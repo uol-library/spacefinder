@@ -1,0 +1,49 @@
+<div id="about-page" class="dialog-container" aria-labelledby="about-page-title" aria-describedby="accessibility-page-description" aria-hidden="true">
+    <div class="dialog-overlay" data-a11y-dialog-hide></div>
+    <article role="document" class="dialog-content">
+        <header>
+            <button type="button" class="button dialog-close" data-a11y-dialog-hide aria-label="Close dialog">&times;</button>
+            <h2 id="about-page-title">About Spacefinder</h2>
+            <p class="visuallyhidden" id="about-page-description">More information about Spacefinder</p>
+        </header>
+        {% capture about_page %}{% include pages/about.md %}{% endcapture %}
+        {{ about_page | markdownify }}
+    </article>
+</div>
+
+<div id="accessibility-page" class="dialog-container" aria-labelledby="accessibility-page-title" aria-describedby="accessibility-page-description" aria-hidden="true">
+    <div class="dialog-overlay" data-a11y-dialog-hide></div>
+    <article role="document" class="dialog-content">
+        <header>
+            <button type="button" class="button dialog-close" data-a11y-dialog-hide aria-label="Close dialog">&times;</button>
+            <h2 id="accessibility-page-title">Accessibility</h2>
+            <p class="visuallyhidden" id="accessibility-page-description">Accessibility statement for Spacefinder</p>
+        </header>
+        {% capture accessibility_page %}{% include pages/accessibility.md %}{% endcapture %}
+        {{ accessibility_page | markdownify }}
+    </article>
+</div>
+
+<div id="privacy-page" class="dialog-container" aria-labelledby="privacy-page-title" aria-describedby="privacy-page-description" aria-hidden="true">
+    <div class="dialog-overlay" data-a11y-dialog-hide></div>
+    <article role="document" class="dialog-content">
+        <header>
+            <button type="button" class="button dialog-close" data-a11y-dialog-hide aria-label="Close dialog">&times;</button>
+            <h2 id="privacy-page-title">Privacy &amp; Cookies</h2>
+            <p class="visuallyhidden" id="privacy-page-description">Privacy and cookies statement for Spacefinder</p>
+        </header>
+        {% capture privacy_page %}{% include pages/privacy.md %}{% endcapture %}
+        {{ privacy_page | markdownify }}
+    </article>
+</div>
+
+<div id="sfalertdialog" class="dialog-container" role="alertdialog" aria-labelledby="sfalertdialog-title" aria-describedby="sfalertdialog-description" aria-hidden="true">
+    <div class="dialog-overlay"></div>
+    <article role="document" class="dialog-content alert-dialog">
+        <header>
+            <button type="button" class="button dialog-close" data-a11y-dialog-hide aria-label="Close dialog">&times;</button>
+            <h2 id="sfalertdialog-title">Dialog title</h2>
+        </header>
+        <p id="sfalertdialog-description">Dialog description</p>
+    </article>
+</div>

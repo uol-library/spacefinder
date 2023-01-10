@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'PT Sans';
+    src: url('../font/pt-sans.woff2?20220901') format('woff2'),
+         url('../font/pt-sans.woff?20220901') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+body, h1, h2, h3, h4, button {
+    font-family: 'PT Sans', sans-serif;
+}
+a {
+    color: $linkcolor;
+    &:hover {
+        color: $linkcolor-hover;
+    }
+    &:visited {
+        color: $linkcolor-visited;
+    }
+    &:active {
+        color: $linkcolor-active;
+    }
+}

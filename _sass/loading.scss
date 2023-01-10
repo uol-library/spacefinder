@@ -1,0 +1,58 @@
+#uol_loader {
+    width: 200px;
+    margin:20px auto;
+    .circle {
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        line-height:25px;
+        background-color: #fff;
+        color:#000;
+        border-radius: 50%;
+        animation: loading 1.5s cubic-bezier(.8, .5, .2, 1.4) infinite;
+        transform-origin: bottom center;
+        position: relative;
+        text-align: center;
+    }
+    @keyframes loading{
+        0%{
+            transform: translateY(0px);
+            background-color: #fff;
+            color:#000;
+        }
+        50%{
+            transform: translateY(20px);
+            background-color: #000;
+            color:#fff;
+        }
+        100%{
+            transform: translateY(0px);
+            background-color: #fff;
+            color:#000;
+        }
+    }
+    .circle-1 {
+        animation-delay: 0.1s;
+    }
+    .circle-2 {
+        animation-delay: 0.2s;
+    }
+    .circle-3 {
+        animation-delay: 0.3s;
+    }
+    .circle-4 {
+        animation-delay: 0.4s;
+    }
+    .circle-5 {
+        animation-delay: 0.5s;
+    }
+    .circle-6 {
+        animation-delay: 0.6s;
+    }
+    .circle-7 {
+        animation-delay: 0.7s;
+    }
+    .circle-8 {
+        animation-delay: 0.8s;
+    }
+}

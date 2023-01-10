@@ -1,0 +1,206 @@
+/**
+ * Layout variables
+ */
+
+/* top navigation bar */
+$topbarheight: 73px;
+$topbarpadding: 10px;
+
+/* filters panel (large screens) */
+$filterswidth: 256px;
+
+/* list panel (large screens) */
+$listwidth: 500px;
+
+/* controls at top of list and search panels */
+$controlsheight: 80px;
+$listcontrolsheight: 40px;
+
+/* footer bar */
+$footerheight: 30px;
+$footerpaddingx: 10px;
+$footerpaddingy: 7px;
+
+/* navigation bar for single space */
+$single-navbarheight: 40px;
+
+/* breakpoints */
+$breakpoint-large: 1000px;
+$breakpoint-med: 600px;
+$breakpoint-small: 400px;
+
+/**
+ * Colours
+ */
+
+/* uol design system colours */
+$color-brand--dark: #910000;
+$color-brand: #c70000;
+$color-brand--bright: #ff4e36;
+$color-brand--pastel: #ff8a7a;
+$color-brand--faded: #ffeded;
+$color-black--dark: #0a0202;
+$color-black: #212121;
+$color-black--light: #6e6b6b;
+$color-black--faded: #dedede;
+$color-brand-2--dark: #156265;
+$color-grey--dark: #6a645d;
+$color-grey--medium: #bcb8b3;
+$color-grey: #ddd9d5;
+$color-grey--light: #eae8e6;
+$color-grey--faded: #f3f2f1;
+$color-warmgrey--dark: #5f5754;
+$color-warmgrey--medium: #81746e;
+$color-warmgrey: #b7aaa4;
+$color-warmgrey--light: #cac2ba;
+$color-warmgrey--faded: #efeae6;
+$color-cream--dark: #ddcfc0;
+$color-cream--medium: #e9e1d8;
+$color-cream: #f6eee5;
+$color-cream--light: #faf6f1;
+$color-white--dark: #fffbf5;
+$color-white: #ffffff;
+$color-blue--dark: #00323d;
+$color-blue: #003a52;
+$color-blue--bright: #1a84c7;
+$color-font--dark: #0e0c0c;
+$color-font: #212529;
+$color-font--light: #3B3B3B;
+$color-font--x-light: #636363;
+$color-link: #910000;
+$color-link--hover: #0e0c0c;
+$color-link--visited: #570000;
+$color-link--active: #570000;
+$color-border--light: #c9c8c5;
+$color-border: #51504c;
+$color-alert--error: #d4351c;
+$color-alert--warning: #e76f16;$closebutton-active: $color-white;
+$color-alert--info: #1993bd;
+
+/* general colors */
+$separatorcolor: $color-grey--medium;
+$bg: $color-white;
+$fg: $color-black;
+
+/* top navigation bar */
+$topbarbg: $color-black;
+$topbarbgactive: $color-black--dark;
+$topbarcolor: $color-white;
+
+/* footer bar */
+$footerbg: $color-black;
+$footercolor: $color-white;
+
+/* filters panel */
+$filterbg: $color-grey--light;
+$filtercolor: $color-black;
+$filterlabelbg: $color-white;
+$filterlabelcolor: $color-black;
+
+/* filters panel buttons */
+$filterbuttoncolor: $color-black;
+$filterbuttonbg: $color-white;
+$filterbuttoncolor-hover: $color-black--dark;
+$filterbuttonbg-hover: $color-white;
+$filterbuttoncolor-disabled: $color-grey--dark;
+$filterbuttonbg-disabled: $color-grey;
+$filterbuttoncolor-active: $color-white;
+$filterbuttonbg-active: $color-blue;
+$filterbuttonborder: transparent;
+$filterbuttonborder-focus: $color-black;
+
+/* geolocation button */
+$geobuttoncolor: $filterbuttoncolor;
+$geobuttonbg: $filterbuttonbg;
+$geobuttoncolor-hover: $filterbuttoncolor-hover;
+$geobuttonbg-hover: $filterbuttonbg-hover;
+$geobuttoncolor-disabled: $filterbuttoncolor-disabled;
+$geobuttonbg-disabled: $filterbuttonbg-disabled;
+$geobuttoncolor-active: $color-white;
+$geobuttonbg-active: $color-blue;
+
+/* recentre button */
+$recentrebuttoncolor: $color-blue;
+$recentrebuttonbg: $color-white;
+$recentrebuttoncolor-hover: $color-blue--bright;
+$recentrebuttonbg-hover: $color-white;;
+$recentrebuttonbordercolor: $color-blue;
+$recentrebuttonbordercolor-hover: $color-blue--bright;
+
+/* List panel */
+$lighttextcolor: $color-font--light;
+$highlighttextcolor: $color-blue;
+$highlighttextcoloralt: $color-brand;
+
+/* space list */
+$spacebg: $color-white;
+$activespacebg: $color-white--dark;
+$spacesubheadbg: $color-cream--light;
+$spacesubheadborder: $color-grey--medium;
+
+/* links */
+$linkcolor: $color-link;
+$linkcolor-active: $color-link--active;
+$linkcolor-visited: $color-link--visited;
+$linkcolor-hover: $color-link--hover;
+
+/* opening times */
+$opencolor: $color-brand-2--dark;
+$closedcolor: $color-brand--dark;
+$openingcolor: $color-blue;
+
+/* modal */
+$modalbg: $color-white;
+$modalborder: $color-black--light;
+$modaloverlay: $color-white; /* set to .8 opacity */
+$closebutton: $color-white;
+$closebuttonbg: $color-black;
+$closebutton-active: $color-white;
+$closebuttonbg-active: $color-black;
+$closebutton-outline: $color-grey;
+
+/* buttons */
+$buttoncolor: $color-white;
+$buttonborder: $color-black;
+$buttonbg: $color-black;
+$buttoncolor-active: $color-black;
+$buttonborder-active: $color-black;
+$buttonbg-active: $color-white;
+$buttoncolor-primary: $color-white;
+$buttonborder-primary: $color-brand-2--dark;
+$buttonbg-primary: $color-brand-2--dark;
+$buttoncolor-secondary: $color-brand-2--dark;
+$buttonborder-secondary: $color-brand-2--dark;
+$buttonbg-secondary: $color-white;
+$button-shadow: $color-black;
+$buttonfocusbg: $color-brand--dark;
+$buttonfocuscolor: $color-white;
+
+/* cookie consent */
+$cc-bg: $color-white;
+$cc-text: $color-black;
+$cc-btn-primary-bg: $color-black;
+$cc-btn-primary-text: $color-white;
+$cc-btn-primary-hover-bg: $color-black--dark;
+$cc-btn-secondary-bg: $color-warmgrey--faded;
+$cc-btn-secondary-text: $color-black;
+$cc-btn-secondary-hover-bg: $color-warmgrey--light;
+$cc-toggle-bg-off: $color-warmgrey--dark;
+$cc-toggle-bg-on: $color-black;
+$cc-toggle-bg-readonly: $color-warmgrey--light;
+$cc-toggle-knob-bg: $color-white;
+$cc-toggle-knob-icon-color: $color-warmgrey--faded;
+$cc-block-text: $color-black;
+$cc-cookie-category-block-bg: $color-grey--faded;
+$cc-cookie-category-block-bg-hover: $color-warmgrey--faded;
+$cc-section-border: $color-grey--faded;
+$cc-cookie-table-border: $color-grey--faded;
+$cc-overlay-bg: rgba(4, 6, 8, .85);
+$cc-webkit-scrollbar-bg: $color-warmgrey--light;
+$cc-webkit-scrollbar-bg-hover: $color-warmgrey;
+
+/* map */
+$space-icon-fill: $color-brand;
+$space-icon-stroke: $color-brand--dark;
+$person-icon-fill: $color-blue--bright;
+$person-icon-stroke: $color-blue;

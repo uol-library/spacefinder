@@ -1,0 +1,10 @@
+_site
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+admin
+vendor
+node_modules
+.vstags
+spaces.json
+Gemfile

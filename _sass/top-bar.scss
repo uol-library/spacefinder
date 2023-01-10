@@ -1,0 +1,126 @@
+/* Top navigation bar */
+#top-bar {
+    background: $topbarbg;
+    color: $topbarcolor;
+    z-index: 10;
+    padding: $topbarpadding;
+    a {
+        background: $topbarbg;
+        color: $topbarcolor;
+    }
+    svg {
+        path {
+            fill: $topbarcolor;
+        }
+    }
+    nav>ul {
+        list-style: none;
+        display: flex;
+        column-gap: $topbarpadding;
+        padding: 0;
+        margin: 0;
+        li {
+            padding: 0;
+            margin: 0;
+            &.site-logo {
+                #site-logo {
+                    display: none;
+                }
+                margin-left: auto;
+                flex: 0 0 53px;
+                a {
+                    padding:0;
+                }
+                @media screen and (min-width: 1000px) {
+                    flex: 0 0 183px;
+                    #site-logo-mark {
+                        display:none;
+                    }
+                    #site-logo {
+                        display: block;
+                    }
+                }
+            }
+            &.filter-button {
+                width: 52px;
+                flex: 0 0 52px;
+                transition: all .5s;
+                button {
+                    padding: 0;
+                    border-radius: 26px;
+                    width: 52px;
+                    text-align: center;
+                    &:hover {
+                        background: darken($topbarbg, 10%);
+                    }
+                }
+                &.active {
+                    background: $filterbg;
+                    button, button:hover {
+                        color: $topbarbg;
+                        background: $filterbg;
+                    }
+                    border-radius: 5px 5px 0 0;
+                    margin-bottom: -$topbarpadding;
+                    padding-bottom: $topbarpadding;
+                }
+            }
+            &.list-button, &.map-button {
+                @media screen and (min-width: 1000px) {
+                    display: none;
+                }
+                &:hover, &.active {
+                    background: $topbarbgactive;
+                    button {
+                        background: $topbarbgactive;
+                    }
+                }
+            }
+            &.list-button {
+                flex: 1 0 auto;
+            }
+            &.map-button {
+                flex: 1 0 auto;
+                @media screen and (min-width: 450px) {
+                    flex: 2 0 auto;
+                }
+            }
+            &.spacefinder-logo {
+                display: none;
+                @media screen and (min-width: 1000px) {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex: 1;
+                }
+            }
+            button {
+                cursor: pointer;
+                border: none;
+                height: 100%;
+                font-size: 1.2rem;
+                line-height: 32px;
+                color: $topbarcolor;
+                background: $topbarbg;
+                text-decoration: none;
+                display: flex;
+                flex-grow: 1;
+                flex-shrink: 0;
+                align-items: center;
+                justify-content: center;
+                column-gap: $topbarpadding;
+                span {
+                    @media screen and (max-width: 450px) {
+                        clip: rect(0 0 0 0);
+                        clip-path: inset(100%); 
+                        height: 1px; 
+                        overflow: hidden; 
+                        position: absolute; 
+                        white-space: nowrap; 
+                        width: 1px; 
+                    }
+                }
+            }
+        }
+    }
+}

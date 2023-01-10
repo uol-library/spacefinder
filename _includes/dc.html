@@ -1,0 +1,16 @@
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+    <meta name="DC.Title" content="{{ site.title }}">
+    <meta name="DC.Description" content="{{ site.description }}">
+    {% if site.dc.creator != "" %}<meta name="DC.Creator" content="{{ site.dc.creator }}">{% endif %}
+    {% if site.dc.publisher != "" %}<meta name="DC.Publisher" content="{{ site.dc.publisher }}">{% endif %}
+    {% if site.dc.dateCreated != "" %}<meta name="DCTERMS.Created" content="{{ site.dc.dateCreated }}">{% endif %}
+    {% if site.dc.dateModified != "" %}<meta name="DCTERMS.Modified" content="{{ site.dc.dateModified }}">{% endif %}
+    {%- if site.dc.types -%}{% for type in site.dc.types %}
+    <meta name="DC.Type" content="{{ type }}">
+    {% endfor %}{%- endif -%}
+    {% if site.dc.subjects %}{%- for subject in site.dc.subjects -%}
+    <meta name="DC.Subject" scheme="DCTERMS.LCSH" content="{{ subject }}">
+    {% endfor %}{%- endif -%}
+    {% if site.dc.spatialCoverage != "" %}<meta name="DCTERMS.Spatial" content="{{ site.dc.spatialCoverage }}">{% endif %}
+    <meta name="DC.Identifier" content="{{ site.url }}">
+    <meta name="DC.Language" content="{{ site.lang | default: 'en' }}">

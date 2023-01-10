@@ -1,0 +1,33 @@
+.accordion {
+	button.accordion-trigger {
+		display: flex;
+		justify-content: space-between;
+		cursor: pointer;
+		span {
+			margin-left:.5em;
+		}
+		&::after {
+			font-family: 'spacefinder-new';
+			speak: none;
+			font-style: normal;
+			font-weight: normal;
+			font-variant: normal;
+			text-transform: none;
+			line-height: 1;
+			display: inline-block;
+			text-decoration: inherit;
+			content: "\E61E";
+		}
+		&[aria-expanded="false"] {
+			&::after {
+				content: "\E620";
+			}
+		}
+	}
+
+	/* For Edge bug https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/4806035/ */
+	.accordion-content[hidden] {
+		display: none;
+	}
+
+}

@@ -1,0 +1,34 @@
+title: Space Finder
+email: ""
+description: >-
+  Spacefinder includes detailed descriptions of spaces,
+  filters based on space characteristics, and navigation
+  via a map.
+environment: production
+baseurl: ""
+url: ""
+host: "localhost"
+google_analytics: ""
+photo_dir: "/assets/photos/"
+lang: "en"
+dc:
+  creator: ""
+  dateCreated: ""
+  dateModified: ""
+  publisher: ""
+  spatialCoverage: ""
+  types:
+    - "InteractiveResource"
+  subjects:
+    - "Digital mapping"
+    - "College Campuses"
+terms:
+  url: ""
+  text: ""
+foi:
+  url: ""
+  text: ""
+sass:
+  style: compressed
+plugins:
+  - jekyll-feed

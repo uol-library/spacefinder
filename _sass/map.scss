@@ -1,0 +1,93 @@
+#map {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid transparent;
+    &:focus-visible {
+        border: 1px solid rgba( $space-icon-stroke, 0.6 );
+    }
+    .leaflet-control-attribution > a {
+        color: $linkcolor;
+        background: $bg;
+        &:hover {
+            color: $linkcolor-hover;
+        }
+        &:visited {
+            color: $linkcolor-visited;
+        }
+        &:active {
+            color: $linkcolor-active;
+        }
+    }
+    .spaceInfoWindow {
+        max-width: 300px;
+        h3 {
+            margin: 0 0 .5rem 0;
+        }
+        p.info {
+            margin: .5rem 0;
+            font-weight: bold;
+        }
+        p.description {
+            margin: .5em 0;
+        }
+        button.show-list {
+            display: block;
+            margin: 0 0 0 auto;
+            display: none;
+            border: none;
+            color: $linkcolor;
+            cursor: pointer;
+            &:hover {
+                color: $linkcolor-hover;
+            }
+            background: $color-white;
+        }
+    }
+    &.active .spaceInfoWindow button.show-list {
+        display: block;
+    }
+    .space-marker {
+        circle {
+            stroke: $space-icon-stroke;
+            fill: $space-icon-fill;
+        }
+    }
+    .person-marker {
+        circle {
+            stroke: $person-icon-stroke;
+            fill: $person-icon-fill;
+        }
+    }
+    .marker-cluster-small,
+    .marker-cluster-medium,
+    .marker-cluster-large {
+        background-color: rgba($space-icon-stroke, 0.6);
+        div {
+            background-color: rgba($space-icon-fill, 0.8);
+            color: $color-white;
+        }
+    }
+    .marker-cluster {
+        background-clip: padding-box;
+        border-radius: 20px;
+        div {
+            width: 30px;
+            height: 30px;
+            margin-left: 5px;
+            margin-top: 5px;
+            text-align: center;
+            border-radius: 15px;
+        }
+        span {
+            line-height: 30px;
+        }
+    }
+    .leaflet-container:-webkit-full-screen {
+        width:100%!important;
+        height:100%!important;
+    }
+    .leaflet-container.leaflet-fullscreen-on {
+        width:100%!important;
+        height:100%!important;
+    }
+}

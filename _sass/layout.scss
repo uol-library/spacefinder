@@ -1,0 +1,136 @@
+/**
+ * Main layout
+ *
+ * This contains rules to create the main layout
+ *
+ * +--------------------------------------------+
+ * | #top-bar                                   |
+ * +--------------------------------------------+
+ * | #spacefinder                               |
+ * +--------------------------------------------+
+ * | #footer-bar                                |
+ * +--------------------------------------------+
+ *
+ * and the spacefinder layout, which changes according to screen size
+ */
+body {
+    overflow: hidden;
+    background: $bg;
+    color: $fg;
+}
+#skip {
+    background: $topbarbg;
+    color: $topbarcolor;
+    a {
+        background: $topbarbg;
+        color: $topbarcolor;
+        margin: .5rem 1rem;
+        display: inline-block;
+        position:absolute;
+        left:-10000px;
+        overflow:hidden;
+        &:focus {
+            position:static;
+        }
+    }
+}
+#maincontainer {
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    #top-bar {
+        height: $topbarheight;
+    }
+    #footer-bar {
+        height: $footerheight;
+        padding: $footerpaddingy $footerpaddingx;
+    }
+    #spacefinder {
+        flex: 1;
+        display: flex;
+        height: calc(100vh - (#{$topbarheight} + #{$footerheight}));
+        width: 100vw;
+        overflow: hidden;
+        #filters, #list, #map {
+            width: 100vw;
+            flex: 0 0 100vw;
+            &.active {
+                visibility: visible;
+            }
+        }
+        #filters, #list {
+            visibility: hidden;
+            margin-left: -100vw;
+            max-height: calc(100vh - (#{$topbarheight} + #{$footerheight}));
+            &.active {
+                margin-left: 0;
+            }
+            .panel-content {
+                overflow-y: auto; 
+            }
+        }
+        #filters {
+            .top-controls {
+                height: $controlsheight;
+            }
+            .panel-content {
+                max-height: calc(100vh - (#{$topbarheight} + #{$footerheight} + #{$controlsheight}));
+            }
+            &:focus {
+                outline:none;
+            }
+        }
+        #list {
+            .top-controls {
+                height: $listcontrolsheight;
+            }
+            .panel-content {
+                max-height: calc(100vh - (#{$topbarheight} + #{$footerheight} + #{$listcontrolsheight}));
+            }
+            #listcontent:focus {
+                outline:none;
+            }
+        }
+        #map {
+            height: calc(100vh - (#{$topbarheight} + #{$footerheight}));
+            &:focus {
+                outline:none;
+            }
+        }
+        @media screen and (min-width: #{$breakpoint-med}) {
+        }
+        @media screen and (min-width: #{$breakpoint-large}) {
+            .switch-view {
+                display: none;
+            }
+            #filters, #list, #map {
+                visibility: visible;
+            }
+            #filters {
+                position: relative;
+                width: $filterswidth;
+                visibility: hidden;
+                flex: 0 0 $filterswidth;
+                margin-left: 0;
+                &.inactive {
+                    margin-left: -$filterswidth;
+                }
+                &.active {
+                    margin-left: 0;
+                    visibility: visible;
+                }
+            }
+            #list {
+                position:relative;
+                flex: 1 0 $listwidth;
+                margin-left: 0;
+            }
+            #map {
+                position:relative;
+                flex: 3 1 auto;
+            }
+        }
+    }
+}

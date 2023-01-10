@@ -1,0 +1,163 @@
+#listcontrols {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    border-bottom: 1px solid $filterbg;
+    p {
+        flex: 1;
+        margin: 1px 3px;
+        padding: .5rem;
+    }
+}
+#listfilters {
+    padding: .5rem;
+    border-bottom: 1px solid $filterbg;
+    .noresults {
+        padding: .5rem 0 .5rem 1rem;
+        position:relative;
+        &:before {
+            content: "!";
+            color: red;
+            position:absolute;
+            top: .5rem;
+            font-weight: bold;
+            left: 0;
+        }
+    }
+}
+#listcontent {
+    .list-space {
+        padding: 1rem .5rem;
+        border-bottom: 1px solid $separatorcolor;
+        &:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        &.hidden {
+            display: none;
+        }
+        &.active {
+            background: $activespacebg;
+            .space-details {
+                .space-image {
+                    width: 100%;
+                    height: auto;
+                    float: none;
+                    margin: 0 0 1rem 0;
+                }
+            }
+        }
+        .space-details {
+            &:after {
+                content: "";
+                display: block;
+                clear: both;
+            }
+            .space-image {
+                width: 50%;
+                height: auto;
+                float: left;
+                margin: 0 1rem 1rem 0;
+            }
+        }
+        h3 {
+            font-size: 1.4rem;
+            font-weight: normal;
+            padding-bottom: .3rem;
+            &:focus {
+                outline: 1px dotted $spacesubheadborder;
+            }
+        }
+        p.space-info {
+            font-weight: normal;
+            padding-bottom: .3rem;
+            display: flex;
+            flex-direction: row;
+            align-items: baseline;
+            gap: 1rem;
+            > span {
+                flex: 1;
+                &.space-type {
+                    font-size: 1.2rem;
+                    display: block;
+                    color: $highlighttextcolor;
+                    span.distance {
+                        display: block;
+                        color: $lighttextcolor;
+                        font-size: .9rem;
+                    }
+                }
+                &.address {
+                    max-width: 70%;
+                    color: $lighttextcolor;
+                    text-align: right;
+                    font-size: .9rem;
+                }
+            }
+        }
+        &[data-sortdistance=""] p.space-info > span.space-type span.distance {
+            display: none;
+        }
+        h4 {
+            font-size: 1.1rem;
+            font-weight: normal;
+            padding-bottom: .5rem 0;
+            background: $spacesubheadbg;
+            margin: .5rem 0;
+            border-top: 1px dotted $spacesubheadborder;
+            border-bottom: 1px dotted $spacesubheadborder;
+        }
+        ul.bulleticons {
+            list-style: none;
+            padding: 0;
+            li {
+                position: relative;
+                padding: .1rem 0 .1rem 2.5rem;
+                &:before {
+                    position: absolute;
+                    top: .25rem;
+                    left: 0.5rem;
+                }
+                &.icon-link {
+                    word-break: break-all;
+                }
+            }
+        }
+        &[data-openclass="open"] {
+            [data-openmsg-id],
+            li.today {
+                color: $opencolor;
+            }
+        }
+        &[data-openclass="opening-later"] {
+            [data-openmsg-id],
+            li.today {
+                color: $openingcolor;
+            }
+        }
+        &[data-openclass="open"] {
+            [data-openmsg-id],
+            li.today {
+                color: $closedcolor;
+            }
+        }
+        ul.opening-times {
+            list-style: none;
+            padding: 0;
+            li {
+                display: flex;
+                span.dayname {
+                    font-weight: bold;
+                    width: 25%;
+                    border-bottom: 1px solid $spacesubheadborder;
+                }
+                span.opening {
+                    width: 25%;
+                    text-align: right;
+                    border-bottom: 1px solid $spacesubheadborder;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,30 @@
+
+/* Utilities */
+/* 
+ * Utility class to hide content visually while keeping it screen reader-accessible.
+ * Source: https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html 
+ */
+.visuallyhidden:not(:focus):not(:active) {
+    clip: rect(0 0 0 0); 
+    clip-path: inset(100%); 
+    height: 1px; 
+    overflow: hidden; 
+    position: absolute; 
+    white-space: nowrap; 
+    width: 1px; 
+}
+
+/**
+ * box-sizing reset
+ * @see: https://css-tricks.com/box-sizing/
+ */
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+/* reset margins */
+body, h1, h2, h3, h4, p, figure, blockquote, dl, dd {
+    margin: 0;
+}

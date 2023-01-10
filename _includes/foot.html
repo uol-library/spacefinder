@@ -1,0 +1,26 @@
+<footer id="footer-bar">
+    <nav aria-label="footer navigation">
+        <ul>
+            <li><button type="button" class="modal-trigger icon-info-circled button-icon" data-dialoghash="about" data-dialogid="about-page" aria-label="About this site"><span class="button-text">About</span></button></li>
+            <li><button type="button" class="modal-trigger icon-universal-access button-icon" data-dialoghash="accessibility" data-dialogid="accessibility-page" aria-label="Accessibility page"><span class="button-text">Accessibility</span></button></li>
+            <li><button type="button" class="modal-trigger" data-dialoghash="privacy" data-dialogid="privacy-page" aria-label="Privacy page">Privacy</button></li>
+            {%- if site.terms.url and site.terms.text -%}
+            <li><a target="external" href="{{ site.terms.url }}">{{ site.terms.text }}</span></a></li>
+            {%- endif -%}
+            {%- if site.foi.url and site.foi.text -%}
+            <li><a target="external" href="{{ site.foi.url }}">{{ site.foi.text }}</a></li>
+            {%- endif -%}
+            <li><button type="button" class="modal-trigger" data-dialoghash="about" data-dialogid="about-page" aria-label="Copyright {{ 'now' | date: '%Y' }} University of Leeds">&copy;<span class="hide-med"> {{ "now" | date: "%Y" }}</span><span class="hide-small"> University of Leeds</span></button></li>
+        </ul>
+    </nav>
+</footer>
+
+{% include modal-includes.html %}
+
+{% include custom-foot.html %}
+
+{%- if site.environment == "development" -%}
+<script src="{{ "/assets/scripts/bundle.js" | absolute_url }}"></script>
+{%- else -%}
+<script src="{{ "/assets/scripts/bundle.min.js" | absolute_url }}"></script>
+{%- endif -%}

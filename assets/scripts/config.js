@@ -1,0 +1,3 @@
+---
+---
+{% include javascript/config.js %}

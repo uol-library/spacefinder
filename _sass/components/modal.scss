@@ -1,0 +1,129 @@
+.dialog-container {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1200;
+}
+
+.dialog-container[aria-hidden='true'] {
+    display: none;
+    pointer-events: none;
+}
+
+.dialog-container[aria-hidden='true'] .dialog-content {
+    animation: fade-out 200ms forwards, slide-down 200ms forwards;
+}
+
+.dialog-container[aria-hidden='true'] .dialog-overlay {
+    animation: fade-out 200ms forwards;
+}
+
+.dialog-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(43, 46, 56, 0.9);
+    animation: fade-in 200ms both;
+}
+
+.dialog-content {
+    background-color: rgb(255, 255, 255);
+    margin: auto;
+    z-index: 1201;
+    position: relative;
+    animation: fade-in 400ms 200ms both, slide-up 400ms 200ms both;
+    padding: 1em;
+    max-width: 900px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 2px;
+    &.alert-dialog {
+        width: 50%;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        .dialog-close {
+            order: 2;
+            font-size: 2em;
+            font-weight: bold;
+            padding: 0;
+            min-width: 1.5em;
+            height: 1.5em;
+        }
+    }
+    h3, h4 {
+        margin: 1em 0;
+    }
+    p {
+        margin: 1em 0;
+    }
+    dl {
+        margin: .5em 0;
+        padding: .5em 0;
+        border-bottom: 1px dotted $separatorcolor;
+        &:first-of-type {
+            border-top: 1px dotted $separatorcolor;
+        }
+    }
+    dt {
+        font-weight: bold;
+    }
+    dd {
+        padding-left: 2em;
+    }
+    dl > dd > ul {
+        padding-left: 0;
+        margin: 0;
+    }
+}
+#feedback-page iframe {
+    width:100%;
+    min-height: 600px;
+    border:0;
+}
+
+@media screen and (min-width: 700px) {
+    .dialog-content {
+        padding: 2em;
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+}
+
+@keyframes fade-out {
+    from {
+       opacity: 1;
+    }
+    to {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+    99% {
+        visibility: visible;
+    }
+}
+
+@keyframes slide-up {
+    from {
+        transform: translateY(10%);
+    }
+}
+
+@keyframes slide-down {
+    to {
+        transform: translateY(10%);
+    }
+}
