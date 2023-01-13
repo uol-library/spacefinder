@@ -35,6 +35,12 @@ Spaces **must** have the following pieces of metadata defined for them:
 
 Other metadata fields can be defined in the JSON data, along with filter information for each space (using keys defined in `_data/config.yml`). This data should then be incorporated somehow into the output of the templates in `_includes/javascript/templates.js`.
 
+Icon Font
+---------
+
+Spacefinder uses a font to display different icons which can be customised using https://fontello.com.
+
+The fontello configuration is in the file `assets/font/src/config.json` which you can import into fontello if you want to add and remove icons. Once you have finished customising the font, download the package from fontello and replace the content of your `assets/font/src` folder with it. The package contains the font (in five formats) and a CSS file `assets/font/src/css/spacefinder.css` which can be used to replace the icon CSS file in `_sass/spacefinder.scss`. The only change made to this file is applying the global icon style to the `::before` **and** `::after` pseudo-elements which allows for the inclusion of two icons together in parts of the UI.
 
 Changelog
 ---------

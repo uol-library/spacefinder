@@ -1,8 +1,36 @@
+##########################################################################
+# Map starting location and zoom level
+##########################################################################
 map:
-  startLat: 53.806529
-  startLng: -1.555291
-  startZoom: 16
+  startLat: 
+  startLng: 
+  startZoom: 
+##########################################################################
+# Filter definitions
+#
+# Filters allow users to filter lists of spaces using checkbox controls in
+# the filters panel of the UI. They are defined here, then the keys are
+# used in the space metadata to enable them.
+#
+# Each filter has the following properties:
+#   key:       ID of the filter, used in classes and control atributes
+#   label:     Human readable description of the filter
+#   message:   Message to display when the filter is active
+#   exclusive: Whether the options are exclusive. If this is set to true,
+#              only one of the options will be selectable
+#   additive:  Whether the options are additive. In other words, if more
+#              than one option is selected, spaces will need to match all
+#              of them (rather than one).
+#   open:      Whether to start with the list of options open
+#   options:   An array of items with:
+#       key:   ID used in classes and control attributes)
+#       label: Human readable description of the option
+#       icon:  Class applied to the option to display a custom icon
+##########################################################################
 filters:
+##########################################################################
+# This filter works with the opening hours of each space
+##########################################################################
   - key: "open"
     label: "Spaces currently open"
     message: "Showing spaces which are currently open"
@@ -12,162 +40,7 @@ filters:
     options:
       - key: "show_open"
         label: "Only show spaces which are currently open"
-  - key: "space_type"
-    label: "Space type"
-    message: "Filtering spaces by type: "
-    exclusive: false
-    additive: false
-    open: true
-    options:
-      - key: "caf"
-        label: "Café"
-      - key: "generalseatingarea"
-        label: "General Seating Area"
-      - key: "itcluster"
-        label: "IT Cluster"
-      - key: "library"
-        label: "Library"
-      - key: "outdoorseatingarea"
-        label: "Outdoor Seating Area"
-  - key: "work"
-    label: "I want to work"
-    message: "Showing spaces where you can work: "
-    exclusive: true
-    additive: false
-    open: true
-    options:
-      - key: "private"
-        label: "Alone, in private"
-      - key: "close"
-        label: "Where others are working"
-      - key: "friends"
-        label: "With friends"
-      - key: "group"
-        label: "On a group project"
-  - key: "atmosphere"
-    label: "Atmosphere"
-    message: "Showing spaces where the atmosphere is: "
-    exclusive: false
-    additive: false
-    open: false
-    options:
-      - key: "disciplined"
-        label: "Disciplined"
-      - key: "relaxed"
-        label: "Relaxed"
-      - key: "historic"
-        label: "Historic"
-      - key: "modern"
-        label: "Modern"
-      - key: "inspiring"
-        label: "Inspiring"
-      - key: "cosy"
-        label: "Cosy"
-      - key: "social"
-        label: "Social"
-      - key: "friendly"
-        label: "Friendly"
-  - key: "noise"
-    label: "Noise levels"
-    message: "Showing spaces where noise levels are: "
-    exclusive: true
-    additive: false
-    open: false
-    options:
-      - key: "strictlysilent"
-        label: "Strictly silent"
-        icon: "icon-sound-0"
-      - key: "whispers"
-        label: "Whispers"
-        icon: "icon-sound-1"
-      - key: "backgroundchatter"
-        label: "Background chatter"
-        icon: "icon-sound-2"
-      - key: "animateddiscussion"
-        label: "Animated discussion"
-        icon: "icon-sound-3"
-      - key: "musicplaying"
-        label: "Music playing"
-        icon: "icon-music"
-  - key: "facilities"
-    label: "Facilities"
-    message: "Showing spaces with facilities: "
-    exclusive: false
-    additive: true
-    open: false
-    options:
-      - key: "food_drink"
-        label: "Food &amp; drink allowed"
-        icon: "icon-drink"
-      - key: "daylight"
-        label: "Natural daylight"
-        icon: "icon-sun"
-      - key: "views"
-        label: "Attractive views out of the window"
-        icon: "icon-views"
-      - key: "large_desks"
-        label: "Large desks"
-        icon: "icon-desk"
-      - key: "adjustable_furniture"
-        label: "Adjustable furniture"
-        icon: "icon-adjustable-furniture"
-      - key: "computers"
-        label: "Computers"
-        icon: "icon-computer"
-      - key: "sockets"
-        label: "Plug Sockets"
-        icon: "icon-power"
-      - key: "signal"
-        label: "Phone signal"
-        icon: "icon-phone"
-      - key: "printers_copiers"
-        label: "Printers and copiers"
-        icon: "icon-printer"
-      - key: "whiteboards"
-        label: "Whiteboards"
-        icon: "icon-whiteboard"
-      - key: "projector"
-        label: "Projector"
-        icon: "icon-projector"
-      - key: "outdoor_seating"
-        label: "Outdoor seating"
-        icon: "icon-bench"
-      - key: "refreshments"
-        label: "Close to refreshments"
-        icon: "icon-coffee"
-      - key: "break"
-        label: "Close to a place to take a break"
-        icon: "icon-marker"
-      - key: "bookable"
-        label: "Bookable"
-        icon: "icon-time-long"
-      - key: "individual_study_space"
-        label: "Individual study spaces available"
-        icon: "icon-individual-space"
-      - key: "toilets"
-        label: "Toilets nearby"
-        icon: "icon-toilet"
-      - key: "gender_neutral_toilets"
-        label: "Gender neutral toilets"
-        icon: "icon-neutral-toilets"
-      - key: "baby_changing"
-        label: "Baby changing facilities"
-        icon: "icon-baby-changing"
-      - key: "wheelchair_accessible"
-        label: "Wheelchair accessible"
-        icon: "icon-disabled"
-      - key: "blue_badge_parking"
-        label: "Parking for blue badge holders"
-        icon: "icon-disabled-parking"
-      - key: "accessible_toilets"
-        label: "Toilets accessible to disabled people"
-        icon: "icon-disabled-toilet"
-      - key: "induction_loops"
-        label: "Induction loops"
-        icon: "icon-hearing-loop"
-      - key: "bike_racks"
-        label: "Bike racks"
-        icon: "icon-bike-rack"
-      - key: "prayer_room"
-        label: "Prayer room"
-        icon: "icon-prayer-room"
+##########################################################################
+# Other filters can be defined according to the metadata schema for the 
+# spaces
+##########################################################################

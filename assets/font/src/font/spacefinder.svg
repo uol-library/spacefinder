@@ -1,10 +1,10 @@
 <?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg">
-<metadata>Copyright (C) 2022 by original authors @ fontello.com</metadata>
+<metadata>Copyright (C) 2023 by original authors @ fontello.com</metadata>
 <defs>
-<font id="spacefinder-new" horiz-adv-x="1000" >
-<font-face font-family="spacefinder-new" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<font id="spacefinder" horiz-adv-x="1000" >
+<font-face font-family="spacefinder" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
 <missing-glyph horiz-adv-x="1000" />
 <glyph glyph-name="views" unicode="&#xe600;" d="M135 761v-822h1081v822h-1081z m994-86v-193h-908v193h908z m-908-650v377h908v-377h-908z" horiz-adv-x="1350.6" />
 
@@ -89,8 +89,6 @@
 <glyph glyph-name="resize-small" unicode="&#xe807;" d="M704 33l-128-130 0 336 335 0-127-128 127-129-79-79z m-686 429l128 129-127 126 79 79 126-126 129 127 0-335-335 0z m0-480l128 129-128 128 335 0 0-336-129 130-127-130z m558 480l0 335 128-127 128 126 78-79-126-126 127-129-335 0z" horiz-adv-x="928" />
 
 <glyph glyph-name="bench" unicode="&#xe822;" d="M1309 516v-493c0-24-20-44-43-44s-44 20-44 44v256h-1135v-256c0-24-20-44-44-44s-43 20-43 44v493c0 23 20 43 43 43s44-20 44-43v-154h1135v154c0 23 20 43 44 43s43-20 43-43z m-1183-115h1045v75h-1045v-75z m0 119h1045v74h-1045v-74z m0 118h1045v75h-1045v-75z" horiz-adv-x="1316.4" />
-
-<glyph glyph-name="uol-logo-mark" unicode="&#xe831;" d="M750 475h31v31h32v32h-63z m0-250h31v125h32v31h-63z m-156 219h219v-31h-219z m78-219h31v125h31v31h-62z m31 281h31v32h-62v-63h31z m-78 0h31v32h-62v-63h31z m-31-281h31v125h31v31h-62z m62-125h32v-31h-32z m32-31h31v-31h-31z m31 31h31v-31h-31z m-31 31h31v-31h-31z m-688 719v-1000h500v281h94v-281h31v313h156v-313h32v281h93v-281h94v1000h-1000z m706-94l107-93h-219l112 93z m-128-122h247l3-34h-250v34z m328-471h-93v31h-219v-31h-94v31h31v250h32v125h281v-122h31v-250h31v-34z" horiz-adv-x="1000" />
 
 <glyph glyph-name="public" unicode="&#xe900;" d="M641-38h-507c-25 0-46 22-46 47v266c0 25 21 47 46 47h507c25 0 47-22 47-47v-266c0-25-22-47-47-47z m-3 526c0 137-113 250-250 250s-250-113-250-250c0 0 0-4 0-4v0-196h65v187c0 0 0 0 0 3 0 103 81 185 185 185s184-82 184-185c0 0 0 0 0-3v0 0h66v13c0-4 0-4 0 0z" horiz-adv-x="781.3" />
 
