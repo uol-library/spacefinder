@@ -53,6 +53,7 @@ function getSpaceHTML( space ) {
 function getAdditionalInfo( space ) {
     splog( 'getAdditionalInfo', 'templates.js' );
     let spaceHTML = '';
+    let spacenode = getSpaceNodeById( space.id );
     spaceHTML += '<section class="section-facts"><h4>Key Facts</h4><ul class="bulleticons"><li class="icon-marker switch-view"><a class="show-map" href="#">Show on map</a></li>';
     let loc = '';
     if ( space.floor !== '' ) {
