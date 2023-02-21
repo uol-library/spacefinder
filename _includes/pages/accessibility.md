@@ -1,8 +1,4 @@
----
-created:
-last_modified:
----
-This website was created by {{ site.dc.creator }}. We want as many people as possible to be able to use this website. For example, that means you should be able to:
+This website was created by <!-- insert site creator here -->. We want as many people as possible to be able to use this website. For example, that means you should be able to:
 
 * change colours, contrast levels and fonts
 * zoom in up to 300% without the text spilling off the screen
@@ -48,6 +44,6 @@ This website is partially compliant with the Web Content Accessibility Guideline
 
 This site includes interactive maps, and while maps are exempt from the scope of the regulations, every attempt has been made to make the maps accessible to assistive technologies. However, there remain some features within the map which may be difficult to use.
 
-{%- if page.created != "" and page.last_modified != "" -%}
-This statement was created on {%- page.created : date: '%-d %B %Y' -%}. It was last updated on {%- page.last_modified : date: '%-d %B %Y' -%}.
-{%- endif -%}
+{% if site.accessibility_statement.created != "" and site.accessibility_statement.last_modified != "" %}
+This statement was created on {{ site.accessibility_statement.created }}. It was last updated on {{ site.accessibility_statement.last_modified }}.
+{% endif %}

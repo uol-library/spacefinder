@@ -45,15 +45,4 @@
             }
         }
     }
-
-    @media screen and (max-width: #{$breakpoint-large}) {
-        .hide-med {
-            display: none;
-        }
-    }
-    @media screen and (max-width: #{$breakpoint-med}) {
-        .hide-small {
-            display: none;
-        }
-    }
 }

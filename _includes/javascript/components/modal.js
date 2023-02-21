@@ -20,13 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
             window.location.hash = dialog.originalpagehash
         });
     });
-    setTimeout( () => {
-        openAlertDialog('Spacefinder feedback', 'Can you please help us improve this site by <a id="fb-link" href="https://bit.ly/spacefinder-feedback" target="sf_feedback">providing feedback using this short form</a> (opens in a new browser window / tab).');
-        document.getElementById('fb-link').addEventListener('click', e => {
-            let dialog = new A11yDialog( document.getElementById( 'sfalertdialog' ) );
-            dialog.hide();
-        });
-    }, 20000);
 });
 
 /**

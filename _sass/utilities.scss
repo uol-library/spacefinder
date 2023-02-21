@@ -28,3 +28,20 @@ html {
 body, h1, h2, h3, h4, p, figure, blockquote, dl, dd {
     margin: 0;
 }
+
+
+@media screen and (min-width: #{$breakpoint-large}) {
+    .show-med {
+        display: none;
+    }
+}
+@media screen and (max-width: #{$breakpoint-large}) {
+    .hide-med {
+        display: none;
+    }
+}
+@media screen and (max-width: #{$breakpoint-med}) {
+    .hide-small {
+        display: none;
+    }
+}
