@@ -4,13 +4,25 @@
             <li><button type="button" class="modal-trigger icon-info-circled button-icon" data-dialoghash="about" data-dialogid="about-page" aria-label="About this site"><span class="button-text">About</span></button></li>
             <li><button type="button" class="modal-trigger icon-universal-access button-icon" data-dialoghash="accessibility" data-dialogid="accessibility-page" aria-label="Accessibility page"><span class="button-text">Accessibility</span></button></li>
             <li><button type="button" class="modal-trigger" data-dialoghash="privacy" data-dialogid="privacy-page" aria-label="Privacy page">Privacy</button></li>
-            {%- if site.terms.url and site.terms.text -%}
-            <li><a target="external" href="{{ site.terms.url }}">{{ site.terms.text }}</span></a></li>
+            {%- if site.terms.url != "" and site.terms.text != "" -%}
+                {%- if site.terms.shorttext != "" -%}
+                    {%- capture termstext -%}<span class="hide-med">{{ site.terms.text }}</span><span class="show-med">{{ site.terms.shorttext }}</span>{%- endcapture -%}
+                {%- else -%}
+                    {%- assign termstext = site.terms.text -%}
+                {%- endif -%}
+            <li><a target="external" href="{{ site.terms.url }}">{{ termstext }}</a></li>
             {%- endif -%}
-            {%- if site.foi.url and site.foi.text -%}
-            <li><a target="external" href="{{ site.foi.url }}">{{ site.foi.text }}</a></li>
+            {%- if site.foi.url != "" and site.foi.text != "" -%}
+                {%- if site.foi.shorttext != "" -%}
+                    {%- capture foitext -%}<span class="hide-med">{{ site.foi.text }}</span><span class="show-med">{{ site.foi.shorttext }}</span>{%- endcapture -%}
+                {%- else -%}
+                    {%- assign foitext = site.foitext -%}
+                {%- endif -%}
+            <li><a target="external" href="{{ site.foi.url }}">{{ foitext }}</a></li>
             {%- endif -%}
-            <li><button type="button" class="modal-trigger" data-dialoghash="about" data-dialogid="about-page" aria-label="Copyright {{ 'now' | date: '%Y' }} University of Leeds">&copy;<span class="hide-med"> {{ "now" | date: "%Y" }}</span><span class="hide-small"> University of Leeds</span></button></li>
+			{%- if site.copyright != "" -%}
+            <li><button type="button" class="modal-trigger" data-dialoghash="about" data-dialogid="about-page" aria-label="Copyright {{ 'now' | date: '%Y' }} {{ site.copyright }}">&copy;<span class="hide-med"> {{ "now" | date: "%Y" }}</span><span class="hide-small"> {{ site.copyright }}</span></button></li>
+			{%- endif -%}
         </ul>
     </nav>
 </footer>

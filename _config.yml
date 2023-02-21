@@ -25,9 +25,11 @@ dc:
 terms:
   url: ""
   text: ""
+  shorttext: ""
 foi:
   url: ""
   text: ""
+  shorttext: ""
 sass:
   style: compressed
 plugins:

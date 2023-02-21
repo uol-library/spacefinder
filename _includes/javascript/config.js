@@ -39,11 +39,11 @@ const spacefinder = {
     /* space related config */
     spaces: [],
     spacesLoaded: false,
-    spacesurl: '{{ site.url }}/spaces.json',
-    imageBaseURL: '{{ site.url }}',
+    spacesurl: '{{ site.url }}{{ site.baseurl }}/spaces.json',
+    imageBaseURL: '{{ site.url }}{{ site.baseurl }}',
 
     /* filter related config */
     filters: [],
     filtersLoaded: false,
-    filtersurl: '{{ site.url }}/filters.json'
+    filtersurl: '{{ site.url }}{{ site.baseurl }}/filters.json'
 };
