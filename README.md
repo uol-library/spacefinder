@@ -7,6 +7,8 @@ The major change made to the original application (https://github.com/cambridge-
 
 For more information about the project, [please visit the Spacefinder UI wiki](https://github.com/uol-library/spacefinder-ui/wiki/)
 
+An example of the application when populated with data is available in the `gh-pages` branch of this repository, which is available at https://uol-library.github.io/spacefinder/.
+
 Using this repository
 ---------------------
 
