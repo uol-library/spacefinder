@@ -417,8 +417,7 @@ function renderList() {
     let listContainer = document.getElementById( 'listcontent' );
     let spacetotal = spacefinder.spaces.length;
     spacefinder.spaces.forEach( space => {
-        spaceContainer = getSpaceHTML( space );
-        listContainer.append( spaceContainer );
+        listContainer.appendChild( getSpaceHTML( space ) );
     });
     document.getElementById( 'searchResultsSummary' ).innerHTML = 'Showing ' + spacetotal + ' of ' + spacetotal + ' spaces';
 }
@@ -433,15 +432,18 @@ function renderAdditionalInfo( spaceid ) {
     splog( 'renderAdditionalInfo', 'spaces.js' );
     /* clear any additional data currently displayed */
     document.querySelectorAll( '.additionalInfo' ).forEach( el => {
-        el.textContent = '';
+        if ( el.replaceChildren ) {
+            el.replaceChildren();
+        } else {
+            el.textContent = '';
+        }
     });
 
     if ( spaceid !== false ) {
         /* get space data */
         let space = getSpaceById( spaceid );
         let spacenode = getSpaceNodeById( spaceid );
-        let spaceHTML = getAdditionalInfo( space );
-        spacenode.querySelector( '.additionalInfo' ).innerHTML = spaceHTML;
+        spacenode.querySelector( '.additionalInfo' ).innerHTML = getAdditionalInfo( space );
     }
 }
 

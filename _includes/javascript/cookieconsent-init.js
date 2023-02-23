@@ -80,7 +80,7 @@ cc.run({
         }
     }
 });
-function canUseLocalStorage(){
+spacefinder.canUseLocalStorage = function(){
     return cc.allowedCategory('performance');
 }
 function showCookieSettings() {

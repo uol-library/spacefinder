@@ -1,10 +1,9 @@
 /**
  * Templates used to render spaces in the list.
  * 
- * Three fundtions should be defined in this file:
- * - getSpaceHTML - assembles HTML for the list view
- * - getAdditionalInfo - assembles HTML for expanded view
- * - getClassList - assembles classnames for each space container to allow filtering
+ * Two fundtions should be defined in this file:
+ * - getSpaceHTML - assembles HTML for the list view (short) and returns a HTML Element
+ * - getAdditionalInfo - assembles HTML for expanded view and returns an HTML String
  */
 
 /**
