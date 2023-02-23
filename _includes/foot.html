@@ -20,9 +20,9 @@
                 {%- endif -%}
             <li><a target="external" href="{{ site.foi.url }}">{{ foitext }}</a></li>
             {%- endif -%}
-			{%- if site.copyright != "" -%}
+	        {%- if site.copyright != "" -%}
             <li><button type="button" class="modal-trigger" data-dialoghash="about" data-dialogid="about-page" aria-label="Copyright {{ 'now' | date: '%Y' }} {{ site.copyright }}">&copy;<span class="hide-med"> {{ "now" | date: "%Y" }}</span><span class="hide-small"> {{ site.copyright }}</span></button></li>
-			{%- endif -%}
+	        {%- endif -%}
         </ul>
     </nav>
 </footer>

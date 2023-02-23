@@ -16,6 +16,13 @@ const spacefinder = {
         small: 400
     },
 
+    /**
+     * whether the application can use local storage
+     * defaults to false here, but can be determined by cookie policy
+     * this function should be redefined in cookieconsent-init.js
+     */
+    canUseLocalStorage: function() { return false; },
+    
     /* map related config */
     map: null,
     osm: null,

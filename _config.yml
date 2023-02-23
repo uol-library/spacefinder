@@ -30,6 +30,7 @@ foi:
   url: ""
   text: ""
   shorttext: ""
+copyright: ""
 sass:
   style: compressed
 plugins:

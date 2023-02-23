@@ -33,7 +33,6 @@ function getSpaceHTML( space ) {
     }
     spaceHTML += '<span class="address">' + loc + '</span></p>';
     spaceHTML += '<div class="space-details">';
-    console.log(spacefinder.imageBaseURL);
     if ( space.image != '' ) {
         spaceHTML += '<img src="' + spacefinder.imageBaseURL + space.image + '" class="space-image" loading="lazy" alt="' + space.imagealt + '">';
     }
