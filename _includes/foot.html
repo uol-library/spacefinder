@@ -29,6 +29,10 @@
 
 {% include modal-includes.html %}
 
+<script defer src="https://cdn.jsdelivr.net/npm/a11y-dialog@7.0.0/dist/a11y-dialog.min.js" integrity="sha256-qWTjNAVDE4xlFTDeuvNj6VeO50JK85+4njt7PJpFsJg=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.8.6/dist/cookieconsent.js" integrity="sha256-Vi5A6sS3UMUAdPfetPOj21O4gBdBS/9JEQZMTIn6oEc=" crossorigin="anonymous"></script>
+<script defer src="{{ "/assets/scripts/cookieconsent.js" | absolute_url }}"></script>
+
 {% include custom-foot.html %}
 
 {%- if site.environment == "development" -%}
