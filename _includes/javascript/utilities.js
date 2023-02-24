@@ -5,7 +5,7 @@
  * @returns {boolean}
  */
 function storageAvailable( type ) {
-    if ( ! canUseLocalStorage() ) {
+    if ( ! spacefinder.canUseLocalStorage() ) {
         return false;
     }
     var storage;
