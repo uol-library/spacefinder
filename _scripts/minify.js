@@ -17,4 +17,4 @@ fs.writeFileSync( path.resolve( __dirname, '../assets/scripts/bundle.min.js' ), 
     "analytics.js": fs.readFileSync( path.resolve( __dirname, jsdir, 'analytics.js' ), "utf8" ),
     "accordion.js": fs.readFileSync( path.resolve( __dirname, jsdir, 'components/accordion.js' ), "utf8" ),
     "modal.js": fs.readFileSync( path.resolve( __dirname, jsdir, 'components/modal.js' ), "utf8" )
-}, { toplevel: true } ).code, "utf8" );
+}).code, "utf8" );
