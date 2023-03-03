@@ -69,7 +69,7 @@ function getAdditionalInfo( space ) {
     if ( space.url !== "" && space.url_text !== '' ) {
         spaceHTML += '<li class="icon-link"><a target="spaceurl" href="' + space.url + '">' + space.url_text + '</a></li>';
     }
-    if ( space.campusmap_url != '' ) {
+    if ( space.campusmap_url !== undefined && space.campusmap_url !== '') {
         let campusmap_ref = space.campusmap_ref !== '' ? ' (map reference ' + space.campusmap_ref + ')': '';
         spaceHTML += '<li class="icon-uol-logo-mark"><a target="campusmap" href="' + space.campusmap_url + '">View on the University campus map</a>' + campusmap_ref + '<li>';
     }
