@@ -7,7 +7,7 @@ The major change made to the original application (https://github.com/cambridge-
 
 For more information about the project, [please visit the Spacefinder UI wiki](https://github.com/uol-library/spacefinder-ui/wiki/)
 
-An example of the application when populated with data is available in the University of Leeds version of Spacefinder, which is available at https://spacefinder.leeds.ac.uk/ and served from the repository https://githum.com/uol-library/spacefinder.leeds.ac.uk/.
+An example of the application when populated with data is available in the University of Leeds version of Spacefinder, which is available at https://spacefinder.leeds.ac.uk/ and served from the repository [uol-library/spacefinder.leeds.ac.uk](https://github.com/uol-library/spacefinder.leeds.ac.uk).
 
 Using this repository
 ---------------------
