@@ -221,7 +221,6 @@ function updateListFilterMessage() {
 function selectSpace( spaceid, source ) {
     splog( 'selectSpace', 'spaces.js' );
     let space = getSpaceById( spaceid );
-    setHash( '/space/' + space.slug );
     document.dispatchEvent(new CustomEvent( 'sfanalytics', {
         detail: {
             type: 'select',
@@ -243,6 +242,7 @@ function selectSpace( spaceid, source ) {
     let listFilters = document.getElementById( 'listfilters' );
     let totop = ( spacenode.offsetTop + listFilters.offsetHeight ) - listContainer.offsetTop;
     scrollingElement.scrollTop = totop;
+    setHash( '/space/' + space.slug );
 }
 
 /**
