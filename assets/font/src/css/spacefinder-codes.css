@@ -41,6 +41,9 @@
 .icon-info-circled:before { content: '\e806'; } /* '' */
 .icon-resize-small:before { content: '\e807'; } /* '' */
 .icon-bench:before { content: '\e822'; } /* '' */
+.icon-uol-logo-mark:before { content: '\e831'; } /* '' */
+.icon-bluesky:before { content: '\e832'; } /* '' */
+.icon-x:before { content: '\e833'; } /* '' */
 .icon-public:before { content: '\e900'; } /* '' */
 .icon-adjustable-furniture:before { content: '\e901'; } /* '' */
 .icon-individual-space:before { content: '\e902'; } /* '' */
@@ -62,3 +65,4 @@
 .icon-facebook-squared:before { content: '\f30e'; } /* '' */
 .icon-pinterest:before { content: '\f312'; } /* '' */
 .icon-linkedin:before { content: '\f318'; } /* '' */
+.icon-instagram:before { content: '\f32d'; } /* '' */
