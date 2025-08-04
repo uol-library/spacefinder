@@ -1,36 +1,39 @@
-title: Space Finder
-email: ""
+remote_theme: uol-library/spacefinder
+title: Space Finder - University of Leeds
+email: p.l.edwards@leeds.ac.uk
 description: >-
-  Spacefinder includes detailed descriptions of spaces,
-  filters based on space characteristics, and navigation
-  via a map.
+  Spacefinder is an application designed for students
+  to locate study spaces at the University of Leeds. It
+  includes detailed descriptions of each space, filters
+  based on space characteristics, and  navigation via a
+  map.
 environment: production
 baseurl: ""
-url: ""
+url: "https://spacefinder.leeds.ac.uk"
 host: "localhost"
-google_analytics: ""
+google_analytics: "G-6LHKST5028"
 photo_dir: "/assets/photos/"
 lang: "en"
 dc:
-  creator: ""
-  dateCreated: ""
-  dateModified: ""
-  publisher: ""
-  spatialCoverage: ""
+  creator: "University of Leeds"
+  dateCreated: "2022-06-06"
+  dateModified: "2022-10-13"
+  publisher: "University of Leeds"
+  spatialCoverage: "University of Leeds campus"
   types:
     - "InteractiveResource"
   subjects:
     - "Digital mapping"
     - "College Campuses"
 terms:
-  url: ""
-  text: ""
-  shorttext: ""
+  url: "https://www.leeds.ac.uk/termsandconditions"
+  text: "Terms &amp; Conditions"
+  shorttext: "Terms"
 foi:
-  url: ""
-  text: ""
-  shorttext: ""
-copyright: ""
+  url: "https://www.leeds.ac.uk/freedom-of-information"
+  text: "Freedom of Information"
+  shorttext: "FOI"
+copyright: "University of Leeds"
 sass:
   style: compressed
 plugins:
