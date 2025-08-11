@@ -40,8 +40,8 @@
 .icon-resize-full:before { content: '\e805'; } /* '' */
 .icon-info-circled:before { content: '\e806'; } /* '' */
 .icon-resize-small:before { content: '\e807'; } /* '' */
+.icon-email:before { content: '\e808'; } /* '' */
 .icon-bench:before { content: '\e822'; } /* '' */
-.icon-uol-logo-mark:before { content: '\e831'; } /* '' */
 .icon-bluesky:before { content: '\e832'; } /* '' */
 .icon-x:before { content: '\e833'; } /* '' */
 .icon-public:before { content: '\e900'; } /* '' */
