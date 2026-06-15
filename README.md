@@ -5,7 +5,7 @@ This repository contains a **jekyll theme** version of the UI for the Cambridge 
 
 The major change made to the original application (https://github.com/cambridge-collection/spacefinder/) is the decoupling of the application into User Interface and server-side components. Here, the data for all spaces is served as JSON files rather than using a data endpoint driven by a server-side application.
 
-For more information about the project, [please visit the Spacefinder UI wiki](https://github.com/uol-library/spacefinder-ui/wiki/)
+For more information about the project, [please visit the Spacefinder UI wiki](https://github.com/uol-library/spacefinder/wiki/)
 
 An example of the application when populated with data is available in the University of Leeds version of Spacefinder, which is available at https://spacefinder.leeds.ac.uk/ and served from the repository [uol-library/spacefinder.leeds.ac.uk](https://github.com/uol-library/spacefinder.leeds.ac.uk).
 
@@ -51,5 +51,5 @@ Changelog
 
 ### 0.9 (10/1/2023)
 
-* Initial release of code based on https://github.com/uol-library/spacefinder-ui
+* Initial release of code based on https://github.com/uol-library/spacefinder
 

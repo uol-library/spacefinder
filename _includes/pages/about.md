@@ -32,7 +32,7 @@ This was released under an Apache 2.0 open source license in January 2023.
 
 ### Copyright
 
-Except where otherwise noted, content on this site is licensed under a <a target="external" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International license</a>. The code used to build this site is <a target="external" href="https://github.com/uol-library/spacefinder-ui">hosted in GitHub</a> and released under an <a target="external" href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 open source license</a>.
+Except where otherwise noted, content on this site is licensed under a <a target="external" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International license</a>. The code used to build this site is <a target="external" href="https://github.com/uol-library/spacefinder">hosted in GitHub</a> and released under an <a target="external" href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 open source license</a>.
 
 The site uses <a target="external" href="https://leafletjs.com/">Leaflet</a>, an open-source JavaScript library for mobile-friendly interactive maps, &copy; 2010–2022 <a target="external" href="http://agafonkin.com/en">Vladimir Agafonkin</a>. Maps are provided by <a target="external" href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; OpenStreetMap contributors. Satellite imagery is provided by <a target="external" href="https://www.esri.com/en-us/home">ESRI</a>, &copy; Esri - Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community.
 

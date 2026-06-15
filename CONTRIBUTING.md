@@ -4,7 +4,7 @@ I'm really glad you're reading this, because we need volunteer developers to hel
 
 Here are some important resources:
 
-  * [Spacefinder wiki](https://github.com/uol-library/spacefinder-ui/wiki) tells you about the project.
+  * [Spacefinder wiki](https://github.com/uol-library/spacefinder/wiki) tells you about the project.
 
 ## Submitting changes
 
