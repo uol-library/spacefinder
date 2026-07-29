@@ -44,9 +44,6 @@ function openAlertDialog( title, content ) {
 /**
  * Accordion
  */
-
-'use strict';
-
 export class Accordion {
 	constructor(domNode) {
 		this.rootEl = domNode;
