@@ -1,32 +1,56 @@
-/**
- * Leafletjs functions for SpaceFinder
- */
-document.addEventListener( 'DOMContentLoaded', () => {
-    initMap();
-});
-
+import { 
+    Control,
+    Map,
+    TileLayer,
+    CircleMarker,
+    Polyline,
+    DivIcon,
+    GeoJSON,
+    FeatureGroup,
+    Marker,
+    SVGOverlay
+} from 'leaflet';
+import A11yDialog from 'a11y-dialog';
+import { spacefinder } from './config.mjs';
+import { createElement, getJSON } from './utilities.mjs';
 /**
  * Initialise map and set listeners to set up markers when loaded
  */
-function initMap() {
+export function initMap() {
     splog( 'initMap', 'map.js' );
     document.addEventListener( 'sfmaploaded', checkGeo );
     document.addEventListener( 'filtersapplied', filterMarkers );
     document.addEventListener( 'spacesloaded', maybeSetupMap );
     document.addEventListener( 'filtersloaded', maybeSetupMap );
     document.addEventListener( 'sfmaploaded', maybeSetupMap );
-    spacefinder.map = L.map( 'map' ).setView([spacefinder.currentLoc.lat, spacefinder.currentLoc.lng], spacefinder.startZoom );
+    spacefinder.map = new Map( 'map' ).setView([spacefinder.currentLoc.lat, spacefinder.currentLoc.lng], spacefinder.startZoom );
     /* change leaflet attribution */
     spacefinder.map.attributionControl.setPrefix( '<a href="https://leafletjs.com" target="external" title="A JavaScript library for interactive maps" aria-label="Leaflet - a JavaScript library for interactive maps"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="12" height="8"><path fill="#4C7BE1" d="M0 0h12v4H0z"></path><path fill="#FFD500" d="M0 4h12v3H0z"></path><path fill="#E0BC00" d="M0 7h12v1H0z"></path></svg> Leaflet</a>' );
-    spacefinder.osm = L.tileLayer( 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    spacefinder.osm = new TileLayer( 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
         attribution: '© <a target="external" href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo( spacefinder.map );
-    spacefinder.esri_sat = L.tileLayer( 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+    spacefinder.esri_sat = new TileLayer( 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
         maxZoom: 19,
 	    attribution: 'Tiles © Esri - Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
     });
-    spacefinder.map.addControl( new L.Control.Fullscreen( { position: 'topright' } ) );
+    spacefinder.fullscreencontrol = new FullScreen({
+        position: 'topleft'
+    }).addTo(spacefinder.map);
+    spacefinder.locateControl = new LocateControl({
+        position: 'topleft',
+        strings: {
+            title: "Start tracking my location"
+        },
+        locateOptions: {
+            watch: true,
+            enableHighAccuracy: true
+        }
+    }).addTo(spacefinder.map);
+    spacefinder.scalecontrol = new Control.Scale(
+        {position: 'bottomleft'}
+    ).addTo(spacefinder.map);
+    spacefinder.dialogControl = new a11yDialogControl().addTo(spacefinder.map);
     spacefinder.mapLoaded = true;
     spacefinder.viewdata = {
         'street': {

@@ -1,3 +1,4 @@
+
 /* setup */
 document.addEventListener( 'DOMContentLoaded', () => {
     document.addEventListener( 'spacesloaded', () => {

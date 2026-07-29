@@ -1,3 +1,5 @@
+import { spacefinder } from './config.mjs';
+
 /**
  * Checks to see if localStorage is available
  * 
@@ -96,34 +98,48 @@ function haversine_distance( mk1, mk2 ) {
  * @param {Integer} options.expiry How long to cache the results (in hours) default: 24
  * @param {Function} options.callback callback function with one parameter (JSON parsed response)
  */
-function getJSON( options ) {
-    if ( ! options.hasOwnProperty( 'key' ) || ! options.hasOwnProperty( 'url' ) ) {
-        return;
-    }
-    if ( ! options.hasOwnProperty( 'expires' ) ) {
-        options.expires = 24;
-    }
-    if ( storageAvailable( 'localStorage' ) && getWithExpiry( options.key ) ) {
-        splog( "getting data '"+options.key+"' from local storage", "utilities.js" );
-        if ( options.hasOwnProperty( 'callback' ) && typeof options.callback == 'function' ) {
-            options.callback( JSON.parse( getWithExpiry( options.key ) ) );
+export function getJSON( options ) {
+    return new Promise( ( resolve, reject ) => {
+        if ( ! options.hasOwnProperty( 'key' ) || ! options.hasOwnProperty( 'url' ) ) {
+            reject({
+                status: 'Missing parameters',
+                statusText: 'To fetch a remote JSON file you need to supply a key and a URL in the options parameter'
+            });
         }
-    } else {
-        splog( "getting data '"+options.key+"' from "+options.url, "utilities.js" );
-        var oReq = new XMLHttpRequest();
-        oReq.addEventListener( 'load', function(){
-            if ( storageAvailable( 'localStorage' ) ) {
-                var expires = new Date().getTime() + ( options.expires * 60 * 60 * 1000 );
-                splog( "storing data '" + options.key + "' in localstorage - expires " + expires, "utilities.js" );
-                setWithExpiry( options.key, this.responseText, options.expires );
-            }
-            if ( options.hasOwnProperty( 'callback' ) && typeof options.callback == 'function' ) {
-                options.callback( JSON.parse( this.responseText ) );
-            }
-        });
-        oReq.open("GET", options.url);
-        oReq.send();
-    }
+        if ( ! options.hasOwnProperty( 'expires' ) ) {
+            options.expires = 24;
+        }
+        if ( storageAvailable( 'localStorage' ) && getWithExpiry( options.key ) ) {
+            splog( `getting data ${options.key} from local storage` );
+            resolve( JSON.parse( getWithExpiry( options.key ) ) );
+        } else {
+            splog( `getting data ${options.key} from ${options.url}` );
+            var xhr = new XMLHttpRequest();
+            xhr.onload = () => {
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    if ( storageAvailable( 'localStorage' ) ) {
+                        var expires = new Date().getTime() + ( options.expires * 60 * 60 * 1000 );
+                        splog( `storing data ${options.key} in localstorage - expires ${expires}` );
+                        setWithExpiry( options.key, xhr.responseText, options.expires );
+                    }
+                    resolve( JSON.parse( this.responseText ) );
+                } else {
+                    reject({
+                        status: xhr.status,
+                        statusText: xhr.statusText
+                    });
+                }
+            };
+            xhr.onerror = () => {
+                reject({
+                    status: xhr.status,
+                    statusText: xhr.statusText
+                });
+            };
+            xhr.open( 'GET', options.url );
+            xhr.send();
+        }
+    });
 }
 
 /**
@@ -227,9 +243,8 @@ function setHash( val ) {
 /**
  * Logs messages to console if debug flag is set
  * @param {string} message
- * @param {string} filename
  */
-function splog( message, filename ) {
+function splog( message ) {
     if ( spacefinder.debug ) {
         let now = new Date();
         console.log( now.getHours() + ':' + now.getMinutes().toString().padStart(2, '0') + ':' + now.getSeconds().toString().padStart(2, '0') + '.' + now.getMilliseconds().toString().padStart(3, '0') + ' ' + filename.padEnd(12) + ' - ' + message );
