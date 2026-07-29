@@ -1,0 +1,174 @@
+:root {
+    /**
+    * Layout variables
+    */
+
+    /* top navigation bar */
+    --topbar-height: 73px;
+    --topbar-padding: 10px;
+
+    /* filters panel (large screens) */
+    --filters-width: 256px;
+
+    /* list panel (large screens) */
+    --list-width: 500px;
+
+    /* controls at top of list and search panels */
+    --controls-height: 80px;
+    --list-controls-height: 40px;
+
+    /* footer bar */
+    --footer-height: 30px;
+    --footer-padding-x: 10px;
+    --footer-padding-y: 7px;
+
+    /* navigation bar for single space */
+    --single-navbar-height: 40px;
+
+    /* breakpoints */
+    --breakpoint-large: 1000px;
+    --breakpoint-med: 600px;
+    --breakpoint-small: 400px;
+
+    /**
+    * Colour variables
+    */
+
+    --background-color: #ffffff;
+    --foreground-color: #212121;
+    --separator-color: #bcb8b3;
+
+    /* links */
+    --link-color: #910000;
+    --link-color-active: #570000;
+    --link-color-visited: #570000;
+    --link-color-hover: #0e0c0c;
+
+    /* top navigation bar */
+    --topbar-bg: #212121;
+    --topbar-bg-active: #0a0202;
+    --topbar-color: #ffffff;
+
+    /* footer bar */
+    --footer-bg: #212121;
+    --footer-color: #ffffff;
+
+    /* filters panel */
+    --filter-bg: #eae8e6;
+    --filter-color: #212121;
+    --filter-label-bg: #ffffff;
+    --filter-label-color: #212121;
+
+    /* filters panel buttons */
+    --filter-button-color: #212121;
+    --filter-button-bg: #ffffff;
+    --filter-button-color-hover: #0a0202;
+    --filter-button-bg-hover: #ffffff;
+    --filter-button-color-disabled: #6a645d;
+    --filter-button-bg-disabled: #ddd9d5;
+    --filter-button-color-active: #ffffff;
+    --filter-button-bg-active: #003a52;
+    --filter-button-border: transparent;
+    --filter-button-border-focus: #212121;
+
+    /* geolocation button */
+    --geo-button-color: var(--filter-button-color);
+    --geo-button-bg: var(--filter-button-bg);
+    --geo-button-color-hover: var(--filter-button-color-hover);
+    --geo-button-bg-hover: var(--filter-button-bg-hover);
+    --geo-button-color-disabled: var(--filter-button-color-disabled);
+    --geo-button-bg-disabled: var(--filter-button-bg-disabled);
+    --geo-button-color-active: #ffffff;
+    --geo-button-bg-active: #003a52;
+
+    /* recentre button */
+    --recentre-button-color: #003a52;
+    --recentre-button-bg: #ffffff;
+    --recentre-button-color-hover: #1a84c7;
+    --recentre-button-bg-hover: #ffffff;
+    --recentre-button-border-color: #003a52;
+    --recentre-button-border-color-hover: #1a84c7;
+
+    /* List panel */
+    --light-text-color: #3B3B3B;
+    --highlight-text-color: #003a52;
+    --highlight-text-color-alt: #c70000;
+
+    /* space list */
+    --space-bg: #ffffff;
+    --active-space-bg: #f6eee5;
+    --space-subhead-bg: #faf6f1;
+    --space-subhead-border: #bcb8b3;
+
+    /* opening times */
+    --open-color: #c70000;
+    --closed-color: #910000;
+    --opening-color: #003a52;
+
+    /* modal */
+    --modal-bg: #ffffff;
+    --modal-border: #6e6b6b;
+    --modal-overlay: rgba(255, 255, 255, 0.8);
+    --close-button: #ffffff;
+    --close-button-bg: #212121;
+    --close-button-active: #ffffff;
+    --close-button-bg-active: #212121;
+    --close-button-outline: #ddd9d5;
+
+    /* buttons */
+    --button-color: #ffffff;
+    --button-border: #212121;
+    --button-bg: #212121;
+    --button-color-active: #212121;
+    --button-border-active: #212121;
+    --button-bg-active: #ffffff;
+    --button-color-primary: #ffffff;
+    --button-border-primary: #156265;
+    --button-bg-primary: #156265;
+    --button-color-secondary: #156265;
+    --button-border-secondary: #156265;
+    --button-bg-secondary: #ffffff;
+    --button-shadow: 33, 33, 33;
+    --button-focus-bg: #910000;
+    --button-focus-color: #ffffff;
+    --topbar-button-hover:
+
+    /* cookie consent */
+    --cc-bg: #ffffff;
+    --cc-text: #212121;
+    --cc-btn-primary-bg: #212121;
+    --cc-btn-primary-text: #ffffff;
+    --cc-btn-primary-hover-bg: #0a0202;
+    --cc-btn-secondary-bg: #efeae6;
+    --cc-btn-secondary-text: #212121;
+    --cc-btn-secondary-hover-bg: #cac2ba;
+    --cc-toggle-bg-off: #81746e;
+    --cc-toggle-bg-on: #212121;
+    --cc-toggle-bg-readonly: #cac2ba;
+    --cc-toggle-knob-bg: #ffffff;
+    --cc-toggle-knob-icon-color: #efeae6;
+    --cc-block-text: #212121;
+    --cc-cookie-category-block-bg: #ddd9d5;
+    --cc-cookie-category-block-bg-hover: #efeae6;
+    --cc-section-border: #ddd9d5;
+    --cc-cookie-table-border: #ddd9d5;
+    --cc-overlay-bg: rgba(4, 6, 8, .85);
+    --cc-webkit-scrollbar-bg: #cac2ba;
+    --cc-webkit-scrollbar-bg-hover: #b7aaa4;
+
+    /* map */
+    --space-icon-fill: 199, 0, 0;
+    --space-icon-stroke: 145, 0, 0;
+    --person-icon-fill: 26, 132, 199;
+    --person-icon-stroke: 0, 58, 82;
+}
+/**
+* Dark mode variables
+*/
+@media (prefers-color-scheme: dark) {
+    :where(body) {
+    }
+}
+:where(body.dark) {
+}
+

@@ -1,0 +1,93 @@
+#map {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid transparent;
+    &:focus-visible {
+        border: 1px solid rgba( var(--space-icon-stroke), 0.6 );
+    }
+    .leaflet-control-attribution > a {
+        color: var(--link-color);
+        background: var(--background-color);
+        &:hover {
+            color: var(--link-color-hover);
+        }
+        &:visited {
+            color: var(--link-color-visited);
+        }
+        &:active {
+            color: var(--link-color-active);
+        }
+    }
+    .spaceInfoWindow {
+        max-width: 300px;
+        h3 {
+            margin: 0 0 .5rem 0;
+        }
+        p.info {
+            margin: .5rem 0;
+            font-weight: bold;
+        }
+        p.description {
+            margin: .5em 0;
+        }
+        button.show-list {
+            display: block;
+            margin: 0 0 0 auto;
+            display: none;
+            border: none;
+            color: var(--link-color);
+            cursor: pointer;
+            &:hover {
+                color: var(--link-color-hover);
+            }
+            background: var(--background-color);
+        }
+    }
+    &.active .spaceInfoWindow button.show-list {
+        display: block;
+    }
+    .space-marker {
+        circle {
+            stroke: rgb(var(--space-icon-stroke));
+            fill: rgb(var(--space-icon-fill));
+        }
+    }
+    .person-marker {
+        circle {
+            stroke: rgb(var(--person-icon-stroke));
+            fill: rgb(var(--person-icon-fill));
+        }
+    }
+    .marker-cluster-small,
+    .marker-cluster-medium,
+    .marker-cluster-large {
+        background-color: rgba(var(--space-icon-stroke), 0.6);
+        div {
+            background-color: rgba(var(--space-icon-fill), 0.8);
+            color: var(--color-white);
+        }
+    }
+    .marker-cluster {
+        background-clip: padding-box;
+        border-radius: 20px;
+        div {
+            width: 30px;
+            height: 30px;
+            margin-left: 5px;
+            margin-top: 5px;
+            text-align: center;
+            border-radius: 15px;
+        }
+        span {
+            line-height: 30px;
+        }
+    }
+    .leaflet-container:-webkit-full-screen {
+        width:100%!important;
+        height:100%!important;
+    }
+    .leaflet-container.leaflet-fullscreen-on {
+        width:100%!important;
+        height:100%!important;
+    }
+}

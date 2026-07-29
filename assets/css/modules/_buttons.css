@@ -1,0 +1,249 @@
+.btn {
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-top: 6px;
+    background: var(--filter-button-bg);
+    color: var(--filter-button-color);
+    cursor: pointer;
+    padding: .5rem .2rem;
+    border: 1px solid var(--filter-button-border);
+    &.active {
+        background: var(--filter-button-bg-active);
+        color: var(--filter-button-color-active);
+    }
+    &:focus {
+        border: 1px solid var(--filter-button-border-focus);
+    }
+    &[disabled] {
+        cursor: default;
+        background: var(--filter-button-bg-disabled);
+        color: var(--filter-button-color-disabled);
+    }
+}
+.geo-button {
+    padding: 0;
+    font-size: 1.5rem;
+    background: var(--geo-button-bg);
+    color: var(--geo-button-color);
+    user-select: none;
+    cursor: pointer;
+    &::before {
+        margin:0;
+    }
+    &:hover {
+        background: var(--geo-button-bg-hover);
+        color: var(--geo-button-color-hover);
+    }
+    &.active {
+        background: var(--geo-button-bg-active);
+        color: var(--geo-button-color-active);
+    }
+    &[disabled] {
+        cursor: default;
+        background: var(--geo-button-bg-disabled);
+        color: var(--geo-button-color-disabled);
+    }
+    #map & {
+        width: 2.2rem;
+        height: 2.2rem;
+        border-radius: 4px;
+    }
+}
+.maptype-button {
+    color: transparent;
+    width: 2.2rem;
+    height: 2.2rem;
+    padding: 0;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    background-size: cover;
+    &.maptype-satellite {
+        background-image:url('../../images/satellite.png');
+    }
+    &.maptype-street {
+        background-image:url('../../images/street.png');
+    }
+}
+.mapfullscreen-button {
+    color: transparent;
+    width: 2.2rem;
+    height: 2.2rem;
+    padding: 0;
+    border-radius: 4px;
+    background: var(--geo-button-bg);
+    color: var(--geo-button-color);
+    cursor: pointer;
+    &:hover {
+        background: var(--geo-button-bg-hover);
+        color: var(--geo-button-color-hover);
+    }
+    &::before {
+        margin: 0;
+        font-size: 1.5rem;
+    }
+}
+.maprecentre-button {
+    color: var(--recentre-button-color);
+    font-weight: bold;
+    padding: .5rem;
+    border-color: var(--recentre-button-border-color);
+    border-radius: 4px;
+    background: var(--recentre-button-bg);
+    cursor: pointer;
+    &:hover {
+        background: var(--recentre-button-bg-hover);
+        color: var(--recentre-button-color-hover);
+        border-color: var(--recentre-button-border-color-hover);
+    }
+}
+.button {
+    line-height: 1;
+    min-width: 10rem;
+    border: 0;
+    font-size: 1rem;
+    padding: 0.8em 1.8em;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    border: 4px solid var(--buttonborder);
+    color: var(--buttoncolor);
+    background: var(--buttonbg);
+    &-primary {
+        border: 2px solid var(--buttonborder-primary);
+        color: var(--buttoncolor-primary);
+        background: var(--buttonbg-primary);
+    }
+    &-secondary {
+        border: 2px solid var(--buttonborder-secondary);
+        color: var(--buttoncolor-secondary);
+        background: var(--buttonbg-secondary);
+    }
+    &:hover, &:active {
+        text-decoration: none;
+        box-shadow: 0 3px 6px 0 rgba(var(--button-shadow), 0.15), 0 2px 4px 0 rgba(var(--button-shadow), 0.12);
+    }
+    &:focus {
+        color: var(--buttoncolor-active);
+        background: var(--buttonbg-active);
+        border-color: var(--buttoncolor-active);
+    }
+}
+.space-title {
+    border: none;
+    position:relative;
+    font-size: inherit;
+    display: block;
+    background: var(--space-bg);
+    padding: 0 2em 0 0;
+    margin: 0;
+    width: 100%;
+    cursor: pointer;
+    text-align: left;
+    &::after {
+        content: "\E620";
+        position:absolute;
+        right: 0;
+        top: 0;
+        font-family: 'spacefinder';
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        display: inline-block;
+        text-decoration: inherit;
+    }
+    .list-space.active & {
+        background: var(--active-space-bg);
+		&::after {
+			content: "\E61E";
+		}
+    }
+}
+.info-closebutton {
+    float: right;
+    margin: 0 0 0 1em;
+    width: 32x;
+    height: 32px;
+    border-radius: 3px;
+    border: 2px solid var(--buttonborder);
+    color: var(--buttoncolor);
+    background: var(--buttonbg);
+    display: none;
+    cursor: pointer;
+    &:hover, &:active {
+        box-shadow: 0 3px 6px 0 rgba(var(--button-shadow), 0.15), 0 2px 4px 0 rgba(var(--button-shadow), 0.12);
+    }
+    &:focus {
+        color: var(--buttonfocuscolor);
+        background: var(--buttonfocusbg);
+    }
+    .list-space.active & {
+        display: inline-block;
+    }
+}
+#listfilters {
+    .search-term,
+    .filter-term {
+        font-size: .9em;
+        border: none;
+        border-bottom: 1px dashed var(--filter-button-color);
+        background: var(--filter-button-bg);
+        cursor: pointer;
+        &.icon-remove:after {
+            content: '\e602';
+            margin-left: .5rem;
+            font-size: .8rem;
+        }
+    }
+}
+#listcontrols {
+    button {
+        width: calc(15% - 6px);
+        margin: 3px 2px;
+        padding: 0;
+        position:relative;
+        border: 1px solid var(--filter-button-border-focus);
+        &#sortdistance {
+            &:after, &:before {
+                margin:0;
+                color: var(--color-blue);
+            }
+            &[disabled]:after, &[disabled]:before {
+                color: var(--filter-button-color-disabled);
+            }
+            &:before {
+                content: '\e803';
+                font-size: 14px;
+            }
+            &:after {
+                content: '\e609';
+                font-size: 14px;
+            }
+            &[data-sortdir="desc"] {
+                &:after {
+                    font-size: 12px;
+                }
+                &:before {
+                    content: '\e609';
+                    font-size: 24px;
+                }
+            }
+            &[data-sortdir="asc"] {
+                &:after {
+                    font-size: 24px;
+                }
+                &:before {
+                    content: '\e609';
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
+

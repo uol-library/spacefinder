@@ -1,0 +1,152 @@
+
+/* Utilities */
+
+/**
+ * box-sizing reset
+ * @see: https://css-tricks.com/box-sizing/
+ */
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+/* reset margins */
+body, h1, h2, h3, h4, p, figure, blockquote, dl, dd {
+    margin: 0;
+}
+
+body {
+    overflow: hidden;
+    background: var(--background-color);
+    color: var(--foreground-color);
+}
+#skip {
+    background: var(--topbar-background);
+    color: var(--topbar-color);
+    a {
+        background: var(--topbar-background);
+        color: var(--topbar-color);
+        margin: .5rem 1rem;
+        display: inline-block;
+        position:absolute;
+        left:-10000px;
+        overflow:hidden;
+        &:focus {
+            position:static;
+        }
+    }
+}
+
+@font-face {
+    font-family: 'PT Sans';
+    src: url('../font/pt-sans.woff2?20220901') format('woff2'),
+         url('../font/pt-sans.woff?20220901') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+body, h1, h2, h3, h4, button {
+    font-family: 'PT Sans', sans-serif;
+}
+a {
+    color: var(--link-color);
+    &:hover {
+        color: var(--link-color-hover);
+    }
+    &:visited {
+        color: var(--link-color-visited);
+    }
+    &:active {
+        color: var(--link-color-active);
+    }
+}
+
+/* 
+ * Utility class to hide content visually while keeping it screen reader-accessible.
+ * Source: https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html 
+ */
+.visuallyhidden:not(:focus):not(:active) {
+    clip: rect(0 0 0 0); 
+    clip-path: inset(100%); 
+    height: 1px; 
+    overflow: hidden; 
+    position: absolute; 
+    white-space: nowrap; 
+    width: 1px; 
+}
+
+@media screen and (min-width: 1000px) {
+    .show-med {
+        display: none;
+    }
+}
+@media screen and (max-width: 1000px) {
+    .hide-med {
+        display: none;
+    }
+}
+@media screen and (max-width: 600px) {
+    .hide-small {
+        display: none;
+    }
+}
+
+#uol_loader {
+    width: 200px;
+    margin:20px auto;
+    .circle {
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        line-height:25px;
+        background-color: #fff;
+        color:#000;
+        border-radius: 50%;
+        animation: loading 1.5s cubic-bezier(.8, .5, .2, 1.4) infinite;
+        transform-origin: bottom center;
+        position: relative;
+        text-align: center;
+    }
+    @keyframes loading{
+        0%{
+            transform: translateY(0px);
+            background-color: #fff;
+            color:#000;
+        }
+        50%{
+            transform: translateY(20px);
+            background-color: #000;
+            color:#fff;
+        }
+        100%{
+            transform: translateY(0px);
+            background-color: #fff;
+            color:#000;
+        }
+    }
+    .circle-1 {
+        animation-delay: 0.1s;
+    }
+    .circle-2 {
+        animation-delay: 0.2s;
+    }
+    .circle-3 {
+        animation-delay: 0.3s;
+    }
+    .circle-4 {
+        animation-delay: 0.4s;
+    }
+    .circle-5 {
+        animation-delay: 0.5s;
+    }
+    .circle-6 {
+        animation-delay: 0.6s;
+    }
+    .circle-7 {
+        animation-delay: 0.7s;
+    }
+    .circle-8 {
+        animation-delay: 0.8s;
+    }
+}
