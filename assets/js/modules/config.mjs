@@ -45,7 +45,10 @@ export const spacefinder = {
     watchID: false,
     permission: false,
 
-    /* space related config */
+    /* data related config */
+    dataSources: {},
+    defaultDataSource: '',
+    dataDir: '{{ site.url }}{{ site.baseurl }}/assets/data/',
     spaces: [],
     spacesLoaded: false,
     spacesurl: '{{ site.url }}{{ site.baseurl }}/spaces.json',

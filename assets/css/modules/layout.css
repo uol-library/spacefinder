@@ -114,12 +114,12 @@
 }
 /* Top navigation bar */
 #top-bar {
-    background: var(--topbar-background);
+    background: var(--topbar-bg);
     color: var(--topbar-color);
     z-index: 10;
     padding: var(--topbar-padding);
     a {
-        background: var(--topbar-background);
+        background: var(--topbar-bg);
         color: var(--topbar-color);
     }
     svg {

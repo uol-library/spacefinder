@@ -79,7 +79,7 @@ function getWithExpiry( key ) {
  * @param {{lat: float, lng: float}} mk2 point 2
  * @returns {Float} distance between mk1 and mk2 in metres
  */
-function haversine_distance( mk1, mk2 ) {
+export function haversine_distance( mk1, mk2 ) {
     var R = 6371071; // Radius of the Earth in metres
     var rlat1 = mk1.lat * ( Math.PI / 180 ); // Convert degrees to radians
     var rlat2 = mk2.lat * ( Math.PI / 180 ); // Convert degrees to radians
@@ -110,19 +110,27 @@ export function getJSON( options ) {
             options.expires = 24;
         }
         if ( storageAvailable( 'localStorage' ) && getWithExpiry( options.key ) ) {
-            splog( `getting data ${options.key} from local storage` );
-            resolve( JSON.parse( getWithExpiry( options.key ) ) );
+            splog( `getting data ${options.key} from local storage`, 'utilities.js' );
+            let data = JSON.parse( getWithExpiry( options.key ) );
+            if ( options.callback ) {
+                options.callback( data );
+            }
+            resolve( data );
         } else {
-            splog( `getting data ${options.key} from ${options.url}` );
+            splog( `getting data ${options.key} from ${options.url}`, 'utilities.js' );
             var xhr = new XMLHttpRequest();
             xhr.onload = () => {
                 if (xhr.status >= 200 && xhr.status < 300) {
                     if ( storageAvailable( 'localStorage' ) ) {
                         var expires = new Date().getTime() + ( options.expires * 60 * 60 * 1000 );
-                        splog( `storing data ${options.key} in localstorage - expires ${expires}` );
+                        splog( `storing data ${options.key} in localstorage - expires ${expires}`, 'utilities.js' );
                         setWithExpiry( options.key, xhr.responseText, options.expires );
                     }
-                    resolve( JSON.parse( this.responseText ) );
+                    let data = JSON.parse( xhr.responseText );
+                    if ( options.callback ) {
+                        options.callback( data );
+                    }
+                    resolve( data );
                 } else {
                     reject({
                         status: xhr.status,
@@ -147,7 +155,7 @@ export function getJSON( options ) {
  * @param {integer} id 
  * @returns {Object} space object
  */
-function getSpaceById( id ) {
+export function getSpaceById( id ) {
     for (let i = 0; i < spacefinder.spaces.length; i++ ) {
         if ( spacefinder.spaces[i].id == id ) {
             return spacefinder.spaces[i];
@@ -161,7 +169,7 @@ function getSpaceById( id ) {
  * @param {string} optionkey
  * @return {Object} filter option object
  */
-function getFilterData( filterkey, optionkey ) {
+export function getFilterData( filterkey, optionkey ) {
     for (let i = 0; i < spacefinder.filters.length; i++ ) {
         if ( spacefinder.filters[i].key == filterkey ) {
             if ( typeof optionkey !== 'undefined' ) {
@@ -183,7 +191,7 @@ function getFilterData( filterkey, optionkey ) {
  * @param {string} slug 
  * @returns {Object} space object
  */
- function getSpaceBySlug( slug ) {
+ export function getSpaceBySlug( slug ) {
     for (let i = 0; i < spacefinder.spaces.length; i++ ) {
         if ( spacefinder.spaces[i].slug == slug ) {
             return spacefinder.spaces[i];
@@ -196,14 +204,14 @@ function getFilterData( filterkey, optionkey ) {
  * @param {integer} id 
  * @returns {Object} DOM node
  */
-function getSpaceNodeById( id ) {
+export function getSpaceNodeById( id ) {
     return document.querySelector( '[data-id="' + id + '"]' );
 }
 
 /**
  * Sets focus on an element
  */
-function setElementFocus( id ) {
+export function setElementFocus( id ) {
     splog( "Setting element focus on #" + id, "utilities.js" );
 	if ( document.getElementById( id ) !== null ) {
 		document.getElementById( id ).setAttribute( 'tabindex', '-1' );
@@ -214,7 +222,7 @@ function setElementFocus( id ) {
 /**
  * Acticvates / deactivates a panel in the view
  */
-function togglePanel( panel, active ) {
+export function togglePanel( panel, active ) {
     if ( [ 'filters', 'list', 'map' ].indexOf( panel ) !== -1 ) {
         let activeclass = active ? 'active': 'inactive';
         let inactiveclass = active ? 'inactive': 'active';
@@ -228,7 +236,7 @@ function togglePanel( panel, active ) {
 /**
  * Sets the hash in the URL
  */
-function setHash( val ) {
+export function setHash( val ) {
     if ( val !== '' ) {
         window.location.hash = val;
     } else {
@@ -244,7 +252,7 @@ function setHash( val ) {
  * Logs messages to console if debug flag is set
  * @param {string} message
  */
-function splog( message ) {
+export function splog( message, filename ) {
     if ( spacefinder.debug ) {
         let now = new Date();
         console.log( now.getHours() + ':' + now.getMinutes().toString().padStart(2, '0') + ':' + now.getSeconds().toString().padStart(2, '0') + '.' + now.getMilliseconds().toString().padStart(3, '0') + ' ' + filename.padEnd(12) + ' - ' + message );

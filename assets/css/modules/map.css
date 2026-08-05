@@ -82,11 +82,9 @@
             line-height: 30px;
         }
     }
-    .leaflet-container:-webkit-full-screen {
-        width:100%!important;
-        height:100%!important;
-    }
-    .leaflet-container.leaflet-fullscreen-on {
+    .leaflet-container:fullscreen,
+    .leaflet-container:-webkit-full-screen,
+    .leaflet-container.leaflet-pseudo-fullscreen {
         width:100%!important;
         height:100%!important;
     }

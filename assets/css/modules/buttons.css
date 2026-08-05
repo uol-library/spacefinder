@@ -68,7 +68,9 @@
         background-image:url('../../images/street.png');
     }
 }
-.mapfullscreen-button {
+.mapfullscreen-button,
+.leaflet-control-zoom-fullscreen {
+    display: block;
     color: transparent;
     width: 2.2rem;
     height: 2.2rem;
@@ -82,8 +84,14 @@
         color: var(--geo-button-color-hover);
     }
     &::before {
+        font-family: 'spacefinder';
+        speak: never;
         margin: 0;
         font-size: 1.5rem;
+        content: '\e805';
+    }
+    &.leaflet-fullscreen-on::before {
+        content: '\e807';
     }
 }
 .maprecentre-button {

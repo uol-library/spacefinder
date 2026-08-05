@@ -1,6 +1,10 @@
 /**
  * Functions for the filters panel in the UI
  */
+import { spacefinder } from './config.mjs';
+import { splog, getJSON } from './utilities.mjs';
+import { Accordion } from './components.mjs';
+
 document.addEventListener( 'spacesloaded', () => {
     document.addEventListener( 'filtersloaded', () => {
         renderFilters();
@@ -13,7 +17,7 @@ document.addEventListener( 'spacesloaded', () => {
  * Gets the current status of all filters
  * @return {Object} activeFilters
  */
-function getFilterStatus() {
+export function getFilterStatus() {
     splog( 'getFilterStatus', 'filters.js' );
     const filters = document.querySelectorAll( '#filters input[type=checkbox]' );
     const activeFilters = [];

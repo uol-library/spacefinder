@@ -29,14 +29,18 @@
 
 {% include modal-includes.html %}
 
-<script defer src="https://cdn.jsdelivr.net/npm/a11y-dialog@7.0.0/dist/a11y-dialog.min.js" integrity="sha256-qWTjNAVDE4xlFTDeuvNj6VeO50JK85+4njt7PJpFsJg=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.8.6/dist/cookieconsent.js" integrity="sha256-Vi5A6sS3UMUAdPfetPOj21O4gBdBS/9JEQZMTIn6oEc=" crossorigin="anonymous"></script>
-<script defer src="{{ "/assets/scripts/cookieconsent.js" | absolute_url }}"></script>
 
 {% include custom-foot.html %}
 
-{%- if site.environment == "development" -%}
-<script src="{{ "/assets/scripts/bundle.js" | absolute_url }}"></script>
-{%- else -%}
-<script src="{{ "/assets/scripts/bundle.min.js" | absolute_url }}"></script>
-{%- endif -%}
+<script type="importmap">
+{
+  "imports": {
+    "leaflet": "https://unpkg.com/leaflet@2.0.0-alpha.1/dist/leaflet-src.js",
+    "leaflet.fullscreen": "https://unpkg.com/leaflet.fullscreen@5.3.3/dist/Control.FullScreen.js",
+    "leaflet.locatecontrol": "https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.89.0/dist/L.Control.Locate.esm.js",
+    "a11y-dialog": "https://cdn.jsdelivr.net/npm/a11y-dialog@8.1.5/dist/a11y-dialog.esm.js"
+  }
+}
+</script>
+<script type="module" src="{{ "/assets/js/main.js" | absolute_url }}"></script>

@@ -2,6 +2,8 @@
  * Cookie Consent configuration
  * @see https://github.com/orestbida/cookieconsent
  */
+import { spacefinder } from './config.mjs';
+
 var cc = initCookieConsent();
 
 cc.run({
@@ -9,9 +11,9 @@ cc.run({
     page_scripts: true,
     gui_options: {
         consent_modal: {
-            layout: 'box', 
+            layout: 'box',
             position: 'bottom center',
-            transition: 'slide', 
+            transition: 'slide',
             swap_buttons: false
         },
         settings_modal: {

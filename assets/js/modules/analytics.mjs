@@ -1,11 +1,11 @@
 /**
  * Google Analytics event triggers
- * 
+ *
  * Adds an event listener for the sfanalytics event, which is called throughout
  * SpaceFinder when things happen which should be logged to GA.
- * 
+ *
  * sfanalytics is a Custom Event which contains information in the detail property:
- * 
+ *
  * @param {Custom Event} e sfanalytics event
  * @param e.detail.type the type of event being logged (search, filter, geostart, geoend, select)
  * @param e.detail.terms the terms used in the search or filter for the search and filter types

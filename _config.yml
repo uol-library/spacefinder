@@ -1,4 +1,5 @@
 title: Space Finder
+theme: 
 email: ""
 description: >-
   Spacefinder includes detailed descriptions of spaces,
@@ -35,3 +36,15 @@ sass:
   style: compressed
 plugins:
   - jekyll-feed
+exclude:
+- node_modules
+- Gemfile
+- Gemfile.lock
+- package.json
+- package-lock.json
+- LICENSE
+- README.md
+- CONTRIBUTING.md
+- CODE_OF_CONDUCT.md
+- CNAME
+- vendor

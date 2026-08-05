@@ -1,0 +1,4 @@
+---
+layout: none
+---
+[{%- for filter in site.data.config.filters -%}{"key":"{{ filter.key }}","label":"{{ filter.label }}","message":"{{ filter.message }}","exclusive":{{ filter.exclusive }},"additive":{{ filter.additive }},"open":{{ filter.open }},"options":[{%- for option in filter.options -%}{"key":"{{ option.key }}","label":"{{ option.label }}"{%- if option.icon -%},"icon":"{{ option.icon }}"{%- endif -%}}{%- unless forloop.last -%},{%- endunless -%}{%- endfor -%}]}{%- unless forloop.last -%},{%- endunless -%}{%- endfor -%}]

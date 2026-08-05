@@ -2,6 +2,9 @@
  * Spacefinder layout setup
  * Sets event listeners on top bar navigation buttons
  */
+import { spacefinder } from './config.mjs';
+import { splog, togglePanel } from './utilities.mjs';
+
 document.addEventListener( 'DOMContentLoaded', () => {
 	setupLayout();
     document.addEventListener( 'spacesloaded', setView );

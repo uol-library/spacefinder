@@ -1,4 +1,10 @@
 
+import { spacefinder } from './config.mjs';
+import { splog, getJSON, getFilterData, setHash, getSpaceById, getSpaceNodeById } from './utilities.mjs';
+import { getFilterStatus } from './filters.mjs';
+import { getSpaceHTML, getAdditionalInfo } from './templates.mjs';
+import { updateDistances } from './map.mjs';
+
 /* setup */
 document.addEventListener( 'DOMContentLoaded', () => {
     document.addEventListener( 'spacesloaded', () => {
@@ -164,7 +170,7 @@ function updateListFilterMessage() {
     /* empty any existing messages and hide */
     container.textContent = '';
     container.setAttribute( 'hidden', '' );
-    let searchmessage = filtermessage = resultsmessage = '';
+    let searchmessage = '', filtermessage = '', resultsmessage = '';
     if ( activeFilters.length ) {
         /* add search and filter messages - buttons will remove filters/terms */
         activeFilters.forEach( f => {
@@ -273,7 +279,7 @@ function deselectSpaces( spaceid ) {
  * @param {boolean} activate whether to activate of deactivate sorting.
  * @param {string} sorttype either alpha or distance.
  */
-function activateSort( activate, sorttype ) {
+export function activateSort( activate, sorttype ) {
     splog( 'activateSort - sorting spaces by ' + sorttype + ' ' + ( activate? 'activated': 'deactivated' ), 'spaces.js' );
     const sortbutton = document.getElementById( 'sort' + sorttype );
     if ( ! activate ) {
@@ -329,7 +335,7 @@ function sortSpacesListener( event ) {
  * @param {string} sortby property we are using to sort the list (needs to be part of a data attribute)
  * @param {boolean} dir sort direction (true = asc, false = desc)
  */
-function sortSpaces( sortby, dir ) {
+export function sortSpaces( sortby, dir ) {
     splog( 'sortSpaces', 'spaces.js' );
     /* first update the sorting buttons */
     document.querySelectorAll( '.sortbutton' ).forEach( el => el.setAttribute( 'data-sortdir', '' ) );

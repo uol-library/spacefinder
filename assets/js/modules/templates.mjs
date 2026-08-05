@@ -1,10 +1,12 @@
 /**
  * Templates used to render spaces in the list.
- * 
+ *
  * Two fundtions should be defined in this file:
  * - getSpaceHTML - assembles HTML for the list view (short) and returns a HTML Element
  * - getAdditionalInfo - assembles HTML for expanded view and returns an HTML String
  */
+import { spacefinder } from './config.mjs';
+import { getSpaceNodeById, getFilterData, splog } from './utilities.mjs';
 
 /**
  * Renders list view for a space
@@ -12,7 +14,7 @@
  * @return {Element} HTML element
  */
 export function getSpaceHTML( space ) {
-    spaceContainer = document.createElement('div');
+    let spaceContainer = document.createElement('div');
     spaceContainer.setAttribute( 'data-id', space.id );
     spaceContainer.setAttribute( 'id', 'space' + space.id );
     spaceContainer.setAttribute( 'data-sortalpha', space.sortKey );
@@ -50,6 +52,7 @@ export function getSpaceHTML( space ) {
  * @return {String} HTML
  */
 export function getAdditionalInfo( space ) {
+    splog( 'getAdditionalInfo', 'templates.js' );
     let spaceHTML = '';
     let spacenode = getSpaceNodeById( space.id );
     spaceHTML += '<section class="section-facts"><h4>Key Facts</h4><ul class="bulleticons"><li class="icon-marker switch-view"><a class="show-map" href="#">Show on map</a></li>';

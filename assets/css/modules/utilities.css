@@ -22,10 +22,10 @@ body {
     color: var(--foreground-color);
 }
 #skip {
-    background: var(--topbar-background);
+    background: var(--topbar-bg);
     color: var(--topbar-color);
     a {
-        background: var(--topbar-background);
+        background: var(--topbar-bg);
         color: var(--topbar-color);
         margin: .5rem 1rem;
         display: inline-block;

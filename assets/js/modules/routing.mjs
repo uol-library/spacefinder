@@ -1,48 +1,16 @@
 /**
  * Routing requests
  */
-export function setUpRouter() {
-    document.body.addEventListener( 'click', (e) => {
-        if ( e.target.matches( '[data-link]' ) ) {
-            e.preventDefault();
-            navigateTo( e.target.href );
-        }
+import { getSpaceBySlug, getSpaceNodeById, splog, setElementFocus } from './utilities.mjs';
+
+document.addEventListener( 'sfmapready', (event) => {
+    splog('Map is ready - load initial page/space', 'routing.js');
+    on_hash_change( event );
+    window.addEventListener( 'hashchange', event => {
+        on_hash_change( event );
     });
-    window.addEventListener("popstate", router);
-    router();
-}
+});
 
-/**
- * Navigate to a given URL (from an anchor with the data-link attribute)
- * @param String url
- */
-const navigateTo = ( url ) => {
-    window.history.pushState( null, null, url );
-    router();
-}
-
-/**
- * 
- */
-const router = () => {
-    const path = window.location.pathname;
-
-    /* get the data source from the first part of the path */
-    if ( ! dataSource ) {
-        dataSource = spacefinder.defaultDataSource;
-        loadData( dataSource ).then( loadDataModule ( dataSource ) );
-
-    }
-}
-
-/**
- * 
- */
-const loadData( src ) {
-    return new Promise( ( resolve, reject ) -> {
-        
-    }
-}
 /**
  * Loads a space when the hash changes (if it is not already selected)
  * or activates page modal

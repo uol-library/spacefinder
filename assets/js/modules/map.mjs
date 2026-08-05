@@ -1,18 +1,22 @@
-import { 
+import {
     Control,
     Map,
     TileLayer,
-    CircleMarker,
-    Polyline,
     DivIcon,
-    GeoJSON,
-    FeatureGroup,
     Marker,
-    SVGOverlay
+    Popup,
+    LatLng,
+    DomUtil,
+    DomEvent
 } from 'leaflet';
-import A11yDialog from 'a11y-dialog';
+import { FullScreen } from 'leaflet.fullscreen';
+import { LocateControl } from 'leaflet.locatecontrol';
 import { spacefinder } from './config.mjs';
-import { createElement, getJSON } from './utilities.mjs';
+import { getSpaceById, splog, haversine_distance } from './utilities.mjs';
+import { openAlertDialog } from './components.mjs';
+import { activateSort, sortSpaces } from './spaces.mjs';
+import { SimpleMarkerClusterGroup } from './clusterer.mjs';
+
 /**
  * Initialise map and set listeners to set up markers when loaded
  */
@@ -40,17 +44,21 @@ export function initMap() {
     spacefinder.locateControl = new LocateControl({
         position: 'topleft',
         strings: {
-            title: "Start tracking my location"
+            title: 'Use my location'
         },
         locateOptions: {
             watch: true,
             enableHighAccuracy: true
-        }
+        },
+        setView: false,
+        onLocationError: onGeoError
     }).addTo(spacefinder.map);
+    spacefinder.map.on( 'locateactivate', onGeoActivate );
+    spacefinder.map.on( 'locatedeactivate', onGeoDeactivate );
+    spacefinder.map.on( 'locationfound', onGeoLocationFound );
     spacefinder.scalecontrol = new Control.Scale(
         {position: 'bottomleft'}
     ).addTo(spacefinder.map);
-    spacefinder.dialogControl = new a11yDialogControl().addTo(spacefinder.map);
     spacefinder.mapLoaded = true;
     spacefinder.viewdata = {
         'street': {
@@ -118,34 +126,29 @@ function maybeSetupMap() {
 
         /* collect latLng coordinates here to define map bounds */
         let pointsArray = [];
-        
+
         /**
          * Initialise marker cluster group
-         * @see https://github.com/Leaflet/Leaflet.markercluster
+         * @see ./clusterer.mjs
          */
-        spacefinder.markergroup = L.markerClusterGroup({
+        spacefinder.markergroup = new SimpleMarkerClusterGroup({
 			disableClusteringAtZoom: 17,
-			zoomToBoundsOnClick: true,
-			spiderfyOnMaxZoom: false,
-			polygonOptions: {
-				color: '#c70000',
-				fillColor: '#c70000'
-			}
+			zoomToBoundsOnClick: true
 		});
-        
+
         /* add each space to the map using a marker */
         for ( let i = 0; i < spacefinder.spaces.length; i++ ) {
             if ( spacefinder.spaces[i].lat && spacefinder.spaces[i].lng ) {
-                var spacePosition = L.latLng( spacefinder.spaces[i].lat, spacefinder.spaces[i].lng );
+                var spacePosition = new LatLng( spacefinder.spaces[i].lat, spacefinder.spaces[i].lng );
                 pointsArray.push( [ spacefinder.spaces[i].lat, spacefinder.spaces[i].lng ] );
-                spacefinder.spaces[i].marker = L.marker( spacePosition, {
+                spacefinder.spaces[i].marker = new Marker( spacePosition, {
                     alt: spacefinder.spaces[i].title,
                     title: spacefinder.spaces[i].title,
                     icon: getSVGIcon( 'space-marker' )
                 });
                 spacefinder.markergroup.addLayer( spacefinder.spaces[i].marker );
                 /* set the popup for the marker */
-                spacefinder.spaces[i].popup = L.popup().setContent( getSpaceInfoWindowContent( spacefinder.spaces[i] ) );
+                spacefinder.spaces[i].popup = new Popup().setContent( getSpaceInfoWindowContent( spacefinder.spaces[i] ) );
                 spacefinder.spaces[i].popup.spaceID = spacefinder.spaces[i].id;
                 spacefinder.spaces[i].marker.bindPopup( spacefinder.spaces[i].popup );
             }
@@ -166,7 +169,7 @@ function maybeSetupMap() {
         /* respond to corresponding events from list */
         document.addEventListener( 'spaceSelected', event => { zoomMapToSpace( event.detail.id ) } );
         document.addEventListener( 'spaceDeselected', deselectSpacesFromMap );
-    
+
         /* Make sure the map view encompasses all markers */
         if ( pointsArray.length ) {
             spacefinder.map.fitBounds( pointsArray );
@@ -177,90 +180,22 @@ function maybeSetupMap() {
         spacefinder.mapZoom = parseInt( spacefinder.map.getZoom() );
 
         /**
-         * Create a button to recentre the map when geolocation is active and the user
+         * Add a button to recentre the map when geolocation is active and the user
          * drags the map off centre (the map should be centred on the user position)
          */
-        L.Control.RecentreControl = L.Control.extend({
-            onAdd: function(map) {
-                var container = L.DomUtil.create( 'div', 'leaflet-control-recentre' );
-                this._recentreButton = L.DomUtil.create( 'button', 'maprecentre-button icon-direction', container );
-                this._recentreButton.innerHTML = 'Recentre';
-                this._recentreButton.setAttribute( 'aria-label', 'Recentre map on my location' );
-                this._recentreButton.setAttribute( 'title', 'Recentre map on my location' );
-                L.DomEvent.on( this._recentreButton, 'mousedown dblclick', L.DomEvent.stopPropagation )
-                    .on( this._recentreButton, 'click', L.DomEvent.stop )
-                    .on( this._recentreButton, 'click', this._recentreMap, this );
-                return container;
-            },
-            onRemove: function( map ) {
-                splog( 'removing recentre control', 'map.js' );
-                L.DomEvent.off( this._recentreButton, 'click mousedown dblclick' );
-            },
-            _recentreMap: function() {
-                let newCenter = geolocationActive() ? spacefinder.personLoc: spacefinder.currentLoc;
-                spacefinder.map.panTo( newCenter );
-                spacefinder.recentreControl = null;
-                this.remove();
-            }
-        });
-
-        /* constructor */
-        L.control.recentreControl = function( opts ) {
-            return new L.Control.RecentreControl( opts );
-        }
-
-        /* add recentre button when map is moved */
         spacefinder.map.on( 'dragend', event => {
-            if ( geolocationActive() && ! spacefinder.recentreControl ) {
+            if ( spacefinder.geoActive && ! spacefinder.recentreControl ) {
                 splog( 'adding recentre control as map was dragged by user', 'map.js' );
-                spacefinder.recentreControl = L.control.recentreControl( { position: 'bottomleft' } ).addTo( spacefinder.map );
+                spacefinder.recentreControl = new RecentreControl( { position: 'bottomleft' } ).addTo( spacefinder.map );
             }
         });
-        
+
         /**
-         * Create a button to switch base layers between streets (OpenStreetMap)
+         * Add a button to switch base layers between streets (OpenStreetMap)
          * and satellite (ESRI).
          */
-        L.Control.MapTypeControl = L.Control.extend({
-            onAdd: function(map) {
-                let sd = spacefinder.viewdata.satellite;
-                var container = L.DomUtil.create('div', 'leaflet-control-maptype');
-                this._mapTypeButton = L.DomUtil.create( 'button', 'maptype-button ' + sd.btnClass, container );
-                const mapTypeButton = document.createElement( 'button' );
-                this._mapTypeButton.innerHTML = sd.btnText;
-                this._mapTypeButton.setAttribute( 'aria-label', sd.btnLabel );
-                this._mapTypeButton.setAttribute( 'title', sd.btnLabel );
-                this._mapTypeButton.setAttribute( 'data-currentType', 'street' );
-                L.DomEvent.on( this._mapTypeButton, 'mousedown dblclick', L.DomEvent.stopPropagation )
-                    .on( this._mapTypeButton, 'click', L.DomEvent.stop )
-                    .on( this._mapTypeButton, 'click', this._switchType, this );
-                return container;
-            },
-            onRemove: function( map ) {
-                L.DomEvent.off( this._mapTypeButton, 'click mousedown dblclick' );
-            },
-            _switchType: function() {
-                let currentType = this._mapTypeButton.getAttribute( 'data-currentType' );
-                let newType = currentType == 'street' ? 'satellite': 'street';
-                this._mapTypeButton.classList.replace( spacefinder.viewdata[ newType ].btnClass, spacefinder.viewdata[ currentType ].btnClass );
-                this._mapTypeButton.innerHTML = spacefinder.viewdata[ currentType ].btnText;
-                this._mapTypeButton.setAttribute( 'aria-label', spacefinder.viewdata[ currentType ].btnLabel );
-                this._mapTypeButton.setAttribute( 'title', spacefinder.viewdata[ currentType ].btnLabel );
-                this._mapTypeButton.setAttribute( 'data-currentType', newType );
-                spacefinder.viewdata[currentType].tileLayer.removeFrom( spacefinder.map );
-                spacefinder.viewdata[newType].tileLayer.addTo( spacefinder.map );
-            }
-        });
+        new MapTypeControl( { position: 'topright' } ).addTo( spacefinder.map );
 
-        /* constructor */
-        L.control.mapTypeControl = function( opts ) {
-            return new L.Control.MapTypeControl( opts );
-        }
-
-        /* add to map */
-        L.control.mapTypeControl( { position: 'topright' } ).addTo( spacefinder.map );
-
-        
         /* let eveyone know we are ready */
         spacefinder.mapReady = true;
         document.dispatchEvent( new Event( 'sfmapready' ) );
@@ -268,8 +203,70 @@ function maybeSetupMap() {
 }
 
 /**
- * Returns HTML for an individual space's infoWindow 
- * @param {Object} space 
+ * Button to recentre the map when geolocation is active and the user
+ * drags the map off centre.
+ */
+class RecentreControl extends Control {
+    onAdd( map ) {
+        const container = DomUtil.create( 'div', 'leaflet-control-recentre' );
+        this._recentreButton = DomUtil.create( 'button', 'maprecentre-button icon-direction', container );
+        this._recentreButton.innerHTML = 'Recentre';
+        this._recentreButton.setAttribute( 'aria-label', 'Recentre map on my location' );
+        this._recentreButton.setAttribute( 'title', 'Recentre map on my location' );
+        DomEvent.on( this._recentreButton, 'mousedown dblclick', DomEvent.stopPropagation )
+            .on( this._recentreButton, 'click', DomEvent.stop )
+            .on( this._recentreButton, 'click', this._recentreMap, this );
+        return container;
+    }
+    onRemove( map ) {
+        splog( 'removing recentre control', 'map.js' );
+        DomEvent.off( this._recentreButton, 'click mousedown dblclick' );
+    }
+    _recentreMap() {
+        let newCenter = spacefinder.geoActive ? spacefinder.personLoc: spacefinder.currentLoc;
+        spacefinder.map.panTo( newCenter );
+        spacefinder.recentreControl = null;
+        this.remove();
+    }
+}
+
+/**
+ * Button to switch base layers between streets (OpenStreetMap) and
+ * satellite (ESRI).
+ */
+class MapTypeControl extends Control {
+    onAdd( map ) {
+        let sd = spacefinder.viewdata.satellite;
+        const container = DomUtil.create( 'div', 'leaflet-control-maptype' );
+        this._mapTypeButton = DomUtil.create( 'button', 'maptype-button ' + sd.btnClass, container );
+        this._mapTypeButton.innerHTML = sd.btnText;
+        this._mapTypeButton.setAttribute( 'aria-label', sd.btnLabel );
+        this._mapTypeButton.setAttribute( 'title', sd.btnLabel );
+        this._mapTypeButton.setAttribute( 'data-currentType', 'street' );
+        DomEvent.on( this._mapTypeButton, 'mousedown dblclick', DomEvent.stopPropagation )
+            .on( this._mapTypeButton, 'click', DomEvent.stop )
+            .on( this._mapTypeButton, 'click', this._switchType, this );
+        return container;
+    }
+    onRemove( map ) {
+        DomEvent.off( this._mapTypeButton, 'click mousedown dblclick' );
+    }
+    _switchType() {
+        let currentType = this._mapTypeButton.getAttribute( 'data-currentType' );
+        let newType = currentType == 'street' ? 'satellite': 'street';
+        this._mapTypeButton.classList.replace( spacefinder.viewdata[ newType ].btnClass, spacefinder.viewdata[ currentType ].btnClass );
+        this._mapTypeButton.innerHTML = spacefinder.viewdata[ currentType ].btnText;
+        this._mapTypeButton.setAttribute( 'aria-label', spacefinder.viewdata[ currentType ].btnLabel );
+        this._mapTypeButton.setAttribute( 'title', spacefinder.viewdata[ currentType ].btnLabel );
+        this._mapTypeButton.setAttribute( 'data-currentType', newType );
+        spacefinder.viewdata[currentType].tileLayer.removeFrom( spacefinder.map );
+        spacefinder.viewdata[newType].tileLayer.addTo( spacefinder.map );
+    }
+}
+
+/**
+ * Returns HTML for an individual space's infoWindow
+ * @param {Object} space
  * @returns {String} HTML content for space infoWindow
  */
 function getSpaceInfoWindowContent( space ) {
@@ -294,7 +291,7 @@ function getSpaceInfoWindowContent( space ) {
  * @return {Object}
  */
 function getSVGIcon( c ) {
-	return L.divIcon({
+	return new DivIcon({
   		html: `<svg width="32" height="32" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="10" stroke-width="6"></circle></svg>`,
 		className: c,
   		iconSize: [32, 32],
@@ -307,7 +304,7 @@ function getSVGIcon( c ) {
  */
 function recentreMap() {
     splog( 'recentreMap', 'map.js' );
-    let newCenter = geolocationActive() ? spacefinder.personLoc: spacefinder.currentLoc;
+    let newCenter = spacefinder.geoActive ? spacefinder.personLoc: spacefinder.currentLoc;
     spacefinder.map.panTo( newCenter );
 }
 
@@ -319,7 +316,7 @@ function recentreMap() {
     splog( 'zoomMapToSpace', 'map.js' );
     let space = getSpaceById( spaceid );
     spacefinder.markergroup.zoomToShowLayer( space.marker, function(){
-        let newCenter = L.latLng( space.lat, space.lng );
+        let newCenter = new LatLng( space.lat, space.lng );
         space.popup.setLatLng( newCenter ).openOn( spacefinder.map );
     });
 }
@@ -351,110 +348,118 @@ function filterMarkers() {
 
 /*******************************************************************
  * GEOLOCATION
+ *
+ * Geolocation is handled by the leaflet.locatecontrol plugin, which
+ * provides the map's own "use my location" button. This section wires
+ * that up to the app's list-view geolocation button, distance
+ * sorting, and analytics events.
  *******************************************************************/
 
 /**
- * Toggle the disabled attribute of the geolocation control
- * @param {boolean} enable which way to toggle
+ * Updates the data-sortdistance attribute for all spaces relative
+ * to the user position.
  */
-function toggleGeolocation( enable ) {
-    splog( 'toggleGeolocation', 'map.js' );
-    if ( enable ) {
-        document.querySelectorAll( '.geo-button' ).forEach( element => element.disabled = false );
+export function updateDistances() {
+    splog( 'updateDistances', 'map.js' );
+    if ( spacefinder.geoActive ) {
+        spacefinder.spaces.forEach( (space, index) => {
+            let d = haversine_distance( spacefinder.personLoc, { lat: space.lat, lng: space.lng } );
+            document.querySelector( '[data-id="' + space.id + '"]').setAttribute( 'data-sortdistance', d );
+            var dist = ( d > 1000 ) ? ( ( d / 1000 ).toFixed(2) + 'km  away' ) : ( d > 1 ? d + ' metres away': ( d === 1 ? d + ' metre away': 'You are here!' ) );
+            document.getElementById( 'distance' + space.id ).innerHTML = dist;
+        });
     } else {
-        document.querySelectorAll( '.geo-button' ).forEach( element => element.disabled = true );
+        let spacenodes = document.querySelectorAll( '.list-space' );
+        if ( spacenodes !== null ) {
+            spacenodes.forEach( element => element.setAttribute( 'data-sortdistance', '' ) );
+        }
     }
 }
 
 /**
- * Toggle the active class of the geolocation control.
- * Also adds/removes the event listener to update the user's position
- * and adds / removes the person marker.
- * @param {boolean} activate which way to toggle
+ * Toggles the disabled attribute of the geolocation button in the list
+ * view. The map's own geolocation control is managed by LocateControl.
+ * @param {boolean} enable
  */
-function activateGeolocation( activate ) {
-    splog( 'activateGeolocation', 'map.js' );
-    if ( activate ) {
-        document.querySelectorAll( '.geo-button' ).forEach( element => {
-            element.classList.add( 'active' );
-            element.setAttribute( 'aria-label', 'Stop using my location' );
-            element.setAttribute( 'title', 'Stop using my location' );
-        });
-        document.addEventListener( 'userlocationchanged', movePersonMarker );
-        document.dispatchEvent(new CustomEvent( 'sfanalytics', {
-            detail: {
-                type: 'geostart'
-            }
-        }));
-    } else {
-        document.querySelectorAll( '.geo-button' ).forEach( element => {
-            element.classList.remove( 'active' );
-            element.setAttribute( 'aria-label', 'Use my location' );
-            element.setAttribute( 'title', 'Use my location' );
-        });
-        document.removeEventListener( 'userlocationchanged', movePersonMarker );
-        /* remove sorting indicator from all buttons */
-        document.getElementById( 'sortdistance' ).setAttribute( 'data-sortdir', '' );
-        document.dispatchEvent(new CustomEvent( 'sfanalytics', {
-            detail: {
-                type: 'geoend'
-            }
-        }));
-    }
+function toggleGeoButton( enable ) {
+    document.querySelectorAll( '.geo-button' ).forEach( element => element.disabled = ! enable );
+}
+
+/**
+ * Called when LocateControl starts tracking the user's position.
+ */
+function onGeoActivate() {
+    splog( 'onGeoActivate', 'map.js' );
+    spacefinder.geoActive = true;
+    document.querySelectorAll( '.geo-button' ).forEach( element => {
+        element.classList.add( 'active' );
+        element.setAttribute( 'aria-label', 'Stop using my location' );
+        element.setAttribute( 'title', 'Stop using my location' );
+    });
+    document.dispatchEvent(new CustomEvent( 'sfanalytics', {
+        detail: {
+            type: 'geostart'
+        }
+    }));
+    activateSort( true, 'distance' );
+}
+
+/**
+ * Called when LocateControl stops tracking the user's position.
+ */
+function onGeoDeactivate() {
+    splog( 'onGeoDeactivate', 'map.js' );
+    spacefinder.geoActive = false;
+    document.querySelectorAll( '.geo-button' ).forEach( element => {
+        element.classList.remove( 'active' );
+        element.setAttribute( 'aria-label', 'Use my location' );
+        element.setAttribute( 'title', 'Use my location' );
+    });
+    document.getElementById( 'sortdistance' ).setAttribute( 'data-sortdir', '' );
+    document.dispatchEvent(new CustomEvent( 'sfanalytics', {
+        detail: {
+            type: 'geoend'
+        }
+    }));
+    activateSort( false, 'distance' );
     updateDistances();
-    activateSort( activate, 'distance' );
 }
 
 /**
- * Moves the person marker to the user's position and centres the 
- * map on that position. The property spacefinder.personLoc is used
- * for the user position - this is updated in the geolocation.watchPosition
- * event listener. In addition to moving the person marker, distances
- * from the person to each space are updated, and if spaces are sorted
- * by distance, the sort order is updated.
- * @see getUserPosition()
+ * Called whenever the browser reports the user's position. Updates
+ * distances, keeps the list sorted by distance if that sort is
+ * active, and enforces the "must be near campus" restriction.
+ * @param {Object} event Leaflet locationfound event
  */
-function movePersonMarker() {
-    splog( 'movePersonMarker', 'map.js' );
-    /* move person marker */
-    if ( spacefinder.personMarker ) {
-        spacefinder.personMarker.setLatLng( spacefinder.personLoc );
+function onGeoLocationFound( event ) {
+    splog( 'onGeoLocationFound', 'map.js' );
+    if ( spacefinder.mapBounds && ! spacefinder.mapBounds.contains( event.latlng ) ) {
+        spacefinder.locateControl.stop();
+        openAlertDialog( 'Sorry...', 'You need to be a bit nearer to use this feature.' );
+        return;
     }
-    /* update distances to each space */
+    spacefinder.personLoc.lat = event.latlng.lat;
+    spacefinder.personLoc.lng = event.latlng.lng;
     updateDistances();
     /* see if the spaces are sorted by distance */
     let btn = document.querySelector( '#sortdistance[data-sortdir$="sc"' );
     if ( btn !== null ) {
-        /* determine direction from current attribute value */
         let sortdir = document.getElementById( 'sortdistance' ).getAttribute( 'data-sortdir' );
         let dir = ( sortdir == 'desc' ) ? false: true;
-        /* re-sort spaces */
         sortSpaces( 'sortdistance', dir );
     }
-    /* centre the map on the person */
-    spacefinder.map.panTo( spacefinder.personLoc );
 }
 
 /**
- * Test to see if geolocation services are enabled
- * @returns {boolean}
+ * Called when LocateControl fails to get the user's position (permission
+ * denied, position unavailable, or timeout).
+ * @param {Object} error
  */
-function geolocationEnabled() {
-    splog( 'geolocationEnabled', 'map.js' );
-    const btn = document.querySelector( '.geo-button' );
-    if ( btn !== null ) {
-        return btn.disabled == false;
+function onGeoError( error ) {
+    splog( 'onGeoError', 'map.js' );
+    if ( error.code === 1 || error.code === 2 ) {
+        toggleGeoButton( false );
     }
-    return false;
-}
-
-/**
- * Test to see if geolocation services are active
- * @returns {boolean}
- */
-function geolocationActive() {
-    splog( 'geolocationActive', 'map.js' );
-    return ( document.querySelector( '.geo-button.active' ) !== null ? true: false );
 }
 
 /**
@@ -483,354 +488,38 @@ function checkGeoPermissions() {
         } ).then( result => {
             /* save permission state (denied, granted or prompt) */
             spacefinder.permission = result.state;
-            if ( 'denied' == result.state ) {
-                toggleGeolocation( false );
-            } else {
-                toggleGeolocation( true );
-            }
+            toggleGeoButton( 'denied' !== result.state );
             result.onchange = function() {
                 spacefinder.permission = result.state;
-                if ( 'denied' == result.state ) {
-                    toggleGeolocation( false );
-                } else {
-                    toggleGeolocation( true );
-                }
+                toggleGeoButton( 'denied' !== result.state );
             }
         }).catch(error => {
-            toggleGeolocation( false );
+            toggleGeoButton( false );
         });
     }
 }
 
 /**
  * Tests for availability of geolocation on client. If available,
- * adds buttons to activate it and adds listeners to buttons.
+ * wires up the list-view geolocation button.
  */
 function checkGeoAvailable() {
     splog( 'checkGeoAvailable', 'map.js' );
     if ( 'geolocation' in navigator ) {
-        /* make button for map to let user activate geolocation */
-        L.Control.geoControl = L.Control.extend({
-            onAdd: function(map) {
-                var container = L.DomUtil.create('div', 'leaflet-control-geolocation');
-                const locationButton = document.createElement( 'button' );
-                locationButton.innerHTML = '';
-                locationButton.classList.add( 'geo-button' );
-                locationButton.classList.add( 'icon-my-location' );
-                locationButton.setAttribute( 'aria-label', 'Use my location' );
-                locationButton.setAttribute( 'title', 'Use my location' );
-                container.appendChild( locationButton );
-                return container;
-            },
-            onRemove: function(map) {}
-        });
-        L.control.geoControl = function(opts) {
-            return new L.Control.geoControl(opts);
-        }
-        L.control.geoControl( { position: 'topright' } ).addTo( spacefinder.map );
-
         /* add listener to buttons to toggle geolocation */
         document.addEventListener( 'click', event => {
             if ( event.target.matches( '.geo-button' ) ) {
-                if ( ! geolocationEnabled() ) {
+                if ( event.target.disabled ) {
                     return;
                 }
-                if ( geolocationActive() ) {
-                    /* disable geolocation */
-                    forgetUserPosition()
+                if ( spacefinder.geoActive ) {
+                    spacefinder.locateControl.stop();
                 } else {
-                    /* get the current position */
-                    getUserPosition();
+                    spacefinder.locateControl.start();
                 }
             }
         });
-
     } else {
-        activateGeolocation( false );
-        toggleGeolocation( false );
+        toggleGeoButton( false );
     }
 }
-
-/**
- * Cancels the watchPosition listener, removes the person marker,
- * and deactivates geolocation controls.
- */
-function forgetUserPosition() {
-    splog( 'forgetUserPosition', 'map.js' );
-    /* stop watching user position */
-    navigator.geolocation.clearWatch( spacefinder.watchID );
-    /* remove person marker from map */
-    spacefinder.personMarker.remove();
-    /* remove recentre control if it is on the map */
-    if ( spacefinder.recentreControl ) {
-        spacefinder.recentreControl.remove();
-        spacefinder.recentreControl = null;
-    }
-    /* make location buttons inactive */
-    activateGeolocation( false );
-    /* re-centre map */
-    spacefinder.map.panTo( spacefinder.currentLoc );
-}
-/**
- * Gets the current position of the user device, centres the
- * map on that position and adds a marker. Then sets a 
- * geolocation.watchPosition listener to update the position 
- * when it changes.
- * TODO: watch for dragging of map by user - this should disable
- * recentring the map on the user position and (possibly) show a 
- * button to recentre? (but not moving the marker)
- */
-function getUserPosition() {
-    splog( 'getUserPosition', 'map.js' );
-	navigator.geolocation.getCurrentPosition( position => {
-        /* centre the map on the user coordinates */
-		spacefinder.personLoc.lat = position.coords.latitude;
-		spacefinder.personLoc.lng = position.coords.longitude;
-        if ( ! spacefinder.mapBounds.contains( spacefinder.personLoc ) ) {
-            toggleGeolocation( false );
-            openAlertDialog( 'Sorry...', 'You need to be a bit nearer to use this feature.' );
-            return;
-        }
-        /* centre the map on the user position */
-		spacefinder.map.panTo( spacefinder.personLoc );
-        /* add a person marker */
-		spacefinder.personMarker = L.marker( spacefinder.personLoc, {
-            alt:   'Your location',
-            title: 'Your location',
-            icon:  getSVGIcon( 'person-marker' )
-        } ).addTo( spacefinder.map );
-        activateGeolocation( true );
-        /* watch for changes in the user position and update the map by firing an event */
-		spacefinder.watchID = navigator.geolocation.watchPosition( position => {
-            if ( ! ( spacefinder.personLoc.lat == position.coords.latitude && spacefinder.personLoc.lng == position.coords.longitude ) ) {
-                spacefinder.personLoc.lat = position.coords.latitude;
-                spacefinder.personLoc.lng = position.coords.longitude;
-                document.dispatchEvent( new Event( 'userlocationchanged' ) );
-            }
-        }, error => {
-			navigator.geolocation.clearWatch( spacefinder.watchID );
-            activateGeolocation( false );
-		});
-
-    }, (error) => {
-        activateGeolocation( false );
-		switch (error.code) {
-			case 1:
-				// Permission denied - The acquisition of the geolocation information failed because the page didn't have the permission to do it.
-			case 2:
-				// Position unavailable - The acquisition of the geolocation failed because at least one internal source of position returned an internal error.
-                toggleGeolocation( false );
-                break;
-			case 3:
-				// Timeout - The time allowed to acquire the geolocation was reached before the information was obtained.
-		}
-	});
-}
-
-/**
- * Updates the data-sortdistance attribute for all spaces relative
- * to the user position.
- */
-function updateDistances() {
-    splog( 'updateDistances', 'map.js' );
-    if ( geolocationActive() ) {
-        spacefinder.spaces.forEach( (space, index) => {
-            let d = haversine_distance( spacefinder.personLoc, { lat: space.lat, lng: space.lng } );
-            document.querySelector( '[data-id="' + space.id + '"]').setAttribute( 'data-sortdistance', d );
-            var dist = ( d > 1000 ) ? ( ( d / 1000 ).toFixed(2) + 'km  away' ) : ( d > 1 ? d + ' metres away': ( d === 1 ? d + ' metre away': 'You are here!' ) );
-            document.getElementById( 'distance' + space.id ).innerHTML = dist;
-        });
-    } else {
-        let spacenodes = document.querySelectorAll( '.list-space' );
-        if ( spacenodes !== null ) {
-            spacenodes.forEach( element => element.setAttribute( 'data-sortdistance', '' ) );
-        }
-    }
-}
-/********************************************************
- * Leaflet fullscreen plugin
- * 
- * Modified to use a button rather than a link
- * 
- * @see https://github.com/Leaflet/Leaflet.fullscreen
- * 
- ********************************************************/
-(function (factory) {
-    if (typeof define === 'function' && define.amd) {
-        // AMD
-        define(['leaflet'], factory);
-    } else if (typeof module !== 'undefined') {
-        // Node/CommonJS
-        module.exports = factory(require('leaflet'));
-    } else {
-        // Browser globals
-        if (typeof window.L === 'undefined') {
-            throw new Error('Leaflet must be loaded first');
-        }
-        factory(window.L);
-    }
-}(function (L) {
-    L.Control.Fullscreen = L.Control.extend({
-        options: {
-            position: 'topleft',
-            title: {
-                'false': 'View Fullscreen',
-                'true': 'Exit Fullscreen'
-            }
-        },
-
-        onAdd: function (map) {
-            var container = L.DomUtil.create('div', 'leaflet-control-fullscreen');
-            this.fsbutton = document.createElement( 'button' );
-            this.fsbutton.innerHTML = '<span class="visuallyhidden"></span>';
-            this.fsbutton.classList.add( 'mapfullscreen-button' );
-            this.fsbutton.classList.add( 'icon-resize-full' );
-            container.appendChild( this.fsbutton );
-        
-            this._map = map;
-            this._map.on('fullscreenchange', this._toggleTitle, this);
-            this._toggleTitle();
-
-            L.DomEvent.on(this.fsbutton, 'click', this._click, this);
-
-            return container;
-        },
-
-        _click: function (e) {
-            L.DomEvent.stopPropagation(e);
-            L.DomEvent.preventDefault(e);
-            this._map.toggleFullscreen(this.options);
-        },
-
-        _toggleTitle: function() {
-            if ( this._map.isFullscreen() ) {
-                this.fsbutton.classList.remove( 'icon-resize-full' );
-                this.fsbutton.classList.add( 'icon-resize-small' );
-            } else {
-                this.fsbutton.classList.remove( 'icon-resize-small' );
-                this.fsbutton.classList.add( 'icon-resize-full' );
-            }
-            this.fsbutton.setAttribute( 'aria-label', this.options.title[this._map.isFullscreen()] );
-            this.fsbutton.setAttribute( 'title', this.options.title[this._map.isFullscreen()] );
-            this.fsbutton.querySelector( 'span' ).innerText = this.options.title[this._map.isFullscreen()];
-        }
-    });
-
-    L.Map.include({
-        isFullscreen: function () {
-            return this._isFullscreen || false;
-        },
-
-        toggleFullscreen: function (options) {
-            var container = this.getContainer();
-            if (this.isFullscreen()) {
-                if (options && options.pseudoFullscreen) {
-                    this._disablePseudoFullscreen(container);
-                } else if (document.exitFullscreen) {
-                    document.exitFullscreen();
-                } else if (document.mozCancelFullScreen) {
-                    document.mozCancelFullScreen();
-                } else if (document.webkitCancelFullScreen) {
-                    document.webkitCancelFullScreen();
-                } else if (document.msExitFullscreen) {
-                    document.msExitFullscreen();
-                } else {
-                    this._disablePseudoFullscreen(container);
-                }
-            } else {
-                if (options && options.pseudoFullscreen) {
-                    this._enablePseudoFullscreen(container);
-                } else if (container.requestFullscreen) {
-                    container.requestFullscreen();
-                } else if (container.mozRequestFullScreen) {
-                    container.mozRequestFullScreen();
-                } else if (container.webkitRequestFullscreen) {
-                    container.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
-                } else if (container.msRequestFullscreen) {
-                    container.msRequestFullscreen();
-                } else {
-                    this._enablePseudoFullscreen(container);
-                }
-            }
-
-        },
-
-        _enablePseudoFullscreen: function (container) {
-            L.DomUtil.addClass(container, 'leaflet-pseudo-fullscreen');
-            this._setFullscreen(true);
-            this.fire('fullscreenchange');
-        },
-
-        _disablePseudoFullscreen: function (container) {
-            L.DomUtil.removeClass(container, 'leaflet-pseudo-fullscreen');
-            this._setFullscreen(false);
-            this.fire('fullscreenchange');
-        },
-
-        _setFullscreen: function(fullscreen) {
-            this._isFullscreen = fullscreen;
-            var container = this.getContainer();
-            if (fullscreen) {
-                L.DomUtil.addClass(container, 'leaflet-fullscreen-on');
-            } else {
-                L.DomUtil.removeClass(container, 'leaflet-fullscreen-on');
-            }
-            this.invalidateSize();
-        },
-
-        _onFullscreenChange: function (e) {
-            var fullscreenElement =
-                document.fullscreenElement ||
-                document.mozFullScreenElement ||
-                document.webkitFullscreenElement ||
-                document.msFullscreenElement;
-
-            if (fullscreenElement === this.getContainer() && !this._isFullscreen) {
-                this._setFullscreen(true);
-                this.fire('fullscreenchange');
-            } else if (fullscreenElement !== this.getContainer() && this._isFullscreen) {
-                this._setFullscreen(false);
-                this.fire('fullscreenchange');
-            }
-        }
-    });
-
-    L.Map.mergeOptions({
-        fullscreenControl: false
-    });
-
-    L.Map.addInitHook(function () {
-        if (this.options.fullscreenControl) {
-            this.fullscreenControl = new L.Control.Fullscreen(this.options.fullscreenControl);
-            this.addControl(this.fullscreenControl);
-        }
-
-        var fullscreenchange;
-
-        if ('onfullscreenchange' in document) {
-            fullscreenchange = 'fullscreenchange';
-        } else if ('onmozfullscreenchange' in document) {
-            fullscreenchange = 'mozfullscreenchange';
-        } else if ('onwebkitfullscreenchange' in document) {
-            fullscreenchange = 'webkitfullscreenchange';
-        } else if ('onmsfullscreenchange' in document) {
-            fullscreenchange = 'MSFullscreenChange';
-        }
-
-        if (fullscreenchange) {
-            var onFullscreenChange = L.bind(this._onFullscreenChange, this);
-
-            this.whenReady(function () {
-                L.DomEvent.on(document, fullscreenchange, onFullscreenChange);
-            });
-
-            this.on('unload', function () {
-                L.DomEvent.off(document, fullscreenchange, onFullscreenChange);
-            });
-        }
-    });
-
-    L.control.fullscreen = function (options) {
-        return new L.Control.Fullscreen(options);
-    };
-}));
