@@ -68,32 +68,6 @@
         background-image:url('../../images/street.png');
     }
 }
-.mapfullscreen-button,
-.leaflet-control-zoom-fullscreen {
-    display: block;
-    color: transparent;
-    width: 2.2rem;
-    height: 2.2rem;
-    padding: 0;
-    border-radius: 4px;
-    background: var(--geo-button-bg);
-    color: var(--geo-button-color);
-    cursor: pointer;
-    &:hover {
-        background: var(--geo-button-bg-hover);
-        color: var(--geo-button-color-hover);
-    }
-    &::before {
-        font-family: 'spacefinder';
-        speak: never;
-        margin: 0;
-        font-size: 1.5rem;
-        content: '\e805';
-    }
-    &.leaflet-fullscreen-on::before {
-        content: '\e807';
-    }
-}
 .maprecentre-button {
     color: var(--recentre-button-color);
     font-weight: bold;

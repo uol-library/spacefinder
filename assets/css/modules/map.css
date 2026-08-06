@@ -52,7 +52,7 @@
             fill: rgb(var(--space-icon-fill));
         }
     }
-    .person-marker {
+    .locate-control-locate-location {
         circle {
             stroke: rgb(var(--person-icon-stroke));
             fill: rgb(var(--person-icon-fill));

@@ -21,7 +21,7 @@ export const spacefinder = {
     /**
      * whether the application can use local storage
      * defaults to false here, but can be determined by cookie policy
-     * this function should be redefined in cookieconsent-init.js
+     * this function should be redefined in cookieconsent.mjs
      */
     canUseLocalStorage: function() { return false; },
     
@@ -46,11 +46,13 @@ export const spacefinder = {
     permission: false,
 
     /* data related config */
-    dataSources: {},
-    defaultDataSource: '',
+    data: {},
+    dataSources: ['spaces'],
+    defaultDataSource: 'spaces',
+    currentDataSource: 'spaces',
     dataDir: '{{ site.url }}{{ site.baseurl }}/assets/data/',
     spaces: [],
-    spacesLoaded: false,
+    placesLoaded: false,
     spacesurl: '{{ site.url }}{{ site.baseurl }}/spaces.json',
     imageBaseURL: '{{ site.url }}{{ site.baseurl }}',
 

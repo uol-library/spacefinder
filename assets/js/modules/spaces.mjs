@@ -1,20 +1,20 @@
 
 import { spacefinder } from './config.mjs';
-import { splog, getJSON, getFilterData, setHash, getSpaceById, getSpaceNodeById } from './utilities.mjs';
+import { splog, getJSON, getFilterData, setHash, getPlaceById, getSpaceNodeById } from './utilities.mjs';
 import { getFilterStatus } from './filters.mjs';
 import { getSpaceHTML, getAdditionalInfo } from './templates.mjs';
 import { updateDistances } from './map.mjs';
 
 /* setup */
 document.addEventListener( 'DOMContentLoaded', () => {
-    document.addEventListener( 'spacesloaded', () => {
+    document.addEventListener( 'placesLoaded', () => {
         renderList();
         updateDistances();
         checkOpeningHours();
         setInterval( checkOpeningHours, (30*1000) );
         activateSort(true, 'alpha');
     });
-    loadSpaces();
+    loadPlaces();
     /* event listener for search + filter changes */
     document.addEventListener( 'viewfilter', applyFilters );
     document.addEventListener( 'filtersapplied', updateListFilterMessage );
@@ -227,7 +227,7 @@ function updateListFilterMessage() {
  */
 function selectSpace( spaceid, source ) {
     splog( 'selectSpace', 'spaces.js' );
-    let space = getSpaceById( spaceid );
+    let space = getPlaceById( spaceid );
     document.dispatchEvent(new CustomEvent( 'sfanalytics', {
         detail: {
             type: 'select',
@@ -387,15 +387,21 @@ function comparer( asc, attr ) {
 /**
  * Loads all space data from a single JSON file
  */
-function loadSpaces() {
-    splog( 'loadSpaces', 'spaces.js' );
-    getJSON( { key: 'spaces', url: spacefinder.spacesurl, callback: data => {
+function loadPlaces() {
+    splog( 'loadPlaces', 'spaces.js' );
+    if ( Object.hasOwn(spacefinder.data, spacefinder.currentDataSource) ) {
+        // FUCK KNOWS
+    } else {
+        spacefinder.data[spacefinder.currentDataSource] = [];
+    }
+    let placeData = spacefinder.data[spacefinder.currentDataSource];
+    getJSON( { key: 'spaces', url: spacefinder.spacesurl }, callback: data => {
         if ( data.length ) {
-            data.forEach( (space, index) => {
-                spacefinder.spaces[index] = space;
-                spacefinder.spaces[index].sortKey = space.title.replace( /[^0-9a-zA-Z]/g, '' ).toLowerCase();
+            data.forEach( (place, index) => {
+                spacefinder.data[spacefinder.currentDataSource][index] = place;
+                spacefinder.data[spacefinder.currentDataSource][index].sortKey = place.title.replace( /[^0-9a-zA-Z]/g, '' ).toLowerCase();
             });
-            spacefinder.spaces.sort( (a, b) => {
+            spacefinder.data[spacefinder.currentDataSource].sort( (a, b) => {
                 if ( a.sortKey < b.sortKey ) {
                     return -1;
                 }
@@ -405,9 +411,9 @@ function loadSpaces() {
                 return 0;
             } );
             adjustSpacesForClosures();
-            spacefinder.spacesLoaded = true;
-            /* fire the spacesloaded event */
-            document.getElementById( 'list' ).dispatchEvent( new Event( 'spacesloaded', {
+            spacefinder.placesLoaded = true;
+            /* fire the placesLoaded event */
+            document.getElementById( 'list' ).dispatchEvent( new Event( 'placesLoaded', {
                 bubbles: true,
                 cancelable: true,
                 composed: false,
@@ -422,8 +428,8 @@ function loadSpaces() {
 function renderList() {
     splog( 'renderList', 'spaces.js' );
     let listContainer = document.getElementById( 'listcontent' );
-    let spacetotal = spacefinder.spaces.length;
-    spacefinder.spaces.forEach( space => {
+    let spacetotal = spacefinder.data[spacefinder.currentDataSource].length;
+    spacefinder.data[spacefinder.currentDataSource].forEach( space => {
         listContainer.appendChild( getSpaceHTML( space ) );
     });
     document.getElementById( 'searchResultsSummary' ).innerHTML = 'Showing ' + spacetotal + ' of ' + spacetotal + ' spaces';
@@ -448,7 +454,7 @@ function renderAdditionalInfo( spaceid ) {
 
     if ( spaceid !== false ) {
         /* get space data */
-        let space = getSpaceById( spaceid );
+        let space = getPlaceById( spaceid );
         let spacenode = getSpaceNodeById( spaceid );
         spacenode.querySelector( '.additionalInfo' ).innerHTML = getAdditionalInfo( space );
     }
@@ -464,7 +470,7 @@ function checkOpeningHours() {
     let daynames = [ 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday' ];
     let todaysday = daynames[ today.getDay() ];
     let timenow = ( today.getHours() * 60 ) + today.getMinutes();
-    spacefinder.spaces.forEach( ( space, index ) => {
+    spacefinder.data[spacefinder.currentDataSource].forEach( ( space, index ) => {
         let openmsg = '';
         let openclass = 'currently-closed';
         let currentClass = document.querySelector( '[data-id="' + space.id + '"]' ).getAttribute( 'data-openclass' );
@@ -540,7 +546,7 @@ function adjustSpacesForClosures() {
             }
         }
         if ( updateDays.length ) {
-            for ( let i = 0; i < spacefinder.spaces.length; i++ ) {
+            for ( let i = 0; i < spacefinder.data[spacefinder.currentDataSource].length; i++ ) {
                 updateDays.forEach( function( day ) {
                     spacefinder.spaces[i].opening_hours[day].open = false;
                 });

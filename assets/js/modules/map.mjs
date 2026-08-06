@@ -12,7 +12,7 @@ import {
 import { FullScreen } from 'leaflet.fullscreen';
 import { LocateControl } from 'leaflet.locatecontrol';
 import { spacefinder } from './config.mjs';
-import { getSpaceById, splog, haversine_distance } from './utilities.mjs';
+import { getPlaceById, splog, haversine_distance } from './utilities.mjs';
 import { openAlertDialog } from './components.mjs';
 import { activateSort, sortSpaces } from './spaces.mjs';
 import { SimpleMarkerClusterGroup } from './clusterer.mjs';
@@ -24,7 +24,7 @@ export function initMap() {
     splog( 'initMap', 'map.js' );
     document.addEventListener( 'sfmaploaded', checkGeo );
     document.addEventListener( 'filtersapplied', filterMarkers );
-    document.addEventListener( 'spacesloaded', maybeSetupMap );
+    document.addEventListener( 'placesLoaded', maybeSetupMap );
     document.addEventListener( 'filtersloaded', maybeSetupMap );
     document.addEventListener( 'sfmaploaded', maybeSetupMap );
     spacefinder.map = new Map( 'map' ).setView([spacefinder.currentLoc.lat, spacefinder.currentLoc.lng], spacefinder.startZoom );
@@ -122,7 +122,7 @@ export function initMap() {
  */
 function maybeSetupMap() {
     splog( 'maybeSetupMap', 'map.js' );
-    if ( spacefinder.mapLoaded && spacefinder.spacesLoaded && spacefinder.filtersLoaded ) {
+    if ( spacefinder.mapLoaded && spacefinder.placesLoaded && spacefinder.filtersLoaded ) {
 
         /* collect latLng coordinates here to define map bounds */
         let pointsArray = [];
@@ -137,7 +137,7 @@ function maybeSetupMap() {
 		});
 
         /* add each space to the map using a marker */
-        for ( let i = 0; i < spacefinder.spaces.length; i++ ) {
+        for ( let i = 0; i < spacefinder.data[spacefinder.currentDataSource].length; i++ ) {
             if ( spacefinder.spaces[i].lat && spacefinder.spaces[i].lng ) {
                 var spacePosition = new LatLng( spacefinder.spaces[i].lat, spacefinder.spaces[i].lng );
                 pointsArray.push( [ spacefinder.spaces[i].lat, spacefinder.spaces[i].lng ] );
@@ -312,9 +312,9 @@ function recentreMap() {
  * Zooms the map to show a particular space
  * @param {Object} space
  */
- function zoomMapToSpace( spaceid ) {
+function zoomMapToSpace( spaceid ) {
     splog( 'zoomMapToSpace', 'map.js' );
-    let space = getSpaceById( spaceid );
+    let space = getPlaceById( spaceid );
     spacefinder.markergroup.zoomToShowLayer( space.marker, function(){
         let newCenter = new LatLng( space.lat, space.lng );
         space.popup.setLatLng( newCenter ).openOn( spacefinder.map );
@@ -337,7 +337,7 @@ function filterMarkers() {
     splog( 'filterMarkers', 'map.js' );
     let markersToAdd = [];
     document.querySelectorAll( '.list-space' ).forEach( element => {
-        let space = getSpaceById( element.getAttribute( 'data-id' ) );
+        let space = getPlaceById( element.getAttribute( 'data-id' ) );
         if ( ! element.classList.contains( 'hidden' ) ) {
             markersToAdd.push( space.marker );
         }
@@ -362,7 +362,7 @@ function filterMarkers() {
 export function updateDistances() {
     splog( 'updateDistances', 'map.js' );
     if ( spacefinder.geoActive ) {
-        spacefinder.spaces.forEach( (space, index) => {
+        spacefinder.data[spacefinder.currentDataSource].forEach( (space, index) => {
             let d = haversine_distance( spacefinder.personLoc, { lat: space.lat, lng: space.lng } );
             document.querySelector( '[data-id="' + space.id + '"]').setAttribute( 'data-sortdistance', d );
             var dist = ( d > 1000 ) ? ( ( d / 1000 ).toFixed(2) + 'km  away' ) : ( d > 1 ? d + ' metres away': ( d === 1 ? d + ' metre away': 'You are here!' ) );

@@ -5,7 +5,7 @@ import { spacefinder } from './config.mjs';
 import { splog, getJSON } from './utilities.mjs';
 import { Accordion } from './components.mjs';
 
-document.addEventListener( 'spacesloaded', () => {
+document.addEventListener( 'placesLoaded', () => {
     document.addEventListener( 'filtersloaded', () => {
         renderFilters();
         setupFilters();

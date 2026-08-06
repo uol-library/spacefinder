@@ -155,10 +155,11 @@ export function getJSON( options ) {
  * @param {integer} id 
  * @returns {Object} space object
  */
-export function getSpaceById( id ) {
-    for (let i = 0; i < spacefinder.spaces.length; i++ ) {
-        if ( spacefinder.spaces[i].id == id ) {
-            return spacefinder.spaces[i];
+export function getPlaceById( id ) {
+    let placeData = spacefinder.data[spacefinder.currentDataSource];
+    for (let i = 0; i < placeData.length; i++ ) {
+        if ( placeData[i].id == id ) {
+            return placeData[i];
         }
     }
 }
@@ -192,7 +193,7 @@ export function getFilterData( filterkey, optionkey ) {
  * @returns {Object} space object
  */
  export function getSpaceBySlug( slug ) {
-    for (let i = 0; i < spacefinder.spaces.length; i++ ) {
+    for (let i = 0; i < spacefinder.data[spacefinder.currentDataSource].length; i++ ) {
         if ( spacefinder.spaces[i].slug == slug ) {
             return spacefinder.spaces[i];
         }

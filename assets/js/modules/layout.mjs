@@ -7,7 +7,7 @@ import { splog, togglePanel } from './utilities.mjs';
 
 document.addEventListener( 'DOMContentLoaded', () => {
 	setupLayout();
-    document.addEventListener( 'spacesloaded', setView );
+    document.addEventListener( 'placesLoaded', setView );
     document.addEventListener( 'sfmapready', setView );
     document.addEventListener( 'filtersloaded', setView );
 	document.addEventListener( 'sfresize', setView );
@@ -65,7 +65,7 @@ function setupLayout() {
  * Sets the initial view of the app
  */
 function setView() {
-	if ( spacefinder.mapReady && spacefinder.spacesLoaded && spacefinder.filtersLoaded ) {
+	if ( spacefinder.mapReady && spacefinder.placesLoaded && spacefinder.filtersLoaded ) {
 		splog('Setting view', 'layout.js' );
 		if ( window.innerWidth >= spacefinder.breakpoints.large ) {
 			splog('Showing filters panel', 'layout.js' );

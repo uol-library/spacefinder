@@ -5,7 +5,7 @@ description: >-
   Spacefinder includes detailed descriptions of spaces,
   filters based on space characteristics, and navigation
   via a map.
-environment: production
+environment: development
 baseurl: ""
 url: ""
 host: "localhost"
