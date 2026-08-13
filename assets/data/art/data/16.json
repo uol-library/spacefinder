@@ -1,0 +1,48 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "VisualArtwork",
+        "name": "Texta Texens",
+        "description": "Commissioned to celebrate Yorkshire Year of the Textile 2016, <strong>Texta Texens</strong> is located in the North walkway outside the Clothworkers&rsquo; South Building. It develops a dialogue with Mitzi Cunliffe&rsquo;s <strong>Man-Made Fibres</strong> on the building&rsquo;s façade above. Lawty works across disciplines and materials, including stone and woven structures. She was Artist in Residence at the V&A Museum from 2005 to 2006 and Leverhulme Artist in Residence in the School of Earth &amp; Environment, University of Leeds between 2014 and 2015.</p><p>Lawty worked with poet Helen Mort, Douglas Caster Fellow in Poetry at the University of Leeds (2014-16) and with Yorkshire sculptor Dan Jones to create <strong>Texta Texens</strong>. Mort&rsquo;s poem &lsquo;Texere&rsquo; is engraved in the sculpture. The words &lsquo;text&rsquo; and &lsquo;textile&rsquo; share their origins in the Latin verb &lsquo;texere&rsquo; (to weave, or to fabricate). The words literally become part of the weft and weave of the stonework. Exploring the link between text and textiles, the piece weaves together conversations about life and learning, research and education, people and place. As Lawty explained of her work: &lsquo;I seek an understated restraint, balance, tension, rhythm: an essential stillness.&rsquo;",
+        "image": {
+            "@type": "ImageObject",
+            "contentUrl": "/assets/data/art/images/texta-texens.jpg",
+            "description": ""
+        },
+        "artform": "Sculpture",
+        "artMedium": "Kilkenny limestone",
+        "dateCreated": "2016",
+        "creator": {
+            "@type": "Person",
+            "name": "Sue Lawty",
+            "birthDate": "1954"
+        },
+        "contributor": [
+            {
+                "@type": "Person",
+                "name": "Dan Jones"
+            },
+            {
+                "@type": "Person",
+                "name": "Helen Mort"
+            }
+        ],
+        "spatial": {
+            "@type": "Place",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "University of Leeds",
+                "addressRegion": "Leeds, West Yorkshire",
+                "postalCode": "LS2 9JT",
+                "streetAddress": "Pavement in front of Clothworkers&rsquo; South Building"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "53.807073162710296",
+                "longitude": "-1.5564092217780485"
+            }
+        }
+    }
+}

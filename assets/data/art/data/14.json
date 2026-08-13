@@ -1,0 +1,44 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "VisualArtwork",
+        "name": "Dual Form",
+        "description": "Born in Wakefield in 1903, Barbara Hepworth is regarded as a pre-eminent British sculptor, along with her peer and fellow Yorkshire native, Henry Moore. In 1965, the year that she produced <strong>Dual Form</strong>, she was made Dame Commander of the British Empire (DBE) and was also made the first female trustee of the Tate Gallery.</p><p><strong>Dual Form</strong> is one of an edition of seven bronzes, a medium that Hepworth began working in towards the late 1950s. With its simple form and pierced hollows, it recalls Hepworth’s earlier work in wood. The sculpture was acquired by the Leeds Art Fund in 1967 and is on loan from Leeds Art Gallery.",
+        "image": {
+            "@type": "ImageObject",
+            "contentUrl": "/assets/data/art/images/dual-form.jpg",
+            "description": ""
+        },
+        "artform": "Sculpture",
+        "artMedium": "Bronze",
+        "dateCreated": "1965",
+        "creator": {
+            "@type": "Person",
+            "name": "Barbara Hepworth",
+            "birthDate": "1903",
+            "deathDate": "1975"
+        },
+        "contributor": {
+            "@type": "Organisation",
+            "name": "Leeds Art Fund",
+            "description": "Lent by Leeds Art Fund (Leeds Museums &amp; Galleries)"
+        },
+        "spatial": {
+            "@type": "Place",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "University of Leeds",
+                "addressRegion": "Leeds, West Yorkshire",
+                "postalCode": "LS2 9JT",
+                "streetAddress": "Outside stage@leeds"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "53.80612376581016",
+                "longitude": "-1.555314891493527"
+            }
+        }
+    }
+}

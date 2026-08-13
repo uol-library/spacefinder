@@ -1,0 +1,200 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "CollegeOrUniversity",
+        "name": "Leeds University Union - Foyer",
+        "description": "Busy study place for people that like working alongside others. Couches with big tables can be used for comfortable group working in a nice environment. Extra couches on the side for anybody wanting to read or take a break.",
+        "alternateName": "leeds-university-union-foyer",
+        "url": "https://www.luu.org.uk/",
+        "sameAs": "https://www.leeds.ac.uk/campusmap?location=17489",
+        "publicAccess": true,
+        "telephone": "0113 380 1400",
+        "image": {
+            "@type": "ImageObject",
+            "contentUrl": "",
+            "description": "Leeds University Union - Foyer"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "University of Leeds",
+            "addressRegion": "Leeds, West Yorkshire",
+            "postalCode": "LS2 9JT",
+            "streetAddress": "Ground floor, Leeds University Union"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 53.80672801,
+            "longitude": -1.555811583
+        },
+        "contactPoint": [
+            {
+                "@type": "ContactPoint",
+                "contactType": "Follow us on facebook",
+                "url": "https://www.facebook.com/leedsuniversityunion/"
+            },
+            {
+                "@type": "ContactPoint",
+                "contactType": "Follow us on X (formerly Twitter)",
+                "url": "https://twitter.com/LeedsUniUnion"
+            }
+        ],
+        "amenityFeature": [
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Food &amp; drink allowed",
+                "alternateName": "food_drink",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Natural daylight",
+                "alternateName": "daylight",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Plug Sockets",
+                "alternateName": "sockets",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Phone signal",
+                "alternateName": "signal",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Toilets nearby",
+                "alternateName": "toilets",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Close to refreshments",
+                "alternateName": "refreshments",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Close to a place to take a break",
+                "alternateName": "break",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Bike racks",
+                "alternateName": "bike_racks",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Gender neutral toilets",
+                "alternateName": "gender_neutral_toilets",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Wheelchair accessible",
+                "alternateName": "wheelchair_accessible",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Baby changing facilities",
+                "alternateName": "baby_changing",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Animated discussion",
+                "alternateName": "animateddiscussion",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Where others are working",
+                "alternateName": "close",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "With friends",
+                "alternateName": "friends",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "On a group project",
+                "alternateName": "group",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Relaxed",
+                "alternateName": "relaxed",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Modern",
+                "alternateName": "modern",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Social",
+                "alternateName": "social",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Friendly",
+                "alternateName": "friendly",
+                "value": true
+            }
+        ],
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Monday",
+                "opens": "08:30:00",
+                "closes": "22:00:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Tuesday",
+                "opens": "08:30:00",
+                "closes": "22:00:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Wednesday",
+                "opens": "08:30:00",
+                "closes": "22:00:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Thursday",
+                "opens": "08:30:00",
+                "closes": "22:00:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Friday",
+                "opens": "08:30:00",
+                "closes": "22:00:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Saturday"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Sunday"
+            }
+        ]
+    }
+}

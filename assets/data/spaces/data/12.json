@@ -1,0 +1,181 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Draft",
+    "mainEntity": {
+        "@type": "CafeOrCoffeeShop",
+        "name": "Toasted in Chancellor's Court (Outdoor space)",
+        "description": "Gourmet toastie van serving a range of toasties, croissants, sweet treats, cold drinks and freshly brewed coffees. Outdoor seating situated in Chancellor's Court, next to the Roger Stevens Building",
+        "alternateName": "toasted-in-chancellors-court-outdoor-space",
+        "url": "",
+        "sameAs": "",
+        "publicAccess": true,
+        "telephone": "",
+        "image": {
+            "@type": "ImageObject",
+            "contentUrl": "/assets/photos/toasted.jpg",
+            "description": "Outdoor photograph of Toasted - a converted Ford Transit van - in Chancellor's Court"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "University of Leeds",
+            "addressRegion": "Leeds, West Yorkshire",
+            "postalCode": "LS2 9JT",
+            "streetAddress": "Chancellor's Court"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 53.8051901,
+            "longitude": -1.5547883
+        },
+        "contactPoint": [
+            {
+                "@type": "ContactPoint",
+                "contactType": "Follow us on facebook",
+                "url": "https://www.facebook.com/toastedleeds/"
+            }
+        ],
+        "amenityFeature": [
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Food &amp; drink allowed",
+                "alternateName": "food_drink",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Natural daylight",
+                "alternateName": "daylight",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Attractive views out of the window",
+                "alternateName": "views",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Phone signal",
+                "alternateName": "signal",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Outdoor seating",
+                "alternateName": "outdoor_seating",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Close to refreshments",
+                "alternateName": "refreshments",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Close to a place to take a break",
+                "alternateName": "break",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Bike racks",
+                "alternateName": "bike_racks",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Gender neutral toilets",
+                "alternateName": "gender_neutral_toilets",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Wheelchair accessible",
+                "alternateName": "wheelchair_accessible",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Animated discussion",
+                "alternateName": "animateddiscussion",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "With friends",
+                "alternateName": "friends",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "On a group project",
+                "alternateName": "group",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Relaxed",
+                "alternateName": "relaxed",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Social",
+                "alternateName": "social",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Friendly",
+                "alternateName": "friendly",
+                "value": true
+            }
+        ],
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Monday",
+                "opens": "08:00:00",
+                "closes": "24:00:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Tuesday",
+                "opens": "08:00:00",
+                "closes": "24:00:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Wednesday",
+                "opens": "08:00:00",
+                "closes": "24:00:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Thursday",
+                "opens": "08:00:00",
+                "closes": "24:00:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Friday",
+                "opens": "08:00:00",
+                "closes": "24:00:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Saturday",
+                "opens": "10:00:00",
+                "closes": "24:00:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Sunday",
+                "opens": "10:00:00",
+                "closes": "24:00:00"
+            }
+        ]
+    }
+}

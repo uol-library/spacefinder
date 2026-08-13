@@ -1,0 +1,60 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "VisualArtwork",
+        "name": "Sign For Art",
+        "description": "<p><strong>Sign for Art (Stelae 2014)</strong> references Keith Wilson&rsquo;s early career as an art instructor for deaf-blind adults in the 1980s. &ldquo;Drawing two spaced fingertips in a wave motion across the forehead of the student &ndash; a tactile brainwave sign &ndash; announced the arrival of the artist, the subject of art and the imminent activity of making art&rdquo;, the artist remembered. &ldquo;This modification of British Sign Language, presumably derived from the making of a brushstroke, struck home and stayed with me&rdquo;.</p><p>Now one of the most recognisable works on campus, at the centre of Beech Grove Plaza, the artwork has been given many affectionate nicknames by students, including &lsquo;The Squiggle&rsquo; and &lsquo;The Wavy Bacon&rsquo;.</p>",
+        "image": [
+            {
+                "@type": "ImageObject",
+                "contentUrl": "/assets/data/art/images/sign-for-art1.jpg",
+                "description": "&ldquo;Sign for Art&rdquo; by Keith Wilson (pictured with the artist - centre)"
+            },
+            {
+                "@type": "ImageObject",
+                "contentUrl": "/assets/data/art/images/sign-for-art2.jpg",
+                "description": "&ldquo;Sign for Art&rdquo; by Keith Wilson"
+            },
+            {
+                "@type": "ImageObject",
+                "contentUrl": "/assets/data/art/images/sign-for-art3.jpg",
+                "description": "&ldquo;Sign for Art&rdquo; by Keith Wilson"
+            },
+            {
+                "@type": "ImageObject",
+                "contentUrl": "/assets/data/art/images/sign-for-art4.jpg",
+                "description": "&ldquo;Sign for Art&rdquo; by Keith Wilson"
+            },
+            {
+                "@type": "ImageObject",
+                "contentUrl": "/assets/data/art/images/sign-for-art5.jpg",
+                "description": "&ldquo;Sign for Art&rdquo; by Keith Wilson"
+            }
+        ],
+        "artform": "Sculpture",
+        "artMedium": "Cast polyurethane elastomer",
+        "dateCreated": "2014",
+        "creator": {
+            "@type": "Person",
+            "name": "Keith Wilson",
+            "birthDate": "1965"
+        },
+        "spatial": {
+            "@type": "Place",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "University of Leeds",
+                "addressRegion": "Leeds, West Yorkshire",
+                "postalCode": "LS2 9JT",
+                "streetAddress": "Beech Grove Plaza"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "53.80706199513932",
+                "longitude": "-1.5543315030180733"
+            }
+        }
+    }
+}

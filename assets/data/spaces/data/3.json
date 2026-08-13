@@ -1,0 +1,206 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "CafeOrCoffeeShop",
+        "name": "Edit Room Café in Edward Boyle Library",
+        "description": "Situated on the ground floor of the Edward Boyle Library, the cafe provides an eclectic mix of grab and go food and drinks for everyone to enjoy at any time of the day.",
+        "alternateName": "edit-room-cafe-in-edward-boyle-library",
+        "url": "https://gfal.leeds.ac.uk/where-to-eat/cafes/the-edit-room/",
+        "sameAs": "https://www.leeds.ac.uk/campusmap?location=17411",
+        "publicAccess": true,
+        "telephone": "",
+        "image": {
+            "@type": "ImageObject",
+            "contentUrl": "/assets/photos/Edit-Room.jpg",
+            "description": "Interior photograph of the Edit Room Café showing the bright lighting, some of the serving area and students seated around a number of tables"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "University of Leeds",
+            "addressRegion": "Leeds, West Yorkshire",
+            "postalCode": "LS2 9JT",
+            "streetAddress": "Level 9 (ground floor), Edward Boyle Library"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 53.80605751185165,
+            "longitude": -1.5546372444373286
+        },
+        "contactPoint": [
+            {
+                "@type": "ContactPoint",
+                "contactType": "Follow us on facebook",
+                "url": "https://www.facebook.com/greatfoodleeds"
+            },
+            {
+                "@type": "ContactPoint",
+                "contactType": "Follow us on X (formerly Twitter)",
+                "url": "https://twitter.com/GreatFoodLeeds"
+            }
+        ],
+        "amenityFeature": [
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Food &amp; drink allowed",
+                "alternateName": "food_drink",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Natural daylight",
+                "alternateName": "daylight",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Attractive views out of the window",
+                "alternateName": "views",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Plug Sockets",
+                "alternateName": "sockets",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Phone signal",
+                "alternateName": "signal",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Outdoor seating",
+                "alternateName": "outdoor_seating",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Toilets nearby",
+                "alternateName": "toilets",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Close to refreshments",
+                "alternateName": "refreshments",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Close to a place to take a break",
+                "alternateName": "break",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Bike racks",
+                "alternateName": "bike_racks",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Wheelchair accessible",
+                "alternateName": "wheelchair_accessible",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Gender neutral toilets",
+                "alternateName": "gender_neutral_toilets",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Animated discussion",
+                "alternateName": "animateddiscussion",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Where others are working",
+                "alternateName": "close",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "With friends",
+                "alternateName": "friends",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "On a group project",
+                "alternateName": "group",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Relaxed",
+                "alternateName": "relaxed",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Modern",
+                "alternateName": "modern",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Social",
+                "alternateName": "social",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Friendly",
+                "alternateName": "friendly",
+                "value": true
+            }
+        ],
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Monday",
+                "opens": "08:30:00",
+                "closes": "17:00:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Tuesday",
+                "opens": "08:30:00",
+                "closes": "17:00:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Wednesday",
+                "opens": "08:30:00",
+                "closes": "17:00:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Thursday",
+                "opens": "08:30:00",
+                "closes": "17:00:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Friday",
+                "opens": "08:30:00",
+                "closes": "17:00:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Saturday"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Sunday"
+            }
+        ]
+    }
+}

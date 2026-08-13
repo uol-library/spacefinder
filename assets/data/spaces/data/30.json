@@ -1,0 +1,222 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "CollegeOrUniversity",
+        "name": "Parkinson Building - Parkinson Court South",
+        "description": "Historic atmosphere with tables and chairs. Occasionally busy but mostly silent.  The study area is to the left after entering the Parkinson Building",
+        "alternateName": "parkinson-building-parkinson-court-south",
+        "url": "https://students.leeds.ac.uk/info/10109/study_support/1419/where_to_study_on_campus",
+        "sameAs": "https://www.leeds.ac.uk/campusmap?location=17525",
+        "publicAccess": true,
+        "telephone": "",
+        "image": {
+            "@type": "ImageObject",
+            "contentUrl": "",
+            "description": "Parkinson Building - Parkinson Court South"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "University of Leeds",
+            "addressRegion": "Leeds, West Yorkshire",
+            "postalCode": "LS2 9JT",
+            "streetAddress": "Ground floor, Parkinson Building"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 53.807639166530755,
+            "longitude": -1.552668530103729
+        },
+        "amenityFeature": [
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Food &amp; drink allowed",
+                "alternateName": "food_drink",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Natural daylight",
+                "alternateName": "daylight",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Attractive views out of the window",
+                "alternateName": "views",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Phone signal",
+                "alternateName": "signal",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Close to refreshments",
+                "alternateName": "refreshments",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Close to a place to take a break",
+                "alternateName": "break",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Large desks",
+                "alternateName": "large_desks",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Individual study spaces available",
+                "alternateName": "individual_study_space",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Plug Sockets",
+                "alternateName": "sockets",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Toilets nearby",
+                "alternateName": "toilets",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Wheelchair accessible",
+                "alternateName": "wheelchair_accessible",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Bike racks",
+                "alternateName": "bike_racks",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Gender neutral toilets",
+                "alternateName": "gender_neutral_toilets",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Baby changing facilities",
+                "alternateName": "baby_changing",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Toilets accessible to disabled people",
+                "alternateName": "accessible_toilets",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Background chatter",
+                "alternateName": "backgroundchatter",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Where others are working",
+                "alternateName": "close",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "With friends",
+                "alternateName": "friends",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Alone, in private",
+                "alternateName": "private",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "On a group project",
+                "alternateName": "group",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Disciplined",
+                "alternateName": "disciplined",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Historic",
+                "alternateName": "historic",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Inspiring",
+                "alternateName": "inspiring",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Social",
+                "alternateName": "social",
+                "value": true
+            }
+        ],
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Monday",
+                "opens": "08:30:00",
+                "closes": "20:30:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Tuesday",
+                "opens": "08:30:00",
+                "closes": "20:30:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Wednesday",
+                "opens": "08:30:00",
+                "closes": "20:30:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Thursday",
+                "opens": "08:30:00",
+                "closes": "20:30:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Friday",
+                "opens": "08:30:00",
+                "closes": "19:00:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Saturday",
+                "opens": "10:00:00",
+                "closes": "17:00:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Sunday",
+                "opens": "10:00:00",
+                "closes": "17:00:00"
+            }
+        ]
+    }
+}

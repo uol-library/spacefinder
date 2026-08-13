@@ -1,0 +1,188 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "CollegeOrUniversity",
+        "name": "Mechanical Engineering - Second floor seating (room 240)",
+        "description": "Comfortable small study area with couches and views from big windows.",
+        "alternateName": "mechanical-engineering-second-floor-seating-room-240",
+        "url": "https://students.leeds.ac.uk/info/10109/study_support/1419/where_to_study_on_campus",
+        "sameAs": "https://www.leeds.ac.uk/campusmap?location=17507",
+        "publicAccess": true,
+        "telephone": "0113 343 2186",
+        "image": {
+            "@type": "ImageObject",
+            "contentUrl": "",
+            "description": "Mechanical Engineering - Second floor seating (room 240)"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "University of Leeds",
+            "addressRegion": "Leeds, West Yorkshire",
+            "postalCode": "LS2 9JT",
+            "streetAddress": "Second floor, Electronic and Electrical Engineering"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 53.80975434335515,
+            "longitude": -1.5555411348813653
+        },
+        "amenityFeature": [
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Food &amp; drink allowed",
+                "alternateName": "food_drink",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Natural daylight",
+                "alternateName": "daylight",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Attractive views out of the window",
+                "alternateName": "views",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Large desks",
+                "alternateName": "large_desks",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Plug Sockets",
+                "alternateName": "sockets",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Phone signal",
+                "alternateName": "signal",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Printers and copiers",
+                "alternateName": "printers_copiers",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Toilets nearby",
+                "alternateName": "toilets",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Bike racks",
+                "alternateName": "bike_racks",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Gender neutral toilets",
+                "alternateName": "gender_neutral_toilets",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Wheelchair accessible",
+                "alternateName": "wheelchair_accessible",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Whispers",
+                "alternateName": "whispers",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "On a group project",
+                "alternateName": "group",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Relaxed",
+                "alternateName": "relaxed",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Modern",
+                "alternateName": "modern",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Inspiring",
+                "alternateName": "inspiring",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Cosy",
+                "alternateName": "cosy",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Social",
+                "alternateName": "social",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Friendly",
+                "alternateName": "friendly",
+                "value": true
+            }
+        ],
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Monday",
+                "opens": "08:00:00",
+                "closes": "18:00:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Tuesday",
+                "opens": "08:00:00",
+                "closes": "18:00:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Wednesday",
+                "opens": "08:00:00",
+                "closes": "18:00:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Thursday",
+                "opens": "08:00:00",
+                "closes": "18:00:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Friday",
+                "opens": "08:00:00",
+                "closes": "18:00:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Saturday"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Sunday"
+            }
+        ]
+    }
+}

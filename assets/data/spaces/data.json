@@ -1,0 +1,6003 @@
+[
+    {
+        "facilities": [
+            "food_drink",
+            "daylight",
+            "views",
+            "free_wifi",
+            "laptops_allowed",
+            "signal",
+            "outdoor_seating",
+            "toilets",
+            "refreshments",
+            "computers",
+            "sockets",
+            "wheelchair_accessible",
+            "bike_racks",
+            "gender_neutral_toilets"
+        ],
+        "atmosphere": [
+            "relaxed",
+            "social",
+            "friendly",
+            "modern"
+        ],
+        "access": "Anyone (public)",
+        "disabled_access": true,
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "8:30",
+                "to": "15:00"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "8:30",
+                "to": "15:00"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "8:30",
+                "to": "15:00"
+            },
+            "thursday": {
+                "open": true,
+                "from": "8:30",
+                "to": "15:00"
+            },
+            "friday": {
+                "open": true,
+                "from": "8:30",
+                "to": "15:00"
+            },
+            "saturday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            },
+            "sunday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            }
+        },
+        "slug": "baines-wing-cafe",
+        "floor": "Ground floor",
+        "restriction": "",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=18467",
+        "imagealt": "Interior photograph of the Baines Wing Café showing students seated at a round table in front of the serving area and chiller cabinets",
+        "url": "https://gfal.leeds.ac.uk/where-to-eat/cafes/baineswing/",
+        "campusmap_ref": "58",
+        "email_address": "gfal@leeds.ac.uk",
+        "work": [
+            "close",
+            "friends",
+            "group"
+        ],
+        "twitter_screen_name": "GreatFoodLeeds",
+        "space_type": "Café",
+        "building": "Baines Wing",
+        "address": "University of Leeds, LS2 9JT",
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.553855264,53.80745464]}",
+        "facebook_url": "https://www.facebook.com/greatfoodleeds",
+        "title": "Baines Wing Café",
+        "tags": [],
+        "what3words": "///toned.duty.fats.",
+        "noise": "Animated discussion",
+        "phone_number": "",
+        "restricted": false,
+        "id": 1,
+        "image": "/assets/photos/Baines-Wing-Cafe.jpg",
+        "description": "Situated between the School of Healthcare and the Great Hall, Baines Wing Café has a large seating area including its own secluded courtyard which is perfect to enjoy the sunny weather.\n\nMixture of group seating around tables, sofas and some high level desking with 6 workstations.",
+        "published": true,
+        "url_text": "Visit the Baines Wing Café web site",
+        "phone_text": "",
+        "lat": 53.80745464,
+        "lng": -1.553855264
+    },
+    {
+        "facilities": [
+            "food_drink",
+            "daylight",
+            "views",
+            "large_desks",
+            "free_wifi",
+            "laptops_allowed",
+            "sockets",
+            "signal",
+            "refreshments",
+            "break",
+            "bike_racks",
+            "gender_neutral_toilets",
+            "wheelchair_accessible"
+        ],
+        "atmosphere": [
+            "modern",
+            "cosy",
+            "social",
+            "friendly"
+        ],
+        "access": "Anyone (public)",
+        "disabled_access": true,
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "8:30",
+                "to": "17:00"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "8:30",
+                "to": "17:00"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "8:30",
+                "to": "17:00"
+            },
+            "thursday": {
+                "open": true,
+                "from": "8:30",
+                "to": "17:00"
+            },
+            "friday": {
+                "open": true,
+                "from": "8:30",
+                "to": "17:00"
+            },
+            "saturday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            },
+            "sunday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            }
+        },
+        "slug": "1915",
+        "floor": "Ground floor",
+        "restriction": "",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=18482",
+        "imagealt": "Interior photograph of the 1915 Café showing high stool seating, normal seating and part of the service counter",
+        "url": "https://gfal.leeds.ac.uk/where-to-eat/cafes/1915/",
+        "campusmap_ref": "53",
+        "work": [
+            "private",
+            "close",
+            "friends",
+            "group"
+        ],
+        "twitter_screen_name": "GreatFoodLeeds",
+        "space_type": "Café",
+        "building": "Sir William Henry Bragg Building",
+        "address": "University of Leeds, LS2 9JT",
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.5543264,53.8091049]}",
+        "facebook_url": "https://www.facebook.com/greatfoodleeds",
+        "title": "1915",
+        "tags": [],
+        "noise": "Background chatter",
+        "phone_number": "",
+        "restricted": false,
+        "id": 10,
+        "image": "/assets/photos/1915.jpg",
+        "description": "1915 is based in the Sir William Henry Bragg Building on Woodhouse Lane, its relaxed and informal menu has been carefully created to offer a mix of both classic and on-trend options.",
+        "published": true,
+        "url_text": "Visit the 1915 web site",
+        "phone_text": "",
+        "lat": 53.8091049,
+        "lng": -1.5543264
+    },
+    {
+        "facilities": [
+            "food_drink",
+            "daylight",
+            "free_wifi",
+            "laptops_allowed",
+            "signal",
+            "outdoor_seating",
+            "refreshments",
+            "break",
+            "bike_racks",
+            "gender_neutral_toilets",
+            "wheelchair_accessible"
+        ],
+        "atmosphere": [
+            "relaxed",
+            "social",
+            "friendly"
+        ],
+        "access": "Anyone (public)",
+        "disabled_access": true,
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "8:00",
+                "to": "15:00"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "8:00",
+                "to": "15:00"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "8:00",
+                "to": "15:00"
+            },
+            "thursday": {
+                "open": true,
+                "from": "8:00",
+                "to": "15:00"
+            },
+            "friday": {
+                "open": true,
+                "from": "8:00",
+                "to": "15:00"
+            },
+            "saturday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            },
+            "sunday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            }
+        },
+        "slug": "hugo-the-camionnette-cafe",
+        "floor": "",
+        "restriction": "",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=18475",
+        "imagealt": "Exterior photograph of Hugo, the Camionnette Café - a converted Citroën H Van - with Clothworker's Building Central in the backgournd",
+        "url": "https://gfal.leeds.ac.uk/where-to-eat/cafes/hugo/",
+        "campusmap_ref": "",
+        "work": [
+            "friends",
+            "group"
+        ],
+        "twitter_screen_name": "GreatFoodLeeds",
+        "space_type": "Café",
+        "building": "University precinct",
+        "address": "University of Leeds, LS2 9JT",
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.5551006,53.8069784]}",
+        "facebook_url": "https://www.facebook.com/greatfoodleeds",
+        "title": "Hugo, the Camionnette Café",
+        "tags": [],
+        "noise": "Animated discussion",
+        "phone_number": "",
+        "restricted": false,
+        "id": 11,
+        "image": "/assets/photos/Hugo-Camionette-Cafe1.jpg",
+        "description": "Hugo, the Camionnette Café, is one of the more unique members of the Great Food at Leeds team and sells a range of hot drinks, pastries and brownies.",
+        "published": true,
+        "url_text": "Visit the Hugo, the Camionnette Café web site",
+        "phone_text": "",
+        "lat": 53.8069784,
+        "lng": -1.5551006
+    },
+    {
+        "facilities": [
+            "food_drink",
+            "daylight",
+            "large_desks",
+            "free_wifi",
+            "laptops_allowed",
+            "signal",
+            "outdoor_seating",
+            "toilets",
+            "refreshments",
+            "break",
+            "bike_racks",
+            "wheelchair_accessible",
+            "gender_neutral_toilets"
+        ],
+        "atmosphere": [
+            "relaxed",
+            "social",
+            "friendly"
+        ],
+        "access": "Anyone (public)",
+        "disabled_access": true,
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "00:00",
+                "to": "24:00"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "00:00",
+                "to": "24:00"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "00:00",
+                "to": "24:00"
+            },
+            "thursday": {
+                "open": true,
+                "from": "00:00",
+                "to": "24:00"
+            },
+            "friday": {
+                "open": true,
+                "from": "00:00",
+                "to": "24:00"
+            },
+            "saturday": {
+                "open": true,
+                "from": "00:00",
+                "to": "24:00"
+            },
+            "sunday": {
+                "open": true,
+                "from": "00:00",
+                "to": "24:00"
+            }
+        },
+        "slug": "outside-the-edward-boyle-library-edit-room-cafe",
+        "floor": "Ground floor",
+        "restriction": "",
+        "campusmap_url": "",
+        "imagealt": "Outside the Edward Boyle Library Edit Room café",
+        "url": "",
+        "campusmap_ref": "",
+        "work": [
+            "friends",
+            "group"
+        ],
+        "twitter_screen_name": "",
+        "space_type": "Outdoor Seating Area",
+        "building": "Edward Boyle Library",
+        "address": "University of Leeds, LS2 9JT",
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.55431,53.80618]}",
+        "facebook_url": "",
+        "title": "Outside the Edward Boyle Library Edit Room café",
+        "tags": [],
+        "what3words": "///nest.snow.solar",
+        "noise": "Animated discussion",
+        "phone_number": "",
+        "restricted": "",
+        "id": 13,
+        "image": "",
+        "description": "Outdoor seating situated outside the Edward Boyle Library",
+        "published": true,
+        "url_text": "",
+        "phone_text": "",
+        "lat": 53.80618,
+        "lng": -1.55431
+    },
+    {
+        "id": 2,
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.5564749502369677,53.81052313551629]}",
+        "work": [
+            "close",
+            "friends",
+            "group"
+        ],
+        "atmosphere": [
+            "relaxed",
+            "modern",
+            "cosy",
+            "social",
+            "friendly"
+        ],
+        "facilities": [
+            "food_drink",
+            "views",
+            "large_desks",
+            "free_wifi",
+            "laptops_allowed",
+            "sockets",
+            "signal",
+            "toilets",
+            "refreshments",
+            "break",
+            "bike_racks",
+            "gender_neutral_toilets",
+            "wheelchair_accessible"
+        ],
+        "title": "Fuse Cafe in Chemical and Process Engineering",
+        "description": "Fuse at The School of Chemical and Process Engineering is a hidden gem located in the Engineering buildings. It is a quiet café with plenty of space, a perfect spot to refresh yourself.",
+        "access": "Anyone (public)",
+        "space_type": "Café",
+        "address": "University of Leeds, LS2 9JT",
+        "building": "Chemical and Process Engineering Building",
+        "floor": "Ground floor and mezzanine",
+        "restricted": false,
+        "restriction": "",
+        "disabled_access": true,
+        "url": "https://gfal.leeds.ac.uk/where-to-eat/cafes/fuse/",
+        "phone_number": "",
+        "twitter_screen_name": "GreatFoodLeeds",
+        "facebook_url": "https://www.facebook.com/greatfoodleeds",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=18474",
+        "campusmap_ref": "48",
+        "noise": "Background chatter",
+        "tags": [],
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "8:30",
+                "to": "15:00"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "8:30",
+                "to": "15:00"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "8:30",
+                "to": "15:00"
+            },
+            "thursday": {
+                "open": true,
+                "from": "8:30",
+                "to": "15:00"
+            },
+            "friday": {
+                "open": true,
+                "from": "8:30",
+                "to": "15:00"
+            },
+            "saturday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            },
+            "sunday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            }
+        },
+        "image": "/assets/photos/Fuse-Cafe.jpg",
+        "imagealt": "Interior photograph of the Fuse Cafe showing the serving area, chiller cabinets and part of the seating area",
+        "slug": "fuse-cafe-in-chemical-and-process-engineering",
+        "published": true,
+        "url_text": "Visit the Fuse Cafe in Chemical and Process Engineering web site",
+        "phone_text": "",
+        "lat": 53.81052313551629,
+        "lng": -1.5564749502369677
+    },
+    {
+        "facilities": [
+            "food_drink",
+            "daylight",
+            "views",
+            "free_wifi",
+            "laptops_allowed",
+            "sockets",
+            "signal",
+            "outdoor_seating",
+            "toilets",
+            "refreshments",
+            "break",
+            "bike_racks",
+            "wheelchair_accessible",
+            "gender_neutral_toilets"
+        ],
+        "atmosphere": [
+            "relaxed",
+            "modern",
+            "social",
+            "friendly"
+        ],
+        "access": "Anyone (public)",
+        "disabled_access": true,
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "8:30",
+                "to": "17:00"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "8:30",
+                "to": "17:00"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "8:30",
+                "to": "17:00"
+            },
+            "thursday": {
+                "open": true,
+                "from": "8:30",
+                "to": "17:00"
+            },
+            "friday": {
+                "open": true,
+                "from": "8:30",
+                "to": "17:00"
+            },
+            "saturday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            },
+            "sunday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            }
+        },
+        "slug": "edit-room-cafe-in-edward-boyle-library",
+        "floor": "Level 9 (ground floor)",
+        "restriction": "",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=17411",
+        "imagealt": "Interior photograph of the Edit Room Café showing the bright lighting, some of the serving area and students seated around a number of tables",
+        "url": "https://gfal.leeds.ac.uk/where-to-eat/cafes/the-edit-room/",
+        "campusmap_ref": "83",
+        "work": [
+            "close",
+            "friends",
+            "group"
+        ],
+        "twitter_screen_name": "GreatFoodLeeds",
+        "space_type": "Café",
+        "building": "Edward Boyle Library",
+        "address": "University of Leeds, LS2 9JT",
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.5546372444373286,53.80605751185165]}",
+        "facebook_url": "https://www.facebook.com/greatfoodleeds",
+        "title": "Edit Room Café in Edward Boyle Library",
+        "tags": [],
+        "noise": "Animated discussion",
+        "phone_number": "",
+        "restricted": "",
+        "id": 3,
+        "image": "/assets/photos/Edit-Room.jpg",
+        "description": "Situated on the ground floor of the Edward Boyle Library, the cafe provides an eclectic mix of grab and go food and drinks for everyone to enjoy at any time of the day.",
+        "published": true,
+        "url_text": "Visit the Edit Room Café in Edward Boyle Library web site",
+        "phone_text": "",
+        "lat": 53.80605751185165,
+        "lng": -1.5546372444373286
+    },
+    {
+        "facilities": [
+            "food_drink",
+            "daylight",
+            "views",
+            "free_wifi",
+            "laptops_allowed",
+            "signal",
+            "refreshments",
+            "break",
+            "large_desks",
+            "individual_study_space",
+            "sockets",
+            "toilets",
+            "wheelchair_accessible",
+            "bike_racks",
+            "gender_neutral_toilets",
+            "baby_changing",
+            "accessible_toilets"
+        ],
+        "atmosphere": [
+            "disciplined",
+            "historic",
+            "inspiring",
+            "social"
+        ],
+        "access": "Anyone (public)",
+        "disabled_access": true,
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "8:30",
+                "to": "20:30"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "8:30",
+                "to": "20:30"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "8:30",
+                "to": "20:30"
+            },
+            "thursday": {
+                "open": true,
+                "from": "8:30",
+                "to": "20:30"
+            },
+            "friday": {
+                "open": true,
+                "from": "8:30",
+                "to": "19:00"
+            },
+            "saturday": {
+                "open": true,
+                "from": "10:00",
+                "to": "17:00"
+            },
+            "sunday": {
+                "open": true,
+                "from": "10:00",
+                "to": "17:00"
+            }
+        },
+        "slug": "parkinson-building-parkinson-court-south",
+        "floor": "Ground floor",
+        "restriction": "Occasional restrictions during graduations in July and December.",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=17525",
+        "imagealt": "Parkinson Building - Parkinson Court South",
+        "url": "https://students.leeds.ac.uk/info/10109/study_support/1419/where_to_study_on_campus",
+        "campusmap_ref": "60",
+        "work": [
+            "close",
+            "friends",
+            "private",
+            "group"
+        ],
+        "twitter_screen_name": "",
+        "space_type": "General Seating Area",
+        "building": "Parkinson Building",
+        "address": "University of Leeds, LS2 9JT",
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.552668530103729,53.807639166530755]}",
+        "facebook_url": "",
+        "title": "Parkinson Building - Parkinson Court South",
+        "tags": [],
+        "what3words": "///trips.forces.riots.",
+        "noise": "Background chatter",
+        "phone_number": "",
+        "restricted": true,
+        "id": 30,
+        "image": "",
+        "description": "Historic atmosphere with tables and chairs. Occasionally busy but mostly silent.  The study area is to the left after entering the Parkinson Building",
+        "published": true,
+        "url_text": "",
+        "phone_text": "",
+        "lat": 53.807639166530755,
+        "lng": -1.552668530103729
+    },
+    {
+        "facilities": [
+            "food_drink",
+            "daylight",
+            "free_wifi",
+            "computers",
+            "laptops_allowed",
+            "signal",
+            "toilets",
+            "break",
+            "bike_racks",
+            "gender_neutral_toilets",
+            "wheelchair_accessible",
+            "blue_badge_parking",
+            "accessible_toilets"
+        ],
+        "atmosphere": [
+            "relaxed",
+            "historic",
+            "cosy",
+            "social",
+            "friendly"
+        ],
+        "access": "Anyone (public)",
+        "disabled_access": true,
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "9:00",
+                "to": "21:30"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "9:00",
+                "to": "21:30"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "9:00",
+                "to": "21:30"
+            },
+            "thursday": {
+                "open": true,
+                "from": "9:00",
+                "to": "21:30"
+            },
+            "friday": {
+                "open": true,
+                "from": "9:00",
+                "to": "17:00"
+            },
+            "saturday": {
+                "open": true,
+                "from": "12:00",
+                "to": "16:00"
+            },
+            "sunday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            }
+        },
+        "slug": "michael-sadler-building-behind-rupert-beckett-lecture-theatre",
+        "floor": "Ground floor",
+        "restriction": "",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=17512",
+        "published": true,
+        "imagealt": "Michael Sadler Building - Behind Rupert Beckett Lecture Theatre",
+        "url": "https://students.leeds.ac.uk/info/10109/study_support/1419/where_to_study_on_campus",
+        "campusmap_ref": "78",
+        "work": [
+            "private",
+            "group"
+        ],
+        "twitter_screen_name": "",
+        "space_type": "General Seating Area",
+        "building": "Michael Sadler Building",
+        "address": "University of Leeds, LS2 9JT",
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.5534262541025172,53.80692643282325]}",
+        "facebook_url": "",
+        "title": "Michael Sadler Building - Behind Rupert Beckett Lecture Theatre",
+        "tags": [],
+        "noise": "Whispers",
+        "phone_number": "0113 343 5555",
+        "restricted": false,
+        "id": 31,
+        "image": "",
+        "description": "Colourful study area with desks and access to clusters. Relaxed space for studying individually or with a group.",
+        "url_text": "",
+        "phone_text": "Contact the Estates Helpdesk",
+        "lat": 53.80692643282325,
+        "lng": -1.5534262541025172
+    },
+    {
+        "id": 32,
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.555811583,53.80672801]}",
+        "work": [
+            "close",
+            "friends",
+            "group"
+        ],
+        "atmosphere": [
+            "relaxed",
+            "modern",
+            "social",
+            "friendly"
+        ],
+        "facilities": [
+            "food_drink",
+            "daylight",
+            "free_wifi",
+            "laptops_allowed",
+            "sockets",
+            "signal",
+            "toilets",
+            "refreshments",
+            "break",
+            "bike_racks",
+            "gender_neutral_toilets",
+            "wheelchair_accessible",
+            "baby_changing"
+        ],
+        "title": "Leeds University Union - Foyer",
+        "description": "Busy study place for people that like working alongside others. Couches with big tables can be used for comfortable group working in a nice environment. Extra couches on the side for anybody wanting to read or take a break.",
+        "access": "Anyone (public)",
+        "space_type": "General Seating Area",
+        "address": "University of Leeds, LS2 9JT",
+        "building": "Leeds University Union",
+        "floor": "Ground floor",
+        "restricted": false,
+        "restriction": "",
+        "disabled_access": true,
+        "url": "https://www.luu.org.uk/",
+        "phone_number": "0113 380 1400",
+        "twitter_screen_name": "LeedsUniUnion",
+        "facebook_url": "https://www.facebook.com/leedsuniversityunion/",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=17489",
+        "campusmap_ref": "32",
+        "noise": "Animated discussion",
+        "tags": [],
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "8:30",
+                "to": "22:00"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "8:30",
+                "to": "22:00"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "8:30",
+                "to": "22:00"
+            },
+            "thursday": {
+                "open": true,
+                "from": "8:30",
+                "to": "22:00"
+            },
+            "friday": {
+                "open": true,
+                "from": "8:30",
+                "to": "22:00"
+            },
+            "saturday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            },
+            "sunday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            }
+        },
+        "image": "",
+        "imagealt": "Leeds University Union - Foyer",
+        "slug": "leeds-university-union-foyer",
+        "published": true,
+        "url_text": "Visit the Leeds University Union - Foyer web site",
+        "phone_text": "Contact Leeds University Union",
+        "lat": 53.80672801,
+        "lng": -1.555811583
+    },
+    {
+        "facilities": [
+            "food_drink",
+            "large_desks",
+            "free_wifi",
+            "laptops_allowed",
+            "signal",
+            "printers_copiers",
+            "toilets",
+            "refreshments",
+            "break",
+            "bike_racks",
+            "gender_neutral_toilets",
+            "wheelchair_accessible",
+            "accessible_toilets"
+        ],
+        "atmosphere": [
+            "relaxed",
+            "modern",
+            "inspiring",
+            "cosy",
+            "social",
+            "friendly"
+        ],
+        "access": "Anyone (public)",
+        "disabled_access": true,
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:00"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:00"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:00"
+            },
+            "thursday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:00"
+            },
+            "friday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:00"
+            },
+            "saturday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            },
+            "sunday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            }
+        },
+        "slug": "worsley-building-airport-lounge-seating-level-7",
+        "floor": "Level 7",
+        "restriction": "",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=17591",
+        "published": true,
+        "imagealt": "Worsley Building - Airport Lounge seating (level 7)",
+        "url": "https://students.leeds.ac.uk/info/10109/study_support/1419/where_to_study_on_campus",
+        "campusmap_ref": "95",
+        "work": [
+            "private",
+            "close",
+            "friends",
+            "group"
+        ],
+        "twitter_screen_name": "",
+        "space_type": "General Seating Area",
+        "building": "Worsley Building",
+        "address": "University of Leeds, LS2 9JT",
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.5552765134496822,53.80355304335263]}",
+        "facebook_url": "",
+        "title": "Worsley Building - Airport Lounge seating (level 7)",
+        "tags": [],
+        "noise": "Background chatter",
+        "phone_number": "",
+        "restricted": false,
+        "id": 33,
+        "image": "",
+        "description": "Modern colourful big area with comfortable couches and chairs. Vending, cash and cofee machines available as well as water fountain.",
+        "url_text": "",
+        "phone_text": "",
+        "lat": 53.80355304335263,
+        "lng": -1.5552765134496822
+    },
+    {
+        "id": 34,
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.5533030311932319,53.808536389199546]}",
+        "work": [
+            "private",
+            "friends",
+            "group"
+        ],
+        "atmosphere": [
+            "relaxed",
+            "modern",
+            "inspiring",
+            "cosy",
+            "social",
+            "friendly"
+        ],
+        "facilities": [
+            "food_drink",
+            "daylight",
+            "free_wifi",
+            "laptops_allowed",
+            "sockets",
+            "signal",
+            "toilets",
+            "bike_racks",
+            "gender_neutral_toilets",
+            "wheelchair_accessible"
+        ],
+        "title": "Chemistry - Chaston Chapman Lounge (room G20)",
+        "description": "Bright green modern lounge located in the Chemistry Building. The perfect place to study, take a break or explore the scientific magazines that are displayed on the shelves. The couches and the chairs are very comfortable, making the area very welcoming.",
+        "access": "Anyone (public)",
+        "space_type": "General Seating Area",
+        "address": "University of Leeds, LS2 9JT",
+        "building": "Chemistry Building",
+        "floor": "Ground floor",
+        "restricted": false,
+        "restriction": "",
+        "disabled_access": true,
+        "url": "https://students.leeds.ac.uk/info/10109/study_support/1419/where_to_study_on_campus",
+        "phone_number": "0113 343 2444",
+        "twitter_screen_name": "",
+        "facebook_url": "",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=17381",
+        "campusmap_ref": "55",
+        "noise": "Animated discussion",
+        "tags": [],
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "thursday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "friday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "saturday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            },
+            "sunday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            }
+        },
+        "image": "",
+        "imagealt": "Chemistry - Chaston Chapman Lounge (room G20)",
+        "slug": "chemistry-chaston-chapman-lounge-room-g20",
+        "published": true,
+        "url_text": "",
+        "phone_text": "Contact the School of Chemical and Process Engineering",
+        "lat": 53.808536389199546,
+        "lng": -1.5533030311932319
+    },
+    {
+        "id": 35,
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.554681504,53.8094698]}",
+        "work": [
+            "private",
+            "friends"
+        ],
+        "atmosphere": [
+            "relaxed",
+            "modern",
+            "cosy",
+            "social",
+            "friendly"
+        ],
+        "facilities": [
+            "food_drink",
+            "daylight",
+            "views",
+            "large_desks",
+            "free_wifi",
+            "laptops_allowed",
+            "signal",
+            "toilets",
+            "break",
+            "bike_racks",
+            "gender_neutral_toilets",
+            "wheelchair_accessible"
+        ],
+        "title": "Electronic and Electrical Engineering - Ground Floor Foyer",
+        "description": "Big bright foyer with couches and circular tables with chairs. A perfect place to relax, take a break or study alone or in a group.",
+        "access": "Anyone (public)",
+        "space_type": "General Seating Area",
+        "address": "University of Leeds, LS2 9JT",
+        "building": "Electronic and Electrical Engineering",
+        "floor": "Ground floor",
+        "restricted": false,
+        "restriction": "",
+        "disabled_access": true,
+        "url": "https://students.leeds.ac.uk/info/10109/study_support/1419/where_to_study_on_campus",
+        "phone_number": "0113 343 2000",
+        "twitter_screen_name": "",
+        "facebook_url": "",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=17412",
+        "campusmap_ref": "51",
+        "noise": "Animated discussion",
+        "tags": [],
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:00"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:00"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:00"
+            },
+            "thursday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:00"
+            },
+            "friday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:00"
+            },
+            "saturday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            },
+            "sunday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            }
+        },
+        "image": "",
+        "imagealt": "Electronic and Electrical Engineering - Ground Floor Foyer",
+        "slug": "electronic-and-electrical-engineering-ground-floor-foyer",
+        "published": true,
+        "url_text": "",
+        "phone_text": "Contact the School of Electronic and Electrical Engineering",
+        "lat": 53.8094698,
+        "lng": -1.554681504
+    },
+    {
+        "id": 36,
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.5555411348813653,53.80975434335515]}",
+        "work": [
+            "group"
+        ],
+        "atmosphere": [
+            "relaxed",
+            "modern",
+            "inspiring",
+            "cosy",
+            "social",
+            "friendly"
+        ],
+        "facilities": [
+            "food_drink",
+            "daylight",
+            "views",
+            "large_desks",
+            "free_wifi",
+            "laptops_allowed",
+            "sockets",
+            "signal",
+            "printers_copiers",
+            "toilets",
+            "bike_racks",
+            "gender_neutral_toilets",
+            "wheelchair_accessible"
+        ],
+        "title": "Mechanical Engineering - Second floor seating (room 240)",
+        "description": "Comfortable small study area with couches and views from big windows.",
+        "access": "Anyone (public)",
+        "space_type": "General Seating Area",
+        "address": "University of Leeds, LS2 9JT",
+        "building": "Electronic and Electrical Engineering",
+        "floor": "Second floor",
+        "restricted": false,
+        "restriction": "",
+        "disabled_access": true,
+        "url": "https://students.leeds.ac.uk/info/10109/study_support/1419/where_to_study_on_campus",
+        "phone_number": "0113 343 2186",
+        "twitter_screen_name": "",
+        "facebook_url": "",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=17507",
+        "campusmap_ref": "50",
+        "noise": "Whispers",
+        "tags": [],
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:00"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:00"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:00"
+            },
+            "thursday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:00"
+            },
+            "friday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:00"
+            },
+            "saturday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            },
+            "sunday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            }
+        },
+        "image": "",
+        "imagealt": "Mechanical Engineering - Second floor seating (room 240)",
+        "slug": "mechanical-engineering-second-floor-seating-room-240",
+        "published": true,
+        "url_text": "",
+        "phone_text": "Contact the School of Mechanical Engineering",
+        "lat": 53.80975434335515,
+        "lng": -1.5555411348813653
+    },
+    {
+        "id": 37,
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.553932038,53.80910265]}",
+        "work": [
+            "private",
+            "close",
+            "friends",
+            "group"
+        ],
+        "atmosphere": [
+            "relaxed",
+            "modern",
+            "inspiring",
+            "cosy",
+            "social",
+            "friendly"
+        ],
+        "facilities": [
+            "food_drink",
+            "daylight",
+            "free_wifi",
+            "laptops_allowed",
+            "sockets",
+            "signal",
+            "printers_copiers",
+            "outdoor_seating",
+            "toilets",
+            "refreshments",
+            "break",
+            "bike_racks",
+            "gender_neutral_toilets",
+            "wheelchair_accessible"
+        ],
+        "title": "Sir William Henry Bragg Building - Ground Floor Breakout Area (Room G.08)",
+        "description": "Modern big break out area with café shop nearby. Social, modern and very comfortable for people to study and relax.",
+        "access": "Anyone (public)",
+        "space_type": "General Seating Area",
+        "address": "University of Leeds, LS2 9JT",
+        "building": "Sir William Henry Bragg Building",
+        "floor": "Ground floor",
+        "restricted": false,
+        "restriction": "",
+        "disabled_access": true,
+        "url": "https://students.leeds.ac.uk/info/10109/study_support/1419/where_to_study_on_campus",
+        "phone_number": "",
+        "twitter_screen_name": "",
+        "facebook_url": "",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=17545",
+        "campusmap_ref": "53",
+        "noise": "Animated discussion",
+        "tags": [],
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "thursday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "friday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "saturday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            },
+            "sunday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            }
+        },
+        "image": "",
+        "imagealt": "Sir William Henry Bragg Building - Ground Floor Breakout Area (Room G.08)",
+        "slug": "sir-william-henry-bragg-building-ground-floor-breakout-area-room-g08",
+        "published": true,
+        "url_text": "",
+        "phone_text": "",
+        "lat": 53.80910265,
+        "lng": -1.553932038
+    },
+    {
+        "id": 38,
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.5615117639086078,53.808132561265076]}",
+        "work": [
+            "private",
+            "close"
+        ],
+        "atmosphere": [
+            "disciplined",
+            "modern",
+            "cosy"
+        ],
+        "facilities": [
+            "food_drink",
+            "large_desks",
+            "free_wifi",
+            "laptops_allowed",
+            "sockets",
+            "signal",
+            "toilets",
+            "break",
+            "bike_racks",
+            "gender_neutral_toilets",
+            "wheelchair_accessible",
+            "accessible_toilets"
+        ],
+        "title": "Maurice Keyworth - Study Centre (Rooms 238 & 307)",
+        "description": "silent study spaces with beautiful views. Outside seminar halls and occationally busy.",
+        "access": "Anyone (public)",
+        "space_type": "General Seating Area",
+        "address": "University of Leeds, LS2 9JT",
+        "building": "Maurice Keyworth Building",
+        "floor": "Second and Third floors",
+        "restricted": false,
+        "restriction": "",
+        "disabled_access": true,
+        "url": "https://students.leeds.ac.uk/info/10109/study_support/1419/where_to_study_on_campus",
+        "phone_number": "",
+        "twitter_screen_name": "",
+        "facebook_url": "",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=17363",
+        "campusmap_ref": "19",
+        "noise": "Strictly silent",
+        "tags": [],
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "8:00",
+                "to": "21:00"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "8:00",
+                "to": "21:00"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "8:00",
+                "to": "21:00"
+            },
+            "thursday": {
+                "open": true,
+                "from": "8:00",
+                "to": "21:00"
+            },
+            "friday": {
+                "open": true,
+                "from": "8:00",
+                "to": "21:00"
+            },
+            "saturday": {
+                "open": true,
+                "from": "9:00",
+                "to": "12:00"
+            },
+            "sunday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            }
+        },
+        "image": "",
+        "imagealt": "Maurice Keyworth - Study Centre (Rooms 238 & 307)",
+        "slug": "maurice-keyworth-study-centre-rooms-238-307",
+        "published": true,
+        "url_text": "",
+        "phone_text": "",
+        "lat": 53.808132561265076,
+        "lng": -1.5615117639086078
+    },
+    {
+        "id": 39,
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.56233253578952,53.808097710898366]}",
+        "work": [
+            "private",
+            "close",
+            "friends"
+        ],
+        "atmosphere": [
+            "relaxed",
+            "modern",
+            "cosy",
+            "social",
+            "friendly"
+        ],
+        "facilities": [
+            "food_drink",
+            "daylight",
+            "views",
+            "free_wifi",
+            "laptops_allowed",
+            "sockets",
+            "signal",
+            "toilets",
+            "refreshments",
+            "break",
+            "bike_racks",
+            "gender_neutral_toilets",
+            "wheelchair_accessible",
+            "accessible_toilets"
+        ],
+        "title": "Liberty Building - Ground floor Common Area (G01)",
+        "description": "Common area near the entrance of the Liberty building. Quiet space with different kinds of tables (and table football).",
+        "access": "Anyone (public)",
+        "space_type": "General Seating Area",
+        "address": "University of Leeds, LS2 9JT",
+        "building": "Liberty Building",
+        "floor": "Ground floor",
+        "restricted": false,
+        "restriction": "",
+        "disabled_access": true,
+        "url": "https://students.leeds.ac.uk/info/10109/study_support/1419/where_to_study_on_campus",
+        "phone_number": "",
+        "twitter_screen_name": "",
+        "facebook_url": "",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=17491",
+        "campusmap_ref": "16",
+        "noise": "Whispers",
+        "tags": [],
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "thursday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "friday": {
+                "open": true,
+                "from": "9:00",
+                "to": "17:00"
+            },
+            "saturday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            },
+            "sunday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            }
+        },
+        "image": "",
+        "imagealt": "Liberty Building - Ground floor Common Area (G01)",
+        "slug": "liberty-building-ground-floor-common-area-g01",
+        "published": true,
+        "url_text": "",
+        "phone_text": "",
+        "lat": 53.808097710898366,
+        "lng": -1.56233253578952
+    },
+    {
+        "id": 4,
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.559424814,53.80655803]}",
+        "work": [
+            "private",
+            "close",
+            "friends",
+            "group"
+        ],
+        "atmosphere": [
+            "relaxed",
+            "modern",
+            "cosy",
+            "social",
+            "friendly"
+        ],
+        "facilities": [
+            "food_drink",
+            "daylight",
+            "views",
+            "free_wifi",
+            "laptops_allowed",
+            "sockets",
+            "signal",
+            "toilets",
+            "refreshments",
+            "break",
+            "bike_racks",
+            "gender_neutral_toilets",
+            "wheelchair_accessible",
+            "blue_badge_parking"
+        ],
+        "title": "Esther Simpson Café",
+        "description": "Located in the new Esther Simpson building on the edge of Woodhouse Moor, the café is modern and relaxed, serving speciality coffee from Darkwoods.",
+        "access": "Anyone (public)",
+        "space_type": "Café",
+        "address": "University of Leeds, LS2 9JT",
+        "building": "Esther Simpson Building",
+        "floor": "Ground floor",
+        "restricted": false,
+        "restriction": "",
+        "disabled_access": true,
+        "url": "https://gfal.leeds.ac.uk/where-to-eat/cafes/esther-simpson-cafe",
+        "phone_number": "",
+        "twitter_screen_name": "GreatFoodLeeds",
+        "facebook_url": "https://www.facebook.com/greatfoodleeds",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=18484",
+        "campusmap_ref": "12",
+        "noise": "Whispers",
+        "tags": [],
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "8:30",
+                "to": "15:00"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "8:30",
+                "to": "15:00"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "8:30",
+                "to": "15:00"
+            },
+            "thursday": {
+                "open": true,
+                "from": "8:30",
+                "to": "15:00"
+            },
+            "friday": {
+                "open": true,
+                "from": "8:30",
+                "to": "15:00"
+            },
+            "saturday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            },
+            "sunday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            }
+        },
+        "image": "/assets/photos/Esther-Simpson-Cafe.jpg",
+        "imagealt": "Interior photogra[ph of the Esther Simpson Café showing the service area, including a cake display cabinet, fruit bowls and drink making equipment",
+        "slug": "esther-simpson-cafe",
+        "published": true,
+        "url_text": "Visit the Esther Simpson Café web site",
+        "phone_text": "",
+        "lat": 53.80655803,
+        "lng": -1.559424814
+    },
+    {
+        "id": 40,
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.562380188,53.80838424]}",
+        "work": [
+            "private",
+            "close"
+        ],
+        "atmosphere": [
+            "relaxed",
+            "modern",
+            "cosy",
+            "social",
+            "friendly"
+        ],
+        "facilities": [
+            "food_drink",
+            "daylight",
+            "views",
+            "free_wifi",
+            "laptops_allowed",
+            "sockets",
+            "signal",
+            "toilets",
+            "bike_racks",
+            "gender_neutral_toilets",
+            "wheelchair_accessible",
+            "accessible_toilets"
+        ],
+        "title": "Liberty Building - First floor Group workspace (1.22)",
+        "description": "Casual seating area for groups or individuals.",
+        "access": "Anyone (public)",
+        "space_type": "General Seating Area",
+        "address": "University of Leeds, LS2 9JT",
+        "building": "Liberty Building",
+        "floor": "First floor",
+        "restricted": false,
+        "restriction": "",
+        "disabled_access": true,
+        "url": "https://students.leeds.ac.uk/info/10109/study_support/1419/where_to_study_on_campus",
+        "phone_number": "",
+        "twitter_screen_name": "",
+        "facebook_url": "",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=17491",
+        "campusmap_ref": "16",
+        "noise": "Whispers",
+        "tags": [],
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "thursday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "friday": {
+                "open": true,
+                "from": "9:00",
+                "to": "17:00"
+            },
+            "saturday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            },
+            "sunday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            }
+        },
+        "image": "",
+        "imagealt": "Liberty Building - First floor Group workspace (1.22)",
+        "slug": "liberty-building-first-floor-group-workspace-122",
+        "published": true,
+        "url_text": "",
+        "phone_text": "",
+        "lat": 53.80838424,
+        "lng": -1.562380188
+    },
+    {
+        "id": 41,
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.56084648,53.80699746]}",
+        "work": [
+            "close",
+            "friends",
+            "group"
+        ],
+        "atmosphere": [
+            "relaxed",
+            "modern",
+            "social"
+        ],
+        "facilities": [
+            "food_drink",
+            "daylight",
+            "free_wifi",
+            "laptops_allowed",
+            "sockets",
+            "signal",
+            "toilets",
+            "refreshments",
+            "break",
+            "bike_racks",
+            "gender_neutral_toilets",
+            "wheelchair_accessible"
+        ],
+        "title": "Charles Thackrah - Atrium (Ground Floor)",
+        "description": "Modern seating area with small tables and wall-attached tables. Occasionally busy. Perfect place to take a break or prepare before class.",
+        "access": "Anyone (public)",
+        "space_type": "General Seating Area",
+        "address": "University of Leeds, LS2 9JT",
+        "building": "Charles Thackrah Building",
+        "floor": "Ground floor",
+        "restricted": false,
+        "restriction": "",
+        "disabled_access": true,
+        "url": "https://students.leeds.ac.uk/info/10109/study_support/1419/where_to_study_on_campus",
+        "phone_number": "",
+        "twitter_screen_name": "",
+        "facebook_url": "",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=17379",
+        "campusmap_ref": "15",
+        "noise": "Background chatter",
+        "tags": [],
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "thursday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "friday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "saturday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            },
+            "sunday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            }
+        },
+        "image": "/assets/photos/Charles-Thackrah.jpg",
+        "imagealt": "Interior photograph of five students in discussion in the Atrium of the Charles Thackrah building on the Ground Floor",
+        "slug": "charles-thackrah-atrium-ground-floor",
+        "published": true,
+        "url_text": "",
+        "phone_text": "",
+        "lat": 53.80699746,
+        "lng": -1.56084648
+    },
+    {
+        "facilities": [
+            "daylight",
+            "large_desks",
+            "free_wifi",
+            "computers",
+            "laptops_allowed",
+            "sockets",
+            "signal",
+            "printers_copiers",
+            "outdoor_seating",
+            "toilets",
+            "refreshments",
+            "break",
+            "bike_racks",
+            "gender_neutral_toilets",
+            "wheelchair_accessible"
+        ],
+        "atmosphere": [
+            "relaxed",
+            "modern",
+            "inspiring",
+            "social",
+            "friendly"
+        ],
+        "access": "University Staff and Students",
+        "disabled_access": true,
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:00"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:00"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:00"
+            },
+            "thursday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:00"
+            },
+            "friday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:00"
+            },
+            "saturday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            },
+            "sunday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            }
+        },
+        "slug": "chemical-and-process-engineering-g06",
+        "floor": "Ground floor",
+        "restriction": "",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=17380",
+        "published": true,
+        "imagealt": "Chemical and Process Engineering - G06",
+        "url": "https://mytimetable.leeds.ac.uk/link?timetable.id=202223!location!6856E1BEE4EE6ABF22261FF5840C4D8D",
+        "campusmap_ref": "48",
+        "work": [
+            "private",
+            "close",
+            "friends",
+            "group"
+        ],
+        "twitter_screen_name": "",
+        "space_type": "IT Cluster",
+        "building": "Chemical and Process Engineering",
+        "address": "University of Leeds, LS2 9JT",
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.55714428,53.81015521]}",
+        "facebook_url": "",
+        "title": "Chemical and Process Engineering - G06",
+        "tags": [],
+        "noise": "Animated discussion",
+        "phone_number": "0113 343 2444",
+        "restricted": true,
+        "id": 42,
+        "image": "",
+        "description": "24 hour cluster with rows of desks. Perfect for day or night social studying with access to water fountain. 83 seat capacity",
+        "url_text": "View timetable for Chemical and Process Engineering - G06",
+        "phone_text": "Contact the School of Chemical and Process Engineering",
+        "lat": 53.81015521,
+        "lng": -1.55714428
+    },
+    {
+        "id": 43,
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.5536192337568269,53.8086589285449]}",
+        "work": [
+            "private",
+            "close",
+            "group"
+        ],
+        "atmosphere": [
+            "disciplined",
+            "inspiring"
+        ],
+        "facilities": [
+            "daylight",
+            "free_wifi",
+            "computers",
+            "laptops_allowed",
+            "whiteboards",
+            "projector",
+            "toilets",
+            "bike_racks",
+            "gender_neutral_toilets",
+            "wheelchair_accessible"
+        ],
+        "title": "Chemistry and Chemistry West Block - 1.44",
+        "description": "Private study space for focused study. 23 seat capacity",
+        "access": "University Staff and Students",
+        "space_type": "IT Cluster",
+        "address": "University of Leeds, LS2 9JT",
+        "building": "Chemistry building",
+        "floor": "First Floor",
+        "restricted": true,
+        "restriction": "",
+        "disabled_access": true,
+        "url": "",
+        "phone_number": "0113 343 6543",
+        "twitter_screen_name": "",
+        "facebook_url": "",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=17382",
+        "campusmap_ref": "55",
+        "noise": "Strictly silent",
+        "tags": [],
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "thursday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "friday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "saturday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            },
+            "sunday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            }
+        },
+        "image": "",
+        "imagealt": "Chemistry and Chemistry West Block - 1.44",
+        "slug": "chemistry-and-chemistry-west-block-144",
+        "published": true,
+        "url_text": "",
+        "phone_text": "Contact the School of Chemistry",
+        "lat": 53.8086589285449,
+        "lng": -1.5536192337568269
+    },
+    {
+        "id": 44,
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.5529769303236765,53.8086589285449]}",
+        "work": [
+            "private",
+            "close",
+            "friends"
+        ],
+        "atmosphere": [
+            "disciplined",
+            "modern",
+            "inspiring",
+            "social",
+            "friendly"
+        ],
+        "facilities": [
+            "daylight",
+            "large_desks",
+            "free_wifi",
+            "computers",
+            "laptops_allowed",
+            "sockets",
+            "printers_copiers",
+            "toilets",
+            "bike_racks",
+            "gender_neutral_toilets",
+            "wheelchair_accessible"
+        ],
+        "title": "Chemistry and Chemistry West Block - 1.44A",
+        "description": "11 seat capacity.",
+        "access": "University Staff and Students",
+        "space_type": "IT Cluster",
+        "address": "University of Leeds, LS2 9JT",
+        "building": "Chemistry building",
+        "floor": "First Floor",
+        "restricted": true,
+        "restriction": "",
+        "disabled_access": true,
+        "url": "",
+        "phone_number": "",
+        "twitter_screen_name": "",
+        "facebook_url": "",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=17382",
+        "campusmap_ref": "55",
+        "tags": [],
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "thursday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "friday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "saturday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            },
+            "sunday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            }
+        },
+        "image": "",
+        "imagealt": "Chemistry and Chemistry West Block - 1.44A",
+        "slug": "chemistry-and-chemistry-west-block-144a",
+        "published": true,
+        "url_text": "",
+        "phone_text": "",
+        "lat": 53.8086589285449,
+        "lng": -1.5529769303236765
+    },
+    {
+        "id": 45,
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.5536192337568269,53.808402196215155]}",
+        "work": [
+            "private",
+            "close",
+            "friends"
+        ],
+        "atmosphere": [
+            "disciplined",
+            "modern",
+            "inspiring",
+            "social",
+            "friendly"
+        ],
+        "facilities": [
+            "daylight",
+            "large_desks",
+            "free_wifi",
+            "computers",
+            "laptops_allowed",
+            "sockets",
+            "printers_copiers",
+            "toilets",
+            "bike_racks",
+            "gender_neutral_toilets",
+            "wheelchair_accessible"
+        ],
+        "title": "Chemistry and Chemistry West Block - 1.46 (Ingold)",
+        "description": "Bright large and social cluster room with variety of desks. Comfortable chairs perfect for long hours of individual or group work. 71 seat capacity.",
+        "access": "University Staff and Students",
+        "space_type": "IT Cluster",
+        "address": "University of Leeds, LS2 9JT",
+        "building": "Chemistry building",
+        "floor": "First Floor",
+        "restricted": true,
+        "restriction": "",
+        "disabled_access": true,
+        "url": "",
+        "phone_number": "0113 343 6543",
+        "twitter_screen_name": "",
+        "facebook_url": "",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=17382",
+        "campusmap_ref": "55",
+        "noise": "Whispers",
+        "tags": [],
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "thursday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "friday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "saturday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            },
+            "sunday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            }
+        },
+        "image": "",
+        "imagealt": "Chemistry and Chemistry West Block - 1.46 (Ingold)",
+        "slug": "chemistry-and-chemistry-west-block-146-ingold",
+        "published": true,
+        "url_text": "",
+        "phone_text": "Contact the School of Chemistry",
+        "lat": 53.808402196215155,
+        "lng": -1.5536192337568269
+    },
+    {
+        "facilities": [
+            "daylight",
+            "large_desks",
+            "free_wifi",
+            "computers",
+            "laptops_allowed",
+            "sockets",
+            "printers_copiers",
+            "whiteboards",
+            "projector",
+            "toilets",
+            "bike_racks",
+            "gender_neutral_toilets",
+            "wheelchair_accessible"
+        ],
+        "atmosphere": [
+            "disciplined",
+            "relaxed",
+            "cosy",
+            "friendly"
+        ],
+        "access": "University Staff and Students",
+        "disabled_access": true,
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "thursday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "friday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "saturday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            },
+            "sunday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            }
+        },
+        "slug": "chemistry-and-chemistry-west-block-140-cohen",
+        "floor": "First Floor",
+        "restriction": "",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=17382",
+        "published": true,
+        "imagealt": "Chemistry and Chemistry West Block - 140 (Cohen)",
+        "url": "https://mytimetable.leeds.ac.uk/link?timetable.id=202223!location!6856E1BEE4EE6ABF22261FF5840C4E61",
+        "campusmap_ref": "55",
+        "work": [
+            "private"
+        ],
+        "twitter_screen_name": "",
+        "space_type": "IT Cluster",
+        "building": "Chemistry building",
+        "address": "University of Leeds, LS2 9JT",
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.5529769303236765,53.808402196215155]}",
+        "facebook_url": "",
+        "title": "Chemistry and Chemistry West Block - 140 (Cohen)",
+        "tags": [],
+        "noise": "Strictly silent",
+        "phone_number": "0113 343 6543",
+        "restricted": true,
+        "id": 46,
+        "image": "",
+        "description": "Large room with lines of computer desks. Silent and busy study space. 96 seat capacity.",
+        "url_text": "View timetable for Chemistry and Chemistry West Block - 140 (Cohen)",
+        "phone_text": "Contact the School of Chemistry",
+        "lat": 53.808402196215155,
+        "lng": -1.5529769303236765
+    },
+    {
+        "facilities": [
+            "daylight",
+            "large_desks",
+            "free_wifi",
+            "computers",
+            "laptops_allowed",
+            "sockets",
+            "signal",
+            "whiteboards",
+            "projector",
+            "toilets",
+            "bike_racks",
+            "gender_neutral_toilets",
+            "wheelchair_accessible"
+        ],
+        "atmosphere": [
+            "disciplined",
+            "modern"
+        ],
+        "access": "University Staff and Students",
+        "disabled_access": true,
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "thursday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "friday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "saturday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            },
+            "sunday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            }
+        },
+        "slug": "clothworkers-building-link-140-richard-hughes",
+        "floor": "First Floor",
+        "restriction": "",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=17389",
+        "published": true,
+        "imagealt": "Clothworkers' Building Link - 140 (Richard Hughes)",
+        "url": "https://mytimetable.leeds.ac.uk/link?timetable.id=202223!location!6856E1BEE4EE6ABF22261FF5840C4E60",
+        "campusmap_ref": "34",
+        "work": [
+            "private",
+            "close"
+        ],
+        "twitter_screen_name": "",
+        "space_type": "IT Cluster",
+        "building": "Clothworkers' Building Central and Link",
+        "address": "University of Leeds, LS2 9JT",
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.5565787554980246,53.80764075812936]}",
+        "facebook_url": "",
+        "title": "Clothworkers' Building Link - 140 (Richard Hughes)",
+        "tags": [],
+        "noise": "Strictly silent",
+        "phone_number": "",
+        "restricted": true,
+        "id": 49,
+        "image": "",
+        "description": "Large area with no drinks or food allowed. 42 seat capacity.",
+        "url_text": "View timetable for Clothworkers' Building Link - 140 (Richard Hughes)",
+        "phone_text": "",
+        "lat": 53.80764075812936,
+        "lng": -1.5565787554980246
+    },
+    {
+        "facilities": [
+            "daylight",
+            "large_desks",
+            "free_wifi",
+            "computers",
+            "laptops_allowed",
+            "sockets",
+            "signal",
+            "whiteboards",
+            "projector",
+            "toilets",
+            "bike_racks",
+            "gender_neutral_toilets",
+            "wheelchair_accessible"
+        ],
+        "atmosphere": [
+            "disciplined",
+            "modern"
+        ],
+        "access": "University Staff and Students",
+        "disabled_access": true,
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "thursday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "friday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "saturday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            },
+            "sunday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            }
+        },
+        "slug": "clothworkers-building-link-g34",
+        "floor": "Ground floor",
+        "restriction": "",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=17389",
+        "published": true,
+        "imagealt": "Clothworkers' Building Link - G.34",
+        "url": "https://mytimetable.leeds.ac.uk/link?timetable.id=202223!location!6856E1BEE4EE6ABF22261FF5840C4F6C",
+        "campusmap_ref": "34",
+        "work": [
+            "private",
+            "close"
+        ],
+        "twitter_screen_name": "",
+        "space_type": "IT Cluster",
+        "building": "Clothworkers' Building Central and Link",
+        "address": "University of Leeds, LS2 9JT",
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.5566380459933304,53.80748904996728]}",
+        "facebook_url": "",
+        "title": "Clothworkers' Building Link - G.34",
+        "tags": [],
+        "noise": "Strictly silent",
+        "phone_number": "",
+        "restricted": true,
+        "id": 50,
+        "image": "",
+        "description": "Cluster room with a variety of desks for individual or group study. 12 seat capacity.",
+        "url_text": "View timetable for Clothworkers' Building Link - G.34",
+        "phone_text": "",
+        "lat": 53.80748904996728,
+        "lng": -1.5566380459933304
+    },
+    {
+        "facilities": [
+            "daylight",
+            "large_desks",
+            "free_wifi",
+            "computers",
+            "laptops_allowed",
+            "sockets",
+            "signal",
+            "whiteboards",
+            "projector",
+            "toilets",
+            "bike_racks",
+            "gender_neutral_toilets",
+            "wheelchair_accessible",
+            "blue_badge_parking"
+        ],
+        "atmosphere": [
+            "disciplined",
+            "modern"
+        ],
+        "access": "University Staff and Students",
+        "disabled_access": true,
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "thursday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "friday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "saturday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            },
+            "sunday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            }
+        },
+        "slug": "esther-simpson-building-109",
+        "floor": "First Floor",
+        "restriction": "",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=17420",
+        "published": true,
+        "imagealt": "Esther Simpson Building - 109",
+        "url": "https://mytimetable.leeds.ac.uk/link?timetable.id=202223!location!6856E1BEE4EE6ABF22261FF5840C4D26",
+        "campusmap_ref": "12",
+        "work": [
+            "private",
+            "close"
+        ],
+        "twitter_screen_name": "",
+        "space_type": "IT Cluster",
+        "building": "Esther Simpson Building",
+        "address": "University of Leeds, LS2 9JT",
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.559575562464403,53.80639358717509]}",
+        "facebook_url": "",
+        "title": "Esther Simpson Building - 109",
+        "tags": [],
+        "noise": "Strictly silent",
+        "phone_number": "",
+        "restricted": true,
+        "id": 53,
+        "image": "",
+        "description": "Cluster room surrounded by big windows with high views of the University campus. Perfect for focused study with access to computers. 76 seat capacity.",
+        "url_text": "View timetable for Esther Simpson Building - 109",
+        "phone_text": "",
+        "lat": 53.80639358717509,
+        "lng": -1.559575562464403
+    },
+    {
+        "id": 54,
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.5572457236710147,53.807836240010325]}",
+        "work": [
+            "private",
+            "close"
+        ],
+        "atmosphere": [
+            "disciplined",
+            "historic",
+            "social"
+        ],
+        "facilities": [
+            "large_desks",
+            "free_wifi",
+            "computers",
+            "laptops_allowed",
+            "sockets",
+            "signal",
+            "printers_copiers",
+            "whiteboards",
+            "projector",
+            "toilets",
+            "break",
+            "bike_racks",
+            "gender_neutral_toilets",
+            "wheelchair_accessible"
+        ],
+        "title": "Fine Art, History of Art and Cultural Studies - B16 (West Teaching Labs)",
+        "description": "Traditional cluster with rows of desks. Relaxed environment for 24 hours study. 33 seat capacity",
+        "access": "University Staff and Students",
+        "space_type": "IT Cluster",
+        "address": "University of Leeds, LS2 9JT",
+        "building": "Fine Art Building",
+        "floor": "Basement",
+        "restricted": true,
+        "restriction": "",
+        "disabled_access": true,
+        "url": "https://mytimetable.leeds.ac.uk/link?timetable.id=202223!location!6856E1BEE4EE6ABF22261FF5840C4F6E",
+        "phone_number": "0113 343 5260",
+        "twitter_screen_name": "",
+        "facebook_url": "",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=17451",
+        "campusmap_ref": "38",
+        "noise": "Whispers",
+        "tags": [],
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "thursday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "friday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "saturday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            },
+            "sunday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            }
+        },
+        "image": "",
+        "imagealt": "Fine Art, History of Art and Cultural Studies - B16 (West Teaching Labs)",
+        "slug": "fine-art-history-of-art-and-cultural-studies-b16-west-teaching-labs",
+        "published": true,
+        "url_text": "View timetable for Fine Art, History of Art and Cultural Studies - B16 (West Teaching Labs)",
+        "phone_text": "Contact the School of Fine Art, History of Art and Cultural Studies",
+        "lat": 53.807836240010325,
+        "lng": -1.5572457236710147
+    },
+    {
+        "id": 55,
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.5572803112845135,53.80776913654024]}",
+        "work": [
+            "private",
+            "close"
+        ],
+        "atmosphere": [
+            "disciplined",
+            "historic",
+            "inspiring",
+            "social",
+            "friendly"
+        ],
+        "facilities": [
+            "daylight",
+            "views",
+            "large_desks",
+            "free_wifi",
+            "computers",
+            "laptops_allowed",
+            "sockets",
+            "signal",
+            "printers_copiers",
+            "projector",
+            "toilets",
+            "break",
+            "bike_racks",
+            "gender_neutral_toilets",
+            "wheelchair_accessible"
+        ],
+        "title": "Fine Art, History of Art and Cultural Studies - G29 (West Teaching Labs)",
+        "description": "Inspiring cluster room surrounded by big windows with high views of the University campus. 31 seat capacity.",
+        "access": "University Staff and Students",
+        "space_type": "IT Cluster",
+        "address": "University of Leeds, LS2 9JT",
+        "building": "Fine Art Building",
+        "floor": "Ground floor",
+        "restricted": true,
+        "restriction": "",
+        "disabled_access": true,
+        "url": "https://mytimetable.leeds.ac.uk/link?timetable.id=202223!location!6856E1BEE4EE6ABF22261FF5840C4F6F",
+        "phone_number": "0113 343 5260",
+        "twitter_screen_name": "",
+        "facebook_url": "",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=17451",
+        "campusmap_ref": "38",
+        "noise": "Strictly silent",
+        "tags": [],
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "thursday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "friday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "saturday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            },
+            "sunday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            }
+        },
+        "image": "",
+        "imagealt": "Fine Art, History of Art and Cultural Studies - G29 (West Teaching Labs)",
+        "slug": "fine-art-history-of-art-and-cultural-studies-g29-west-teaching-labs",
+        "published": true,
+        "url_text": "View timetable for Fine Art, History of Art and Cultural Studies - G29 (West Teaching Labs)",
+        "phone_text": "Contact the School of Fine Art, History of Art and Cultural Studies",
+        "lat": 53.80776913654024,
+        "lng": -1.5572803112845135
+    },
+    {
+        "facilities": [
+            "daylight",
+            "views",
+            "large_desks",
+            "free_wifi",
+            "computers",
+            "laptops_allowed",
+            "sockets",
+            "signal",
+            "projector",
+            "toilets",
+            "refreshments",
+            "break",
+            "bike_racks",
+            "gender_neutral_toilets",
+            "wheelchair_accessible",
+            "blue_badge_parking",
+            "accessible_toilets"
+        ],
+        "atmosphere": [
+            "relaxed",
+            "modern",
+            "inspiring",
+            "cosy",
+            "social",
+            "friendly"
+        ],
+        "access": "University Staff and Students",
+        "disabled_access": true,
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "thursday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "friday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "saturday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            },
+            "sunday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            }
+        },
+        "slug": "irene-manton-building-790",
+        "floor": "Level 7",
+        "restriction": "",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=17462",
+        "published": true,
+        "imagealt": "Irene Manton Building - 7.90",
+        "url": "https://mytimetable.leeds.ac.uk/link?timetable.id=202223!location!6856E1BEE4EE6ABF22261FF5840C4F62",
+        "campusmap_ref": "91",
+        "work": [
+            "private",
+            "close",
+            "friends"
+        ],
+        "twitter_screen_name": "",
+        "space_type": "IT Cluster",
+        "building": "Irene Manton Building",
+        "address": "University of Leeds, LS2 9JT",
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.5548974249272625,53.80446980623904]}",
+        "facebook_url": "",
+        "title": "Irene Manton Building - 7.90",
+        "tags": [],
+        "noise": "Whispers",
+        "phone_number": "",
+        "restricted": true,
+        "id": 56,
+        "image": "",
+        "description": "Rows of desks with a full left side of windows that are facing a beautiful side of campus allowing plenty of natural light into the study area. 41 seat capacity.",
+        "url_text": "View timetable for Irene Manton Building - 7.90",
+        "phone_text": "",
+        "lat": 53.80446980623904,
+        "lng": -1.5548974249272625
+    },
+    {
+        "id": 57,
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.5548974249272625,53.80431536943481]}",
+        "work": [
+            "private",
+            "close"
+        ],
+        "atmosphere": [
+            "disciplined",
+            "modern",
+            "inspiring",
+            "social",
+            "friendly"
+        ],
+        "facilities": [
+            "daylight",
+            "views",
+            "large_desks",
+            "free_wifi",
+            "computers",
+            "laptops_allowed",
+            "sockets",
+            "signal",
+            "projector",
+            "toilets",
+            "refreshments",
+            "break",
+            "bike_racks",
+            "gender_neutral_toilets",
+            "wheelchair_accessible",
+            "blue_badge_parking",
+            "accessible_toilets"
+        ],
+        "title": "Irene Manton Building - 7.96",
+        "description": "Modern large IT cluster with plenty of large windows facing a beautiful side of the University campus. 40 seat capacity.",
+        "access": "University Staff and Students",
+        "space_type": "IT Cluster",
+        "address": "University of Leeds, LS2 9JT",
+        "building": "Irene Manton Building",
+        "floor": "Level 7",
+        "restricted": true,
+        "restriction": "",
+        "disabled_access": true,
+        "url": "https://mytimetable.leeds.ac.uk/link?timetable.id=202223!location!6856E1BEE4EE6ABF22261FF5840C4F61",
+        "phone_number": "",
+        "twitter_screen_name": "",
+        "facebook_url": "",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=17462",
+        "campusmap_ref": "91",
+        "noise": "Strictly silent",
+        "tags": [],
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "thursday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "friday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "saturday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            },
+            "sunday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            }
+        },
+        "image": "",
+        "imagealt": "Irene Manton Building - 7.96",
+        "slug": "irene-manton-building-796",
+        "published": true,
+        "url_text": "View timetable for Irene Manton Building - 7.96",
+        "phone_text": "",
+        "lat": 53.80431536943481,
+        "lng": -1.5548974249272625
+    },
+    {
+        "facilities": [
+            "food_drink",
+            "daylight",
+            "views",
+            "free_wifi",
+            "laptops_allowed",
+            "signal",
+            "toilets",
+            "refreshments",
+            "break",
+            "sockets",
+            "wheelchair_accessible",
+            "bike_racks",
+            "gender_neutral_toilets",
+            "baby_changing",
+            "accessible_toilets"
+        ],
+        "atmosphere": [
+            "historic",
+            "inspiring",
+            "friendly",
+            "social",
+            "relaxed"
+        ],
+        "access": "Anyone (public)",
+        "disabled_access": true,
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "8:30",
+                "to": "16:00"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "8:30",
+                "to": "16:00"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "8:30",
+                "to": "16:00"
+            },
+            "thursday": {
+                "open": true,
+                "from": "8:30",
+                "to": "16:00"
+            },
+            "friday": {
+                "open": true,
+                "from": "8:30",
+                "to": "16:00"
+            },
+            "saturday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            },
+            "sunday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            }
+        },
+        "slug": "costa-parkinson-court",
+        "floor": "Ground floor",
+        "restriction": "",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=17525",
+        "imagealt": "An overhead, interior photograph of the Costa Parkinson Court serving area and seating with blurred images of two customers",
+        "url": "https://gfal.leeds.ac.uk/where-to-eat/cafes/parkinson/",
+        "campusmap_ref": "60",
+        "email_address": "gfal@leeds.ac.uk",
+        "work": [
+            "private",
+            "close",
+            "friends",
+            "group"
+        ],
+        "twitter_screen_name": "GreatFoodLeeds",
+        "space_type": "Café",
+        "building": "Parkinson Building",
+        "address": "University of Leeds, LS2 9JT",
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.5526256147622044,53.808126986172226]}",
+        "facebook_url": "https://www.facebook.com/greatfoodleeds",
+        "title": "Costa Parkinson Court",
+        "tags": [],
+        "noise": "Animated discussion",
+        "phone_number": "",
+        "restricted": false,
+        "id": 6,
+        "image": "/assets/photos/Parkinson-Court-Cafe4.jpg",
+        "description": "Parkinson Court Café sits in one of the most iconic buildings at the University of Leeds. The café is open plan and  conveniently located for a break from working in the Brotherton Library. Serves a range of sandwiches and snacks throughout the day.",
+        "published": true,
+        "url_text": "Visit the Costa Parkinson Court web site",
+        "phone_text": "",
+        "lat": 53.808126986172226,
+        "lng": -1.5526256147622044
+    },
+    {
+        "id": 60,
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.552550512914537,53.80789891535809]}",
+        "work": [
+            "private",
+            "close"
+        ],
+        "atmosphere": [
+            "disciplined"
+        ],
+        "facilities": [
+            "daylight",
+            "views",
+            "large_desks",
+            "free_wifi",
+            "computers",
+            "laptops_allowed",
+            "sockets",
+            "signal",
+            "whiteboards",
+            "projector",
+            "toilets",
+            "break",
+            "bike_racks",
+            "gender_neutral_toilets",
+            "wheelchair_accessible"
+        ],
+        "title": "Parkinson Building - B.26",
+        "description": "Cluster room surrounded by big windows with high views of the University campus. Perfect for focused study with acess to computers. 15 seat capacity.",
+        "access": "University Staff and Students",
+        "space_type": "IT Cluster",
+        "address": "University of Leeds, LS2 9JT",
+        "building": "Parkinson building",
+        "floor": "Basement",
+        "restricted": true,
+        "restriction": "",
+        "disabled_access": true,
+        "url": "",
+        "phone_number": "",
+        "twitter_screen_name": "",
+        "facebook_url": "",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=17525",
+        "campusmap_ref": "60",
+        "noise": "Whispers",
+        "tags": [],
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "9:00",
+                "to": "20:30"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "9:00",
+                "to": "20:30"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "9:00",
+                "to": "20:30"
+            },
+            "thursday": {
+                "open": true,
+                "from": "9:00",
+                "to": "20:30"
+            },
+            "friday": {
+                "open": true,
+                "from": "9:00",
+                "to": "19:00"
+            },
+            "saturday": {
+                "open": true,
+                "from": "10:00",
+                "to": "17:00"
+            },
+            "sunday": {
+                "open": true,
+                "from": "10:00",
+                "to": "17:00"
+            }
+        },
+        "image": "",
+        "imagealt": "Parkinson Building - B.26",
+        "slug": "parkinson-building-b26",
+        "published": true,
+        "url_text": "",
+        "phone_text": "",
+        "lat": 53.80789891535809,
+        "lng": -1.552550512914537
+    },
+    {
+        "facilities": [
+            "daylight",
+            "views",
+            "free_wifi",
+            "computers",
+            "laptops_allowed",
+            "sockets",
+            "signal",
+            "printers_copiers",
+            "projector",
+            "toilets",
+            "break",
+            "bike_racks",
+            "gender_neutral_toilets",
+            "wheelchair_accessible",
+            "accessible_toilets"
+        ],
+        "atmosphere": [
+            "disciplined",
+            "modern",
+            "inspiring",
+            "social",
+            "friendly"
+        ],
+        "access": "University Staff and Students",
+        "disabled_access": "",
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "9:00",
+                "to": "17:00"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "9:00",
+                "to": "17:00"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "9:00",
+                "to": "17:00"
+            },
+            "thursday": {
+                "open": true,
+                "from": "9:00",
+                "to": "17:00"
+            },
+            "friday": {
+                "open": true,
+                "from": "9:00",
+                "to": "17:00"
+            },
+            "saturday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            },
+            "sunday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            }
+        },
+        "slug": "psychology-37-and-41-university-road-143",
+        "floor": "First Floor",
+        "restriction": "",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=17579",
+        "published": true,
+        "imagealt": "Psychology (37 and 41 University Road) - 1.43",
+        "url": "https://mytimetable.leeds.ac.uk/link?timetable.id=202223!location!6856E1BEE4EE6ABF22261FF5840C4FDC",
+        "campusmap_ref": "37",
+        "work": [
+            "private",
+            "close"
+        ],
+        "twitter_screen_name": "",
+        "space_type": "IT Cluster",
+        "building": "Psychology (37 and 41 University Road)",
+        "address": "University of Leeds, LS2 9JT",
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.5574678781634532,53.80742731273586]}",
+        "facebook_url": "",
+        "title": "Psychology (37 and 41 University Road) - 1.43",
+        "tags": [],
+        "noise": "Whispers",
+        "phone_number": "",
+        "restricted": true,
+        "id": 62,
+        "image": "",
+        "description": "Circular bright clusters room with pretty views on campus available 24 hours. Access to water fountain. 47 seat capacity.",
+        "url_text": "View timetable for Psychology (37 and 41 University Road) - 1.43",
+        "phone_text": "",
+        "lat": 53.80742731273586,
+        "lng": -1.5574678781634532
+    },
+    {
+        "id": 63,
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.557350387109787,53.807542178366845]}",
+        "work": [
+            "private",
+            "close"
+        ],
+        "atmosphere": [
+            "disciplined",
+            "relaxed",
+            "modern",
+            "inspiring",
+            "social",
+            "friendly"
+        ],
+        "facilities": [
+            "daylight",
+            "views",
+            "free_wifi",
+            "computers",
+            "laptops_allowed",
+            "sockets",
+            "signal",
+            "printers_copiers",
+            "whiteboards",
+            "projector",
+            "toilets",
+            "refreshments",
+            "break",
+            "bike_racks",
+            "gender_neutral_toilets",
+            "wheelchair_accessible",
+            "accessible_toilets"
+        ],
+        "title": "Psychology (37 and 41 University Road) - 1.45",
+        "description": "Rows of IT clusters in a theatre style. 58 seat capacity.",
+        "access": "University Staff and Students",
+        "space_type": "IT Cluster",
+        "address": "University of Leeds, LS2 9JT",
+        "building": "Psychology (37 and 41 University Road)",
+        "floor": "First floor",
+        "restricted": true,
+        "restriction": "",
+        "disabled_access": true,
+        "url": "https://mytimetable.leeds.ac.uk/link?timetable.id=202223!location!6856E1BEE4EE6ABF22261FF5840C4FDB",
+        "phone_number": "",
+        "twitter_screen_name": "",
+        "facebook_url": "",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=17579",
+        "campusmap_ref": "37",
+        "noise": "Strictly silent",
+        "tags": [],
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "9:00",
+                "to": "17:00"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "9:00",
+                "to": "17:00"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "9:00",
+                "to": "17:00"
+            },
+            "thursday": {
+                "open": true,
+                "from": "9:00",
+                "to": "17:00"
+            },
+            "friday": {
+                "open": true,
+                "from": "9:00",
+                "to": "17:00"
+            },
+            "saturday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            },
+            "sunday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            }
+        },
+        "image": "",
+        "imagealt": "Psychology (37 and 41 University Road) - 1.45",
+        "slug": "psychology-37-and-41-university-road-145",
+        "published": true,
+        "url_text": "View timetable for Psychology (37 and 41 University Road) - 1.45",
+        "phone_text": "",
+        "lat": 53.807542178366845,
+        "lng": -1.557350387109787
+    },
+    {
+        "id": 64,
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.554457453,53.80665]}",
+        "work": [
+            "private"
+        ],
+        "atmosphere": [
+            "disciplined",
+            "social",
+            "friendly"
+        ],
+        "facilities": [
+            "daylight",
+            "free_wifi",
+            "computers",
+            "laptops_allowed",
+            "sockets",
+            "signal",
+            "printers_copiers",
+            "whiteboards",
+            "projector",
+            "outdoor_seating",
+            "toilets",
+            "break",
+            "bike_racks",
+            "gender_neutral_toilets",
+            "wheelchair_accessible",
+            "accessible_toilets"
+        ],
+        "title": "Social Sciences Building - 10.11",
+        "description": "Big cluster room at the Social Sciences Building. Rows of desks with computers near a place to take a break. Perfect for studying between lectures on campus. 40 seat capacity.",
+        "access": "University Staff and Students",
+        "space_type": "IT Cluster",
+        "address": "University of Leeds, LS2 9JT",
+        "building": "Social Sciences building",
+        "floor": "Level 10",
+        "restricted": true,
+        "restriction": "",
+        "disabled_access": true,
+        "url": "",
+        "phone_number": "",
+        "twitter_screen_name": "",
+        "facebook_url": "",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=17547",
+        "campusmap_ref": "82",
+        "noise": "Strictly silent",
+        "tags": [],
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "thursday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "friday": {
+                "open": true,
+                "from": "9:00",
+                "to": "18:00"
+            },
+            "saturday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            },
+            "sunday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            }
+        },
+        "image": "",
+        "imagealt": "Social Sciences Building - 10.11",
+        "slug": "social-sciences-building-1011",
+        "published": true,
+        "url_text": "",
+        "phone_text": "",
+        "lat": 53.80665,
+        "lng": -1.554457453
+    },
+    {
+        "id": 65,
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.5561629834730435,53.80334949968224]}",
+        "work": [
+            "private",
+            "close",
+            "group"
+        ],
+        "atmosphere": [
+            "disciplined",
+            "modern"
+        ],
+        "facilities": [
+            "large_desks",
+            "free_wifi",
+            "computers",
+            "laptops_allowed",
+            "sockets",
+            "signal",
+            "printers_copiers",
+            "projector",
+            "toilets",
+            "bike_racks",
+            "gender_neutral_toilets",
+            "wheelchair_accessible"
+        ],
+        "title": "Worsley Building - 8.038",
+        "description": "Cluster room with a variety of desks for individual or group study. 52 seat capacity.",
+        "access": "University Staff and Students",
+        "space_type": "IT Cluster",
+        "address": "University of Leeds, LS2 9JT",
+        "building": "Worsley building",
+        "floor": "Level 8",
+        "restricted": true,
+        "restriction": "",
+        "disabled_access": true,
+        "url": "",
+        "phone_number": "",
+        "twitter_screen_name": "",
+        "facebook_url": "",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=17591",
+        "campusmap_ref": "95",
+        "noise": "Strictly silent",
+        "tags": [],
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:00"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:00"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:00"
+            },
+            "thursday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:00"
+            },
+            "friday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:00"
+            },
+            "saturday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            },
+            "sunday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            }
+        },
+        "image": "",
+        "imagealt": "Worsley Building - 8.038",
+        "slug": "worsley-building-8038",
+        "published": true,
+        "url_text": "",
+        "phone_text": "",
+        "lat": 53.80334949968224,
+        "lng": -1.5561629834730435
+    },
+    {
+        "id": 66,
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.5559524300786896,53.80334949968224]}",
+        "work": [
+            "private",
+            "close"
+        ],
+        "atmosphere": [
+            "disciplined"
+        ],
+        "facilities": [
+            "large_desks",
+            "free_wifi",
+            "computers",
+            "laptops_allowed",
+            "sockets",
+            "printers_copiers",
+            "projector",
+            "toilets",
+            "bike_racks",
+            "gender_neutral_toilets",
+            "wheelchair_accessible"
+        ],
+        "title": "Worsley Building - 8.039",
+        "description": "Big room that offers clusters on high and normal desks. Modern and strictly silent environment. 51 seat capacity.",
+        "access": "University Staff and Students",
+        "space_type": "IT Cluster",
+        "address": "University of Leeds, LS2 9JT",
+        "building": "Worsley building",
+        "floor": "Level 8",
+        "restricted": true,
+        "restriction": "",
+        "disabled_access": true,
+        "url": "",
+        "phone_number": "",
+        "twitter_screen_name": "",
+        "facebook_url": "",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=17591",
+        "campusmap_ref": "95",
+        "noise": "Strictly silent",
+        "tags": [],
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:00"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:00"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:00"
+            },
+            "thursday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:00"
+            },
+            "friday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:00"
+            },
+            "saturday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            },
+            "sunday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            }
+        },
+        "image": "",
+        "imagealt": "Worsley Building - 8.039",
+        "slug": "worsley-building-8039",
+        "published": true,
+        "url_text": "",
+        "phone_text": "",
+        "lat": 53.80334949968224,
+        "lng": -1.5559524300786896
+    },
+    {
+        "facilities": [
+            "large_desks",
+            "free_wifi",
+            "computers",
+            "laptops_allowed",
+            "sockets",
+            "projector",
+            "toilets",
+            "break",
+            "bike_racks",
+            "gender_neutral_toilets",
+            "wheelchair_accessible"
+        ],
+        "atmosphere": [
+            "disciplined"
+        ],
+        "access": "University Staff and Students",
+        "disabled_access": true,
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:00"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:00"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:00"
+            },
+            "thursday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:00"
+            },
+            "friday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:00"
+            },
+            "saturday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            },
+            "sunday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            }
+        },
+        "slug": "worsley-building-8049o-fourman",
+        "floor": "Level 8",
+        "restriction": "",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=17591",
+        "published": true,
+        "imagealt": "Worsley Building - 8.049O (Fourman)",
+        "url": "https://mytimetable.leeds.ac.uk/link?timetable.id=202223!location!6856E1BEE4EE6ABF22261FF5840C4F00",
+        "campusmap_ref": "95",
+        "work": [
+            "private",
+            "close"
+        ],
+        "twitter_screen_name": "",
+        "space_type": "IT Cluster",
+        "building": "Worsley building",
+        "address": "University of Leeds, LS2 9JT",
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.5550257269226497,53.803562547313106]}",
+        "facebook_url": "",
+        "title": "Worsley Building - 8.049O (Fourman)",
+        "tags": [],
+        "noise": "Strictly silent",
+        "phone_number": "",
+        "restricted": true,
+        "id": 69,
+        "image": "",
+        "description": "Large room with plenty of available clusters to use. Comfortable chairs and large desks perfect for focused study. 50 seat capacity.",
+        "url_text": "View timetable for Worsley Building - 8.049O (Fourman)",
+        "phone_text": "",
+        "lat": 53.803562547313106,
+        "lng": -1.5550257269226497
+    },
+    {
+        "facilities": [
+            "food_drink",
+            "large_desks",
+            "free_wifi",
+            "laptops_allowed",
+            "sockets",
+            "signal",
+            "toilets",
+            "refreshments",
+            "break",
+            "bike_racks",
+            "gender_neutral_toilets",
+            "wheelchair_accessible"
+        ],
+        "atmosphere": [
+            "relaxed",
+            "cosy",
+            "social",
+            "friendly"
+        ],
+        "access": "Anyone (public)",
+        "disabled_access": true,
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:30"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:30"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:30"
+            },
+            "thursday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:30"
+            },
+            "friday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:30"
+            },
+            "saturday": {
+                "true": false,
+                "from": "10:00",
+                "to": "14:00"
+            },
+            "sunday": {
+                "true": false,
+                "from": "10:00",
+                "to": "14:00"
+            }
+        },
+        "floor": "Ground floor and mezzanine",
+        "restriction": "",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=17536",
+        "url": "https://gfal.leeds.ac.uk/where-to-eat/refectory/",
+        "campusmap_ref": "29",
+        "work": [
+            "private",
+            "close",
+            "friends",
+            "group"
+        ],
+        "twitter_screen_name": "GreatFoodLeeds",
+        "space_type": "Café",
+        "building": "University precinct",
+        "address": "University of Leeds, LS2 9JT",
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.55657117,53.80685681]}",
+        "facebook_url": "https://www.facebook.com/greatfoodleeds",
+        "title": "Refectory",
+        "tags": [],
+        "noise": "Animated discussion",
+        "phone_number": "",
+        "restricted": false,
+        "id": 7,
+        "description": "Located right at the heart of University campus, the contemporary Refectory venue offers a wide range of hot and cold food each day.",
+        "image": "/assets/photos/Refectory4.jpg",
+        "imagealt": "Overhead, interior photograph of the Refectory, full of customers, taken from the balcony above the main dining area",
+        "slug": "refectory",
+        "published": true,
+        "url_text": "Visit the Refectory  web site",
+        "phone_text": "",
+        "lat": 53.80685681,
+        "lng": -1.55657117
+    },
+    {
+        "facilities": [
+            "large_desks",
+            "free_wifi",
+            "computers",
+            "laptops_allowed",
+            "sockets",
+            "signal",
+            "projector",
+            "toilets",
+            "bike_racks",
+            "gender_neutral_toilets",
+            "wheelchair_accessible"
+        ],
+        "atmosphere": [
+            "disciplined",
+            "inspiring"
+        ],
+        "access": "University Staff and Students",
+        "disabled_access": true,
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:00"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:00"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:00"
+            },
+            "thursday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:00"
+            },
+            "friday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:00"
+            },
+            "saturday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            },
+            "sunday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            }
+        },
+        "slug": "worsley-building-8049p-fourman",
+        "floor": "Level 8",
+        "restriction": "",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=17591",
+        "published": true,
+        "imagealt": "Worsley Building - 8.049P (Fourman)",
+        "url": "https://mytimetable.leeds.ac.uk/link?timetable.id=202223!location!6856E1BEE4EE6ABF22261FF5840C4F01",
+        "campusmap_ref": "95",
+        "work": [
+            "private",
+            "close"
+        ],
+        "twitter_screen_name": "",
+        "space_type": "IT Cluster",
+        "building": "Worsley building",
+        "address": "University of Leeds, LS2 9JT",
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.5550257269226497,53.80346750761152]}",
+        "facebook_url": "",
+        "title": "Worsley Building - 8.049P (Fourman)",
+        "tags": [],
+        "noise": "Whispers",
+        "phone_number": "",
+        "restricted": true,
+        "id": 70,
+        "image": "",
+        "description": "Large room with computers available. 50 seat capacity.",
+        "url_text": "View timetable for Worsley Building - 8.049P (Fourman)",
+        "phone_text": "",
+        "lat": 53.80346750761152,
+        "lng": -1.5550257269226497
+    },
+    {
+        "facilities": [
+            "daylight",
+            "views",
+            "large_desks",
+            "free_wifi",
+            "computers",
+            "laptops_allowed",
+            "sockets",
+            "signal",
+            "printers_copiers",
+            "bookable",
+            "toilets",
+            "refreshments",
+            "break",
+            "accessible_toilets",
+            "wheelchair_accessible",
+            "individual_study_space",
+            "prayer_room",
+            "bike_racks",
+            "gender_neutral_toilets"
+        ],
+        "atmosphere": [
+            "disciplined",
+            "relaxed",
+            "inspiring",
+            "friendly"
+        ],
+        "access": "University Staff and Students ",
+        "disabled_access": true,
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "8:00",
+                "to": "24:00"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "8:00",
+                "to": "24:00"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "8:00",
+                "to": "24:00"
+            },
+            "thursday": {
+                "open": true,
+                "from": "8:00",
+                "to": "24:00"
+            },
+            "friday": {
+                "open": true,
+                "from": "8:00",
+                "to": "24:00"
+            },
+            "saturday": {
+                "open": true,
+                "from": "10:00",
+                "to": "24:00"
+            },
+            "sunday": {
+                "open": true,
+                "from": "10:00",
+                "to": "24:00"
+            }
+        },
+        "slug": "edward-boyle-11th-and-12th-floors",
+        "floor": "Level 11 and 12",
+        "restriction": "Library Card needed",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=17411",
+        "imagealt": "Edward Boyle 11th and 12th floors",
+        "url": "https://library.leeds.ac.uk/",
+        "campusmap_ref": "83",
+        "work": [
+            "private",
+            "close"
+        ],
+        "twitter_screen_name": "UoLLibrary",
+        "space_type": "Library",
+        "building": "Edward Boyle library",
+        "address": "University of Leeds, Leeds LS2 9JT",
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.5548797388561932,53.806061034606785]}",
+        "facebook_url": "https://www.facebook.com/leedsuniversitylibrary",
+        "title": "Edward Boyle 11th and 12th floors",
+        "tags": [],
+        "noise": "Whispers",
+        "phone_number": "0113 343 5663",
+        "restricted": false,
+        "id": 71,
+        "image": "",
+        "description": "Silent place for studying with access to books, clusters and nice high views of the University campus. Perfect place for focused study and exam preparation.",
+        "published": true,
+        "url_text": "Visit the Library website",
+        "phone_text": "Contact the Library",
+        "lat": 53.806061034606785,
+        "lng": -1.5548797388561932
+    },
+    {
+        "facilities": [
+            "daylight",
+            "views",
+            "large_desks",
+            "free_wifi",
+            "computers",
+            "laptops_allowed",
+            "sockets",
+            "signal",
+            "printers_copiers",
+            "toilets",
+            "refreshments",
+            "break",
+            "individual_study_space",
+            "accessible_toilets",
+            "wheelchair_accessible",
+            "bike_racks",
+            "gender_neutral_toilets",
+            "prayer_room"
+        ],
+        "atmosphere": [
+            "disciplined",
+            "relaxed",
+            "cosy",
+            "social",
+            "friendly"
+        ],
+        "access": "University Staff and Students",
+        "disabled_access": true,
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "8:00",
+                "to": "24:00"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "8:00",
+                "to": "24:00"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "8:00",
+                "to": "24:00"
+            },
+            "thursday": {
+                "open": true,
+                "from": "8:00",
+                "to": "24:00"
+            },
+            "friday": {
+                "open": true,
+                "from": "8:00",
+                "to": "24:00"
+            },
+            "saturday": {
+                "open": true,
+                "from": "10:00",
+                "to": "24:00"
+            },
+            "sunday": {
+                "open": true,
+                "from": "10:00",
+                "to": "24:00"
+            }
+        },
+        "slug": "edward-boyle-10th-floor",
+        "floor": "Level 10",
+        "restriction": "Library Card needed",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=17411",
+        "imagealt": "Edward Boyle 10th floor",
+        "url": "https://library.leeds.ac.uk/",
+        "campusmap_ref": "83",
+        "work": [
+            "private",
+            "close",
+            "friends",
+            "group"
+        ],
+        "twitter_screen_name": "UoLLibrary",
+        "space_type": "Library",
+        "building": "Edward Boyle library",
+        "address": "University of Leeds, Leeds LS2 9JT",
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.554715838272632,53.80584958261785]}",
+        "facebook_url": "https://www.facebook.com/leedsuniversitylibrary",
+        "title": "Edward Boyle 10th floor",
+        "tags": [],
+        "noise": "Background chatter",
+        "phone_number": "0113 343 5663",
+        "restricted": true,
+        "id": 72,
+        "image": "",
+        "description": "Busy study place for people who like working alongside others. Couches with big tables can be used for comfortable group working in a nice environment. Extra couches on the side for anybody who wants to read or take a break inside the library.",
+        "published": true,
+        "url_text": "Visit the Library website",
+        "phone_text": "Contact the Library",
+        "lat": 53.80584958261785,
+        "lng": -1.554715838272632
+    },
+    {
+        "facilities": [
+            "large_desks",
+            "individual_study_space",
+            "free_wifi",
+            "computers",
+            "laptops_allowed",
+            "sockets",
+            "printers_copiers",
+            "toilets",
+            "accessible_toilets",
+            "wheelchair_accessible",
+            "break",
+            "refreshments",
+            "daylight",
+            "signal",
+            "bookable",
+            "bike_racks",
+            "gender_neutral_toilets",
+            "prayer_room"
+        ],
+        "atmosphere": [
+            "disciplined"
+        ],
+        "access": "University Staff and Students",
+        "disabled_access": true,
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "8:00",
+                "to": "24:00"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "8:00",
+                "to": "24:00"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "8:00",
+                "to": "24:00"
+            },
+            "thursday": {
+                "open": true,
+                "from": "8:00",
+                "to": "24:00"
+            },
+            "friday": {
+                "open": true,
+                "from": "8:00",
+                "to": "24:00"
+            },
+            "saturday": {
+                "open": true,
+                "from": "10:00",
+                "to": "24:00"
+            },
+            "sunday": {
+                "open": true,
+                "from": "10:00",
+                "to": "24:00"
+            }
+        },
+        "slug": "edward-boyle-13th-floor",
+        "floor": "Level 13",
+        "restriction": "Staff or Postgraduate Library Card needed",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=17411",
+        "imagealt": "Edward Boyle 13th floor",
+        "url": "https://library.leeds.ac.uk/",
+        "campusmap_ref": "83",
+        "work": [
+            "in_a_library"
+        ],
+        "twitter_screen_name": "UoLLibrary",
+        "space_type": "Library",
+        "building": "Edward Boyle library",
+        "address": "University of Leeds, Leeds LS2 9JT",
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.5545886781506026,53.80627235748126]}",
+        "facebook_url": "https://www.facebook.com/leedsuniversitylibrary",
+        "title": "Edward Boyle 13th floor",
+        "noise": "Background chatter",
+        "phone_number": "0113 343 5663",
+        "restricted": true,
+        "id": 73,
+        "image": "",
+        "description": "Silent library space for staff and postgraduate students with bookable group study rooms.",
+        "published": true,
+        "url_text": "Visit the Library website",
+        "phone_text": "Contact the Library",
+        "lat": 53.80627235748126,
+        "lng": -1.5545886781506026
+    },
+    {
+        "facilities": [
+            "daylight",
+            "views",
+            "large_desks",
+            "free_wifi",
+            "computers",
+            "laptops_allowed",
+            "sockets",
+            "signal",
+            "printers_copiers",
+            "whiteboards",
+            "projector",
+            "outdoor_seating",
+            "bookable",
+            "toilets",
+            "refreshments",
+            "break",
+            "individual_study_space",
+            "accessible_toilets",
+            "wheelchair_accessible",
+            "bike_racks",
+            "gender_neutral_toilets",
+            "prayer_room"
+        ],
+        "atmosphere": [
+            "disciplined",
+            "relaxed",
+            "cosy",
+            "social",
+            "friendly"
+        ],
+        "access": "University Staff and Students",
+        "disabled_access": true,
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "8:00",
+                "to": "24:00"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "8:00",
+                "to": "24:00"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "8:00",
+                "to": "24:00"
+            },
+            "thursday": {
+                "open": true,
+                "from": "8:00",
+                "to": "24:00"
+            },
+            "friday": {
+                "open": true,
+                "from": "8:00",
+                "to": "24:00"
+            },
+            "saturday": {
+                "open": true,
+                "from": "10:00",
+                "to": "24:00"
+            },
+            "sunday": {
+                "open": true,
+                "from": "10:00",
+                "to": "24:00"
+            }
+        },
+        "slug": "edward-boyle-8th-floor",
+        "floor": "Level 8",
+        "restriction": "Library Card needed",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=17411",
+        "imagealt": "Edward Boyle 8th floor",
+        "url": "https://library.leeds.ac.uk/",
+        "campusmap_ref": "83",
+        "work": [
+            "private",
+            "close",
+            "friends",
+            "group"
+        ],
+        "twitter_screen_name": "UoLLibrary",
+        "space_type": "Library",
+        "building": "Edward Boyle library",
+        "address": "University of Leeds, Leeds LS2 9JT",
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.5548797388561932,53.80627235748126]}",
+        "facebook_url": "https://www.facebook.com/leedsuniversitylibrary",
+        "title": "Edward Boyle 8th floor",
+        "tags": [],
+        "noise": "Background chatter",
+        "phone_number": "0113 343 5663",
+        "restricted": true,
+        "id": 74,
+        "image": "",
+        "description": "Study space for people to attend seminars and being able to participate, study with friends and explore multiple journals. Available bookable study spaces / meeting rooms",
+        "published": true,
+        "url_text": "Visit the Library website",
+        "phone_text": "Contact the Library",
+        "lat": 53.80627235748126,
+        "lng": -1.5548797388561932
+    },
+    {
+        "facilities": [
+            "large_desks",
+            "free_wifi",
+            "computers",
+            "laptops_allowed",
+            "sockets",
+            "signal",
+            "printers_copiers",
+            "toilets",
+            "refreshments",
+            "break",
+            "accessible_toilets",
+            "wheelchair_accessible",
+            "bike_racks",
+            "gender_neutral_toilets",
+            "prayer_room"
+        ],
+        "atmosphere": [
+            "disciplined",
+            "relaxed",
+            "cosy"
+        ],
+        "access": "University Staff and Students",
+        "disabled_access": true,
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "8:00",
+                "to": "24:00"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "8:00",
+                "to": "24:00"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "8:00",
+                "to": "24:00"
+            },
+            "thursday": {
+                "open": true,
+                "from": "8:00",
+                "to": "24:00"
+            },
+            "friday": {
+                "open": true,
+                "from": "8:00",
+                "to": "24:00"
+            },
+            "saturday": {
+                "open": true,
+                "from": "10:00",
+                "to": "24:00"
+            },
+            "sunday": {
+                "open": true,
+                "from": "10:00",
+                "to": "24:00"
+            }
+        },
+        "slug": "health-sciences-library",
+        "floor": "7th floor",
+        "restriction": "Library Card needed",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=17446",
+        "imagealt": "Health Sciences library",
+        "url": "https://library.leeds.ac.uk/",
+        "campusmap_ref": "95",
+        "work": [
+            "private",
+            "close"
+        ],
+        "twitter_screen_name": "UoLLibrary",
+        "space_type": "Library",
+        "building": "Worsley building",
+        "address": "Clarendon Way, Leeds LS2 9NL",
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.5564001631185989,53.80341606647992]}",
+        "facebook_url": "https://www.facebook.com/leedsuniversitylibrary",
+        "title": "Health Sciences library",
+        "tags": [],
+        "noise": "Strictly silent",
+        "phone_number": "",
+        "restricted": true,
+        "id": 75,
+        "image": "",
+        "description": "Quiet study space within the library. Books available (related to health sciences).",
+        "published": true,
+        "url_text": "Visit the Library website",
+        "phone_text": "",
+        "lat": 53.80341606647992,
+        "lng": -1.5564001631185989
+    },
+    {
+        "facilities": [
+            "free_wifi",
+            "computers",
+            "laptops_allowed",
+            "sockets",
+            "signal",
+            "printers_copiers",
+            "whiteboards",
+            "projector",
+            "bookable",
+            "toilets",
+            "refreshments",
+            "break",
+            "accessible_toilets",
+            "wheelchair_accessible",
+            "bike_racks",
+            "gender_neutral_toilets",
+            "prayer_room"
+        ],
+        "atmosphere": [
+            "disciplined",
+            "cosy"
+        ],
+        "access": "University Staff and Students",
+        "disabled_access": true,
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "8:00",
+                "to": "24:00"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "8:00",
+                "to": "24:00"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "8:00",
+                "to": "24:00"
+            },
+            "thursday": {
+                "open": true,
+                "from": "8:00",
+                "to": "24:00"
+            },
+            "friday": {
+                "open": true,
+                "from": "8:00",
+                "to": "24:00"
+            },
+            "saturday": {
+                "open": true,
+                "from": "10:00",
+                "to": "24:00"
+            },
+            "sunday": {
+                "open": true,
+                "from": "10:00",
+                "to": "24:00"
+            }
+        },
+        "slug": "health-sciences-library-group-study-rooms",
+        "floor": "7th floor",
+        "restriction": "Library Card needed",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=17446",
+        "imagealt": "Health Sciences library - group study rooms",
+        "url": "https://library.leeds.ac.uk/",
+        "campusmap_ref": "95",
+        "work": [
+            "private",
+            "close",
+            "group"
+        ],
+        "twitter_screen_name": "UoLLibrary",
+        "space_type": "Library",
+        "building": "Worsley building",
+        "address": "Clarendon Way, Leeds LS2 9NL",
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.5553086999558254,53.80334949968224]}",
+        "facebook_url": "https://www.facebook.com/leedsuniversitylibrary",
+        "title": "Health Sciences library - group study rooms",
+        "tags": [],
+        "noise": "Strictly silent",
+        "phone_number": "",
+        "restricted": true,
+        "id": 76,
+        "image": "",
+        "description": "Group study rooms for group work (booking required)",
+        "published": true,
+        "url_text": "Visit the Library website",
+        "phone_text": "",
+        "lat": 53.80334949968224,
+        "lng": -1.5553086999558254
+    },
+    {
+        "facilities": [
+            "large_desks",
+            "free_wifi",
+            "computers",
+            "laptops_allowed",
+            "sockets",
+            "signal",
+            "printers_copiers",
+            "toilets",
+            "refreshments",
+            "break",
+            "accessible_toilets",
+            "wheelchair_accessible",
+            "bike_racks",
+            "gender_neutral_toilets",
+            "prayer_room"
+        ],
+        "atmosphere": [
+            "relaxed",
+            "cosy",
+            "social"
+        ],
+        "access": "University Staff and Students",
+        "disabled_access": true,
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "8:00",
+                "to": "24:00"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "8:00",
+                "to": "24:00"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "8:00",
+                "to": "24:00"
+            },
+            "thursday": {
+                "open": true,
+                "from": "8:00",
+                "to": "24:00"
+            },
+            "friday": {
+                "open": true,
+                "from": "8:00",
+                "to": "24:00"
+            },
+            "saturday": {
+                "open": true,
+                "from": "10:00",
+                "to": "24:00"
+            },
+            "sunday": {
+                "open": true,
+                "from": "10:00",
+                "to": "24:00"
+            }
+        },
+        "slug": "health-sciences-library-group-study-space",
+        "floor": "7th floor",
+        "restriction": "Library Card needed",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=17446",
+        "imagealt": "Health Sciences library - group study space",
+        "url": "https://library.leeds.ac.uk/",
+        "campusmap_ref": "95",
+        "work": [
+            "private",
+            "close"
+        ],
+        "twitter_screen_name": "UoLLibrary",
+        "space_type": "Library",
+        "building": "Worsley building",
+        "address": "Clarendon Way, Leeds LS2 9NL",
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.555838436202766,53.80334949968224]}",
+        "facebook_url": "https://www.facebook.com/leedsuniversitylibrary",
+        "title": "Health Sciences library - group study space",
+        "tags": [],
+        "noise": "Animated discussion",
+        "phone_number": "",
+        "restricted": true,
+        "id": 77,
+        "image": "",
+        "description": "Group study space for groups inside the library.",
+        "published": true,
+        "url_text": "Visit the Library website",
+        "phone_text": "",
+        "lat": 53.80334949968224,
+        "lng": -1.555838436202766
+    },
+    {
+        "facilities": [
+            "daylight",
+            "views",
+            "large_desks",
+            "free_wifi",
+            "computers",
+            "laptops_allowed",
+            "sockets",
+            "signal",
+            "printers_copiers",
+            "toilets",
+            "refreshments",
+            "break",
+            "wheelchair_accessible",
+            "accessible_toilets",
+            "bike_racks",
+            "gender_neutral_toilets",
+            "prayer_room"
+        ],
+        "atmosphere": [
+            "disciplined",
+            "cosy"
+        ],
+        "access": "University Staff and Students",
+        "disabled_access": true,
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "0:00",
+                "to": "24:00"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "0:00",
+                "to": "24:00"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "0:00",
+                "to": "24:00"
+            },
+            "thursday": {
+                "open": true,
+                "from": "0:00",
+                "to": "24:00"
+            },
+            "friday": {
+                "open": true,
+                "from": "0:00",
+                "to": "24:00"
+            },
+            "saturday": {
+                "open": true,
+                "from": "0:00",
+                "to": "24:00"
+            },
+            "sunday": {
+                "open": true,
+                "from": "0:00",
+                "to": "24:00"
+            }
+        },
+        "slug": "laidlaw-library-3rd-floor-silent-study-area",
+        "floor": "3rd",
+        "restriction": "Library Card needed",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=17471",
+        "imagealt": "Laidlaw library - 3rd floor silent study area",
+        "url": "https://library.leeds.ac.uk/",
+        "campusmap_ref": "63",
+        "work": [
+            "private",
+            "close"
+        ],
+        "twitter_screen_name": "UoLLibrary",
+        "space_type": "Library",
+        "building": "Laidlaw library",
+        "address": "University of Leeds, LS2 9JT",
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.5516671603064218,53.80691394868929]}",
+        "facebook_url": "https://www.facebook.com/leedsuniversitylibrary",
+        "title": "Laidlaw library - 3rd floor silent study area",
+        "tags": [],
+        "noise": "Strictly silent",
+        "phone_number": "",
+        "restricted": true,
+        "id": 78,
+        "image": "/assets/photos/Laidlaw-library1.jpg",
+        "description": "Silent study space inside the Laidlaw library.",
+        "published": true,
+        "url_text": "Visit the Library website",
+        "phone_text": "",
+        "lat": 53.80691394868929,
+        "lng": -1.5516671603064218
+    },
+    {
+        "facilities": [
+            "daylight",
+            "views",
+            "large_desks",
+            "free_wifi",
+            "computers",
+            "laptops_allowed",
+            "sockets",
+            "signal",
+            "printers_copiers",
+            "toilets",
+            "refreshments",
+            "break",
+            "wheelchair_accessible",
+            "accessible_toilets",
+            "bike_racks",
+            "gender_neutral_toilets",
+            "prayer_room"
+        ],
+        "atmosphere": [
+            "disciplined",
+            "cosy"
+        ],
+        "access": "University Staff and Students",
+        "disabled_access": true,
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "0:00",
+                "to": "24:00"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "0:00",
+                "to": "24:00"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "0:00",
+                "to": "24:00"
+            },
+            "thursday": {
+                "open": true,
+                "from": "0:00",
+                "to": "24:00"
+            },
+            "friday": {
+                "open": true,
+                "from": "0:00",
+                "to": "24:00"
+            },
+            "saturday": {
+                "open": true,
+                "from": "0:00",
+                "to": "24:00"
+            },
+            "sunday": {
+                "open": true,
+                "from": "0:00",
+                "to": "24:00"
+            }
+        },
+        "slug": "laidlaw-library-2nd-floor-silent-study-area",
+        "floor": "2nd floor",
+        "restriction": "Library Card needed",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=17471",
+        "imagealt": "Laidlaw library - 2nd floor silent study area",
+        "url": "https://library.leeds.ac.uk/",
+        "campusmap_ref": "63",
+        "work": [
+            "private",
+            "close"
+        ],
+        "twitter_screen_name": "UoLLibrary",
+        "space_type": "Library",
+        "building": "Laidlaw library",
+        "address": "University of Leeds, LS2 9JT",
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.5519026406650602,53.806631618358196]}",
+        "facebook_url": "https://www.facebook.com/leedsuniversitylibrary",
+        "title": "Laidlaw library - 2nd floor silent study area",
+        "tags": [],
+        "noise": "Strictly silent",
+        "phone_number": "",
+        "restricted": true,
+        "id": 79,
+        "image": "/assets/photos/Laidlaw-library2.jpg",
+        "description": "Silent study space. Group booths also available.",
+        "published": true,
+        "url_text": "Visit the Library website",
+        "phone_text": "",
+        "lat": 53.806631618358196,
+        "lng": -1.5519026406650602
+    },
+    {
+        "id": 8,
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.5552662581655925,53.803461605737006]}",
+        "work": [
+            "close",
+            "friends",
+            "group"
+        ],
+        "atmosphere": [
+            "relaxed",
+            "social",
+            "friendly"
+        ],
+        "facilities": [
+            "food_drink",
+            "free_wifi",
+            "laptops_allowed",
+            "sockets",
+            "signal",
+            "toilets",
+            "refreshments",
+            "break",
+            "bike_racks",
+            "gender_neutral_toilets",
+            "wheelchair_accessible",
+            "accessible_toilets"
+        ],
+        "title": "Café Seven",
+        "description": "Located in the Worsley building, Café Seven is one of our most popular and vibrant cafés. Recently refurbished the large seating area is a great place to meet with friends.",
+        "access": "Anyone (public)",
+        "space_type": "Café",
+        "address": "University of Leeds, LS2 9JT",
+        "building": "Worsley Building",
+        "floor": "Level 7",
+        "restricted": false,
+        "restriction": "",
+        "disabled_access": true,
+        "url": "https://gfal.leeds.ac.uk/where-to-eat/cafes/cafeseven/",
+        "phone_number": "",
+        "twitter_screen_name": "GreatFoodLeeds",
+        "facebook_url": "https://www.facebook.com/greatfoodleeds",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=18472",
+        "campusmap_ref": "95",
+        "noise": "Background chatter",
+        "tags": [],
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "8:30",
+                "to": "17:00"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "8:30",
+                "to": "17:00"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "8:30",
+                "to": "17:00"
+            },
+            "thursday": {
+                "open": true,
+                "from": "8:30",
+                "to": "17:00"
+            },
+            "friday": {
+                "open": true,
+                "from": "8:30",
+                "to": "17:00"
+            },
+            "saturday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            },
+            "sunday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            }
+        },
+        "image": "/assets/photos/Cafe-Seven.jpg",
+        "imagealt": "Interior photograph showing part of the Café Seven logo and part of the service and self-service areas",
+        "slug": "cafe-seven",
+        "published": true,
+        "url_text": "Visit the Café Seven web site",
+        "phone_text": "",
+        "lat": 53.803461605737006,
+        "lng": -1.5552662581655925
+    },
+    {
+        "facilities": [
+            "free_wifi",
+            "computers",
+            "laptops_allowed",
+            "sockets",
+            "signal",
+            "printers_copiers",
+            "toilets",
+            "refreshments",
+            "break",
+            "daylight",
+            "views",
+            "individual_study_space",
+            "accessible_toilets",
+            "wheelchair_accessible",
+            "bike_racks",
+            "gender_neutral_toilets",
+            "prayer_room"
+        ],
+        "atmosphere": [
+            "disciplined",
+            "cosy"
+        ],
+        "access": "University Staff and Students",
+        "disabled_access": true,
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "0:00",
+                "to": "24:00"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "0:00",
+                "to": "24:00"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "0:00",
+                "to": "24:00"
+            },
+            "thursday": {
+                "open": true,
+                "from": "0:00",
+                "to": "24:00"
+            },
+            "friday": {
+                "open": true,
+                "from": "0:00",
+                "to": "24:00"
+            },
+            "saturday": {
+                "open": true,
+                "from": "0:00",
+                "to": "24:00"
+            },
+            "sunday": {
+                "open": true,
+                "from": "0:00",
+                "to": "24:00"
+            }
+        },
+        "slug": "laidlaw-library-1st-floor-silent-study-area",
+        "floor": "1st floor",
+        "restriction": "Library Card needed",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=17471",
+        "imagealt": "Laidlaw library - 1st floor silent study area",
+        "url": "https://library.leeds.ac.uk/",
+        "campusmap_ref": "63",
+        "work": [
+            "private",
+            "close"
+        ],
+        "twitter_screen_name": "UoLLibrary",
+        "space_type": "Library",
+        "building": "Laidlaw library",
+        "address": "University of Leeds, LS2 9JT",
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.5521869665500727,53.806643780629116]}",
+        "facebook_url": "https://www.facebook.com/leedsuniversitylibrary",
+        "title": "Laidlaw library - 1st floor silent study area",
+        "tags": [],
+        "noise": "Strictly silent",
+        "phone_number": "",
+        "restricted": true,
+        "id": 80,
+        "image": "/assets/photos/Laidlaw-library3.jpg",
+        "description": "Study space inside the library, closed doors, very silent.",
+        "published": true,
+        "url_text": "Visit the Library website",
+        "phone_text": "",
+        "lat": 53.806643780629116,
+        "lng": -1.5521869665500727
+    },
+    {
+        "facilities": [
+            "large_desks",
+            "free_wifi",
+            "computers",
+            "laptops_allowed",
+            "sockets",
+            "signal",
+            "printers_copiers",
+            "whiteboards",
+            "projector",
+            "bookable",
+            "toilets",
+            "refreshments",
+            "break",
+            "wheelchair_accessible",
+            "accessible_toilets",
+            "bike_racks",
+            "gender_neutral_toilets",
+            "prayer_room"
+        ],
+        "atmosphere": [
+            "disciplined",
+            "cosy"
+        ],
+        "access": "University Staff and Students",
+        "disabled_access": true,
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "0:00",
+                "to": "24:00"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "0:00",
+                "to": "24:00"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "0:00",
+                "to": "24:00"
+            },
+            "thursday": {
+                "open": true,
+                "from": "0:00",
+                "to": "24:00"
+            },
+            "friday": {
+                "open": true,
+                "from": "0:00",
+                "to": "24:00"
+            },
+            "saturday": {
+                "open": true,
+                "from": "0:00",
+                "to": "24:00"
+            },
+            "sunday": {
+                "open": true,
+                "from": "0:00",
+                "to": "24:00"
+            }
+        },
+        "slug": "laidlaw-library-1st-floor-group-study-booths",
+        "floor": "1st floor",
+        "restriction": "Library Card needed",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=17471",
+        "imagealt": "Laidlaw library - 1st floor group study booths",
+        "url": "https://library.leeds.ac.uk/",
+        "campusmap_ref": "63",
+        "work": [
+            "private",
+            "close",
+            "group"
+        ],
+        "twitter_screen_name": "UoLLibrary",
+        "space_type": "Library",
+        "building": "Laidlaw library",
+        "address": "University of Leeds, LS2 9JT",
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.551799964466388,53.80682678188746]}",
+        "facebook_url": "https://www.facebook.com/leedsuniversitylibrary",
+        "title": "Laidlaw library - 1st floor group study booths",
+        "tags": [],
+        "noise": "Whispers",
+        "phone_number": "",
+        "restricted": true,
+        "id": 81,
+        "image": "/assets/photos/Laidlaw-library4.jpg",
+        "description": "Group study booths for groups of up to 5 with monitor display.",
+        "published": true,
+        "url_text": "Visit the Library website",
+        "phone_text": "",
+        "lat": 53.80682678188746,
+        "lng": -1.551799964466388
+    },
+    {
+        "facilities": [
+            "daylight",
+            "views",
+            "free_wifi",
+            "laptops_allowed",
+            "sockets",
+            "signal",
+            "printers_copiers",
+            "toilets",
+            "refreshments",
+            "break",
+            "large_desks",
+            "accessible_toilets",
+            "wheelchair_accessible",
+            "bike_racks",
+            "gender_neutral_toilets",
+            "prayer_room"
+        ],
+        "atmosphere": [
+            "relaxed",
+            "cosy",
+            "social",
+            "friendly"
+        ],
+        "access": "University Staff and Students",
+        "disabled_access": true,
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "0:00",
+                "to": "24:00"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "0:00",
+                "to": "24:00"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "0:00",
+                "to": "24:00"
+            },
+            "thursday": {
+                "open": true,
+                "from": "0:00",
+                "to": "24:00"
+            },
+            "friday": {
+                "open": true,
+                "from": "0:00",
+                "to": "24:00"
+            },
+            "saturday": {
+                "open": true,
+                "from": "0:00",
+                "to": "24:00"
+            },
+            "sunday": {
+                "open": true,
+                "from": "0:00",
+                "to": "24:00"
+            }
+        },
+        "slug": "laidlaw-library-footsteps-fund-room",
+        "floor": "1st floor",
+        "restriction": "Library Card needed",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=17471",
+        "imagealt": "Laidlaw library - Footsteps fund room",
+        "url": "https://library.leeds.ac.uk/",
+        "campusmap_ref": "63",
+        "work": [
+            "close",
+            "friends",
+            "group"
+        ],
+        "twitter_screen_name": "UoLLibrary",
+        "space_type": "Library",
+        "building": "Laidlaw library",
+        "address": "University of Leeds, LS2 9JT",
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.5517480995156712,53.80702057118846]}",
+        "facebook_url": "https://www.facebook.com/leedsuniversitylibrary",
+        "title": "Laidlaw library - Footsteps fund room",
+        "tags": [],
+        "noise": "Background chatter",
+        "phone_number": "",
+        "restricted": true,
+        "id": 82,
+        "image": "/assets/photos/Laidlaw-library5.jpg",
+        "description": "Casual seating area.",
+        "published": true,
+        "url_text": "Visit the Library website",
+        "phone_text": "",
+        "lat": 53.80702057118846,
+        "lng": -1.5517480995156712
+    },
+    {
+        "facilities": [
+            "free_wifi",
+            "computers",
+            "laptops_allowed",
+            "sockets",
+            "signal",
+            "printers_copiers",
+            "toilets",
+            "refreshments",
+            "break",
+            "wheelchair_accessible",
+            "daylight",
+            "individual_study_space",
+            "prayer_room",
+            "accessible_toilets",
+            "gender_neutral_toilets",
+            "induction_loops",
+            "adjustable_furniture",
+            "bike_racks"
+        ],
+        "atmosphere": [
+            "disciplined",
+            "cosy",
+            "historic",
+            "modern",
+            "friendly",
+            "social",
+            "inspiring",
+            "relaxed"
+        ],
+        "access": "University Staff and Students",
+        "disabled_access": true,
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "8:00",
+                "to": "20:00"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "8:00",
+                "to": "20:00"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "8:00",
+                "to": "20:00"
+            },
+            "thursday": {
+                "open": true,
+                "from": "8:00",
+                "to": "20:00"
+            },
+            "friday": {
+                "open": true,
+                "from": "8:00",
+                "to": "20:00"
+            },
+            "saturday": {
+                "open": true,
+                "from": "10:00",
+                "to": "20:00"
+            },
+            "sunday": {
+                "open": true,
+                "from": "10:00",
+                "to": "20:00"
+            }
+        },
+        "slug": "brotherton-library",
+        "floor": "",
+        "restriction": "Library Card needed",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=17354",
+        "imagealt": "Brotherton Library",
+        "url": "https://library.leeds.ac.uk/",
+        "campusmap_ref": "59",
+        "email_address": "library@leeds.ac.uk",
+        "work": [
+            "private",
+            "close",
+            "in_a_library",
+            "friends",
+            "group"
+        ],
+        "twitter_screen_name": "UoLLibrary",
+        "space_type": "Library",
+        "building": "Brotherton Library",
+        "address": "University of Leeds, LS2 9JT",
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.553329,53.80789]}",
+        "facebook_url": "",
+        "title": "Brotherton Library",
+        "tags": [],
+        "what3words": "///cares.limes.races",
+        "noise": "Whispers",
+        "phone_number": "0113 343 5663",
+        "restricted": true,
+        "id": 83,
+        "image": "/assets/photos/Brotherton-Library.jpg",
+        "description": "Inspiring study place with group study areas on floor 2 of the Main Building and floor 3 of the West Building.",
+        "published": true,
+        "url_text": "Visit the Library website",
+        "phone_text": "Contact the Library",
+        "lat": 53.80789,
+        "lng": -1.553329
+    },
+    {
+        "id": 84,
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.5505879998850083,53.805363612275706]}",
+        "work": [
+            "close",
+            "friends",
+            "group"
+        ],
+        "atmosphere": [
+            "relaxed",
+            "cosy",
+            "social",
+            "friendly"
+        ],
+        "facilities": [
+            "food_drink",
+            "daylight",
+            "views",
+            "free_wifi",
+            "laptops_allowed",
+            "signal",
+            "outdoor_seating",
+            "toilets",
+            "refreshments",
+            "bike_racks",
+            "gender_neutral_toilets",
+            "wheelchair_accessible",
+            "blue_badge_parking"
+        ],
+        "title": "Affine Café",
+        "description": "Affine is more than just a place to grab a bite. A place to break away from the pressures of the working day and enjoy a breather, a change of scenery, or even a chat with fellow professionals. Located at the heart of the innovation hub, the contemporary space provides a welcoming environment to relax and unwind. The perfect place for casual meetings or laidback lunches.",
+        "access": "Anyone (public)",
+        "space_type": "Café",
+        "address": "University of Leeds, LS2 9JT",
+        "building": "Nexus building",
+        "floor": "Ground floor",
+        "restricted": false,
+        "restriction": "",
+        "disabled_access": true,
+        "url": "https://gfal.leeds.ac.uk/where-to-eat/cafes/affine/",
+        "booking_url": "https://gfal.leeds.ac.uk/club/",
+        "phone_number": "",
+        "twitter_screen_name": "GreatFoodLeeds",
+        "facebook_url": "https://www.facebook.com/greatfoodleeds",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=18466",
+        "campusmap_ref": "66",
+        "noise": "Animated discussion",
+        "tags": [],
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "8:30",
+                "to": "17:00"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "8:30",
+                "to": "17:00"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "8:30",
+                "to": "17:00"
+            },
+            "thursday": {
+                "open": true,
+                "from": "8:30",
+                "to": "17:00"
+            },
+            "friday": {
+                "open": true,
+                "from": "8:30",
+                "to": "17:00"
+            },
+            "saturday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            },
+            "sunday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            }
+        },
+        "image": "/assets/photos/Affine.jpg",
+        "imagealt": "Interior photograph of the Affine Café showing the service counter and seating, with multiple customers seated around tables  and two customers at the counter",
+        "slug": "affine-cafe",
+        "published": true,
+        "url_text": "Visit the Affine Café web site",
+        "phone_text": "",
+        "lat": 53.805363612275706,
+        "lng": -1.5505879998850083
+    },
+    {
+        "id": 85,
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.5553239258361453,53.803461209927285]}",
+        "work": [
+            "private",
+            "close",
+            "friends"
+        ],
+        "atmosphere": [
+            "disciplined",
+            "relaxed",
+            "modern",
+            "cosy",
+            "social",
+            "friendly"
+        ],
+        "facilities": [
+            "food_drink",
+            "daylight",
+            "views",
+            "free_wifi",
+            "laptops_allowed",
+            "sockets",
+            "signal",
+            "toilets",
+            "refreshments",
+            "break",
+            "bike_racks",
+            "gender_neutral_toilets",
+            "wheelchair_accessible"
+        ],
+        "title": "Loma Express Dentistry",
+        "description": "Located on level six of the Worsley building, the café provides a range of grab and go food and drinks. With a focus on healthy, field-to-fork food options, LOMA Express stocks unique salad and sandwich combinations, and fresh herbal infusion teas and other delicious LOMA Express products made fresh each day.",
+        "access": "Anyone (public)",
+        "space_type": "Café",
+        "address": "University of Leeds, LS2 9JT",
+        "building": "Worsley building",
+        "floor": "Level 6",
+        "restricted": false,
+        "restriction": "",
+        "disabled_access": true,
+        "url": "https://gfal.leeds.ac.uk/where-to-eat/cafes/loma-express-dentistry/",
+        "phone_number": "",
+        "twitter_screen_name": "GreatFoodLeeds",
+        "facebook_url": "https://www.facebook.com/greatfoodleeds",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=18477",
+        "campusmap_ref": "95",
+        "noise": "Animated discussion",
+        "tags": [],
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "8:00",
+                "to": "14:00"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "8:00",
+                "to": "14:00"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "8:00",
+                "to": "14:00"
+            },
+            "thursday": {
+                "open": true,
+                "from": "8:00",
+                "to": "14:00"
+            },
+            "friday": {
+                "open": true,
+                "from": "8:00",
+                "to": "14:00"
+            },
+            "saturday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            },
+            "sunday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            }
+        },
+        "image": "/assets/photos/Loma-Express-Dentistry.jpg",
+        "imagealt": "Interior photograph of the serving hatch in Loma Express Dentistry, with a customer weraing a headscarf being served by a member of staff, and two customers partially seen in the foreground",
+        "slug": "loma-express-dentistry",
+        "published": true,
+        "url_text": "Visit the Loma Express Dentistry web site",
+        "phone_text": "",
+        "lat": 53.803461209927285,
+        "lng": -1.5553239258361453
+    },
+    {
+        "id": 86,
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.5606943,53.8079452]}",
+        "work": [
+            "private",
+            "close",
+            "friends"
+        ],
+        "atmosphere": [
+            "disciplined",
+            "relaxed",
+            "modern",
+            "cosy",
+            "social",
+            "friendly"
+        ],
+        "facilities": [
+            "food_drink",
+            "daylight",
+            "views",
+            "free_wifi",
+            "laptops_allowed",
+            "sockets",
+            "signal",
+            "toilets",
+            "refreshments",
+            "break",
+            "bike_racks",
+            "gender_neutral_toilets",
+            "wheelchair_accessible",
+            "accessible_toilets"
+        ],
+        "title": "Caffè Nero at Business School",
+        "description": "Serving a selection of hot and cold drinks, salads, soups, sandwiches, cakes and snacks. Inside there is varied ample seating - whether you want to relax or work in groups, longer opening hours makes it the perfect spot for breaks between lectures and meetings throughout the day.",
+        "access": "Anyone (public)",
+        "space_type": "Café",
+        "address": "University of Leeds, LS2 9JT",
+        "building": "Maurice Keyworth Building",
+        "floor": "Ground floor",
+        "restricted": false,
+        "restriction": "",
+        "disabled_access": true,
+        "url": "https://gfal.leeds.ac.uk/where-to-eat/cafes/caffe-nero-at-business-school/",
+        "phone_number": "",
+        "twitter_screen_name": "GreatFoodLeeds",
+        "facebook_url": "https://www.facebook.com/greatfoodleeds",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=18468",
+        "campusmap_ref": "19",
+        "noise": "Animated discussion",
+        "tags": [],
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:00"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:00"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:00"
+            },
+            "thursday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:00"
+            },
+            "friday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:00"
+            },
+            "saturday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            },
+            "sunday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            }
+        },
+        "image": "/assets/photos/Caffe-Nero-Business-School.jpg",
+        "imagealt": "Interior photograph of the main service area in the Caffè Nero at Business School, showing its distinctive lighting, chiller cabinets and coffee machine",
+        "slug": "caffe-nero-at-business-school",
+        "published": true,
+        "url_text": "Visit the Caffè Nero at Business School web site",
+        "phone_text": "",
+        "lat": 53.8079452,
+        "lng": -1.5606943
+    },
+    {
+        "id": 87,
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.5517479706497481,53.807130152155715]}",
+        "work": [
+            "private",
+            "close",
+            "friends"
+        ],
+        "atmosphere": [
+            "disciplined",
+            "relaxed",
+            "modern",
+            "cosy",
+            "social",
+            "friendly"
+        ],
+        "facilities": [
+            "food_drink",
+            "daylight",
+            "views",
+            "free_wifi",
+            "laptops_allowed",
+            "sockets",
+            "signal",
+            "toilets",
+            "refreshments",
+            "break",
+            "bike_racks",
+            "gender_neutral_toilets",
+            "wheelchair_accessible"
+        ],
+        "title": "Caffè Nero at Laidlaw Library",
+        "description": "This is the very first Caffé Nero on a University campus, specialising in high-quality Italian coffee, a warm and welcoming atmosphere, good food and great personal service.",
+        "access": "Anyone (public)",
+        "space_type": "Café",
+        "address": "University of Leeds, LS2 9JT",
+        "building": "Laidlaw Library",
+        "floor": "Ground floor",
+        "restricted": false,
+        "restriction": "",
+        "disabled_access": true,
+        "url": "https://gfal.leeds.ac.uk/where-to-eat/cafes/caffe-nero/",
+        "phone_number": "",
+        "twitter_screen_name": "GreatFoodLeeds",
+        "facebook_url": "https://www.facebook.com/greatfoodleeds",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=18470",
+        "campusmap_ref": "63",
+        "noise": "Animated discussion",
+        "tags": [],
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "8:00",
+                "to": "20:00"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "8:00",
+                "to": "20:00"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "8:00",
+                "to": "20:00"
+            },
+            "thursday": {
+                "open": true,
+                "from": "8:00",
+                "to": "20:00"
+            },
+            "friday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:00"
+            },
+            "saturday": {
+                "open": true,
+                "from": "10:00",
+                "to": "16:30"
+            },
+            "sunday": {
+                "open": true,
+                "from": "10:00",
+                "to": "20:00"
+            }
+        },
+        "image": "/assets/photos/Caffe-Nero-Laidlaw.jpg",
+        "imagealt": "Exterior photograph of the Caffè Nero logo on the window of the Laidlaw Library, with the stained glass windows of the Emmanuel Centre in the background",
+        "slug": "caffe-nero-at-laidlaw-library",
+        "published": true,
+        "url_text": "Visit the Caffè Nero at Laidlaw Library web site",
+        "phone_text": "",
+        "lat": 53.807130152155715,
+        "lng": -1.5517479706497481
+    },
+    {
+        "id": 88,
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.5543964,53.8049273]}",
+        "work": [
+            "private",
+            "close",
+            "friends"
+        ],
+        "atmosphere": [
+            "disciplined",
+            "relaxed",
+            "modern",
+            "cosy",
+            "social",
+            "friendly"
+        ],
+        "facilities": [
+            "food_drink",
+            "daylight",
+            "views",
+            "free_wifi",
+            "laptops_allowed",
+            "sockets",
+            "signal",
+            "toilets",
+            "refreshments",
+            "break",
+            "bike_racks",
+            "gender_neutral_toilets",
+            "wheelchair_accessible",
+            "accessible_toilets"
+        ],
+        "title": "Caffè Nero at Roger Stevens",
+        "description": "This Caffè Nero is conveniently located at the heart of campus overlooking the sustainable pond. Serving a selection of hot and cold drinks, salads, soups, sandwiches, cakes and snacks. Inside there is varied ample seating - whether you want to relax or work in groups, longer opening hours makes it the perfect spot for breaks between lectures and meetings throughout the day.",
+        "access": "Anyone (public)",
+        "space_type": "Café",
+        "address": "University of Leeds, LS2 9JT",
+        "building": "Roger Stevens building",
+        "floor": "Level 6",
+        "restricted": false,
+        "restriction": "",
+        "disabled_access": true,
+        "url": "https://gfal.leeds.ac.uk/where-to-eat/cafes/caffe-nero-at-roger-stevens/",
+        "phone_number": "",
+        "twitter_screen_name": "GreatFoodLeeds",
+        "facebook_url": "https://www.facebook.com/greatfoodleeds",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=18471",
+        "campusmap_ref": "89",
+        "noise": "Animated discussion",
+        "tags": [],
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:30"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:30"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:30"
+            },
+            "thursday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:30"
+            },
+            "friday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:30"
+            },
+            "saturday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            },
+            "sunday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            }
+        },
+        "image": "/assets/photos/Caffe-Nero-Roger-Stevens1.jpg",
+        "imagealt": "Interior photograph of the service area at the Caffè Nero in the Roger Stevens building, showing the logo above, lighting and two members of staff",
+        "slug": "caffe-nero-at-roger-stevens",
+        "published": true,
+        "url_text": "Visit the Caffè Nero at Roger Stevens web site",
+        "phone_text": "",
+        "lat": 53.8049273,
+        "lng": -1.5543964
+    },
+    {
+        "facilities": [
+            "free_wifi",
+            "computers",
+            "laptops_allowed",
+            "sockets",
+            "printers_copiers",
+            "signal",
+            "toilets",
+            "refreshments",
+            "gender_neutral_toilets",
+            "break",
+            "wheelchair_accessible",
+            "bike_racks"
+        ],
+        "atmosphere": [
+            "disciplined",
+            "cosy"
+        ],
+        "access": "University Staff and Students",
+        "disabled_access": true,
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "9:00",
+                "to": "17:00"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "9:00",
+                "to": "17:00"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "9:00",
+                "to": "17:00"
+            },
+            "thursday": {
+                "open": true,
+                "from": "9:00",
+                "to": "17:00"
+            },
+            "friday": {
+                "open": true,
+                "from": "9:00",
+                "to": "17:00"
+            },
+            "saturday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            },
+            "sunday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            }
+        },
+        "slug": "st-james-hospital-library",
+        "floor": "Level 3",
+        "restriction": "Library Card needed",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=17354",
+        "published": true,
+        "url": "https://library.leeds.ac.uk/",
+        "campusmap_ref": null,
+        "work": [
+            "in_a_library",
+            "private",
+            "close"
+        ],
+        "twitter_screen_name": "UoLLibrary",
+        "space_type": "Library",
+        "building": "Clinical Sciences building",
+        "address": "St James's University Hospital, Beckett St, Harehills, Leeds LS9 7LN",
+        "phone_number": "",
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.5199219,53.8079267]}",
+        "facebook_url": "https://www.facebook.com/leedsuniversitylibrary",
+        "title": "St James's University Hospital Library",
+        "noise": "Whispers",
+        "restricted": true,
+        "image": "",
+        "id": 89,
+        "description": "Based on level 3 of the Clinical Sciences building, St James’s University Hospital Library supports the information needs of University research and teaching staff, medical and healthcare students, and employees of the Leeds Teaching Hospitals Trust.",
+        "url_text": "Visit the Library website",
+        "phone_text": "",
+        "lat": 53.8079267,
+        "lng": -1.5199219
+    },
+    {
+        "id": 9,
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.5559066355802778,53.80347902972122]}",
+        "work": [
+            "private",
+            "close",
+            "friends"
+        ],
+        "atmosphere": [
+            "disciplined",
+            "relaxed",
+            "modern",
+            "cosy",
+            "social",
+            "friendly"
+        ],
+        "facilities": [
+            "food_drink",
+            "daylight",
+            "views",
+            "free_wifi",
+            "laptops_allowed",
+            "sockets",
+            "signal",
+            "toilets",
+            "refreshments",
+            "break",
+            "bike_racks",
+            "gender_neutral_toilets",
+            "wheelchair_accessible",
+            "accessible_toilets"
+        ],
+        "title": "Loma Café",
+        "description": "LOMA is a unique offering on campus serving up specially selected craft coffee, delicious drinks and handcrafted salads and sandwiches. With a focus on healthy, field-to-fork food options, LOMA stands apart from the other food outlets on campus with unique salad and sandwich combinations you will struggle to find elsewhere.",
+        "access": "Anyone (public)",
+        "space_type": "Café",
+        "address": "University of Leeds, LS2 9JT",
+        "building": "Worsley Building",
+        "floor": "Level 9",
+        "restricted": false,
+        "restriction": "",
+        "disabled_access": true,
+        "url": "https://gfal.leeds.ac.uk/where-to-eat/cafes/loma-cafe/",
+        "phone_number": "",
+        "twitter_screen_name": "GreatFoodLeeds",
+        "facebook_url": "https://www.facebook.com/greatfoodleeds",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=17591",
+        "campusmap_ref": "95",
+        "noise": "Whispers",
+        "tags": [],
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "8:30",
+                "to": "16:00"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "8:30",
+                "to": "16:00"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "8:30",
+                "to": "16:00"
+            },
+            "thursday": {
+                "open": true,
+                "from": "8:30",
+                "to": "16:00"
+            },
+            "friday": {
+                "open": true,
+                "from": "8:30",
+                "to": "16:00"
+            },
+            "saturday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            },
+            "sunday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            }
+        },
+        "image": "/assets/photos/Loma-Cafe.jpg",
+        "imagealt": "Interior photograph of the Loma Café showing the overhead lighting rig for the main seating area with the service area in the background",
+        "slug": "loma-cafe",
+        "published": true,
+        "url_text": "Visit the Loma Café web site",
+        "phone_text": "",
+        "lat": 53.80347902972122,
+        "lng": -1.5559066355802778
+    },
+    {
+        "facilities": [
+            "daylight",
+            "views",
+            "individual_study_space",
+            "free_wifi",
+            "computers",
+            "laptops_allowed",
+            "sockets",
+            "signal",
+            "printers_copiers",
+            "bike_racks",
+            "toilets",
+            "accessible_toilets",
+            "gender_neutral_toilets",
+            "break",
+            "wheelchair_accessible"
+        ],
+        "atmosphere": [
+            "relaxed",
+            "modern",
+            "inspiring'",
+            "cosy",
+            "social",
+            "friendly"
+        ],
+        "access": "University Staff and Students",
+        "disabled_access": true,
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "9:30",
+                "to": "20:00"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "9:30",
+                "to": "20:00"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "9:30",
+                "to": "20:00"
+            },
+            "thursday": {
+                "open": true,
+                "from": "9:30",
+                "to": "20:00"
+            },
+            "friday": {
+                "open": true,
+                "from": "9:30",
+                "to": "17:00"
+            },
+            "saturday": {
+                "open": true,
+                "from": "12:00",
+                "to": "17:00"
+            },
+            "sunday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            }
+        },
+        "slug": "language-zone",
+        "floor": "Second floor",
+        "restriction": "",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=17525",
+        "published": true,
+        "url": "https://www.leeds.ac.uk/language-centre/doc/language-zone",
+        "campusmap_ref": "",
+        "phone_number": "0113 343 2646",
+        "email_address": "languagezone@leeds.ac.uk",
+        "work": [
+            "close"
+        ],
+        "twitter_screen_name": "",
+        "space_type": "Library",
+        "building": "Parkinson Building",
+        "address": "University of Leeds, LS2 9JT",
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.552787,53.807706]}",
+        "facebook_url": "",
+        "title": "Language Zone",
+        "noise": "Whispers",
+        "restricted": false,
+        "image": "/assets/photos/LanguageZone.jpg",
+        "imagealt": "Interior photograph of part of the Language Zone, showing multiple workstations arranged radially around a central pullar with students at work, and light streaming in through the window",
+        "id": 90,
+        "description": "The Language Zone is a welcoming space open to all students and staff at Leeds and provides learning material in more than 50 languages, as well as friendly advice for language learners. We have a computer cluster for personal study, and books, magazines, audio and video resources to help you learn a language, as well as spaces for informal social activities.",
+        "url_text": "Visit the Language Zone web site",
+        "phone_text": "Contact the Language Zone",
+        "lat": 53.807706,
+        "lng": -1.552787
+    },
+    {
+        "id": 91,
+        "published": true,
+        "title": "Worsley Building - 11.006 (LIDA cluster)",
+        "description": "Modern and quiet space. Follow timetable link below to check when room is free. 52 seat capacity.",
+        "space_type": "IT Cluster",
+        "slug": "worsley-building-11-006-lida-cluster",
+        "address": "University of Leeds, LS2 9JT",
+        "building": "Worsley building",
+        "floor": "Level 11",
+        "location": "{\"type\":\"Point\",\"coordinates\":[-1.555752941,53.8033012]}",
+        "what3words": "",
+        "access": "University Staff and Students",
+        "restricted": true,
+        "restriction": "Follow timetable link to check when room is free",
+        "disabled_access": true,
+        "url": "https://mytimetable.leeds.ac.uk/link?timetable.id=202223!location!6856E1BEE4EE6ABF22261FF5840C4DA1",
+        "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=17591",
+        "campusmap_ref": "95",
+        "booking_url": "",
+        "phone_number": "",
+        "email_address'": "",
+        "twitter_screen_name": "",
+        "facebook_url": "",
+        "noise": "Whispers",
+        "facilities": [
+            "daylight",
+            "large_desks",
+            "free_wifi",
+            "computers",
+            "laptops_allowed",
+            "sockets",
+            "bike_racks",
+            "toilets",
+            "accessible_toilets",
+            "gender_neutral_toilets",
+            "wheelchair_accessible"
+        ],
+        "work": [
+            "close"
+        ],
+        "atmosphere": [
+            "disciplined"
+        ],
+        "tags": "",
+        "image": "",
+        "imagealt": "",
+        "opening_hours": {
+            "monday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:00"
+            },
+            "tuesday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:00"
+            },
+            "wednesday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:00"
+            },
+            "thursday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:00"
+            },
+            "friday": {
+                "open": true,
+                "from": "8:00",
+                "to": "18:00"
+            },
+            "saturday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            },
+            "sunday": {
+                "open": false,
+                "from": "",
+                "to": ""
+            }
+        },
+        "url_text": "View timetable for Worsley Building - 11.006 (LIDA cluster)",
+        "phone_text": "",
+        "lat": 53.8033012,
+        "lng": -1.555752941
+    }
+]

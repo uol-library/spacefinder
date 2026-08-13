@@ -1,0 +1,39 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "VisualArtwork",
+        "name": "Limbo",
+        "description": "<p>Austin Wright grew up in Cardiff, where he attended night classes in art before studying Languages at New College, Oxford. Entering a career in teaching, he settled in Yorkshire in 1937. He created his sculptures in the barn and garden of his home in Upper Poppleton, and by 1954 had given up teaching to concentrate on his art. Initially influenced by Moore and Hepworth, he became known for his small lead figure groups. Between 1961 and 1964 he was Gregory Fellow in Sculpture at the University of Leeds.</p><p><strong>Limbo</strong> gathers 26 lead pieces created from drawings and observations made in sketchbooks on family seaside holidays in Anglesey and Cornwall in the 1950s. Some of these figure sketches relate directly to those in this sculpture, which for many years was displayed in the family garden.</p>",
+        "image": {
+            "@type": "ImageObject",
+            "contentUrl": "/assets/data/art/images/limbo.jpg",
+            "description": ""
+        },
+        "artform": "Sculpture",
+        "artMedium": "Concrete and lead",
+        "dateCreated": "1958",
+        "creator": {
+            "@type": "Person",
+            "name": "Austin Wright",
+            "birthDate": "1911",
+            "deathDate": "1997"
+        },
+        "spatial": {
+            "@type": "Place",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "University of Leeds",
+                "addressRegion": "Leeds, West Yorkshire",
+                "postalCode": "LS2 9JT",
+                "streetAddress": "Baines Wing Coffee Bar courtyard."
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "53.80756849142625",
+                "longitude": "-1.5542740993437314"
+            }
+        }
+    }
+}

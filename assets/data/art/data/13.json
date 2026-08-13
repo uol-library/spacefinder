@@ -1,0 +1,39 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "VisualArtwork",
+        "name": "A Celebration of Engineering Sciences",
+        "description": "<p>Allan Johnson was an architect at Lanchester & Lodge, a London practice with a long association with the University of Leeds. During the 1950s he worked on the Man-Made Fibres building, taking the lead on commissioning Mitzi Cunliffe&rsquo;s sculpture.</p><p>Johnson&rsquo;s proposal for a huge sculptural relief for the front of the Mechanical Engineering building was received enthusiastically by the University&rsquo;s Vice-Chancellor. Suggesting the interaction of man and machine, its dynamic shapes are inspired by link mechanisms in mechanical engineering. Constructing it from lightweight glass fibre reinforced polyester (GFRP), rather than much heavier traditional stone, enabled it to be installed in its raised location relatively easily.</p><p>In 2016 the sculpture was listed Grade II by Historic England as &lsquo; a vigorous, bold design&hellip; successfully connecting to the internal dynamics and meaning of the building&rsquo;.</p>",
+        "image": {
+            "@type": "ImageObject",
+            "contentUrl": "/assets/data/art/images/a-celebration-of-engineering-sciences.jpg",
+            "description": "DP168902: Exterior view of the university building from the north-east, showing the relief sculpture 'A Celebration of ngineering Sciences' over the entrance. 20th April 2015, <a href=\"http://archive.historicengland.org.uk/\">Historic England Archive</a>."
+        },
+        "artform": "Sculpture",
+        "artMedium": "Glass fibre reinforced polyester (GFRP)",
+        "dateCreated": "1962-1963",
+        "creator": {
+            "@type": "Person",
+            "name": "Allan Johnson",
+            "birthDate": "1907",
+            "deathDate": "1994"
+        },
+        "spatial": {
+            "@type": "Place",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "University of Leeds",
+                "addressRegion": "Leeds, West Yorkshire",
+                "postalCode": "LS2 9JT",
+                "streetAddress": "Mechanical Engineering Building, Woodhouse Lane"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "53.809863242932906",
+                "longitude": "-1.5553355102399058"
+            }
+        }
+    }
+}

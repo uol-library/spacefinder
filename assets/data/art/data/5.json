@@ -1,0 +1,46 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "VisualArtwork",
+        "name": "Levitating Figure, known as &lsquo;The Dreamer&rsquo;",
+        "description": "<p>Quentin Bell was the son of Vanessa and Clive Bell and nephew of Virginia Woolf. He is renowned as a ceramicist, and for his books on the Bloomsbury artists and a biography of Woolf. He was appointed Head of Fine Art at the University of Leeds in 1959, and later Professor of Fine Art. In 1978, Stanley Burton suggested acquiring a work by Bell for the Leeds campus.</p><p>Bell proposed a levitating figure – a recurrent theme in his art inspired by a conjuror&rsquo;s trick he saw as a child. Stanley and the Vice-Chancellor, Lord Boyle, eventually decided on a site near the Edward Boyle Library. The work was cast in fibreglass with a steel armature, in an inter-disciplinary partnership with the Department of Civil  Engineering. Dr Gurdev Singh was responsible for the design and construction of the internal support and the Department oversaw the installation.</p><p>Unveiled by Stanley Burton in October 1982, it was later removed from its original site due to the Library&rsquo;s expansion. Commonly known on campus as &lsquo;The Dreamer&rsquo;, it is not clear when this title was acquired. It has also been called &lsquo;The Astral Lady&rsquo;, and Bell referred to it as the &lsquo;Elmdon Figure&rsquo;. Whatever its title or location, the artwork is one of the most popular on campus, and has become a site for personal pilgrimages and memorials.</p>",
+        "image": [
+            {
+                "@type": "ImageObject",
+                "contentUrl": "/assets/data/art/images/the-dreamer1.jpg",
+                "description": "Levitating Figure, known as &lsquo;The Dreamer&rsquo; by Quentin Bell"
+            },
+            {
+                "@type": "ImageObject",
+                "contentUrl": "/assets/data/art/images/the-dreamer2.jpg",
+                "description": "Levitating Figure, known as &lsquo;The Dreamer&rsquo; by Quentin Bell"
+            }
+        ],
+        "artform": "Sculpture",
+        "artMedium": "Fibreglass with internal steel armature",
+        "dateCreated": "1982",
+        "creator": {
+            "@type": "Person",
+            "name": "Quentin Bell",
+            "birthDate": "1910",
+            "deathDate": "1996"
+        },
+        "spatial": {
+            "@type": "Place",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "University of Leeds",
+                "addressRegion": "Leeds, West Yorkshire",
+                "postalCode": "LS2 9JT",
+                "streetAddress": "Clothworkers&rsquo; Court"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "53.80763693275983",
+                "longitude": "-1.5550047375113125"
+            }
+        }
+    }
+}

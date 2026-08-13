@@ -1,0 +1,39 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "VisualArtwork",
+        "name": "Lenten Cover",
+        "description": "<p>Lyons was born in Staffordshire and studied at Wolverhampton College of Art and the University of Newcastle. He was Head of Sculpture at Manchester Metropolitan University from 1989-93. He lived and worked in Yorkshire until his death in 2019. His large-scale public sculptures are sited in cities in China and Mexico and throughout Europe.</p><p>Made of steel plate sourced from scrapyards in Hull and Leeds, <strong>Lenten Cover</strong> was completed on Good Friday 1979. It reminded the artist of cloths covering church statues during Lent. This monumental piece creates a gateway from one place to another. It was exhibited across England and Wales before being purchased from the artist in 2019.</p>",
+        "image": {
+            "@type": "ImageObject",
+            "contentUrl": "/assets/data/art/images/lenten-cover.jpg",
+            "description": ""
+        },
+        "artform": "Sculpture",
+        "artMedium": "Steel (varnished)",
+        "dateCreated": "1979",
+        "creator": {
+            "@type": "Person",
+            "name": "Michael Lyons",
+            "birthDate": "1943",
+            "deathDate": "2009"
+        },
+        "spatial": {
+            "@type": "Place",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "University of Leeds",
+                "addressRegion": "Leeds, West Yorkshire",
+                "postalCode": "LS2 9JT",
+                "streetAddress": "Western Campus Green"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "53.807679984948365",
+                "longitude": "-1.5619942197379162"
+            }
+        }
+    }
+}

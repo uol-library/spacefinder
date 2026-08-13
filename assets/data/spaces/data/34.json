@@ -1,0 +1,182 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "CollegeOrUniversity",
+        "name": "Chemistry - Chaston Chapman Lounge (room G20)",
+        "description": "Bright green modern lounge located in the Chemistry Building. The perfect place to study, take a break or explore the scientific magazines that are displayed on the shelves. The couches and the chairs are very comfortable, making the area very welcoming.",
+        "alternateName": "chemistry-chaston-chapman-lounge-room-g20",
+        "url": "https://students.leeds.ac.uk/info/10109/study_support/1419/where_to_study_on_campus",
+        "sameAs": "https://www.leeds.ac.uk/campusmap?location=17381",
+        "publicAccess": true,
+        "telephone": "0113 343 2444",
+        "image": {
+            "@type": "ImageObject",
+            "contentUrl": "",
+            "description": "Chemistry - Chaston Chapman Lounge (room G20)"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "University of Leeds",
+            "addressRegion": "Leeds, West Yorkshire",
+            "postalCode": "LS2 9JT",
+            "streetAddress": "Ground floor, Chemistry Building"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 53.808536389199546,
+            "longitude": -1.5533030311932319
+        },
+        "amenityFeature": [
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Food &amp; drink allowed",
+                "alternateName": "food_drink",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Natural daylight",
+                "alternateName": "daylight",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Plug Sockets",
+                "alternateName": "sockets",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Phone signal",
+                "alternateName": "signal",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Toilets nearby",
+                "alternateName": "toilets",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Bike racks",
+                "alternateName": "bike_racks",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Gender neutral toilets",
+                "alternateName": "gender_neutral_toilets",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Wheelchair accessible",
+                "alternateName": "wheelchair_accessible",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Animated discussion",
+                "alternateName": "animateddiscussion",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Alone, in private",
+                "alternateName": "private",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "With friends",
+                "alternateName": "friends",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "On a group project",
+                "alternateName": "group",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Relaxed",
+                "alternateName": "relaxed",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Modern",
+                "alternateName": "modern",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Inspiring",
+                "alternateName": "inspiring",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Cosy",
+                "alternateName": "cosy",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Social",
+                "alternateName": "social",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Friendly",
+                "alternateName": "friendly",
+                "value": true
+            }
+        ],
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Monday",
+                "opens": "09:00:00",
+                "closes": "18:00:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Tuesday",
+                "opens": "09:00:00",
+                "closes": "18:00:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Wednesday",
+                "opens": "09:00:00",
+                "closes": "18:00:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Thursday",
+                "opens": "09:00:00",
+                "closes": "18:00:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Friday",
+                "opens": "09:00:00",
+                "closes": "18:00:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Saturday"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Sunday"
+            }
+        ]
+    }
+}

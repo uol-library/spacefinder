@@ -1,0 +1,41 @@
+{
+    "title": "Baby Changing",
+    "marker_icon_url": "BabyChanging.png",
+    "group_contents": [{
+        "id": "17687",
+        "entryTitle": "Leeds University Union",
+        "title": "Leeds University Union",
+        "desc": "<a href=\"https:\/\/www.luu.org.uk\/\">Visit website<\/a><br><br><a href=\"01133801400\">0113 3801 400<\/a><br><br>\n<strong>Term time opening hours<\/strong><br>Open from 8.30am Monday-Saturday<br>12 Noon Sunday<br><br><strong>What3Words<\/strong><br><a href=\"https:\/\/what3words.com\/move.soda.soccer\">\/\/\/move.soda.soccer<\/a>",
+        "lat": "53.806589",
+        "lng": "-1.556111",
+        "tour": "",
+        "clusterID": "",
+        "StreetviewHeading": "",
+        "StreetviewPitch": "",
+        "tour_img_url": ""
+    }, {
+        "id": "17707",
+        "entryTitle": "Marjorie and Arnold Ziff Building",
+        "title": "Marjorie and Arnold Ziff Building",
+        "desc": "<strong>Term time opening hours<\/strong><br>Monday-Friday 9.00am-5.30pm<br>(Counter hours are 9.00am-4.45pm Mon-Fri except Wed 10.00am-4.45pm)<br><br><strong>Vacation opening hours<\/strong><br>Monday-Friday 9.00am-5.30pm<br><br><strong>What3Words<\/strong><br><a href=\"https:\/\/what3words.com\/transit.anyway.hobby\">\/\/\/transit.anyway.hobby<\/a>",
+        "lat": "53.806698",
+        "lng": "-1.553373",
+        "tour": "",
+        "clusterID": "",
+        "StreetviewHeading": "",
+        "StreetviewPitch": "",
+        "tour_img_url": ""
+    }, {
+        "id": "17738",
+        "entryTitle": "Parkinson Building",
+        "title": "Parkinson Building",
+        "desc": "<strong>Term time opening hours<\/strong><br>Monday-Thursday 9.00am-9.30pm<br>Friday 9.00am-6.30pm<br>Saturday 10.00am-5.00pm<br>Sunday 10.00am-7.00pm<br><br><strong>Vacation opening hours<\/strong><br>Monday-Thursday 9.00am-7.30pm<br>Friday 9.00am-5.00pm<br>Saturday 10.00am-5.00pm<br><br><strong>What3Words<\/strong><br><a href=\"https:\/\/what3words.com\/search.engage.sprint\">\/\/\/search.engage.sprint<\/a>",
+        "lat": "53.807931",
+        "lng": "-1.552729",
+        "tour": "",
+        "clusterID": "",
+        "StreetviewHeading": "",
+        "StreetviewPitch": "",
+        "tour_img_url": ""
+    }]
+}

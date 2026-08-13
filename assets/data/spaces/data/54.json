@@ -1,0 +1,182 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "CollegeOrUniversity",
+        "name": "Fine Art, History of Art and Cultural Studies - B16 (West Teaching Labs)",
+        "description": "Traditional cluster with rows of desks. Relaxed environment for 24 hours study. 33 seat capacity",
+        "alternateName": "fine-art-history-of-art-and-cultural-studies-b16-west-teaching-labs",
+        "url": "https://mytimetable.leeds.ac.uk/link?timetable.id=202223!location!6856E1BEE4EE6ABF22261FF5840C4F6E",
+        "sameAs": "https://www.leeds.ac.uk/campusmap?location=17451",
+        "publicAccess": false,
+        "telephone": "0113 343 5260",
+        "image": {
+            "@type": "ImageObject",
+            "contentUrl": "",
+            "description": "Fine Art, History of Art and Cultural Studies - B16 (West Teaching Labs)"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "University of Leeds",
+            "addressRegion": "Leeds, West Yorkshire",
+            "postalCode": "LS2 9JT",
+            "streetAddress": "Basement, Fine Art Building"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 53.807836240010325,
+            "longitude": -1.5572457236710147
+        },
+        "amenityFeature": [
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Large desks",
+                "alternateName": "large_desks",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Computers",
+                "alternateName": "computers",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Plug Sockets",
+                "alternateName": "sockets",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Phone signal",
+                "alternateName": "signal",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Printers and copiers",
+                "alternateName": "printers_copiers",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Whiteboards",
+                "alternateName": "whiteboards",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Projector",
+                "alternateName": "projector",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Toilets nearby",
+                "alternateName": "toilets",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Close to a place to take a break",
+                "alternateName": "break",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Bike racks",
+                "alternateName": "bike_racks",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Gender neutral toilets",
+                "alternateName": "gender_neutral_toilets",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Wheelchair accessible",
+                "alternateName": "wheelchair_accessible",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Whispers",
+                "alternateName": "whispers",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Alone, in private",
+                "alternateName": "private",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Where others are working",
+                "alternateName": "close",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Disciplined",
+                "alternateName": "disciplined",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Historic",
+                "alternateName": "historic",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Social",
+                "alternateName": "social",
+                "value": true
+            }
+        ],
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Monday",
+                "opens": "09:00:00",
+                "closes": "18:00:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Tuesday",
+                "opens": "09:00:00",
+                "closes": "18:00:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Wednesday",
+                "opens": "09:00:00",
+                "closes": "18:00:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Thursday",
+                "opens": "09:00:00",
+                "closes": "18:00:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Friday",
+                "opens": "09:00:00",
+                "closes": "18:00:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Saturday"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Sunday"
+            }
+        ]
+    }
+}

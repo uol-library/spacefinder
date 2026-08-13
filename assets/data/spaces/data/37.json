@@ -1,0 +1,212 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "CollegeOrUniversity",
+        "name": "Sir William Henry Bragg Building - Ground Floor Breakout Area (Room G.08)",
+        "description": "Modern big break out area with café shop nearby. Social, modern and very comfortable for people to study and relax.",
+        "alternateName": "sir-william-henry-bragg-building-ground-floor-breakout-area-room-g08",
+        "url": "https://students.leeds.ac.uk/info/10109/study_support/1419/where_to_study_on_campus",
+        "sameAs": "https://www.leeds.ac.uk/campusmap?location=17545",
+        "publicAccess": true,
+        "telephone": "",
+        "image": {
+            "@type": "ImageObject",
+            "contentUrl": "",
+            "description": "Sir William Henry Bragg Building - Ground Floor Breakout Area (Room G.08)"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "University of Leeds",
+            "addressRegion": "Leeds, West Yorkshire",
+            "postalCode": "LS2 9JT",
+            "streetAddress": "Ground floor, Sir William Henry Bragg Building"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 53.80910265,
+            "longitude": -1.553932038
+        },
+        "amenityFeature": [
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Food &amp; drink allowed",
+                "alternateName": "food_drink",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Natural daylight",
+                "alternateName": "daylight",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Plug Sockets",
+                "alternateName": "sockets",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Phone signal",
+                "alternateName": "signal",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Printers and copiers",
+                "alternateName": "printers_copiers",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Outdoor seating",
+                "alternateName": "outdoor_seating",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Toilets nearby",
+                "alternateName": "toilets",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Close to refreshments",
+                "alternateName": "refreshments",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Close to a place to take a break",
+                "alternateName": "break",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Bike racks",
+                "alternateName": "bike_racks",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Gender neutral toilets",
+                "alternateName": "gender_neutral_toilets",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Wheelchair accessible",
+                "alternateName": "wheelchair_accessible",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Animated discussion",
+                "alternateName": "animateddiscussion",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Alone, in private",
+                "alternateName": "private",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Where others are working",
+                "alternateName": "close",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "With friends",
+                "alternateName": "friends",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "On a group project",
+                "alternateName": "group",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Relaxed",
+                "alternateName": "relaxed",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Modern",
+                "alternateName": "modern",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Inspiring",
+                "alternateName": "inspiring",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Cosy",
+                "alternateName": "cosy",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Social",
+                "alternateName": "social",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Friendly",
+                "alternateName": "friendly",
+                "value": true
+            }
+        ],
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Monday",
+                "opens": "09:00:00",
+                "closes": "18:00:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Tuesday",
+                "opens": "09:00:00",
+                "closes": "18:00:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Wednesday",
+                "opens": "09:00:00",
+                "closes": "18:00:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Thursday",
+                "opens": "09:00:00",
+                "closes": "18:00:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Friday",
+                "opens": "09:00:00",
+                "closes": "18:00:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Saturday"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Sunday"
+            }
+        ]
+    }
+}

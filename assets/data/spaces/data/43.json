@@ -1,0 +1,158 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "CollegeOrUniversity",
+        "name": "Chemistry and Chemistry West Block - 1.44",
+        "description": "Private study space for focused study. 23 seat capacity",
+        "alternateName": "chemistry-and-chemistry-west-block-144",
+        "url": "",
+        "sameAs": "https://www.leeds.ac.uk/campusmap?location=17382",
+        "publicAccess": false,
+        "telephone": "0113 343 6543",
+        "image": {
+            "@type": "ImageObject",
+            "contentUrl": "",
+            "description": "Chemistry and Chemistry West Block - 1.44"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "University of Leeds",
+            "addressRegion": "Leeds, West Yorkshire",
+            "postalCode": "LS2 9JT",
+            "streetAddress": "First Floor, Chemistry building"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 53.8086589285449,
+            "longitude": -1.5536192337568269
+        },
+        "amenityFeature": [
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Natural daylight",
+                "alternateName": "daylight",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Computers",
+                "alternateName": "computers",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Whiteboards",
+                "alternateName": "whiteboards",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Projector",
+                "alternateName": "projector",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Toilets nearby",
+                "alternateName": "toilets",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Bike racks",
+                "alternateName": "bike_racks",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Gender neutral toilets",
+                "alternateName": "gender_neutral_toilets",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Wheelchair accessible",
+                "alternateName": "wheelchair_accessible",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Strictly silent",
+                "alternateName": "strictlysilent",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Alone, in private",
+                "alternateName": "private",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Where others are working",
+                "alternateName": "close",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "On a group project",
+                "alternateName": "group",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Disciplined",
+                "alternateName": "disciplined",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Inspiring",
+                "alternateName": "inspiring",
+                "value": true
+            }
+        ],
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Monday",
+                "opens": "09:00:00",
+                "closes": "18:00:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Tuesday",
+                "opens": "09:00:00",
+                "closes": "18:00:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Wednesday",
+                "opens": "09:00:00",
+                "closes": "18:00:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Thursday",
+                "opens": "09:00:00",
+                "closes": "18:00:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Friday",
+                "opens": "09:00:00",
+                "closes": "18:00:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Saturday"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "https://schema.org/Sunday"
+            }
+        ]
+    }
+}

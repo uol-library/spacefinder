@@ -1,0 +1,39 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "VisualArtwork",
+        "name": "Man-made Fibres",
+        "description": "<p>The American sculptor Mitzi Cunliffe (n&eacute;e Solomon) was born in New York and studied Fine Art at Columbia University from 1935-40. She married a British academic, and they moved to England in 1949, settling in Manchester. Cunliffe was also a designer of jewellery, textiles and glass, and a teacher in later life.</p><p>Following a large-scale commission for the Festival of Britain in 1951, she designed her most famous work, the BAFTA &lsquo;mask&rsquo;, in 1955. The same year, she was commissioned to create a major piece for the new Man-Made Fibres building at the University of Leeds. Professor JB Speakman, Head of the Department of Textile Industries, required a piece that would reflect exciting progress in the field of synthetic fibres.</p><p>Cunliffe&rsquo;s concept was for a vast pair of hands with textile fibres crossed between them, to be executed in Portland stone. The Duke of Edinburgh unveiled <strong>Man-Made Fibres</strong> when the new building was opened in 1956. Atop what is now called Clothworkers&rsquo; Building South, the sculpture has been conserved so that it can be seen again in its original state. Cunliffe spent her entire working life bringing art and architecture together in her vision of &lsquo;sculpture by the yard&rsquo;. She wanted her work to be &lsquo;used, rained on, leaned against, taken for granted&rsquo;. In this case however, her work is positioned so high on the Clothworkers&rsquo; Building South that it can easily be missed.</p>",
+        "image": {
+            "@type": "ImageObject",
+            "contentUrl": "/assets/data/art/images/man-made-fibres.jpg",
+            "description": ""
+        },
+        "artform": "Sculpture",
+        "artMedium": "Portland Stone",
+        "dateCreated": "1956",
+        "creator": {
+            "@type": "Person",
+            "name": "Mitzi Cunliffe",
+            "birthDate": "1918",
+            "deathDate": "2006"
+        },
+        "spatial": {
+            "@type": "Place",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "University of Leeds",
+                "addressRegion": "Leeds, West Yorkshire",
+                "postalCode": "LS2 9JT",
+                "streetAddress": "Clothworkers&rsquo; Building South"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "53.80721325359724",
+                "longitude": "-1.556360594135395"
+            }
+        }
+    }
+}

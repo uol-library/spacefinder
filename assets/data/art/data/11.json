@@ -1,0 +1,38 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "VisualArtwork",
+        "name": "Greener Living Space",
+        "description": "<p>Leeds-born artist David Mayne works in metal, welding and grinding to create texture and quality. His work outside the M&amp;S Company Archive on the Western Campus was commissioned by Groundwork and Marks & Spencer to celebrate their Greener Living Spaces programme. Funded by the sale of 5p carrier bags, this joint initiative transformed over 100 parks, play areas, and public gardens across the country.</p><p>This artwork reflects the company&rsquo;s commitment to sustainability as well as Marks &amp; Spencer&rsquo;s rich textile history, embodied by the woven steel mesh in the form of a rolled bolt of cloth.</p>",
+        "image": {
+            "@type": "ImageObject",
+            "contentUrl": "/assets/data/art/images/greener-living-space.jpg",
+            "description": ""
+        },
+        "artform": "Sculpture",
+        "artMedium": "Sustainable materials: stainless steel",
+        "dateCreated": "2014",
+        "creator": {
+            "@type": "Person",
+            "name": "David Mayne",
+            "birthDate": "1962"
+        },
+        "spatial": {
+            "@type": "Place",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "University of Leeds",
+                "addressRegion": "Leeds, West Yorkshire",
+                "postalCode": "LS2 9JT",
+                "streetAddress": "In front of M&amp;S Company Archive"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "53.807218689682145",
+                "longitude": "-1.56134043130815"
+            }
+        }
+    }
+}

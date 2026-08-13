@@ -1,0 +1,38 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "VisualArtwork",
+        "name": "Conversation",
+        "description": "<p>Lorna Green is a sculptor and environmental artist based in Cheshire. Her public art installations can be permanent or temporary and are often interactive. She did her MPhil at the University of Leeds and was a visiting lecturer from 1990 to 1997.</p><p>In 1999, Green collaborated on <strong>Roof Garden</strong>, a landscaping project with John Micklethwaite-Howe (now a sustainable community garden). Conversation responds to this garden and the stone circles. Composed of three standing stones inlaid with round plaques of black granite, it celebrates the dialogue between sculpture and nature on campus.</p><p>The entire project gained two commendations in the Leeds Architecture Awards 2000.</p>",
+        "image": {
+            "@type": "ImageObject",
+            "contentUrl": "/assets/data/art/images/conversation.jpg",
+            "description": ""
+        },
+        "artform": "Sculpture",
+        "artMedium": "Sandstone and polished granite",
+        "dateCreated": "1999",
+        "creator": {
+            "@type": "Person",
+            "name": "Lorna Green",
+            "birthDate": ""
+        },
+        "spatial": {
+            "@type": "Place",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "University of Leeds",
+                "addressRegion": "Leeds, West Yorkshire",
+                "postalCode": "LS2 9JT",
+                "streetAddress": "Chancellor&rsquo;s Court"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "53.80512720243669",
+                "longitude": "-1.5551731775365771"
+            }
+        }
+    }
+}

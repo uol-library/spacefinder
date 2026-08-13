@@ -1,0 +1,92 @@
+{
+    "id": 2,
+    "location": "{\"type\":\"Point\",\"coordinates\":[-1.5564749502369677,53.81052313551629]}",
+    "work": [
+        "close",
+        "friends",
+        "group"
+    ],
+    "atmosphere": [
+        "relaxed",
+        "modern",
+        "cosy",
+        "social",
+        "friendly"
+    ],
+    "facilities": [
+        "food_drink",
+        "views",
+        "large_desks",
+        "free_wifi",
+        "laptops_allowed",
+        "sockets",
+        "signal",
+        "toilets",
+        "refreshments",
+        "break",
+        "bike_racks",
+        "gender_neutral_toilets",
+        "wheelchair_accessible"
+    ],
+    "title": "Fuse Cafe in Chemical and Process Engineering",
+    "description": "Fuse at The School of Chemical and Process Engineering is a hidden gem located in the Engineering buildings. It is a quiet café with plenty of space, a perfect spot to refresh yourself.",
+    "access": "Anyone (public)",
+    "space_type": "Café",
+    "address": "University of Leeds, LS2 9JT",
+    "building": "Chemical and Process Engineering Building",
+    "floor": "Ground floor and mezzanine",
+    "restricted": false,
+    "restriction": "",
+    "disabled_access": true,
+    "url": "https://gfal.leeds.ac.uk/where-to-eat/cafes/fuse/",
+    "phone_number": "",
+    "twitter_screen_name": "GreatFoodLeeds",
+    "facebook_url": "https://www.facebook.com/greatfoodleeds",
+    "campusmap_url": "https://www.leeds.ac.uk/campusmap?location=18474",
+    "campusmap_ref": "48",
+    "noise": "Background chatter",
+    "tags": [],
+    "opening_hours": {
+        "monday": {
+            "open": true,
+            "from": "8:30",
+            "to": "15:00"
+        },
+        "tuesday": {
+            "open": true,
+            "from": "8:30",
+            "to": "15:00"
+        },
+        "wednesday": {
+            "open": true,
+            "from": "8:30",
+            "to": "15:00"
+        },
+        "thursday": {
+            "open": true,
+            "from": "8:30",
+            "to": "15:00"
+        },
+        "friday": {
+            "open": true,
+            "from": "8:30",
+            "to": "15:00"
+        },
+        "saturday": {
+            "open": false,
+            "from": "",
+            "to": ""
+        },
+        "sunday": {
+            "open": false,
+            "from": "",
+            "to": ""
+        }
+    },
+    "image": "/assets/photos/Fuse-Cafe.jpg",
+    "imagealt": "Interior photograph of the Fuse Cafe showing the serving area, chiller cabinets and part of the seating area",
+    "slug": "fuse-cafe-in-chemical-and-process-engineering",
+    "published": true,
+    "url_text": "Visit the Fuse Cafe in Chemical and Process Engineering web site",
+    "phone_text": ""
+}

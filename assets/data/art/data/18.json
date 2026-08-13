@@ -1,0 +1,38 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "VisualArtwork",
+        "name": "The Worlds of If",
+        "description": "<p>The William Henry Bragg Building is named for the Nobel-prize-winning physicist and x-ray crystallographer. At Leeds, he uncovered the structures of certain crystals with his son William Lawrence Bragg. Father and son were jointly awarded the Nobel Prize for Physics in 1915.</p><p>Sara Barker&rsquo;s sculpture responds to the beauty of crystal structures as well as to the theories initiated by the Braggs and extended by their successors. Their famous equation, Bragg&rsquo;s Law, <strong>nλ=2d sinθ</strong>, runs through the sculpture.</p><p><strong>The Worlds of If</strong> reflects the interdisciplinary and collaborative nature of the research taking place within the building, across Engineering, Astronomy, Physics and Computing. The sculpture is formed of strands and scientific symbols woven together like a textile. The artwork combines elements of sculpture, painting, collage and textiles.</p>",
+        "image": {
+            "@type": "ImageObject",
+            "contentUrl": "/assets/data/art/images/the-worlds-of-if.jpg",
+            "description": ""
+        },
+        "artform": "Sculpture",
+        "artMedium": "Welded aluminium with anodised metallic and iridescent paint",
+        "dateCreated": "2020",
+        "creator": {
+            "@type": "Person",
+            "name": "Sara Barker",
+            "birthDate": "1980"
+        },
+        "spatial": {
+            "@type": "Place",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "University of Leeds",
+                "addressRegion": "Leeds, West Yorkshire",
+                "postalCode": "LS2 9JT",
+                "streetAddress": "Sir William Henry Bragg Building"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "53.80951283105852",
+                "longitude": "-1.554276195104834"
+            }
+        }
+    }
+}

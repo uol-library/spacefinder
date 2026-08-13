@@ -1,0 +1,44 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "VisualArtwork",
+        "name": "Three Piece Reclining Figure No.2: Bridge Prop",
+        "description": "<p>Henry Moore was born in Castleford, West Yorkshire. After serving in the First World War he became a student at the Leeds School of Art (now Leeds Arts University), where he met fellow Yorkshire sculptor Barbara Hepworth. Moore also had access to the modernist works in the collection of Sir Michael Sadler, the University&rsquo;s then Vice-Chancellor, which had a profound effect on his development.</p><p>The sculpture consists of three bronze segments positioned to represent a reclining human figure in multiple pieces. According to the artist, the work was inspired by Waterloo Bridge, in which he saw one part of the bridge resting against another, giving the sculpture its subtitle &lsquo;Bridge Prop&rsquo;.",
+        "image": {
+            "@type": "ImageObject",
+            "contentUrl": "/assets/data/art/images/reclining-figure.jpg",
+            "description": ""
+        },
+        "artform": "Sculpture",
+        "artMedium": "Bronze",
+        "dateCreated": "1963",
+        "creator": {
+            "@type": "Person",
+            "name": "Henry Moore",
+            "birthDate": "1898",
+            "deathDate": "1986"
+        },
+        "contributor": {
+            "@type": "Organisation",
+            "name": "Leeds Art Fund",
+            "description": "Lent by Leeds Art Fund (Leeds Museums &amp; Galleries)"
+        },
+        "spatial": {
+            "@type": "Place",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "University of Leeds",
+                "addressRegion": "Leeds, West Yorkshire",
+                "postalCode": "LS2 9JT",
+                "streetAddress": "Chancellor&rsquo;s Court"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "",
+                "longitude": ""
+            }
+        }
+    }
+}

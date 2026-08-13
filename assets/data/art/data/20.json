@@ -1,0 +1,44 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "VisualArtwork",
+        "name": "Master of the Universe",
+        "description": "<p>This mechanical figure is Eduardo Paolozzi&rsquo;s re-interpretation of a famous satirical portrait of the mathematician Sir Isaac Newton, by artist and poet William Blake.</p><p>Paolozzi described how his composition unites both Blake and Newton: &lsquo;While Blake may have been satirising Newton, I see this work as an exciting union of two British geniuses. Together, they present to us nature and science, poetry, art, architecture &ndash; all welded, interconnected, interdependent.&rsquo;</p><p>Scottish artist Sir Eduardo Paolozzi was one of the pioneers of pop art. He was elected to the Royal Academy in 1979 and was appointed Her Majesty&rsquo;s Sculptor in Ordinary for Scotland in 1986 &ndash; a position he held until his death.</p><p>Paolozzi produced several versions of <strong>Master of the Universe</strong>. Another version is displayed outside the British Library in London The sculpture was donated by Douglas Caster CBE BSc FIET, who completed his degree in Electronic and Electrical Engineering at Leeds in 1975.</p>",
+        "image": {
+            "@type": "ImageObject",
+            "contentUrl": "/assets/data/art/images/master-of-the-universe.jpg",
+            "description": ""
+        },
+        "artform": "Sculpture",
+        "artMedium": "cast bronze",
+        "dateCreated": "1989",
+        "creator": {
+            "@type": "Person",
+            "name": "Eduardo Paolozzi",
+            "birthDate": "1924",
+            "deathDate": "2005"
+        },
+        "contributor": {
+            "@type": "Person",
+            "name": "Douglas and Lizzie Caster",
+            "description": "Gift of Douglas and Lizzie Caster, 2023"
+        },
+        "spatial": {
+            "@type": "Place",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "University of Leeds",
+                "addressRegion": "Leeds, West Yorkshire",
+                "postalCode": "LS2 9JT",
+                "streetAddress": "Outside Edward Boyle Library main entrance"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "53.806242580437534",
+                "longitude": "-1.5540245785993685"
+            }
+        }
+    }
+}

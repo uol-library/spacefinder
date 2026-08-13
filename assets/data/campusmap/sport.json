@@ -1,0 +1,77 @@
+{
+    "title": "Sport",
+    "marker_icon_url": "sport.png",
+    "group_contents": [{
+        "id": "18449",
+        "entryTitle": "Bodington Playing Fields",
+        "title": "Bodington Playing Fields",
+        "desc": "Sport and Physical Activity<br><br><a href=\"https:\/\/sport.leeds.ac.uk\/facilities\/bodington-playing-fields\/\">Visit website<\/a><br><br>Bodington Avenue, Adel, Leeds, LS16 8NA<br><br>Located three miles North of the main University of Leeds campus, Bodington has many sports pitches as well as The Brownlee Centre; the UK\u2019s first purpose built triathlon training centre.<br><br><strong>What3Words<\/strong><br><a href=\"https:\/\/w3w.co\/plank.follow.stream\">\/\/\/plank.follow.stream<\/a>",
+        "lat": "53.843183547106214",
+        "lng": " -1.589661129803988",
+        "tour": "",
+        "clusterID": "",
+        "StreetviewHeading": "",
+        "StreetviewPitch": "",
+        "tour_img_url": ""
+    }, {
+        "id": "17636",
+        "entryTitle": "Cromer Terrace Studios",
+        "title": "Cromer Terrace Studios",
+        "desc": "Cromer Terrace, Woodhouse, Leeds, LS2 9JT<br><br><a href=\"https:\/\/sport.leeds.ac.uk\/facilities\/cromer-terrace\/\">Visit website<\/a><br><br>\r\nCromer Terrace is a dynamic, multi-purpose studio that is located in the heart of the University of Leeds next to the Student\u2019s Union.<br><br><strong>What3Words<\/strong><br><a href=\"https:\/\/w3w.co\/toys.before.hooks\">\/\/\/toys.before.hooks<\/a>",
+        "lat": "53.806533658101635",
+        "lng": "-1.5574216313216909",
+        "tour": "",
+        "clusterID": "",
+        "StreetviewHeading": "",
+        "StreetviewPitch": "",
+        "tour_img_url": ""
+    }, {
+        "id": "17660",
+        "entryTitle": "Gryphon Sports Centre",
+        "title": "Gryphon Sports Centre",
+        "desc": "<br><a href=\"https:\/\/sport.leeds.ac.uk\/facilities\/gryphon-centre-2\/\">Visit website<\/a><br><br>The Gryphon Sports Centre offers a range of bookable sports and activities in its sports hall, together with 3 squash courts that can be used by staff and students.<br><br><strong>What3Words<\/strong><br><a href=\"https:\/\/what3words.com\/soak.translated.traded\">\/\/\/soak.translated.traded<\/a>",
+        "lat": "53.807372",
+        "lng": "-1.562964",
+        "tour": "",
+        "clusterID": "",
+        "StreetviewHeading": "",
+        "StreetviewPitch": "",
+        "tour_img_url": ""
+    }, {
+        "id": "18450",
+        "entryTitle": "Sports Park Weetwood",
+        "title": "Sports Park Weetwood",
+        "desc": "Sport and Physical Activity<br><br><a href=\"https:\/\/sport.leeds.ac.uk\/facilities\/weetwood\/\">Visit website<\/a><br><br>Ring Road, Weetwood, Leeds, LS16 5AU<br><br>Excellent facility for outdoor sports such as cricket, football, rugby and hockey with top of the range artificial and grass pitches.<br><br><strong>What3Words<\/strong><br><a href=\"https:\/\/w3w.co\/enter.edgy.newly\">\/\/\/enter.edgy.newly<\/a>",
+        "lat": "53.83849126265394",
+        "lng": "-1.5886276921134213",
+        "tour": "",
+        "clusterID": "",
+        "StreetviewHeading": "",
+        "StreetviewPitch": "",
+        "tour_img_url": ""
+    }, {
+        "id": "17769",
+        "entryTitle": "The Edge",
+        "title": "The Edge",
+        "desc": "Sport and Physical Activity<br><br><a href=\"http:\/\/sport.leeds.ac.uk\/the-edge\/\">Visit website<\/a><br><br>\n<a href=\"01133435095\">0113 343 5095<\/a>\n<br><br><strong>Term time opening hours<\/strong><br>Monday-Friday 8.00am-9.00pm<br><br>\nState of the art fitness centre with facilities including:\n<ul>\n<li>25 meter, 8 lane swimming pool<\/li>\n<li>250 station fitness suite with designated weights training room<\/li>\n<li>3 Fitness studios to cater for up to 150 classes per week<\/li>\n<li>2 Sports Halls (comprising of 12 badminton courts)<\/li>\n<li>2 Squash Courts<\/li>\n<li>Climbing and Bouldering Wall<\/li>\n<\/ul><br><br><strong>What3Words<\/strong><br><a href=\"https:\/\/what3words.com\/teams.plan.direct\">\/\/\/teams.plan.direct<\/a>",
+        "lat": "53.80432",
+        "lng": "-1.55266",
+        "tour": "",
+        "clusterID": "",
+        "StreetviewHeading": "",
+        "StreetviewPitch": "",
+        "tour_img_url": ""
+    }, {
+        "id": "18451",
+        "entryTitle": "University Boat House",
+        "title": "University Boat House",
+        "desc": "Sport and Physical Activity<br><br>Thwaite Lane, Leeds, LS10 1RN<br><br>Our fantastic boat house opened in September 2014 next to Thwaite Mills in Stourton. It is the home of the University of Leeds Boat Club and Leeds Rowing Club.<br><br><a href=\"http:\/\/sport.leeds.ac.uk\/facilities\/boat-house\/\">Visit website<\/a><br><br>\r\n<a href=\"01133435080\">0113 343 5080<\/a><br><br><strong>What3Words<\/strong><br><a href=\"https:\/\/what3words.com\/paid.glow.club\">\/\/\/paid.glow.club<\/a>",
+        "lat": "53.775513480673574",
+        "lng": "-1.5097706384349254",
+        "tour": "",
+        "clusterID": "",
+        "StreetviewHeading": "",
+        "StreetviewPitch": "",
+        "tour_img_url": ""
+    }]
+}

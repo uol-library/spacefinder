@@ -1,0 +1,25 @@
+[{
+    "id": "58",
+    "entryTitle": "Faculty Tours: 9:30am",
+    "title": "Faculty Tours: 9:30am",
+    "desc": "Here are some details about the opening of the new Squiggle Sculpture",
+    "lat": "53.807114",
+    "lng": "-1.554336",
+    "marker_icon_url": "calendar.png"
+}, {
+    "id": "59",
+    "entryTitle": "Meet Tutors: 10:20am",
+    "title": "Meet Tutors: 10:20am",
+    "desc": "Here are some details about the opening of the Freshers Week",
+    "lat": "53.8069740897",
+    "lng": "-1.55573487282",
+    "marker_icon_url": "calendar.png"
+}, {
+    "id": "60",
+    "entryTitle": "Welcome talk: 9am",
+    "title": "Welcome talk: 9am",
+    "desc": "Here are some details about the opening of the event, schedule etc",
+    "lat": "53.810037",
+    "lng": "-1.556095",
+    "marker_icon_url": "calendar.png"
+}]

@@ -1,0 +1,39 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "VisualArtwork",
+        "name": "Untitled Bas-relief",
+        "description": "<p>Dalwood was born in 1924 in Bristol. He was apprenticed as an engineer before serving in the Royal Navy from 1944-46, returning to study at Bath Academy under Kenneth Armitage. He worked in a bronze foundry in Milan on an Italian Government Scholarship from 1950-51. Awarded a Gregory Fellowship in 1955, he worked at the University of Leeds until 1959. During this period, he was commissioned by several universities including Oxford, Manchester and Liverpool.</p><p>In 1961 Dalwood was commissioned to produce this large aluminium bas relief frieze for the University’s hall of residence, Bodington Hall. He worked the clay by hand, then cast the abstract forms and shapes in metal. When Bodington was closed and demolished in 2013, the work was stored, cleaned and relocated to its new site at stage@leeds.</p><p>In 2012 Historic England gave the work a Grade II listing, in recognition of the sculptor’s ‘new venture on a wholly different scale and technical complexity to anything he had previously made’ and its historic interest as public art commissioned by a university during the sixties.</p>",
+        "image": {
+            "@type": "ImageObject",
+            "contentUrl": "/assets/data/art/images/.jpg",
+            "description": ""
+        },
+        "artform": "Sculpture",
+        "artMedium": "Aluminium &ndash; Silicon alloy",
+        "dateCreated": "1961",
+        "creator": {
+            "@type": "Person",
+            "name": "Hubert Dalwood",
+            "birthDate": "1924",
+            "deathDate": "1976"
+        },
+        "spatial": {
+            "@type": "Place",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "University of Leeds",
+                "addressRegion": "Leeds, West Yorkshire",
+                "postalCode": "LS2 9JT",
+                "streetAddress": "stage@leeds"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "53.806447933642396",
+                "longitude": "-1.5553355102766848"
+            }
+        }
+    }
+}

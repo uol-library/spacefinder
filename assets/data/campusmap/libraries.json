@@ -1,0 +1,53 @@
+{
+    "title": "Libraries",
+    "marker_icon_url": "Libraries.png",
+    "group_contents": [{
+        "id": "17603",
+        "entryTitle": "Brotherton Library",
+        "title": "Brotherton Library",
+        "desc": "Access via the Parkinson Building<br><br><a href=\"http:\/\/library.leeds.ac.uk\/library-locations#activate-tab1_brotherton\">Visit website<\/a><br><br>\n<a href=\"tel:01133435663\">0113 343 5663<\/a><br><br>\nPlease visit the website for opening hours<br><br><strong>What3Words<\/strong><br><a href=\"https:\/\/what3words.com\/search.engage.sprint\">\/\/\/search.engage.sprint<\/a>",
+        "lat": "53.807872",
+        "lng": "-1.553326",
+        "tour": "",
+        "clusterID": "",
+        "StreetviewHeading": "",
+        "StreetviewPitch": "",
+        "tour_img_url": ""
+    }, {
+        "id": "17642",
+        "entryTitle": "Edward Boyle Library",
+        "title": "Edward Boyle Library",
+        "desc": "<a href=\"http:\/\/library.leeds.ac.uk\/library-locations#activate-tab1_edward_boyle\">Visit website<\/a><br><br><a href=\"tel:01133435663\">0113 343 5663<\/a><br><br>\nPlease visit the website for opening hours<br><br><strong>What3Words<\/strong><br><a href=\"https:\/\/what3words.com\/editor.mixed.softly\">\/\/\/editor.mixed.softly<\/a>",
+        "lat": "53.806156",
+        "lng": "-1.554583",
+        "tour": "",
+        "clusterID": "",
+        "StreetviewHeading": "",
+        "StreetviewPitch": "",
+        "tour_img_url": ""
+    }, {
+        "id": "17661",
+        "entryTitle": "Health Sciences Library",
+        "title": "Health Sciences Library",
+        "desc": "Worsley Building<br><br><a href=\"https:\/\/library.leeds.ac.uk\/library-locations#activate-tab1_health_sciences\">Visit website<\/a><br><br>\n<a href=\"tel:01133435663 \">0113 343 5663 <\/a><br><br><strong>What3Words<\/strong><br><a href=\"https:\/\/what3words.com\/posts.crush.enter\">\/\/\/posts.crush.enter<\/a>",
+        "lat": "53.803323",
+        "lng": "-1.55565",
+        "tour": "",
+        "clusterID": "",
+        "StreetviewHeading": "",
+        "StreetviewPitch": "",
+        "tour_img_url": ""
+    }, {
+        "id": "17683",
+        "entryTitle": "Laidlaw Library",
+        "title": "Laidlaw Library",
+        "desc": "166 Woodhouse Lane<br><br><a href=\"http:\/\/library.leeds.ac.uk\/library-locations#activate-tab1_laidlaw\">Visit website<\/a><br><br>\n<a href=\"tel:01133435663\">0113 343 5663<\/a><br><br>\nPlease visit the website for opening hours<br><br><strong>What3Words<\/strong><br><a href=\"https:\/\/what3words.com\/ending.hooks.narrow\">\/\/\/ending.hooks.narrow<\/a>",
+        "lat": "53.807012",
+        "lng": "-1.551691",
+        "tour": "",
+        "clusterID": "",
+        "StreetviewHeading": "",
+        "StreetviewPitch": "",
+        "tour_img_url": ""
+    }]
+}

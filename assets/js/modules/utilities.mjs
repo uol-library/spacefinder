@@ -151,17 +151,44 @@ export function getJSON( options ) {
 }
 
 /**
+ * Returns a place object given a property and value
+ * @param {Object} object with property p and value v
+ * @returns {Object} place object
+ */
+function getPlace( f ) {
+    let placeData = spacefinder.data[spacefinder.currentDataSource];
+    for (let i = 0; i < placeData.length; i++ ) {
+        if ( placeData[i][f.p] == f.v ) {
+            return placeData[i];
+        }
+    }
+
+}
+/**
  * Returns a space object given a valid ID
  * @param {integer} id 
  * @returns {Object} space object
  */
 export function getPlaceById( id ) {
-    let placeData = spacefinder.data[spacefinder.currentDataSource];
-    for (let i = 0; i < placeData.length; i++ ) {
-        if ( placeData[i].id == id ) {
-            return placeData[i];
-        }
-    }
+    return getPlace( { p: 'id', v: id });
+}
+
+/**
+ * Returns a space object given a valid slug
+ * @param {string} slug 
+ * @returns {Object} place object
+ */
+export function getPlaceBySlug( slug ) {
+    return getPlace( { p: 'slug', v: slug } );
+}
+
+/**
+ * Returns a space DOM node given a valid ID
+ * @param {integer} id 
+ * @returns {Object} DOM node
+ */
+export function getPlaceNodeById( id ) {
+    return document.querySelector( '[data-id="' + id + '"]' );
 }
 
 /**
@@ -185,28 +212,6 @@ export function getFilterData( filterkey, optionkey ) {
         }
     }
     return false;
-}
-
-/**
- * Returns a space object given a valid slug
- * @param {string} slug 
- * @returns {Object} space object
- */
- export function getSpaceBySlug( slug ) {
-    for (let i = 0; i < spacefinder.data[spacefinder.currentDataSource].length; i++ ) {
-        if ( spacefinder.spaces[i].slug == slug ) {
-            return spacefinder.spaces[i];
-        }
-    }
-}
-
-/**
- * Returns a space DOM node given a valid ID
- * @param {integer} id 
- * @returns {Object} DOM node
- */
-export function getSpaceNodeById( id ) {
-    return document.querySelector( '[data-id="' + id + '"]' );
 }
 
 /**

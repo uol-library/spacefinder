@@ -1,0 +1,43 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "VisualArtwork",
+        "name": "Converse Column",
+        "description": "<p><strong>Converse Column</strong> is a nine-metre high, two-and-a-half-metre diameter revolving &lsquo;Poemdrum&rsquo; commissioned from Liliane Lijn for the NEXUS building. The New York-born, London-based artist is known for her work with kinetic text, and is a pioneer in the interaction of art, science technology and language.</p><p>Lijn asked students and staff to submit short texts on themes of interchange, invention and transformation, which were combined with her own poem in a collaborative work. This text was then laser-cut into the surface of two nested drums, which turn continually in opposite directions and at different speeds. Visible as daylight recedes, two layers of internal lighting illuminate the words, with a carefully programmed suite of colour changes. Difficult to read conventionally, it uses light, motion and words to explore how  unexpected combinations can produce fresh meanings.</p>",
+        "image": {
+            "@type": "ImageObject",
+            "contentUrl": "/assets/data/art/images/converse-column.jpg",
+            "description": ""
+        },
+        "artform": "Sculpture",
+        "artMedium": "Laser-cut painted aluminium, stainless steel with LED lighting and turntable mechanism.",
+        "dateCreated": "2019",
+        "creator": {
+            "@type": "Person",
+            "name": "Liliane Lijn",
+            "birthDate": "1939"
+        },
+        "contributor": {
+            "@type": "Organisation",
+            "name": "Neon Circus",
+            "description": "Fabricated by Neon Circus"
+        },
+        "spatial": {
+            "@type": "Place",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "University of Leeds",
+                "addressRegion": "Leeds, West Yorkshire",
+                "postalCode": "LS2 9JT",
+                "streetAddress": "Discovery Way, outside NEXUS Building"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "53.80520007237692",
+                "longitude": "-1.5490120797785778"
+            }
+        }
+    }
+}

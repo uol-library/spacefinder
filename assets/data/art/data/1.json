@@ -1,0 +1,65 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "VisualArtwork",
+        "name": "A Spire",
+        "description": "<p>British-Japanese artist Simon Fujiwara was born in London, grew up in Cornwall and now lives and works in Berlin. Standing at the very entrance to the campus, in front of the Laidlaw Library, <strong>A Spire</strong> is a beacon and totem that represents the industries on which the University &ndash; and the city &ndash; are built. It was Fujiwara&rsquo;s first public art commission.</p><p>Tall and cylindrical, it is the third &lsquo;spire&rsquo; between two church buildings on Woodhouse Lane, drawing attention to the physical qualities of the site and creating a visually arresting moment. From the pulverised coal at its base symbolising the source of Leeds&rsquo; prosperity, to the cables laid into the cast representing the current digital era, the surface of intertwined natural and technological elements forms a soaring visual timeline.</p>",
+        "image": [
+            {
+                "@type": "ImageObject",
+                "contentUrl": "/assets/data/art/images/a-spire1.jpg",
+                "description": "&ldquo;A Spire&rdquo; by Simon Fijiwara pictured in front of the Laidlaw Library"
+            },
+            {
+                "@type": "ImageObject",
+                "contentUrl": "/assets/data/art/images/a-spire2.jpg",
+                "description": "&ldquo;A Spire&rdquo; by Simon Fijiwara pictured in front of the Laidlaw Library"
+            },
+            {
+                "@type": "ImageObject",
+                "contentUrl": "/assets/data/art/images/a-spire3.jpg",
+                "description": "Simon Fijiwara pictured in front of &ldquo;A Spire&rdquo;"
+            },
+            {
+                "@type": "ImageObject",
+                "contentUrl": "/assets/data/art/images/a-spire4.jpg",
+                "description": "&ldquo;A Spire&rdquo; by Simon Fijiwara pictured in front of the Laidlaw Library"
+            },
+            {
+                "@type": "ImageObject",
+                "contentUrl": "/assets/data/art/images/a-spire5.jpg",
+                "description": "Simon Fijiwara fabricating &ldquo;A Spire&rdquo; in his studio"
+            },
+            {
+                "@type": "ImageObject",
+                "contentUrl": "/assets/data/art/images/a-spire6.jpg",
+                "description": "Close up of the surface of &ldquo;A Spire&rdquo; by Simon Fijiwara"
+            }
+        ],
+        "artform": "Sculpture",
+        "artMedium": "Cast jesmonite",
+        "dateCreated": "2015",
+        "creator": {
+            "@type": "Person",
+            "name": "Simon Fujiwara",
+            "birthDate": "1982"
+        },
+        "spatial": {
+            "@type": "Place",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "University of Leeds",
+                "addressRegion": "Leeds, West Yorkshire",
+                "postalCode": "LS2 9JT",
+                "streetAddress": "Laidlaw Library, Woodhouse Lane entrance"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "53.80697250689583",
+                "longitude": "-1.5514923847726263"
+            }
+        }
+    }
+}

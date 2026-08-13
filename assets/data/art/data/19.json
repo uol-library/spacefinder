@@ -1,0 +1,38 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "VisualArtwork",
+        "name": "Curtain",
+        "description": "<p>Basque artist Juanjo Novella&rsquo;s sculpture is the largest freestanding work on campus, measuring 20 metres long by three metres high. It resembles a sheet of paper with a &lsquo;torn&rsquo; edge along the top. This page represents university life as a place of reading, writing, experimentation and sketching out ideas.</p><p>Poet Laureate Simon Armitage's words &lsquo;to leaf is to learn&rsquo; are punched through the surface of the artwork, along with a leaf design referring to the mature sycamore tree nearby. This page represents the university as a place of reading, writing, experimentation and sketching out ideas.</p><p>Novella said: &lsquo;I like to imagine people around my sculptures, touching them, leaning on them, children playing. I want this work to be a living element that adds a sense of identity to the place where it is located.&rsquo;</p>",
+        "image": {
+            "@type": "ImageObject",
+            "contentUrl": "/assets/data/art/images/curtain.jpg",
+            "description": ""
+        },
+        "artform": "Sculpture",
+        "artMedium": "Painted Steel",
+        "dateCreated": "2021",
+        "creator": {
+            "@type": "Person",
+            "name": "Juanjo Novella",
+            "birthDate": "1961"
+        },
+        "spatial": {
+            "@type": "Place",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "University of Leeds",
+                "addressRegion": "Leeds, West Yorkshire",
+                "postalCode": "LS2 9JT",
+                "streetAddress": "Esther Simpson Building"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "53.80636478965133",
+                "longitude": "-1.5601477932547008"
+            }
+        }
+    }
+}

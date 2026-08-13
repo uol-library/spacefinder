@@ -1,0 +1,39 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "VisualArtwork",
+        "name": "Hermes / The Spirit Of Enterprise",
+        "description": "<p>The flying bronze figure on the east wall of the Roger Stevens building is one of the most prominent, striking sculptures on campus. Originally it was commissioned by the Midland Bank for their London offices in the late 1950s. Chattaway called it <strong>Hermes</strong>, but the Greek god&rsquo;s &lsquo;less desirable&rsquo; associations, as the protector of thieves, led his patrons to rename it <strong>The Spirit of Enterprise</strong>.</p><p>Threatened with scrapping when the Midland building was sold to developers, the work was saved by Chattaway&rsquo;s longstanding patron, Stanley Burton, who purchased it for campus. Chattaway was delighted at the return of his original title, <strong>Hermes</strong>.</p><p>In a very different new home, the sculpture is a dramatic example of how public art can change and adapt to new settings and new audiences, creating fresh dialogues with its environment.",
+        "image": {
+            "@type": "ImageObject",
+            "contentUrl": "/assets/data/art/images/.jpg",
+            "description": "Drawing for Hermes, by WH Chattaway, chalk and pencil on paper. Gift of Stanley Burton, 1983. University of Leeds Art Collection &copy; Estate of WH Chattaway"
+        },
+        "artform": "Sculpture",
+        "artMedium": "Bronze",
+        "dateCreated": "1958",
+        "creator": {
+            "@type": "Person",
+            "name": "William Chattaway",
+            "birthDate": "1927",
+            "deathDate": "2019"
+        },
+        "spatial": {
+            "@type": "Place",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "University of Leeds",
+                "addressRegion": "Leeds, West Yorkshire",
+                "postalCode": "LS2 9JT",
+                "streetAddress": "Roger Stevens Building"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "53.80494913102676",
+                "longitude": "-1.5543317668285812"
+            }
+        }
+    }
+}

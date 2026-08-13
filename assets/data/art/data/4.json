@@ -1,0 +1,39 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "VisualArtwork",
+        "name": "Christ Driving The Moneychangers From The Temple",
+        "description": "<p>Prolific sculptor, typographer and printmaker Eric Gill was commissioned to produce a war memorial by the University’s Vice-Chancellor Michael Sadler in 1917. Known for his precise linear simplicity, Gill was associated with the modernist direct carving movement, which encouraged a return to skills favoured in the Middle Ages. He became the subject of posthumous scandal when a 1989 biography revealed his sexual abuse of his daughters.</p><p>Gill&rsquo;s relief was carved in five sections and was dedicated by the Bishop of Ripon in 1923, in its prominent original site on the wall beneath the Great Hall. It represents the Bible story in which Christ violently expels traders and moneychangers from a temple. This moralising subject was popular in European art, but in the context of a 20th-century war memorial it was surprising; the press at the time described it as &lsquo;bizarre&rsquo; and &lsquo;not appropriate&rsquo;.</p><p>Gill held intensely religious, anti-industrial beliefs and thought modern warfare was driven by monetary gain. Some believed he was implying that Leeds merchants had profited from the war. For Sadler, however, the subject affirmed the Allies&rsquo; use of force as justifiable. Like Christ, they used violence as the last resort in a righteous cause. For Sadler, the frieze presented the war as an ethical rather than a military triumph. In recent times, the frieze has been criticised for what can be read as an antisemitic trope that associates money changing with Jewish people.</p><p>The work was moved indoors to its current location in 1961.</p><p><strong>This work was conserved in 2018 thanks to the Henry Moore Foundation, the Friends of University Art and Music (Leeds) and Leeds Arts Fund</strong>.</p>",
+        "image": {
+            "@type": "ImageObject",
+            "contentUrl": "/assets/data/art/images/christ-driving-moneychangers-from-temple1.jpg",
+            "description": "&ldquo;Christ Driving The Moneychangers From The Temple&rdquo; by Eric Gill (1882-1940)"
+        },
+        "artform": "Sculpture",
+        "artMedium": "Portland Stone",
+        "dateCreated": "1923",
+        "creator": {
+            "@type": "Person",
+            "name": "Eric Gill",
+            "birthDate": "1882",
+            "deathDate": "1940"
+        },
+        "spatial": {
+            "@type": "Place",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "University of Leeds",
+                "addressRegion": "Leeds, West Yorkshire",
+                "postalCode": "LS2 9JT",
+                "streetAddress": "Michael Sadler Building, foyer"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "53.80697013110159",
+                "longitude": "-1.5535764611647243"
+            }
+        }
+    }
+}
