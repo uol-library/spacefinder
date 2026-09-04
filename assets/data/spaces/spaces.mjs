@@ -1,17 +1,24 @@
 /**
  * Templates used to render spaces in the list.
  *
- * The following functions can be defined in this file:
- * - getPlaceHTML (mandatory) - assembles HTML for the list view (short) and returns a HTML Element
+ * The following functions are defined in this file:
+ * 
+ * - getPlaceHTML - assembles HTML for the list view (short) and returns a HTML Element
  * - getAdditionalInfo - assembles HTML for expanded view and returns an HTML String
+ * - getInfoWindowContent - assembles HTML for the map infoWindow and returns an HTML String
  * - onloadPlaceData - called when the data is loaded, can be used to set up any additional data structures or intervals
  * - onrenderPlaceData - called when the data is rendered, can be used to set up any additional data structures or intervals
  * - onunloadPlaceData - called when the data is unloaded, can be used to clear any intervals or event listeners
+ * 
+ * These are called using the module namespace object, which is added to the spacefinder.data object when this module is loaded.
+ * i.e. spacefinder.data.spaces.getPlaceHTML( space ) will call the getPlaceHTML function in this module.
+ * 
+ * All the above are mandatory for dynamically loaded modules, apart from the onunloadPlaceData function, which is optional.
  */
 import { spacefinder } from '../../js/modules/config.mjs';
 import { getPlaceNodeById, getFilterData, splog } from '../../js/modules/utilities.mjs';
 
-const namespace = 'spaces';
+export const namespace = 'spaces';
 
 /**
  * Renders list view for a space
@@ -135,6 +142,27 @@ export function getAdditionalInfo( space ) {
         }
     }
     return spaceHTML;
+}
+
+/**
+ * Returns HTML for an individual space's infoWindow
+ * @param {Object} space
+ * @returns {String} HTML content for space infoWindow
+ */
+export function getInfoWindowContent( space ) {
+    let info = [];
+    info.push( space.space_type );
+    if ( space.floor !== '' ) {
+        info.push( space.floor );
+    }
+    if ( space.building !== '' ) {
+        info.push( space.building );
+    }
+    let content = '<div class="placeInfoWindow"><h3>'+space.title+'</h3>';
+    content += '<p class="info">' + info.join(', ') + '</p>';
+    content += '<p class="description">' + space.description + '</p>';
+    content += '<button class="show-list">More info&hellip;</button></div>';
+    return content;
 }
 
 /**
@@ -270,5 +298,6 @@ export function onunloadPlaceData( ) {
     splog( 'onunloadPlaceData (spaces module)' );
     clearInterval( spacefinder.data[namespace].openingHoursInterval );
 }
+
 
 

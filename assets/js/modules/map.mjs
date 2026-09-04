@@ -148,7 +148,7 @@ function maybeSetupMap() {
                 });
                 spacefinder.data[spacefinder.currentDataSource].markergroup.addLayer( spacefinder.data[spacefinder.currentDataSource].places[i].marker );
                 /* set the popup for the marker */
-                spacefinder.data[spacefinder.currentDataSource].places[i].popup = new Popup().setContent( getPlaceInfoWindowContent( spacefinder.data[spacefinder.currentDataSource].places[i] ) );
+                spacefinder.data[spacefinder.currentDataSource].places[i].popup = new Popup().setContent( spacefinder.data[spacefinder.currentDataSource].module.getInfoWindowContent( spacefinder.data[spacefinder.currentDataSource].places[i] ) );
                 spacefinder.data[spacefinder.currentDataSource].places[i].popup.spaceID = spacefinder.data[spacefinder.currentDataSource].places[i].id;
                 spacefinder.data[spacefinder.currentDataSource].places[i].marker.bindPopup( spacefinder.data[spacefinder.currentDataSource].places[i].popup );
             }
@@ -159,7 +159,7 @@ function maybeSetupMap() {
 
         /* use popupopen and popupclose events to select and deselect places from map */
         spacefinder.map.on( 'popupopen', event => {
-            zoomMapToSpace( event.popup.spaceID );
+            zoomMapToPlace( event.popup.spaceID );
             document.dispatchEvent( new CustomEvent( 'placeSelectedOnMap', { bubbles: true, detail: { id: event.popup.spaceID, src: 'map' } } ) );
         });
         spacefinder.map.on( 'popupclose', event => {
@@ -167,7 +167,7 @@ function maybeSetupMap() {
         });
 
         /* respond to corresponding events from list */
-        document.addEventListener( 'placeSelected', event => { zoomMapToSpace( event.detail.id ) } );
+        document.addEventListener( 'placeSelected', event => { zoomMapToPlace( event.detail.id ) } );
         document.addEventListener( 'placeDeselected', deselectPlacesFromMap );
 
         /* Make sure the map view encompasses all markers */
@@ -265,27 +265,6 @@ class MapTypeControl extends Control {
 }
 
 /**
- * Returns HTML for an individual space's infoWindow
- * @param {Object} space
- * @returns {String} HTML content for space infoWindow
- */
-function getPlaceInfoWindowContent( space ) {
-	let info = [];
-	info.push( space.space_type );
-	if ( space.floor !== '' ) {
-		info.push( space.floor );
-	}
-	if ( space.building !== '' ) {
-		info.push( space.building );
-	}
-	let content = '<div class="placeInfoWindow"><h3>'+space.title+'</h3>';
-	content += '<p class="info">' + info.join(', ') + '</p>';
-	content += '<p class="description">' + space.description + '</p>';
-	content += '<button class="show-list">More info&hellip;</button></div>';
-	return content;
-}
-
-/**
  * Returns an object to be used in the map to make a leaflet icon
  * @param {String} className CSS class to be used on the icon
  * @return {Object}
@@ -312,8 +291,8 @@ function recentreMap() {
  * Zooms the map to show a particular space
  * @param {Object} space
  */
-function zoomMapToSpace( spaceid ) {
-    splog( 'zoomMapToSpace' );
+function zoomMapToPlace( spaceid ) {
+    splog( 'zoomMapToPlace' );
     let space = getPlaceById( spaceid );
     spacefinder.data[spacefinder.currentDataSource].markergroup.zoomToShowLayer( space.marker, function(){
         let newCenter = new LatLng( space.lat, space.lng );
