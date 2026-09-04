@@ -1,8 +1,7 @@
 
 import { spacefinder } from './config.mjs';
-import { splog, getJSON, getFilterData, setHash, getPlaceById, getSpaceNodeById } from './utilities.mjs';
+import { splog, getJSON, getFilterData, setHash, getPlaceById, getPlaceNodeById } from './utilities.mjs';
 import { getFilterStatus } from './filters.mjs';
-import { getSpaceHTML, getAdditionalInfo } from './templates.mjs';
 import { updateDistances } from './map.mjs';
 
 /* setup */
@@ -10,8 +9,6 @@ document.addEventListener( 'DOMContentLoaded', () => {
     document.addEventListener( 'placesLoaded', () => {
         renderList();
         updateDistances();
-        checkOpeningHours();
-        setInterval( checkOpeningHours, (30*1000) );
         activateSort(true, 'alpha');
     });
     loadPlaces();
@@ -19,15 +16,15 @@ document.addEventListener( 'DOMContentLoaded', () => {
     document.addEventListener( 'viewfilter', applyFilters );
     document.addEventListener( 'filtersapplied', updateListFilterMessage );
 
-    /* event listeners for space selection and deselection */
-    document.addEventListener( 'spaceSelected', event => { selectSpace( event.detail.id, event.detail.src ) } );
-    document.addEventListener( 'spaceDeselected', event => { deselectSpaces( event.detail ) }  );
-    document.addEventListener( 'spaceSelectedOnMap', event => { selectSpace( event.detail.id, 'map' ) } );
-    document.addEventListener( 'spaceDeselectedFromMap', event => { deselectSpaces( event.detail ) }  );
-    /* set up click events for spaces */
+    /* event listeners for place selection and deselection */
+    document.addEventListener( 'placeSelected', event => { selectPlace( event.detail.id, event.detail.src ) } );
+    document.addEventListener( 'placeDeselected', event => { deselectPlaces( event.detail ) }  );
+    document.addEventListener( 'placeSelectedOnMap', event => { selectPlace( event.detail.id, 'map' ) } );
+    document.addEventListener( 'placeDeselectedFromMap', event => { deselectPlaces( event.detail ) }  );
+    /* set up click events for places */
     document.addEventListener( 'click', event => {
         /**
-         * Show space on map button (only visible on smaller screens)
+         * Show place on map button (only visible on smaller screens)
          * Changes the view to show the map pane
          */
         if ( event.target.classList.contains( 'show-map' ) ) {
@@ -41,21 +38,21 @@ document.addEventListener( 'DOMContentLoaded', () => {
                 }
             } ) );
         /**
-         * Event listener to show/hide space detail
-         * Added to load-info class which is on space headings
+         * Event listener to show/hide place detail
+         * Added to load-info class which is on place headings
          */
         } else if ( event.target.classList.contains( 'load-info' ) ) {
             event.preventDefault();
             if ( event.target.getAttribute( 'aria-expanded' ) === 'true' ) {
-                let spaceID = event.target.getAttribute( 'data-spaceid' );
-                document.dispatchEvent( new CustomEvent( 'spaceDeselected', { bubbles: true, detail: spaceID } ) );
+                let placeID = event.target.getAttribute( 'data-placeid' );
+                document.dispatchEvent( new CustomEvent( 'placeDeselected', { bubbles: true, detail: placeID } ) );
                 event.target.setAttribute( 'aria-expanded', 'false' );
                 setHash( '' );
             } else {
-                let spaceID = event.target.getAttribute( 'data-spaceid' );
-                let spacenode = document.querySelector( '[data-id="' + spaceID + '"]' );
-                if ( ! spacenode.classList.contains( 'active' ) ) {
-                    document.dispatchEvent( new CustomEvent( 'spaceSelected', { bubbles: true, detail: { id: spaceID, src: 'list' } } ) );
+                let placeID = event.target.getAttribute( 'data-placeid' );
+                let placenode = document.querySelector( '[data-id="' + placeID + '"]' );
+                if ( ! placenode.classList.contains( 'active' ) ) {
+                    document.dispatchEvent( new CustomEvent( 'placeSelected', { bubbles: true, detail: { id: placeID, src: 'list' } } ) );
                 }
                 event.target.setAttribute( 'aria-expanded', 'true' );
             }
@@ -87,17 +84,17 @@ document.addEventListener( 'DOMContentLoaded', () => {
 });
 
 /**
- * Applies filters to the list of spaces
+ * Applies filters to the list of places
  */
 function applyFilters() {
-    splog( 'applyFilters', 'spaces.js' );
+    splog( 'applyFilters' );
     const activeFilters = getFilterStatus();
     document.getElementById( 'listcontainer' ).scrollTop = 0;
     let searchcondition = '';
     if ( activeFilters.length ) {
         activeFilters.forEach( filtergroup => {
             if ( filtergroup.name !== 'search' ) {
-                document.dispatchEvent(new CustomEvent('sfanalytics', {
+                document.dispatchEvent(new CustomEvent('sffilter', {
                     detail: {
                         type: 'filter',
                         filtername: filtergroup.name,
@@ -106,7 +103,7 @@ function applyFilters() {
                 }));
             }
         });
-        document.querySelectorAll( '.list-space' ).forEach( el => {
+        document.querySelectorAll( '.list-place' ).forEach( el => {
             el.classList.remove( 'hidden' );
             let showEl = true;
             activeFilters.forEach( filtergroup => {
@@ -151,20 +148,20 @@ function applyFilters() {
             }
         });
     } else {
-        document.querySelectorAll( '.list-space' ).forEach( el => {
+        document.querySelectorAll( '.list-place' ).forEach( el => {
             el.classList.remove( 'hidden' );
         });
     }
-    document.dispatchEvent( new CustomEvent( 'spaceDeselected', { bubbles: true, detail: false } ) );
+    document.dispatchEvent( new CustomEvent( 'placeDeselected', { bubbles: true, detail: false } ) );
     document.dispatchEvent( new Event( 'filtersapplied' ) );
 }
 
 /**
- * Updates the message above the list of spaces to show what 
+ * Updates the message above the list of places to show what 
  * search terms and filters are active
  */
 function updateListFilterMessage() {
-    splog( 'updateListFilterMessage', 'spaces.js' );
+    splog( 'updateListFilterMessage' );
     let activeFilters = getFilterStatus();
     let container = document.getElementById( 'listfilters' );
     /* empty any existing messages and hide */
@@ -176,7 +173,7 @@ function updateListFilterMessage() {
         activeFilters.forEach( f => {
             if ( f.name == 'search' ) {
                 let pl = f.value.length > 1 ? 's': '';
-                searchmessage = '<p>Searching spaces which contain text: ';
+                searchmessage = '<p>Searching places which contain text: ';
                 let termlist = [];
                 f.value.forEach( term => {
                     termlist.push( '<button class="search-term icon-remove" data-searchtext="' + term + '">' + term + '</button>' );
@@ -200,14 +197,14 @@ function updateListFilterMessage() {
             }
         });
     }
-    /* get count of spaces */
-    let spacetotal = document.querySelectorAll( '.list-space' ).length;
-    let spacesShowing = spacetotal;
-    /* decrease spaces count if some are hidden */
-    if ( document.querySelectorAll( '.list-space.hidden' ) != null ) {
-        spacesShowing -= document.querySelectorAll( '.list-space.hidden' ).length;
+    /* get count of places */
+    let placetotal = document.querySelectorAll( '.list-place' ).length;
+    let placesShowing = placetotal;
+    /* decrease places count if some are hidden */
+    if ( document.querySelectorAll( '.list-place.hidden' ) != null ) {
+        placesShowing -= document.querySelectorAll( '.list-place.hidden' ).length;
         /* show zero results message */
-        if ( spacesShowing == 0 ) {
+        if ( placesShowing == 0 ) {
             resultsmessage = '<p class="noresults">Sorry, your search has found no results - try removing some of your search criteria.</p>';
         }
     }
@@ -216,90 +213,93 @@ function updateListFilterMessage() {
         container.innerHTML = searchmessage + filtermessage + resultsmessage;
         container.removeAttribute( 'hidden' );
     }
-    /* update spaces showing count */
-    document.getElementById( 'searchResultsSummary' ).textContent = 'Showing ' + spacesShowing + ' of ' + spacetotal + ' spaces';
+    /* update places showing count */
+    document.getElementById( 'searchResultsSummary' ).textContent = 'Showing ' + placesShowing + ' of ' + placetotal + ' places';
 }
 
 /**
- * Selects a space in the list
- * @param {integer} spaceid ID of space to be selected
+ * Selects a place in the list
+ * @param {integer} placeid ID of place to be selected
  * @param {string} source Source of selection (map, list, load)
  */
-function selectSpace( spaceid, source ) {
-    splog( 'selectSpace', 'spaces.js' );
-    let space = getPlaceById( spaceid );
-    document.dispatchEvent(new CustomEvent( 'sfanalytics', {
+function selectPlace( placeid, source ) {
+    splog( 'selectPlace' );
+    let place = getPlaceById( placeid );
+    if ( ! place ) {
+        splog( 'selectPlace - no place found with ID ' + placeid );
+        return;
+    }
+    document.dispatchEvent(new CustomEvent( 'sfselectitem', {
         detail: {
-            type: 'select',
-            id: spaceid,
-            name: space.title,
+            id: placeid,
+            name: place.title,
             src: source
         }
     }));
-    renderAdditionalInfo( space.id );
-    let spacenode = document.querySelector( '[data-id="' + spaceid + '"]' );
-    document.querySelectorAll( '.list-space' ).forEach( sp => {
+    renderAdditionalInfo( place.id );
+    let placenode = document.querySelector( '[data-id="' + place.id + '"]' );
+    document.querySelectorAll( '.list-place' ).forEach( sp => {
         sp.classList.remove( 'active' );
     });
-    spacenode.classList.add( 'active' );
-    spacenode.querySelector( 'button.space-title' ).setAttribute( 'aria-expanded', true );
+    placenode.classList.add( 'active' );
+    placenode.querySelector( 'button.place-title' ).setAttribute( 'aria-expanded', true );
     /* find distance from top of listcontainer */
     let scrollingElement = document.getElementById( 'listcontainer' );
     let listContainer = document.getElementById( 'listcontent' );
     let listFilters = document.getElementById( 'listfilters' );
-    let totop = ( spacenode.offsetTop + listFilters.offsetHeight ) - listContainer.offsetTop;
+    let totop = ( placenode.offsetTop + listFilters.offsetHeight ) - listContainer.offsetTop;
     scrollingElement.scrollTop = totop;
-    setHash( '/space/' + space.slug );
+    setHash( '/' + spacefinder.currentDataSource + '/' + place.slug );
 }
 
 /**
- * Deselects a space in the list, an optionally scrolls the list to the top
+ * Deselects a place in the list, an optionally scrolls the list to the top
  * and recentres the map.
- * @param {integer} spaceid ID of space which has been deselected
+ * @param {integer} placeid ID of place which has been deselected
  */
-function deselectSpaces( spaceid ) {
-    splog( 'deselectSpaces', 'spaces.js' );
-    if ( document.querySelector( '.list-space.active' ) ) {
+function deselectPlaces( placeid ) {
+    splog( 'deselectPlaces' );
+    if ( document.querySelector( '.list-place.active' ) ) {
         document.querySelectorAll( '.additionalInfo' ).forEach( el => {
             el.textContent = '';
         });
-        document.querySelectorAll( '.list-space' ).forEach( sp => {
+        document.querySelectorAll( '.list-place' ).forEach( sp => {
             sp.classList.remove( 'active' );
         });
-        document.querySelectorAll( 'button.space-title' ).forEach( st => {
+        document.querySelectorAll( 'button.place-title' ).forEach( st => {
             st.setAttribute( 'aria-expanded', false );
         });
-        let deselectedSpace = document.querySelector( '.space-title[data-spaceid="' + parseInt( spaceid ) + '"]' );
+        let deselectedSpace = document.querySelector( '.place-title[data-placeid="' + parseInt( placeid ) + '"]' );
     }
     setHash( '' );
 }
 
 /**
- * Activates sorting the list of spaces in the UI.
+ * Activates sorting the list of places in the UI.
  * @param {boolean} activate whether to activate of deactivate sorting.
  * @param {string} sorttype either alpha or distance.
  */
 export function activateSort( activate, sorttype ) {
-    splog( 'activateSort - sorting spaces by ' + sorttype + ' ' + ( activate? 'activated': 'deactivated' ), 'spaces.js' );
+    splog( 'activateSort - sorting places by ' + sorttype + ' ' + ( activate? 'activated': 'deactivated' ) );
     const sortbutton = document.getElementById( 'sort' + sorttype );
     if ( ! activate ) {
         sortbutton.disabled = true;
-        sortbutton.removeEventListener( 'click', sortSpacesListener );
+        sortbutton.removeEventListener( 'click', sortPlacesListener );
         if ( 'distance' === sorttype ) {
             sortbutton.setAttribute( 'title', 'Sort by distance (nearest to farthest)' );
             sortbutton.setAttribute( 'aria-label', 'Sort by distance (nearest to farthest)' );
         }
     } else {
         sortbutton.disabled = false;
-        sortbutton.addEventListener( 'click', sortSpacesListener );
+        sortbutton.addEventListener( 'click', sortPlacesListener );
     }
 }
 /**
  * Function used as an event listener on the sorting buttons
  * @param {Event} event event from button click
  */
-function sortSpacesListener( event ) {
-    splog( 'sortSpacesListener', 'spaces.js' );
+function sortPlacesListener( event ) {
+    splog( 'sortPlacesListener' );
     event.preventDefault();
     /* get all the data we need to perform the sort */
     let sortdir = event.target.getAttribute( 'data-sortdir' );
@@ -326,17 +326,17 @@ function sortSpacesListener( event ) {
         sortAlphaButton.setAttribute( 'data-sortdir', 'desc' );
     }
     /* perform the sort */
-    sortSpaces( sortby, dir );
+    sortPlaces( sortby, dir );
 }
 
 /**
- * Function to sort spaces. Sorts using data attributes on 
- * space containers (sortalpha, sortdistance)
+ * Function to sort places. Sorts using data attributes on 
+ * place containers (sortalpha, sortdistance)
  * @param {string} sortby property we are using to sort the list (needs to be part of a data attribute)
  * @param {boolean} dir sort direction (true = asc, false = desc)
  */
-export function sortSpaces( sortby, dir ) {
-    splog( 'sortSpaces', 'spaces.js' );
+export function sortPlaces( sortby, dir ) {
+    splog( 'sortPlaces' );
     /* first update the sorting buttons */
     document.querySelectorAll( '.sortbutton' ).forEach( el => el.setAttribute( 'data-sortdir', '' ) );
     let dirAttr = dir ? 'asc': 'desc';
@@ -350,7 +350,7 @@ export function sortSpaces( sortby, dir ) {
     listitemsArray.forEach( el => {
         listcontainer.appendChild( el );
     });
-    document.dispatchEvent( new Event( 'spaceDeselected' ) );
+    document.dispatchEvent( new Event( 'placeDeselected' ) );
 }
 
 /**
@@ -360,7 +360,7 @@ export function sortSpaces( sortby, dir ) {
  * @returns sorting function for Array.sort()
  */
 function comparer( asc, attr ) {
-    splog( 'comparer', 'spaces.js' );
+    splog( 'comparer' );
     /**
      * the function to perform the comparison
      * @param {(integer|string)} a first value to sort
@@ -385,64 +385,68 @@ function comparer( asc, attr ) {
 };
 
 /**
- * Loads all space data from a single JSON file
+ * Loads all place data from a single JSON file
  */
 function loadPlaces() {
-    splog( 'loadPlaces', 'spaces.js' );
+    splog( 'loadPlaces' );
     if ( Object.hasOwn(spacefinder.data, spacefinder.currentDataSource) ) {
-        // FUCK KNOWS
+        splog( 'loadPlaces - data already loaded for ' + spacefinder.currentDataSource );
+        return;
     } else {
-        spacefinder.data[spacefinder.currentDataSource] = [];
+        spacefinder.data[spacefinder.currentDataSource] = { places: [] };
     }
-    let placeData = spacefinder.data[spacefinder.currentDataSource];
-    getJSON( { key: 'spaces', url: spacefinder.spacesurl }, callback: data => {
+    getJSON( {
+        key: spacefinder.currentDataSource,
+        url: spacefinder.dataDir + spacefinder.currentDataSource + '/data.json'
+    } ).then( data => {
         if ( data.length ) {
-            data.forEach( (place, index) => {
-                spacefinder.data[spacefinder.currentDataSource][index] = place;
-                spacefinder.data[spacefinder.currentDataSource][index].sortKey = place.title.replace( /[^0-9a-zA-Z]/g, '' ).toLowerCase();
-            });
-            spacefinder.data[spacefinder.currentDataSource].sort( (a, b) => {
-                if ( a.sortKey < b.sortKey ) {
-                    return -1;
-                }
-                if ( a.sortKey > b.sortKey ) {
-                    return 1;
-                }
-                return 0;
-            } );
-            adjustSpacesForClosures();
-            spacefinder.placesLoaded = true;
-            /* fire the placesLoaded event */
-            document.getElementById( 'list' ).dispatchEvent( new Event( 'placesLoaded', {
-                bubbles: true,
-                cancelable: true,
-                composed: false,
-            } ) );
-        }
-    } } );
+            console.log( spacefinder.dataDir + spacefinder.currentDataSource + '/' + spacefinder.currentDataSource + '.mjs' );
+            import(spacefinder.dataDir + spacefinder.currentDataSource + '/' + spacefinder.currentDataSource + '.mjs')
+                .then( module => {
+                    spacefinder.data[spacefinder.currentDataSource].module = module;
+                    spacefinder.data[spacefinder.currentDataSource].module.onloadPlaceData( data );
+                    spacefinder.placesLoaded = true;
+                    /* fire the placesLoaded event */
+                    document.getElementById( 'list' ).dispatchEvent( new Event( 'placesLoaded', {
+                        bubbles: true,
+                        cancelable: true,
+                        composed: false,
+                    } ) );
+               } )
+                .catch( error => {
+                    console.error( `Error loading module for ${spacefinder.currentDataSource} - status: ${error.status}, message: ${error.statusText}` );
+                } );
+         }
+    } ).catch( error => {
+        console.log( error );
+        console.error( `Error loading place data - status: ${error.status}, message: ${error.statusText}` );
+    } );
 }
 
 /**
- * Renders list view for spaces
+ * Renders list view for places
  */
 function renderList() {
-    splog( 'renderList', 'spaces.js' );
+    splog( 'renderList' );
     let listContainer = document.getElementById( 'listcontent' );
-    let spacetotal = spacefinder.data[spacefinder.currentDataSource].length;
-    spacefinder.data[spacefinder.currentDataSource].forEach( space => {
-        listContainer.appendChild( getSpaceHTML( space ) );
+    let placetotal = spacefinder.data[spacefinder.currentDataSource].places.length;
+    spacefinder.data[spacefinder.currentDataSource].places.forEach( place => {
+        listContainer.appendChild( spacefinder.data[spacefinder.currentDataSource].module.getPlaceHTML( place ) );
     });
-    document.getElementById( 'searchResultsSummary' ).innerHTML = 'Showing ' + spacetotal + ' of ' + spacetotal + ' spaces';
+    document.getElementById( 'searchResultsSummary' ).innerHTML = 'Showing ' + placetotal + ' of ' + placetotal + ' places';
+    if ( Object.hasOwn( spacefinder.data[spacefinder.currentDataSource].module, 'onrenderPlaceData' ) ) {
+        spacefinder.data[spacefinder.currentDataSource].module.onrenderPlaceData();
+    }
 }
 
 /**
- * Renders additional information about a space.
- * The main listing only contains a minimal amount of information about spaces - 
- * when a space is clicked on, this is augmented by additional data.
- * @param {integer} spaceid ID of space
+ * Renders additional information about a place.
+ * The main listing only contains a minimal amount of information about places - 
+ * when a place is clicked on, this is augmented by additional data.
+ * @param {integer} placeid ID of place
  */
-function renderAdditionalInfo( spaceid ) {
-    splog( 'renderAdditionalInfo', 'spaces.js' );
+function renderAdditionalInfo( placeid ) {
+    splog( 'renderAdditionalInfo' );
     /* clear any additional data currently displayed */
     document.querySelectorAll( '.additionalInfo' ).forEach( el => {
         if ( el.replaceChildren ) {
@@ -452,115 +456,11 @@ function renderAdditionalInfo( spaceid ) {
         }
     });
 
-    if ( spaceid !== false ) {
-        /* get space data */
-        let space = getPlaceById( spaceid );
-        let spacenode = getSpaceNodeById( spaceid );
-        spacenode.querySelector( '.additionalInfo' ).innerHTML = getAdditionalInfo( space );
+    if ( placeid !== false ) {
+        /* get place data */
+        let place = getPlaceById( placeid );
+        let placenode = getPlaceNodeById( placeid );
+        placenode.querySelector( '.additionalInfo' ).innerHTML = spacefinder.data[spacefinder.currentDataSource].module.getAdditionalInfo( place );
     }
 }
 
-/**
- * Checks each space to see if it currently open and sets data-opennow attribute
- * Also adds class to the row in the opening times table.
- */
-function checkOpeningHours() {
-    splog( 'checkOpeningHours', 'spaces.js' );
-    let today = new Date();
-    let daynames = [ 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday' ];
-    let todaysday = daynames[ today.getDay() ];
-    let timenow = ( today.getHours() * 60 ) + today.getMinutes();
-    spacefinder.data[spacefinder.currentDataSource].forEach( ( space, index ) => {
-        let openmsg = '';
-        let openclass = 'currently-closed';
-        let currentClass = document.querySelector( '[data-id="' + space.id + '"]' ).getAttribute( 'data-openclass' );
-        if ( space.opening_hours ) {
-            if ( space.opening_hours[ todaysday ].open ) {
-                let open_from = getTimeFromString( space.opening_hours[ todaysday ].from );
-                let open_to = getTimeFromString( space.opening_hours[ todaysday ].to );
-                if ( open_from > timenow ) {
-                    let openingin = '';
-                    let openinmins = ( open_from - timenow ) % 60;
-                    let openinhrs = Math.floor( ( ( open_from - timenow ) / 60 ) );
-                    let pl = '';
-                    if ( openinhrs > 0 ) {
-                        pl = ( openinhrs == 1 )? '': 's';
-                        openingin += openinhrs + 'hr' + pl + ' ';
-                    }
-                    pl = ( openinmins == 1 ) ? '': 's';
-                    if ( openinmins > 0 ) {
-                        openingin += openinmins + 'min' + pl;
-                    }
-                    openmsg = 'Currently closed (opens in ' + openingin + ')';
-                    openclass = 'opening-later';
-                } else if ( open_to < ( timenow + 60 ) ) {
-                    let closingin = '';
-                    let closinginmins = ( open_to - timenow ) % 60;
-                    let pl = ( closinginmins == 1 ) ? '': 's';
-                    if ( closinginmins > 0 ) {
-                        closingin += closinginmins + ' min' + pl;
-                    }
-                    openmsg = 'Currently open (closes in ' + closingin + ')';
-                    openclass = 'open';
-                } else if ( open_to < timenow ) {
-                    openclass = 'closed';
-                    openmsg = 'Currently closed';
-                } else {
-                    openclass = 'open';
-                    openmsg = 'Currently open';
-                }
-            } else {
-                openmsg = 'Closed all day';
-            }
-        }
-        document.querySelector( '[data-id="' + space.id + '"]' ).setAttribute( 'data-openmsg', openmsg );
-        document.querySelector( '[data-id="' + space.id + '"]' ).setAttribute( 'data-openclass', openclass );
-        /* change message in any spaces showing additional info */
-        if ( document.querySelector( '[data-openmsg-id="' + space.id + '"]' ) != null ) {
-            document.querySelector( '[data-openmsg-id="' + space.id + '"]' ).textContent = openmsg;
-            document.querySelector( '[data-openmsg-id="' + space.id + '"]' ).classList.remove( currentClass );
-            document.querySelector( '[data-openmsg-id="' + space.id + '"]' ).classList.add( openclass );
-            
-        }
-    });
-}
-
-/**
- * Adjusts spaces opening times to take University closures into account
- * Closures affect all spaces and are stored in the spacefinder object
- * defined in config.js
- */
-function adjustSpacesForClosures() {
-    if ( spacefinder.closureDates ) {
-        let today = new Date();
-        let lastMonday = new Date();
-        lastMonday.setDate( today.getDate() - ( ( today.getDay() + 6 ) % 7 ) );
-        let daynames = [ 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday' ];
-        let updateDays = [];
-        for ( let i = 0; i < 7; i++ ) {
-            let toCheck = new Date();
-            toCheck.setDate( lastMonday.getDate() + i );
-            let toCheckStr = toCheck.getDate() + '-' + ( toCheck.getMonth() + 1 ) + '-' + toCheck.getFullYear();
-            if ( spacefinder.closureDates.indexOf( toCheckStr ) !== -1 ) {
-                updateDays.push( daynames[i] );
-            }
-        }
-        if ( updateDays.length ) {
-            for ( let i = 0; i < spacefinder.data[spacefinder.currentDataSource].length; i++ ) {
-                updateDays.forEach( function( day ) {
-                    spacefinder.spaces[i].opening_hours[day].open = false;
-                });
-            }
-        }
-    }
-}
-
-/**
- * Returns an integer for a time in the format hh:mm 
- * @param {string} str 
- * @returns {integer}
- */
-function getTimeFromString( str ) {
-    let parts = str.split( ':' );
-    return ( parseInt( parts[0] ) * 60 ) + parseInt( parts[1] );
-}

@@ -14,7 +14,7 @@ document.addEventListener( 'DOMContentLoaded', () => {
     window.addEventListener( 'resize', () => {
         clearTimeout( spacefinder.resizeTimeout );
         spacefinder.resizeTimeout = setTimeout( () => {
-            splog( 'Resize event', 'layout.js' );
+            splog( 'Resize event' );
 			document.dispatchEvent( new Event( 'sfresize' ) );
         }, 200);
     });
@@ -42,22 +42,34 @@ function setupLayout() {
 	/* event listener for view changes triggered by top nav */
 	document.addEventListener( 'viewchange', event => {
 		let views = [ 'filters', 'list', 'map' ];
-		let changedview = document.getElementById( event.detail.view );
-		/* special case for closing filters view */
-		if ( event.detail.view == 'filters' && document.querySelector( '#top-bar .navbutton[data-view="filters"]' ).classList.contains( 'active' ) ) {
-			togglePanel( 'filters', false );
-			togglePanel( 'list', true );
-		} else {
-			views.forEach(view => {
-				togglePanel( view, false );
-			});
-			togglePanel( event.detail.view, true );
-			if ( event.detail.view == 'filters' ) {
-				window.setTimeout( function() { 
-					document.getElementById( 'search-input' ).focus(); 
-				}, 1000 );
-			}
+		if ( views.indexOf( event.detail.view ) === -1 ) {
+			splog( 'Invalid view: ' + event.detail.view );
+			return;
 		}
+		splog( 'View change event: ' + event.detail.view );
+		togglePanel( event.detail.view, document.querySelector( '#top-bar .navbutton[data-view="' + event.detail.view + '"]' ).classList.contains( 'inactive' ) );
+		if ( window.innerWidth < spacefinder.breakpoints.large ) {
+			views.forEach(view => {
+				if ( view !== event.detail.view ) {
+					togglePanel( view, false );
+				}
+			});
+		}
+		/* special case for closing filters view */
+		// if ( 0 && event.detail.view == 'filters' && document.querySelector( '#top-bar .navbutton[data-view="filters"]' ).classList.contains( 'active' ) ) {
+		// 	togglePanel( 'filters', false );
+		// 	togglePanel( 'list', true );
+		// } else {
+		// 	// views.forEach(view => {
+		// 	// 	togglePanel( view, false );
+		// 	// });
+		// 	togglePanel( event.detail.view, true );
+		// 	if ( event.detail.view == 'filters' ) {
+		// 		window.setTimeout( function() { 
+		// 			document.getElementById( 'search-input' ).focus(); 
+		// 		}, 1000 );
+		// 	}
+		// }
 	});
 }
 
@@ -66,16 +78,16 @@ function setupLayout() {
  */
 function setView() {
 	if ( spacefinder.mapReady && spacefinder.placesLoaded && spacefinder.filtersLoaded ) {
-		splog('Setting view', 'layout.js' );
+		splog('Setting view' );
 		if ( window.innerWidth >= spacefinder.breakpoints.large ) {
-			splog('Showing filters panel', 'layout.js' );
+			splog('Showing filters panel' );
 			togglePanel( 'filters', true );
 		} else {
-			splog('Hiding filters panel', 'layout.js' );
+			splog('Hiding filters panel');
 			togglePanel( 'filters', false );
 		}
 		if ( window.innerWidth >= spacefinder.breakpoints.small ) {
-			splog('Showing list panel', 'layout.js' );
+			splog('Showing list panel' );
 			togglePanel( 'list', true );
 		}
 	}

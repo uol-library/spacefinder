@@ -64,7 +64,7 @@
         background-color: rgba(var(--space-icon-stroke), 0.6);
         div {
             background-color: rgba(var(--space-icon-fill), 0.8);
-            color: var(--color-white);
+            color: var(--space-icon-text);
         }
     }
     .marker-cluster {

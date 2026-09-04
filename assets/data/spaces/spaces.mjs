@@ -1,25 +1,31 @@
 /**
  * Templates used to render spaces in the list.
  *
- * Two fundtions should be defined in this file:
- * - getSpaceHTML - assembles HTML for the list view (short) and returns a HTML Element
+ * The following functions can be defined in this file:
+ * - getPlaceHTML (mandatory) - assembles HTML for the list view (short) and returns a HTML Element
  * - getAdditionalInfo - assembles HTML for expanded view and returns an HTML String
+ * - onloadPlaceData - called when the data is loaded, can be used to set up any additional data structures or intervals
+ * - onrenderPlaceData - called when the data is rendered, can be used to set up any additional data structures or intervals
+ * - onunloadPlaceData - called when the data is unloaded, can be used to clear any intervals or event listeners
  */
-import { spacefinder } from './config.mjs';
-import { getSpaceNodeById, getFilterData, splog } from './utilities.mjs';
+import { spacefinder } from '../../js/modules/config.mjs';
+import { getPlaceNodeById, getFilterData, splog } from '../../js/modules/utilities.mjs';
+
+const namespace = 'spaces';
 
 /**
  * Renders list view for a space
  * @param {Object} space
  * @return {Element} HTML element
  */
-export function getSpaceHTML( space ) {
+export function getPlaceHTML( space ) {
+    splog( 'getPlaceHTML (spaces module)' );
     let spaceContainer = document.createElement('div');
     spaceContainer.setAttribute( 'data-id', space.id );
     spaceContainer.setAttribute( 'id', 'space' + space.id );
     spaceContainer.setAttribute( 'data-sortalpha', space.sortKey );
     spaceContainer.setAttribute( 'class', getClassList( space ) );
-    let spaceHTML = '<div class="space-summary"><h3><button data-slug="' + space.slug + '" class="accordion-trigger space-title load-info" aria-expanded="false" aria-controls="additionalInfo' + space.id + '" data-spaceid="' + space.id + '">' + space.title + '</button></h3>';
+    let spaceHTML = '<div class="space-summary"><h3><button data-slug="' + space.slug + '" class="accordion-trigger place-title load-info" aria-expanded="false" aria-controls="additionalInfo' + space.id + '" data-placeid="' + space.id + '">' + space.title + '</button></h3>';
     spaceHTML += '<p class="space-info"><span class="space-type space-type-' + space.space_type.replace( /[^0-9a-zA-Z]/g, '').toLowerCase() + '">' + space.space_type + '<span class="distance" id="distance' + space.id +'"></span></span>';
     spaceHTML += '';
     let loc = '';
@@ -35,7 +41,7 @@ export function getSpaceHTML( space ) {
     spaceHTML += '<span class="address">' + loc + '</span></p>';
     spaceHTML += '<div class="space-details">';
     if ( space.image != '' ) {
-        spaceHTML += '<img src="' + spacefinder.imageBaseURL + space.image + '" class="space-image" loading="lazy" alt="' + space.imagealt + '">';
+        spaceHTML += '<img src="' + spacefinder.dataDir + 'spaces/images/' + space.image + '" class="space-image" loading="lazy" alt="' + space.imagealt + '">';
     }
     spaceHTML += '<p class="description">' + space.description + '</p></div></div>';
     spaceHTML += '<div class="additionalInfo" id="additionalInfo' + space.id + '"></div>';
@@ -52,9 +58,9 @@ export function getSpaceHTML( space ) {
  * @return {String} HTML
  */
 export function getAdditionalInfo( space ) {
-    splog( 'getAdditionalInfo', 'templates.js' );
+    splog( 'getAdditionalInfo (spaces module)' );
     let spaceHTML = '';
-    let spacenode = getSpaceNodeById( space.id );
+    let spacenode = getPlaceNodeById( space.id );
     spaceHTML += '<section class="section-facts"><h4>Key Facts</h4><ul class="bulleticons"><li class="icon-marker switch-view"><a class="show-map" href="#">Show on map</a></li>';
     let loc = '';
     if ( space.floor !== '' ) {
@@ -155,3 +161,114 @@ function getClassList( space ) {
     }
     return classList;
 }
+
+/**
+ * Function called when the data is loaded
+ * can be used to set up any additional data structures or intervals
+ * @param {*} data - JSON data for the spaces
+ */
+export function onloadPlaceData( data ) {
+    splog( 'onloadPlaceData (spaces module)' );
+    spacefinder.data[namespace].places = [];
+    data.forEach( (place, index) => {
+        spacefinder.data[namespace].places[index] = place;
+        spacefinder.data[namespace].places[index].sortKey = place.title.replace( /[^0-9a-zA-Z]/g, '' ).toLowerCase();
+    });
+    spacefinder.data[namespace].places.sort( (a, b) => {
+        if ( a.sortKey < b.sortKey ) {
+            return -1;
+        }
+        if ( a.sortKey > b.sortKey ) {
+            return 1;
+        }
+        return 0;
+    } );
+    spacefinder.data[namespace].getTimeFromString = function( str ) {
+        let parts = str.split( ':' );
+        return ( parseInt( parts[0] ) * 60 ) + parseInt( parts[1] );
+    };
+    spacefinder.data[namespace].checkOpeningHours = function() {
+        splog( 'checkOpeningHours (spaces module)' );
+        if ( ! spacefinder.data[namespace].places.length ) {
+            return;
+        }
+        let today = new Date();
+        let daynames = [ 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday' ];
+        let todaysday = daynames[ today.getDay() ];
+        let timenow = ( today.getHours() * 60 ) + today.getMinutes();
+        spacefinder.data[namespace].places.forEach( space => {
+            let openmsg = '';
+            let openclass = 'currently-closed';
+            let currentClass = document.querySelector( '[data-id="' + space.id + '"]' ).getAttribute( 'data-openclass' );
+            if ( space.opening_hours ) {
+                if ( space.opening_hours[ todaysday ].open ) {
+                    let open_from = spacefinder.data[namespace].getTimeFromString( space.opening_hours[ todaysday ].from );
+                    let open_to = spacefinder.data[namespace].getTimeFromString( space.opening_hours[ todaysday ].to );
+                    if ( open_from > timenow ) {
+                        let openingin = '';
+                        let openinmins = ( open_from - timenow ) % 60;
+                        let openinhrs = Math.floor( ( ( open_from - timenow ) / 60 ) );
+                        let pl = '';
+                        if ( openinhrs > 0 ) {
+                            pl = ( openinhrs == 1 )? '': 's';
+                            openingin += openinhrs + 'hr' + pl + ' ';
+                        }
+                        pl = ( openinmins == 1 ) ? '': 's';
+                        if ( openinmins > 0 ) {
+                            openingin += openinmins + 'min' + pl;
+                        }
+                        openmsg = 'Currently closed (opens in ' + openingin + ')';
+                        openclass = 'opening-later';
+                    } else if ( open_to < ( timenow + 60 ) ) {
+                        let closingin = '';
+                        let closinginmins = ( open_to - timenow ) % 60;
+                        let pl = ( closinginmins == 1 ) ? '': 's';
+                        if ( closinginmins > 0 ) {
+                            closingin += closinginmins + ' min' + pl;
+                        }
+                        openmsg = 'Currently open (closes in ' + closingin + ')';
+                        openclass = 'open';
+                    } else if ( open_to < timenow ) {
+                        openclass = 'closed';
+                        openmsg = 'Currently closed';
+                    } else {
+                        openclass = 'open';
+                        openmsg = 'Currently open';
+                    }
+                } else {
+                    openmsg = 'Closed all day';
+                }
+            }
+            document.querySelector( '[data-id="' + space.id + '"]' ).setAttribute( 'data-openmsg', openmsg );
+            document.querySelector( '[data-id="' + space.id + '"]' ).setAttribute( 'data-openclass', openclass );
+            /* change message in any spaces showing additional info */
+            if ( document.querySelector( '[data-openmsg-id="' + space.id + '"]' ) != null ) {
+                document.querySelector( '[data-openmsg-id="' + space.id + '"]' ).textContent = openmsg;
+                document.querySelector( '[data-openmsg-id="' + space.id + '"]' ).classList.remove( currentClass );
+                document.querySelector( '[data-openmsg-id="' + space.id + '"]' ).classList.add( openclass );
+                
+            }
+        });
+    };
+}
+
+/**
+ * Function called after the data is rendered
+ * Can be used to set up any additional data structures or intervals
+ */
+export function onrenderPlaceData() {
+    splog( 'onrenderPlaceData (spaces module)' );
+    spacefinder.data[namespace].checkOpeningHours();
+    spacefinder.data[namespace].openingHoursInterval = setInterval( spacefinder.data[namespace].checkOpeningHours, (30*1000) );
+}
+
+/**
+ * Function called when the data is unloaded
+ * Can be used to clear any intervals or event listeners
+ */
+export function onunloadPlaceData( ) {
+    splog( 'onunloadPlaceData (spaces module)' );
+    clearInterval( spacefinder.data[namespace].openingHoursInterval );
+}
+
+

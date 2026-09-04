@@ -1,10 +1,10 @@
 /**
  * Routing requests
  */
-import { getSpaceBySlug, getSpaceNodeById, splog, setElementFocus } from './utilities.mjs';
+import { getPlaceBySlug, getPlaceNodeById, splog, setElementFocus } from './utilities.mjs';
 
 document.addEventListener( 'sfmapready', (event) => {
-    splog('Map is ready - load initial page/space', 'routing.js');
+    splog('Map is ready - load initial page/space');
     on_hash_change( event );
     window.addEventListener( 'hashchange', event => {
         on_hash_change( event );
@@ -20,15 +20,15 @@ function on_hash_change( event ) {
         let hp = window.location.hash.split( '/' );
         if ( hp.length === 3 ) {
             if ( hp[1] == 'space' ) {
-                let space = getSpaceBySlug( hp[2] );
-                let spacenode = getSpaceNodeById( space.id );
-                splog( 'Checking to see if the space is already active', 'routing.js' );
+                let space = getPlaceBySlug( hp[2] );
+                let spacenode = getPlaceNodeById( space.id );
+                splog( 'Checking to see if the space is already active' );
                 if ( ! spacenode.classList.contains( 'active' ) ) {
-                    splog( 'Activating space', 'routing.js' );
-                    document.dispatchEvent( new CustomEvent( 'spaceSelected', { bubbles: true, detail: { id: space.id, src: 'load' } } ) );
+                    splog( 'Activating space' );
+                    document.dispatchEvent( new CustomEvent( 'placeSelected', { bubbles: true, detail: { id: space.id, src: 'load' } } ) );
                     setElementFocus( 'space' + space.id );
                 } else {
-                    splog( 'Space is already active', 'routing.js' );
+                    splog( 'Space is already active' );
                 }
             }
         }

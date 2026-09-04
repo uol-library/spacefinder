@@ -8,10 +8,10 @@
     --topbar-padding: 10px;
 
     /* filters panel (large screens) */
-    --filters-width: 256px;
+    --filters-width: 256;
 
     /* list panel (large screens) */
-    --list-width: 500px;
+    --list-width: 500;
 
     /* controls at top of list and search panels */
     --controls-height: 80px;
@@ -159,6 +159,7 @@
     /* map */
     --space-icon-fill: 199, 0, 0;
     --space-icon-stroke: 145, 0, 0;
+    --space-icon-text: #fff;
     --person-icon-fill: 26, 132, 199;
     --person-icon-stroke: 0, 58, 82;
 }

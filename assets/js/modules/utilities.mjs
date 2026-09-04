@@ -110,20 +110,20 @@ export function getJSON( options ) {
             options.expires = 24;
         }
         if ( storageAvailable( 'localStorage' ) && getWithExpiry( options.key ) ) {
-            splog( `getting data ${options.key} from local storage`, 'utilities.js' );
+            splog( `getting data ${options.key} from local storage` );
             let data = JSON.parse( getWithExpiry( options.key ) );
             if ( options.callback ) {
                 options.callback( data );
             }
             resolve( data );
         } else {
-            splog( `getting data ${options.key} from ${options.url}`, 'utilities.js' );
+            splog( `getting data ${options.key} from ${options.url}` );
             var xhr = new XMLHttpRequest();
             xhr.onload = () => {
                 if (xhr.status >= 200 && xhr.status < 300) {
                     if ( storageAvailable( 'localStorage' ) ) {
                         var expires = new Date().getTime() + ( options.expires * 60 * 60 * 1000 );
-                        splog( `storing data ${options.key} in localstorage - expires ${expires}`, 'utilities.js' );
+                        splog( `storing data ${options.key} in localstorage - expires ${new Date( expires).toLocaleDateString("en-UK")}` );
                         setWithExpiry( options.key, xhr.responseText, options.expires );
                     }
                     let data = JSON.parse( xhr.responseText );
@@ -156,25 +156,26 @@ export function getJSON( options ) {
  * @returns {Object} place object
  */
 function getPlace( f ) {
-    let placeData = spacefinder.data[spacefinder.currentDataSource];
+    let placeData = spacefinder.data[spacefinder.currentDataSource].places;
     for (let i = 0; i < placeData.length; i++ ) {
         if ( placeData[i][f.p] == f.v ) {
             return placeData[i];
         }
     }
-
+    return false;
 }
+
 /**
- * Returns a space object given a valid ID
+ * Returns a place object given a valid ID
  * @param {integer} id 
- * @returns {Object} space object
+ * @returns {Object} place object
  */
 export function getPlaceById( id ) {
     return getPlace( { p: 'id', v: id });
 }
 
 /**
- * Returns a space object given a valid slug
+ * Returns a place object given a valid slug
  * @param {string} slug 
  * @returns {Object} place object
  */
@@ -183,7 +184,7 @@ export function getPlaceBySlug( slug ) {
 }
 
 /**
- * Returns a space DOM node given a valid ID
+ * Returns a place DOM node given a valid ID
  * @param {integer} id 
  * @returns {Object} DOM node
  */
@@ -198,16 +199,17 @@ export function getPlaceNodeById( id ) {
  * @return {Object} filter option object
  */
 export function getFilterData( filterkey, optionkey ) {
-    for (let i = 0; i < spacefinder.filters.length; i++ ) {
-        if ( spacefinder.filters[i].key == filterkey ) {
+    let filterData = spacefinder.data[spacefinder.currentDataSource].filters;
+    for (let i = 0; i < filterData.length; i++ ) {
+        if ( filterData[i].key == filterkey ) {
             if ( typeof optionkey !== 'undefined' ) {
-                for (let j = 0; j < spacefinder.filters[i].options.length; j++ ) {
-                    if ( spacefinder.filters[i].options[j].key == optionkey ) {
-                        return spacefinder.filters[i].options[j];
+                for (let j = 0; j < filterData[i].options.length; j++ ) {
+                    if ( filterData[i].options[j].key == optionkey ) {
+                        return filterData[i].options[j];
                     }
                 }
             } else {
-                return spacefinder.filters[i];
+                return filterData[i];
             }
         }
     }
@@ -218,7 +220,7 @@ export function getFilterData( filterkey, optionkey ) {
  * Sets focus on an element
  */
 export function setElementFocus( id ) {
-    splog( "Setting element focus on #" + id, "utilities.js" );
+    splog( "Setting element focus on #" + id );
 	if ( document.getElementById( id ) !== null ) {
 		document.getElementById( id ).setAttribute( 'tabindex', '-1' );
 		document.getElementById( id ).focus();
@@ -258,9 +260,9 @@ export function setHash( val ) {
  * Logs messages to console if debug flag is set
  * @param {string} message
  */
-export function splog( message, filename ) {
+export function splog( message ) {
     if ( spacefinder.debug ) {
         let now = new Date();
-        console.log( now.getHours() + ':' + now.getMinutes().toString().padStart(2, '0') + ':' + now.getSeconds().toString().padStart(2, '0') + '.' + now.getMilliseconds().toString().padStart(3, '0') + ' ' + filename.padEnd(12) + ' - ' + message );
+        console.log( now.getHours() + ':' + now.getMinutes().toString().padStart(2, '0') + ':' + now.getSeconds().toString().padStart(2, '0') + '.' + now.getMilliseconds().toString().padStart(3, '0') + ' - ' + message );
     }
 }

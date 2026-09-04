@@ -18,7 +18,7 @@ document.addEventListener( 'placesLoaded', () => {
  * @return {Object} activeFilters
  */
 export function getFilterStatus() {
-    splog( 'getFilterStatus', 'filters.js' );
+    splog( 'getFilterStatus' );
     const filters = document.querySelectorAll( '#filters input[type=checkbox]' );
     const activeFilters = [];
     for (const cbx of filters) {
@@ -56,23 +56,28 @@ export function getFilterStatus() {
  * Loads all filter data from a single JSON file
  */
 function loadFilters() {
-    splog( 'loadFilters', 'filters.js' );
-    getJSON( { key: 'filters', url: spacefinder.filtersurl, callback: data => {
+    splog( 'loadFilters' );
+    getJSON( { 
+        key: spacefinder.currentDataSource + '_filters',
+        url: spacefinder.dataDir + spacefinder.currentDataSource + '/filters.json'
+    } ).then( data => {
         if ( data.length ) {
-            spacefinder.filters = data;
+            spacefinder.data[spacefinder.currentDataSource].filters = data;
             spacefinder.filtersLoaded = true;
             /* fire the filtersloaded event */
             document.dispatchEvent( new Event( 'filtersloaded' ) );
         }
-    } } );
+    } ).catch( error => {
+        splog( `Error loading filters data - status: ${error.status}, message: ${error.statusText}` );
+    } );
 }
 
 /**
  * Builds the filters panel
  */
 function renderFilters() {
-    splog( 'renderFilters', 'filters.js' );
-    if ( spacefinder.filters.length ) {
+    splog( 'renderFilters' );
+    if ( spacefinder.data[spacefinder.currentDataSource].filters.length ) {
         let filterForm = document.createElement( 'form' );
         filterForm.setAttribute( 'id', 'filter-options-form' );
         filterForm.setAttribute( 'role', 'search' );
@@ -83,7 +88,7 @@ function renderFilters() {
         filterForm.appendChild( controlsContainer );
         let panelContainer = document.createElement( 'div' );
         panelContainer.classList.add( 'panel-content' );
-        spacefinder.filters.forEach( filter => {
+        spacefinder.data[spacefinder.currentDataSource].filters.forEach( filter => {
             let fs = document.createElement( 'fieldset' );
             fs.classList.add( 'filter-options' );
             fs.classList.add( filter.key + '-filter-options' );
@@ -128,7 +133,7 @@ function renderFilters() {
  * Set up event listeners on filters
  */
 function setupFilters() {
-    splog( 'setupFilters', 'filters.js' );
+    splog( 'setupFilters' );
     /* event listener for filter changes */
     document.addEventListener( 'filtersapplied', event => {
         const activeFilters = getFilterStatus();
@@ -204,14 +209,13 @@ function setupFilters() {
     document.getElementById( 'search-submit' ).addEventListener( 'click', event => {
         event.preventDefault();
         let inputvalue = document.getElementById( 'search-input' ).value.replace( /[^a-zA-Z0-9 ]/g, '' ).trim();
-        splog( inputvalue, 'filters.js' );
+        splog( `Search for ${inputvalue}` );
         if ( inputvalue.length > 1 ) {
             document.getElementById( 'search-input' ).value = inputvalue;
             /* trigger the viewfilter event */
             event.target.dispatchEvent( new Event( 'viewfilter', { bubbles: true } ) );
-            document.dispatchEvent( new CustomEvent( 'sfanalytics', {
+            document.dispatchEvent( new CustomEvent( 'sfsearch', {
                 detail: {
-                    type: 'search',
                     terms: inputvalue
                 }
             }));

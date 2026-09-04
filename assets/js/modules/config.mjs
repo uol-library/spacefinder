@@ -5,11 +5,6 @@
  */
 export const spacefinder = {
     debug: {% if site.environment == "development" %}true{% else %}false{% endif %},
-    /**
-     * global closure dates - these will affect ALL spaces
-     * Dates should be in the format DD-MM-YYYY
-     */
-    closureDates: [],
 
     /* CSS breakpoints */
     breakpoints: {

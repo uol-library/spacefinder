@@ -87,7 +87,7 @@
         "phone_number": "",
         "restricted": false,
         "id": 1,
-        "image": "/assets/photos/Baines-Wing-Cafe.jpg",
+        "image": "Baines-Wing-Cafe.jpg",
         "description": "Situated between the School of Healthcare and the Great Hall, Baines Wing Café has a large seating area including its own secluded courtyard which is perfect to enjoy the sunny weather.\n\nMixture of group seating around tables, sofas and some high level desking with 6 workstations.",
         "published": true,
         "url_text": "Visit the Baines Wing Café web site",
@@ -181,7 +181,7 @@
         "phone_number": "",
         "restricted": false,
         "id": 10,
-        "image": "/assets/photos/1915.jpg",
+        "image": "1915.jpg",
         "description": "1915 is based in the Sir William Henry Bragg Building on Woodhouse Lane, its relaxed and informal menu has been carefully created to offer a mix of both classic and on-trend options.",
         "published": true,
         "url_text": "Visit the 1915 web site",
@@ -270,7 +270,7 @@
         "phone_number": "",
         "restricted": false,
         "id": 11,
-        "image": "/assets/photos/Hugo-Camionette-Cafe1.jpg",
+        "image": "Hugo-Camionette-Cafe1.jpg",
         "description": "Hugo, the Camionnette Café, is one of the more unique members of the Great Food at Leeds team and sells a range of hot drinks, pastries and brownies.",
         "published": true,
         "url_text": "Visit the Hugo, the Camionnette Café web site",
@@ -455,7 +455,7 @@
                 "to": ""
             }
         },
-        "image": "/assets/photos/Fuse-Cafe.jpg",
+        "image": "Fuse-Cafe.jpg",
         "imagealt": "Interior photograph of the Fuse Cafe showing the serving area, chiller cabinets and part of the seating area",
         "slug": "fuse-cafe-in-chemical-and-process-engineering",
         "published": true,
@@ -550,7 +550,7 @@
         "phone_number": "",
         "restricted": "",
         "id": 3,
-        "image": "/assets/photos/Edit-Room.jpg",
+        "image": "Edit-Room.jpg",
         "description": "Situated on the ground floor of the Edward Boyle Library, the cafe provides an eclectic mix of grab and go food and drinks for everyone to enjoy at any time of the day.",
         "published": true,
         "url_text": "Visit the Edit Room Café in Edward Boyle Library web site",
@@ -1585,7 +1585,7 @@
                 "to": ""
             }
         },
-        "image": "/assets/photos/Esther-Simpson-Cafe.jpg",
+        "image": "Esther-Simpson-Cafe.jpg",
         "imagealt": "Interior photogra[ph of the Esther Simpson Café showing the service area, including a cake display cabinet, fruit bowls and drink making equipment",
         "slug": "esther-simpson-cafe",
         "published": true,
@@ -1768,7 +1768,7 @@
                 "to": ""
             }
         },
-        "image": "/assets/photos/Charles-Thackrah.jpg",
+        "image": "Charles-Thackrah.jpg",
         "imagealt": "Interior photograph of five students in discussion in the Atrium of the Charles Thackrah building on the Ground Floor",
         "slug": "charles-thackrah-atrium-ground-floor",
         "published": true,
@@ -2980,7 +2980,7 @@
         "phone_number": "",
         "restricted": false,
         "id": 6,
-        "image": "/assets/photos/Parkinson-Court-Cafe4.jpg",
+        "image": "Parkinson-Court-Cafe4.jpg",
         "description": "Parkinson Court Café sits in one of the most iconic buildings at the University of Leeds. The café is open plan and  conveniently located for a break from working in the Brotherton Library. Serves a range of sandwiches and snacks throughout the day.",
         "published": true,
         "url_text": "Visit the Costa Parkinson Court web site",
@@ -3713,7 +3713,7 @@
         "restricted": false,
         "id": 7,
         "description": "Located right at the heart of University campus, the contemporary Refectory venue offers a wide range of hot and cold food each day.",
-        "image": "/assets/photos/Refectory4.jpg",
+        "image": "Refectory4.jpg",
         "imagealt": "Overhead, interior photograph of the Refectory, full of customers, taken from the balcony above the main dining area",
         "slug": "refectory",
         "published": true,
@@ -4571,7 +4571,7 @@
         "phone_number": "",
         "restricted": true,
         "id": 78,
-        "image": "/assets/photos/Laidlaw-library1.jpg",
+        "image": "Laidlaw-library1.jpg",
         "description": "Silent study space inside the Laidlaw library.",
         "published": true,
         "url_text": "Visit the Library website",
@@ -4665,7 +4665,7 @@
         "phone_number": "",
         "restricted": true,
         "id": 79,
-        "image": "/assets/photos/Laidlaw-library2.jpg",
+        "image": "Laidlaw-library2.jpg",
         "description": "Silent study space. Group booths also available.",
         "published": true,
         "url_text": "Visit the Library website",
@@ -4755,7 +4755,7 @@
                 "to": ""
             }
         },
-        "image": "/assets/photos/Cafe-Seven.jpg",
+        "image": "Cafe-Seven.jpg",
         "imagealt": "Interior photograph showing part of the Café Seven logo and part of the service and self-service areas",
         "slug": "cafe-seven",
         "published": true,
@@ -4850,7 +4850,7 @@
         "phone_number": "",
         "restricted": true,
         "id": 80,
-        "image": "/assets/photos/Laidlaw-library3.jpg",
+        "image": "Laidlaw-library3.jpg",
         "description": "Study space inside the library, closed doors, very silent.",
         "published": true,
         "url_text": "Visit the Library website",
@@ -4946,7 +4946,7 @@
         "phone_number": "",
         "restricted": true,
         "id": 81,
-        "image": "/assets/photos/Laidlaw-library4.jpg",
+        "image": "Laidlaw-library4.jpg",
         "description": "Group study booths for groups of up to 5 with monitor display.",
         "published": true,
         "url_text": "Visit the Library website",
@@ -5042,7 +5042,7 @@
         "phone_number": "",
         "restricted": true,
         "id": 82,
-        "image": "/assets/photos/Laidlaw-library5.jpg",
+        "image": "Laidlaw-library5.jpg",
         "description": "Casual seating area.",
         "published": true,
         "url_text": "Visit the Library website",
@@ -5148,7 +5148,7 @@
         "phone_number": "0113 343 5663",
         "restricted": true,
         "id": 83,
-        "image": "/assets/photos/Brotherton-Library.jpg",
+        "image": "Brotherton-Library.jpg",
         "description": "Inspiring study place with group study areas on floor 2 of the Main Building and floor 3 of the West Building.",
         "published": true,
         "url_text": "Visit the Library website",
@@ -5241,7 +5241,7 @@
                 "to": ""
             }
         },
-        "image": "/assets/photos/Affine.jpg",
+        "image": "Affine.jpg",
         "imagealt": "Interior photograph of the Affine Café showing the service counter and seating, with multiple customers seated around tables  and two customers at the counter",
         "slug": "affine-cafe",
         "published": true,
@@ -5336,7 +5336,7 @@
                 "to": ""
             }
         },
-        "image": "/assets/photos/Loma-Express-Dentistry.jpg",
+        "image": "Loma-Express-Dentistry.jpg",
         "imagealt": "Interior photograph of the serving hatch in Loma Express Dentistry, with a customer weraing a headscarf being served by a member of staff, and two customers partially seen in the foreground",
         "slug": "loma-express-dentistry",
         "published": true,
@@ -5432,7 +5432,7 @@
                 "to": ""
             }
         },
-        "image": "/assets/photos/Caffe-Nero-Business-School.jpg",
+        "image": "Caffe-Nero-Business-School.jpg",
         "imagealt": "Interior photograph of the main service area in the Caffè Nero at Business School, showing its distinctive lighting, chiller cabinets and coffee machine",
         "slug": "caffe-nero-at-business-school",
         "published": true,
@@ -5527,7 +5527,7 @@
                 "to": "20:00"
             }
         },
-        "image": "/assets/photos/Caffe-Nero-Laidlaw.jpg",
+        "image": "Caffe-Nero-Laidlaw.jpg",
         "imagealt": "Exterior photograph of the Caffè Nero logo on the window of the Laidlaw Library, with the stained glass windows of the Emmanuel Centre in the background",
         "slug": "caffe-nero-at-laidlaw-library",
         "published": true,
@@ -5623,7 +5623,7 @@
                 "to": ""
             }
         },
-        "image": "/assets/photos/Caffe-Nero-Roger-Stevens1.jpg",
+        "image": "Caffe-Nero-Roger-Stevens1.jpg",
         "imagealt": "Interior photograph of the service area at the Caffè Nero in the Roger Stevens building, showing the logo above, lighting and two members of staff",
         "slug": "caffe-nero-at-roger-stevens",
         "published": true,
@@ -5807,7 +5807,7 @@
                 "to": ""
             }
         },
-        "image": "/assets/photos/Loma-Cafe.jpg",
+        "image": "Loma-Cafe.jpg",
         "imagealt": "Interior photograph of the Loma Café showing the overhead lighting rig for the main seating area with the service area in the background",
         "slug": "loma-cafe",
         "published": true,
@@ -5902,7 +5902,7 @@
         "title": "Language Zone",
         "noise": "Whispers",
         "restricted": false,
-        "image": "/assets/photos/LanguageZone.jpg",
+        "image": "LanguageZone.jpg",
         "imagealt": "Interior photograph of part of the Language Zone, showing multiple workstations arranged radially around a central pullar with students at work, and light streaming in through the window",
         "id": 90,
         "description": "The Language Zone is a welcoming space open to all students and staff at Leeds and provides learning material in more than 50 languages, as well as friendly advice for language learners. We have a computer cluster for personal study, and books, magazines, audio and video resources to help you learn a language, as well as spaces for informal social activities.",

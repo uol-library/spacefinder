@@ -85,31 +85,32 @@
     .switch-view {
         display: none;
     }
-    #filters, #list, #map {
-        visibility: visible;
-    }
-    #filters {
-        position: relative;
-        width: var(--filters-width);
-        visibility: hidden;
-        flex: 0 0 var(--filters-width);
-        margin-left: 0;
-        &.inactive {
-            margin-left: -var(--filters-width);
-        }
-        &.active {
-            margin-left: 0;
+    #maincontainer #spacefinder {
+        #filters, #list, #map {
             visibility: visible;
         }
-    }
-    #list {
-        position:relative;
-        flex: 1 0 var(--list-width);
-        margin-left: 0;
-    }
-    #map {
-        position:relative;
-        flex: 3 1 auto;
+        #filters, #list {
+            position: relative;
+            margin-left: 0;
+            &.inactive {
+                flex: 0;
+                width: 0;
+                visibility: hidden;
+                overflow: hidden;
+            }
+        }
+        #filters {
+            width: calc(var(--filters-width) * 1px);
+            flex: 0 0 calc(var(--filters-width) * 1px);
+        }
+        #list {
+            width: calc(var(--list-width) * 1px);
+            flex: 1 0 calc(var(--list-width) * 1px);
+        }
+        #map {
+            position:relative;
+            flex: 3 1 auto;
+        }
     }
 }
 /* Top navigation bar */
@@ -155,47 +156,23 @@
                     }
                 }
             }
-            &.filter-button {
-                width: 52px;
-                flex: 0 0 52px;
-                transition: all .5s;
-                button {
-                    padding: 0;
-                    border-radius: 26px;
-                    width: 52px;
-                    text-align: center;
-                    &:hover {
-                        background: var(--topbar-bg-active);
-                    }
-                }
+            &.list-button, &.map-button, &.filter-button {
+                border:2px solid transparent;
+                border-radius: 3px;
                 &.active {
-                    background: var(--topbar-color);
-                    button, button:hover {
-                        color: var(--topbar-bg);
-                        background: var(--topbar-color);
-                    }
-                }
-            }
-            &.list-button, &.map-button {
-                @media screen and (min-width: 1000px) {
-                    display: none;
-                }
-                &:hover, &.active {
                     background: var(--topbar-bg-active);
+                    border-color: var(--topbar-color);
                     button {
                         background: var(--topbar-bg-active);
                     }
                 }
             }
-            &.list-button {
-                flex: 1 0 auto;
-            }
-            &.map-button {
-                flex: 1 0 auto;
-                @media screen and (min-width: 450px) {
-                    flex: 2 0 auto;
+            @media screen and (min-width: 1000px) {
+                &.map-button {
+                    display: none;
                 }
             }
+
             &.spacefinder-logo {
                 display: none;
                 @media screen and (min-width: 1000px) {
@@ -215,13 +192,13 @@
                 background: var(--topbar-bg);
                 text-decoration: none;
                 display: flex;
-                flex-grow: 1;
-                flex-shrink: 0;
+                flex: 1 0 auto;
+                padding: 0 1em;
                 align-items: center;
                 justify-content: center;
                 column-gap: var(--topbar-padding);
                 span {
-                    @media screen and (max-width: 450px) {
+                    @media screen and (max-width: 1000px) {
                         clip: rect(0 0 0 0);
                         clip-path: inset(100%); 
                         height: 1px; 

@@ -14,14 +14,14 @@ import { LocateControl } from 'leaflet.locatecontrol';
 import { spacefinder } from './config.mjs';
 import { getPlaceById, splog, haversine_distance } from './utilities.mjs';
 import { openAlertDialog } from './components.mjs';
-import { activateSort, sortSpaces } from './spaces.mjs';
+import { activateSort, sortPlaces } from './places.mjs';
 import { SimpleMarkerClusterGroup } from './clusterer.mjs';
 
 /**
  * Initialise map and set listeners to set up markers when loaded
  */
 export function initMap() {
-    splog( 'initMap', 'map.js' );
+    splog( 'initMap' );
     document.addEventListener( 'sfmaploaded', checkGeo );
     document.addEventListener( 'filtersapplied', filterMarkers );
     document.addEventListener( 'placesLoaded', maybeSetupMap );
@@ -108,7 +108,7 @@ export function initMap() {
         spacefinder.map.invalidateSize( true );
     });
     document.addEventListener( 'viewchange', () => {
-        splog( 'view changed', 'map.js' );
+        splog( 'view changed' );
         window.setTimeout( () => {
             splog( 'invalidating map size - viewchange event', 'map.js' );
             spacefinder.map.invalidateSize( true );
@@ -121,7 +121,7 @@ export function initMap() {
  * the map is fully loaded and the space data is fully loaded.
  */
 function maybeSetupMap() {
-    splog( 'maybeSetupMap', 'map.js' );
+    splog( 'maybeSetupMap' );
     if ( spacefinder.mapLoaded && spacefinder.placesLoaded && spacefinder.filtersLoaded ) {
 
         /* collect latLng coordinates here to define map bounds */
@@ -131,44 +131,44 @@ function maybeSetupMap() {
          * Initialise marker cluster group
          * @see ./clusterer.mjs
          */
-        spacefinder.markergroup = new SimpleMarkerClusterGroup({
+        spacefinder.data[spacefinder.currentDataSource].markergroup = new SimpleMarkerClusterGroup({
 			disableClusteringAtZoom: 17,
 			zoomToBoundsOnClick: true
 		});
 
         /* add each space to the map using a marker */
-        for ( let i = 0; i < spacefinder.data[spacefinder.currentDataSource].length; i++ ) {
-            if ( spacefinder.spaces[i].lat && spacefinder.spaces[i].lng ) {
-                var spacePosition = new LatLng( spacefinder.spaces[i].lat, spacefinder.spaces[i].lng );
-                pointsArray.push( [ spacefinder.spaces[i].lat, spacefinder.spaces[i].lng ] );
-                spacefinder.spaces[i].marker = new Marker( spacePosition, {
-                    alt: spacefinder.spaces[i].title,
-                    title: spacefinder.spaces[i].title,
+        for ( let i = 0; i < spacefinder.data[spacefinder.currentDataSource].places.length; i++ ) {
+            if ( spacefinder.data[spacefinder.currentDataSource].places[i].lat && spacefinder.data[spacefinder.currentDataSource].places[i].lng ) {
+                var spacePosition = new LatLng( spacefinder.data[spacefinder.currentDataSource].places[i].lat, spacefinder.data[spacefinder.currentDataSource].places[i].lng );
+                pointsArray.push( [ spacefinder.data[spacefinder.currentDataSource].places[i].lat, spacefinder.data[spacefinder.currentDataSource].places[i].lng ] );
+                spacefinder.data[spacefinder.currentDataSource].places[i].marker = new Marker( spacePosition, {
+                    alt: spacefinder.data[spacefinder.currentDataSource].places[i].title,
+                    title: spacefinder.data[spacefinder.currentDataSource].places[i].title,
                     icon: getSVGIcon( 'space-marker' )
                 });
-                spacefinder.markergroup.addLayer( spacefinder.spaces[i].marker );
+                spacefinder.data[spacefinder.currentDataSource].markergroup.addLayer( spacefinder.data[spacefinder.currentDataSource].places[i].marker );
                 /* set the popup for the marker */
-                spacefinder.spaces[i].popup = new Popup().setContent( getSpaceInfoWindowContent( spacefinder.spaces[i] ) );
-                spacefinder.spaces[i].popup.spaceID = spacefinder.spaces[i].id;
-                spacefinder.spaces[i].marker.bindPopup( spacefinder.spaces[i].popup );
+                spacefinder.data[spacefinder.currentDataSource].places[i].popup = new Popup().setContent( getPlaceInfoWindowContent( spacefinder.data[spacefinder.currentDataSource].places[i] ) );
+                spacefinder.data[spacefinder.currentDataSource].places[i].popup.spaceID = spacefinder.data[spacefinder.currentDataSource].places[i].id;
+                spacefinder.data[spacefinder.currentDataSource].places[i].marker.bindPopup( spacefinder.data[spacefinder.currentDataSource].places[i].popup );
             }
         }
 
         /* add the markers to the map */
-        spacefinder.map.addLayer( spacefinder.markergroup );
+        spacefinder.map.addLayer( spacefinder.data[spacefinder.currentDataSource].markergroup );
 
         /* use popupopen and popupclose events to select and deselect spaces from map */
         spacefinder.map.on( 'popupopen', event => {
             zoomMapToSpace( event.popup.spaceID );
-            document.dispatchEvent( new CustomEvent( 'spaceSelectedOnMap', { bubbles: true, detail: { id: event.popup.spaceID, src: 'map' } } ) );
+            document.dispatchEvent( new CustomEvent( 'placeSelectedOnMap', { bubbles: true, detail: { id: event.popup.spaceID, src: 'map' } } ) );
         });
         spacefinder.map.on( 'popupclose', event => {
-            document.dispatchEvent( new CustomEvent( 'spaceDeselectedFromMap', { bubbles: true, detail: { id: event.popup.spaceID } } ) );
+            document.dispatchEvent( new CustomEvent( 'placeDeselectedFromMap', { bubbles: true, detail: { id: event.popup.spaceID } } ) );
         });
 
         /* respond to corresponding events from list */
-        document.addEventListener( 'spaceSelected', event => { zoomMapToSpace( event.detail.id ) } );
-        document.addEventListener( 'spaceDeselected', deselectSpacesFromMap );
+        document.addEventListener( 'placeSelected', event => { zoomMapToSpace( event.detail.id ) } );
+        document.addEventListener( 'placeDeselected', deselectPlacesFromMap );
 
         /* Make sure the map view encompasses all markers */
         if ( pointsArray.length ) {
@@ -185,7 +185,7 @@ function maybeSetupMap() {
          */
         spacefinder.map.on( 'dragend', event => {
             if ( spacefinder.geoActive && ! spacefinder.recentreControl ) {
-                splog( 'adding recentre control as map was dragged by user', 'map.js' );
+                splog( 'adding recentre control as map was dragged by user' );
                 spacefinder.recentreControl = new RecentreControl( { position: 'bottomleft' } ).addTo( spacefinder.map );
             }
         });
@@ -219,7 +219,7 @@ class RecentreControl extends Control {
         return container;
     }
     onRemove( map ) {
-        splog( 'removing recentre control', 'map.js' );
+        splog( 'removing recentre control' );
         DomEvent.off( this._recentreButton, 'click mousedown dblclick' );
     }
     _recentreMap() {
@@ -269,7 +269,7 @@ class MapTypeControl extends Control {
  * @param {Object} space
  * @returns {String} HTML content for space infoWindow
  */
-function getSpaceInfoWindowContent( space ) {
+function getPlaceInfoWindowContent( space ) {
 	let info = [];
 	info.push( space.space_type );
 	if ( space.floor !== '' ) {
@@ -303,7 +303,7 @@ function getSVGIcon( c ) {
  * Re-centres map
  */
 function recentreMap() {
-    splog( 'recentreMap', 'map.js' );
+    splog( 'recentreMap' );
     let newCenter = spacefinder.geoActive ? spacefinder.personLoc: spacefinder.currentLoc;
     spacefinder.map.panTo( newCenter );
 }
@@ -313,9 +313,9 @@ function recentreMap() {
  * @param {Object} space
  */
 function zoomMapToSpace( spaceid ) {
-    splog( 'zoomMapToSpace', 'map.js' );
+    splog( 'zoomMapToSpace' );
     let space = getPlaceById( spaceid );
-    spacefinder.markergroup.zoomToShowLayer( space.marker, function(){
+    spacefinder.data[spacefinder.currentDataSource].markergroup.zoomToShowLayer( space.marker, function(){
         let newCenter = new LatLng( space.lat, space.lng );
         space.popup.setLatLng( newCenter ).openOn( spacefinder.map );
     });
@@ -325,8 +325,8 @@ function zoomMapToSpace( spaceid ) {
 /**
  * Resets the map after a space has been selected
  */
- function deselectSpacesFromMap() {
-    splog( 'deselectSpacesFromMap', 'map.js' );
+ function deselectPlacesFromMap() {
+    splog( 'deselectPlacesFromMap' );
     spacefinder.map.closePopup();
 }
 
@@ -334,16 +334,16 @@ function zoomMapToSpace( spaceid ) {
  * Filters the markers on the map
  */
 function filterMarkers() {
-    splog( 'filterMarkers', 'map.js' );
+    splog( 'filterMarkers' );
     let markersToAdd = [];
-    document.querySelectorAll( '.list-space' ).forEach( element => {
+    document.querySelectorAll( '.list-place' ).forEach( element => {
         let space = getPlaceById( element.getAttribute( 'data-id' ) );
         if ( ! element.classList.contains( 'hidden' ) ) {
             markersToAdd.push( space.marker );
         }
     });
-    spacefinder.markergroup.clearLayers();
-    spacefinder.markergroup.addLayers( markersToAdd );
+    spacefinder.data[spacefinder.currentDataSource].markergroup.clearLayers();
+    spacefinder.data[spacefinder.currentDataSource].markergroup.addLayers( markersToAdd );
 }
 
 /*******************************************************************
@@ -360,16 +360,16 @@ function filterMarkers() {
  * to the user position.
  */
 export function updateDistances() {
-    splog( 'updateDistances', 'map.js' );
+    splog( 'updateDistances' );
     if ( spacefinder.geoActive ) {
-        spacefinder.data[spacefinder.currentDataSource].forEach( (space, index) => {
+        spacefinder.data[spacefinder.currentDataSource].places.forEach( (space, index) => {
             let d = haversine_distance( spacefinder.personLoc, { lat: space.lat, lng: space.lng } );
             document.querySelector( '[data-id="' + space.id + '"]').setAttribute( 'data-sortdistance', d );
             var dist = ( d > 1000 ) ? ( ( d / 1000 ).toFixed(2) + 'km  away' ) : ( d > 1 ? d + ' metres away': ( d === 1 ? d + ' metre away': 'You are here!' ) );
             document.getElementById( 'distance' + space.id ).innerHTML = dist;
         });
     } else {
-        let spacenodes = document.querySelectorAll( '.list-space' );
+        let spacenodes = document.querySelectorAll( '.list-place' );
         if ( spacenodes !== null ) {
             spacenodes.forEach( element => element.setAttribute( 'data-sortdistance', '' ) );
         }
@@ -389,18 +389,14 @@ function toggleGeoButton( enable ) {
  * Called when LocateControl starts tracking the user's position.
  */
 function onGeoActivate() {
-    splog( 'onGeoActivate', 'map.js' );
+    splog( 'onGeoActivate' );
     spacefinder.geoActive = true;
     document.querySelectorAll( '.geo-button' ).forEach( element => {
         element.classList.add( 'active' );
         element.setAttribute( 'aria-label', 'Stop using my location' );
         element.setAttribute( 'title', 'Stop using my location' );
     });
-    document.dispatchEvent(new CustomEvent( 'sfanalytics', {
-        detail: {
-            type: 'geostart'
-        }
-    }));
+    document.dispatchEvent(new Event( 'sfgeostart' ));
     activateSort( true, 'distance' );
 }
 
@@ -408,7 +404,7 @@ function onGeoActivate() {
  * Called when LocateControl stops tracking the user's position.
  */
 function onGeoDeactivate() {
-    splog( 'onGeoDeactivate', 'map.js' );
+    splog( 'onGeoDeactivate' );
     spacefinder.geoActive = false;
     document.querySelectorAll( '.geo-button' ).forEach( element => {
         element.classList.remove( 'active' );
@@ -416,11 +412,7 @@ function onGeoDeactivate() {
         element.setAttribute( 'title', 'Use my location' );
     });
     document.getElementById( 'sortdistance' ).setAttribute( 'data-sortdir', '' );
-    document.dispatchEvent(new CustomEvent( 'sfanalytics', {
-        detail: {
-            type: 'geoend'
-        }
-    }));
+    document.dispatchEvent(new Event( 'sfgeoend' ));
     activateSort( false, 'distance' );
     updateDistances();
 }
@@ -432,7 +424,7 @@ function onGeoDeactivate() {
  * @param {Object} event Leaflet locationfound event
  */
 function onGeoLocationFound( event ) {
-    splog( 'onGeoLocationFound', 'map.js' );
+    splog( 'onGeoLocationFound' );
     if ( spacefinder.mapBounds && ! spacefinder.mapBounds.contains( event.latlng ) ) {
         spacefinder.locateControl.stop();
         openAlertDialog( 'Sorry...', 'You need to be a bit nearer to use this feature.' );
@@ -446,7 +438,7 @@ function onGeoLocationFound( event ) {
     if ( btn !== null ) {
         let sortdir = document.getElementById( 'sortdistance' ).getAttribute( 'data-sortdir' );
         let dir = ( sortdir == 'desc' ) ? false: true;
-        sortSpaces( 'sortdistance', dir );
+        sortPlaces( 'sortdistance', dir );
     }
 }
 
@@ -456,7 +448,7 @@ function onGeoLocationFound( event ) {
  * @param {Object} error
  */
 function onGeoError( error ) {
-    splog( 'onGeoError', 'map.js' );
+    splog( 'onGeoError' );
     if ( error.code === 1 || error.code === 2 ) {
         toggleGeoButton( false );
     }
@@ -466,7 +458,7 @@ function onGeoError( error ) {
  * Performs checks for geolocation permissions and services when the map has loaded
  */
 function checkGeo() {
-    splog( 'checkGeo', 'map.js' );
+    splog( 'checkGeo' );
     /* first see if geolocation is available on the device */
     checkGeoAvailable();
     /* check to see if it is enabled to determine initial button states */
@@ -479,7 +471,7 @@ function checkGeo() {
  * watches for updates to permissions.
  */
 function checkGeoPermissions() {
-    splog( 'checkGeoPermissions', 'map.js' );
+    splog( 'checkGeoPermissions' );
     /* check for permissions query */
     if ( 'permissions' in navigator && navigator.permissions.query ) {
         /* query geolocation permissions */
@@ -504,7 +496,7 @@ function checkGeoPermissions() {
  * wires up the list-view geolocation button.
  */
 function checkGeoAvailable() {
-    splog( 'checkGeoAvailable', 'map.js' );
+    splog( 'checkGeoAvailable' );
     if ( 'geolocation' in navigator ) {
         /* add listener to buttons to toggle geolocation */
         document.addEventListener( 'click', event => {
