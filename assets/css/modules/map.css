@@ -3,7 +3,7 @@
     overflow: hidden;
     border: 1px solid transparent;
     &:focus-visible {
-        border: 1px solid rgba( var(--space-icon-stroke), 0.6 );
+        border: 1px solid rgba( var(--place-icon-stroke), 0.6 );
     }
     .leaflet-control-attribution > a {
         color: var(--link-color);
@@ -18,7 +18,7 @@
             color: var(--link-color-active);
         }
     }
-    .spaceInfoWindow {
+    .placeInfoWindow {
         max-width: 300px;
         h3 {
             margin: 0 0 .5rem 0;
@@ -43,13 +43,13 @@
             background: var(--background-color);
         }
     }
-    &.active .spaceInfoWindow button.show-list {
+    &.active .placeInfoWindow button.show-list {
         display: block;
     }
-    .space-marker {
+    .place-marker {
         circle {
-            stroke: rgb(var(--space-icon-stroke));
-            fill: rgb(var(--space-icon-fill));
+            stroke: rgb(var(--place-icon-stroke));
+            fill: rgb(var(--place-icon-fill));
         }
     }
     .locate-control-locate-location {
@@ -61,10 +61,10 @@
     .marker-cluster-small,
     .marker-cluster-medium,
     .marker-cluster-large {
-        background-color: rgba(var(--space-icon-stroke), 0.6);
+        background-color: rgba(var(--place-icon-stroke), 0.6);
         div {
-            background-color: rgba(var(--space-icon-fill), 0.8);
-            color: var(--space-icon-text);
+            background-color: rgba(var(--place-icon-fill), 0.8);
+            color: var(--place-icon-text);
         }
     }
     .marker-cluster {

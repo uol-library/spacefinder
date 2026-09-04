@@ -22,7 +22,7 @@
     --footer-padding-x: 10px;
     --footer-padding-y: 7px;
 
-    /* navigation bar for single space */
+    /* navigation bar for single place */
     --single-navbar-height: 40px;
 
     /* breakpoints */
@@ -94,11 +94,11 @@
     --highlight-text-color: #003a52;
     --highlight-text-color-alt: #c70000;
 
-    /* space list */
-    --space-bg: #ffffff;
-    --active-space-bg: #f6eee5;
-    --space-subhead-bg: #faf6f1;
-    --space-subhead-border: #bcb8b3;
+    /* place list */
+    --place-bg: #ffffff;
+    --active-place-bg: #f6eee5;
+    --place-subhead-bg: #faf6f1;
+    --place-subhead-border: #bcb8b3;
 
     /* opening times */
     --open-color: #c70000;
@@ -157,9 +157,9 @@
     --cc-webkit-scrollbar-bg-hover: #b7aaa4;
 
     /* map */
-    --space-icon-fill: 199, 0, 0;
-    --space-icon-stroke: 145, 0, 0;
-    --space-icon-text: #fff;
+    --place-icon-fill: 199, 0, 0;
+    --place-icon-stroke: 145, 0, 0;
+    --place-icon-text: #fff;
     --person-icon-fill: 26, 132, 199;
     --person-icon-stroke: 0, 58, 82;
 }

@@ -22,11 +22,11 @@ export function getPlaceHTML( space ) {
     splog( 'getPlaceHTML (spaces module)' );
     let spaceContainer = document.createElement('div');
     spaceContainer.setAttribute( 'data-id', space.id );
-    spaceContainer.setAttribute( 'id', 'space' + space.id );
+    spaceContainer.setAttribute( 'id', 'place' + space.id );
     spaceContainer.setAttribute( 'data-sortalpha', space.sortKey );
     spaceContainer.setAttribute( 'class', getClassList( space ) );
-    let spaceHTML = '<div class="space-summary"><h3><button data-slug="' + space.slug + '" class="accordion-trigger place-title load-info" aria-expanded="false" aria-controls="additionalInfo' + space.id + '" data-placeid="' + space.id + '">' + space.title + '</button></h3>';
-    spaceHTML += '<p class="space-info"><span class="space-type space-type-' + space.space_type.replace( /[^0-9a-zA-Z]/g, '').toLowerCase() + '">' + space.space_type + '<span class="distance" id="distance' + space.id +'"></span></span>';
+    let spaceHTML = '<div class="place-summary"><h3><button data-slug="' + space.slug + '" class="accordion-trigger place-title load-info" aria-expanded="false" aria-controls="additionalInfo' + space.id + '" data-placeid="' + space.id + '">' + space.title + '</button></h3>';
+    spaceHTML += '<p class="place-info"><span class="place-type place-type-' + space.space_type.replace( /[^0-9a-zA-Z]/g, '').toLowerCase() + '">' + space.space_type + '<span class="distance" id="distance' + space.id +'"></span></span>';
     spaceHTML += '';
     let loc = '';
     if ( space.floor !== '' ) {
@@ -39,9 +39,9 @@ export function getPlaceHTML( space ) {
         loc += '<span class="address-location">' + space.address + '</span>';
     }
     spaceHTML += '<span class="address">' + loc + '</span></p>';
-    spaceHTML += '<div class="space-details">';
+    spaceHTML += '<div class="place-details">';
     if ( space.image != '' ) {
-        spaceHTML += '<img src="' + spacefinder.dataDir + 'spaces/images/' + space.image + '" class="space-image" loading="lazy" alt="' + space.imagealt + '">';
+        spaceHTML += '<img src="' + spacefinder.dataDir + 'spaces/images/' + space.image + '" class="place-image" loading="lazy" alt="' + space.imagealt + '">';
     }
     spaceHTML += '<p class="description">' + space.description + '</p></div></div>';
     spaceHTML += '<div class="additionalInfo" id="additionalInfo' + space.id + '"></div>';
@@ -75,7 +75,7 @@ export function getAdditionalInfo( space ) {
     loc += ' (<a target="googlemaps" href="https://www.google.com/maps/dir/?api=1&amp;destination=' + space.lat + '%2c' + space.lng + '&amp;travelmode=walking">get directions</a>)';
     spaceHTML += '<li class="icon-address">' + loc + '</li>';
     if ( space.url !== "" && space.url_text !== '' ) {
-        spaceHTML += '<li class="icon-link"><a target="spaceurl" href="' + space.url + '">' + space.url_text + '</a></li>';
+        spaceHTML += '<li class="icon-link"><a target="placeurl" href="' + space.url + '">' + space.url_text + '</a></li>';
     }
     if ( space.campusmap_url !== undefined && space.campusmap_url !== '') {
         let campusmap_ref = space.campusmap_ref !== '' ? ' (map reference ' + space.campusmap_ref + ')': '';
@@ -143,9 +143,9 @@ export function getAdditionalInfo( space ) {
  * @return {String} classList Space separated list of classnames
  */
 function getClassList( space ) {
-    var classList = 'list-space ';
+    var classList = 'list-place ';
     if ( space.space_type ) {
-        classList += 'space_type_' + space.space_type.replace( /[^0-9a-zA-Z]/g, '' ).toLowerCase() + ' ';
+        classList += 'place_type_' + space.space_type.replace( /[^0-9a-zA-Z]/g, '' ).toLowerCase() + ' ';
     }
     if ( space.work.length ){
         classList += 'work_' + space.work.join( ' work_' ) + ' ';

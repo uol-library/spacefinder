@@ -385,7 +385,7 @@
     }
 }
 #listcontent {
-    .list-space {
+    .list-place {
         padding: 1rem .5rem;
         border-bottom: 1px solid var(--separator-color);
         &:after {
@@ -397,9 +397,9 @@
             display: none;
         }
         &.active {
-            background: var(--active-space-bg);
-            .space-details {
-                .space-image {
+            background: var(--active-place-bg);
+            .place-details {
+                .place-image {
                     width: 100%;
                     height: auto;
                     float: none;
@@ -407,13 +407,13 @@
                 }
             }
         }
-        .space-details {
+        .place-details {
             &:after {
                 content: "";
                 display: block;
                 clear: both;
             }
-            .space-image {
+            .place-image {
                 width: 50%;
                 height: auto;
                 float: left;
@@ -425,10 +425,10 @@
             font-weight: normal;
             padding-bottom: .3rem;
             &:focus {
-                outline: 1px dotted var(--space-subhead-border);
+                outline: 1px dotted var(--place-subhead-border);
             }
         }
-        p.space-info {
+        p.place-info {
             font-weight: normal;
             padding-bottom: .3rem;
             display: flex;
@@ -437,7 +437,7 @@
             gap: 1rem;
             > span {
                 flex: 1;
-                &.space-type {
+                &.place-type {
                     font-size: 1.2rem;
                     display: block;
                     color: var(--highlight-text-color);
@@ -455,17 +455,17 @@
                 }
             }
         }
-        &[data-sortdistance=""] p.space-info > span.space-type span.distance {
+        &[data-sortdistance=""] p.place-info > span.place-type span.distance {
             display: none;
         }
         h4 {
             font-size: 1.1rem;
             font-weight: normal;
             padding-bottom: .5rem 0;
-            background: var(--space-subhead-bg);
+            background: var(--place-subhead-bg);
             margin: .5rem 0;
-            border-top: 1px dotted var(--space-subhead-border);
-            border-bottom: 1px dotted var(--space-subhead-border);
+            border-top: 1px dotted var(--place-subhead-border);
+            border-bottom: 1px dotted var(--place-subhead-border);
         }
         ul.bulleticons {
             list-style: none;
@@ -509,12 +509,12 @@
                 span.dayname {
                     font-weight: bold;
                     width: 25%;
-                    border-bottom: 1px solid var(--space-subhead-border);
+                    border-bottom: 1px solid var(--place-subhead-border);
                 }
                 span.opening {
                     width: 25%;
                     text-align: right;
-                    border-bottom: 1px solid var(--space-subhead-border);
+                    border-bottom: 1px solid var(--place-subhead-border);
                 }
             }
         }

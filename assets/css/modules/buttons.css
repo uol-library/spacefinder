@@ -114,12 +114,12 @@
         border-color: var(--buttoncolor-active);
     }
 }
-.space-title {
+.place-title {
     border: none;
     position:relative;
     font-size: inherit;
     display: block;
-    background: var(--space-bg);
+    background: var(--place-bg);
     padding: 0 2em 0 0;
     margin: 0;
     width: 100%;
@@ -140,8 +140,8 @@
         display: inline-block;
         text-decoration: inherit;
     }
-    .list-space.active & {
-        background: var(--active-space-bg);
+    .list-place.active & {
+        background: var(--active-place-bg);
 		&::after {
 			content: "\E61E";
 		}
@@ -165,7 +165,7 @@
         color: var(--buttonfocuscolor);
         background: var(--buttonfocusbg);
     }
-    .list-space.active & {
+    .list-place.active & {
         display: inline-block;
     }
 }

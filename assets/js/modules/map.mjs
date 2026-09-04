@@ -117,8 +117,8 @@ export function initMap() {
 }
 
 /**
- * Sets up te map with markers for each space. Needs to run when
- * the map is fully loaded and the space data is fully loaded.
+ * Sets up te map with markers for each place. Needs to run when
+ * the map is fully loaded and the place data is fully loaded.
  */
 function maybeSetupMap() {
     splog( 'maybeSetupMap' );
@@ -136,7 +136,7 @@ function maybeSetupMap() {
 			zoomToBoundsOnClick: true
 		});
 
-        /* add each space to the map using a marker */
+        /* add each place to the map using a marker */
         for ( let i = 0; i < spacefinder.data[spacefinder.currentDataSource].places.length; i++ ) {
             if ( spacefinder.data[spacefinder.currentDataSource].places[i].lat && spacefinder.data[spacefinder.currentDataSource].places[i].lng ) {
                 var spacePosition = new LatLng( spacefinder.data[spacefinder.currentDataSource].places[i].lat, spacefinder.data[spacefinder.currentDataSource].places[i].lng );
@@ -144,7 +144,7 @@ function maybeSetupMap() {
                 spacefinder.data[spacefinder.currentDataSource].places[i].marker = new Marker( spacePosition, {
                     alt: spacefinder.data[spacefinder.currentDataSource].places[i].title,
                     title: spacefinder.data[spacefinder.currentDataSource].places[i].title,
-                    icon: getSVGIcon( 'space-marker' )
+                    icon: getSVGIcon( 'place-marker' )
                 });
                 spacefinder.data[spacefinder.currentDataSource].markergroup.addLayer( spacefinder.data[spacefinder.currentDataSource].places[i].marker );
                 /* set the popup for the marker */
@@ -157,7 +157,7 @@ function maybeSetupMap() {
         /* add the markers to the map */
         spacefinder.map.addLayer( spacefinder.data[spacefinder.currentDataSource].markergroup );
 
-        /* use popupopen and popupclose events to select and deselect spaces from map */
+        /* use popupopen and popupclose events to select and deselect places from map */
         spacefinder.map.on( 'popupopen', event => {
             zoomMapToSpace( event.popup.spaceID );
             document.dispatchEvent( new CustomEvent( 'placeSelectedOnMap', { bubbles: true, detail: { id: event.popup.spaceID, src: 'map' } } ) );
@@ -278,7 +278,7 @@ function getPlaceInfoWindowContent( space ) {
 	if ( space.building !== '' ) {
 		info.push( space.building );
 	}
-	let content = '<div class="spaceInfoWindow"><h3>'+space.title+'</h3>';
+	let content = '<div class="placeInfoWindow"><h3>'+space.title+'</h3>';
 	content += '<p class="info">' + info.join(', ') + '</p>';
 	content += '<p class="description">' + space.description + '</p>';
 	content += '<button class="show-list">More info&hellip;</button></div>';
