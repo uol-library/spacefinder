@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Published",
     "mainEntity": {
         "@type": "CafeOrCoffeeShop",
+        "additionalType": "Café",
         "identifier": 4,
         "name": "Esther Simpson Café",
         "description": "Located in the new Esther Simpson building on the edge of Woodhouse Moor, the café is modern and relaxed, serving speciality coffee from Darkwoods.",

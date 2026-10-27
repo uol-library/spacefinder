@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Draft",
     "mainEntity": {
         "@type": "Place",
+        "additionalType": "Seminar room",
         "identifier": 24,
         "name": "Michael Sadler Building - 2.01",
         "description": "Small room on a theater style. 10 seat capacity. High views of Leeds are inspiring a productive study .",

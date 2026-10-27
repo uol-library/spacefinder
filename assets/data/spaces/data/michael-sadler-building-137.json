@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Draft",
     "mainEntity": {
         "@type": "Place",
+        "additionalType": "Seminar room",
         "identifier": 23,
         "name": "Michael Sadler Building - 1.37",
         "description": "Silent study space with chairs and flip out tables. 12 seat capacity. Perfect for studying using multiple whiteboards.",

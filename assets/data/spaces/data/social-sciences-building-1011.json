@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Draft",
     "mainEntity": {
         "@type": "CollegeOrUniversity",
+        "additionalType": "IT Cluster",
         "identifier": 64,
         "name": "Social Sciences Building - 10.11",
         "description": "Big cluster room at the Social Sciences Building. Rows of desks with computers near a place to take a break. Perfect for studying between lectures on campus. 40 seat capacity.",

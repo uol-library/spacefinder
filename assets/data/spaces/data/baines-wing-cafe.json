@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Published",
     "mainEntity": {
         "@type": "CafeOrCoffeeShop",
+        "additionalType": "Café",
         "identifier": 1,
         "name": "Baines Wing Café",
         "description": "Situated between the School of Healthcare and the Great Hall, Baines Wing Café has a large seating area including its own secluded courtyard which is perfect to enjoy the sunny weather.\n\nMixture of group seating around tables, sofas and some high level desking with 6 workstations.",

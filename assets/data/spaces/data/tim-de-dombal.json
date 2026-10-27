@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Draft",
     "mainEntity": {
         "@type": "CollegeOrUniversity",
+        "additionalType": "IT Cluster",
         "identifier": 95,
         "name": "Tim de Dombal - Room 4.17b Clinical Sciences Building",
         "description": "Traditional cluster with rows of desks in a relaxed environment. 28 seat capacity",

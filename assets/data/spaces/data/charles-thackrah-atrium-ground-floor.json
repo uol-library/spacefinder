@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Published",
     "mainEntity": {
         "@type": "CollegeOrUniversity",
+        "additionalType": "General Seating Area",
         "identifier": 41,
         "name": "Charles Thackrah - Atrium (Ground Floor)",
         "description": "Modern seating area with small tables and wall-attached tables. Occasionally busy. Perfect place to take a break or prepare before class.",

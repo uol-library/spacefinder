@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Published",
     "mainEntity": {
         "@type": "CafeOrCoffeeShop",
+        "additionalType": "Café",
         "identifier": 7,
         "name": "Refectory",
         "description": "Located right at the heart of University campus, the contemporary Refectory venue offers a wide range of hot and cold food each day.",

@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Published",
     "mainEntity": {
         "@type": "Library",
+        "additionalType": "Library",
         "identifier": 74,
         "name": "Edward Boyle 8th floor",
         "description": "Study space with both silent and non-silent areas to work with friends or individually. There are also group study spaces and meeting rooms available to book for collaborative projects.",
@@ -40,6 +41,14 @@
                 "@type": "ContactPoint",
                 "contactType": "Follow us on Bluesky",
                 "url": "https://bit.ly/4nxW4FT"
+            }
+        ],
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "restriction",
+                "name": "Access restriction",
+                "value": "Library Card needed"
             }
         ],
         "amenityFeature": [

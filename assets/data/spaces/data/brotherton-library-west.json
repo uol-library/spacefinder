@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Published",
     "mainEntity": {
         "@type": "Library",
+        "additionalType": "Library",
         "identifier": 99,
         "name": "Brotherton Library West Building",
         "description": "A bright and modern study space with high ceilings, individual study, group tables for collaborative work and docking stations to boost productivity.",
@@ -40,6 +41,14 @@
                 "@type": "ContactPoint",
                 "contactType": "Follow us on Bluesky",
                 "url": "https://bit.ly/4nxW4FT"
+            }
+        ],
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "restriction",
+                "name": "Access restriction",
+                "value": "Library Card needed"
             }
         ],
         "amenityFeature": [

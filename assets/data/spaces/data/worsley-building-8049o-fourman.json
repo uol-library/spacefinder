@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Published",
     "mainEntity": {
         "@type": "CollegeOrUniversity",
+        "additionalType": "IT Cluster",
         "identifier": 69,
         "name": "Worsley Building - 8.049O (Fourman)",
         "description": "Large room with plenty of available clusters to use. Comfortable chairs and large desks perfect for focused study. 50 seat capacity. From the Worsley Airport Lounge on Level 7 walk through the double doors near the ATM cash machine. Take a lift or stairs up to level 8. The doors to Fourman O and P are on the corridor by the lifts.",

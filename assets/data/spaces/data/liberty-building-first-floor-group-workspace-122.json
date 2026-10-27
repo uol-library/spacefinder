@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Published",
     "mainEntity": {
         "@type": "CollegeOrUniversity",
+        "additionalType": "General Seating Area",
         "identifier": 40,
         "name": "Liberty Building - First floor Group workspace (1.22)",
         "description": "Casual seating area for groups or individuals.",

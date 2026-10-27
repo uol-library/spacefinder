@@ -6,6 +6,46 @@ map:
   startLng: -1.555291
   startZoom: 16
 ##########################################################################
+# Routing
+#
+# How places and pages are shown in URLs:
+#   history: URLs like /spaces/1915 (uses the History API). Direct visits
+#            to these URLs need the server to send the site's index page;
+#            if it can't, 404.html redirects to the site and the URL is
+#            restored. On Azure Static Web Apps, add a navigationFallback
+#            to staticwebapp.config.json to avoid the redirect.
+#   hash:    URLs like /#/spaces/1915. Works on any static host, such as
+#            GitHub Pages, with no server configuration.
+##########################################################################
+routing: "hash"
+##########################################################################
+# Datasets
+#
+# Each dataset is a folder in assets/data named after its key, containing:
+#   data.json:    an array of schema.org JSON-LD records
+#   filters.json: filter definitions (see below for the format)
+#   <key>.mjs:    a module which renders the data (see spaces/spaces.mjs)
+#   images/:      any images the data refers to (optional)
+#
+# The key is also used in URLs, e.g. /spaces/1915. The first dataset is
+# the one shown when the site is opened.
+#
+# Each dataset has the following properties:
+#   key:   folder name and URL path
+#   label: human readable name, used in the interface
+#   icon:  icon class used for the dataset in the interface
+##########################################################################
+datasources:
+  - key: "spaces"
+    label: "Study spaces"
+    icon: "icon-desk"
+  - key: "buildings"
+    label: "Buildings"
+    icon: "icon-marker"
+  - key: "art"
+    label: "Public art"
+    icon: "icon-views"
+##########################################################################
 # Filter definitions
 #
 # Filters allow users to filter lists of spaces using checkbox controls in

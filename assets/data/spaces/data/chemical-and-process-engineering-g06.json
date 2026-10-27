@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Published",
     "mainEntity": {
         "@type": "CollegeOrUniversity",
+        "additionalType": "IT Cluster",
         "identifier": 42,
         "name": "Chemical and Process Engineering - G06",
         "description": "24 hour cluster with rows of desks. Perfect for day or night social studying with access to water fountain. 83 seat capacity. There are steps at the entrance to the cluster (from Woodhouse Lane). There is a wheelchair lift from the Engineering entrance foyer, but this can only be operated under supervision of reception staff who are available Monday - Friday, 8.45am - 5pm.",
@@ -30,6 +31,14 @@
             "latitude": 53.810493169467485,
             "longitude": -1.5563105415915899
         },
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "restriction",
+                "name": "Access restriction",
+                "value": "Access to the cluster is via an <a href=\"https://it.leeds.ac.uk/it?id=clusters\" target=\"_it\">entrance code available on the IT website</a>"
+            }
+        ],
         "amenityFeature": [
             {
                 "@type": "LocationFeatureSpecification",

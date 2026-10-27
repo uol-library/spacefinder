@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Draft",
     "mainEntity": {
         "@type": "CollegeOrUniversity",
+        "additionalType": "IT Cluster",
         "identifier": 59,
         "name": "Mechanical Engineering - 5.34d",
         "description": "Cluster room surrounded by big windows with high views of the University campus. Perfect for focused study with access to computers. 25 seat capacity.",

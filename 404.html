@@ -2,6 +2,19 @@
 permalink: /404.html
 layout: default
 ---
+{% if site.data.config.routing == "history" %}
+<script>
+/* With history routing, URLs like /spaces/1915 only exist in the app, so send
+   them to the app, which restores the URL (see restoreRoute in routing.mjs) */
+(function() {
+    var base = '{{ site.baseurl }}/';
+    var path = window.location.pathname;
+    if ( path.indexOf( base ) === 0 && path !== base ) {
+        window.location.replace( base + '?route=' + encodeURIComponent( path.slice( base.length ) ) + window.location.hash );
+    }
+})();
+</script>
+{% endif %}
 
 <style type="text/css" media="screen">
   .container {

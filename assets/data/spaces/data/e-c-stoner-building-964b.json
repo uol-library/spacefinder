@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Draft",
     "mainEntity": {
         "@type": "CollegeOrUniversity",
+        "additionalType": "IT Cluster",
         "identifier": 98,
         "name": "E C Stoner Building - 9.64B",
         "description": "Large cluster with multiple computers and comfortable chairs. 36 seat capacity.",

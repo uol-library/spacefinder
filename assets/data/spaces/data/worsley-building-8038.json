@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Published",
     "mainEntity": {
         "@type": "CollegeOrUniversity",
+        "additionalType": "IT Cluster",
         "identifier": 65,
         "name": "Worsley Building - 8.038",
         "description": "Cluster room with a variety of desks for individual or group study. 52 seat capacity. Height adjustable tdesks available.",

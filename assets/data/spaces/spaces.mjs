@@ -4,7 +4,7 @@
  * The following functions are defined in this file:
  * 
  * - getPlaceHTML - assembles HTML for the list view (short) and returns a HTML Element
- * - getAdditionalInfo - assembles HTML for expanded view and returns an HTML String
+ * - getAdditionalInfo - assembles HTML for expanded view and returns an HTML String (rendered hidden with the list, shown when the place is selected)
  * - getInfoWindowContent - assembles HTML for the map infoWindow and returns an HTML String
  * - onloadPlaceData - called when the data is loaded, can be used to set up any additional data structures or intervals
  * - onrenderPlaceData - called when the data is rendered, can be used to set up any additional data structures or intervals
@@ -16,7 +16,8 @@
  * All the above are mandatory for dynamically loaded modules, apart from the onunloadPlaceData function, which is optional.
  */
 import { spacefinder } from '../../js/modules/config.mjs';
-import { getPlaceNodeById, getFilterData, splog } from '../../js/modules/utilities.mjs';
+import { getPlaceNodeById, getFilterData, splog, escapeHTML, getDirectionsLink, createPlaceElement, getInfoWindowHTML } from '../../js/modules/utilities.mjs';
+import { getPublishedEntities, getPropertyValue, getFeatureKeys } from '../../js/modules/jsonld.mjs';
 
 export const namespace = 'spaces';
 
@@ -27,40 +28,33 @@ export const namespace = 'spaces';
  */
 export function getPlaceHTML( space ) {
     splog( 'getPlaceHTML (spaces module)' );
-    let spaceContainer = document.createElement('div');
-    spaceContainer.setAttribute( 'data-id', space.id );
-    spaceContainer.setAttribute( 'id', 'place' + space.id );
-    spaceContainer.setAttribute( 'data-sortalpha', space.sortKey );
-    spaceContainer.setAttribute( 'class', getClassList( space ) );
-    let spaceHTML = '<div class="place-summary"><h3><button data-slug="' + space.slug + '" class="accordion-trigger place-title load-info" aria-expanded="false" aria-controls="additionalInfo' + space.id + '" data-placeid="' + space.id + '">' + space.title + '</button></h3>';
-    spaceHTML += '<p class="place-info"><span class="place-type place-type-' + space.space_type.replace( /[^0-9a-zA-Z]/g, '').toLowerCase() + '">' + space.space_type + '<span class="distance" id="distance' + space.id +'"></span></span>';
-    spaceHTML += '';
     let loc = '';
     if ( space.floor !== '' ) {
-        loc += '<span class="address-floor">' + space.floor + '</span>, ';
+        loc += '<span class="address-floor">' + escapeHTML( space.floor ) + '</span>, ';
     }
     if ( space.building !== '' ) {
-        loc += '<span class="address-building">' + space.building + '</span>, ';
+        loc += '<span class="address-building">' + escapeHTML( space.building ) + '</span>, ';
     }
     if ( space.address !== '' ) {
-        loc += '<span class="address-location">' + space.address + '</span>';
+        loc += '<span class="address-location">' + escapeHTML( space.address ) + '</span>';
     }
-    spaceHTML += '<span class="address">' + loc + '</span></p>';
-    spaceHTML += '<div class="place-details">';
+    let details = '';
     if ( space.images && space.images.length ) {
-        spaceHTML += '<img src="' + space.images[0].url + '" class="place-image" loading="lazy" alt="' + space.images[0].alt + '">';
+        details += '<img src="' + space.images[0].url + '" class="place-image" loading="lazy" alt="' + escapeHTML( space.images[0].alt ) + '">';
     }
-    spaceHTML += '<p class="description">' + space.description + '</p></div></div>';
-    spaceHTML += '<div class="additionalInfo" id="additionalInfo' + space.id + '"></div>';
-    spaceHTML += '</div>';
-    spaceContainer.innerHTML = spaceHTML;
-    return spaceContainer;
+    details += '<p class="description">' + space.description + '</p>';
+    return createPlaceElement( space, {
+        classList: getClassList( space ),
+        typeLabel: escapeHTML( space.space_type ),
+        typeClass: space.space_type,
+        address: loc,
+        details: details
+    } );
 }
 
 /**
  * Gets additional information about a space.
- * The main listing only contains a minimal amount of information about spaces - 
- * when a space is clicked on, this is augmented by additional data.
+ * This is rendered (hidden) with the list, and shown when a space is selected.
  * @param {Object} space space data
  * @return {String} HTML
  */
@@ -79,7 +73,7 @@ export function getAdditionalInfo( space ) {
     if ( space.address !== '' ) {
         loc += space.address;
     }
-    loc += ' (<a target="googlemaps" href="https://www.google.com/maps/dir/?api=1&amp;destination=' + space.lat + '%2c' + space.lng + '&amp;travelmode=walking">get directions</a>)';
+    loc += ' (' + getDirectionsLink( space.lat, space.lng ) + ')';
     spaceHTML += '<li class="icon-address">' + loc + '</li>';
     if ( space.links && space.links.length ) {
         space.links.forEach( link => {
@@ -93,12 +87,12 @@ export function getAdditionalInfo( space ) {
         }
         spaceHTML += '</li>';
     } else {
-        spaceHTML += '<li class="icon-public">Open to ' + space.access + '<li>';
+        spaceHTML += '<li class="icon-public">Open to ' + space.access + '</li>';
     }
     spaceHTML += '</ul></section>';
 
     spaceHTML += '<section class="section-opening"><h4>Opening Times</h4>';
-    spaceHTML += '<p class="icon-time-short" data-openmsg-id="' + space.id + '">' + spacenode.getAttribute( 'data-openmsg' ) + '</p>';
+    spaceHTML += '<p class="icon-time-short" data-openmsg-id="' + space.id + '">' + ( spacenode.getAttribute( 'data-openmsg' ) || '' ) + '</p>';
     spaceHTML += '<ul class="opening-times">';
     [ 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday' ].forEach( (day, idx) => {
         let today = new Date().getDay();
@@ -140,19 +134,8 @@ export function getAdditionalInfo( space ) {
  * @returns {String} HTML content for space infoWindow
  */
 export function getInfoWindowContent( space ) {
-    let info = [];
-    info.push( space.space_type );
-    if ( space.floor !== '' ) {
-        info.push( space.floor );
-    }
-    if ( space.building !== '' ) {
-        info.push( space.building );
-    }
-    let content = '<div class="placeInfoWindow"><h3>'+space.title+'</h3>';
-    content += '<p class="info">' + info.join(', ') + '</p>';
-    content += '<p class="description">' + space.description + '</p>';
-    content += '<button class="show-list">More info&hellip;</button></div>';
-    return content;
+    let info = [ space.space_type, space.floor, space.building ].map( escapeHTML );
+    return getInfoWindowHTML( space.title, info, space.description );
 }
 
 /**
@@ -161,7 +144,7 @@ export function getInfoWindowContent( space ) {
  * @return {String} classList Space separated list of classnames
  */
 function getClassList( space ) {
-    var classList = 'list-place ';
+    var classList = '';
     if ( space.space_type ) {
         classList += 'place_type_' + space.space_type.replace( /[^0-9a-zA-Z]/g, '' ).toLowerCase() + ' ';
     }
@@ -180,27 +163,110 @@ function getClassList( space ) {
     return classList;
 }
 
+/* amenityFeature keys (alternateName) which are not facilities - these match the keys in filters.json */
+const WORK_KEYS = [ 'private', 'close', 'friends', 'group' ];
+const ATMOSPHERE_KEYS = [ 'disciplined', 'relaxed', 'historic', 'modern', 'inspiring', 'cosy', 'social', 'friendly' ];
+const NOISE_KEYS = [ 'strictlysilent', 'whispers', 'backgroundchatter', 'animateddiscussion', 'musicplaying' ];
+
+/* icon classes for social media contactPoints, by contactType */
+const CONTACT_CLASSES = {
+    'Follow us on Facebook': 'icon-facebook-squared',
+    'Follow us on X (formerly Twitter)': 'icon-x',
+    'Follow us on Instagram': 'icon-instagram',
+    'Follow us on Bluesky': 'icon-bluesky'
+};
+
+/**
+ * Formats a tel: URL as a UK phone number, e.g. tel:+441133435260 becomes 0113 343 5260
+ * @param {String} tel
+ * @return {String}
+ */
+function formatPhone( tel ) {
+    let num = tel.replace( /^tel:/, '' ).replace( /^\+44/, '0' ).replace( /\D/g, '' );
+    return num.replace( /^(0\d{3})(\d{3})(\d+)$/, '$1 $2 $3' );
+}
+
+/**
+ * Converts a JSON-LD space to the data structure used by the templates in this module
+ * @param {Object} ld JSON-LD for a space (the mainEntity of its Article)
+ * @return {Object} space
+ */
+function getSpaceFromJSONLD( ld ) {
+    let restriction = getPropertyValue( ld.additionalProperty, 'restriction' );
+    let space = {
+        id: ld.identifier,
+        slug: ld.alternateName,
+        title: ld.name,
+        description: ld.description,
+        space_type: ld.additionalType,
+        floor: '',
+        building: ld.address.streetAddress,
+        address: [ ld.address.addressLocality, ld.address.postalCode ].filter( Boolean ).join( ', ' ),
+        lat: ld.geo.latitude,
+        lng: ld.geo.longitude,
+        access: ld.publicAccess ? 'Anyone (public)': 'University Staff and Students',
+        restricted: !! restriction,
+        restriction: restriction || '',
+        images: [],
+        links: [],
+        contacts: [],
+        facilities: [],
+        work: [],
+        atmosphere: [],
+        noise: '',
+        opening_hours: {},
+        ld: ld
+    };
+    if ( ld.image && ld.image.contentUrl ) {
+        space.images.push( { url: ld.image.contentUrl, alt: ld.image.description } );
+    }
+    if ( ld.url ) {
+        let linkText = ld.url.indexOf( 'mytimetable' ) !== -1 ? 'View timetable for ' + ld.name: 'Visit the ' + ld.name + ' web site';
+        space.links.push( { class: 'icon-link', url: ld.url, link_text: linkText } );
+    }
+    if ( ld.sameAs ) {
+        space.links.push( { class: 'icon-uol-logo-mark', url: ld.sameAs, link_text: 'View on the University campus map' } );
+    }
+    if ( ld.telephone ) {
+        space.contacts.push( { class: 'icon-phone', url: ld.telephone, link_text: 'Call us on ' + formatPhone( ld.telephone ) } );
+    }
+    if ( ld.email ) {
+        space.contacts.push( { class: 'icon-email', url: 'mailto:' + ld.email, link_text: 'Email us at ' + ld.email } );
+    }
+    ( ld.contactPoint || [] ).forEach( cp => {
+        space.contacts.push( { class: CONTACT_CLASSES[ cp.contactType ] || 'icon-link', url: cp.url, link_text: cp.contactType } );
+    });
+    getFeatureKeys( ld ).forEach( key => {
+        if ( WORK_KEYS.includes( key ) ) {
+            space.work.push( key );
+        } else if ( ATMOSPHERE_KEYS.includes( key ) ) {
+            space.atmosphere.push( key );
+        } else if ( NOISE_KEYS.includes( key ) ) {
+            space.noise = ld.amenityFeature.find( f => f.alternateName === key ).name;
+        } else {
+            space.facilities.push( key );
+        }
+    });
+    [ 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday' ].forEach( day => {
+        space.opening_hours[ day ] = { open: false, from: '', to: '' };
+    });
+    ( ld.openingHoursSpecification || [] ).forEach( spec => {
+        let day = spec.dayOfWeek.replace( /^https?:\/\/schema.org\//, '' ).toLowerCase();
+        if ( spec.opens && spec.closes ) {
+            space.opening_hours[ day ] = { open: true, from: spec.opens.slice( 0, 5 ), to: spec.closes.slice( 0, 5 ) };
+        }
+    });
+    return space;
+}
+
 /**
  * Function called when the data is loaded
  * can be used to set up any additional data structures or intervals
- * @param {*} data - JSON data for the spaces
+ * @param {*} data - JSON-LD data for the spaces
  */
 export function onloadPlaceData( data ) {
     splog( 'onloadPlaceData (spaces module)' );
-    spacefinder.data[namespace].places = [];
-    data.forEach( (place, index) => {
-        spacefinder.data[namespace].places[index] = place;
-        spacefinder.data[namespace].places[index].sortKey = place.title.replace( /[^0-9a-zA-Z]/g, '' ).toLowerCase();
-    });
-    spacefinder.data[namespace].places.sort( (a, b) => {
-        if ( a.sortKey < b.sortKey ) {
-            return -1;
-        }
-        if ( a.sortKey > b.sortKey ) {
-            return 1;
-        }
-        return 0;
-    } );
+    spacefinder.data[namespace].places = getPublishedEntities( data ).map( getSpaceFromJSONLD );
     spacefinder.data[namespace].getTimeFromString = function( str ) {
         let parts = str.split( ':' );
         return ( parseInt( parts[0] ) * 60 ) + parseInt( parts[1] );

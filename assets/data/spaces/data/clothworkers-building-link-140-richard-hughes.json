@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Published",
     "mainEntity": {
         "@type": "CollegeOrUniversity",
+        "additionalType": "IT Cluster",
         "identifier": 49,
         "name": "Clothworkers' Building Link - 140 (Richard Hughes)",
         "description": "Large area with no drinks or food allowed. 42 seat capacity. From the Great Hall, travel away from the Parkinson down University Road, and turn right straight after you pass under the Clothworkers' Link Building. Use the entrance on the right then turn left and use the stairs.",
@@ -30,6 +31,14 @@
             "latitude": 53.80780363723696,
             "longitude": -1.5564445563099445
         },
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "restriction",
+                "name": "Access restriction",
+                "value": "Access to the cluster is via an <a href=\"https://it.leeds.ac.uk/it?id=clusters\" target=\"_it\">entrance code available on the IT website</a>"
+            }
+        ],
         "amenityFeature": [
             {
                 "@type": "LocationFeatureSpecification",

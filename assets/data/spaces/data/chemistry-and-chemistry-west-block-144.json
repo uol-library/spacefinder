@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Published",
     "mainEntity": {
         "@type": "CollegeOrUniversity",
+        "additionalType": "IT Cluster",
         "identifier": 43,
         "name": "Chemistry and Chemistry West Block - 1.44",
         "description": "Private study space for focused study. 23 seat capacity. Go through the Clothworkers Arch and through the small arch at the back of the courtyard. Follow the path at the back of the Brotherton Library round to the right, and enter the Chemistry building. Take the stairs or lift up one floor and enter Ingold. Cross the cluster towards the other set of double doors - the entrance to Chemistry 1.44 is on your left just before you exit Ingold.",

@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Published",
     "mainEntity": {
         "@type": "CollegeOrUniversity",
+        "additionalType": "General Seating Area",
         "identifier": 39,
         "name": "Liberty Building - Ground floor Common Area (G01)",
         "description": "Common area near the entrance of the Liberty building. Quiet space with different kinds of tables (and table football).",

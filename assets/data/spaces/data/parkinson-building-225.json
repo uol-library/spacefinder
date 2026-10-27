@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Draft",
     "mainEntity": {
         "@type": "Place",
+        "additionalType": "Seminar room",
         "identifier": 27,
         "name": "Parkinson Building - 2.25",
         "description": "Seminar room available for individual study with a great view of the University campus. 20 Seat Capacity.",

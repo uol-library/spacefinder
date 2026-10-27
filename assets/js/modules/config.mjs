@@ -42,10 +42,16 @@ export const spacefinder = {
 
     /* data related config */
     data: {},
-    dataSources: ['spaces'],
-    defaultDataSource: 'spaces',
-    currentDataSource: 'spaces',
+    /* datasets, from _data/config.yml - the first is the default */
+    dataSources: {{ site.data.config.datasources | jsonify }},
+    defaultDataSource: {{ site.data.config.datasources[0].key | jsonify }},
+    /* set from the URL by routing.mjs before the data is loaded */
+    currentDataSource: {{ site.data.config.datasources[0].key | jsonify }},
     dataDir: '{{ site.url }}{{ site.baseurl }}/assets/data/',
+    /* path of the site, which routes (e.g. spaces/1915) are added to */
+    basePath: '{{ site.baseurl }}/',
+    /* "history" for URLs like /spaces/1915, "hash" for URLs like /#/spaces/1915 */
+    routing: {{ site.data.config.routing | default: "hash" | jsonify }},
     spaces: [],
     placesLoaded: false,
     spacesurl: '{{ site.url }}{{ site.baseurl }}/spaces.json',

@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Published",
     "mainEntity": {
         "@type": "CollegeOrUniversity",
+        "additionalType": "IT Cluster",
         "identifier": 57,
         "name": "Irene Manton North - 7.96",
         "description": "Modern large IT cluster with plenty of large windows facing a beautiful side of the University campus. 40 seat capacity. From the Sustainable Garden outside Roger Stevens cross the bridge from the Garstang building to the Irene Manton building and turn right. The entrance to the cluster is the first door on the left.",
@@ -30,6 +31,14 @@
             "latitude": 53.80446980623904,
             "longitude": -1.5548974249272625
         },
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "restriction",
+                "name": "Access restriction",
+                "value": "Access to the cluster is via an <a href=\"https://it.leeds.ac.uk/it?id=clusters\" target=\"_it\">entrance code available on the IT website</a>"
+            }
+        ],
         "amenityFeature": [
             {
                 "@type": "LocationFeatureSpecification",

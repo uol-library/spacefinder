@@ -5,6 +5,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "CafeOrCoffeeShop",
+            "additionalType": "Café",
+            "identifier": 10,
             "name": "1915",
             "description": "1915 is based in the Sir William Henry Bragg Building on Woodhouse Lane, its relaxed and informal menu has been carefully created to offer a mix of both classic and on-trend options.",
             "alternateName": "1915",
@@ -212,6 +214,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "CafeOrCoffeeShop",
+            "additionalType": "Café",
+            "identifier": 84,
             "name": "Affine Café",
             "description": "Affine is more than just a place to grab a bite. A place to break away from the pressures of the working day and enjoy a breather, a change of scenery, or even a chat with fellow professionals. Located at the heart of the innovation hub, the contemporary space provides a welcoming environment to relax and unwind. The perfect place for casual meetings or laidback lunches.",
             "alternateName": "affine-cafe",
@@ -413,6 +417,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "CollegeOrUniversity",
+            "additionalType": "IT Cluster",
+            "identifier": 54,
             "name": "Fine Art, History of Art and Cultural Studies - B16 (West Teaching Lab Lower)",
             "description": "Traditional cluster with rows of desks in a relaxed environment. 33 seat capacity",
             "alternateName": "b16-west-teaching-lab-lower",
@@ -438,6 +444,14 @@
                 "latitude": 53.807836240010325,
                 "longitude": -1.5572457236710147
             },
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "propertyID": "restriction",
+                    "name": "Access restriction",
+                    "value": "Access to the cluster is via an <a href=\"https://it.leeds.ac.uk/it?id=clusters\" target=\"_it\">entrance code available on the IT website</a>"
+                }
+            ],
             "amenityFeature": [
                 {
                     "@type": "LocationFeatureSpecification",
@@ -600,6 +614,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "CafeOrCoffeeShop",
+            "additionalType": "Café",
+            "identifier": 1,
             "name": "Baines Wing Café",
             "description": "Situated between the School of Healthcare and the Great Hall, Baines Wing Café has a large seating area including its own secluded courtyard which is perfect to enjoy the sunny weather.\n\nMixture of group seating around tables, sofas and some high level desking with 6 workstations.",
             "alternateName": "baines-wing-cafe",
@@ -807,6 +823,8 @@
         "creativeWorkStatus": "Draft",
         "mainEntity": {
             "@type": "Place",
+            "additionalType": "Seminar room",
+            "identifier": 15,
             "name": "Baines Wing - G.16",
             "description": "16 Seat Capacity",
             "alternateName": "baines-wing-g16",
@@ -960,6 +978,8 @@
         "creativeWorkStatus": "Draft",
         "mainEntity": {
             "@type": "Place",
+            "additionalType": "Seminar room",
+            "identifier": 14,
             "name": "Baines Wing - G.28",
             "description": "Small study/seminar room space that includes one large desk for group or single focused study. Access to whiteboard and plug sockets. 15 seat capacity.",
             "alternateName": "baines-wing-g28",
@@ -1119,6 +1139,8 @@
         "creativeWorkStatus": "Draft",
         "mainEntity": {
             "@type": "Place",
+            "additionalType": "Seminar room",
+            "identifier": 18,
             "name": "Baines Wing - G.37",
             "description": "32 Seat Capacity",
             "alternateName": "baines-wing-g37",
@@ -1272,6 +1294,8 @@
         "creativeWorkStatus": "Draft",
         "mainEntity": {
             "@type": "Place",
+            "additionalType": "Seminar room",
+            "identifier": 16,
             "name": "Baines Wing - LG.17",
             "description": "Big seminar room with projector and flippable whiteboard. Five windows are allowing plenty of daylight to enter the room and there is acesss to a big projector. 20 seat capacity.",
             "alternateName": "baines-wing-lg17",
@@ -1437,6 +1461,8 @@
         "creativeWorkStatus": "Draft",
         "mainEntity": {
             "@type": "Place",
+            "additionalType": "Seminar room",
+            "identifier": 17,
             "name": "Baines Wing - LG.20",
             "description": "Seminar room with flip out tables and chairs in small theater style. 14 seat capacity.",
             "alternateName": "baines-wing-lg20",
@@ -1596,6 +1622,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "CollegeOrUniversity",
+            "additionalType": "General Seating Area",
+            "identifier": 31,
             "name": "Michael Sadler Building - Behind Rupert Beckett Lecture Theatre",
             "description": "Colourful study area with desks and access to clusters. Relaxed space for studying individually or with a group.",
             "alternateName": "behind-rupert-beckett-lecture-theatre",
@@ -1787,6 +1815,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "Library",
+            "additionalType": "Library",
+            "identifier": 83,
             "name": "Brotherton Library Main Building",
             "description": "Inspiring study area with iconic round reading room and an abundance of books. It is silent study space across all four floors with plenty of desks and power points.",
             "alternateName": "brotherton-library",
@@ -1822,6 +1852,14 @@
                     "@type": "ContactPoint",
                     "contactType": "Follow us on Bluesky",
                     "url": "https://bit.ly/4nxW4FT"
+                }
+            ],
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "propertyID": "restriction",
+                    "name": "Access restriction",
+                    "value": "Library Card needed"
                 }
             ],
             "amenityFeature": [
@@ -2052,6 +2090,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "Library",
+            "additionalType": "Library",
+            "identifier": 99,
             "name": "Brotherton Library West Building",
             "description": "A bright and modern study space with high ceilings, individual study, group tables for collaborative work and docking stations to boost productivity.",
             "alternateName": "brotherton-library-west",
@@ -2087,6 +2127,14 @@
                     "@type": "ContactPoint",
                     "contactType": "Follow us on Bluesky",
                     "url": "https://bit.ly/4nxW4FT"
+                }
+            ],
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "propertyID": "restriction",
+                    "name": "Access restriction",
+                    "value": "Library Card needed"
                 }
             ],
             "amenityFeature": [
@@ -2311,6 +2359,8 @@
         "creativeWorkStatus": "Draft",
         "mainEntity": {
             "@type": "CafeOrCoffeeShop",
+            "additionalType": "Café",
+            "identifier": 5,
             "name": "Café Maia",
             "description": "Café Maia at Ziff is perfect for meetings, to take a break or even to do some work in the computer area.",
             "alternateName": "cafe-maia",
@@ -2524,6 +2574,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "CafeOrCoffeeShop",
+            "additionalType": "Café",
+            "identifier": 8,
             "name": "Café Seven",
             "description": "Located in the Worsley building, Café Seven is one of our most popular and vibrant cafés. Recently refurbished the large seating area is a great place to meet with friends.",
             "alternateName": "cafe-seven",
@@ -2713,6 +2765,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "CafeOrCoffeeShop",
+            "additionalType": "Café",
+            "identifier": 86,
             "name": "Caffè Nero at Business School",
             "description": "Serving a selection of hot and cold drinks, salads, soups, sandwiches, cakes and snacks. Inside there is varied ample seating - whether you want to relax or work in groups, longer opening hours makes it the perfect spot for breaks between lectures and meetings throughout the day.",
             "alternateName": "caffe-nero-at-business-school",
@@ -2932,6 +2986,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "CafeOrCoffeeShop",
+            "additionalType": "Café",
+            "identifier": 87,
             "name": "Caffè Nero at Laidlaw Library",
             "description": "This is the very first Caffé Nero on a University campus, specialising in high-quality Italian coffee, a warm and welcoming atmosphere, good food and great personal service.",
             "alternateName": "caffe-nero-at-laidlaw-library",
@@ -3149,6 +3205,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "CafeOrCoffeeShop",
+            "additionalType": "Café",
+            "identifier": 88,
             "name": "Caffè Nero at Roger Stevens",
             "description": "This Caffè Nero is conveniently located at the heart of campus overlooking the sustainable pond. Serving a selection of hot and cold drinks, salads, soups, sandwiches, cakes and snacks. Inside there is varied ample seating - whether you want to relax or work in groups, longer opening hours makes it the perfect spot for breaks between lectures and meetings throughout the day.",
             "alternateName": "caffe-nero-at-roger-stevens",
@@ -3368,6 +3426,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "CollegeOrUniversity",
+            "additionalType": "General Seating Area",
+            "identifier": 41,
             "name": "Charles Thackrah - Atrium (Ground Floor)",
             "description": "Modern seating area with small tables and wall-attached tables. Occasionally busy. Perfect place to take a break or prepare before class.",
             "alternateName": "charles-thackrah-atrium-ground-floor",
@@ -3545,6 +3605,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "CollegeOrUniversity",
+            "additionalType": "IT Cluster",
+            "identifier": 42,
             "name": "Chemical and Process Engineering - G06",
             "description": "24 hour cluster with rows of desks. Perfect for day or night social studying with access to water fountain. 83 seat capacity. There are steps at the entrance to the cluster (from Woodhouse Lane). There is a wheelchair lift from the Engineering entrance foyer, but this can only be operated under supervision of reception staff who are available Monday - Friday, 8.45am - 5pm.",
             "alternateName": "chemical-and-process-engineering-g06",
@@ -3570,6 +3632,14 @@
                 "latitude": 53.810493169467485,
                 "longitude": -1.5563105415915899
             },
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "propertyID": "restriction",
+                    "name": "Access restriction",
+                    "value": "Access to the cluster is via an <a href=\"https://it.leeds.ac.uk/it?id=clusters\" target=\"_it\">entrance code available on the IT website</a>"
+                }
+            ],
             "amenityFeature": [
                 {
                     "@type": "LocationFeatureSpecification",
@@ -3762,6 +3832,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "CollegeOrUniversity",
+            "additionalType": "IT Cluster",
+            "identifier": 46,
             "name": "Chemistry and Chemistry West Block - 140 (Cohen)",
             "description": "Large room with lines of computer desks. Silent and busy study space. 96 seat capacity. Cohen can be used as one large teaching space, or separated by a partition wall into Cohen A and Cohen B. From Parkinson Court, go up the stairs at the Cafe end and turn right at the top of the stairs. Turn right again through the double doors. Take the first left into the cluster.",
             "alternateName": "chemistry-and-chemistry-west-block-140-cohen",
@@ -3939,6 +4011,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "CollegeOrUniversity",
+            "additionalType": "IT Cluster",
+            "identifier": 43,
             "name": "Chemistry and Chemistry West Block - 1.44",
             "description": "Private study space for focused study. 23 seat capacity. Go through the Clothworkers Arch and through the small arch at the back of the courtyard. Follow the path at the back of the Brotherton Library round to the right, and enter the Chemistry building. Take the stairs or lift up one floor and enter Ingold. Cross the cluster towards the other set of double doors - the entrance to Chemistry 1.44 is on your left just before you exit Ingold.",
             "alternateName": "chemistry-and-chemistry-west-block-144",
@@ -4104,6 +4178,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "CollegeOrUniversity",
+            "additionalType": "IT Cluster",
+            "identifier": 44,
             "name": "Chemistry and Chemistry West Block - 1.44A",
             "description": "11 seat capacity. Go through the Clothworkers Arch and through the small arch at the back of the courtyard. Follow the path at the back of the Brotherton Library round to the right, and enter the Chemistry building. Take the stairs or lift up one floor and enter Ingold. Cross the cluster towards the other set of double doors - the entrance to Chemistry 1.44a is just before you exit Ingold.",
             "alternateName": "chemistry-and-chemistry-west-block-144a",
@@ -4287,6 +4363,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "CollegeOrUniversity",
+            "additionalType": "IT Cluster",
+            "identifier": 45,
             "name": "Chemistry and Chemistry West Block - 1.46 (Ingold)",
             "description": "Bright large and social cluster room with variety of desks. Comfortable chairs perfect for long hours of individual or group work. 71 seat capacity. Go through the Clothworkers Arch and through the small arch at the back of the courtyard. Follow the path at the back of the Brotherton Library round to the right, and enter the Chemistry building. Take the stairs or lift up one floor to the entrance to Ingold.",
             "alternateName": "chemistry-and-chemistry-west-block-146-ingold",
@@ -4470,6 +4548,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "CollegeOrUniversity",
+            "additionalType": "General Seating Area",
+            "identifier": 34,
             "name": "Chemistry - Chaston Chapman Lounge (room G20)",
             "description": "Bright green modern lounge located in the Chemistry Building. The perfect place to study, take a break or explore the scientific magazines that are displayed on the shelves. The couches and the chairs are very comfortable, making the area very welcoming.",
             "alternateName": "chemistry-chaston-chapman-lounge-room-g20",
@@ -4653,6 +4733,8 @@
         "creativeWorkStatus": "Draft",
         "mainEntity": {
             "@type": "CollegeOrUniversity",
+            "additionalType": "IT Cluster",
+            "identifier": 47,
             "name": "Clarendon Building - G04",
             "description": "Classroom with 4 computer rows. Comfortable chairs. 50 seat capacity.",
             "alternateName": "clarendon-building-g04",
@@ -4836,6 +4918,8 @@
         "creativeWorkStatus": "Draft",
         "mainEntity": {
             "@type": "CollegeOrUniversity",
+            "additionalType": "IT Cluster",
+            "identifier": 48,
             "name": "Clarendon Building - G07",
             "description": "Classroom with 4 computer rows. Comfortable chairs. 100 seat capacity",
             "alternateName": "clarendon-building-g07",
@@ -5007,6 +5091,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "CollegeOrUniversity",
+            "additionalType": "IT Cluster",
+            "identifier": 49,
             "name": "Clothworkers' Building Link - 140 (Richard Hughes)",
             "description": "Large area with no drinks or food allowed. 42 seat capacity. From the Great Hall, travel away from the Parkinson down University Road, and turn right straight after you pass under the Clothworkers' Link Building. Use the entrance on the right then turn left and use the stairs.",
             "alternateName": "clothworkers-building-link-140-richard-hughes",
@@ -5032,6 +5118,14 @@
                 "latitude": 53.80780363723696,
                 "longitude": -1.5564445563099445
             },
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "propertyID": "restriction",
+                    "name": "Access restriction",
+                    "value": "Access to the cluster is via an <a href=\"https://it.leeds.ac.uk/it?id=clusters\" target=\"_it\">entrance code available on the IT website</a>"
+                }
+            ],
             "amenityFeature": [
                 {
                     "@type": "LocationFeatureSpecification",
@@ -5182,6 +5276,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "CafeOrCoffeeShop",
+            "additionalType": "Café",
+            "identifier": 6,
             "name": "Costa Parkinson Court",
             "description": "Parkinson Court Café sits in one of the most iconic buildings at the University of Leeds. The café is open plan and  conveniently located for a break from working in the Brotherton Library. Serves a range of sandwiches and snacks throughout the day.",
             "alternateName": "costa-parkinson-court",
@@ -5407,6 +5503,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "CollegeOrUniversity",
+            "additionalType": "IT Cluster",
+            "identifier": 51,
             "name": "E C Stoner Building - 6.61",
             "description": "Large cluster with multiple computers and comfortable chairs. 40 seat capacity. Between approx 8am-8pm weekdays you can also access from Level 10 of EC Stoner building (where the IT Service Desk is) following the Red Route to lift 48 (next to staircase 4) and take the lift down to level 6. The entrance to the cluster is on your right. Please note this lift is switched off between approx 8pm-8am weekdays and all day at weekends.",
             "alternateName": "e-c-stoner-building-661",
@@ -5432,6 +5530,14 @@
                 "latitude": 53.80532840091855,
                 "longitude": -1.5519239738605104
             },
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "propertyID": "restriction",
+                    "name": "Access restriction",
+                    "value": "Access to the cluster is via an <a href=\"https://it.leeds.ac.uk/it?id=clusters\" target=\"_it\">entrance code available on the IT website</a>"
+                }
+            ],
             "amenityFeature": [
                 {
                     "@type": "LocationFeatureSpecification",
@@ -5588,6 +5694,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "CollegeOrUniversity",
+            "additionalType": "IT Cluster",
+            "identifier": 97,
             "name": "E C Stoner Building - 6.62",
             "description": "Small cluster - 9 seat capacity. This room is flat with level access from the ground floor or via the lift.",
             "alternateName": "e-c-stoner-building-662",
@@ -5613,6 +5721,14 @@
                 "latitude": 53.805328033113454,
                 "longitude": -1.5519733139012006
             },
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "propertyID": "restriction",
+                    "name": "Access restriction",
+                    "value": "Access to the cluster is via an <a href=\"https://it.leeds.ac.uk/it?id=clusters\" target=\"_it\">entrance code available on the IT website</a>"
+                }
+            ],
             "amenityFeature": [
                 {
                     "@type": "LocationFeatureSpecification",
@@ -5763,6 +5879,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "CollegeOrUniversity",
+            "additionalType": "IT Cluster",
+            "identifier": 52,
             "name": "E C Stoner Building - 6.68",
             "description": "Large cluster with multiple computers and comfortable chairs. 47 seat capacity. This room is flat with level access from the ground floor or via the lift and there are height adjustable desks available.",
             "alternateName": "e-c-stoner-building-668",
@@ -5946,6 +6064,8 @@
         "creativeWorkStatus": "Draft",
         "mainEntity": {
             "@type": "CollegeOrUniversity",
+            "additionalType": "IT Cluster",
+            "identifier": 98,
             "name": "E C Stoner Building - 9.64B",
             "description": "Large cluster with multiple computers and comfortable chairs. 36 seat capacity.",
             "alternateName": "e-c-stoner-building-964b",
@@ -6123,6 +6243,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "CafeOrCoffeeShop",
+            "additionalType": "Café",
+            "identifier": 3,
             "name": "Edit Room Café in Edward Boyle Library",
             "description": "Situated on the ground floor of the Edward Boyle Library, the cafe provides an eclectic mix of grab and go food and drinks for everyone to enjoy at any time of the day.",
             "alternateName": "edit-room-cafe",
@@ -6330,6 +6452,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "Library",
+            "additionalType": "Library",
+            "identifier": 72,
             "name": "Edward Boyle 10th floor",
             "description": "Busy study place for people who like working alongside others. Couches with big tables can be used for group working in a nice environment. Extra couches on the side for anybody who wants to read or take a break inside the library. Silent study area available at either end of the floor.",
             "alternateName": "edward-boyle-10th-floor",
@@ -6365,6 +6489,14 @@
                     "@type": "ContactPoint",
                     "contactType": "Follow us on Bluesky",
                     "url": "https://bit.ly/4nxW4FT"
+                }
+            ],
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "propertyID": "restriction",
+                    "name": "Access restriction",
+                    "value": "Library Card needed"
                 }
             ],
             "amenityFeature": [
@@ -6571,12 +6703,14 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "Library",
+            "additionalType": "Library",
+            "identifier": 71,
             "name": "Edward Boyle 11th and 12th floors",
             "description": "Silent study area with access to books, clusters and nice high views of the University campus. Perfect place for focused study and exam preparation.",
             "alternateName": "edward-boyle-11th-and-12th-floors",
             "url": "https://library.leeds.ac.uk/",
             "sameAs": "https://www.leeds.ac.uk/campusmap?location=17411",
-            "publicAccess": true,
+            "publicAccess": false,
             "telephone": "tel:+441133435663 ",
             "email": "library@leeds.ac.uk",
             "image": {
@@ -6606,6 +6740,14 @@
                     "@type": "ContactPoint",
                     "contactType": "Follow us on Bluesky",
                     "url": "https://bit.ly/4nxW4FT"
+                }
+            ],
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "propertyID": "restriction",
+                    "name": "Access restriction",
+                    "value": "Library Card needed"
                 }
             ],
             "amenityFeature": [
@@ -6800,6 +6942,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "Library",
+            "additionalType": "Library",
+            "identifier": 73,
             "name": "Edward Boyle 13th floor (Research Hub)",
             "description": "Silent study space designed specifically for staff and postgraduate students with bookable group and individual study spaces as well as meeting rooms.",
             "alternateName": "edward-boyle-13th-floor",
@@ -6835,6 +6979,14 @@
                     "@type": "ContactPoint",
                     "contactType": "Follow us on Bluesky",
                     "url": "https://bit.ly/4nxW4FT"
+                }
+            ],
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "propertyID": "restriction",
+                    "name": "Access restriction",
+                    "value": "Staff or Postgraduate Library Card needed"
                 }
             ],
             "amenityFeature": [
@@ -6993,6 +7145,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "Library",
+            "additionalType": "Library",
+            "identifier": 74,
             "name": "Edward Boyle 8th floor",
             "description": "Study space with both silent and non-silent areas to work with friends or individually. There are also group study spaces and meeting rooms available to book for collaborative projects.",
             "alternateName": "edward-boyle-8th-floor",
@@ -7028,6 +7182,14 @@
                     "@type": "ContactPoint",
                     "contactType": "Follow us on Bluesky",
                     "url": "https://bit.ly/4nxW4FT"
+                }
+            ],
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "propertyID": "restriction",
+                    "name": "Access restriction",
+                    "value": "Library Card needed"
                 }
             ],
             "amenityFeature": [
@@ -7252,6 +7414,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "Library",
+            "additionalType": "Library",
+            "identifier": 100,
             "name": "Edward Boyle 9th floor (ground floor)",
             "description": "Located on the entrance floor are the customer service help desk and accessible study rooms for students registered with disability services. On this floor, you can borrow a laptop from the laptop locker or take a break in the wellbeing area with boardgames, colouring papers and bean bags.",
             "alternateName": "edward-boyle-ground-floor",
@@ -7287,6 +7451,14 @@
                     "@type": "ContactPoint",
                     "contactType": "Follow us on Bluesky",
                     "url": "https://bit.ly/4nxW4FT"
+                }
+            ],
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "propertyID": "restriction",
+                    "name": "Access restriction",
+                    "value": "Library Card needed"
                 }
             ],
             "amenityFeature": [
@@ -7493,6 +7665,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "CollegeOrUniversity",
+            "additionalType": "General Seating Area",
+            "identifier": 35,
             "name": "Electronic and Electrical Engineering - Ground Floor Foyer",
             "description": "Big bright foyer with couches and circular tables with chairs. A perfect place to relax, take a break or study alone or in a group.",
             "alternateName": "electronic-and-electrical-engineering-ground-floor-foyer",
@@ -7676,6 +7850,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "CollegeOrUniversity",
+            "additionalType": "IT Cluster",
+            "identifier": 93,
             "name": "School of English - Room 2.02",
             "description": "Small room with computers available. 16 seat capacity. From the main entrance go up the stairs or take the lift to the 2nd floor. The cluster is on the left at the top of the staircase.",
             "alternateName": "english-room-202",
@@ -7853,6 +8029,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "CollegeOrUniversity",
+            "additionalType": "IT Cluster",
+            "identifier": 53,
             "name": "Esther Simpson Building - 109",
             "description": "Cluster room surrounded by big windows with high views of the University campus. Perfect for focused study with access to computers. 76 seat capacity.",
             "alternateName": "esther-simpson-building-109",
@@ -8030,6 +8208,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "CafeOrCoffeeShop",
+            "additionalType": "Café",
+            "identifier": 4,
             "name": "Esther Simpson Café",
             "description": "Located in the new Esther Simpson building on the edge of Woodhouse Moor, the café is modern and relaxed, serving speciality coffee from Darkwoods.",
             "alternateName": "esther-simpson-cafe",
@@ -8249,6 +8429,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "CafeOrCoffeeShop",
+            "additionalType": "Café",
+            "identifier": 2,
             "name": "Fuse Cafe in Chemical and Process Engineering",
             "description": "Fuse at The School of Chemical and Process Engineering is a hidden gem located in the Engineering buildings. It is a quiet café with plenty of space, a perfect spot to refresh yourself.",
             "alternateName": "fuse-cafe",
@@ -8456,6 +8638,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "CollegeOrUniversity",
+            "additionalType": "IT Cluster",
+            "identifier": 55,
             "name": "Fine Art, History of Art and Cultural Studies - G29 (West Teaching Lab Upper)",
             "description": "Traditional cluster with rows of desks in a relaxed environment. 31 seat capacity",
             "alternateName": "g29-west-teaching-lab-upper",
@@ -8481,6 +8665,14 @@
                 "latitude": 53.807836240010325,
                 "longitude": -1.5572457236710147
             },
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "propertyID": "restriction",
+                    "name": "Access restriction",
+                    "value": "Access to the cluster is via an <a href=\"https://it.leeds.ac.uk/it?id=clusters\" target=\"_it\">entrance code available on the IT website</a>"
+                }
+            ],
             "amenityFeature": [
                 {
                     "@type": "LocationFeatureSpecification",
@@ -8643,6 +8835,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "Library",
+            "additionalType": "Library",
+            "identifier": 77,
             "name": "Health Sciences library - collaborative learning space",
             "description": "A large study space designed for collaborative work, with comfortable chairs, extra greenery and an abundance of natural light. There are also bookable soundproof study pods for individuals and groups, plus docking stations to power-up your devices.",
             "alternateName": "health-sciences-library-collaborative-learning-space",
@@ -8678,6 +8872,14 @@
                     "@type": "ContactPoint",
                     "contactType": "Follow us on Bluesky",
                     "url": "https://bit.ly/4nxW4FT"
+                }
+            ],
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "propertyID": "restriction",
+                    "name": "Access restriction",
+                    "value": "Library Card needed"
                 }
             ],
             "amenityFeature": [
@@ -8830,6 +9032,8 @@
         "creativeWorkStatus": "Draft",
         "mainEntity": {
             "@type": "Library",
+            "additionalType": "Library",
+            "identifier": 76,
             "name": "Health Sciences library - group study rooms",
             "description": "Group study rooms for group work (booking required)",
             "alternateName": "health-sciences-library-group-study-rooms",
@@ -8865,6 +9069,14 @@
                     "@type": "ContactPoint",
                     "contactType": "Follow us on Bluesky",
                     "url": "https://bit.ly/4nxW4FT"
+                }
+            ],
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "propertyID": "restriction",
+                    "name": "Access restriction",
+                    "value": "Library Card needed"
                 }
             ],
             "amenityFeature": [
@@ -9047,6 +9259,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "Library",
+            "additionalType": "Library",
+            "identifier": 75,
             "name": "Health Sciences library main area",
             "description": "Silent study area with over 400 individual desks and our collection of medical and health-related books. There are also bookable group rooms for collaborative work and individual rooms for a more focused session, plus a small pause zone to wind down if you are looking to take a quick break.",
             "alternateName": "health-sciences-library",
@@ -9082,6 +9296,14 @@
                     "@type": "ContactPoint",
                     "contactType": "Follow us on Bluesky",
                     "url": "https://bit.ly/4nxW4FT"
+                }
+            ],
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "propertyID": "restriction",
+                    "name": "Access restriction",
+                    "value": "Library Card needed"
                 }
             ],
             "amenityFeature": [
@@ -9264,6 +9486,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "CafeOrCoffeeShop",
+            "additionalType": "Café",
+            "identifier": 11,
             "name": "Hugo, the Camionnette Café",
             "description": "Hugo, the Camionnette Café, is one of the more unique members of the Great Food at Leeds team and sells a range of hot drinks, pastries and brownies.",
             "alternateName": "hugo-the-camionnette-cafe",
@@ -9441,6 +9665,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "CollegeOrUniversity",
+            "additionalType": "IT Cluster",
+            "identifier": 57,
             "name": "Irene Manton North - 7.96",
             "description": "Modern large IT cluster with plenty of large windows facing a beautiful side of the University campus. 40 seat capacity. From the Sustainable Garden outside Roger Stevens cross the bridge from the Garstang building to the Irene Manton building and turn right. The entrance to the cluster is the first door on the left.",
             "alternateName": "irene-manton-north-796",
@@ -9466,6 +9692,14 @@
                 "latitude": 53.80446980623904,
                 "longitude": -1.5548974249272625
             },
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "propertyID": "restriction",
+                    "name": "Access restriction",
+                    "value": "Access to the cluster is via an <a href=\"https://it.leeds.ac.uk/it?id=clusters\" target=\"_it\">entrance code available on the IT website</a>"
+                }
+            ],
             "amenityFeature": [
                 {
                     "@type": "LocationFeatureSpecification",
@@ -9658,6 +9892,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "CollegeOrUniversity",
+            "additionalType": "IT Cluster",
+            "identifier": 56,
             "name": "Irene Manton South - 7.90",
             "description": "Rows of desks with a full left side of windows that are facing a beautiful side of campus allowing plenty of natural light into the study area. 41 seat capacity. From the Sustainable Garden outside Roger Stevens cross the bridge from the Garstang building to the Irene Manton building and turn right. The entrance to the cluster is the first door on the left.",
             "alternateName": "irene-manton-south-790",
@@ -9683,6 +9919,14 @@
                 "latitude": 53.80431536943481,
                 "longitude": -1.5548974249272625
             },
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "propertyID": "restriction",
+                    "name": "Access restriction",
+                    "value": "Access to the cluster is via an <a href=\"https://it.leeds.ac.uk/it?id=clusters\" target=\"_it\">entrance code available on the IT website</a>"
+                }
+            ],
             "amenityFeature": [
                 {
                     "@type": "LocationFeatureSpecification",
@@ -9887,6 +10131,8 @@
         "creativeWorkStatus": "Draft",
         "mainEntity": {
             "@type": "Library",
+            "additionalType": "Library",
+            "identifier": 79,
             "name": "Laidlaw library - 2nd floor silent study area",
             "description": "Silent study space. Group booths also available.",
             "alternateName": "laidlaw-library-2nd-floor-silent-study-area",
@@ -9922,6 +10168,14 @@
                     "@type": "ContactPoint",
                     "contactType": "Follow us on Bluesky",
                     "url": "https://bit.ly/4nxW4FT"
+                }
+            ],
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "propertyID": "restriction",
+                    "name": "Access restriction",
+                    "value": "Library Card needed"
                 }
             ],
             "amenityFeature": [
@@ -10098,6 +10352,8 @@
         "creativeWorkStatus": "Draft",
         "mainEntity": {
             "@type": "Library",
+            "additionalType": "Library",
+            "identifier": 78,
             "name": "Laidlaw library - 3rd floor silent study area",
             "description": "Silent study space inside the Laidlaw library.",
             "alternateName": "laidlaw-library-3rd-floor-silent-study-area",
@@ -10133,6 +10389,14 @@
                     "@type": "ContactPoint",
                     "contactType": "Follow us on Bluesky",
                     "url": "https://bit.ly/4nxW4FT"
+                }
+            ],
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "propertyID": "restriction",
+                    "name": "Access restriction",
+                    "value": "Library Card needed"
                 }
             ],
             "amenityFeature": [
@@ -10309,6 +10573,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "Library",
+            "additionalType": "Library",
+            "identifier": 80,
             "name": "Laidlaw library - 3rd floor",
             "description": "Completely silent floor suitable for concentrated individual work and exam preparations. There are docking screens, cluster computers and plenty of plug points on this floor.",
             "alternateName": "laidlaw-library-3rd-floor",
@@ -10344,6 +10610,14 @@
                     "@type": "ContactPoint",
                     "contactType": "Follow us on Bluesky",
                     "url": "https://bit.ly/4nxW4FT"
+                }
+            ],
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "propertyID": "restriction",
+                    "name": "Access restriction",
+                    "value": "Library Card needed"
                 }
             ],
             "amenityFeature": [
@@ -10520,6 +10794,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "Library",
+            "additionalType": "Library",
+            "identifier": 92,
             "name": "Laidlaw library - first and second floors",
             "description": "A study space split into two zones, one is silent study with individual tables and plug points for focused study, one is for casual study, with large tables, bookable group booths, docking screens and nice views.",
             "alternateName": "laidlaw-library-first-second-floors",
@@ -10555,6 +10831,14 @@
                     "@type": "ContactPoint",
                     "contactType": "Follow us on Bluesky",
                     "url": "https://bit.ly/4nxW4FT"
+                }
+            ],
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "propertyID": "restriction",
+                    "name": "Access restriction",
+                    "value": "Library Card needed"
                 }
             ],
             "amenityFeature": [
@@ -10737,6 +11021,8 @@
         "creativeWorkStatus": "Draft",
         "mainEntity": {
             "@type": "Library",
+            "additionalType": "Library",
+            "identifier": 82,
             "name": "Laidlaw library - Footsteps fund room",
             "description": "Casual seating area.",
             "alternateName": "laidlaw-library-footsteps-fund-room",
@@ -10772,6 +11058,14 @@
                     "@type": "ContactPoint",
                     "contactType": "Follow us on Bluesky",
                     "url": "https://bit.ly/4nxW4FT"
+                }
+            ],
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "propertyID": "restriction",
+                    "name": "Access restriction",
+                    "value": "Library Card needed"
                 }
             ],
             "amenityFeature": [
@@ -10960,6 +11254,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "Library",
+            "additionalType": "Library",
+            "identifier": 81,
             "name": "Laidlaw library ground floor",
             "description": "A study space with a wide range of purposes, with individual and group tables plus bookable group rooms. There is also a Caffè Nero with comfortable couches for a more relaxed study session. Inside the gates is the skills space, a supportive and welcoming space to develop your academic and digital skills for study and work.",
             "alternateName": "laidlaw-library-ground-floor",
@@ -10995,6 +11291,14 @@
                     "@type": "ContactPoint",
                     "contactType": "Follow us on Bluesky",
                     "url": "https://bit.ly/4nxW4FT"
+                }
+            ],
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "propertyID": "restriction",
+                    "name": "Access restriction",
+                    "value": "Library Card needed"
                 }
             ],
             "amenityFeature": [
@@ -11165,12 +11469,14 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "Library",
+            "additionalType": "Library",
+            "identifier": 90,
             "name": "Language Zone",
             "description": "The Language Zone is a welcoming space open to all students and staff at Leeds and provides learning material in more than 50 languages, as well as friendly advice for language learners. We have a computer cluster for personal study, and books, magazines, audio and video resources to help you learn a language, as well as spaces for informal social activities.",
             "alternateName": "language-zone",
             "url": "https://students.leeds.ac.uk/learn-language/doc/language-learning-resources",
             "sameAs": "https://www.leeds.ac.uk/campusmap?location=17525",
-            "publicAccess": true,
+            "publicAccess": false,
             "telephone": "tel:+441133435663 ",
             "email": "library@leeds.ac.uk",
             "image": {
@@ -11372,6 +11678,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "CollegeOrUniversity",
+            "additionalType": "General Seating Area",
+            "identifier": 32,
             "name": "Leeds University Union - Foyer",
             "description": "Busy study place for people that like working alongside others. Couches with big tables can be used for comfortable group working in a nice environment. Extra couches on the side for anybody wanting to read or take a break.",
             "alternateName": "leeds-university-union-foyer",
@@ -11573,6 +11881,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "CollegeOrUniversity",
+            "additionalType": "General Seating Area",
+            "identifier": 40,
             "name": "Liberty Building - First floor Group workspace (1.22)",
             "description": "Casual seating area for groups or individuals.",
             "alternateName": "liberty-building-first-floor-group-workspace-122",
@@ -11756,6 +12066,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "CollegeOrUniversity",
+            "additionalType": "General Seating Area",
+            "identifier": 39,
             "name": "Liberty Building - Ground floor Common Area (G01)",
             "description": "Common area near the entrance of the Liberty building. Quiet space with different kinds of tables (and table football).",
             "alternateName": "liberty-building-ground-floor-common-area-g01",
@@ -11957,6 +12269,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "CafeOrCoffeeShop",
+            "additionalType": "Café",
+            "identifier": 9,
             "name": "Loma Café",
             "description": "LOMA is a unique offering on campus serving up specially selected craft coffee, delicious drinks and handcrafted salads and sandwiches. With a focus on healthy, field-to-fork food options, LOMA stands apart from the other food outlets on campus with unique salad and sandwich combinations you will struggle to find elsewhere.",
             "alternateName": "loma-cafe",
@@ -12176,6 +12490,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "CafeOrCoffeeShop",
+            "additionalType": "Café",
+            "identifier": 85,
             "name": "Loma Express Dentistry",
             "description": "Located on level six of the Worsley building, the café provides a range of grab and go food and drinks. With a focus on healthy, field-to-fork food options, LOMA Express stocks unique salad and sandwich combinations, and fresh herbal infusion teas and other delicious LOMA Express products made fresh each day.",
             "alternateName": "loma-express-dentistry",
@@ -12389,6 +12705,8 @@
         "creativeWorkStatus": "Draft",
         "mainEntity": {
             "@type": "CollegeOrUniversity",
+            "additionalType": "IT Cluster",
+            "identifier": 58,
             "name": "Maurice Keyworth Building - 2.21",
             "description": "Large IT cluster. 70 seat capacity.",
             "alternateName": "maurice-keyworth-building-221",
@@ -12574,6 +12892,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "CollegeOrUniversity",
+            "additionalType": "General Seating Area",
+            "identifier": 38,
             "name": "Maurice Keyworth - Study Centre (Rooms 238 & 307)",
             "description": "silent study spaces with beautiful views. Outside seminar halls and occationally busy.",
             "alternateName": "maurice-keyworth-study-centre-rooms-238-307",
@@ -12747,6 +13067,8 @@
         "creativeWorkStatus": "Draft",
         "mainEntity": {
             "@type": "CollegeOrUniversity",
+            "additionalType": "IT Cluster",
+            "identifier": 59,
             "name": "Mechanical Engineering - 5.34d",
             "description": "Cluster room surrounded by big windows with high views of the University campus. Perfect for focused study with access to computers. 25 seat capacity.",
             "alternateName": "mechanical-engineering-534d",
@@ -12942,6 +13264,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "CollegeOrUniversity",
+            "additionalType": "General Seating Area",
+            "identifier": 36,
             "name": "Mechanical Engineering - Second floor seating (outside room 240)",
             "description": "Comfortable small study area with couches and views from big windows.",
             "alternateName": "mechanical-engineering-second-floor-seating-room-240",
@@ -13131,6 +13455,8 @@
         "creativeWorkStatus": "Draft",
         "mainEntity": {
             "@type": "Place",
+            "additionalType": "Seminar room",
+            "identifier": 21,
             "name": "Michael Sadler Building - 1.01",
             "description": "Study space with nice views and frames on the walls. 24 seat capacity.",
             "alternateName": "michael-sadler-building-101",
@@ -13340,6 +13666,8 @@
         "creativeWorkStatus": "Draft",
         "mainEntity": {
             "@type": "Place",
+            "additionalType": "Seminar room",
+            "identifier": 22,
             "name": "Michael Sadler Building - 1.19",
             "description": "Chairs and flip out tables as well as access to 3 whiteboards and projector. Perfect for group study. 16 seat capacity.",
             "alternateName": "michael-sadler-building-119",
@@ -13525,6 +13853,8 @@
         "creativeWorkStatus": "Draft",
         "mainEntity": {
             "@type": "Place",
+            "additionalType": "Seminar room",
+            "identifier": 23,
             "name": "Michael Sadler Building - 1.37",
             "description": "Silent study space with chairs and flip out tables. 12 seat capacity. Perfect for studying using multiple whiteboards.",
             "alternateName": "michael-sadler-building-137",
@@ -13698,6 +14028,8 @@
         "creativeWorkStatus": "Draft",
         "mainEntity": {
             "@type": "Place",
+            "additionalType": "Seminar room",
+            "identifier": 24,
             "name": "Michael Sadler Building - 2.01",
             "description": "Small room on a theater style. 10 seat capacity. High views of Leeds are inspiring a productive study .",
             "alternateName": "michael-sadler-building-201",
@@ -13871,6 +14203,8 @@
         "creativeWorkStatus": "Draft",
         "mainEntity": {
             "@type": "Place",
+            "additionalType": "Seminar room",
+            "identifier": 25,
             "name": "Michael Sadler Building - 3.40",
             "description": "Seminar room available for individual study with great view to university campus. 16 seat capacity.",
             "alternateName": "michael-sadler-building-340",
@@ -14074,6 +14408,8 @@
         "creativeWorkStatus": "Draft",
         "mainEntity": {
             "@type": "Place",
+            "additionalType": "Seminar room",
+            "identifier": 20,
             "name": "Michael Sadler Building - B.37",
             "description": "Large communal desk area surrounded by chairs. 16 seat capacity.",
             "alternateName": "michael-sadler-building-b37",
@@ -14253,6 +14589,8 @@
         "creativeWorkStatus": "Draft",
         "mainEntity": {
             "@type": "Place",
+            "additionalType": "Seminar room",
+            "identifier": 19,
             "name": "Michael Sadler Building - B.49",
             "description": "Large communal desk with adjustable height function. Plently of whiteboards available for silent or group study. 10 seat capacity.",
             "alternateName": "michael-sadler-building-b49",
@@ -14450,6 +14788,8 @@
         "creativeWorkStatus": "Draft",
         "mainEntity": {
             "@type": "Place",
+            "additionalType": "Seminar room",
+            "identifier": 26,
             "name": "Michael Sadler Building - LG.17",
             "description": "Seminar room with chairs and flip out tables with a big window facing the campus. 19 Seat Capacity.",
             "alternateName": "michael-sadler-building-lg17",
@@ -14635,6 +14975,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "CollegeOrUniversity",
+            "additionalType": "Outdoor Seating Area",
+            "identifier": 13,
             "name": "Outside the Edward Boyle Library Edit Room café",
             "description": "Outdoor seating situated outside the Edward Boyle Library",
             "alternateName": "outside-the-edward-boyle-library",
@@ -14816,6 +15158,8 @@
         "creativeWorkStatus": "Draft",
         "mainEntity": {
             "@type": "Place",
+            "additionalType": "Seminar room",
+            "identifier": 27,
             "name": "Parkinson Building - 2.25",
             "description": "Seminar room available for individual study with a great view of the University campus. 20 Seat Capacity.",
             "alternateName": "parkinson-building-225",
@@ -15009,6 +15353,8 @@
         "creativeWorkStatus": "Draft",
         "mainEntity": {
             "@type": "Place",
+            "additionalType": "Seminar room",
+            "identifier": 28,
             "name": "Parkinson Building - 4.20",
             "description": "Seminar room available for individual study with a great view of the University campus. 16 Seat Capacity.",
             "alternateName": "parkinson-building-420",
@@ -15202,6 +15548,8 @@
         "creativeWorkStatus": "Draft",
         "mainEntity": {
             "@type": "Place",
+            "additionalType": "Seminar room",
+            "identifier": 29,
             "name": "Parkinson Building - 4.30",
             "description": "Seminar room available for individual study with great view to university campus. 14 seat capacity.",
             "alternateName": "parkinson-building-430",
@@ -15389,6 +15737,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "CollegeOrUniversity",
+            "additionalType": "IT Cluster",
+            "identifier": 94,
             "name": "Parkinson Building - B.25",
             "description": "Perfect for focused study with access to computers. 15 seat capacity. From Parkinson Court use the stairs at the opposite end from the Café and go down to the basement. Go through the doors under the display screen and turn right. The entrance to the cluster is directly in front of you.",
             "alternateName": "parkinson-building-b25",
@@ -15554,6 +15904,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "CollegeOrUniversity",
+            "additionalType": "IT Cluster",
+            "identifier": 60,
             "name": "Parkinson Building - B.26",
             "description": "Perfect for focused study with access to computers. 15 seat capacity - height adjustable desks available. From Parkinson Court use the stairs at the opposite end from the Café and go down to the basement. Go through the doors under the display screen and turn right. Follow the corridor to the right. B26 is the door at the end of the corridor.",
             "alternateName": "parkinson-building-b26",
@@ -15725,6 +16077,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "CollegeOrUniversity",
+            "additionalType": "IT Cluster",
+            "identifier": 61,
             "name": "Parkinson Building - B.32 (Woolhouse)",
             "description": "Cluster room with a variety of desks for individual or group study - height adjustable desks available. 57 seat capacity. From Parkinson Court use the stairs at the opposite end from the Café and go down to the basement. Go through the doors under the display screen. The entrance to the cluster is on your left.",
             "alternateName": "parkinson-building-b32-woolhouse",
@@ -15908,12 +16262,14 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "CollegeOrUniversity",
+            "additionalType": "General Seating Area",
+            "identifier": 30,
             "name": "Parkinson Building - Parkinson Court South",
             "description": "Historic atmosphere with tables and chairs. Occasionally busy but mostly silent.  The study area is to the left after entering the Parkinson Building",
             "alternateName": "parkinson-building-parkinson-court-south",
             "url": "",
             "sameAs": "https://www.leeds.ac.uk/campusmap?location=17525",
-            "publicAccess": false,
+            "publicAccess": true,
             "telephone": "",
             "email": "",
             "image": {
@@ -15933,6 +16289,14 @@
                 "latitude": 53.807639166530755,
                 "longitude": -1.552668530103729
             },
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "propertyID": "restriction",
+                    "name": "Access restriction",
+                    "value": "Occasional restrictions during graduations in July and December."
+                }
+            ],
             "amenityFeature": [
                 {
                     "@type": "LocationFeatureSpecification",
@@ -16131,6 +16495,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "CollegeOrUniversity",
+            "additionalType": "IT Cluster",
+            "identifier": 62,
             "name": "Psychology (37 and 41 University Road) - 1.43",
             "description": "Circular bright clusters room with pretty views on campus available 24 hours. Access to water fountain. 47 seat capacity. Enter the Psychology building using the door in the far corner of the Psychology courtyard. Take the stairs or lift up to the top floor, the entrance to the cluster is just off the landing.",
             "alternateName": "psychology-143",
@@ -16156,6 +16522,14 @@
                 "latitude": 53.80748550042279,
                 "longitude": -1.5568979206681979
             },
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "propertyID": "restriction",
+                    "name": "Access restriction",
+                    "value": "Access to the cluster is via an <a href=\"https://it.leeds.ac.uk/it?id=clusters\" target=\"_it\">entrance code available on the IT website</a>"
+                }
+            ],
             "amenityFeature": [
                 {
                     "@type": "LocationFeatureSpecification",
@@ -16336,6 +16710,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "CollegeOrUniversity",
+            "additionalType": "IT Cluster",
+            "identifier": 63,
             "name": "Psychology (37 and 41 University Road) - 1.45",
             "description": "Rows of IT clusters in a theatre style. 58 seat capacity.  Enter the Psychology building using the door in the far corner of the Psychology courtyard. Take the stairs or lift up to the top floor, the entrance to the cluster is just off the landing.",
             "alternateName": "psychology-145",
@@ -16361,6 +16737,14 @@
                 "latitude": 53.80730177399727,
                 "longitude": -1.5568979206681979
             },
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "propertyID": "restriction",
+                    "name": "Access restriction",
+                    "value": "Access to the cluster is via an <a href=\"https://it.leeds.ac.uk/it?id=clusters\" target=\"_it\">entrance code available on the IT website</a>"
+                }
+            ],
             "amenityFeature": [
                 {
                     "@type": "LocationFeatureSpecification",
@@ -16559,6 +16943,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "CafeOrCoffeeShop",
+            "additionalType": "Café",
+            "identifier": 7,
             "name": "Refectory",
             "description": "Located right at the heart of University campus, the contemporary Refectory venue offers a wide range of hot and cold food each day.",
             "alternateName": "refectory",
@@ -16760,6 +17146,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "CollegeOrUniversity",
+            "additionalType": "General Seating Area",
+            "identifier": 37,
             "name": "Sir William Henry Bragg Building - Ground Floor Breakout Area (Room G.08)",
             "description": "Modern big break out area with café shop nearby. Social, modern and very comfortable for people to study and relax.",
             "alternateName": "sir-william-henry-bragg-building-ground-floor-breakout-area-room-g08",
@@ -16973,6 +17361,8 @@
         "creativeWorkStatus": "Draft",
         "mainEntity": {
             "@type": "CollegeOrUniversity",
+            "additionalType": "IT Cluster",
+            "identifier": 64,
             "name": "Social Sciences Building - 10.11",
             "description": "Big cluster room at the Social Sciences Building. Rows of desks with computers near a place to take a break. Perfect for studying between lectures on campus. 40 seat capacity.",
             "alternateName": "social-sciences-building-1011",
@@ -17162,6 +17552,8 @@
         "creativeWorkStatus": "Draft",
         "mainEntity": {
             "@type": "Library",
+            "additionalType": "Library",
+            "identifier": 89,
             "name": "St James's University Hospital Library",
             "description": "Based on level 3 of the Clinical Sciences building, St James’s University Hospital Library supports the information needs of University research and teaching staff, medical and healthcare students, and employees of the Leeds Teaching Hospitals Trust.",
             "alternateName": "st-james-hospital-library",
@@ -17197,6 +17589,14 @@
                     "@type": "ContactPoint",
                     "contactType": "Follow us on Bluesky",
                     "url": "https://bit.ly/4nxW4FT"
+                }
+            ],
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "propertyID": "restriction",
+                    "name": "Access restriction",
+                    "value": "Library Card needed"
                 }
             ],
             "amenityFeature": [
@@ -17329,6 +17729,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "CollegeOrUniversity",
+            "additionalType": "IT Cluster",
+            "identifier": 96,
             "name": "Textiles Cluster - G.33",
             "description": "Cluster room with a variety of desks for individual or group study. 15 seat capacity - height adjustable desks available. From the Great Hall, travel away from the Parkinson down University Road, and turn right straight after you pass under the Clothworkers' Link Building. The entrance is on the right.",
             "alternateName": "textiles-cluster-g33",
@@ -17354,6 +17756,14 @@
                 "latitude": 53.807707023302015,
                 "longitude": -1.5565759845355271
             },
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "propertyID": "restriction",
+                    "name": "Access restriction",
+                    "value": "Access to the cluster is via an <a href=\"https://it.leeds.ac.uk/it?id=clusters\" target=\"_it\">entrance code available on the IT website</a>"
+                }
+            ],
             "amenityFeature": [
                 {
                     "@type": "LocationFeatureSpecification",
@@ -17510,6 +17920,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "CollegeOrUniversity",
+            "additionalType": "IT Cluster",
+            "identifier": 50,
             "name": "Textiles Cluster - G.34",
             "description": "Cluster room with a variety of desks for individual or group study. 12 seat capacity - height adjustable desks available. From the Great Hall, travel away from the Parkinson down University Road, and turn right straight after you pass under the Clothworkers' Link Building. The entrance is on the right.",
             "alternateName": "textiles-cluster-g34",
@@ -17535,6 +17947,14 @@
                 "latitude": 53.80777354438881,
                 "longitude": -1.5565491624470094
             },
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "propertyID": "restriction",
+                    "name": "Access restriction",
+                    "value": "Access to the cluster is via an <a href=\"https://it.leeds.ac.uk/it?id=clusters\" target=\"_it\">entrance code available on the IT website</a>"
+                }
+            ],
             "amenityFeature": [
                 {
                     "@type": "LocationFeatureSpecification",
@@ -17691,6 +18111,8 @@
         "creativeWorkStatus": "Draft",
         "mainEntity": {
             "@type": "CollegeOrUniversity",
+            "additionalType": "IT Cluster",
+            "identifier": 95,
             "name": "Tim de Dombal - Room 4.17b Clinical Sciences Building",
             "description": "Traditional cluster with rows of desks in a relaxed environment. 28 seat capacity",
             "alternateName": "tim-de-dombal",
@@ -17878,6 +18300,8 @@
         "creativeWorkStatus": "Draft",
         "mainEntity": {
             "@type": "CafeOrCoffeeShop",
+            "additionalType": "Café",
+            "identifier": 12,
             "name": "Toasted in Chancellor's Court (Outdoor space)",
             "description": "Gourmet toastie van serving a range of toasties, croissants, sweet treats, cold drinks and freshly brewed coffees. Outdoor seating situated in Chancellor's Court, next to the Roger Stevens Building",
             "alternateName": "toasted",
@@ -18060,6 +18484,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "CollegeOrUniversity",
+            "additionalType": "IT Cluster",
+            "identifier": 91,
             "name": "Worsley Building - 11.006 (LIDA cluster)",
             "description": "Modern and quiet space. Follow timetable link below to check when room is free. 52 seat capacity.",
             "alternateName": "worsley-building-11-006-lida-cluster",
@@ -18085,6 +18511,14 @@
                 "latitude": 53.8033012,
                 "longitude": -1.555752941
             },
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "propertyID": "restriction",
+                    "name": "Access restriction",
+                    "value": "Follow timetable link to check when room is free"
+                }
+            ],
             "amenityFeature": [
                 {
                     "@type": "LocationFeatureSpecification",
@@ -18207,6 +18641,8 @@
         "creativeWorkStatus": "Draft",
         "mainEntity": {
             "@type": "CollegeOrUniversity",
+            "additionalType": "IT Cluster",
+            "identifier": 67,
             "name": "Worsley Building - 7.027r",
             "description": "IT cluster with adjustable size. No drinks or food allowed. 12 seat capacity",
             "alternateName": "worsley-building-7027r",
@@ -18378,6 +18814,8 @@
         "creativeWorkStatus": "Draft",
         "mainEntity": {
             "@type": "CollegeOrUniversity",
+            "additionalType": "IT Cluster",
+            "identifier": 68,
             "name": "Worsley Building - 7.027s",
             "description": "IT cluster with adjustable size. 24 seat capacity.",
             "alternateName": "worsley-building-7027s",
@@ -18549,6 +18987,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "CollegeOrUniversity",
+            "additionalType": "IT Cluster",
+            "identifier": 65,
             "name": "Worsley Building - 8.038",
             "description": "Cluster room with a variety of desks for individual or group study. 52 seat capacity. Height adjustable tdesks available.",
             "alternateName": "worsley-building-8038",
@@ -18726,6 +19166,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "CollegeOrUniversity",
+            "additionalType": "IT Cluster",
+            "identifier": 66,
             "name": "Worsley Building - 8.039",
             "description": "Big room that offers clusters on high and normal desks. Modern and strictly silent environment. 50 seat capacity. Height adjustable tdesks available.",
             "alternateName": "worsley-building-8039",
@@ -18885,6 +19327,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "CollegeOrUniversity",
+            "additionalType": "IT Cluster",
+            "identifier": 69,
             "name": "Worsley Building - 8.049O (Fourman)",
             "description": "Large room with plenty of available clusters to use. Comfortable chairs and large desks perfect for focused study. 50 seat capacity. From the Worsley Airport Lounge on Level 7 walk through the double doors near the ATM cash machine. Take a lift or stairs up to level 8. The doors to Fourman O and P are on the corridor by the lifts.",
             "alternateName": "worsley-building-8049o-fourman",
@@ -19044,6 +19488,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "CollegeOrUniversity",
+            "additionalType": "IT Cluster",
+            "identifier": 70,
             "name": "Worsley Building - 8.049P (Fourman Parkinson)",
             "description": "Large room with computers available. 50 seat capacity. From the Worsley Airport Lounge on Level 7 walk through the double doors near the ATM cash machine. Take a lift or stairs up to level 8. The doors to Fourman O and P are on the corridor by the lifts.",
             "alternateName": "worsley-building-8049p-fourman",
@@ -19209,6 +19655,8 @@
         "creativeWorkStatus": "Published",
         "mainEntity": {
             "@type": "CollegeOrUniversity",
+            "additionalType": "General Seating Area",
+            "identifier": 33,
             "name": "Worsley Building - Airport Lounge seating (level 7)",
             "description": "Modern colourful big area with comfortable couches and chairs. Vending, cash and cofee machines available as well as water fountain.",
             "alternateName": "worsley-building-airport-lounge-seating-level-7",

@@ -4,13 +4,14 @@
     "creativeWorkStatus": "Published",
     "mainEntity": {
         "@type": "CollegeOrUniversity",
+        "additionalType": "General Seating Area",
         "identifier": 30,
         "name": "Parkinson Building - Parkinson Court South",
         "description": "Historic atmosphere with tables and chairs. Occasionally busy but mostly silent.  The study area is to the left after entering the Parkinson Building",
         "alternateName": "parkinson-building-parkinson-court-south",
         "url": "",
         "sameAs": "https://www.leeds.ac.uk/campusmap?location=17525",
-        "publicAccess": false,
+        "publicAccess": true,
         "telephone": "",
         "email": "",
         "image": {
@@ -30,6 +31,14 @@
             "latitude": 53.807639166530755,
             "longitude": -1.552668530103729
         },
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "restriction",
+                "name": "Access restriction",
+                "value": "Occasional restrictions during graduations in July and December."
+            }
+        ],
         "amenityFeature": [
             {
                 "@type": "LocationFeatureSpecification",

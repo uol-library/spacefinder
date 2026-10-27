@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Published",
     "mainEntity": {
         "@type": "CafeOrCoffeeShop",
+        "additionalType": "Café",
         "identifier": 2,
         "name": "Fuse Cafe in Chemical and Process Engineering",
         "description": "Fuse at The School of Chemical and Process Engineering is a hidden gem located in the Engineering buildings. It is a quiet café with plenty of space, a perfect spot to refresh yourself.",

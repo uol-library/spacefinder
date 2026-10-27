@@ -217,6 +217,83 @@ export function getFilterData( filterkey, optionkey ) {
 }
 
 /**
+ * Escapes a string for use in HTML text or attribute values
+ * @param {string} str
+ * @return {string} escaped string
+ */
+export function escapeHTML( str ) {
+    return String( str ).replace( /&/g, '&amp;' ).replace( /</g, '&lt;' ).replace( />/g, '&gt;' ).replace( /"/g, '&quot;' );
+}
+
+/**
+ * Converts HTML (e.g. text containing entities such as &rsquo;) to plain text
+ * @param {string} html
+ * @return {string} text
+ */
+export function decodeHTML( html ) {
+    return new DOMParser().parseFromString( html, 'text/html' ).documentElement.textContent;
+}
+
+/**
+ * Returns a link to Google Maps walking directions to a location
+ * @param {number} lat
+ * @param {number} lng
+ * @return {string} HTML
+ */
+export function getDirectionsLink( lat, lng ) {
+    return '<a target="googlemaps" href="https://www.google.com/maps/dir/?api=1&amp;destination=' + lat + '%2c' + lng + '&amp;travelmode=walking">get directions</a>';
+}
+
+/**
+ * Creates the list view element for a place. The ids, classes and data
+ * attributes used here are relied on by places.mjs, map.mjs and routing.mjs,
+ * so data modules should use this rather than building their own.
+ * @param {Object} place place data (id, slug, title and sortKey are used)
+ * @param {Object} content
+ * @param {string} content.classList classes used for filtering
+ * @param {string} content.typeLabel type of place shown in the list (HTML)
+ * @param {string} content.typeClass used to make the place-type-* class
+ * @param {string} content.address address (HTML)
+ * @param {string} content.details image, description etc. (HTML)
+ * @param {string} content.search optional text to search instead of the place summary
+ * @return {Element} HTML element
+ */
+export function createPlaceElement( place, content ) {
+    let container = document.createElement( 'div' );
+    container.setAttribute( 'data-id', place.id );
+    container.setAttribute( 'id', 'place' + place.id );
+    container.setAttribute( 'data-sortalpha', place.sortKey );
+    container.setAttribute( 'class', ( 'list-place ' + ( content.classList || '' ) ).trim() );
+    if ( content.search ) {
+        container.setAttribute( 'data-search', content.search );
+    }
+    let html = '<div class="place-summary"><h3><button data-slug="' + place.slug + '" class="accordion-trigger place-title load-info" aria-expanded="false" aria-controls="additionalInfo' + place.id + '" data-placeid="' + place.id + '">' + escapeHTML( place.title ) + '</button></h3>';
+    html += '<p class="place-info"><span class="place-type place-type-' + content.typeClass.replace( /[^0-9a-zA-Z]/g, '' ).toLowerCase() + '">' + content.typeLabel + '<span class="distance" id="distance' + place.id + '"></span></span>';
+    html += '<span class="address">' + ( content.address || '' ) + '</span></p>';
+    html += '<div class="place-details">' + ( content.details || '' ) + '</div></div>';
+    html += '<div class="additionalInfo" id="additionalInfo' + place.id + '"></div>';
+    container.innerHTML = html;
+    return container;
+}
+
+/**
+ * Returns HTML for a place's map infoWindow. The show-list button is used by map.mjs.
+ * @param {string} title place title
+ * @param {Array} info short facts about the place (HTML), shown comma separated
+ * @param {string} description optional description (HTML)
+ * @return {string} HTML
+ */
+export function getInfoWindowHTML( title, info, description ) {
+    let content = '<div class="placeInfoWindow"><h3>' + escapeHTML( title ) + '</h3>';
+    content += '<p class="info">' + info.filter( Boolean ).join( ', ' ) + '</p>';
+    if ( description ) {
+        content += '<p class="description">' + description + '</p>';
+    }
+    content += '<button class="show-list">More info&hellip;</button></div>';
+    return content;
+}
+
+/**
  * Sets focus on an element
  */
 export function setElementFocus( id ) {
@@ -242,18 +319,58 @@ export function togglePanel( panel, active ) {
 }
 
 /**
- * Sets the hash in the URL
+ * Gets the current route from the URL, e.g. [ 'spaces', '1915' ] from
+ * /spaces/1915 (history routing) or /#/spaces/1915 (hash routing)
+ * @return {Array} route segments
  */
-export function setHash( val ) {
-    if ( val !== '' ) {
-        window.location.hash = val;
+export function getRoute() {
+    let path = '';
+    if ( spacefinder.routing === 'history' ) {
+        path = window.location.pathname;
+        if ( path.indexOf( spacefinder.basePath ) === 0 ) {
+            path = path.slice( spacefinder.basePath.length );
+        }
     } else {
-        if ( 'pushState' in history ) {
-            history.pushState('', document.title, window.location.pathname );
+        path = window.location.hash.replace( /^#\/?/, '' );
+    }
+    return path.split( '/' ).filter( Boolean ).map( decodeURIComponent );
+}
+
+/**
+ * Returns the URL for a route
+ * @param {string} route e.g. spaces/1915 (empty for the home page)
+ * @return {string} URL
+ */
+export function getRouteURL( route ) {
+    if ( spacefinder.routing === 'history' ) {
+        return spacefinder.basePath + route;
+    }
+    return spacefinder.basePath + ( route ? '#/' + route: '' );
+}
+
+/**
+ * Sets the route in the URL, adding a history entry if it has changed
+ * @param {string} route e.g. spaces/1915 (empty for the home page)
+ * @param {boolean} replace replace the current history entry rather than adding one
+ */
+export function setRoute( route, replace ) {
+    let url = getRouteURL( route );
+    if ( url !== window.location.pathname + window.location.search + window.location.hash ) {
+        if ( replace ) {
+            history.replaceState( null, '', url );
         } else {
-            window.location.hash = val;
+            history.pushState( null, '', url );
         }
     }
+}
+
+/**
+ * Returns the route for a dataset - the default dataset is the home page
+ * @param {string} key dataset key
+ * @return {string} route
+ */
+export function getDataSourceRoute( key ) {
+    return key === spacefinder.defaultDataSource ? '': key;
 }
 
 /**

@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Published",
     "mainEntity": {
         "@type": "CollegeOrUniversity",
+        "additionalType": "IT Cluster",
         "identifier": 54,
         "name": "Fine Art, History of Art and Cultural Studies - B16 (West Teaching Lab Lower)",
         "description": "Traditional cluster with rows of desks in a relaxed environment. 33 seat capacity",
@@ -30,6 +31,14 @@
             "latitude": 53.807836240010325,
             "longitude": -1.5572457236710147
         },
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "restriction",
+                "name": "Access restriction",
+                "value": "Access to the cluster is via an <a href=\"https://it.leeds.ac.uk/it?id=clusters\" target=\"_it\">entrance code available on the IT website</a>"
+            }
+        ],
         "amenityFeature": [
             {
                 "@type": "LocationFeatureSpecification",

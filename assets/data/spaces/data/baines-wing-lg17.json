@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Draft",
     "mainEntity": {
         "@type": "Place",
+        "additionalType": "Seminar room",
         "identifier": 16,
         "name": "Baines Wing - LG.17",
         "description": "Big seminar room with projector and flippable whiteboard. Five windows are allowing plenty of daylight to enter the room and there is acesss to a big projector. 20 seat capacity.",

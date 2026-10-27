@@ -1,6 +1,6 @@
 
 import { spacefinder } from './config.mjs';
-import { splog, getJSON, getFilterData, setHash, getPlaceById, getPlaceNodeById } from './utilities.mjs';
+import { splog, getJSON, getFilterData, getRoute, setRoute, getDataSourceRoute, getPlaceById, getPlaceNodeById } from './utilities.mjs';
 import { getFilterStatus } from './filters.mjs';
 import { updateDistances } from './map.mjs';
 
@@ -11,6 +11,8 @@ document.addEventListener( 'DOMContentLoaded', () => {
         updateDistances();
         activateSort(true, 'alpha');
     });
+    /* additional info can use filter data (e.g. labels and icons), so is rendered when the filters have loaded */
+    document.addEventListener( 'filtersloaded', renderAdditionalInfo );
     loadPlaces();
     /* event listener for search + filter changes */
     document.addEventListener( 'viewfilter', applyFilters );
@@ -47,7 +49,6 @@ document.addEventListener( 'DOMContentLoaded', () => {
                 let placeID = event.target.getAttribute( 'data-placeid' );
                 document.dispatchEvent( new CustomEvent( 'placeDeselected', { bubbles: true, detail: placeID } ) );
                 event.target.setAttribute( 'aria-expanded', 'false' );
-                setHash( '' );
             } else {
                 let placeID = event.target.getAttribute( 'data-placeid' );
                 let placenode = document.querySelector( '[data-id="' + placeID + '"]' );
@@ -108,9 +109,11 @@ function applyFilters() {
             let showEl = true;
             activeFilters.forEach( filtergroup => {
                 if ( filtergroup.name == 'search' ) {
+                    /* search the place summary (not the hidden additional info), or the module's own search text */
+                    let searchText = ( el.getAttribute( 'data-search' ) || el.querySelector( '.place-summary' ).textContent ).toLowerCase();
                     let foundKw = false;
                     filtergroup.value.forEach( term => {
-                        if ( el.textContent.toLowerCase().indexOf( term.toLowerCase() ) != -1 ) {
+                        if ( searchText.indexOf( term.toLowerCase() ) != -1 ) {
                             foundKw = true;
                         }
                     });
@@ -236,7 +239,7 @@ function selectPlace( placeid, source ) {
             src: source
         }
     }));
-    renderAdditionalInfo( place.id );
+    showAdditionalInfo( place.id );
     let placenode = document.querySelector( '[data-id="' + place.id + '"]' );
     document.querySelectorAll( '.list-place' ).forEach( sp => {
         sp.classList.remove( 'active' );
@@ -249,29 +252,40 @@ function selectPlace( placeid, source ) {
     let listFilters = document.getElementById( 'listfilters' );
     let totop = ( placenode.offsetTop + listFilters.offsetHeight ) - listContainer.offsetTop;
     scrollingElement.scrollTop = totop;
-    setHash( '/' + spacefinder.currentDataSource + '/' + place.slug );
+    setRoute( spacefinder.currentDataSource + '/' + place.slug );
 }
 
 /**
  * Deselects a place in the list, an optionally scrolls the list to the top
  * and recentres the map.
- * @param {integer} placeid ID of place which has been deselected
+ * @param {integer|Object|boolean} placeid ID of place which has been deselected (or an object
+ * with an id property, from the map), or false to deselect any place
  */
 function deselectPlaces( placeid ) {
     splog( 'deselectPlaces' );
-    if ( document.querySelector( '.list-place.active' ) ) {
-        document.querySelectorAll( '.additionalInfo' ).forEach( el => {
-            el.textContent = '';
-        });
+    let id = ( placeid && typeof placeid === 'object' ) ? placeid.id: placeid;
+    let active = document.querySelector( '.list-place.active' );
+    /* opening a map popup closes the previous one - ignore that if another place is already selected */
+    if ( active && id !== false && id !== undefined && String( active.getAttribute( 'data-id' ) ) !== String( id ) ) {
+        splog( 'deselectPlaces - place ' + id + ' is not selected' );
+        return;
+    }
+    if ( active ) {
+        showAdditionalInfo( false );
         document.querySelectorAll( '.list-place' ).forEach( sp => {
             sp.classList.remove( 'active' );
         });
         document.querySelectorAll( 'button.place-title' ).forEach( st => {
             st.setAttribute( 'aria-expanded', false );
         });
-        let deselectedSpace = document.querySelector( '.place-title[data-placeid="' + parseInt( placeid ) + '"]' );
     }
-    setHash( '' );
+    /* if the URL is for a place, change it to the dataset - unless another place
+       has been selected in the meantime (when going back in history, it will already have changed) */
+    setTimeout( () => {
+        if ( ! document.querySelector( '.list-place.active' ) && getRoute().length > 1 ) {
+            setRoute( getDataSourceRoute( spacefinder.currentDataSource ) );
+        }
+    }, 0 );
 }
 
 /**
@@ -385,6 +399,25 @@ function comparer( asc, attr ) {
 };
 
 /**
+ * Adds a sort key to each place (from its title) and sorts the places alphabetically
+ * @param {Array} places
+ */
+function sortPlacesByTitle( places ) {
+    places.forEach( place => {
+        place.sortKey = place.title.replace( /[^0-9a-zA-Z]/g, '' ).toLowerCase();
+    });
+    places.sort( (a, b) => {
+        if ( a.sortKey < b.sortKey ) {
+            return -1;
+        }
+        if ( a.sortKey > b.sortKey ) {
+            return 1;
+        }
+        return 0;
+    } );
+}
+
+/**
  * Loads all place data from a single JSON file
  */
 function loadPlaces() {
@@ -405,6 +438,7 @@ function loadPlaces() {
                 .then( module => {
                     spacefinder.data[spacefinder.currentDataSource].module = module;
                     spacefinder.data[spacefinder.currentDataSource].module.onloadPlaceData( data );
+                    sortPlacesByTitle( spacefinder.data[spacefinder.currentDataSource].places );
                     spacefinder.placesLoaded = true;
                     /* fire the placesLoaded event */
                     document.getElementById( 'list' ).dispatchEvent( new Event( 'placesLoaded', {
@@ -431,7 +465,9 @@ function renderList() {
     let listContainer = document.getElementById( 'listcontent' );
     let placetotal = spacefinder.data[spacefinder.currentDataSource].places.length;
     spacefinder.data[spacefinder.currentDataSource].places.forEach( place => {
-        listContainer.appendChild( spacefinder.data[spacefinder.currentDataSource].module.getPlaceHTML( place ) );
+        let placenode = listContainer.appendChild( spacefinder.data[spacefinder.currentDataSource].module.getPlaceHTML( place ) );
+        /* additional info is rendered by renderAdditionalInfo, and shown when the place is selected */
+        placenode.querySelector( '.additionalInfo' ).hidden = true;
     });
     document.getElementById( 'searchResultsSummary' ).innerHTML = 'Showing ' + placetotal + ' of ' + placetotal + ' places';
     if ( Object.hasOwn( spacefinder.data[spacefinder.currentDataSource].module, 'onrenderPlaceData' ) ) {
@@ -440,27 +476,28 @@ function renderList() {
 }
 
 /**
- * Renders additional information about a place.
- * The main listing only contains a minimal amount of information about places - 
- * when a place is clicked on, this is augmented by additional data.
- * @param {integer} placeid ID of place
+ * Renders additional information for all places (hidden until a place is selected)
  */
-function renderAdditionalInfo( placeid ) {
+function renderAdditionalInfo() {
     splog( 'renderAdditionalInfo' );
-    /* clear any additional data currently displayed */
-    document.querySelectorAll( '.additionalInfo' ).forEach( el => {
-        if ( el.replaceChildren ) {
-            el.replaceChildren();
-        } else {
-            el.textContent = '';
-        }
+    spacefinder.data[spacefinder.currentDataSource].places.forEach( place => {
+        getPlaceNodeById( place.id ).querySelector( '.additionalInfo' ).innerHTML = spacefinder.data[spacefinder.currentDataSource].module.getAdditionalInfo( place );
     });
+}
 
+/**
+ * Shows additional information about a place.
+ * Additional information is rendered with the list (hidden) - when a place
+ * is selected, its additional information is shown and all others are hidden.
+ * @param {integer} placeid ID of place, or false to hide all
+ */
+function showAdditionalInfo( placeid ) {
+    splog( 'showAdditionalInfo' );
+    document.querySelectorAll( '.additionalInfo' ).forEach( el => {
+        el.hidden = true;
+    });
     if ( placeid !== false ) {
-        /* get place data */
-        let place = getPlaceById( placeid );
-        let placenode = getPlaceNodeById( placeid );
-        placenode.querySelector( '.additionalInfo' ).innerHTML = spacefinder.data[spacefinder.currentDataSource].module.getAdditionalInfo( place );
+        getPlaceNodeById( placeid ).querySelector( '.additionalInfo' ).hidden = false;
     }
 }
 

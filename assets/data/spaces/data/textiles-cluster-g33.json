@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Published",
     "mainEntity": {
         "@type": "CollegeOrUniversity",
+        "additionalType": "IT Cluster",
         "identifier": 96,
         "name": "Textiles Cluster - G.33",
         "description": "Cluster room with a variety of desks for individual or group study. 15 seat capacity - height adjustable desks available. From the Great Hall, travel away from the Parkinson down University Road, and turn right straight after you pass under the Clothworkers' Link Building. The entrance is on the right.",
@@ -30,6 +31,14 @@
             "latitude": 53.807707023302015,
             "longitude": -1.5565759845355271
         },
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "restriction",
+                "name": "Access restriction",
+                "value": "Access to the cluster is via an <a href=\"https://it.leeds.ac.uk/it?id=clusters\" target=\"_it\">entrance code available on the IT website</a>"
+            }
+        ],
         "amenityFeature": [
             {
                 "@type": "LocationFeatureSpecification",

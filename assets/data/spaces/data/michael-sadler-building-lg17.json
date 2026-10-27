@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Draft",
     "mainEntity": {
         "@type": "Place",
+        "additionalType": "Seminar room",
         "identifier": 26,
         "name": "Michael Sadler Building - LG.17",
         "description": "Seminar room with chairs and flip out tables with a big window facing the campus. 19 Seat Capacity.",

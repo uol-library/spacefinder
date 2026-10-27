@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Published",
     "mainEntity": {
         "@type": "CafeOrCoffeeShop",
+        "additionalType": "Café",
         "identifier": 87,
         "name": "Caffè Nero at Laidlaw Library",
         "description": "This is the very first Caffé Nero on a University campus, specialising in high-quality Italian coffee, a warm and welcoming atmosphere, good food and great personal service.",

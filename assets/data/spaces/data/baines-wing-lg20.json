@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Draft",
     "mainEntity": {
         "@type": "Place",
+        "additionalType": "Seminar room",
         "identifier": 17,
         "name": "Baines Wing - LG.20",
         "description": "Seminar room with flip out tables and chairs in small theater style. 14 seat capacity.",

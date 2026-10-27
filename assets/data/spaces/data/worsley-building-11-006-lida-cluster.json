@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Published",
     "mainEntity": {
         "@type": "CollegeOrUniversity",
+        "additionalType": "IT Cluster",
         "identifier": 91,
         "name": "Worsley Building - 11.006 (LIDA cluster)",
         "description": "Modern and quiet space. Follow timetable link below to check when room is free. 52 seat capacity.",
@@ -30,6 +31,14 @@
             "latitude": 53.8033012,
             "longitude": -1.555752941
         },
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "restriction",
+                "name": "Access restriction",
+                "value": "Follow timetable link to check when room is free"
+            }
+        ],
         "amenityFeature": [
             {
                 "@type": "LocationFeatureSpecification",

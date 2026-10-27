@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Draft",
     "mainEntity": {
         "@type": "Place",
+        "additionalType": "Seminar room",
         "identifier": 22,
         "name": "Michael Sadler Building - 1.19",
         "description": "Chairs and flip out tables as well as access to 3 whiteboards and projector. Perfect for group study. 16 seat capacity.",

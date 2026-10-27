@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Published",
     "mainEntity": {
         "@type": "CollegeOrUniversity",
+        "additionalType": "Outdoor Seating Area",
         "identifier": 13,
         "name": "Outside the Edward Boyle Library Edit Room café",
         "description": "Outdoor seating situated outside the Edward Boyle Library",

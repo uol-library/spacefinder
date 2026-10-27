@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Draft",
     "mainEntity": {
         "@type": "CafeOrCoffeeShop",
+        "additionalType": "Café",
         "identifier": 5,
         "name": "Café Maia",
         "description": "Café Maia at Ziff is perfect for meetings, to take a break or even to do some work in the computer area.",

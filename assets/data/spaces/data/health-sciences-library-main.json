@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Published",
     "mainEntity": {
         "@type": "Library",
+        "additionalType": "Library",
         "identifier": 75,
         "name": "Health Sciences library main area",
         "description": "Silent study area with over 400 individual desks and our collection of medical and health-related books. There are also bookable group rooms for collaborative work and individual rooms for a more focused session, plus a small pause zone to wind down if you are looking to take a quick break.",
@@ -40,6 +41,14 @@
                 "@type": "ContactPoint",
                 "contactType": "Follow us on Bluesky",
                 "url": "https://bit.ly/4nxW4FT"
+            }
+        ],
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "restriction",
+                "name": "Access restriction",
+                "value": "Library Card needed"
             }
         ],
         "amenityFeature": [

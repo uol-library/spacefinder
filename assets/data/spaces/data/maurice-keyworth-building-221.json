@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Draft",
     "mainEntity": {
         "@type": "CollegeOrUniversity",
+        "additionalType": "IT Cluster",
         "identifier": 58,
         "name": "Maurice Keyworth Building - 2.21",
         "description": "Large IT cluster. 70 seat capacity.",

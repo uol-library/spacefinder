@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Draft",
     "mainEntity": {
         "@type": "Place",
+        "additionalType": "Seminar room",
         "identifier": 20,
         "name": "Michael Sadler Building - B.37",
         "description": "Large communal desk area surrounded by chairs. 16 seat capacity.",

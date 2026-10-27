@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Published",
     "mainEntity": {
         "@type": "CollegeOrUniversity",
+        "additionalType": "IT Cluster",
         "identifier": 46,
         "name": "Chemistry and Chemistry West Block - 140 (Cohen)",
         "description": "Large room with lines of computer desks. Silent and busy study space. 96 seat capacity. Cohen can be used as one large teaching space, or separated by a partition wall into Cohen A and Cohen B. From Parkinson Court, go up the stairs at the Cafe end and turn right at the top of the stairs. Turn right again through the double doors. Take the first left into the cluster.",

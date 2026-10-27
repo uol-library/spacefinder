@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Published",
     "mainEntity": {
         "@type": "Library",
+        "additionalType": "Library",
         "identifier": 92,
         "name": "Laidlaw library - first and second floors",
         "description": "A study space split into two zones, one is silent study with individual tables and plug points for focused study, one is for casual study, with large tables, bookable group booths, docking screens and nice views.",
@@ -40,6 +41,14 @@
                 "@type": "ContactPoint",
                 "contactType": "Follow us on Bluesky",
                 "url": "https://bit.ly/4nxW4FT"
+            }
+        ],
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "restriction",
+                "name": "Access restriction",
+                "value": "Library Card needed"
             }
         ],
         "amenityFeature": [

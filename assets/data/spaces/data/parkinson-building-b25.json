@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Published",
     "mainEntity": {
         "@type": "CollegeOrUniversity",
+        "additionalType": "IT Cluster",
         "identifier": 94,
         "name": "Parkinson Building - B.25",
         "description": "Perfect for focused study with access to computers. 15 seat capacity. From Parkinson Court use the stairs at the opposite end from the Café and go down to the basement. Go through the doors under the display screen and turn right. The entrance to the cluster is directly in front of you.",

@@ -2,29 +2,67 @@
  * Modal
  */
 import A11yDialog from 'a11y-dialog';
+import { spacefinder } from './config.mjs';
+import { getRoute, setRoute, getDataSourceRoute } from './utilities.mjs';
+
+/* page dialogs, keyed by page name (the route is page/<name>) */
+const pageDialogs = {};
 
 document.addEventListener('DOMContentLoaded', () => {
-    /* change location hash when modals are activated */
+    /* set the route when page modals are opened, and go back to the previous route when they are closed */
     document.querySelectorAll('.modal-trigger').forEach( mb => {
-        let dialogid = mb.getAttribute('data-dialogid');
-        let pagehash = mb.getAttribute('data-dialoghash');
-        let dialog = new A11yDialog( document.getElementById( dialogid ) );
+        let page = mb.getAttribute('data-dialoghash');
+        let dialog = getPageDialog( page, mb.getAttribute('data-dialogid') );
         mb.addEventListener('click', e => {
+            dialog.previousRoute = getRoute().join( '/' );
             dialog.show();
-            dialog.originalpagehash = window.location.hash;
-            window.location.hash = '#/page/'+pagehash;
+            setRoute( 'page/' + page );
             document.dispatchEvent(new CustomEvent('sfselectpage', {
                 detail: {
-                    id: pagehash,
+                    id: page,
                     name: e.target.textContent
                 }
             }));
         });
-        dialog.on('hide', (element, event) => {
-            window.location.hash = dialog.originalpagehash
+    });
+    /* show and hide pages from the URL (see routing.mjs) */
+    document.addEventListener( 'sfshowpage', event => {
+        let dialog = pageDialogs[ event.detail.page ];
+        if ( dialog && ! dialog.shown ) {
+            /* the page was opened directly, so closing it goes to the current dataset */
+            dialog.previousRoute = getDataSourceRoute( spacefinder.currentDataSource );
+            dialog.show();
+        }
+    });
+    document.addEventListener( 'sfhidepages', () => {
+        Object.values( pageDialogs ).forEach( dialog => {
+            if ( dialog.shown ) {
+                dialog.hide();
+            }
         });
     });
 });
+
+/**
+ * Gets the dialog for a page, creating it if needed
+ * (more than one button can open the same page)
+ * @param {String} page page name
+ * @param {String} dialogid id of the dialog element
+ * @return {A11yDialog}
+ */
+function getPageDialog( page, dialogid ) {
+    if ( ! pageDialogs[ page ] ) {
+        let dialog = new A11yDialog( document.getElementById( dialogid ) );
+        dialog.on('hide', () => {
+            /* only change the URL if it is still the page's (it won't be when going back in history) */
+            if ( getRoute()[0] === 'page' ) {
+                setRoute( dialog.previousRoute || '' );
+            }
+        });
+        pageDialogs[ page ] = dialog;
+    }
+    return pageDialogs[ page ];
+}
 
 /**
  * Re-usable alert dialog

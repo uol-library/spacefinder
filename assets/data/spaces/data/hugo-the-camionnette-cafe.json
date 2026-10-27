@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Published",
     "mainEntity": {
         "@type": "CafeOrCoffeeShop",
+        "additionalType": "Café",
         "identifier": 11,
         "name": "Hugo, the Camionnette Café",
         "description": "Hugo, the Camionnette Café, is one of the more unique members of the Great Food at Leeds team and sells a range of hot drinks, pastries and brownies.",

@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Draft",
     "mainEntity": {
         "@type": "Place",
+        "additionalType": "Seminar room",
         "identifier": 19,
         "name": "Michael Sadler Building - B.49",
         "description": "Large communal desk with adjustable height function. Plently of whiteboards available for silent or group study. 10 seat capacity.",

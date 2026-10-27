@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Published",
     "mainEntity": {
         "@type": "CollegeOrUniversity",
+        "additionalType": "General Seating Area",
         "identifier": 32,
         "name": "Leeds University Union - Foyer",
         "description": "Busy study place for people that like working alongside others. Couches with big tables can be used for comfortable group working in a nice environment. Extra couches on the side for anybody wanting to read or take a break.",

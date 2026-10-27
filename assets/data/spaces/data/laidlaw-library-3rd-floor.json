@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Published",
     "mainEntity": {
         "@type": "Library",
+        "additionalType": "Library",
         "identifier": 80,
         "name": "Laidlaw library - 3rd floor",
         "description": "Completely silent floor suitable for concentrated individual work and exam preparations. There are docking screens, cluster computers and plenty of plug points on this floor.",
@@ -40,6 +41,14 @@
                 "@type": "ContactPoint",
                 "contactType": "Follow us on Bluesky",
                 "url": "https://bit.ly/4nxW4FT"
+            }
+        ],
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "restriction",
+                "name": "Access restriction",
+                "value": "Library Card needed"
             }
         ],
         "amenityFeature": [

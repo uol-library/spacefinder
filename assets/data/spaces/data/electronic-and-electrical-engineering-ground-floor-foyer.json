@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Published",
     "mainEntity": {
         "@type": "CollegeOrUniversity",
+        "additionalType": "General Seating Area",
         "identifier": 35,
         "name": "Electronic and Electrical Engineering - Ground Floor Foyer",
         "description": "Big bright foyer with couches and circular tables with chairs. A perfect place to relax, take a break or study alone or in a group.",

@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Published",
     "mainEntity": {
         "@type": "Library",
+        "additionalType": "Library",
         "identifier": 81,
         "name": "Laidlaw library ground floor",
         "description": "A study space with a wide range of purposes, with individual and group tables plus bookable group rooms. There is also a Caffè Nero with comfortable couches for a more relaxed study session. Inside the gates is the skills space, a supportive and welcoming space to develop your academic and digital skills for study and work.",
@@ -40,6 +41,14 @@
                 "@type": "ContactPoint",
                 "contactType": "Follow us on Bluesky",
                 "url": "https://bit.ly/4nxW4FT"
+            }
+        ],
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "restriction",
+                "name": "Access restriction",
+                "value": "Library Card needed"
             }
         ],
         "amenityFeature": [

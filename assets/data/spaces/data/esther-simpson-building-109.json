@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Published",
     "mainEntity": {
         "@type": "CollegeOrUniversity",
+        "additionalType": "IT Cluster",
         "identifier": 53,
         "name": "Esther Simpson Building - 109",
         "description": "Cluster room surrounded by big windows with high views of the University campus. Perfect for focused study with access to computers. 76 seat capacity.",

@@ -7,6 +7,9 @@
     "concat": "node _scripts/concat.js",
     "crontab": "node _scripts/cron.js",
     "process": "node _scripts/processJSON.js",
+    "sustainability": "node _scripts/sustainability.js",
+    "osm": "node _scripts/osm.js",
+    "buildings": "node _scripts/buildings.js",
     "build": "bundle exec jekyll build",
     "serve": "bundle exec jekyll serve --config _config.yml"
   },

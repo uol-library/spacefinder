@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Published",
     "mainEntity": {
         "@type": "CollegeOrUniversity",
+        "additionalType": "IT Cluster",
         "identifier": 52,
         "name": "E C Stoner Building - 6.68",
         "description": "Large cluster with multiple computers and comfortable chairs. 47 seat capacity. This room is flat with level access from the ground floor or via the lift and there are height adjustable desks available.",

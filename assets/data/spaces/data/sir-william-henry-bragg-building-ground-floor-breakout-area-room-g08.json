@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Published",
     "mainEntity": {
         "@type": "CollegeOrUniversity",
+        "additionalType": "General Seating Area",
         "identifier": 37,
         "name": "Sir William Henry Bragg Building - Ground Floor Breakout Area (Room G.08)",
         "description": "Modern big break out area with café shop nearby. Social, modern and very comfortable for people to study and relax.",

@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Published",
     "mainEntity": {
         "@type": "CafeOrCoffeeShop",
+        "additionalType": "Café",
         "identifier": 6,
         "name": "Costa Parkinson Court",
         "description": "Parkinson Court Café sits in one of the most iconic buildings at the University of Leeds. The café is open plan and  conveniently located for a break from working in the Brotherton Library. Serves a range of sandwiches and snacks throughout the day.",

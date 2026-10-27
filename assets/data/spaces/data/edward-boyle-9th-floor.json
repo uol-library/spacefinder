@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Published",
     "mainEntity": {
         "@type": "Library",
+        "additionalType": "Library",
         "identifier": 100,
         "name": "Edward Boyle 9th floor (ground floor)",
         "description": "Located on the entrance floor are the customer service help desk and accessible study rooms for students registered with disability services. On this floor, you can borrow a laptop from the laptop locker or take a break in the wellbeing area with boardgames, colouring papers and bean bags.",
@@ -40,6 +41,14 @@
                 "@type": "ContactPoint",
                 "contactType": "Follow us on Bluesky",
                 "url": "https://bit.ly/4nxW4FT"
+            }
+        ],
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "restriction",
+                "name": "Access restriction",
+                "value": "Library Card needed"
             }
         ],
         "amenityFeature": [

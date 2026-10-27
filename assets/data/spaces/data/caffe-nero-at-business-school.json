@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Published",
     "mainEntity": {
         "@type": "CafeOrCoffeeShop",
+        "additionalType": "Café",
         "identifier": 86,
         "name": "Caffè Nero at Business School",
         "description": "Serving a selection of hot and cold drinks, salads, soups, sandwiches, cakes and snacks. Inside there is varied ample seating - whether you want to relax or work in groups, longer opening hours makes it the perfect spot for breaks between lectures and meetings throughout the day.",

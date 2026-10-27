@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Draft",
     "mainEntity": {
         "@type": "CollegeOrUniversity",
+        "additionalType": "IT Cluster",
         "identifier": 47,
         "name": "Clarendon Building - G04",
         "description": "Classroom with 4 computer rows. Comfortable chairs. 50 seat capacity.",

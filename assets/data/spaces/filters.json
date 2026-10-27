@@ -14,7 +14,7 @@
         ]
     },
     {
-        "key": "space_type",
+        "key": "place_type",
         "label": "Space type",
         "message": "Filtering spaces by type: ",
         "exclusive": false,

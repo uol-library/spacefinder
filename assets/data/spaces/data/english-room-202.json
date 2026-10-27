@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Published",
     "mainEntity": {
         "@type": "CollegeOrUniversity",
+        "additionalType": "IT Cluster",
         "identifier": 93,
         "name": "School of English - Room 2.02",
         "description": "Small room with computers available. 16 seat capacity. From the main entrance go up the stairs or take the lift to the 2nd floor. The cluster is on the left at the top of the staircase.",

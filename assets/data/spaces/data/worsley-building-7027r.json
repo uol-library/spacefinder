@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Draft",
     "mainEntity": {
         "@type": "CollegeOrUniversity",
+        "additionalType": "IT Cluster",
         "identifier": 67,
         "name": "Worsley Building - 7.027r",
         "description": "IT cluster with adjustable size. No drinks or food allowed. 12 seat capacity",

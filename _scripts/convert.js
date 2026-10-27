@@ -122,13 +122,14 @@ function convertObj(spaceJSON) {
         "creativeWorkStatus": spaceJSON.published ? "Published" : "Draft",
         "mainEntity": {
             "@type": getType(spaceJSON.space_type),
+            "additionalType": spaceJSON.space_type || '',
             "identifier": spaceJSON.id || '',
             "name": spaceJSON.title || '',
             "description": spaceJSON.description || '',
             "alternateName": spaceJSON.slug || '',
             "url": mainUrl ? mainUrl.url : '',
             "sameAs": mapUrl ? mapUrl.url : '',
-            "publicAccess": !spaceJSON.restricted,
+            "publicAccess": (spaceJSON.access || '').trim() === 'Anyone (public)',
             "telephone": phone ? phone.url : '',
             "email": email ? email.url.replace(/^mailto:/i, '') : '',
             "image": {
@@ -154,6 +155,16 @@ function convertObj(spaceJSON) {
     const contactPoints = buildContactPoints(spaceJSON.contacts);
     if (contactPoints.length) {
         template.mainEntity.contactPoint = contactPoints;
+    }
+
+    // Conditions of access, e.g. "Library Card needed"
+    if (spaceJSON.restriction) {
+        template.mainEntity.additionalProperty = [{
+            "@type": "PropertyValue",
+            "propertyID": "restriction",
+            "name": "Access restriction",
+            "value": spaceJSON.restriction
+        }];
     }
 
     template.mainEntity.amenityFeature = buildAmenityFeatures(spaceJSON);

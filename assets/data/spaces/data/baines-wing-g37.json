@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Draft",
     "mainEntity": {
         "@type": "Place",
+        "additionalType": "Seminar room",
         "identifier": 18,
         "name": "Baines Wing - G.37",
         "description": "32 Seat Capacity",

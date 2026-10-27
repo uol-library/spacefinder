@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Draft",
     "mainEntity": {
         "@type": "Place",
+        "additionalType": "Seminar room",
         "identifier": 21,
         "name": "Michael Sadler Building - 1.01",
         "description": "Study space with nice views and frames on the walls. 24 seat capacity.",

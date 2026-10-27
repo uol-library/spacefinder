@@ -4,13 +4,14 @@
     "creativeWorkStatus": "Published",
     "mainEntity": {
         "@type": "Library",
+        "additionalType": "Library",
         "identifier": 90,
         "name": "Language Zone",
         "description": "The Language Zone is a welcoming space open to all students and staff at Leeds and provides learning material in more than 50 languages, as well as friendly advice for language learners. We have a computer cluster for personal study, and books, magazines, audio and video resources to help you learn a language, as well as spaces for informal social activities.",
         "alternateName": "language-zone",
         "url": "https://students.leeds.ac.uk/learn-language/doc/language-learning-resources",
         "sameAs": "https://www.leeds.ac.uk/campusmap?location=17525",
-        "publicAccess": true,
+        "publicAccess": false,
         "telephone": "tel:+441133435663 ",
         "email": "library@leeds.ac.uk",
         "image": {

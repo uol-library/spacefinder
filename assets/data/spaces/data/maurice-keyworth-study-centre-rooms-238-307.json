@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Published",
     "mainEntity": {
         "@type": "CollegeOrUniversity",
+        "additionalType": "General Seating Area",
         "identifier": 38,
         "name": "Maurice Keyworth - Study Centre (Rooms 238 & 307)",
         "description": "silent study spaces with beautiful views. Outside seminar halls and occationally busy.",

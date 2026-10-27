@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Draft",
     "mainEntity": {
         "@type": "Place",
+        "additionalType": "Seminar room",
         "identifier": 14,
         "name": "Baines Wing - G.28",
         "description": "Small study/seminar room space that includes one large desk for group or single focused study. Access to whiteboard and plug sockets. 15 seat capacity.",

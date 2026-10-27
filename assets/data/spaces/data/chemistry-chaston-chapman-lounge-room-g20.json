@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Published",
     "mainEntity": {
         "@type": "CollegeOrUniversity",
+        "additionalType": "General Seating Area",
         "identifier": 34,
         "name": "Chemistry - Chaston Chapman Lounge (room G20)",
         "description": "Bright green modern lounge located in the Chemistry Building. The perfect place to study, take a break or explore the scientific magazines that are displayed on the shelves. The couches and the chairs are very comfortable, making the area very welcoming.",

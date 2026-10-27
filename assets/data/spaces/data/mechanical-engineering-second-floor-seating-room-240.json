@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Published",
     "mainEntity": {
         "@type": "CollegeOrUniversity",
+        "additionalType": "General Seating Area",
         "identifier": 36,
         "name": "Mechanical Engineering - Second floor seating (outside room 240)",
         "description": "Comfortable small study area with couches and views from big windows.",

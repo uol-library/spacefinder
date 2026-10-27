@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Published",
     "mainEntity": {
         "@type": "CollegeOrUniversity",
+        "additionalType": "General Seating Area",
         "identifier": 33,
         "name": "Worsley Building - Airport Lounge seating (level 7)",
         "description": "Modern colourful big area with comfortable couches and chairs. Vending, cash and cofee machines available as well as water fountain.",

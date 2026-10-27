@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Published",
     "mainEntity": {
         "@type": "CollegeOrUniversity",
+        "additionalType": "IT Cluster",
         "identifier": 63,
         "name": "Psychology (37 and 41 University Road) - 1.45",
         "description": "Rows of IT clusters in a theatre style. 58 seat capacity.  Enter the Psychology building using the door in the far corner of the Psychology courtyard. Take the stairs or lift up to the top floor, the entrance to the cluster is just off the landing.",
@@ -30,6 +31,14 @@
             "latitude": 53.80730177399727,
             "longitude": -1.5568979206681979
         },
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "restriction",
+                "name": "Access restriction",
+                "value": "Access to the cluster is via an <a href=\"https://it.leeds.ac.uk/it?id=clusters\" target=\"_it\">entrance code available on the IT website</a>"
+            }
+        ],
         "amenityFeature": [
             {
                 "@type": "LocationFeatureSpecification",

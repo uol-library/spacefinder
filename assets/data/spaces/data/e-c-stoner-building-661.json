@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Published",
     "mainEntity": {
         "@type": "CollegeOrUniversity",
+        "additionalType": "IT Cluster",
         "identifier": 51,
         "name": "E C Stoner Building - 6.61",
         "description": "Large cluster with multiple computers and comfortable chairs. 40 seat capacity. Between approx 8am-8pm weekdays you can also access from Level 10 of EC Stoner building (where the IT Service Desk is) following the Red Route to lift 48 (next to staircase 4) and take the lift down to level 6. The entrance to the cluster is on your right. Please note this lift is switched off between approx 8pm-8am weekdays and all day at weekends.",
@@ -30,6 +31,14 @@
             "latitude": 53.80532840091855,
             "longitude": -1.5519239738605104
         },
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "restriction",
+                "name": "Access restriction",
+                "value": "Access to the cluster is via an <a href=\"https://it.leeds.ac.uk/it?id=clusters\" target=\"_it\">entrance code available on the IT website</a>"
+            }
+        ],
         "amenityFeature": [
             {
                 "@type": "LocationFeatureSpecification",

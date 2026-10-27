@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Published",
     "mainEntity": {
         "@type": "CollegeOrUniversity",
+        "additionalType": "IT Cluster",
         "identifier": 66,
         "name": "Worsley Building - 8.039",
         "description": "Big room that offers clusters on high and normal desks. Modern and strictly silent environment. 50 seat capacity. Height adjustable tdesks available.",

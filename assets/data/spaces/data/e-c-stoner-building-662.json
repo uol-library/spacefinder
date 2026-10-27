@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Published",
     "mainEntity": {
         "@type": "CollegeOrUniversity",
+        "additionalType": "IT Cluster",
         "identifier": 97,
         "name": "E C Stoner Building - 6.62",
         "description": "Small cluster - 9 seat capacity. This room is flat with level access from the ground floor or via the lift.",
@@ -30,6 +31,14 @@
             "latitude": 53.805328033113454,
             "longitude": -1.5519733139012006
         },
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "restriction",
+                "name": "Access restriction",
+                "value": "Access to the cluster is via an <a href=\"https://it.leeds.ac.uk/it?id=clusters\" target=\"_it\">entrance code available on the IT website</a>"
+            }
+        ],
         "amenityFeature": [
             {
                 "@type": "LocationFeatureSpecification",

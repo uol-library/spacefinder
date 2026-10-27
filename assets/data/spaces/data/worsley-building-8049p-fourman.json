@@ -4,6 +4,7 @@
     "creativeWorkStatus": "Published",
     "mainEntity": {
         "@type": "CollegeOrUniversity",
+        "additionalType": "IT Cluster",
         "identifier": 70,
         "name": "Worsley Building - 8.049P (Fourman Parkinson)",
         "description": "Large room with computers available. 50 seat capacity. From the Worsley Airport Lounge on Level 7 walk through the double doors near the ATM cash machine. Take a lift or stairs up to level 8. The doors to Fourman O and P are on the corridor by the lifts.",
