@@ -1,0 +1,122 @@
+{
+    "facilities": [
+        "daylight",
+        "views",
+        "individual_study_space",
+        "free_wifi",
+        "computers",
+        "laptops_allowed",
+        "sockets",
+        "signal",
+        "printers_copiers",
+        "bike_racks",
+        "toilets",
+        "accessible_toilets",
+        "gender_neutral_toilets",
+        "break",
+        "wheelchair_accessible"
+    ],
+    "atmosphere": [
+        "relaxed",
+        "modern",
+        "inspiring'",
+        "cosy",
+        "social",
+        "friendly"
+    ],
+    "access": "University Staff and Students",
+    "disabled_access": true,
+    "opening_hours": {
+        "monday": {
+            "open": true,
+            "from": "9:30",
+            "to": "17:00"
+        },
+        "tuesday": {
+            "open": true,
+            "from": "9:30",
+            "to": "17:00"
+        },
+        "wednesday": {
+            "open": true,
+            "from": "9:30",
+            "to": "17:00"
+        },
+        "thursday": {
+            "open": true,
+            "from": "9:30",
+            "to": "17:00"
+        },
+        "friday": {
+            "open": true,
+            "from": "9:30",
+            "to": "17:00"
+        },
+        "saturday": {
+            "open": false,
+            "from": "",
+            "to": ""
+        },
+        "sunday": {
+            "open": false,
+            "from": "",
+            "to": ""
+        }
+    },
+    "slug": "language-zone",
+    "floor": "Second floor",
+    "restriction": "",
+    "published": true,
+    "work": [
+        "close"
+    ],
+    "space_type": "Library",
+    "building": "Parkinson Building",
+    "address": "University of Leeds, LS2 9JT",
+    "location": "{\"type\":\"Point\",\"coordinates\":[-1.552787,53.807706]}",
+    "title": "Language Zone",
+    "noise": "Whispers",
+    "restricted": false,
+    "id": 90,
+    "description": "The Language Zone is a welcoming space open to all students and staff at Leeds and provides learning material in more than 50 languages, as well as friendly advice for language learners. We have a computer cluster for personal study, and books, magazines, audio and video resources to help you learn a language, as well as spaces for informal social activities.",
+    "contacts": [
+        {
+            "url": "mailto:library@leeds.ac.uk",
+            "link_text": "Email us at library@leeds.ac.uk",
+            "class": "icon-email"
+        },
+        {
+            "url": "tel:+441133435663 ",
+            "link_text": "Call us on +44 (0)113 343 5663",
+            "class": "icon-phone"
+        },
+        {
+            "url": "https://bit.ly/4lGhXAO",
+            "link_text": "Follow us on Instagram",
+            "class": "icon-instagram"
+        },
+        {
+            "url": "https://bit.ly/4nxW4FT",
+            "link_text": "Follow us on Bluesky",
+            "class": "icon-bluesky"
+        }
+    ],
+    "links": [
+        {
+            "url": "https://students.leeds.ac.uk/learn-language/doc/language-learning-resources",
+            "link_text": "Visit the Language Zone web site",
+            "class": "icon-link"
+        },
+        {
+            "url": "https://www.leeds.ac.uk/campusmap?location=17525",
+            "link_text": "View on the University campus map",
+            "class": "icon-uol-logo-mark"
+        }
+    ],
+    "images": [
+        {
+            "url": "/assets/photos/LanguageZone.jpg",
+            "alt": "Interior photograph of part of the Language Zone, showing multiple workstations arranged radially around a central pullar with students at work, and light streaming in through the window"
+        }
+    ]
+}

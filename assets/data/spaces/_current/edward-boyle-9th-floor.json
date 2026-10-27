@@ -1,0 +1,128 @@
+{
+    "facilities": [
+        "daylight",
+        "views",
+        "large_desks",
+        "free_wifi",
+        "computers",
+        "laptops_allowed",
+        "sockets",
+        "signal",
+        "printers_copiers",
+        "toilets",
+        "refreshments",
+        "break",
+        "individual_study_space",
+        "accessible_toilets",
+        "wheelchair_accessible",
+        "bike_racks",
+        "gender_neutral_toilets"
+    ],
+    "atmosphere": [
+        "disciplined",
+        "relaxed",
+        "cosy",
+        "social",
+        "friendly"
+    ],
+    "access": "University Staff and Students",
+    "disabled_access": true,
+    "opening_hours": {
+        "monday": {
+            "open": true,
+            "from": "0:00",
+            "to": "24:00"
+        },
+        "tuesday": {
+            "open": true,
+            "from": "0:00",
+            "to": "24:00"
+        },
+        "wednesday": {
+            "open": true,
+            "from": "0:00",
+            "to": "24:00"
+        },
+        "thursday": {
+            "open": true,
+            "from": "0:00",
+            "to": "24:00"
+        },
+        "friday": {
+            "open": true,
+            "from": "0:00",
+            "to": "24:00"
+        },
+        "saturday": {
+            "open": true,
+            "from": "0:00",
+            "to": "24:00"
+        },
+        "sunday": {
+            "open": true,
+            "from": "0:00",
+            "to": "24:00"
+        }
+    },
+    "slug": "edward-boyle-ground-floor",
+    "floor": "Level 9",
+    "restriction": "Library Card needed",
+    "work": [
+        "private",
+        "close",
+        "friends",
+        "group"
+    ],
+    "space_type": "Library",
+    "building": "Edward Boyle library",
+    "address": "University of Leeds, Leeds LS2 9JT",
+    "location": "{\"type\":\"Point\",\"coordinates\":[-1.554528,53.80618]}",
+    "what3words": "///super.maple.circle",
+    "title": "Edward Boyle 9th floor (ground floor)",
+    "tags": [],
+    "noise": "Background chatter",
+    "restricted": true,
+    "id": 100,
+    "description": "Located on the entrance floor are the customer service help desk and accessible study rooms for students registered with disability services. On this floor, you can borrow a laptop from the laptop locker or take a break in the wellbeing area with boardgames, colouring papers and bean bags.",
+    "published": true,
+    "contacts": [
+        {
+            "url": "mailto:library@leeds.ac.uk",
+            "link_text": "Email us at library@leeds.ac.uk",
+            "class": "icon-email"
+        },
+        {
+            "url": "tel:+441133435663 ",
+            "link_text": "Call us on +44 (0)113 343 5663",
+            "class": "icon-phone"
+        },
+        {
+            "url": "https://bit.ly/4lGhXAO",
+            "link_text": "Follow us on Instagram",
+            "class": "icon-instagram"
+        },
+        {
+            "url": "https://bit.ly/4nxW4FT",
+            "link_text": "Follow us on Bluesky",
+            "class": "icon-bluesky"
+        }
+    ],
+    "links": [
+        {
+            "url": "https://library.leeds.ac.uk/",
+            "link_text": "Visit the Library website",
+            "class": "icon-link"
+        },
+        {
+            "url": "https://www.leeds.ac.uk/campusmap?location=17411",
+            "link_text": "View on the University campus map (map reference 83)",
+            "class": "icon-uol-logo-mark"
+        }
+    ],
+    "images": [
+        {
+            "url": "/assets/photos/edward-boyle-9th-floor.jpg",
+            "alt": "Two students at a long table with plug sockets and integrated lights overlooking a grassy area."
+        }
+    ]
+}

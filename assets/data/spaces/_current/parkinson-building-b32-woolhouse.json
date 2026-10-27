@@ -1,0 +1,91 @@
+{
+    "facilities": [
+        "adjustable_furniture",
+        "daylight",
+        "views",
+        "large_desks",
+        "free_wifi",
+        "computers",
+        "laptops_allowed",
+        "sockets",
+        "signal",
+        "whiteboards",
+        "projector",
+        "toilets",
+        "break",
+        "bike_racks",
+        "gender_neutral_toilets",
+        "wheelchair_accessible"
+    ],
+    "atmosphere": [
+        "disciplined"
+    ],
+    "access": "University Staff and Students",
+    "disabled_access": true,
+    "opening_hours": {
+        "monday": {
+            "open": true,
+            "from": "9:00",
+            "to": "18:00"
+        },
+        "tuesday": {
+            "open": true,
+            "from": "9:00",
+            "to": "18:00"
+        },
+        "wednesday": {
+            "open": true,
+            "from": "9:00",
+            "to": "18:00"
+        },
+        "thursday": {
+            "open": true,
+            "from": "9:00",
+            "to": "18:00"
+        },
+        "friday": {
+            "open": true,
+            "from": "9:00",
+            "to": "18:00"
+        },
+        "saturday": {
+            "open": false,
+            "from": "",
+            "to": ""
+        },
+        "sunday": {
+            "open": false,
+            "from": "",
+            "to": ""
+        }
+    },
+    "slug": "parkinson-building-b32-woolhouse",
+    "floor": "Basement",
+    "restriction": "",
+    "published": true,
+    "work": [
+        "private",
+        "close"
+    ],
+    "twitter_screen_name": "",
+    "space_type": "IT Cluster",
+    "building": "Parkinson building",
+    "address": "University of Leeds, LS2 9JT",
+    "location": "{\"type\":\"Point\",\"coordinates\":[-1.552668530103729,53.80806436246307]}",
+    "facebook_url": "",
+    "title": "Parkinson Building - B.32 (Woolhouse)",
+    "tags": [],
+    "noise": "Whispers",
+    "restricted": true,
+    "id": 61,
+    "description": "Cluster room with a variety of desks for individual or group study - height adjustable desks available. 57 seat capacity. From Parkinson Court use the stairs at the opposite end from the Café and go down to the basement. Go through the doors under the display screen. The entrance to the cluster is on your left.",
+    "contacts": [],
+    "links": [
+        {
+            "url": "https://www.leeds.ac.uk/campusmap?location=17525",
+            "link_text": "View on the University campus map (map reference 55)",
+            "class": "icon-uol-logo-mark"
+        }
+    ],
+    "images": []
+}

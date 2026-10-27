@@ -1,0 +1,941 @@
+[
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "creativeWorkStatus": "Published",
+        "mainEntity": {
+            "@type": "VisualArtwork",
+            "name": "A Celebration of Engineering Sciences",
+            "description": "<p>Allan Johnson was an architect at Lanchester & Lodge, a London practice with a long association with the University of Leeds. During the 1950s he worked on the Man-Made Fibres building, taking the lead on commissioning Mitzi Cunliffe&rsquo;s sculpture.</p><p>Johnson&rsquo;s proposal for a huge sculptural relief for the front of the Mechanical Engineering building was received enthusiastically by the University&rsquo;s Vice-Chancellor. Suggesting the interaction of man and machine, its dynamic shapes are inspired by link mechanisms in mechanical engineering. Constructing it from lightweight glass fibre reinforced polyester (GFRP), rather than much heavier traditional stone, enabled it to be installed in its raised location relatively easily.</p><p>In 2016 the sculpture was listed Grade II by Historic England as &lsquo; a vigorous, bold design&hellip; successfully connecting to the internal dynamics and meaning of the building&rsquo;.</p>",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": "/assets/data/art/images/a-celebration-of-engineering-sciences.jpg",
+                "description": "DP168902: Exterior view of the university building from the north-east, showing the relief sculpture 'A Celebration of ngineering Sciences' over the entrance. 20th April 2015, <a href=\"http://archive.historicengland.org.uk/\">Historic England Archive</a>."
+            },
+            "artform": "Sculpture",
+            "artMedium": "Glass fibre reinforced polyester (GFRP)",
+            "dateCreated": "1962-1963",
+            "creator": {
+                "@type": "Person",
+                "name": "Allan Johnson",
+                "birthDate": "1907",
+                "deathDate": "1994"
+            },
+            "spatial": {
+                "@type": "Place",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "University of Leeds",
+                    "addressRegion": "Leeds, West Yorkshire",
+                    "postalCode": "LS2 9JT",
+                    "streetAddress": "Mechanical Engineering Building, Woodhouse Lane"
+                },
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "53.809863242932906",
+                    "longitude": "-1.5553355102399058"
+                }
+            }
+        }
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "creativeWorkStatus": "Published",
+        "mainEntity": {
+            "@type": "VisualArtwork",
+            "name": "A Spire",
+            "description": "<p>British-Japanese artist Simon Fujiwara was born in London, grew up in Cornwall and now lives and works in Berlin. Standing at the very entrance to the campus, in front of the Laidlaw Library, <strong>A Spire</strong> is a beacon and totem that represents the industries on which the University &ndash; and the city &ndash; are built. It was Fujiwara&rsquo;s first public art commission.</p><p>Tall and cylindrical, it is the third &lsquo;spire&rsquo; between two church buildings on Woodhouse Lane, drawing attention to the physical qualities of the site and creating a visually arresting moment. From the pulverised coal at its base symbolising the source of Leeds&rsquo; prosperity, to the cables laid into the cast representing the current digital era, the surface of intertwined natural and technological elements forms a soaring visual timeline.</p>",
+            "image": [
+                {
+                    "@type": "ImageObject",
+                    "contentUrl": "/assets/data/art/images/a-spire1.jpg",
+                    "description": "&ldquo;A Spire&rdquo; by Simon Fijiwara pictured in front of the Laidlaw Library"
+                },
+                {
+                    "@type": "ImageObject",
+                    "contentUrl": "/assets/data/art/images/a-spire2.jpg",
+                    "description": "&ldquo;A Spire&rdquo; by Simon Fijiwara pictured in front of the Laidlaw Library"
+                },
+                {
+                    "@type": "ImageObject",
+                    "contentUrl": "/assets/data/art/images/a-spire3.jpg",
+                    "description": "Simon Fijiwara pictured in front of &ldquo;A Spire&rdquo;"
+                },
+                {
+                    "@type": "ImageObject",
+                    "contentUrl": "/assets/data/art/images/a-spire4.jpg",
+                    "description": "&ldquo;A Spire&rdquo; by Simon Fijiwara pictured in front of the Laidlaw Library"
+                },
+                {
+                    "@type": "ImageObject",
+                    "contentUrl": "/assets/data/art/images/a-spire5.jpg",
+                    "description": "Simon Fijiwara fabricating &ldquo;A Spire&rdquo; in his studio"
+                },
+                {
+                    "@type": "ImageObject",
+                    "contentUrl": "/assets/data/art/images/a-spire6.jpg",
+                    "description": "Close up of the surface of &ldquo;A Spire&rdquo; by Simon Fijiwara"
+                }
+            ],
+            "artform": "Sculpture",
+            "artMedium": "Cast jesmonite",
+            "dateCreated": "2015",
+            "creator": {
+                "@type": "Person",
+                "name": "Simon Fujiwara",
+                "birthDate": "1982"
+            },
+            "spatial": {
+                "@type": "Place",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "University of Leeds",
+                    "addressRegion": "Leeds, West Yorkshire",
+                    "postalCode": "LS2 9JT",
+                    "streetAddress": "Laidlaw Library, Woodhouse Lane entrance"
+                },
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "53.80697250689583",
+                    "longitude": "-1.5514923847726263"
+                }
+            }
+        }
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "creativeWorkStatus": "Published",
+        "mainEntity": {
+            "@type": "VisualArtwork",
+            "name": "Christ Driving The Moneychangers From The Temple",
+            "description": "<p>Prolific sculptor, typographer and printmaker Eric Gill was commissioned to produce a war memorial by the University’s Vice-Chancellor Michael Sadler in 1917. Known for his precise linear simplicity, Gill was associated with the modernist direct carving movement, which encouraged a return to skills favoured in the Middle Ages. He became the subject of posthumous scandal when a 1989 biography revealed his sexual abuse of his daughters.</p><p>Gill&rsquo;s relief was carved in five sections and was dedicated by the Bishop of Ripon in 1923, in its prominent original site on the wall beneath the Great Hall. It represents the Bible story in which Christ violently expels traders and moneychangers from a temple. This moralising subject was popular in European art, but in the context of a 20th-century war memorial it was surprising; the press at the time described it as &lsquo;bizarre&rsquo; and &lsquo;not appropriate&rsquo;.</p><p>Gill held intensely religious, anti-industrial beliefs and thought modern warfare was driven by monetary gain. Some believed he was implying that Leeds merchants had profited from the war. For Sadler, however, the subject affirmed the Allies&rsquo; use of force as justifiable. Like Christ, they used violence as the last resort in a righteous cause. For Sadler, the frieze presented the war as an ethical rather than a military triumph. In recent times, the frieze has been criticised for what can be read as an antisemitic trope that associates money changing with Jewish people.</p><p>The work was moved indoors to its current location in 1961.</p><p><strong>This work was conserved in 2018 thanks to the Henry Moore Foundation, the Friends of University Art and Music (Leeds) and Leeds Arts Fund</strong>.</p>",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": "/assets/data/art/images/christ-driving-moneychangers-from-temple1.jpg",
+                "description": "&ldquo;Christ Driving The Moneychangers From The Temple&rdquo; by Eric Gill (1882-1940)"
+            },
+            "artform": "Sculpture",
+            "artMedium": "Portland Stone",
+            "dateCreated": "1923",
+            "creator": {
+                "@type": "Person",
+                "name": "Eric Gill",
+                "birthDate": "1882",
+                "deathDate": "1940"
+            },
+            "spatial": {
+                "@type": "Place",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "University of Leeds",
+                    "addressRegion": "Leeds, West Yorkshire",
+                    "postalCode": "LS2 9JT",
+                    "streetAddress": "Michael Sadler Building, foyer"
+                },
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "53.80697013110159",
+                    "longitude": "-1.5535764611647243"
+                }
+            }
+        }
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "creativeWorkStatus": "Published",
+        "mainEntity": {
+            "@type": "VisualArtwork",
+            "name": "Conversation",
+            "description": "<p>Lorna Green is a sculptor and environmental artist based in Cheshire. Her public art installations can be permanent or temporary and are often interactive. She did her MPhil at the University of Leeds and was a visiting lecturer from 1990 to 1997.</p><p>In 1999, Green collaborated on <strong>Roof Garden</strong>, a landscaping project with John Micklethwaite-Howe (now a sustainable community garden). Conversation responds to this garden and the stone circles. Composed of three standing stones inlaid with round plaques of black granite, it celebrates the dialogue between sculpture and nature on campus.</p><p>The entire project gained two commendations in the Leeds Architecture Awards 2000.</p>",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": "/assets/data/art/images/conversation.jpg",
+                "description": ""
+            },
+            "artform": "Sculpture",
+            "artMedium": "Sandstone and polished granite",
+            "dateCreated": "1999",
+            "creator": {
+                "@type": "Person",
+                "name": "Lorna Green",
+                "birthDate": ""
+            },
+            "spatial": {
+                "@type": "Place",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "University of Leeds",
+                    "addressRegion": "Leeds, West Yorkshire",
+                    "postalCode": "LS2 9JT",
+                    "streetAddress": "Chancellor&rsquo;s Court"
+                },
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "53.80512720243669",
+                    "longitude": "-1.5551731775365771"
+                }
+            }
+        }
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "creativeWorkStatus": "Published",
+        "mainEntity": {
+            "@type": "VisualArtwork",
+            "name": "Converse Column",
+            "description": "<p><strong>Converse Column</strong> is a nine-metre high, two-and-a-half-metre diameter revolving &lsquo;Poemdrum&rsquo; commissioned from Liliane Lijn for the NEXUS building. The New York-born, London-based artist is known for her work with kinetic text, and is a pioneer in the interaction of art, science technology and language.</p><p>Lijn asked students and staff to submit short texts on themes of interchange, invention and transformation, which were combined with her own poem in a collaborative work. This text was then laser-cut into the surface of two nested drums, which turn continually in opposite directions and at different speeds. Visible as daylight recedes, two layers of internal lighting illuminate the words, with a carefully programmed suite of colour changes. Difficult to read conventionally, it uses light, motion and words to explore how  unexpected combinations can produce fresh meanings.</p>",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": "/assets/data/art/images/converse-column.jpg",
+                "description": ""
+            },
+            "artform": "Sculpture",
+            "artMedium": "Laser-cut painted aluminium, stainless steel with LED lighting and turntable mechanism.",
+            "dateCreated": "2019",
+            "creator": {
+                "@type": "Person",
+                "name": "Liliane Lijn",
+                "birthDate": "1939"
+            },
+            "contributor": {
+                "@type": "Organisation",
+                "name": "Neon Circus",
+                "description": "Fabricated by Neon Circus"
+            },
+            "spatial": {
+                "@type": "Place",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "University of Leeds",
+                    "addressRegion": "Leeds, West Yorkshire",
+                    "postalCode": "LS2 9JT",
+                    "streetAddress": "Discovery Way, outside NEXUS Building"
+                },
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "53.80520007237692",
+                    "longitude": "-1.5490120797785778"
+                }
+            }
+        }
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "creativeWorkStatus": "Published",
+        "mainEntity": {
+            "@type": "VisualArtwork",
+            "name": "Curtain",
+            "description": "<p>Basque artist Juanjo Novella&rsquo;s sculpture is the largest freestanding work on campus, measuring 20 metres long by three metres high. It resembles a sheet of paper with a &lsquo;torn&rsquo; edge along the top. This page represents university life as a place of reading, writing, experimentation and sketching out ideas.</p><p>Poet Laureate Simon Armitage's words &lsquo;to leaf is to learn&rsquo; are punched through the surface of the artwork, along with a leaf design referring to the mature sycamore tree nearby. This page represents the university as a place of reading, writing, experimentation and sketching out ideas.</p><p>Novella said: &lsquo;I like to imagine people around my sculptures, touching them, leaning on them, children playing. I want this work to be a living element that adds a sense of identity to the place where it is located.&rsquo;</p>",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": "/assets/data/art/images/curtain.jpg",
+                "description": ""
+            },
+            "artform": "Sculpture",
+            "artMedium": "Painted Steel",
+            "dateCreated": "2021",
+            "creator": {
+                "@type": "Person",
+                "name": "Juanjo Novella",
+                "birthDate": "1961"
+            },
+            "spatial": {
+                "@type": "Place",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "University of Leeds",
+                    "addressRegion": "Leeds, West Yorkshire",
+                    "postalCode": "LS2 9JT",
+                    "streetAddress": "Esther Simpson Building"
+                },
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "53.80636478965133",
+                    "longitude": "-1.5601477932547008"
+                }
+            }
+        }
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "creativeWorkStatus": "Published",
+        "mainEntity": {
+            "@type": "VisualArtwork",
+            "name": "Dual Form",
+            "description": "Born in Wakefield in 1903, Barbara Hepworth is regarded as a pre-eminent British sculptor, along with her peer and fellow Yorkshire native, Henry Moore. In 1965, the year that she produced <strong>Dual Form</strong>, she was made Dame Commander of the British Empire (DBE) and was also made the first female trustee of the Tate Gallery.</p><p><strong>Dual Form</strong> is one of an edition of seven bronzes, a medium that Hepworth began working in towards the late 1950s. With its simple form and pierced hollows, it recalls Hepworth’s earlier work in wood. The sculpture was acquired by the Leeds Art Fund in 1967 and is on loan from Leeds Art Gallery.",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": "/assets/data/art/images/dual-form.jpg",
+                "description": ""
+            },
+            "artform": "Sculpture",
+            "artMedium": "Bronze",
+            "dateCreated": "1965",
+            "creator": {
+                "@type": "Person",
+                "name": "Barbara Hepworth",
+                "birthDate": "1903",
+                "deathDate": "1975"
+            },
+            "contributor": {
+                "@type": "Organisation",
+                "name": "Leeds Art Fund",
+                "description": "Lent by Leeds Art Fund (Leeds Museums &amp; Galleries)"
+            },
+            "spatial": {
+                "@type": "Place",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "University of Leeds",
+                    "addressRegion": "Leeds, West Yorkshire",
+                    "postalCode": "LS2 9JT",
+                    "streetAddress": "Outside stage@leeds"
+                },
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "53.80612376581016",
+                    "longitude": "-1.555314891493527"
+                }
+            }
+        }
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "creativeWorkStatus": "Published",
+        "mainEntity": {
+            "@type": "VisualArtwork",
+            "name": "Greener Living Space",
+            "description": "<p>Leeds-born artist David Mayne works in metal, welding and grinding to create texture and quality. His work outside the M&amp;S Company Archive on the Western Campus was commissioned by Groundwork and Marks & Spencer to celebrate their Greener Living Spaces programme. Funded by the sale of 5p carrier bags, this joint initiative transformed over 100 parks, play areas, and public gardens across the country.</p><p>This artwork reflects the company&rsquo;s commitment to sustainability as well as Marks &amp; Spencer&rsquo;s rich textile history, embodied by the woven steel mesh in the form of a rolled bolt of cloth.</p>",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": "/assets/data/art/images/greener-living-space.jpg",
+                "description": ""
+            },
+            "artform": "Sculpture",
+            "artMedium": "Sustainable materials: stainless steel",
+            "dateCreated": "2014",
+            "creator": {
+                "@type": "Person",
+                "name": "David Mayne",
+                "birthDate": "1962"
+            },
+            "spatial": {
+                "@type": "Place",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "University of Leeds",
+                    "addressRegion": "Leeds, West Yorkshire",
+                    "postalCode": "LS2 9JT",
+                    "streetAddress": "In front of M&amp;S Company Archive"
+                },
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "53.807218689682145",
+                    "longitude": "-1.56134043130815"
+                }
+            }
+        }
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "creativeWorkStatus": "Published",
+        "mainEntity": {
+            "@type": "VisualArtwork",
+            "name": "Hermes / The Spirit Of Enterprise",
+            "description": "<p>The flying bronze figure on the east wall of the Roger Stevens building is one of the most prominent, striking sculptures on campus. Originally it was commissioned by the Midland Bank for their London offices in the late 1950s. Chattaway called it <strong>Hermes</strong>, but the Greek god&rsquo;s &lsquo;less desirable&rsquo; associations, as the protector of thieves, led his patrons to rename it <strong>The Spirit of Enterprise</strong>.</p><p>Threatened with scrapping when the Midland building was sold to developers, the work was saved by Chattaway&rsquo;s longstanding patron, Stanley Burton, who purchased it for campus. Chattaway was delighted at the return of his original title, <strong>Hermes</strong>.</p><p>In a very different new home, the sculpture is a dramatic example of how public art can change and adapt to new settings and new audiences, creating fresh dialogues with its environment.",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": "/assets/data/art/images/.jpg",
+                "description": "Drawing for Hermes, by WH Chattaway, chalk and pencil on paper. Gift of Stanley Burton, 1983. University of Leeds Art Collection &copy; Estate of WH Chattaway"
+            },
+            "artform": "Sculpture",
+            "artMedium": "Bronze",
+            "dateCreated": "1958",
+            "creator": {
+                "@type": "Person",
+                "name": "William Chattaway",
+                "birthDate": "1927",
+                "deathDate": "2019"
+            },
+            "spatial": {
+                "@type": "Place",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "University of Leeds",
+                    "addressRegion": "Leeds, West Yorkshire",
+                    "postalCode": "LS2 9JT",
+                    "streetAddress": "Roger Stevens Building"
+                },
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "53.80494913102676",
+                    "longitude": "-1.5543317668285812"
+                }
+            }
+        }
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "creativeWorkStatus": "Published",
+        "mainEntity": {
+            "@type": "VisualArtwork",
+            "name": "Lenten Cover",
+            "description": "<p>Lyons was born in Staffordshire and studied at Wolverhampton College of Art and the University of Newcastle. He was Head of Sculpture at Manchester Metropolitan University from 1989-93. He lived and worked in Yorkshire until his death in 2019. His large-scale public sculptures are sited in cities in China and Mexico and throughout Europe.</p><p>Made of steel plate sourced from scrapyards in Hull and Leeds, <strong>Lenten Cover</strong> was completed on Good Friday 1979. It reminded the artist of cloths covering church statues during Lent. This monumental piece creates a gateway from one place to another. It was exhibited across England and Wales before being purchased from the artist in 2019.</p>",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": "/assets/data/art/images/lenten-cover.jpg",
+                "description": ""
+            },
+            "artform": "Sculpture",
+            "artMedium": "Steel (varnished)",
+            "dateCreated": "1979",
+            "creator": {
+                "@type": "Person",
+                "name": "Michael Lyons",
+                "birthDate": "1943",
+                "deathDate": "2009"
+            },
+            "spatial": {
+                "@type": "Place",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "University of Leeds",
+                    "addressRegion": "Leeds, West Yorkshire",
+                    "postalCode": "LS2 9JT",
+                    "streetAddress": "Western Campus Green"
+                },
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "53.807679984948365",
+                    "longitude": "-1.5619942197379162"
+                }
+            }
+        }
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "creativeWorkStatus": "Published",
+        "mainEntity": {
+            "@type": "VisualArtwork",
+            "name": "Levitating Figure, known as &lsquo;The Dreamer&rsquo;",
+            "description": "<p>Quentin Bell was the son of Vanessa and Clive Bell and nephew of Virginia Woolf. He is renowned as a ceramicist, and for his books on the Bloomsbury artists and a biography of Woolf. He was appointed Head of Fine Art at the University of Leeds in 1959, and later Professor of Fine Art. In 1978, Stanley Burton suggested acquiring a work by Bell for the Leeds campus.</p><p>Bell proposed a levitating figure – a recurrent theme in his art inspired by a conjuror&rsquo;s trick he saw as a child. Stanley and the Vice-Chancellor, Lord Boyle, eventually decided on a site near the Edward Boyle Library. The work was cast in fibreglass with a steel armature, in an inter-disciplinary partnership with the Department of Civil  Engineering. Dr Gurdev Singh was responsible for the design and construction of the internal support and the Department oversaw the installation.</p><p>Unveiled by Stanley Burton in October 1982, it was later removed from its original site due to the Library&rsquo;s expansion. Commonly known on campus as &lsquo;The Dreamer&rsquo;, it is not clear when this title was acquired. It has also been called &lsquo;The Astral Lady&rsquo;, and Bell referred to it as the &lsquo;Elmdon Figure&rsquo;. Whatever its title or location, the artwork is one of the most popular on campus, and has become a site for personal pilgrimages and memorials.</p>",
+            "image": [
+                {
+                    "@type": "ImageObject",
+                    "contentUrl": "/assets/data/art/images/the-dreamer1.jpg",
+                    "description": "Levitating Figure, known as &lsquo;The Dreamer&rsquo; by Quentin Bell"
+                },
+                {
+                    "@type": "ImageObject",
+                    "contentUrl": "/assets/data/art/images/the-dreamer2.jpg",
+                    "description": "Levitating Figure, known as &lsquo;The Dreamer&rsquo; by Quentin Bell"
+                }
+            ],
+            "artform": "Sculpture",
+            "artMedium": "Fibreglass with internal steel armature",
+            "dateCreated": "1982",
+            "creator": {
+                "@type": "Person",
+                "name": "Quentin Bell",
+                "birthDate": "1910",
+                "deathDate": "1996"
+            },
+            "spatial": {
+                "@type": "Place",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "University of Leeds",
+                    "addressRegion": "Leeds, West Yorkshire",
+                    "postalCode": "LS2 9JT",
+                    "streetAddress": "Clothworkers&rsquo; Court"
+                },
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "53.80763693275983",
+                    "longitude": "-1.5550047375113125"
+                }
+            }
+        }
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "creativeWorkStatus": "Published",
+        "mainEntity": {
+            "@type": "VisualArtwork",
+            "name": "Limbo",
+            "description": "<p>Austin Wright grew up in Cardiff, where he attended night classes in art before studying Languages at New College, Oxford. Entering a career in teaching, he settled in Yorkshire in 1937. He created his sculptures in the barn and garden of his home in Upper Poppleton, and by 1954 had given up teaching to concentrate on his art. Initially influenced by Moore and Hepworth, he became known for his small lead figure groups. Between 1961 and 1964 he was Gregory Fellow in Sculpture at the University of Leeds.</p><p><strong>Limbo</strong> gathers 26 lead pieces created from drawings and observations made in sketchbooks on family seaside holidays in Anglesey and Cornwall in the 1950s. Some of these figure sketches relate directly to those in this sculpture, which for many years was displayed in the family garden.</p>",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": "/assets/data/art/images/limbo.jpg",
+                "description": ""
+            },
+            "artform": "Sculpture",
+            "artMedium": "Concrete and lead",
+            "dateCreated": "1958",
+            "creator": {
+                "@type": "Person",
+                "name": "Austin Wright",
+                "birthDate": "1911",
+                "deathDate": "1997"
+            },
+            "spatial": {
+                "@type": "Place",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "University of Leeds",
+                    "addressRegion": "Leeds, West Yorkshire",
+                    "postalCode": "LS2 9JT",
+                    "streetAddress": "Baines Wing Coffee Bar courtyard."
+                },
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "53.80756849142625",
+                    "longitude": "-1.5542740993437314"
+                }
+            }
+        }
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "creativeWorkStatus": "Published",
+        "mainEntity": {
+            "@type": "VisualArtwork",
+            "name": "Man-made Fibres",
+            "description": "<p>The American sculptor Mitzi Cunliffe (n&eacute;e Solomon) was born in New York and studied Fine Art at Columbia University from 1935-40. She married a British academic, and they moved to England in 1949, settling in Manchester. Cunliffe was also a designer of jewellery, textiles and glass, and a teacher in later life.</p><p>Following a large-scale commission for the Festival of Britain in 1951, she designed her most famous work, the BAFTA &lsquo;mask&rsquo;, in 1955. The same year, she was commissioned to create a major piece for the new Man-Made Fibres building at the University of Leeds. Professor JB Speakman, Head of the Department of Textile Industries, required a piece that would reflect exciting progress in the field of synthetic fibres.</p><p>Cunliffe&rsquo;s concept was for a vast pair of hands with textile fibres crossed between them, to be executed in Portland stone. The Duke of Edinburgh unveiled <strong>Man-Made Fibres</strong> when the new building was opened in 1956. Atop what is now called Clothworkers&rsquo; Building South, the sculpture has been conserved so that it can be seen again in its original state. Cunliffe spent her entire working life bringing art and architecture together in her vision of &lsquo;sculpture by the yard&rsquo;. She wanted her work to be &lsquo;used, rained on, leaned against, taken for granted&rsquo;. In this case however, her work is positioned so high on the Clothworkers&rsquo; Building South that it can easily be missed.</p>",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": "/assets/data/art/images/man-made-fibres.jpg",
+                "description": ""
+            },
+            "artform": "Sculpture",
+            "artMedium": "Portland Stone",
+            "dateCreated": "1956",
+            "creator": {
+                "@type": "Person",
+                "name": "Mitzi Cunliffe",
+                "birthDate": "1918",
+                "deathDate": "2006"
+            },
+            "spatial": {
+                "@type": "Place",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "University of Leeds",
+                    "addressRegion": "Leeds, West Yorkshire",
+                    "postalCode": "LS2 9JT",
+                    "streetAddress": "Clothworkers&rsquo; Building South"
+                },
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "53.80721325359724",
+                    "longitude": "-1.556360594135395"
+                }
+            }
+        }
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "creativeWorkStatus": "Published",
+        "mainEntity": {
+            "@type": "VisualArtwork",
+            "name": "Master of the Universe",
+            "description": "<p>This mechanical figure is Eduardo Paolozzi&rsquo;s re-interpretation of a famous satirical portrait of the mathematician Sir Isaac Newton, by artist and poet William Blake.</p><p>Paolozzi described how his composition unites both Blake and Newton: &lsquo;While Blake may have been satirising Newton, I see this work as an exciting union of two British geniuses. Together, they present to us nature and science, poetry, art, architecture &ndash; all welded, interconnected, interdependent.&rsquo;</p><p>Scottish artist Sir Eduardo Paolozzi was one of the pioneers of pop art. He was elected to the Royal Academy in 1979 and was appointed Her Majesty&rsquo;s Sculptor in Ordinary for Scotland in 1986 &ndash; a position he held until his death.</p><p>Paolozzi produced several versions of <strong>Master of the Universe</strong>. Another version is displayed outside the British Library in London The sculpture was donated by Douglas Caster CBE BSc FIET, who completed his degree in Electronic and Electrical Engineering at Leeds in 1975.</p>",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": "/assets/data/art/images/master-of-the-universe.jpg",
+                "description": ""
+            },
+            "artform": "Sculpture",
+            "artMedium": "cast bronze",
+            "dateCreated": "1989",
+            "creator": {
+                "@type": "Person",
+                "name": "Eduardo Paolozzi",
+                "birthDate": "1924",
+                "deathDate": "2005"
+            },
+            "contributor": {
+                "@type": "Person",
+                "name": "Douglas and Lizzie Caster",
+                "description": "Gift of Douglas and Lizzie Caster, 2023"
+            },
+            "spatial": {
+                "@type": "Place",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "University of Leeds",
+                    "addressRegion": "Leeds, West Yorkshire",
+                    "postalCode": "LS2 9JT",
+                    "streetAddress": "Outside Edward Boyle Library main entrance"
+                },
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "53.806242580437534",
+                    "longitude": "-1.5540245785993685"
+                }
+            }
+        }
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "creativeWorkStatus": "Published",
+        "mainEntity": {
+            "@type": "VisualArtwork",
+            "name": "Meet, Sit and Talk",
+            "description": "<p>Lorna Green is a sculptor and environmental artist based in Cheshire. Her public art installations can be permanent or temporary and are often interactive. She did her MPhil at the University of Leeds and was a visiting lecturer from 1990 to 1997. In 1995 she was commissioned to create a sculpture for Chancellor&rsquo;s Court.</p><p><strong>Meet, Sit and Talk</strong> is made up of three stone circles, each stone bearing a rectangle of polished granite reflecting the sky and surroundings. Green explains the sculpture &lsquo;is intended to be used &ndash; for sitting, for meeting at and to create a socially interactive space&rsquo; and it is a popular meeting place on sunny days. Green redesigned the whole area with landscape architect Allan R. Ruff, who created a path recalling the flow of a river, the planting changing shape and colour with the seasons.</p>",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": "/assets/data/art/images/meet-sit-talk.jpg",
+                "description": ""
+            },
+            "artform": "Sculpture",
+            "artMedium": "Sandstone and gravel",
+            "dateCreated": "1995",
+            "creator": {
+                "@type": "Person",
+                "name": "Lorna Green",
+                "birthDate": ""
+            },
+            "spatial": {
+                "@type": "Place",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "University of Leeds",
+                    "addressRegion": "Leeds, West Yorkshire",
+                    "postalCode": "LS2 9JT",
+                    "streetAddress": "Chancellor&rsquo;s Court"
+                },
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "53.80506924862577",
+                    "longitude": "-1.5556566684320894"
+                }
+            }
+        }
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "creativeWorkStatus": "Published",
+        "mainEntity": {
+            "@type": "VisualArtwork",
+            "name": "Sign For Art",
+            "description": "<p><strong>Sign for Art (Stelae 2014)</strong> references Keith Wilson&rsquo;s early career as an art instructor for deaf-blind adults in the 1980s. &ldquo;Drawing two spaced fingertips in a wave motion across the forehead of the student &ndash; a tactile brainwave sign &ndash; announced the arrival of the artist, the subject of art and the imminent activity of making art&rdquo;, the artist remembered. &ldquo;This modification of British Sign Language, presumably derived from the making of a brushstroke, struck home and stayed with me&rdquo;.</p><p>Now one of the most recognisable works on campus, at the centre of Beech Grove Plaza, the artwork has been given many affectionate nicknames by students, including &lsquo;The Squiggle&rsquo; and &lsquo;The Wavy Bacon&rsquo;.</p>",
+            "image": [
+                {
+                    "@type": "ImageObject",
+                    "contentUrl": "/assets/data/art/images/sign-for-art1.jpg",
+                    "description": "&ldquo;Sign for Art&rdquo; by Keith Wilson (pictured with the artist - centre)"
+                },
+                {
+                    "@type": "ImageObject",
+                    "contentUrl": "/assets/data/art/images/sign-for-art2.jpg",
+                    "description": "&ldquo;Sign for Art&rdquo; by Keith Wilson"
+                },
+                {
+                    "@type": "ImageObject",
+                    "contentUrl": "/assets/data/art/images/sign-for-art3.jpg",
+                    "description": "&ldquo;Sign for Art&rdquo; by Keith Wilson"
+                },
+                {
+                    "@type": "ImageObject",
+                    "contentUrl": "/assets/data/art/images/sign-for-art4.jpg",
+                    "description": "&ldquo;Sign for Art&rdquo; by Keith Wilson"
+                },
+                {
+                    "@type": "ImageObject",
+                    "contentUrl": "/assets/data/art/images/sign-for-art5.jpg",
+                    "description": "&ldquo;Sign for Art&rdquo; by Keith Wilson"
+                }
+            ],
+            "artform": "Sculpture",
+            "artMedium": "Cast polyurethane elastomer",
+            "dateCreated": "2014",
+            "creator": {
+                "@type": "Person",
+                "name": "Keith Wilson",
+                "birthDate": "1965"
+            },
+            "spatial": {
+                "@type": "Place",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "University of Leeds",
+                    "addressRegion": "Leeds, West Yorkshire",
+                    "postalCode": "LS2 9JT",
+                    "streetAddress": "Beech Grove Plaza"
+                },
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "53.80706199513932",
+                    "longitude": "-1.5543315030180733"
+                }
+            }
+        }
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "creativeWorkStatus": "Published",
+        "mainEntity": {
+            "@type": "VisualArtwork",
+            "name": "Texta Texens",
+            "description": "Commissioned to celebrate Yorkshire Year of the Textile 2016, <strong>Texta Texens</strong> is located in the North walkway outside the Clothworkers&rsquo; South Building. It develops a dialogue with Mitzi Cunliffe&rsquo;s <strong>Man-Made Fibres</strong> on the building&rsquo;s façade above. Lawty works across disciplines and materials, including stone and woven structures. She was Artist in Residence at the V&A Museum from 2005 to 2006 and Leverhulme Artist in Residence in the School of Earth &amp; Environment, University of Leeds between 2014 and 2015.</p><p>Lawty worked with poet Helen Mort, Douglas Caster Fellow in Poetry at the University of Leeds (2014-16) and with Yorkshire sculptor Dan Jones to create <strong>Texta Texens</strong>. Mort&rsquo;s poem &lsquo;Texere&rsquo; is engraved in the sculpture. The words &lsquo;text&rsquo; and &lsquo;textile&rsquo; share their origins in the Latin verb &lsquo;texere&rsquo; (to weave, or to fabricate). The words literally become part of the weft and weave of the stonework. Exploring the link between text and textiles, the piece weaves together conversations about life and learning, research and education, people and place. As Lawty explained of her work: &lsquo;I seek an understated restraint, balance, tension, rhythm: an essential stillness.&rsquo;",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": "/assets/data/art/images/texta-texens.jpg",
+                "description": ""
+            },
+            "artform": "Sculpture",
+            "artMedium": "Kilkenny limestone",
+            "dateCreated": "2016",
+            "creator": {
+                "@type": "Person",
+                "name": "Sue Lawty",
+                "birthDate": "1954"
+            },
+            "contributor": [
+                {
+                    "@type": "Person",
+                    "name": "Dan Jones"
+                },
+                {
+                    "@type": "Person",
+                    "name": "Helen Mort"
+                }
+            ],
+            "spatial": {
+                "@type": "Place",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "University of Leeds",
+                    "addressRegion": "Leeds, West Yorkshire",
+                    "postalCode": "LS2 9JT",
+                    "streetAddress": "Pavement in front of Clothworkers&rsquo; South Building"
+                },
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "53.807073162710296",
+                    "longitude": "-1.5564092217780485"
+                }
+            }
+        }
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "creativeWorkStatus": "Published",
+        "mainEntity": {
+            "@type": "VisualArtwork",
+            "name": "The Worlds of If",
+            "description": "<p>The William Henry Bragg Building is named for the Nobel-prize-winning physicist and x-ray crystallographer. At Leeds, he uncovered the structures of certain crystals with his son William Lawrence Bragg. Father and son were jointly awarded the Nobel Prize for Physics in 1915.</p><p>Sara Barker&rsquo;s sculpture responds to the beauty of crystal structures as well as to the theories initiated by the Braggs and extended by their successors. Their famous equation, Bragg&rsquo;s Law, <strong>nλ=2d sinθ</strong>, runs through the sculpture.</p><p><strong>The Worlds of If</strong> reflects the interdisciplinary and collaborative nature of the research taking place within the building, across Engineering, Astronomy, Physics and Computing. The sculpture is formed of strands and scientific symbols woven together like a textile. The artwork combines elements of sculpture, painting, collage and textiles.</p>",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": "/assets/data/art/images/the-worlds-of-if.jpg",
+                "description": ""
+            },
+            "artform": "Sculpture",
+            "artMedium": "Welded aluminium with anodised metallic and iridescent paint",
+            "dateCreated": "2020",
+            "creator": {
+                "@type": "Person",
+                "name": "Sara Barker",
+                "birthDate": "1980"
+            },
+            "spatial": {
+                "@type": "Place",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "University of Leeds",
+                    "addressRegion": "Leeds, West Yorkshire",
+                    "postalCode": "LS2 9JT",
+                    "streetAddress": "Sir William Henry Bragg Building"
+                },
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "53.80951283105852",
+                    "longitude": "-1.554276195104834"
+                }
+            }
+        }
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "creativeWorkStatus": "Published",
+        "mainEntity": {
+            "@type": "VisualArtwork",
+            "name": "Three Piece Reclining Figure No.2: Bridge Prop",
+            "description": "<p>Henry Moore was born in Castleford, West Yorkshire. After serving in the First World War he became a student at the Leeds School of Art (now Leeds Arts University), where he met fellow Yorkshire sculptor Barbara Hepworth. Moore also had access to the modernist works in the collection of Sir Michael Sadler, the University&rsquo;s then Vice-Chancellor, which had a profound effect on his development.</p><p>The sculpture consists of three bronze segments positioned to represent a reclining human figure in multiple pieces. According to the artist, the work was inspired by Waterloo Bridge, in which he saw one part of the bridge resting against another, giving the sculpture its subtitle &lsquo;Bridge Prop&rsquo;.",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": "/assets/data/art/images/reclining-figure.jpg",
+                "description": ""
+            },
+            "artform": "Sculpture",
+            "artMedium": "Bronze",
+            "dateCreated": "1963",
+            "creator": {
+                "@type": "Person",
+                "name": "Henry Moore",
+                "birthDate": "1898",
+                "deathDate": "1986"
+            },
+            "contributor": {
+                "@type": "Organisation",
+                "name": "Leeds Art Fund",
+                "description": "Lent by Leeds Art Fund (Leeds Museums &amp; Galleries)"
+            },
+            "spatial": {
+                "@type": "Place",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "University of Leeds",
+                    "addressRegion": "Leeds, West Yorkshire",
+                    "postalCode": "LS2 9JT",
+                    "streetAddress": "Chancellor&rsquo;s Court"
+                },
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "",
+                    "longitude": ""
+                }
+            }
+        }
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "creativeWorkStatus": "Published",
+        "mainEntity": {
+            "@type": "VisualArtwork",
+            "name": "Untitled Bas-relief",
+            "description": "<p>Dalwood was born in 1924 in Bristol. He was apprenticed as an engineer before serving in the Royal Navy from 1944-46, returning to study at Bath Academy under Kenneth Armitage. He worked in a bronze foundry in Milan on an Italian Government Scholarship from 1950-51. Awarded a Gregory Fellowship in 1955, he worked at the University of Leeds until 1959. During this period, he was commissioned by several universities including Oxford, Manchester and Liverpool.</p><p>In 1961 Dalwood was commissioned to produce this large aluminium bas relief frieze for the University’s hall of residence, Bodington Hall. He worked the clay by hand, then cast the abstract forms and shapes in metal. When Bodington was closed and demolished in 2013, the work was stored, cleaned and relocated to its new site at stage@leeds.</p><p>In 2012 Historic England gave the work a Grade II listing, in recognition of the sculptor’s ‘new venture on a wholly different scale and technical complexity to anything he had previously made’ and its historic interest as public art commissioned by a university during the sixties.</p>",
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": "/assets/data/art/images/.jpg",
+                "description": ""
+            },
+            "artform": "Sculpture",
+            "artMedium": "Aluminium &ndash; Silicon alloy",
+            "dateCreated": "1961",
+            "creator": {
+                "@type": "Person",
+                "name": "Hubert Dalwood",
+                "birthDate": "1924",
+                "deathDate": "1976"
+            },
+            "spatial": {
+                "@type": "Place",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "University of Leeds",
+                    "addressRegion": "Leeds, West Yorkshire",
+                    "postalCode": "LS2 9JT",
+                    "streetAddress": "stage@leeds"
+                },
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "53.806447933642396",
+                    "longitude": "-1.5553355102766848"
+                }
+            }
+        }
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "creativeWorkStatus": "Published",
+        "mainEntity": {
+            "@type": "VisualArtwork",
+            "name": "Walking Figure",
+            "description": "<p>Chattaway was born in Coventry and studied at Coventry School of Art and the Slade, before settling in Paris in 1950. The original <strong>Walking Figure</strong> was created in 1968 and is much influenced by Alberto Giacometti&rsquo;s figures of the 1950s and 60s. The original piece was conceived as part of a <strong>Triple Group</strong> (1968) with a seated figure and one lying horizontally.</p><p>Stanley Burton, who enjoyed a close friendship with Chattaway, was Chairman of Bodington Hall, the University&rsquo;s student residence located north of the main campus. Stanley commissioned this standing figure from the original group, for the grounds of Bodington Hall. In the 1980s, however, Walking Figure was severely damaged by students and one leg was destroyed beyond repair. Ever supportive of the University, Stanley asked Chattaway to recast the sculpture. This later cast is now displayed within Parkinson Court. When Bodington Hall closed in 2013, Stanley Burton displayed the damaged original sculpture in his garden.</p>",
+            "image": [
+                {
+                    "@type": "ImageObject",
+                    "contentUrl": "/assets/data/art/images/walking-figure1.jpg",
+                    "description": "&ldquo;Walking Figure&rdquo; by William Henry Chattaway (1927-2019)"
+                },
+                {
+                    "@type": "ImageObject",
+                    "contentUrl": "/assets/data/art/images/walking-figure1.jpg",
+                    "description": "&ldquo;Walking Figure&rdquo; by William Henry Chattaway (1927-2019)"
+                },
+                {
+                    "@type": "ImageObject",
+                    "contentUrl": "/assets/data/art/images/walking-figure1.jpg",
+                    "description": "&ldquo;Walking Figure&rdquo; by William Henry Chattaway (1927-2019)"
+                },
+                {
+                    "@type": "ImageObject",
+                    "contentUrl": "/assets/data/art/images/walking-figure1.jpg",
+                    "description": "&ldquo;Walking Figure&rdquo; by William Henry Chattaway (1927-2019)"
+                },
+                {
+                    "@type": "ImageObject",
+                    "contentUrl": "/assets/data/art/images/walking-figure1.jpg",
+                    "description": "&ldquo;Walking Figure&rdquo; (detail) by William Henry Chattaway (1927-2019)"
+                },
+                {
+                    "@type": "ImageObject",
+                    "contentUrl": "/assets/data/art/images/walking-figure1.jpg",
+                    "description": "&ldquo;Walking Figure&rdquo; (detail) by William Henry Chattaway (1927-2019)"
+                },
+                {
+                    "@type": "ImageObject",
+                    "contentUrl": "/assets/data/art/images/walking-figure1.jpg",
+                    "description": "&ldquo;Walking Figure&rdquo; (detail) by William Henry Chattaway (1927-2019)"
+                },
+                {
+                    "@type": "ImageObject",
+                    "contentUrl": "/assets/data/art/images/walking-figure1.jpg",
+                    "description": "&ldquo;Walking Figure&rdquo; (detail) by William Henry Chattaway (1927-2019)"
+                }
+            ],
+            "artform": "Sculpture",
+            "artMedium": "Bronze",
+            "dateCreated": "1989",
+            "temporal": "recast of 1968 original",
+            "creator": {
+                "@type": "Person",
+                "name": "William Chattaway",
+                "birthDate": "1927",
+                "deathDate": "2019"
+            },
+            "contributor": {
+                "@type": "Person",
+                "name": "Stanley Burton",
+                "description": "Gift of Stanley Burton, 1989"
+            },
+            "spatial": {
+                "@type": "Place",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "University of Leeds",
+                    "addressRegion": "Leeds, West Yorkshire",
+                    "postalCode": "LS2 9JT",
+                    "streetAddress": "Parkinson Court, Parkinson building"
+                },
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "53.807699494373175",
+                    "longitude": "-1.5526256180943054"
+                }
+            }
+        }
+    }
+]

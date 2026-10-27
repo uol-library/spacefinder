@@ -1,0 +1,114 @@
+{
+    "id": 9,
+    "location": "{\"type\":\"Point\",\"coordinates\":[-1.5559066355802778,53.80347902972122]}",
+    "work": [
+        "private",
+        "close",
+        "friends"
+    ],
+    "atmosphere": [
+        "disciplined",
+        "relaxed",
+        "modern",
+        "cosy",
+        "social",
+        "friendly"
+    ],
+    "facilities": [
+        "food_drink",
+        "daylight",
+        "views",
+        "free_wifi",
+        "laptops_allowed",
+        "sockets",
+        "signal",
+        "toilets",
+        "refreshments",
+        "break",
+        "bike_racks",
+        "gender_neutral_toilets",
+        "wheelchair_accessible",
+        "accessible_toilets"
+    ],
+    "title": "Loma Café",
+    "description": "LOMA is a unique offering on campus serving up specially selected craft coffee, delicious drinks and handcrafted salads and sandwiches. With a focus on healthy, field-to-fork food options, LOMA stands apart from the other food outlets on campus with unique salad and sandwich combinations you will struggle to find elsewhere.",
+    "access": "Anyone (public)",
+    "space_type": "Café",
+    "address": "University of Leeds, LS2 9JT",
+    "building": "Worsley Building",
+    "floor": "Level 9",
+    "restricted": false,
+    "restriction": "",
+    "disabled_access": true,
+    "noise": "Whispers",
+    "tags": [],
+    "opening_hours": {
+        "monday": {
+            "open": true,
+            "from": "8:30",
+            "to": "16:00"
+        },
+        "tuesday": {
+            "open": true,
+            "from": "8:30",
+            "to": "16:00"
+        },
+        "wednesday": {
+            "open": true,
+            "from": "8:30",
+            "to": "16:00"
+        },
+        "thursday": {
+            "open": true,
+            "from": "8:30",
+            "to": "16:00"
+        },
+        "friday": {
+            "open": true,
+            "from": "8:30",
+            "to": "16:00"
+        },
+        "saturday": {
+            "open": false,
+            "from": "",
+            "to": ""
+        },
+        "sunday": {
+            "open": false,
+            "from": "",
+            "to": ""
+        }
+    },
+    "slug": "loma-cafe",
+    "published": true,
+    "contacts": [
+        {
+            "url": "https://www.instagram.com/greatfoodleeds/",
+            "link_text": "Follow Great Food at Leeds on Instagram",
+            "class": "icon-instagram"
+        },
+        {
+            "url": "https://www.facebook.com/greatfoodleeds",
+            "link_text": "Follow Great Food at Leeds on Facebook",
+            "class": "icon-facebook-squared"
+        }
+    ],
+    "links": [
+        {
+            "url": "https://gfal.leeds.ac.uk/where-to-eat/cafes/loma-cafe/",
+            "link_text": "Visit the Loma Café web site",
+            "class": "icon-link"
+        },
+        {
+            "url": "https://www.leeds.ac.uk/campusmap?location=17591",
+            "link_text": "View on the University campus map (map reference 95)",
+            "class": "icon-uol-logo-mark"
+        }
+    ],
+    "images": [
+        {
+            "url": "/assets/photos/Loma-Cafe.jpg",
+            "alt": "Interior photograph of the Loma Café showing the overhead lighting rig for the main seating area with the service area in the background"
+        }
+    ]
+}

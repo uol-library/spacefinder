@@ -1,0 +1,97 @@
+{
+    "facilities": [
+        "large_desks",
+        "free_wifi",
+        "computers",
+        "laptops_allowed",
+        "sockets",
+        "printers_copiers",
+        "projector",
+        "toilets",
+        "break",
+        "bike_racks",
+        "gender_neutral_toilets",
+        "wheelchair_accessible"
+    ],
+    "atmosphere": [
+        "disciplined"
+    ],
+    "access": "University Staff and Students",
+    "disabled_access": true,
+    "opening_hours": {
+        "monday": {
+            "open": true,
+            "from": "9:00",
+            "to": "18:00"
+        },
+        "tuesday": {
+            "open": true,
+            "from": "9:00",
+            "to": "18:00"
+        },
+        "wednesday": {
+            "open": true,
+            "from": "9:00",
+            "to": "18:00"
+        },
+        "thursday": {
+            "open": true,
+            "from": "9:00",
+            "to": "18:00"
+        },
+        "friday": {
+            "open": true,
+            "from": "9:00",
+            "to": "18:00"
+        },
+        "saturday": {
+            "open": false,
+            "from": "",
+            "to": ""
+        },
+        "sunday": {
+            "open": false,
+            "from": "",
+            "to": ""
+        }
+    },
+    "slug": "worsley-building-8049o-fourman",
+    "floor": "Level 8",
+    "restriction": "",
+    "published": true,
+    "work": [
+        "private",
+        "close"
+    ],
+    "twitter_screen_name": "",
+    "space_type": "IT Cluster",
+    "building": "Worsley building",
+    "address": "University of Leeds, LS2 9JT",
+    "location": "{\"type\":\"Point\",\"coordinates\":[-1.5550257269226497,53.803562547313106]}",
+    "facebook_url": "",
+    "title": "Worsley Building - 8.049O (Fourman)",
+    "tags": [],
+    "noise": "Strictly silent",
+    "restricted": true,
+    "id": 69,
+    "description": "Large room with plenty of available clusters to use. Comfortable chairs and large desks perfect for focused study. 50 seat capacity. From the Worsley Airport Lounge on Level 7 walk through the double doors near the ATM cash machine. Take a lift or stairs up to level 8. The doors to Fourman O and P are on the corridor by the lifts.",
+    "contacts": [],
+    "links": [
+        {
+            "url": "https://mytimetable.leeds.ac.uk/link?timetable.id=202526!location!5216C608F8794D77F15FA9D195AB1EFD",
+            "link_text": "View timetable for Worsley Building - 8.049O (Fourman)",
+            "class": "icon-link"
+        },
+        {
+            "url": "https://www.leeds.ac.uk/campusmap?location=17591",
+            "link_text": "View on the University campus map (map reference 95)",
+            "class": "icon-uol-logo-mark"
+        }
+    ],
+    "images": [
+        {
+            "url": "/assets/photos/cluster-fourman-o-p.jpg",
+            "alt": "Worsley Building - 8.049O (Fourman)"
+        }
+    ]
+}

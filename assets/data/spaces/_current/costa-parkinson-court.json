@@ -1,0 +1,120 @@
+{
+    "facilities": [
+        "food_drink",
+        "daylight",
+        "views",
+        "free_wifi",
+        "laptops_allowed",
+        "signal",
+        "toilets",
+        "refreshments",
+        "break",
+        "sockets",
+        "wheelchair_accessible",
+        "bike_racks",
+        "gender_neutral_toilets",
+        "baby_changing",
+        "accessible_toilets"
+    ],
+    "atmosphere": [
+        "historic",
+        "inspiring",
+        "friendly",
+        "social",
+        "relaxed"
+    ],
+    "access": "Anyone (public)",
+    "disabled_access": true,
+    "opening_hours": {
+        "monday": {
+            "open": true,
+            "from": "8:30",
+            "to": "16:00"
+        },
+        "tuesday": {
+            "open": true,
+            "from": "8:30",
+            "to": "16:00"
+        },
+        "wednesday": {
+            "open": true,
+            "from": "8:30",
+            "to": "16:00"
+        },
+        "thursday": {
+            "open": true,
+            "from": "8:30",
+            "to": "16:00"
+        },
+        "friday": {
+            "open": true,
+            "from": "8:30",
+            "to": "16:00"
+        },
+        "saturday": {
+            "open": false,
+            "from": "",
+            "to": ""
+        },
+        "sunday": {
+            "open": false,
+            "from": "",
+            "to": ""
+        }
+    },
+    "slug": "costa-parkinson-court",
+    "floor": "Ground floor",
+    "restriction": "",
+    "work": [
+        "private",
+        "close",
+        "friends",
+        "group"
+    ],
+    "space_type": "Café",
+    "building": "Parkinson Building",
+    "address": "University of Leeds, LS2 9JT",
+    "location": "{\"type\":\"Point\",\"coordinates\":[-1.5526256147622044,53.808126986172226]}",
+    "title": "Costa Parkinson Court",
+    "tags": [],
+    "noise": "Animated discussion",
+    "restricted": false,
+    "id": 6,
+    "description": "Parkinson Court Café sits in one of the most iconic buildings at the University of Leeds. The café is open plan and  conveniently located for a break from working in the Brotherton Library. Serves a range of sandwiches and snacks throughout the day.",
+    "published": true,
+    "contacts": [
+        {
+            "url": "mailto:gfal@leeds.ac.uk",
+            "link_text": "Email us at gfal@leeds.ac.uk",
+            "class": "icon-email"
+        },
+        {
+            "url": "https://www.instagram.com/greatfoodleeds/",
+            "link_text": "Follow Great Food at Leeds on Instagram",
+            "class": "icon-instagram"
+        },
+        {
+            "url": "https://www.facebook.com/greatfoodleeds",
+            "link_text": "Follow Great Food at Leeds on Facebook",
+            "class": "icon-facebook-squared"
+        }
+    ],
+    "links": [
+        {
+            "url": "https://gfal.leeds.ac.uk/where-to-eat/cafes/parkinson/",
+            "link_text": "Visit the Costa Parkinson Court web site",
+            "class": "icon-link"
+        },
+        {
+            "url": "https://www.leeds.ac.uk/campusmap?location=17525",
+            "link_text": "View on the University campus map (map reference 60)",
+            "class": "icon-uol-logo-mark"
+        }
+    ],
+    "images": [
+        {
+            "url": "/assets/photos/Parkinson-Court-Cafe4.jpg",
+            "alt": "An overhead, interior photograph of the Costa Parkinson Court serving area and seating with blurred images of two customers"
+        }
+    ]
+}

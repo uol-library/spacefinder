@@ -1,0 +1,123 @@
+{
+    "facilities": [
+        "large_desks",
+        "free_wifi",
+        "computers",
+        "laptops_allowed",
+        "sockets",
+        "signal",
+        "printers_copiers",
+        "whiteboards",
+        "projector",
+        "toilets",
+        "refreshments",
+        "break",
+        "accessible_toilets",
+        "wheelchair_accessible",
+        "bike_racks",
+        "gender_neutral_toilets",
+        "prayer_room"
+    ],
+    "atmosphere": [
+        "disciplined",
+        "relaxed",
+        "cosy"
+    ],
+    "access": "University Staff and Students",
+    "disabled_access": true,
+    "opening_hours": {
+        "monday": {
+            "open": true,
+            "from": "8:00",
+            "to": "24:00"
+        },
+        "tuesday": {
+            "open": true,
+            "from": "8:00",
+            "to": "24:00"
+        },
+        "wednesday": {
+            "open": true,
+            "from": "8:00",
+            "to": "24:00"
+        },
+        "thursday": {
+            "open": true,
+            "from": "8:00",
+            "to": "24:00"
+        },
+        "friday": {
+            "open": true,
+            "from": "8:00",
+            "to": "24:00"
+        },
+        "saturday": {
+            "open": true,
+            "from": "10:00",
+            "to": "24:00"
+        },
+        "sunday": {
+            "open": true,
+            "from": "10:00",
+            "to": "24:00"
+        }
+    },
+    "slug": "health-sciences-library",
+    "floor": "7th floor",
+    "restriction": "Library Card needed",
+    "work": [
+        "private",
+        "close"
+    ],
+    "space_type": "Library",
+    "building": "Worsley building",
+    "address": "Clarendon Way, Leeds LS2 9NL",
+    "location": "{\"type\":\"Point\",\"coordinates\":[-1.5564001631185989,53.80341606647992]}",
+    "title": "Health Sciences library main area",
+    "tags": [],
+    "noise": "Strictly silent",
+    "restricted": true,
+    "id": 75,
+    "description": "Silent study area with over 400 individual desks and our collection of medical and health-related books. There are also bookable group rooms for collaborative work and individual rooms for a more focused session, plus a small pause zone to wind down if you are looking to take a quick break.",
+    "published": true,
+    "contacts": [
+        {
+            "url": "mailto:library@leeds.ac.uk",
+            "link_text": "Email us at library@leeds.ac.uk",
+            "class": "icon-email"
+        },
+        {
+            "url": "tel:+441133435663 ",
+            "link_text": "Call us on +44 (0)113 343 5663",
+            "class": "icon-phone"
+        },
+        {
+            "url": "https://bit.ly/4lGhXAO",
+            "link_text": "Follow us on Instagram",
+            "class": "icon-instagram"
+        },
+        {
+            "url": "https://bit.ly/4nxW4FT",
+            "link_text": "Follow us on Bluesky",
+            "class": "icon-bluesky"
+        }
+    ],
+    "links": [
+        {
+            "url": "https://library.leeds.ac.uk/",
+            "link_text": "Visit the Library website",
+            "class": "icon-link"
+        },
+        {
+            "url": "https://www.leeds.ac.uk/campusmap?location=17446",
+            "link_text": "View on the University campus map (map reference 95)",
+            "class": "icon-uol-logo-mark"
+        }
+    ],
+    "images": [
+        {
+            "url": "/assets/photos/health-sciences-library-main-area.jpg",
+            "alt": "Large room with individual desks placed side by side, separated by light blue dividers."
+        }
+    ]
+}

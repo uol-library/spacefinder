@@ -1,0 +1,114 @@
+{
+    "id": 4,
+    "location": "{\"type\":\"Point\",\"coordinates\":[-1.559424814,53.80655803]}",
+    "work": [
+        "private",
+        "close",
+        "friends",
+        "group"
+    ],
+    "atmosphere": [
+        "relaxed",
+        "modern",
+        "cosy",
+        "social",
+        "friendly"
+    ],
+    "facilities": [
+        "food_drink",
+        "daylight",
+        "views",
+        "free_wifi",
+        "laptops_allowed",
+        "sockets",
+        "signal",
+        "toilets",
+        "refreshments",
+        "break",
+        "bike_racks",
+        "gender_neutral_toilets",
+        "wheelchair_accessible",
+        "blue_badge_parking"
+    ],
+    "title": "Esther Simpson Café",
+    "description": "Located in the new Esther Simpson building on the edge of Woodhouse Moor, the café is modern and relaxed, serving speciality coffee from Darkwoods.",
+    "access": "Anyone (public)",
+    "space_type": "Café",
+    "address": "University of Leeds, LS2 9JT",
+    "building": "Esther Simpson Building",
+    "floor": "Ground floor",
+    "restricted": false,
+    "restriction": "",
+    "disabled_access": true,
+    "noise": "Whispers",
+    "tags": [],
+    "opening_hours": {
+        "monday": {
+            "open": true,
+            "from": "8:30",
+            "to": "15:00"
+        },
+        "tuesday": {
+            "open": true,
+            "from": "8:30",
+            "to": "15:00"
+        },
+        "wednesday": {
+            "open": true,
+            "from": "8:30",
+            "to": "15:00"
+        },
+        "thursday": {
+            "open": true,
+            "from": "8:30",
+            "to": "15:00"
+        },
+        "friday": {
+            "open": true,
+            "from": "8:30",
+            "to": "15:00"
+        },
+        "saturday": {
+            "open": false,
+            "from": "",
+            "to": ""
+        },
+        "sunday": {
+            "open": false,
+            "from": "",
+            "to": ""
+        }
+    },
+    "slug": "esther-simpson-cafe",
+    "published": true,
+    "contacts": [
+        {
+            "url": "https://www.instagram.com/greatfoodleeds/",
+            "link_text": "Follow Great Food at Leeds on Instagram",
+            "class": "icon-instagram"
+        },
+        {
+            "url": "https://www.facebook.com/greatfoodleeds",
+            "link_text": "Follow Great Food at Leeds on Facebook",
+            "class": "icon-facebook-squared"
+        }
+    ],
+    "links": [
+        {
+            "url": "https://gfal.leeds.ac.uk/where-to-eat/cafes/esther-simpson-cafe",
+            "link_text": "Visit the Esther Simpson Café web site",
+            "class": "icon-link"
+        },
+        {
+            "url": "https://www.leeds.ac.uk/campusmap?location=18484",
+            "link_text": "View on the University campus map (map reference 12)",
+            "class": "icon-uol-logo-mark"
+        }
+    ],
+    "images": [
+        {
+            "url": "/assets/photos/Esther-Simpson-Cafe.jpg",
+            "alt": "Interior photogra[ph of the Esther Simpson Café showing the service area, including a cake display cabinet, fruit bowls and drink making equipment"
+        }
+    ]
+}

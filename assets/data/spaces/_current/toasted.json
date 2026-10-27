@@ -1,0 +1,93 @@
+{
+    "facilities": [
+        "food_drink",
+        "daylight",
+        "views",
+        "free_wifi",
+        "laptops_allowed",
+        "signal",
+        "outdoor_seating",
+        "refreshments",
+        "break",
+        "bike_racks",
+        "gender_neutral_toilets",
+        "wheelchair_accessible"
+    ],
+    "atmosphere": [
+        "relaxed",
+        "social",
+        "friendly"
+    ],
+    "access": "Anyone (public)",
+    "disabled_access": true,
+    "opening_hours": {
+        "monday": {
+            "open": true,
+            "from": "8:00",
+            "to": "24:00"
+        },
+        "tuesday": {
+            "open": true,
+            "from": "8:00",
+            "to": "24:00"
+        },
+        "wednesday": {
+            "open": true,
+            "from": "8:00",
+            "to": "24:00"
+        },
+        "thursday": {
+            "open": true,
+            "from": "8:00",
+            "to": "24:00"
+        },
+        "friday": {
+            "open": true,
+            "from": "8:00",
+            "to": "24:00"
+        },
+        "saturday": {
+            "open": true,
+            "from": "10:00",
+            "to": "24:00"
+        },
+        "sunday": {
+            "open": true,
+            "from": "10:00",
+            "to": "24:00"
+        }
+    },
+    "floor": "",
+    "restriction": "",
+    "work": [
+        "friends",
+        "group"
+    ],
+    "twitter_screen_name": "",
+    "space_type": "Café",
+    "building": "Chancellor's Court",
+    "address": "University of Leeds, LS2 9JT",
+    "location": "{\"type\":\"Point\",\"coordinates\":[-1.5547883,53.8051901]}",
+    "title": "Toasted in Chancellor's Court (Outdoor space)",
+    "tags": [],
+    "noise": "Animated discussion",
+    "restricted": false,
+    "id": 12,
+    "description": "Gourmet toastie van serving a range of toasties, croissants, sweet treats, cold drinks and freshly brewed coffees. Outdoor seating situated in Chancellor's Court, next to the Roger Stevens Building",
+    "slug": "toasted",
+    "published": false,
+    "contacts": [
+        {
+            "url": "https://www.facebook.com/toastedleeds/",
+            "link_text": "Follow toastedleeds/ on facebook",
+            "class": "icon-facebook-squared"
+        }
+    ],
+    "links": [],
+    "images": [
+        {
+            "url": "/assets/photos/toasted.jpg",
+            "alt": "Outdoor photograph of Toasted - a converted Ford Transit van - in Chancellor's Court"
+        }
+    ]
+}

@@ -1,0 +1,118 @@
+{
+    "facilities": [
+        "free_wifi",
+        "computers",
+        "laptops_allowed",
+        "sockets",
+        "signal",
+        "printers_copiers",
+        "whiteboards",
+        "projector",
+        "bookable",
+        "toilets",
+        "refreshments",
+        "break",
+        "accessible_toilets",
+        "wheelchair_accessible",
+        "bike_racks",
+        "gender_neutral_toilets",
+        "prayer_room"
+    ],
+    "atmosphere": [
+        "disciplined",
+        "cosy"
+    ],
+    "access": "University Staff and Students",
+    "disabled_access": true,
+    "opening_hours": {
+        "monday": {
+            "open": true,
+            "from": "8:00",
+            "to": "24:00"
+        },
+        "tuesday": {
+            "open": true,
+            "from": "8:00",
+            "to": "24:00"
+        },
+        "wednesday": {
+            "open": true,
+            "from": "8:00",
+            "to": "24:00"
+        },
+        "thursday": {
+            "open": true,
+            "from": "8:00",
+            "to": "24:00"
+        },
+        "friday": {
+            "open": true,
+            "from": "8:00",
+            "to": "24:00"
+        },
+        "saturday": {
+            "open": true,
+            "from": "10:00",
+            "to": "24:00"
+        },
+        "sunday": {
+            "open": true,
+            "from": "10:00",
+            "to": "24:00"
+        }
+    },
+    "slug": "health-sciences-library-group-study-rooms",
+    "floor": "7th floor",
+    "restriction": "Library Card needed",
+    "work": [
+        "private",
+        "close",
+        "group"
+    ],
+    "space_type": "Library",
+    "building": "Worsley building",
+    "address": "Clarendon Way, Leeds LS2 9NL",
+    "location": "{\"type\":\"Point\",\"coordinates\":[-1.5553086999558254,53.80334949968224]}",
+    "title": "Health Sciences library - group study rooms",
+    "tags": [],
+    "noise": "Strictly silent",
+    "restricted": true,
+    "id": 76,
+    "description": "Group study rooms for group work (booking required)",
+    "published": false,
+    "contacts": [
+        {
+            "url": "mailto:library@leeds.ac.uk",
+            "link_text": "Email us at library@leeds.ac.uk",
+            "class": "icon-email"
+        },
+        {
+            "url": "tel:+441133435663 ",
+            "link_text": "Call us on +44 (0)113 343 5663",
+            "class": "icon-phone"
+        },
+        {
+            "url": "https://bit.ly/4lGhXAO",
+            "link_text": "Follow us on Instagram",
+            "class": "icon-instagram"
+        },
+        {
+            "url": "https://bit.ly/4nxW4FT",
+            "link_text": "Follow us on Bluesky",
+            "class": "icon-bluesky"
+        }
+    ],
+    "links": [
+        {
+            "url": "https://library.leeds.ac.uk/",
+            "link_text": "Visit the Library website",
+            "class": "icon-link"
+        },
+        {
+            "url": "https://www.leeds.ac.uk/campusmap?location=17446",
+            "link_text": "View on the University campus map (map reference 95)",
+            "class": "icon-uol-logo-mark"
+        }
+    ],
+    "images": []
+}

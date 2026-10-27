@@ -1,0 +1,94 @@
+{
+    "facilities": [
+        "daylight",
+        "large_desks",
+        "free_wifi",
+        "computers",
+        "laptops_allowed",
+        "sockets",
+        "signal",
+        "whiteboards",
+        "toilets",
+        "bike_racks",
+        "gender_neutral_toilets",
+        "wheelchair_accessible",
+        "blue_badge_parking"
+    ],
+    "atmosphere": [
+        "disciplined",
+        "modern"
+    ],
+    "access": "University Staff and Students",
+    "disabled_access": true,
+    "opening_hours": {
+        "monday": {
+            "open": true,
+            "from": "0:00",
+            "to": "24:00"
+        },
+        "tuesday": {
+            "open": true,
+            "from": "0:00",
+            "to": "24:00"
+        },
+        "wednesday": {
+            "open": true,
+            "from": "0:00",
+            "to": "24:00"
+        },
+        "thursday": {
+            "open": true,
+            "from": "0:00",
+            "to": "24:00"
+        },
+        "friday": {
+            "open": true,
+            "from": "0:00",
+            "to": "24:00"
+        },
+        "saturday": {
+            "open": true,
+            "from": "0:00",
+            "to": "24:00"
+        },
+        "sunday": {
+            "open": true,
+            "from": "0:00",
+            "to": "24:00"
+        }
+    },
+    "slug": "e-c-stoner-building-662",
+    "floor": "Level 6",
+    "restriction": "Access to the cluster is via an <a href=\"https://it.leeds.ac.uk/it?id=clusters\" target=\"_it\">entrance code available on the IT website</a>",
+    "published": true,
+    "work": [
+        "private",
+        "close"
+    ],
+    "twitter_screen_name": "",
+    "space_type": "IT Cluster",
+    "building": "E C Stoner Building",
+    "address": "University of Leeds, LS2 9JT",
+    "location": "{\"type\":\"Point\",\"coordinates\":[-1.5519733139012006,53.805328033113454]}",
+    "facebook_url": "",
+    "title": "E C Stoner Building - 6.62",
+    "tags": [],
+    "noise": "Strictly silent",
+    "restricted": true,
+    "id": 97,
+    "description": "Small cluster - 9 seat capacity. This room is flat with level access from the ground floor or via the lift.",
+    "contacts": [],
+    "links": [
+        {
+            "url": "https://www.leeds.ac.uk/campusmap?location=17406",
+            "link_text": "View on the University campus map (map reference 73)",
+            "class": "icon-uol-logo-mark"
+        }
+    ],
+    "images": [
+        {
+            "url": "/assets/photos/ecstoner-entrance.jpg",
+            "alt": "E C Stoner Building - 6.62 - entrance"
+        }
+    ]
+}

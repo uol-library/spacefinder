@@ -1,0 +1,90 @@
+{
+    "facilities": [
+        "daylight",
+        "large_desks",
+        "free_wifi",
+        "computers",
+        "laptops_allowed",
+        "sockets",
+        "signal",
+        "whiteboards",
+        "projector",
+        "toilets",
+        "bike_racks",
+        "gender_neutral_toilets",
+        "wheelchair_accessible",
+        "blue_badge_parking"
+    ],
+    "atmosphere": [
+        "disciplined",
+        "modern"
+    ],
+    "access": "University Staff and Students",
+    "disabled_access": true,
+    "opening_hours": {
+        "monday": {
+            "open": true,
+            "from": "9:00",
+            "to": "18:00"
+        },
+        "tuesday": {
+            "open": true,
+            "from": "9:00",
+            "to": "18:00"
+        },
+        "wednesday": {
+            "open": true,
+            "from": "9:00",
+            "to": "18:00"
+        },
+        "thursday": {
+            "open": true,
+            "from": "9:00",
+            "to": "18:00"
+        },
+        "friday": {
+            "open": true,
+            "from": "9:00",
+            "to": "18:00"
+        },
+        "saturday": {
+            "open": false,
+            "from": "",
+            "to": ""
+        },
+        "sunday": {
+            "open": false,
+            "from": "",
+            "to": ""
+        }
+    },
+    "slug": "e-c-stoner-building-964b",
+    "floor": "Level 9",
+    "restriction": "",
+    "published": false,
+    "work": [
+        "private",
+        "close"
+    ],
+    "twitter_screen_name": "",
+    "space_type": "IT Cluster",
+    "building": "E C Stoner Building",
+    "address": "University of Leeds, LS2 9JT",
+    "location": "{\"type\":\"Point\",\"coordinates\":[-1.552767918,53.80538144]}",
+    "facebook_url": "",
+    "title": "E C Stoner Building - 9.64B",
+    "tags": [],
+    "noise": "Strictly silent",
+    "restricted": true,
+    "id": 98,
+    "description": "Large cluster with multiple computers and comfortable chairs. 36 seat capacity.",
+    "contacts": [],
+    "links": [
+        {
+            "url": "https://www.leeds.ac.uk/campusmap?location=17406",
+            "link_text": "View on the University campus map (map reference 73)",
+            "class": "icon-uol-logo-mark"
+        }
+    ],
+    "images": []
+}

@@ -1,0 +1,97 @@
+{
+    "id": 35,
+    "location": "{\"type\":\"Point\",\"coordinates\":[-1.554681504,53.8094698]}",
+    "work": [
+        "private",
+        "friends"
+    ],
+    "atmosphere": [
+        "relaxed",
+        "modern",
+        "cosy",
+        "social",
+        "friendly"
+    ],
+    "facilities": [
+        "food_drink",
+        "daylight",
+        "views",
+        "large_desks",
+        "free_wifi",
+        "laptops_allowed",
+        "signal",
+        "toilets",
+        "break",
+        "bike_racks",
+        "gender_neutral_toilets",
+        "wheelchair_accessible"
+    ],
+    "title": "Electronic and Electrical Engineering - Ground Floor Foyer",
+    "description": "Big bright foyer with couches and circular tables with chairs. A perfect place to relax, take a break or study alone or in a group.",
+    "access": "Anyone (public)",
+    "space_type": "General Seating Area",
+    "address": "University of Leeds, LS2 9JT",
+    "building": "Electronic and Electrical Engineering",
+    "floor": "Ground floor",
+    "restricted": false,
+    "restriction": "",
+    "disabled_access": true,
+    "twitter_screen_name": "",
+    "facebook_url": "",
+    "noise": "Animated discussion",
+    "tags": [],
+    "opening_hours": {
+        "monday": {
+            "open": true,
+            "from": "8:00",
+            "to": "18:00"
+        },
+        "tuesday": {
+            "open": true,
+            "from": "8:00",
+            "to": "18:00"
+        },
+        "wednesday": {
+            "open": true,
+            "from": "8:00",
+            "to": "18:00"
+        },
+        "thursday": {
+            "open": true,
+            "from": "8:00",
+            "to": "18:00"
+        },
+        "friday": {
+            "open": true,
+            "from": "8:00",
+            "to": "18:00"
+        },
+        "saturday": {
+            "open": false,
+            "from": "",
+            "to": ""
+        },
+        "sunday": {
+            "open": false,
+            "from": "",
+            "to": ""
+        }
+    },
+    "slug": "electronic-and-electrical-engineering-ground-floor-foyer",
+    "published": true,
+    "contacts": [
+        {
+            "url": "tel:+441133432000",
+            "link_text": "Call us on 0113 343 2000",
+            "class": "icon-phone"
+        }
+    ],
+    "links": [
+        {
+            "url": "https://www.leeds.ac.uk/campusmap?location=17412",
+            "link_text": "View on the University campus map (map reference 51)",
+            "class": "icon-uol-logo-mark"
+        }
+    ],
+    "images": []
+}

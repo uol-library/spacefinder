@@ -1,0 +1,99 @@
+{
+    "id": 59,
+    "location": "{\"type\":\"Point\",\"coordinates\":[-1.55589859,53.80958489]}",
+    "work": [
+        "private",
+        "close"
+    ],
+    "atmosphere": [
+        "disciplined",
+        "modern",
+        "inspiring",
+        "friendly"
+    ],
+    "facilities": [
+        "daylight",
+        "views",
+        "large_desks",
+        "free_wifi",
+        "computers",
+        "laptops_allowed",
+        "sockets",
+        "signal",
+        "printers_copiers",
+        "whiteboards",
+        "toilets",
+        "bike_racks",
+        "gender_neutral_toilets",
+        "wheelchair_accessible",
+        "accessible_toilets"
+    ],
+    "title": "Mechanical Engineering - 5.34d",
+    "description": "Cluster room surrounded by big windows with high views of the University campus. Perfect for focused study with access to computers. 25 seat capacity.",
+    "access": "University Staff and Students",
+    "space_type": "IT Cluster",
+    "address": "University of Leeds, LS2 9JT",
+    "building": "Mechanical Engineering building",
+    "floor": "Fifth Floor",
+    "restricted": true,
+    "restriction": "",
+    "disabled_access": true,
+    "twitter_screen_name": "",
+    "facebook_url": "",
+    "noise": "Strictly silent",
+    "tags": [],
+    "opening_hours": {
+        "monday": {
+            "open": true,
+            "from": "8:00",
+            "to": "18:00"
+        },
+        "tuesday": {
+            "open": true,
+            "from": "8:00",
+            "to": "18:00"
+        },
+        "wednesday": {
+            "open": true,
+            "from": "8:00",
+            "to": "18:00"
+        },
+        "thursday": {
+            "open": true,
+            "from": "8:00",
+            "to": "18:00"
+        },
+        "friday": {
+            "open": true,
+            "from": "8:00",
+            "to": "18:00"
+        },
+        "saturday": {
+            "open": false,
+            "from": "",
+            "to": ""
+        },
+        "sunday": {
+            "open": false,
+            "from": "",
+            "to": ""
+        }
+    },
+    "slug": "mechanical-engineering-534d",
+    "published": false,
+    "contacts": [
+        {
+            "url": "tel:+441133432186",
+            "link_text": "Call us on 0113 343 2186",
+            "class": "icon-phone"
+        }
+    ],
+    "links": [
+        {
+            "url": "https://www.leeds.ac.uk/campusmap?location=17507",
+            "link_text": "View on the University campus map (map reference 50)",
+            "class": "icon-uol-logo-mark"
+        }
+    ],
+    "images": []
+}

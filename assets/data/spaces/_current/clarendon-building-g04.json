@@ -1,0 +1,96 @@
+{
+    "facilities": [
+        "daylight",
+        "large_desks",
+        "free_wifi",
+        "computers",
+        "laptops_allowed",
+        "sockets",
+        "signal",
+        "whiteboards",
+        "projector",
+        "toilets",
+        "refreshments",
+        "bike_racks",
+        "gender_neutral_toilets",
+        "wheelchair_accessible"
+    ],
+    "atmosphere": [
+        "disciplined",
+        "modern",
+        "cosy"
+    ],
+    "access": "University Staff and Students",
+    "disabled_access": true,
+    "opening_hours": {
+        "monday": {
+            "open": true,
+            "from": "9:00",
+            "to": "18:00"
+        },
+        "tuesday": {
+            "open": true,
+            "from": "9:00",
+            "to": "18:00"
+        },
+        "wednesday": {
+            "open": true,
+            "from": "9:00",
+            "to": "18:00"
+        },
+        "thursday": {
+            "open": true,
+            "from": "9:00",
+            "to": "18:00"
+        },
+        "friday": {
+            "open": true,
+            "from": "9:00",
+            "to": "18:00"
+        },
+        "saturday": {
+            "open": false,
+            "from": "",
+            "to": ""
+        },
+        "sunday": {
+            "open": false,
+            "from": "",
+            "to": ""
+        }
+    },
+    "slug": "clarendon-building-g04",
+    "floor": "Ground floor",
+    "restriction": "",
+    "published": false,
+    "work": [
+        "private",
+        "close"
+    ],
+    "twitter_screen_name": "",
+    "space_type": "IT Cluster",
+    "building": "Clarendon building",
+    "address": "University of Leeds, LS2 9JT",
+    "location": "{\"type\":\"Point\",\"coordinates\":[-1.5602497100466306,53.80726148395461]}",
+    "facebook_url": "",
+    "title": "Clarendon Building - G04",
+    "tags": [],
+    "noise": "Strictly silent",
+    "restricted": true,
+    "id": 47,
+    "description": "Classroom with 4 computer rows. Comfortable chairs. 50 seat capacity.",
+    "contacts": [],
+    "links": [
+        {
+            "url": "https://mytimetable.leeds.ac.uk/link?timetable.id=202526!location!5216C608F8794D77F15FA9D195AB1DCA",
+            "link_text": "View timetable for Clarendon Building - G04",
+            "class": "icon-link"
+        },
+        {
+            "url": "https://www.leeds.ac.uk/campusmap?location=17385",
+            "link_text": "View on the University campus map (map reference 20)",
+            "class": "icon-uol-logo-mark"
+        }
+    ],
+    "images": []
+}

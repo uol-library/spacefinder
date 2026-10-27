@@ -1,0 +1,119 @@
+{
+    "facilities": [
+        "daylight",
+        "large_desks",
+        "free_wifi",
+        "laptops_allowed",
+        "whiteboards",
+        "sockets",
+        "signal",
+        "toilets",
+        "bookable",
+        "light",
+        "refreshments",
+        "break",
+        "wheelchair_accessible"
+    ],
+    "atmosphere": [
+        "relaxed",
+        "cosy",
+        "social"
+    ],
+    "access": "University Staff and Students",
+    "disabled_access": true,
+    "opening_hours": {
+        "monday": {
+            "open": true,
+            "from": "8:00",
+            "to": "24:00"
+        },
+        "tuesday": {
+            "open": true,
+            "from": "8:00",
+            "to": "24:00"
+        },
+        "wednesday": {
+            "open": true,
+            "from": "8:00",
+            "to": "24:00"
+        },
+        "thursday": {
+            "open": true,
+            "from": "8:00",
+            "to": "24:00"
+        },
+        "friday": {
+            "open": true,
+            "from": "8:00",
+            "to": "24:00"
+        },
+        "saturday": {
+            "open": true,
+            "from": "10:00",
+            "to": "24:00"
+        },
+        "sunday": {
+            "open": true,
+            "from": "10:00",
+            "to": "24:00"
+        }
+    },
+    "slug": "health-sciences-library-collaborative-learning-space",
+    "floor": "7th floor",
+    "restriction": "Library Card needed",
+    "work": [
+        "private",
+        "close"
+    ],
+    "space_type": "Library",
+    "building": "Worsley building",
+    "address": "Clarendon Way, Leeds LS2 9NL",
+    "location": "{\"type\":\"Point\",\"coordinates\":[-1.555838436202766,53.80334949968224]}",
+    "title": "Health Sciences library - collaborative learning space",
+    "tags": [],
+    "noise": "Animated discussion",
+    "restricted": true,
+    "id": 77,
+    "description": "A large study space designed for collaborative work, with comfortable chairs, extra greenery and an abundance of natural light. There are also bookable soundproof study pods for individuals and groups, plus docking stations to power-up your devices.",
+    "published": true,
+    "contacts": [
+        {
+            "url": "mailto:library@leeds.ac.uk",
+            "link_text": "Email us at library@leeds.ac.uk",
+            "class": "icon-email"
+        },
+        {
+            "url": "tel:+441133435663 ",
+            "link_text": "Call us on +44 (0)113 343 5663",
+            "class": "icon-phone"
+        },
+        {
+            "url": "https://bit.ly/4lGhXAO",
+            "link_text": "Follow us on Instagram",
+            "class": "icon-instagram"
+        },
+        {
+            "url": "https://bit.ly/4nxW4FT",
+            "link_text": "Follow us on Bluesky",
+            "class": "icon-bluesky"
+        }
+    ],
+    "links": [
+        {
+            "url": "https://library.leeds.ac.uk/",
+            "link_text": "Visit the Library website",
+            "class": "icon-link"
+        },
+        {
+            "url": "https://www.leeds.ac.uk/campusmap?location=17446",
+            "link_text": "View on the University campus map (map reference 95)",
+            "class": "icon-uol-logo-mark"
+        }
+    ],
+    "images": [
+        {
+            "url": "/assets/photos/health-sciences-library-collaborative-study-space.jpg",
+            "alt": "Large space with high wooden ceiling, a skylight, lots of greenery, sofas, group desks and study booths."
+        }
+    ]
+}

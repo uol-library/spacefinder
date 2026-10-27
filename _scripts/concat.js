@@ -1,29 +1,33 @@
 /**
- * This script takes all the files within the spaces directory and compiles a master data file
- * in the root of the repository called spaces.json
+ * Scans each subfolder of assets/data that contains a data/ directory,
+ * reads all JSON files from it, and writes them as a JSON array to
+ * assets/data/{subfolder}/data.json.
+ *
+ * Run from any directory:
+ *   node spacefinder/_scripts/concat.js
  */
-const fs = require('fs');
+
+'use strict';
+
+const fs   = require('fs');
 const path = require('path');
-const spacefiles = fs.readdirSync( path.resolve( __dirname, '../spaces' ), { encoding: 'utf8' } );
-const allSpaces = [];
-spacefiles.forEach( filename => {
-    if ( filename !== '.' && filename !== '..' ) {
-        var data = fs.readFileSync( path.resolve( __dirname, '../spaces/', filename ) );
-        var jsondata = JSON.parse( data );
-        if ( jsondata.published ) {
-            var geodata = JSON.parse( jsondata.location );
-            if ( geodata && geodata.coordinates && geodata.coordinates.length == 2 ) {
-                jsondata.lat = geodata.coordinates[1];
-                jsondata.lng = geodata.coordinates[0];
-            } else {
-                jsondata.lat = '';
-                jsondata.lng = '';
-            }
-            allSpaces.push( jsondata );
-        }
-    }
+
+const ASSETS_DATA = path.resolve(__dirname, '../assets/data');
+
+const subfolders = fs.readdirSync(ASSETS_DATA, { encoding: 'utf8', withFileTypes: true })
+    .filter(entry => entry.isDirectory())
+    .map(entry => entry.name);
+
+subfolders.forEach(subfolder => {
+    const dataDir = path.join(ASSETS_DATA, subfolder, 'data');
+    if (!fs.existsSync(dataDir) || !fs.statSync(dataDir).isDirectory()) return;
+
+    const items = fs.readdirSync(dataDir, { encoding: 'utf8' })
+        .filter(f => f.endsWith('.json') && f !== '.gitkeep')
+        .sort()
+        .map(filename => JSON.parse(fs.readFileSync(path.join(dataDir, filename))));
+
+    const outPath = path.join(ASSETS_DATA, subfolder, 'data.json');
+    fs.writeFileSync(outPath, JSON.stringify(items, null, 4));
+    console.log(`${subfolder}/data.json — ${items.length} items`);
 });
-fs.writeFileSync( path.resolve( __dirname, '../spaces.json' ), JSON.stringify( allSpaces ) );
-
-
-

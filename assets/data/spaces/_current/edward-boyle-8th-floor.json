@@ -1,0 +1,130 @@
+{
+    "facilities": [
+        "daylight",
+        "views",
+        "large_desks",
+        "free_wifi",
+        "computers",
+        "laptops_allowed",
+        "sockets",
+        "signal",
+        "printers_copiers",
+        "whiteboards",
+        "projector",
+        "bookable",
+        "toilets",
+        "refreshments",
+        "break",
+        "individual_study_space",
+        "accessible_toilets",
+        "wheelchair_accessible",
+        "bike_racks",
+        "gender_neutral_toilets"
+    ],
+    "atmosphere": [
+        "disciplined",
+        "relaxed",
+        "cosy",
+        "social",
+        "friendly"
+    ],
+    "access": "University Staff and Students",
+    "disabled_access": true,
+    "opening_hours": {
+        "monday": {
+            "open": true,
+            "from": "0:00",
+            "to": "24:00"
+        },
+        "tuesday": {
+            "open": true,
+            "from": "0:00",
+            "to": "24:00"
+        },
+        "wednesday": {
+            "open": true,
+            "from": "0:00",
+            "to": "24:00"
+        },
+        "thursday": {
+            "open": true,
+            "from": "0:00",
+            "to": "24:00"
+        },
+        "friday": {
+            "open": true,
+            "from": "0:00",
+            "to": "24:00"
+        },
+        "saturday": {
+            "open": true,
+            "from": "0:00",
+            "to": "24:00"
+        },
+        "sunday": {
+            "open": true,
+            "from": "0:00",
+            "to": "24:00"
+        }
+    },
+    "slug": "edward-boyle-8th-floor",
+    "floor": "Level 8",
+    "restriction": "Library Card needed",
+    "work": [
+        "private",
+        "close",
+        "friends",
+        "group"
+    ],
+    "space_type": "Library",
+    "building": "Edward Boyle library",
+    "address": "University of Leeds, Leeds LS2 9JT",
+    "location": "{\"type\":\"Point\",\"coordinates\":[-1.5548797388561932,53.80627235748126]}",
+    "title": "Edward Boyle 8th floor",
+    "tags": [],
+    "noise": "Background chatter",
+    "restricted": true,
+    "id": 74,
+    "description": "Study space with both silent and non-silent areas to work with friends or individually. There are also group study spaces and meeting rooms available to book for collaborative projects.",
+    "published": true,
+    "contacts": [
+        {
+            "url": "mailto:library@leeds.ac.uk",
+            "link_text": "Email us at library@leeds.ac.uk",
+            "class": "icon-email"
+        },
+        {
+            "url": "tel:+441133435663 ",
+            "link_text": "Call us on +44 (0)113 343 5663",
+            "class": "icon-phone"
+        },
+        {
+            "url": "https://bit.ly/4lGhXAO",
+            "link_text": "Follow us on Instagram",
+            "class": "icon-instagram"
+        },
+        {
+            "url": "https://bit.ly/4nxW4FT",
+            "link_text": "Follow us on Bluesky",
+            "class": "icon-bluesky"
+        }
+    ],
+    "links": [
+        {
+            "url": "https://library.leeds.ac.uk/",
+            "link_text": "Visit the Library website",
+            "class": "icon-link"
+        },
+        {
+            "url": "https://www.leeds.ac.uk/campusmap?location=17411",
+            "link_text": "View on the University campus map (map reference 83)",
+            "class": "icon-uol-logo-mark"
+        }
+    ],
+    "images": [
+        {
+            "url": "/assets/photos/edward-boyle-8th-floor.jpg",
+            "alt": "A spacious room with large windows overlooking a grassy area with many individual desks and computers."
+        }
+    ]
+}

@@ -1,0 +1,111 @@
+{
+    "facilities": [
+        "food_drink",
+        "large_desks",
+        "free_wifi",
+        "laptops_allowed",
+        "sockets",
+        "signal",
+        "toilets",
+        "refreshments",
+        "break",
+        "bike_racks",
+        "gender_neutral_toilets",
+        "wheelchair_accessible"
+    ],
+    "atmosphere": [
+        "relaxed",
+        "cosy",
+        "social",
+        "friendly"
+    ],
+    "access": "Anyone (public)",
+    "disabled_access": true,
+    "opening_hours": {
+        "monday": {
+            "open": true,
+            "from": "8:00",
+            "to": "18:30"
+        },
+        "tuesday": {
+            "open": true,
+            "from": "8:00",
+            "to": "18:30"
+        },
+        "wednesday": {
+            "open": true,
+            "from": "8:00",
+            "to": "18:30"
+        },
+        "thursday": {
+            "open": true,
+            "from": "8:00",
+            "to": "18:30"
+        },
+        "friday": {
+            "open": true,
+            "from": "8:00",
+            "to": "18:30"
+        },
+        "saturday": {
+            "true": false,
+            "from": "10:00",
+            "to": "14:00"
+        },
+        "sunday": {
+            "true": false,
+            "from": "10:00",
+            "to": "14:00"
+        }
+    },
+    "floor": "Ground floor and mezzanine",
+    "restriction": "",
+    "work": [
+        "private",
+        "close",
+        "friends",
+        "group"
+    ],
+    "space_type": "Café",
+    "building": "University precinct",
+    "address": "University of Leeds, LS2 9JT",
+    "location": "{\"type\":\"Point\",\"coordinates\":[-1.55657117,53.80685681]}",
+    "title": "Refectory",
+    "tags": [],
+    "noise": "Animated discussion",
+    "restricted": false,
+    "id": 7,
+    "description": "Located right at the heart of University campus, the contemporary Refectory venue offers a wide range of hot and cold food each day.",
+    "slug": "refectory",
+    "published": true,
+    "contacts": [
+        {
+            "url": "https://www.instagram.com/greatfoodleeds/",
+            "link_text": "Follow Great Food at Leeds on Instagram",
+            "class": "icon-instagram"
+        },
+        {
+            "url": "https://www.facebook.com/greatfoodleeds",
+            "link_text": "Follow Great Food at Leeds on Facebook",
+            "class": "icon-facebook-squared"
+        }
+    ],
+    "links": [
+        {
+            "url": "https://gfal.leeds.ac.uk/where-to-eat/refectory/",
+            "link_text": "Visit the Refectory  web site",
+            "class": "icon-link"
+        },
+        {
+            "url": "https://www.leeds.ac.uk/campusmap?location=17536",
+            "link_text": "View on the University campus map (map reference 29)",
+            "class": "icon-uol-logo-mark"
+        }
+    ],
+    "images": [
+        {
+            "url": "/assets/photos/Refectory4.jpg",
+            "alt": "Overhead, interior photograph of the Refectory, full of customers, taken from the balcony above the main dining area"
+        }
+    ]
+}

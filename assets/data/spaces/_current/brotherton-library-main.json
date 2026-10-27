@@ -1,0 +1,133 @@
+{
+    "facilities": [
+        "free_wifi",
+        "computers",
+        "laptops_allowed",
+        "sockets",
+        "signal",
+        "printers_copiers",
+        "toilets",
+        "refreshments",
+        "break",
+        "wheelchair_accessible",
+        "daylight",
+        "individual_study_space",
+        "prayer_room",
+        "accessible_toilets",
+        "gender_neutral_toilets",
+        "induction_loops",
+        "adjustable_furniture",
+        "bike_racks"
+    ],
+    "atmosphere": [
+        "disciplined",
+        "cosy",
+        "historic",
+        "modern",
+        "friendly",
+        "social",
+        "inspiring",
+        "relaxed"
+    ],
+    "access": "University Staff and Students",
+    "disabled_access": true,
+    "opening_hours": {
+        "monday": {
+            "open": true,
+            "from": "8:00",
+            "to": "20:00"
+        },
+        "tuesday": {
+            "open": true,
+            "from": "8:00",
+            "to": "20:00"
+        },
+        "wednesday": {
+            "open": true,
+            "from": "8:00",
+            "to": "20:00"
+        },
+        "thursday": {
+            "open": true,
+            "from": "8:00",
+            "to": "20:00"
+        },
+        "friday": {
+            "open": true,
+            "from": "8:00",
+            "to": "20:00"
+        },
+        "saturday": {
+            "open": true,
+            "from": "10:00",
+            "to": "20:00"
+        },
+        "sunday": {
+            "open": true,
+            "from": "10:00",
+            "to": "20:00"
+        }
+    },
+    "slug": "brotherton-library",
+    "floor": "",
+    "restriction": "Library Card needed",
+    "work": [
+        "private",
+        "close",
+        "in_a_library",
+        "friends",
+        "group"
+    ],
+    "space_type": "Library",
+    "building": "Brotherton Library",
+    "address": "University of Leeds, LS2 9JT",
+    "location": "{\"type\":\"Point\",\"coordinates\":[-1.553329,53.80789]}",
+    "title": "Brotherton Library Main Building",
+    "tags": [],
+    "what3words": "///poem.unity.grace",
+    "noise": "Whispers",
+    "restricted": true,
+    "id": 83,
+    "description": "Inspiring study area with iconic round reading room and an abundance of books. It is silent study space across all four floors with plenty of desks and power points.",
+    "published": true,
+    "contacts": [
+        {
+            "url": "mailto:library@leeds.ac.uk",
+            "link_text": "Email us at library@leeds.ac.uk",
+            "class": "icon-email"
+        },
+        {
+            "url": "tel:+441133435663 ",
+            "link_text": "Call us on +44 (0)113 343 5663",
+            "class": "icon-phone"
+        },
+        {
+            "url": "https://bit.ly/4lGhXAO",
+            "link_text": "Follow us on Instagram",
+            "class": "icon-instagram"
+        },
+        {
+            "url": "https://bit.ly/4nxW4FT",
+            "link_text": "Follow us on Bluesky",
+            "class": "icon-bluesky"
+        }
+    ],
+    "links": [
+        {
+            "url": "https://library.leeds.ac.uk/",
+            "link_text": "Visit the Library website",
+            "class": "icon-link"
+        },
+        {
+            "url": "https://www.leeds.ac.uk/campusmap?location=17354",
+            "link_text": "View on the University campus map (map reference 59)",
+            "class": "icon-uol-logo-mark"
+        }
+    ],
+    "images": [
+        {
+            "url": "/assets/photos/brotherton-library-main.jpg",
+            "alt": "A large round reading room, with marble pillars supporting a high domed ceiling. Students are working at wooden desks."
+        }
+    ]
+}

@@ -1,0 +1,113 @@
+{
+    "id": 87,
+    "location": "{\"type\":\"Point\",\"coordinates\":[-1.5517480995156712,53.80702057118846]}",
+    "work": [
+        "private",
+        "close",
+        "friends"
+    ],
+    "atmosphere": [
+        "disciplined",
+        "relaxed",
+        "modern",
+        "cosy",
+        "social",
+        "friendly"
+    ],
+    "facilities": [
+        "food_drink",
+        "daylight",
+        "views",
+        "free_wifi",
+        "laptops_allowed",
+        "sockets",
+        "signal",
+        "toilets",
+        "refreshments",
+        "break",
+        "bike_racks",
+        "gender_neutral_toilets",
+        "wheelchair_accessible"
+    ],
+    "title": "Caffè Nero at Laidlaw Library",
+    "description": "This is the very first Caffé Nero on a University campus, specialising in high-quality Italian coffee, a warm and welcoming atmosphere, good food and great personal service.",
+    "access": "Anyone (public)",
+    "space_type": "Café",
+    "address": "University of Leeds, LS2 9JT",
+    "building": "Laidlaw Library",
+    "floor": "Ground floor",
+    "restricted": false,
+    "restriction": "",
+    "disabled_access": true,
+    "noise": "Animated discussion",
+    "tags": [],
+    "opening_hours": {
+        "monday": {
+            "open": true,
+            "from": "8:00",
+            "to": "20:00"
+        },
+        "tuesday": {
+            "open": true,
+            "from": "8:00",
+            "to": "20:00"
+        },
+        "wednesday": {
+            "open": true,
+            "from": "8:00",
+            "to": "20:00"
+        },
+        "thursday": {
+            "open": true,
+            "from": "8:00",
+            "to": "20:00"
+        },
+        "friday": {
+            "open": true,
+            "from": "8:00",
+            "to": "18:00"
+        },
+        "saturday": {
+            "open": true,
+            "from": "10:00",
+            "to": "16:30"
+        },
+        "sunday": {
+            "open": true,
+            "from": "10:00",
+            "to": "20:00"
+        }
+    },
+    "slug": "caffe-nero-at-laidlaw-library",
+    "published": true,
+    "contacts": [
+        {
+            "url": "https://www.instagram.com/greatfoodleeds/",
+            "link_text": "Follow Great Food at Leeds on Instagram",
+            "class": "icon-instagram"
+        },
+        {
+            "url": "https://www.facebook.com/greatfoodleeds",
+            "link_text": "Follow Great Food at Leeds on Facebook",
+            "class": "icon-facebook-squared"
+        }
+    ],
+    "links": [
+        {
+            "url": "https://gfal.leeds.ac.uk/where-to-eat/cafes/caffe-nero/",
+            "link_text": "Visit the Caffè Nero at Laidlaw Library web site",
+            "class": "icon-link"
+        },
+        {
+            "url": "https://www.leeds.ac.uk/campusmap?location=18470",
+            "link_text": "View on the University campus map (map reference 63)",
+            "class": "icon-uol-logo-mark"
+        }
+    ],
+    "images": [
+        {
+            "url": "/assets/photos/Caffe-Nero-Laidlaw.jpg",
+            "alt": "Exterior photograph of the Caffè Nero logo on the window of the Laidlaw Library, with the stained glass windows of the Emmanuel Centre in the background"
+        }
+    ]
+}

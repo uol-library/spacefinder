@@ -1,0 +1,111 @@
+{
+    "id": 84,
+    "location": "{\"type\":\"Point\",\"coordinates\":[-1.5505879998850083,53.805363612275706]}",
+    "work": [
+        "close",
+        "friends",
+        "group"
+    ],
+    "atmosphere": [
+        "relaxed",
+        "cosy",
+        "social",
+        "friendly"
+    ],
+    "facilities": [
+        "food_drink",
+        "daylight",
+        "views",
+        "free_wifi",
+        "laptops_allowed",
+        "signal",
+        "outdoor_seating",
+        "toilets",
+        "refreshments",
+        "bike_racks",
+        "gender_neutral_toilets",
+        "wheelchair_accessible",
+        "blue_badge_parking"
+    ],
+    "title": "Affine Café",
+    "description": "Affine is more than just a place to grab a bite. A place to break away from the pressures of the working day and enjoy a breather, a change of scenery, or even a chat with fellow professionals. Located at the heart of the innovation hub, the contemporary space provides a welcoming environment to relax and unwind. The perfect place for casual meetings or laidback lunches.",
+    "access": "Anyone (public)",
+    "space_type": "Café",
+    "address": "University of Leeds, LS2 9JT",
+    "building": "Nexus building",
+    "floor": "Ground floor",
+    "restricted": false,
+    "restriction": "",
+    "disabled_access": true,
+    "noise": "Animated discussion",
+    "tags": [],
+    "opening_hours": {
+        "monday": {
+            "open": true,
+            "from": "8:30",
+            "to": "17:00"
+        },
+        "tuesday": {
+            "open": true,
+            "from": "8:30",
+            "to": "17:00"
+        },
+        "wednesday": {
+            "open": true,
+            "from": "8:30",
+            "to": "17:00"
+        },
+        "thursday": {
+            "open": true,
+            "from": "8:30",
+            "to": "17:00"
+        },
+        "friday": {
+            "open": true,
+            "from": "8:30",
+            "to": "17:00"
+        },
+        "saturday": {
+            "open": false,
+            "from": "",
+            "to": ""
+        },
+        "sunday": {
+            "open": false,
+            "from": "",
+            "to": ""
+        }
+    },
+    "slug": "affine-cafe",
+    "published": true,
+    "contacts": [
+        {
+            "url": "https://www.instagram.com/greatfoodleeds/",
+            "link_text": "Follow Great Food at Leeds on Instagram",
+            "class": "icon-instagram"
+        },
+        {
+            "url": "https://www.facebook.com/greatfoodleeds",
+            "link_text": "Follow Great Food at Leeds on Facebook",
+            "class": "icon-facebook-squared"
+        }
+    ],
+    "links": [
+        {
+            "url": "https://gfal.leeds.ac.uk/where-to-eat/cafes/affine/",
+            "link_text": "Visit the Affine Café web site",
+            "class": "icon-link"
+        },
+        {
+            "url": "https://www.leeds.ac.uk/campusmap?location=18466",
+            "link_text": "View on the University campus map (map reference 66)",
+            "class": "icon-uol-logo-mark"
+        }
+    ],
+    "images": [
+        {
+            "url": "/assets/photos/Affine.jpg",
+            "alt": "Interior photograph of the Affine Café showing the service counter and seating, with multiple customers seated around tables  and two customers at the counter"
+        }
+    ]
+}
