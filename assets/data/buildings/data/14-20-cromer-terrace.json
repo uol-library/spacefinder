@@ -1,0 +1,102 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "CivicStructure",
+        "identifier": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "slug",
+                "value": "14-20-cromer-terrace"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "osm",
+                "value": "way/84749534"
+            }
+        ],
+        "name": "14-20 Cromer Terrace",
+        "description": "",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "University of Leeds",
+            "addressRegion": "Leeds, West Yorkshire",
+            "streetAddress": "14-20"
+        },
+        "latitude": 53.8064847,
+        "longitude": -1.5573673,
+        "geo": {
+            "@type": "GeoShape",
+            "polygon": [
+                "53.8066633 -1.5573461 53.8063393 -1.5575812 53.8062997 -1.5574246 53.8063242 -1.5574069 53.8063162 -1.5573752 53.8063237 -1.5573698 53.8063162 -1.55734 53.8063581 -1.5573095 53.8063747 -1.5573748 53.8065503 -1.5572472 53.8065291 -1.5571636 53.8065917 -1.5571182 53.806612 -1.5571983 53.8066238 -1.5571897 53.8066633 -1.5573461"
+            ]
+        },
+        "sameAs": [
+            "https://www.openstreetmap.org/way/84749534"
+        ],
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "accessable",
+                "name": "AccessAble access guide",
+                "value": "https://www.accessable.co.uk/university-of-leeds/access-guides/10-12-cromer-terrace"
+            }
+        ],
+        "amenityFeature": [
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Sport",
+                "alternateName": "sport",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "AccessAble access guide",
+                "alternateName": "accessable",
+                "value": true
+            }
+        ],
+        "containsPlace": [
+            {
+                "@type": "Place",
+                "name": "Business School - Centre for International Business",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "17360"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=17360",
+                "description": "14-20 Cromer Terrace<br>Leeds<br>LS2 9JU<br><br><a href=\"https://business.leeds.ac.uk/research-and-innovation/research-centres/cibul/\">Visit the Centre for International Business website</a><br><br><a href=tel:01133433249\">0113 343 3249</a>",
+                "latitude": 53.806462,
+                "longitude": -1.557462
+            },
+            {
+                "@type": "Place",
+                "name": "Business School - India and South Asian Business Centre: 10-12 Cromer Terrace",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "17362"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=17362",
+                "description": "10-12 Cromer Terrace<br>University Precinct<br>Leeds<br>LS2 9JR<br><br><a href=\"https://business.leeds.ac.uk/research-and-innovation/research-centres/cibul/isabc/\">Visit the India and South Asian Business Centre website</a><br><br><a href=\"https://www.accessable.co.uk/university-of-leeds/access-guides/10-12-cromer-terrace\">View AccessAble access guide</a>",
+                "latitude": 53.806462,
+                "longitude": -1.557462
+            },
+            {
+                "@type": "Place",
+                "name": "Cromer Terrace Studios",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "17636"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=17636",
+                "description": "Cromer Terrace, Woodhouse, Leeds, LS2 9JT<br><br><a href=\"https://sport.leeds.ac.uk/facilities/cromer-terrace/\">Visit website</a><br><br>Cromer Terrace is a dynamic, multi-purpose studio that is located in the heart of the University of Leeds next to the Student’s Union.",
+                "latitude": 53.806533658101635,
+                "longitude": -1.5574216313216909
+            }
+        ]
+    }
+}

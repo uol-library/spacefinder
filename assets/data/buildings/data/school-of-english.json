@@ -1,0 +1,95 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "CivicStructure",
+        "identifier": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "slug",
+                "value": "school-of-english"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "osm",
+                "value": "way/84749516"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "wikidata",
+                "value": "Q26215642"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "uprn",
+                "value": "72652839"
+            }
+        ],
+        "name": "School of English",
+        "description": "",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "University of Leeds",
+            "addressRegion": "Leeds, West Yorkshire",
+            "streetAddress": "",
+            "postalCode": "LS2 9JT"
+        },
+        "latitude": 53.8063021,
+        "longitude": -1.5534879,
+        "geo": {
+            "@type": "GeoShape",
+            "polygon": [
+                "53.8065017 -1.5533171 53.8061444 -1.5533359 53.8061481 -1.5535388 53.8061861 -1.5535368 53.8061886 -1.5536736 53.8062715 -1.5536693 53.806273 -1.5537551 53.8063807 -1.5537495 53.8063787 -1.5536404 53.8063267 -1.5536431 53.8063245 -1.5535212 53.8063839 -1.5535181 53.8063829 -1.5534655 53.8065043 -1.5534591 53.8065017 -1.5533171"
+            ]
+        },
+        "sameAs": [
+            "https://www.openstreetmap.org/way/84749516",
+            "https://www.wikidata.org/wiki/Q26215642"
+        ],
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "accessable",
+                "name": "AccessAble access guide",
+                "value": "https://www.accessable.co.uk/searches?query=3+Cavendish+Road&location_query=&g-recaptcha-response=&commit=Search"
+            }
+        ],
+        "amenityFeature": [
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "AccessAble access guide",
+                "alternateName": "accessable",
+                "value": true
+            }
+        ],
+        "containsPlace": [
+            {
+                "@type": "Place",
+                "name": "Cavendish Road 6-10",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "17373"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=17373",
+                "description": "School of English<br><br>View<a href=\"https://www.accessable.co.uk/searches?query=3+Cavendish+Road&location_query=&g-recaptcha-response=&commit=Search\"> disabled access information for 6-10 Cavendish Road </a>on the AccessAble website<br><br><strong>Water fountains</strong><br>Cavendish Road Number 10, Basement, B.07",
+                "latitude": 53.806379,
+                "longitude": -1.553363
+            },
+            {
+                "@type": "Place",
+                "name": "English",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "17416"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=17416",
+                "description": "6-10 Cavendish Road<br><br>School of English <br>Computer clusters<br><br><a href=\"https://ahc.leeds.ac.uk/english\">Visit the School of English website</a><br><br><a href=\"tel:01133434739\">0113 343 4739</a><br><br><strong>Term time opening hours</strong><br>Monday-Friday 9.00am-6.00pm<br><br><strong>Vacation opening hours</strong><br>Monday-Friday 9.00am-4.30pm<br><br>View <a href=\"https://www.accessable.co.uk/university-of-leeds/access-guides/school-of-english\">disabled access information for the English Building</a> on the AccessAble website.",
+                "latitude": 53.806338,
+                "longitude": -1.5534
+            }
+        ]
+    }
+}

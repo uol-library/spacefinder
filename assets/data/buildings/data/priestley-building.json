@@ -1,0 +1,117 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "CivicStructure",
+        "identifier": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "slug",
+                "value": "priestley-building"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "osm",
+                "value": "way/29042486"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "wikidata",
+                "value": "Q26262667"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "uprn",
+                "value": "72667177"
+            }
+        ],
+        "name": "Priestley Building",
+        "description": "Mount Preston Street<br>Leeds<br>LS2 9JT<br><br>Faculty of Environment and Social Sciences, Level 9<br><br>View <a href=\"https://www.accessable.co.uk/university-of-leeds/access-guides/priestley-building\">disabled access information for the Priestley Building</a> on the AccessAble website",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "University of Leeds",
+            "addressRegion": "Leeds, West Yorkshire",
+            "streetAddress": "",
+            "postalCode": "LS2 9JT"
+        },
+        "latitude": 53.8050918,
+        "longitude": -1.5562518,
+        "geo": {
+            "@type": "GeoShape",
+            "polygon": [
+                "53.805384 -1.5563714 53.8053841 -1.556338 53.8053845 -1.5561957 53.8053847 -1.5561329 53.8048158 -1.5561277 53.8048152 -1.5563035 53.8047565 -1.5563029 53.8047563 -1.5563658 53.805384 -1.5563714"
+            ]
+        },
+        "sameAs": [
+            "https://www.openstreetmap.org/way/29042486",
+            "https://www.wikidata.org/wiki/Q26262667",
+            "https://www.leeds.ac.uk/campusmap?location=17531"
+        ],
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "accessable",
+                "name": "AccessAble access guide",
+                "value": "https://www.accessable.co.uk/university-of-leeds/access-guides/priestley-building"
+            }
+        ],
+        "image": {
+            "@type": "ImageObject",
+            "contentUrl": "/assets/data/buildings/images/staff-centre-university-of-leeds-5th-december-2014.jpg",
+            "description": "Staff Centre, University of Leeds.  Taken on the afternoon of Friday the 5th of December 2014.",
+            "creditText": "Mtaylor848, CC BY-SA 4.0, via Wikimedia Commons",
+            "license": "https://creativecommons.org/licenses/by-sa/4.0",
+            "acquireLicensePage": "https://commons.wikimedia.org/wiki/File:Staff_Centre,_University_of_Leeds_(5th_December_2014).JPG"
+        },
+        "amenityFeature": [
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "AccessAble access guide",
+                "alternateName": "accessable",
+                "value": true
+            }
+        ],
+        "containsPlace": [
+            {
+                "@type": "Place",
+                "name": "Environment office",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "17426"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=17426",
+                "description": "Priestley Building<br>Mount Preston Street<br><br><a href=\"https://www.environment.leeds.ac.uk/\">Visit the Faculty of Environment website</a><br><br>Phone: <a href=\"tel:01133432846\">0113 343 2846</a>",
+                "latitude": 53.805179,
+                "longitude": -1.556239
+            },
+            {
+                "@type": "Place",
+                "name": "Faculty of Environment and Social Sciences",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "17428"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=17428",
+                "description": "Priestley Building<br>Mount Preston Street<br>Leeds<br>LS2 9JT<br><br>View <a href=\"https://www.accessable.co.uk/university-of-leeds/access-guides/priestley-building\">disabled access information for the Priestley Building</a> on the AccessAble website",
+                "latitude": 53.805179,
+                "longitude": -1.556239
+            },
+            {
+                "@type": "Place",
+                "name": "Politics and International Studies",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "17530"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=17530",
+                "description": "Priestley Building, Mount Preston Street<br>Leeds<br>LS2 9JT<br><br><a href=\"https://essl.leeds.ac.uk/politics\">Visit Politics and International Studies website</a><br><br>View <a href=\"https://www.accessable.co.uk/university-of-leeds/access-guides/priestley-building\">disabled access information for the Priestley Building</a> on the AccessAble website",
+                "latitude": 53.805179,
+                "longitude": -1.556239
+            }
+        ]
+    }
+}

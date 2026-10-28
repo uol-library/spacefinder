@@ -1,0 +1,129 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "Place",
+        "identifier": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "slug",
+                "value": "business-school-centre-for-employment-relations-innovation-and-change"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "osm",
+                "value": "way/84750386"
+            }
+        ],
+        "name": "Business School - Centre for Employment Relations, Innovation and Change",
+        "description": "31 Lyddon Terrace<br>Leeds<br>LS2 9LA<br><br><a href=\"https://business.leeds.ac.uk/research-and-innovation/research-centres/ceric/\">Visit the Centre for Employment Relations, Innovation and Change website</a><br><br>Phone: <a href=\"tel:01133436851\">0113 343 6851</a>",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "University of Leeds",
+            "addressRegion": "Leeds, West Yorkshire",
+            "streetAddress": "7-41 Lyddon Terrace"
+        },
+        "latitude": 53.8071492,
+        "longitude": -1.5597114,
+        "geo": {
+            "@type": "GeoShape",
+            "polygon": [
+                "53.8077648 -1.5593843 53.8075919 -1.5595025 53.8075824 -1.5594628 53.8075014 -1.5595181 53.8075152 -1.5595758 53.8074393 -1.5596276 53.8074455 -1.5596537 53.8073667 -1.5597074 53.8073553 -1.5596595 53.8068624 -1.5599954 53.8069023 -1.5601632 53.8068592 -1.5601926 53.8068681 -1.5602299 53.8068227 -1.5602609 53.8067991 -1.5601614 53.8068282 -1.5601415 53.806801 -1.5600272 53.8065962 -1.5601671 53.8065556 -1.5599968 53.807721 -1.5592006 53.8077648 -1.5593843"
+            ]
+        },
+        "sameAs": [
+            "https://www.openstreetmap.org/way/84750386",
+            "https://www.leeds.ac.uk/campusmap?location=17358"
+        ],
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "building:levels",
+                "name": "Levels",
+                "value": 3
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "accessable",
+                "name": "AccessAble access guide",
+                "value": "https://www.accessable.co.uk/university-of-leeds/access-guides/esther-simpson-building"
+            }
+        ],
+        "amenityFeature": [
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "AccessAble access guide",
+                "alternateName": "accessable",
+                "value": true
+            }
+        ],
+        "containsPlace": [
+            {
+                "@type": "Place",
+                "name": "Business School - Professional Services Sector",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "17365"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=17365",
+                "description": "20 Lyddon Terrace<br>Leeds<br>LS2 9JT<br><br><a href=\"http://business.leeds.ac.uk/\">Visit the Business School website</a><br><br>Phone: <a href=\"tel:0113 436321\">0113 343 6321</a>",
+                "latitude": 53.807135,
+                "longitude": -1.559471
+            },
+            {
+                "@type": "Place",
+                "name": "Business School - Research and Innovation office, Faculty Graduate School: 21 Lyddon Terrace",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "17366"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=17366",
+                "description": "21 Lyddon Terrace<br>Leeds<br>LS2 9LA<br><br><a href=\"http://business.leeds.ac.uk/\">Visit the Business School website</a><br><br><a href=\"tel:0113 436321\">0113 343 6321</a>",
+                "latitude": 53.807086,
+                "longitude": -1.559641
+            },
+            {
+                "@type": "Place",
+                "name": "Esther Simpson Building",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "17420"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=17420",
+                "description": "Lyddon Terrace<br>Leeds<br>LS2 9LA<br><br><strong>Water refill locations:</strong>First floor, outside the toilets (1.06)<br>Second floor, outside the toilets (2.05)<br>Third floor, outside the toilets (3.06)<br><br>View <a href=\"https://www.accessable.co.uk/university-of-leeds/access-guides/esther-simpson-building\">disabled access information for the Esther Simpson Building </a>on the AccessAble website",
+                "latitude": 53.80658,
+                "longitude": -1.55999
+            },
+            {
+                "@type": "Place",
+                "name": "Lyddon Terrace",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "17502"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=17502",
+                "description": "Leeds Enterprise Centre<br>Professional Development Hub<br>Professional Services Sector: 20 Lyddon Terrace<br>Yorkshire Universities: 20 Lyddon Terrace<br>Research and Innovation Office<br>Faculty Graduate School: 21 Lyddon Terrace<br><br>View <a href=\"https://www.accessable.co.uk/searches?query=Lyddon+terrace&location_query=&g-recaptcha-response=&commit=Search\">disabled access information for Lyddon Terrace </a>on the AccessAble website",
+                "latitude": 53.807402,
+                "longitude": -1.559472
+            },
+            {
+                "@type": "Place",
+                "name": "Yorkshire Universities",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "17592"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=17592",
+                "description": "20 Lyddon Terrace<br>Leeds<br>LS2 9LA<br><br><ahref=\"http://www.yorkshireuniversities.ac.uk/\">Visit Yorkshire Universities website</a>",
+                "latitude": 53.807402,
+                "longitude": -1.559472
+            }
+        ]
+    }
+}

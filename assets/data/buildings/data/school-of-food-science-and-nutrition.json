@@ -1,0 +1,70 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "CivicStructure",
+        "identifier": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "slug",
+                "value": "school-of-food-science-and-nutrition"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "osm",
+                "value": "way/84736042"
+            }
+        ],
+        "name": "School of Food Science and Nutrition",
+        "description": "",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "University of Leeds",
+            "addressRegion": "Leeds, West Yorkshire",
+            "streetAddress": "Food Science Building"
+        },
+        "latitude": 53.804893,
+        "longitude": -1.5535176,
+        "geo": {
+            "@type": "GeoShape",
+            "polygon": [
+                "53.8047233 -1.55331 53.8047723 -1.5535834 53.8049063 -1.5535864 53.8049034 -1.5532824 53.8049021 -1.5531452 53.805048 -1.5530392 53.8050502 -1.5538087 53.8047135 -1.5538134 53.8046396 -1.5533505 53.8047233 -1.55331"
+            ]
+        },
+        "sameAs": [
+            "https://www.openstreetmap.org/way/84736042"
+        ],
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "accessable",
+                "name": "AccessAble access guide",
+                "value": "https://www.accessable.co.uk/university-of-leeds/access-guides/food-sciences"
+            }
+        ],
+        "amenityFeature": [
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "AccessAble access guide",
+                "alternateName": "accessable",
+                "value": true
+            }
+        ],
+        "containsPlace": [
+            {
+                "@type": "Place",
+                "name": "Food Science and Nutrition",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "17433"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=17433",
+                "description": "School of Food Science and Nutrition<br>Willow Terrace Road<br><br><a href=\"https://physicalsciences.leeds.ac.uk/info/5/school_of_food_science_and_nutrition\">Visit the Food Science and Nutrition website</a><br><br>Phone: <a href=\"tel:01133432958\">0113 343 2958</a><br><br>View <a href=\"https://www.accessable.co.uk/university-of-leeds/access-guides/food-sciences\">disabled access information for the School of Food Science and Nutrition</a>on the AccessAble website<br><br><strong>Water fountains</strong><br>Level 1 Common Room",
+                "latitude": 53.804888,
+                "longitude": -1.553565
+            }
+        ]
+    }
+}

@@ -1,0 +1,58 @@
+[
+    {
+        "key": "material",
+        "label": "Material",
+        "message": "Showing artworks made of: ",
+        "exclusive": false,
+        "additive": false,
+        "open": true,
+        "options": [
+            {
+                "key": "bronze",
+                "label": "Bronze"
+            },
+            {
+                "key": "stone",
+                "label": "Stone"
+            },
+            {
+                "key": "metal",
+                "label": "Steel, aluminium and other metals"
+            },
+            {
+                "key": "modern",
+                "label": "Modern materials (fibreglass, resin, plastics)"
+            },
+            {
+                "key": "wood",
+                "label": "Wood"
+            }
+        ]
+    },
+    {
+        "key": "period",
+        "label": "Date",
+        "message": "Showing artworks made: ",
+        "exclusive": false,
+        "additive": false,
+        "open": true,
+        "options": [
+            {
+                "key": "before_1960",
+                "label": "Before 1960"
+            },
+            {
+                "key": "1960_1989",
+                "label": "1960 to 1989"
+            },
+            {
+                "key": "1990_2009",
+                "label": "1990 to 2009"
+            },
+            {
+                "key": "since_2010",
+                "label": "Since 2010"
+            }
+        ]
+    }
+]

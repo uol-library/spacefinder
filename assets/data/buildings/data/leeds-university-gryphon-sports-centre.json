@@ -1,0 +1,82 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "Place",
+        "identifier": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "slug",
+                "value": "leeds-university-gryphon-sports-centre"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "osm",
+                "value": "way/84735163"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "uprn",
+                "value": "72751833"
+            }
+        ],
+        "name": "Leeds University Gryphon Sports Centre",
+        "description": "",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "University of Leeds",
+            "addressRegion": "Leeds, West Yorkshire",
+            "streetAddress": "",
+            "postalCode": "LS2 9LZ"
+        },
+        "latitude": 53.8073666,
+        "longitude": -1.5629148,
+        "geo": {
+            "@type": "GeoShape",
+            "polygon": [
+                "53.8072791 -1.5632726 53.8075597 -1.5630575 53.8074521 -1.5626548 53.8074179 -1.5625268 53.8072482 -1.5626569 53.8072775 -1.5627664 53.8072468 -1.5627899 53.8072417 -1.5628128 53.8072578 -1.5628731 53.8071868 -1.5629276 53.8072791 -1.5632726"
+            ]
+        },
+        "sameAs": [
+            "https://www.openstreetmap.org/way/84735163"
+        ],
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "accessable",
+                "name": "AccessAble access guide",
+                "value": "https://www.accessable.co.uk/university-of-leeds/access-guides/gryphon-sports-centre"
+            }
+        ],
+        "amenityFeature": [
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Sport",
+                "alternateName": "sport",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "AccessAble access guide",
+                "alternateName": "accessable",
+                "value": true
+            }
+        ],
+        "containsPlace": [
+            {
+                "@type": "Place",
+                "name": "Gryphon Sports Centre",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "17444"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=17444",
+                "description": "Western Campus<br>Woodsley Rd<br>Leeds<br>LS2 9LZSport and Physical Activity<br><br><a href=\"http://sport.leeds.ac.uk/facilities/sports-halls/\">Visit the Sport and Physical Activity website</a><br><br>Phone <a href=\"tel:01133435080\">0113 343 5080</a><br><br>The Gryphon Sports Centre offers a range of bookable sports and activities in its sports hall including three squash courts that can be used by staff and students.<br><br>View <a href=\"https://www.accessable.co.uk/university-of-leeds/access-guides/gryphon-sports-centre\">disabled access information for the Gryphon Sports Centre </a>on the AccessAble website",
+                "latitude": 53.807372,
+                "longitude": -1.562964
+            }
+        ]
+    }
+}

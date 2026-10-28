@@ -1,0 +1,71 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "CivicStructure",
+        "identifier": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "slug",
+                "value": "cavendish-road-3-9"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "osm",
+                "value": "way/84735164"
+            }
+        ],
+        "name": "Cavendish Road 3-9",
+        "description": "Faculty of Arts, Humanities and Cultures office<br>English<br><br>View<a href=\"https://www.accessable.co.uk/university-of-leeds/access-guides/5-cavendish-road\"> disabled access information for 5 Cavendish Road </a>on the AccessAble website.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "University of Leeds",
+            "addressRegion": "Leeds, West Yorkshire",
+            "streetAddress": "3-9 Cavendish Road"
+        },
+        "latitude": 53.8057935,
+        "longitude": -1.5526357,
+        "geo": {
+            "@type": "GeoShape",
+            "polygon": [
+                "53.806013 -1.5526989 53.8055809 -1.5527582 53.805572 -1.5525726 53.8060041 -1.5525132 53.806013 -1.5526989"
+            ]
+        },
+        "sameAs": [
+            "https://www.openstreetmap.org/way/84735164",
+            "https://www.leeds.ac.uk/campusmap?location=17372"
+        ],
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "accessable",
+                "name": "AccessAble access guide",
+                "value": "https://www.accessable.co.uk/university-of-leeds/access-guides/5-cavendish-road"
+            }
+        ],
+        "amenityFeature": [
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "AccessAble access guide",
+                "alternateName": "accessable",
+                "value": true
+            }
+        ],
+        "containsPlace": [
+            {
+                "@type": "Place",
+                "name": "Faculty of Arts, Humanities and Cultures office",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "17422"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=17422",
+                "description": "3 Cavendish Road<br>Leeds<br>LS2 9JT<br><br><a href=\"http://www.leeds.ac.uk/faculties/doc/faculty-arts-humanities-cultures\">Visit the Faculty of Arts, Humanities and Cultures website</a><br><br>Phone: <a href=\"tel:01133432687\">0113 343 2687</a>",
+                "latitude": 53.806,
+                "longitude": -1.55272
+            }
+        ]
+    }
+}

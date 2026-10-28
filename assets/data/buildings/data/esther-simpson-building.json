@@ -1,0 +1,116 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "CivicStructure",
+        "identifier": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "slug",
+                "value": "esther-simpson-building"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "osm",
+                "value": "way/935282448"
+            }
+        ],
+        "name": "Esther Simpson Building",
+        "description": "",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "University of Leeds",
+            "addressRegion": "Leeds, West Yorkshire",
+            "streetAddress": ""
+        },
+        "latitude": 53.8064609,
+        "longitude": -1.5595422,
+        "geo": {
+            "@type": "GeoShape",
+            "polygon": [
+                "53.8062636 -1.5598988 53.8064901 -1.5597478 53.8067012 -1.5596072 53.8065931 -1.5591425 53.8064061 -1.5592607 53.8064455 -1.5594394 53.8064281 -1.5594484 53.8061953 -1.559605 53.8062636 -1.5598988"
+            ]
+        },
+        "sameAs": [
+            "https://www.openstreetmap.org/way/935282448"
+        ],
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "accessable",
+                "name": "AccessAble access guide",
+                "value": "https://www.accessable.co.uk/university-of-leeds/access-guides/esther-simpson-building"
+            }
+        ],
+        "amenityFeature": [
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Entrances mapped",
+                "alternateName": "entrances",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "AccessAble access guide",
+                "alternateName": "accessable",
+                "value": true
+            }
+        ],
+        "containsPlace": [
+            {
+                "@type": "Place",
+                "additionalType": "https://wiki.openstreetmap.org/wiki/Key:entrance",
+                "name": "Main entrance",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "osm",
+                    "value": "node/11261405655"
+                },
+                "latitude": 53.8064901,
+                "longitude": -1.5597478,
+                "amenityFeature": [
+                    {
+                        "@type": "LocationFeatureSpecification",
+                        "name": "Entrance type",
+                        "alternateName": "entrance",
+                        "value": "main"
+                    }
+                ]
+            },
+            {
+                "@type": "Place",
+                "additionalType": "https://wiki.openstreetmap.org/wiki/Key:entrance",
+                "name": "Main entrance",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "osm",
+                    "value": "node/11261405656"
+                },
+                "latitude": 53.8064281,
+                "longitude": -1.5594484,
+                "amenityFeature": [
+                    {
+                        "@type": "LocationFeatureSpecification",
+                        "name": "Entrance type",
+                        "alternateName": "entrance",
+                        "value": "main"
+                    }
+                ]
+            },
+            {
+                "@type": "Place",
+                "name": "Esther Simpson Café",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "18484"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=18484",
+                "description": "Esther Simpson Building<br>Lyddon Terrace<br>Leeds<br>LS2 9LA<br><br><br>Take a break in the newly completed Esther Simpson Café found on the ground floor of the Esther Simpson Building.<br><br>View <a href=\"https://www.accessable.co.uk/university-of-leeds/access-guides/esther-simpson-building\">disabled access information for the Esther Simpson Building </a>on the AccessAble website",
+                "latitude": 53.8065989991554,
+                "longitude": -1.5596144017209979
+            }
+        ]
+    }
+}

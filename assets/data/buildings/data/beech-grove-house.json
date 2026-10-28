@@ -1,0 +1,82 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "CivicStructure",
+        "identifier": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "slug",
+                "value": "beech-grove-house"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "osm",
+                "value": "way/84656860"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "wikidata",
+                "value": "Q26234696"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "uprn",
+                "value": "72650731"
+            }
+        ],
+        "name": "Beech Grove House",
+        "description": "University Precinct<br>Leeds<br>LS2 9JT<br><br><strong>Term time opening hours</strong><br>Monday-Friday 9.00am-5.00pm<br><br><strong>Water fountains</strong><br>Downstairs kitchen<br><br>View <a href=\"https://www.accessable.co.uk/university-of-leeds/access-guides/beech-grove-house\">disabled access information for Beech Grove House</a> on the AccessAble website.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "University of Leeds",
+            "addressRegion": "Leeds, West Yorkshire",
+            "streetAddress": "",
+            "postalCode": "LS2 9JT"
+        },
+        "latitude": 53.8071828,
+        "longitude": -1.5557575,
+        "geo": {
+            "@type": "GeoShape",
+            "polygon": [
+                "53.8072604 -1.555884 53.8071301 -1.555914 53.8071075 -1.5556309 53.8072377 -1.555601 53.8072604 -1.555884"
+            ]
+        },
+        "sameAs": [
+            "https://www.openstreetmap.org/way/84656860",
+            "https://www.wikidata.org/wiki/Q26234696",
+            "https://www.leeds.ac.uk/campusmap?location=17344"
+        ],
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "building:levels",
+                "name": "Levels",
+                "value": 2
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "accessable",
+                "name": "AccessAble access guide",
+                "value": "https://www.accessable.co.uk/university-of-leeds/access-guides/beech-grove-house"
+            }
+        ],
+        "image": {
+            "@type": "ImageObject",
+            "contentUrl": "/assets/data/buildings/images/beech-grove-house-the-nucleus-of-leeds-university-taken-by-flickr-user-20th-may-2012.jpg",
+            "description": "Beech Grove House, 'the nucleus of Leeds University' (photographers words) at the University of Leeds in Leeds, West Yorkshire.  Taken by Flickr user: Tim Green aka atouch on Sunday the 20th of May 2012.  ( https://www.flickr.com/photos/atoach/7274220764/in/photostream )",
+            "creditText": "Flickr user:Tim Green aka atouch, CC BY 2.0, via Wikimedia Commons",
+            "license": "https://creativecommons.org/licenses/by/2.0",
+            "acquireLicensePage": "https://commons.wikimedia.org/wiki/File:Beech_Grove_House,_the_nucleus_of_Leeds_University_(Taken_by_Flickr_user_20th_May_2012).jpg"
+        },
+        "amenityFeature": [
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "AccessAble access guide",
+                "alternateName": "accessable",
+                "value": true
+            }
+        ]
+    }
+}

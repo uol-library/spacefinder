@@ -1,0 +1,273 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "CivicStructure",
+        "identifier": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "slug",
+                "value": "michael-sadler-building"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "osm",
+                "value": "way/84749515"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "wikidata",
+                "value": "Q26248715"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "uprn",
+                "value": "72650714"
+            }
+        ],
+        "name": "Michael Sadler Building",
+        "description": "Michel Sadler Building<br>University Precinct<br>University of Leeds<br>Leeds<br>LS2 9JT<br><br>Arabic, Islamic and Middle Eastern Studies<br>East Asian Studies<br>English<br>French<br>German, Russian and Slavonic Studies<br>History<br>Italian<br>Linguistics and Phonetics<br>Languages, Cultures and Societies<br>Philosophy, Religion and the History of Science<br>Spanish, Portuguese and Latin American Studies<br>Translation Studies<br><br><a href=\"https://ahc.leeds.ac.uk/\">Visit the Faculty of Arts, Humanities and Cultures website</a><br><br><strong>Term time opening hours</strong><br>Monday-Thursday 8.30am-9.30pm<br>Friday 8.30am-5.00pm<br>Sat 12.00-4.00pm<br><br><strong>Vacation opening hours</strong><br>Monday-Friday 8.30am-4.30pm<br><br>View <a href=\"https://www.accessable.co.uk/university-of-leeds/access-guides/michael-sadler\">disabled access information for the Michael Sadler Building on the AccessAble website</a><br><br><strong>Water fountains</strong><br>Ground floor, room 10",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "University of Leeds",
+            "addressRegion": "Leeds, West Yorkshire",
+            "streetAddress": "Michael Sadler Building",
+            "postalCode": "LS2 9JT"
+        },
+        "latitude": 53.8070595,
+        "longitude": -1.5534579,
+        "geo": {
+            "@type": "GeoShape",
+            "polygon": [
+                "53.8069996 -1.5533026 53.8069025 -1.5532584 53.8068935 -1.5533366 53.8068883 -1.5534343 53.8068898 -1.5535217 53.8068964 -1.5535939 53.8069119 -1.5536704 53.8070089 -1.5536149 53.8070172 -1.5540141 53.8070999 -1.5540126 53.807163 -1.5540114 53.8071652 -1.5539611 53.8071764 -1.5539608 53.8071718 -1.5535948 53.8071609 -1.5535939 53.8071587 -1.5535152 53.8071707 -1.5535137 53.8071699 -1.55345 53.807169 -1.5533864 53.8071643 -1.5529622 53.8071052 -1.5529657 53.8071038 -1.5528997 53.8069894 -1.5529021 53.8069996 -1.5533026"
+            ]
+        },
+        "sameAs": [
+            "https://www.openstreetmap.org/way/84749515",
+            "https://www.wikidata.org/wiki/Q26248715",
+            "https://www.leeds.ac.uk/campusmap?location=17512"
+        ],
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "building:levels",
+                "name": "Levels",
+                "value": 6
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "accessable",
+                "name": "AccessAble access guide",
+                "value": "https://www.accessable.co.uk/university-of-leeds/access-guides/michael-sadler"
+            }
+        ],
+        "image": {
+            "@type": "ImageObject",
+            "contentUrl": "/assets/data/buildings/images/michael-sadler-building-leeds-university-geograph-org-uk-411497.jpg",
+            "description": "Michael Sadler Building - Leeds University",
+            "creditText": "Betty Longbottom, CC BY-SA 2.0, via Wikimedia Commons",
+            "license": "https://creativecommons.org/licenses/by-sa/2.0",
+            "acquireLicensePage": "https://commons.wikimedia.org/wiki/File:Michael_Sadler_Building_-_Leeds_University_-_geograph.org.uk_-_411497.jpg"
+        },
+        "amenityFeature": [
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Entrances mapped",
+                "alternateName": "entrances",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "AccessAble access guide",
+                "alternateName": "accessable",
+                "value": true
+            }
+        ],
+        "containsPlace": [
+            {
+                "@type": "Place",
+                "additionalType": "https://wiki.openstreetmap.org/wiki/Key:entrance",
+                "name": "Main entrance",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "osm",
+                    "value": "node/9765190628"
+                },
+                "latitude": 53.8071699,
+                "longitude": -1.55345,
+                "amenityFeature": [
+                    {
+                        "@type": "LocationFeatureSpecification",
+                        "name": "Entrance type",
+                        "alternateName": "entrance",
+                        "value": "main"
+                    }
+                ]
+            },
+            {
+                "@type": "Place",
+                "additionalType": "https://wiki.openstreetmap.org/wiki/Key:entrance",
+                "name": "Entrance",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "osm",
+                    "value": "node/9765190638"
+                },
+                "latitude": 53.8070999,
+                "longitude": -1.5540126,
+                "amenityFeature": [
+                    {
+                        "@type": "LocationFeatureSpecification",
+                        "name": "Entrance type",
+                        "alternateName": "entrance",
+                        "value": "yes"
+                    }
+                ]
+            },
+            {
+                "@type": "Place",
+                "name": "Arabic, Islamic and Middle Eastern Studies",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "17340"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=17340",
+                "description": "School of Languages, Cultures and Societies<br><br><a href=\"https://ahc.leeds.ac.uk/arabic-islamic-middle-eastern-studies/\">Visit the Arabic, Islamic and Middle Eastern Studies webpage</a><br><br><a href=\"tel:01133436631\">0113 343 6631</a>",
+                "latitude": 53.807074,
+                "longitude": -1.553429
+            },
+            {
+                "@type": "Place",
+                "name": "East Asian Studies",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "17408"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=17408",
+                "description": "School of Languages, Cultures and Societies <br><br>Michael Sadler Building<br>University of Leeds<br>Leeds<br>LS2 9JT<br><br><a href=\"https://ahc.leeds.ac.uk/east-asian-studies\">Visit the East Asian Studies webpage</a><br><br>Phone: <a href=\"tel:01133436631\">0113 343 6631</a><br><br>View <a href=\"https://www.accessable.co.uk/university-of-leeds/access-guides/michael-sadler\">disabled access information for the Michael Sadler Building </a>on the AccessAble website.",
+                "latitude": 53.807073,
+                "longitude": -1.553451
+            },
+            {
+                "@type": "Place",
+                "name": "French",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "17434"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=17434",
+                "description": "Michael Sadler Building<br><br><a href=\"https://ahc.leeds.ac.uk/french\">Visit webpages about the French department</a><br><br>Phone: <a href=\"tel:01133436631\">0113 343 6631</a>",
+                "latitude": 53.807092,
+                "longitude": -1.553408
+            },
+            {
+                "@type": "Place",
+                "name": "German, Russian and Slavonic Studies",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "17439"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=17439",
+                "description": "Michael Sadler Building<br>University Precinct<br>Leeds<br>LS2 9JT<br><br><a href=\"https://ahc.leeds.ac.uk/languages\">Visit the School of Languages, Cultures and Societies website</a><br><br>Phone: <a href=\"tel:01133436631\">0113 343 6631</a>",
+                "latitude": 53.807073,
+                "longitude": -1.553408
+            },
+            {
+                "@type": "Place",
+                "name": "History",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "17451"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=17451",
+                "description": "Michael Sadler Building<br>University Precinct<br>Leeds<br>LS2 9JT<br><br><a href=\"https://ahc.leeds.ac.uk/history\">Visit the School of History website</a><br><br>Phone: <a href=\"01133436770\">0113 343 6770</a>",
+                "latitude": 53.80706,
+                "longitude": -1.553419
+            },
+            {
+                "@type": "Place",
+                "name": "Hugo Camionnette takeaway",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "18475"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=18475",
+                "description": "University of Leeds, Precinct, Woodhouse, Leeds, LS2 9JT<br><br><a href=\"https://gfal.leeds.ac.uk/where-to-eat/cafes/hugo/\">Visit the Hugo webpage</a><br><br>Hugo, the Camionnette Café sells a range of delicious products including coffees, croissants, and fresh sandwiches.<br><br>Conveniently located on the main precinct, you can easily grab a bite for breakfast on your way into the University or grab a quick lunch or snack.",
+                "latitude": 53.80706074093679,
+                "longitude": -1.5540491755986297
+            },
+            {
+                "@type": "Place",
+                "name": "Italian",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "17466"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=17466",
+                "description": "Michael Sadler Building<br><br><a href=\"https://ahc.leeds.ac.uk/italian\">Visit the Italian degrees website</a><br><br><a href=\"01133436631\">Phone: 0113 343 6631</a>",
+                "latitude": 53.807092,
+                "longitude": -1.553193
+            },
+            {
+                "@type": "Place",
+                "name": "Languages, Cultures and Societies",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "17474"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=17474",
+                "description": "Michael Sadler building<br><br><a href=\"https://ahc.leeds.ac.uk/languages\">Visit the Languages, Cultures and Societies website</a><br><br><a href=\"01133436631\">Phone: 0113 343 6631</a><br><br>View <a href=\"https://www.accessable.co.uk/university-of-leeds/access-guides/michael-sadler\">disabled access information for the Michael Sadler Building</a> on the AccessAble website.",
+                "latitude": 53.807126,
+                "longitude": -1.553443
+            },
+            {
+                "@type": "Place",
+                "name": "Linguistics and Phonetics",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "17498"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=17498",
+                "description": "Michael Sadler Building<br><br><a href=\"https://ahc.leeds.ac.uk/linguistics-phonetics\">Visit website</a><br><br><a href=\"tel:01133436631\">0113 343 6631</a>",
+                "latitude": 53.807067,
+                "longitude": -1.553301
+            },
+            {
+                "@type": "Place",
+                "name": "Philosophy, Religion and the History of Science",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "17527"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=17527",
+                "description": "Michael Sadler building<br><br><a href=\"https://ahc.leeds.ac.uk/performance\">Visit the Philosophy, Religion and the History of Science website</a><br><br><a href=\"tel:01133433260\">Phone: 0113 343 3260</a>",
+                "latitude": 53.807126,
+                "longitude": -1.553443
+            },
+            {
+                "@type": "Place",
+                "name": "Spanish, Portuguese and Latin American Studies",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "17550"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=17550",
+                "description": "169 Woodhouse Lane<br><br><a href=\"https://ahc.leeds.ac.uk/spanish-portuguese-latin-american-studies\">Visit the Spanish, Portuguese and Latin American Studies website</a><br><br><a href=\"tel:01133436631\">Phone: 0113 343 6631</a>",
+                "latitude": 53.807086,
+                "longitude": -1.553322
+            }
+        ]
+    }
+}

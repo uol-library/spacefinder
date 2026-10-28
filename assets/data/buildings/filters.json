@@ -1,0 +1,53 @@
+[
+    {
+        "key": "category",
+        "label": "Building type",
+        "message": "Showing buildings for: ",
+        "exclusive": false,
+        "additive": false,
+        "open": true,
+        "options": [
+            {
+                "key": "accommodation",
+                "label": "Accommodation"
+            },
+            {
+                "key": "libraries",
+                "label": "Libraries"
+            },
+            {
+                "key": "culture",
+                "label": "Culture"
+            },
+            {
+                "key": "sport",
+                "label": "Sport"
+            }
+        ]
+    },
+    {
+        "key": "accessibility",
+        "label": "Accessibility",
+        "message": "Showing buildings with: ",
+        "exclusive": false,
+        "additive": true,
+        "open": true,
+        "options": [
+            {
+                "key": "wheelchair_entrance",
+                "label": "Wheelchair accessible entrance",
+                "icon": "icon-disabled"
+            },
+            {
+                "key": "accessable",
+                "label": "AccessAble access guide",
+                "icon": "icon-universal-access"
+            },
+            {
+                "key": "entrances",
+                "label": "Entrances mapped",
+                "icon": "icon-direction"
+            }
+        ]
+    }
+]

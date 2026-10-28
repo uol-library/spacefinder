@@ -1,0 +1,234 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "CivicStructure",
+        "identifier": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "slug",
+                "value": "roger-stevens-building"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "osm",
+                "value": "way/29042489"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "wikidata",
+                "value": "Q17533992"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "uprn",
+                "value": "72674246;72650723"
+            }
+        ],
+        "name": "Roger Stevens Building",
+        "description": "Roger Stevens Building<br>University Precinct<br>University of Leeds<br>Leeds<br>LS2 9JT<br><ul><li>Print and Mail</li><li>Coffee Bars</li></ul><a href=\"https://students.leeds.ac.uk/rooms#building=Roger-Stevens-Building\">Roger Stevens room information</a><br><br><strong>Term time opening hours</strong><br>Monday-Friday 8.00am-6.00pm<br><br><strong>Vacation opening hours</strong><br>Monday-Friday 8.00am-5.00pm<br><br>View <a href=\"https://www.accessable.co.uk/university-of-leeds/access-guides/roger-stevens\">disabled access information for the Roger Stevens Building</a> on the AccessAble website<br><br><strong>Water fountains</strong><br>Teaching Technology Support, behind counter and on Level 6<br>Level 5, corridor C-001, room 34 and room 52K<br>Level 6, rooms 27, 52 and 63<br><br><strong>Café</strong><br>Café Nero, Level 6",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "University of Leeds",
+            "addressRegion": "Leeds, West Yorkshire",
+            "streetAddress": "",
+            "postalCode": "LS2 9JT"
+        },
+        "latitude": 53.8048862,
+        "longitude": -1.554684,
+        "geo": {
+            "@type": "GeoShape",
+            "polygon": [
+                "53.8050292 -1.554966 53.8050306 -1.5547027 53.8050302 -1.5546596 53.8050286 -1.554462 53.8050286 -1.5544008 53.8050053 -1.5544008 53.8049826 -1.5544008 53.8049826 -1.5543661 53.8049178 -1.554366 53.8048668 -1.5543659 53.8048668 -1.5544047 53.8048154 -1.5544047 53.8048154 -1.5544297 53.8048153 -1.5544668 53.8047349 -1.5544667 53.8047348 -1.5547233 53.8047348 -1.5547502 53.8047348 -1.5547819 53.8047347 -1.5549389 53.8047347 -1.554964 53.8048386 -1.5549641 53.8050292 -1.554966"
+            ]
+        },
+        "sameAs": [
+            "https://www.openstreetmap.org/way/29042489",
+            "https://www.wikidata.org/wiki/Q17533992",
+            "https://www.leeds.ac.uk/campusmap?location=17539"
+        ],
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "accessable",
+                "name": "AccessAble access guide",
+                "value": "https://www.accessable.co.uk/university-of-leeds/access-guides/roger-stevens"
+            }
+        ],
+        "image": {
+            "@type": "ImageObject",
+            "contentUrl": "/assets/data/buildings/images/roger-stevens-building-2013-09-30-22-29-22.jpg",
+            "description": "Roger Stevens Building",
+            "creditText": "astroman3D, CC BY-SA 3.0, via Wikimedia Commons",
+            "license": "https://creativecommons.org/licenses/by-sa/3.0",
+            "acquireLicensePage": "https://commons.wikimedia.org/wiki/File:Roger_Stevens_Building_2013-09-30_22-29-22.jpg"
+        },
+        "amenityFeature": [
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Entrances mapped",
+                "alternateName": "entrances",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "AccessAble access guide",
+                "alternateName": "accessable",
+                "value": true
+            }
+        ],
+        "containsPlace": [
+            {
+                "@type": "Place",
+                "additionalType": "https://wiki.openstreetmap.org/wiki/Key:entrance",
+                "name": "Entrance",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "osm",
+                    "value": "node/772763250"
+                },
+                "latitude": 53.8050053,
+                "longitude": -1.5544008,
+                "amenityFeature": [
+                    {
+                        "@type": "LocationFeatureSpecification",
+                        "name": "Entrance type",
+                        "alternateName": "entrance",
+                        "value": "yes"
+                    },
+                    {
+                        "@type": "LocationFeatureSpecification",
+                        "name": "level",
+                        "alternateName": "level",
+                        "value": "6"
+                    }
+                ]
+            },
+            {
+                "@type": "Place",
+                "additionalType": "https://wiki.openstreetmap.org/wiki/Key:entrance",
+                "name": "Entrance",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "osm",
+                    "value": "node/4535780419"
+                },
+                "latitude": 53.8048154,
+                "longitude": -1.5544297,
+                "amenityFeature": [
+                    {
+                        "@type": "LocationFeatureSpecification",
+                        "name": "Entrance type",
+                        "alternateName": "entrance",
+                        "value": "yes"
+                    },
+                    {
+                        "@type": "LocationFeatureSpecification",
+                        "name": "level",
+                        "alternateName": "level",
+                        "value": "6"
+                    }
+                ]
+            },
+            {
+                "@type": "Place",
+                "additionalType": "https://wiki.openstreetmap.org/wiki/Key:entrance",
+                "name": "Emergency exit",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "osm",
+                    "value": "node/5488850318"
+                },
+                "latitude": 53.8048386,
+                "longitude": -1.5549641,
+                "amenityFeature": [
+                    {
+                        "@type": "LocationFeatureSpecification",
+                        "name": "Entrance type",
+                        "alternateName": "entrance",
+                        "value": "emergency"
+                    }
+                ]
+            },
+            {
+                "@type": "Place",
+                "additionalType": "https://wiki.openstreetmap.org/wiki/Key:entrance",
+                "name": "Entrance",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "osm",
+                    "value": "node/9937702889"
+                },
+                "latitude": 53.8047348,
+                "longitude": -1.5547502,
+                "amenityFeature": [
+                    {
+                        "@type": "LocationFeatureSpecification",
+                        "name": "Entrance type",
+                        "alternateName": "entrance",
+                        "value": "yes"
+                    },
+                    {
+                        "@type": "LocationFeatureSpecification",
+                        "name": "level",
+                        "alternateName": "level",
+                        "value": "7"
+                    }
+                ]
+            },
+            {
+                "@type": "Place",
+                "additionalType": "https://wiki.openstreetmap.org/wiki/Key:entrance",
+                "name": "Main entrance",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "osm",
+                    "value": "node/9937766233"
+                },
+                "latitude": 53.8050306,
+                "longitude": -1.5547027,
+                "amenityFeature": [
+                    {
+                        "@type": "LocationFeatureSpecification",
+                        "name": "Entrance type",
+                        "alternateName": "entrance",
+                        "value": "main"
+                    },
+                    {
+                        "@type": "LocationFeatureSpecification",
+                        "name": "level",
+                        "alternateName": "level",
+                        "value": "7"
+                    }
+                ]
+            },
+            {
+                "@type": "Place",
+                "name": "Caffé Nero at Roger Stevens",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "18471"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=18471",
+                "description": "Roger Stevens Building<br>Willow Terrace Road,<br>Leeds<br>LS2 9NH<br><br><a href=\"https://gfal.leeds.ac.uk/where-to-eat/cafes/caffe-nero-at-roger-stevens/\">Visit Caffé Nero webpage</a><br><br>This Caffé Nero is on level 6 of the Roger Stevens building at the heart of campus overlooking the sustainable pond.",
+                "latitude": 53.80491930392357,
+                "longitude": -1.554411478912474
+            },
+            {
+                "@type": "Place",
+                "name": "Print and Mail",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "17532"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=17532",
+                "description": "Roger Stevens Building<br><br><a href=\"http://pcb.leeds.ac.uk/\">Visit the Print and Mail website</a><br><br><a href=\"tel:01133432668\">Phone: 0113 343 2668</a><br><br>View <a href=\"https://www.accessable.co.uk/venues/roger-stevens\">disabled access information for the Roger Stevens Building</a> on the AccessAble website",
+                "latitude": 53.804922,
+                "longitude": -1.554412
+            }
+        ]
+    }
+}

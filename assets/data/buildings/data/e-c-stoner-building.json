@@ -1,0 +1,149 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "CivicStructure",
+        "identifier": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "slug",
+                "value": "e-c-stoner-building"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "osm",
+                "value": "way/22951928"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "wikidata",
+                "value": "Q26237205"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "uprn",
+                "value": "72650720"
+            }
+        ],
+        "name": "E C Stoner Building",
+        "description": "University Precinct<br>Leeds<br>LS2 9JT<br><br>Computing<br>Helix<br>IT service desk<br>​​​​​​​Leeds Institute for Teaching Excellence (LITE)<br>Teaching Space Service<br>Physics and Astronomy<br>Trade Union Offices<br>Coffee bars<br><br><strong>Term time opening hours</strong><br>Monday to Friday - 8.30am to 6.00pm<br><br><strong>Vacation opening hours</strong><br>Monday to Friday - 8.30am to 5.30pm<br><br><strong>Water fountains</strong><br>Level 6, room 62<br>Level 8, room 3b<br>Level 9, room 1<br>Level 10<br>Level 11, rooms 11, 16, 23, 35, 46, 56, 60, 72, 76<br>Level 12, rooms 12, 84<br>School of Computing<br><br>View <a href=\"https://www.accessable.co.uk/university-of-leeds/access-guides/ec-stoner-building\">disabled access information for the E C Stoner Building </a>on the AccessAble website",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "University of Leeds",
+            "addressRegion": "Leeds, West Yorkshire",
+            "streetAddress": "",
+            "postalCode": "LS2 9JT"
+        },
+        "latitude": 53.8053898,
+        "longitude": -1.5527403,
+        "geo": {
+            "@type": "GeoShape",
+            "polygon": [
+                "53.8053113 -1.5543165 53.8053113 -1.5542649 53.8053112 -1.5539113 53.8053111 -1.5532375 53.805311 -1.5526423 53.805311 -1.5523878 53.805311 -1.5519553 53.8053108 -1.5510759 53.8053232 -1.5510759 53.8054616 -1.5510758 53.8054614 -1.5524166 53.8054621 -1.552638 53.8054624 -1.5540789 53.8055224 -1.5540772 53.8055226 -1.5543176 53.8054662 -1.5543164 53.8054537 -1.5543164 53.8054393 -1.5543164 53.8054082 -1.5543164 53.8053113 -1.5543165"
+            ]
+        },
+        "sameAs": [
+            "https://www.openstreetmap.org/way/22951928",
+            "https://www.wikidata.org/wiki/Q26237205",
+            "https://www.leeds.ac.uk/campusmap?location=17406"
+        ],
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "building:levels",
+                "name": "Levels",
+                "value": 6
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "accessable",
+                "name": "AccessAble access guide",
+                "value": "https://www.accessable.co.uk/university-of-leeds/access-guides/ec-stoner-building"
+            }
+        ],
+        "image": {
+            "@type": "ImageObject",
+            "contentUrl": "/assets/data/buildings/images/e-c-stoner-building-university-of-leeds-geograph-org-uk-544966.jpg",
+            "description": "E C Stoner Building - University of Leeds",
+            "creditText": "Betty Longbottom, CC BY-SA 2.0, via Wikimedia Commons",
+            "license": "https://creativecommons.org/licenses/by-sa/2.0",
+            "acquireLicensePage": "https://commons.wikimedia.org/wiki/File:E_C_Stoner_Building_-_University_of_Leeds_-_geograph.org.uk_-_544966.jpg"
+        },
+        "amenityFeature": [
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "AccessAble access guide",
+                "alternateName": "accessable",
+                "value": true
+            }
+        ],
+        "containsPlace": [
+            {
+                "@type": "Place",
+                "name": "Advancement",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "17339"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=17339",
+                "description": "Room 9.30A, Floor 9, EC Stoner Building <br><br><a href=\"https://www.leeds.ac.uk/alumni\">Visit the Alumni website</a><br><br>Phone: <a href=\"tel:01133437520\">0113 343 7520</a><br><br>View <a href=\"https://www.accessable.co.uk/university-of-leeds/access-guides/ec-stoner-building\">disabled access information for the E C Stoner Building </a>on the AccessAble website",
+                "latitude": 53.805458,
+                "longitude": -1.554084
+            },
+            {
+                "@type": "Place",
+                "name": "HELIX",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "22363"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=22363",
+                "description": "Floor 7, E C Stoner Building<br><br>Learning innovation hub for students, staff, and the local community, including immersive technologies, cutting-edge multimedia production studios, and a physical makerspace.<br><br><a href=\"https://digitaleducation.leeds.ac.uk/helix\">Visit the HELIX website</a>",
+                "latitude": 53.805472,
+                "longitude": -1.5533994
+            },
+            {
+                "@type": "Place",
+                "name": "IT Service Desk",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "17464"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=17464",
+                "description": "Level 10, EC Stoner Building<br><br><a href=\"https://leeds.service-now.com/it\">Visit the IT Service Desk website</a><br><br><a href=\"tel:01133433333\">Phone: 0113 343 3333</a><br><br>View <a href=\"https://www.accessable.co.uk/university-of-leeds/access-guides/ec-stoner-building\"> disabled access information for the EC Stoner Building </a>on the AccessAble website.",
+                "latitude": 53.805379,
+                "longitude": -1.5538
+            },
+            {
+                "@type": "Place",
+                "name": "Leeds Institute for Teaching Excellence (LITE)",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "17481"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=17481",
+                "description": "Level 8, E C Stoner Building<br><br><a href=\"http://teachingexcellence.leeds.ac.uk/ \">Visit the LITE website</a><br><br><a href=\"tel:0113 343 4114\">Phone: 0113 343 4114</a><br><br>View <a href=\"https://www.accessable.co.uk/university-of-leeds/access-guides/ec-stoner-building\">disabled access information for the E C Stoner Building </a>on the AccessAble website",
+                "latitude": 53.805458,
+                "longitude": -1.554084
+            },
+            {
+                "@type": "Place",
+                "name": "Teaching Space Service",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "21742"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=21742",
+                "description": "Room 6.01, EC Stoner Building<br>University Precinct<br>Leeds<br>LS2 9JT<br><p>Supporting all teaching, education and meeting spaces and providing AV solutions across campus.</p><p>For more information, <a href=\"https://estates.leeds.ac.uk/our-services/facilities-support-services/\">visit the Facilities Support services webpage.</a> <br><a href=\"tel:01133435555\">Phone: 0113 34 35555</a><br><br>Opening hours: Monday to Friday – 8:00 to 17:00<br><br>View <a href=\"https://www.accessable.co.uk/university-of-leeds/access-guides/ec-stoner-building\">disabled access information for the E C Stoner Building </a>on the AccessAble website<br><br><strong>What3Words: </strong><br><a href=\"https://w3w.co/spent.cage.pasta\">What3Words for the Teaching Space Service ///spent.cage.pasta</a>",
+                "latitude": 53.8054,
+                "longitude": -1.553804
+            }
+        ]
+    }
+}

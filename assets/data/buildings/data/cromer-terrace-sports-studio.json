@@ -1,0 +1,70 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "CivicStructure",
+        "identifier": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "slug",
+                "value": "cromer-terrace-sports-studio"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "osm",
+                "value": "way/175997917"
+            }
+        ],
+        "name": "Cromer Terrace Sports Studio",
+        "description": "",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "University of Leeds",
+            "addressRegion": "Leeds, West Yorkshire",
+            "streetAddress": "Cromer Terrace"
+        },
+        "latitude": 53.8066932,
+        "longitude": -1.5570876,
+        "geo": {
+            "@type": "GeoShape",
+            "polygon": [
+                "53.8066718 -1.5573247 53.8065802 -1.556944 53.8066992 -1.556862 53.8067159 -1.5568505 53.8068074 -1.5572312 53.8066718 -1.5573247"
+            ]
+        },
+        "sameAs": [
+            "https://www.openstreetmap.org/way/175997917"
+        ],
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "accessable",
+                "name": "AccessAble access guide",
+                "value": "https://www.accessable.co.uk/venues/commercial-services-cromer-terrace-fitness-studio"
+            }
+        ],
+        "amenityFeature": [
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "AccessAble access guide",
+                "alternateName": "accessable",
+                "value": true
+            }
+        ],
+        "containsPlace": [
+            {
+                "@type": "Place",
+                "name": "Gryphon Performance Hub",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "17398"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=17398",
+                "description": "Cromer Terrace, University Precinct<br>University of Leeds<br>Leeds<br>LS2 9JT<br><br><a href=\"https://sport.leeds.ac.uk/facilities/gryphon-performance-hub\">Visit the Gryphon Performance Hub webpage</a><br><br>Closely located to Leeds University Union, it is the biggest studio space at the University of Leeds and used for a variety of different classes. Physiotherapy and sports massage facilities are also located on site.<br><br>View <a href=\"https://www.accessable.co.uk/venues/commercial-services-cromer-terrace-fitness-studio\">disabled access information for Gryphon Performance Hub</a> on the AccessAble website",
+                "latitude": 53.80677,
+                "longitude": -1.557231
+            }
+        ]
+    }
+}

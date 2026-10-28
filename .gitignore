@@ -9,3 +9,4 @@ node_modules
 .vstags
 spaces.json
 Gemfile*
+_tests/build

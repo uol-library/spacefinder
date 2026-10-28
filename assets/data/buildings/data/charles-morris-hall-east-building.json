@@ -1,0 +1,85 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "Accommodation",
+        "identifier": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "slug",
+                "value": "charles-morris-hall-east-building"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "osm",
+                "value": "way/80718686"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "wikidata",
+                "value": "Q26262670"
+            }
+        ],
+        "name": "Charles Morris Hall East Building",
+        "description": "",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "University of Leeds",
+            "addressRegion": "Leeds, West Yorkshire",
+            "streetAddress": "Mount Preston Street",
+            "postalCode": "LS2 9JP"
+        },
+        "latitude": 53.805382,
+        "longitude": -1.5571124,
+        "geo": {
+            "@type": "GeoShape",
+            "polygon": [
+                "53.8051515 -1.5567061 53.8051098 -1.5567467 53.8051006 -1.556717 53.8050188 -1.5567162 53.8052299 -1.5573114 53.8056076 -1.5573124 53.8057199 -1.5573127 53.8058032 -1.5570718 53.8057184 -1.557068 53.8057107 -1.5570888 53.8056699 -1.5570552 53.8056439 -1.557118 53.8053015 -1.557121 53.8051515 -1.5567061"
+            ]
+        },
+        "sameAs": [
+            "https://www.openstreetmap.org/way/80718686",
+            "https://www.wikidata.org/wiki/Q26262670"
+        ],
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "accessable",
+                "name": "AccessAble access guide",
+                "value": "https://www.accessable.co.uk/venues/charles-morris-hall-storm-jameson-court"
+            }
+        ],
+        "image": {
+            "@type": "ImageObject",
+            "contentUrl": "/assets/data/buildings/images/storm-jameson-east-university-of-leeds-5th-december-2014.jpg",
+            "description": "Storm Jameson East, University of Leeds.  Taken on the afternoon of Friday the 5th of December 2014.",
+            "creditText": "Mtaylor848, CC BY-SA 4.0, via Wikimedia Commons",
+            "license": "https://creativecommons.org/licenses/by-sa/4.0",
+            "acquireLicensePage": "https://commons.wikimedia.org/wiki/File:Storm_Jameson_East,_University_of_Leeds_(5th_December_2014).JPG"
+        },
+        "amenityFeature": [
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "AccessAble access guide",
+                "alternateName": "accessable",
+                "value": true
+            }
+        ],
+        "containsPlace": [
+            {
+                "@type": "Place",
+                "name": "Storm Jameson Court",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "17558"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=17558",
+                "description": "Charles Morris Hall<br>Mount Preston Street<br>University Precinct, University of Leeds<br>Leeds<br>LS2 9JT<br><br><a href=\"https://accommodation.leeds.ac.uk/residence/1/charles-morris-hall\">Visit the Charles Morris Hall website</a><br><br><a href=\"tel:01133432750\">Phone: 0113 343 2750</a><br><br>View <a href=\"https://www.accessable.co.uk/venues/charles-morris-hall-storm-jameson-court\">disabled access information for Storm Jameson Court</a> on the AccessAble website",
+                "latitude": 53.805547,
+                "longitude": -1.557216
+            }
+        ]
+    }
+}

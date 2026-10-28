@@ -1,0 +1,103 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "Place",
+        "identifier": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "slug",
+                "value": "blenheim-terrace"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "osm",
+                "value": "relation/7686369"
+            }
+        ],
+        "name": "Blenheim Terrace",
+        "description": "Blenheim Terrace<br>Leeds<br>LS2 9HD<br><br>11-14, Blenheim Terrace - Governance and Compliance.<br><br><strong>Term time opening hours</strong><br>Monday-Thursday 8.30am-9.30pm<br>Friday 8.30am-5.00pm<br><br><strong>Vacation opening hours</strong><br>Monday-Friday 9.00am-4.30pm",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "University of Leeds",
+            "addressRegion": "Leeds, West Yorkshire",
+            "streetAddress": ""
+        },
+        "latitude": 53.8072,
+        "longitude": -1.5507202,
+        "geo": {
+            "@type": "GeoShape",
+            "polygon": [
+                "53.8071325 -1.5502345 53.8069753 -1.5499778 53.8069364 -1.5499106 53.8068448 -1.5500627 53.8063795 -1.5492596 53.806299 -1.5493935 53.807729 -1.551909 53.8081109 -1.5520652 53.8081223 -1.5520425 53.8080494 -1.5518658 53.8080014 -1.5517637 53.8079672 -1.5518148 53.8078281 -1.5517867 53.8078309 -1.5517682 53.80782 -1.5517659 53.8078568 -1.5517043 53.8078292 -1.5516503 53.807779 -1.5517363 53.8075571 -1.5512923 53.8076493 -1.5511391 53.8073629 -1.5506448 53.8072708 -1.5507979 53.807176 -1.5506343 53.8072028 -1.5505897 53.8072567 -1.5506828 53.8073234 -1.550572 53.8071729 -1.5503072 53.8070873 -1.5504475 53.8071102 -1.5504927 53.8070964 -1.5505132 53.807035 -1.5503978 53.8070961 -1.5502948 53.8071325 -1.5502345"
+            ]
+        },
+        "sameAs": [
+            "https://www.openstreetmap.org/relation/7686369",
+            "https://www.leeds.ac.uk/campusmap?location=17351"
+        ],
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "building:levels",
+                "name": "Levels",
+                "value": 3
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "accessable",
+                "name": "AccessAble access guide",
+                "value": "https://www.accessable.co.uk/university-of-leeds/access-guides/17-blenheim-terrace"
+            }
+        ],
+        "amenityFeature": [
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "AccessAble access guide",
+                "alternateName": "accessable",
+                "value": true
+            }
+        ],
+        "containsPlace": [
+            {
+                "@type": "Place",
+                "name": "Caffé Nero at Laidlaw",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "18470"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=18470",
+                "description": "Laidlaw Library<br>University of Leeds<br>Woodhouse Lane,<br>Leeds<br>LS2 3AR<br><br><a href=\"https://gfal.leeds.ac.uk/where-to-eat/cafes/caffe-nero/\">Visit Caffé Nero webpage</a><br><br>Take a break from your studies and enjoy some premium Italian coffee at Caffé Nero.",
+                "latitude": 53.80725398857343,
+                "longitude": -1.5515097382725975
+            },
+            {
+                "@type": "Place",
+                "name": "Governance and Compliance",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "17542"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=17542",
+                "description": "11-14 Blenheim Terrace<br><br><a href=\"https://secretariat.leeds.ac.uk\">Visit Governance and Compliance website</a>",
+                "latitude": 53.807177,
+                "longitude": -1.55101
+            },
+            {
+                "@type": "Place",
+                "name": "Inter-Disciplinary Ethics Applied",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "17459"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=17459",
+                "description": "17 Blenheim Terrace<br>LS2 9HD<br><br><a href=\"https://ahc.leeds.ac.uk/ethics\">Visit the Inter-Disciplinary Ethics Applied website</a><br><br><a href=\"01133437799\">Phone: 0113 343 7799</a><br><br><a href=\"https://www.accessable.co.uk/university-of-leeds/access-guides/17-blenheim-terrace\">View AccessAble access guide</a>",
+                "latitude": 53.807056,
+                "longitude": -1.550861
+            }
+        ]
+    }
+}

@@ -1,0 +1,86 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "CivicStructure",
+        "identifier": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "slug",
+                "value": "clarendon-building"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "osm",
+                "value": "way/142813595"
+            }
+        ],
+        "name": "Clarendon Building",
+        "description": "103 Clarendon Road<br>University Western Campus<br>Leeds<br>LS2 9DF<br><br>Part of the <a href=\"https://business.leeds.ac.uk/\">Leeds University Business School</a><br><br>View <a href=\"https://www.accessable.co.uk/university-of-leeds/access-guides/clarendon-building\">disabled access information for the Clarendon Building</a> on the AccessAble website.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "University of Leeds",
+            "addressRegion": "Leeds, West Yorkshire",
+            "streetAddress": "Clarendon Building, 103 Clarendon Road",
+            "postalCode": "LS2 9DF"
+        },
+        "latitude": 53.8074508,
+        "longitude": -1.5604548,
+        "geo": {
+            "@type": "GeoShape",
+            "polygon": [
+                "53.8076101 -1.5607617 53.8077297 -1.5605168 53.8074947 -1.5603201 53.8073164 -1.5601709 53.8071923 -1.5602417 53.8072261 -1.5604116 53.8072335 -1.5604491 53.8072617 -1.5604724 53.8074904 -1.5606624 53.8076101 -1.5607617"
+            ]
+        },
+        "sameAs": [
+            "https://www.openstreetmap.org/way/142813595",
+            "https://www.leeds.ac.uk/campusmap?location=17385"
+        ],
+        "url": "https://business.leeds.ac.uk/",
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "accessable",
+                "name": "AccessAble access guide",
+                "value": "https://www.accessable.co.uk/university-of-leeds/access-guides/clarendon-building"
+            }
+        ],
+        "amenityFeature": [
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Entrances mapped",
+                "alternateName": "entrances",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "AccessAble access guide",
+                "alternateName": "accessable",
+                "value": true
+            }
+        ],
+        "containsPlace": [
+            {
+                "@type": "Place",
+                "additionalType": "https://wiki.openstreetmap.org/wiki/Key:entrance",
+                "name": "Main entrance",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "osm",
+                    "value": "node/9744985038"
+                },
+                "latitude": 53.8074947,
+                "longitude": -1.5603201,
+                "amenityFeature": [
+                    {
+                        "@type": "LocationFeatureSpecification",
+                        "name": "Entrance type",
+                        "alternateName": "entrance",
+                        "value": "main"
+                    }
+                ]
+            }
+        ]
+    }
+}

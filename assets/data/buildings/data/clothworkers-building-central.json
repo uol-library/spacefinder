@@ -1,0 +1,128 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "CivicStructure",
+        "identifier": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "slug",
+                "value": "clothworkers-building-central"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "osm",
+                "value": "way/84749529"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "uprn",
+                "value": "72761739;72751819"
+            }
+        ],
+        "name": "Clothworkers' Building Central",
+        "description": "",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "University of Leeds",
+            "addressRegion": "Leeds, West Yorkshire",
+            "streetAddress": "Clothworkers' Building Central",
+            "postalCode": "LS2 9JT"
+        },
+        "latitude": 53.8076557,
+        "longitude": -1.5557333,
+        "geo": {
+            "@type": "GeoShape",
+            "polygon": [
+                "53.8075654 -1.5564102 53.807624 -1.5563891 53.8077853 -1.5563185 53.8078905 -1.5562696 53.8078211 -1.5557773 53.8078459 -1.5557667 53.8077819 -1.5553129 53.8077494 -1.5550608 53.8076884 -1.5550766 53.8076903 -1.5551001 53.8075621 -1.5551342 53.8074302 -1.5551692 53.8074787 -1.5557603 53.8075654 -1.5564102"
+            ]
+        },
+        "sameAs": [
+            "https://www.openstreetmap.org/way/84749529"
+        ],
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "accessable",
+                "name": "AccessAble access guide",
+                "value": "https://www.accessable.co.uk/university-of-leeds/access-guides/clothworkers-building-link"
+            }
+        ],
+        "amenityFeature": [
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Entrances mapped",
+                "alternateName": "entrances",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "AccessAble access guide",
+                "alternateName": "accessable",
+                "value": true
+            }
+        ],
+        "containsPlace": [
+            {
+                "@type": "Place",
+                "additionalType": "https://wiki.openstreetmap.org/wiki/Key:entrance",
+                "name": "Entrance",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "osm",
+                    "value": "node/9765190617"
+                },
+                "latitude": 53.8075621,
+                "longitude": -1.5551342,
+                "amenityFeature": [
+                    {
+                        "@type": "LocationFeatureSpecification",
+                        "name": "Entrance type",
+                        "alternateName": "entrance",
+                        "value": "yes"
+                    }
+                ]
+            },
+            {
+                "@type": "Place",
+                "name": "Clothworkers' Building Central and Link",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "17389"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=17389",
+                "description": "University Road<br>University<br>Precinct<br>Leeds<br>LS2 9JT<br><br>Design<br><br><strong>Term time opening hours</strong><br>Monday-Friday 9.00am-6.00pm<br><br><strong>Vacation opening hours</strong><br>Monday-Friday 9.00am-6.00pm<br><br>View <a href=\"https://www.accessable.co.uk/university-of-leeds/access-guides/clothworkers-building-link\">disabled access information for the Clothworkers' Building Central</a> on the AccessAble website<br><br>View <a href=\"https://www.accessable.co.uk/university-of-leeds/access-guides/clothworkers-building-link\">disabled access information for the Clothworkers' Building Link</a> on the AccessAble website<br><br><strong>Water fountains</strong><br>School of Design<br>General office<br>Leeds Institute of Textiles and Colour<br>Ground floor student area<br>Ground floor reception",
+                "latitude": 53.807585,
+                "longitude": -1.556389
+            },
+            {
+                "@type": "Place",
+                "name": "Design",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "17402"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=17402",
+                "description": "Clothworkers' Building - Central and Link<br>University Road<br>University Precinct<br>Leeds<br>LS2 9JT<br><br><a href=\"http://www.design.leeds.ac.uk/\">Visit the School of Design website</a><br><br>Phone: <a href=\"tel: (0)1133433700\">0113 343 3700</a><br><br> View <a href=\"https://www.accessable.co.uk/university-of-leeds/access-guides/clothworkers-building-link\">disabled access information for the Clothworkers’ Building</a><br>on the AccessAble website.",
+                "latitude": 53.807687,
+                "longitude": -1.555799
+            },
+            {
+                "@type": "Place",
+                "name": "Leeds Institute of Textiles and Colour",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "22820"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=22820",
+                "description": "Rooms GO5A, GO5B and GO5C, Clothworkers Building Central<br>University Road<br>University Precinct<br>Leeds<br>LS2 9JT<br><br>View <a href=\"https://www.accessable.co.uk/venues/clothworkers-central\">disabled access information for the Clothworkers' Building Central</a> on the AccessAble website",
+                "latitude": 53.807585,
+                "longitude": -1.5552
+            }
+        ]
+    }
+}

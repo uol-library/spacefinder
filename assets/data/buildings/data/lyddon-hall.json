@@ -1,0 +1,83 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "Accommodation",
+        "identifier": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "slug",
+                "value": "lyddon-hall"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "osm",
+                "value": "way/84749535"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "wikidata",
+                "value": "Q26262658"
+            }
+        ],
+        "name": "Lyddon Hall",
+        "description": "Lyddon Hall<br>University Precinct<br>University of Leeds<br>Leeds<br>LS2 9JT<br><br>Accommodation<p><p>Comprising: Main Hall, 10, 17 and 27 Clarendon Place, 13-23, 25 and 27-31 Cromer Terrace and 32 Springfield Mount<br><br><a href=\"http://accommodation.leeds.ac.uk/lyddon\">Visit Lyddon Hall website</a><br><br>View <a href=\"https://www.accessable.co.uk/university-of-leeds/access-guides/cromer-terrace-lyddon-hall-annexe\">AccessAble access guide for Lyddon Hall</a><br><br><a href=\"tel:01133437697\">Phone: 0113 343 7697</a>",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "University of Leeds",
+            "addressRegion": "Leeds, West Yorkshire",
+            "streetAddress": "Lyddon Hall, Virginia Road",
+            "postalCode": "LS2 9JW"
+        },
+        "latitude": 53.8062018,
+        "longitude": -1.5568688,
+        "geo": {
+            "@type": "GeoShape",
+            "polygon": [
+                "53.8062707 -1.5571825 53.8060271 -1.5569398 53.806177 -1.5565082 53.8063076 -1.5566383 53.8062965 -1.5566702 53.8063098 -1.5566834 53.8062782 -1.5567752 53.8062587 -1.556756 53.8062235 -1.5568587 53.8063697 -1.5570025 53.8063169 -1.5571566 53.8062707 -1.5571825"
+            ]
+        },
+        "sameAs": [
+            "https://www.openstreetmap.org/way/84749535",
+            "https://www.wikidata.org/wiki/Q26262658",
+            "https://www.leeds.ac.uk/campusmap?location=17501"
+        ],
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "building:levels",
+                "name": "Levels",
+                "value": 4
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "accessable",
+                "name": "AccessAble access guide",
+                "value": "https://www.accessable.co.uk/university-of-leeds/access-guides/cromer-terrace-lyddon-hall-annexe"
+            }
+        ],
+        "image": {
+            "@type": "ImageObject",
+            "contentUrl": "/assets/data/buildings/images/lyddon-hall-leeds-university-taken-by-flickr-user-6th-february-2013.jpg",
+            "description": "Lyddon Hall, University of Leeds, Leeds, West Yorkshire.  This was the home of Sir Clifford Albutt, inventor of the clincal thermometer.",
+            "creditText": "Flickr user:Tim Green aka atouch, CC BY 2.0, via Wikimedia Commons",
+            "license": "https://creativecommons.org/licenses/by/2.0",
+            "acquireLicensePage": "https://commons.wikimedia.org/wiki/File:Lyddon_Hall,_Leeds_University_(Taken_by_Flickr_user_6th_February_2013).jpg"
+        },
+        "amenityFeature": [
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Accommodation",
+                "alternateName": "accommodation",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "AccessAble access guide",
+                "alternateName": "accessable",
+                "value": true
+            }
+        ]
+    }
+}

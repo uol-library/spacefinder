@@ -1,0 +1,62 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "CivicStructure",
+        "identifier": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "slug",
+                "value": "jerusalem-chapel"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "osm",
+                "value": "way/84749544"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "uprn",
+                "value": "72751796"
+            }
+        ],
+        "name": "Jerusalem Chapel",
+        "description": "42 West Hillary Street / Willow Terrace Road<br><br>View <a href=\"https://www.accessable.co.uk/university-of-leeds/access-guides/jerusalem-chapel\">disabled access information for Jerusalem Chapel</a> on the AccessAble website.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "University of Leeds",
+            "addressRegion": "Leeds, West Yorkshire",
+            "streetAddress": "",
+            "postalCode": "LS2 3AE"
+        },
+        "latitude": 53.8045234,
+        "longitude": -1.5516799,
+        "geo": {
+            "@type": "GeoShape",
+            "polygon": [
+                "53.8046313 -1.5517737 53.8044488 -1.5518357 53.8044193 -1.5515862 53.8046018 -1.5515241 53.8046313 -1.5517737"
+            ]
+        },
+        "sameAs": [
+            "https://www.openstreetmap.org/way/84749544",
+            "https://www.leeds.ac.uk/campusmap?location=17468"
+        ],
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "accessable",
+                "name": "AccessAble access guide",
+                "value": "https://www.accessable.co.uk/university-of-leeds/access-guides/jerusalem-chapel"
+            }
+        ],
+        "amenityFeature": [
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "AccessAble access guide",
+                "alternateName": "accessable",
+                "value": true
+            }
+        ]
+    }
+}

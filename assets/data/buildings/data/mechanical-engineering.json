@@ -1,0 +1,77 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "CivicStructure",
+        "identifier": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "slug",
+                "value": "mechanical-engineering"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "osm",
+                "value": "way/188510531"
+            }
+        ],
+        "name": "Mechanical Engineering",
+        "description": "Mechanical Engineering Building<br>Woodhouse Lane<br>University of Leeds<br>Leeds<br>LS2 9JT<br><br><a href=\"https://eps.leeds.ac.uk/mechanical-engineering\">Visit the School of Mechanical Engineering website</a><br><br><strong>Contact information</strong><br>Phone: <a href=\"tel:01133432186 \">0113 343 2186</a><br><br><strong>Term time opening hours</strong><br>Monday-Friday 8am - 6pm<br><br><strong>Vacation opening hours</strong><br>Monday-Friday 8am - 5pm<br><br><strong>Water fountains</strong><br>Next to room 150<br>Level 4, room 41A",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "University of Leeds",
+            "addressRegion": "Leeds, West Yorkshire",
+            "streetAddress": ""
+        },
+        "latitude": 53.8096172,
+        "longitude": -1.5556576,
+        "geo": {
+            "@type": "GeoShape",
+            "polygon": [
+                "53.8097051 -1.5561379 53.8095608 -1.5564582 53.8095884 -1.5565 53.8095343 -1.5566051 53.8095126 -1.5565765 53.8094903 -1.5566251 53.8094437 -1.5563243 53.8095707 -1.5560605 53.809332 -1.5556871 53.8093512 -1.5556367 53.8092974 -1.5555456 53.8094213 -1.5552923 53.8094922 -1.5551474 53.8095611 -1.555007 53.8096265 -1.5548898 53.8098015 -1.5552282 53.8097669 -1.5552952 53.8098533 -1.5553694 53.8099049 -1.5555268 53.8099309 -1.5555052 53.8099613 -1.5555646 53.8097051 -1.5561379"
+            ]
+        },
+        "sameAs": [
+            "https://www.openstreetmap.org/way/188510531",
+            "https://www.leeds.ac.uk/campusmap?location=17507"
+        ],
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "building:levels",
+                "name": "Levels",
+                "value": 6
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "accessable",
+                "name": "AccessAble access guide",
+                "value": "https://www.accessable.co.uk/university-of-leeds/access-guides/mechanical-engineering-building"
+            }
+        ],
+        "amenityFeature": [
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "AccessAble access guide",
+                "alternateName": "accessable",
+                "value": true
+            }
+        ],
+        "containsPlace": [
+            {
+                "@type": "Place",
+                "name": "Medical and Biological Engineering",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "17509"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=17509",
+                "description": "Medical and Biological Engineering Building<br><br>Access via Clarendon Road<br><br><a href=\"http://www.imbe.leeds.ac.uk/\">Visit the Medical and Biological Engineering Building website</a><br><br><a href=\"tel:01132424611\">Phone: 0113 242 4611</a><br><br><strong>Water fountains</strong><br>Rooms X101, X102 and 302<br><br>View <a href=\"https://www.accessable.co.uk/university-of-leeds/access-guides/medical-and-biological-engineering\">disabled access information for the Medical and Biological Engineering building</a> on the AccessAble website.",
+                "latitude": 53.809564,
+                "longitude": -1.556282
+            }
+        ]
+    }
+}

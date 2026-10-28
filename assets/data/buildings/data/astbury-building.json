@@ -1,0 +1,91 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "CivicStructure",
+        "identifier": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "slug",
+                "value": "astbury-building"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "osm",
+                "value": "way/186375014"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "wikidata",
+                "value": "Q26210693"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "uprn",
+                "value": "72650725"
+            }
+        ],
+        "name": "Astbury Building",
+        "description": "Clarendon Way<br>University Precinct<br>Leeds<br>LS2 9JT<br><br>Biological Sciences<br><br><a href=\"http://biologicalsciences.leeds.ac.uk/\">View the Biological Sciences website</a><br><br>View <a href=\"https://www.accessable.co.uk/university-of-leeds/access-guides/astbury-building\">disabled access information for the Astbury Building</a> on the AccessAble website.<br><br><strong>Water fountains</strong><br><p>Level 11, Room 105</p>",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "University of Leeds",
+            "addressRegion": "Leeds, West Yorkshire",
+            "streetAddress": "",
+            "postalCode": "LS2 9JT"
+        },
+        "latitude": 53.8039185,
+        "longitude": -1.5553355,
+        "geo": {
+            "@type": "GeoShape",
+            "polygon": [
+                "53.8036598 -1.5556097 53.8036591 -1.5553532 53.8036593 -1.5553352 53.8036594 -1.5553103 53.80366 -1.555289 53.8039103 -1.5552895 53.8039105 -1.5549624 53.8040731 -1.5549647 53.8040896 -1.5549649 53.8040896 -1.5550422 53.8041776 -1.5550423 53.8041775 -1.5551479 53.8040896 -1.5551478 53.8040903 -1.5553077 53.8040902 -1.5553461 53.8040901 -1.5555819 53.8040568 -1.555583 53.8039058 -1.5555828 53.8039057 -1.5556101 53.8036598 -1.5556097"
+            ]
+        },
+        "sameAs": [
+            "https://www.openstreetmap.org/way/186375014",
+            "https://www.wikidata.org/wiki/Q26210693",
+            "https://www.leeds.ac.uk/campusmap?location=17342"
+        ],
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "accessable",
+                "name": "AccessAble access guide",
+                "value": "https://www.accessable.co.uk/university-of-leeds/access-guides/astbury-building"
+            }
+        ],
+        "image": {
+            "@type": "ImageObject",
+            "contentUrl": "/assets/data/buildings/images/university-of-leeds-4th-may-2010-051.jpg",
+            "description": "Looking towards the Asbury Building from a walkway along the Garstang Building at the University of Leeds.  Taken on the afternoon of Tuesday the 4th of May 2010.",
+            "creditText": "Mtaylor848, CC BY-SA 3.0, via Wikimedia Commons",
+            "license": "https://creativecommons.org/licenses/by-sa/3.0",
+            "acquireLicensePage": "https://commons.wikimedia.org/wiki/File:University_of_Leeds_(4th_May_2010)_051.jpg"
+        },
+        "amenityFeature": [
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "AccessAble access guide",
+                "alternateName": "accessable",
+                "value": true
+            }
+        ],
+        "containsPlace": [
+            {
+                "@type": "Place",
+                "name": "Loma Café",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "18476"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=18476",
+                "description": "Worsley Building, University of Leeds, Clarendon Way, Woodhouse, Leeds, LS2 9JT<br><br><a href=\"https://gfal.leeds.ac.uk/where-to-eat/cafes/loma-cafe/\">Visit the LOMA café website</a><br><br>Loma offers specially selected craft coffee, delicious drinks and handcrafted salads and sandwiches.",
+                "latitude": 53.80369530303014,
+                "longitude": -1.5554881769022302
+            }
+        ]
+    }
+}

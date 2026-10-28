@@ -1,0 +1,123 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "Place",
+        "identifier": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "slug",
+                "value": "hopewell-house"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "osm",
+                "value": "way/84736102"
+            }
+        ],
+        "name": "Hopewell House",
+        "description": "173 Woodhouse Lane",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "University of Leeds",
+            "addressRegion": "Leeds, West Yorkshire",
+            "streetAddress": ""
+        },
+        "latitude": 53.8060937,
+        "longitude": -1.5503463,
+        "geo": {
+            "@type": "GeoShape",
+            "polygon": [
+                "53.805946 -1.550114 53.8060202 -1.5500186 53.8061218 -1.550236 53.8061906 -1.5503874 53.8062063 -1.5505333 53.8062166 -1.5506291 53.8061115 -1.5506632 53.8060835 -1.5503809 53.8060574 -1.5504123 53.805946 -1.550114"
+            ]
+        },
+        "sameAs": [
+            "https://www.openstreetmap.org/way/84736102",
+            "https://www.leeds.ac.uk/campusmap?location=17452"
+        ],
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "building:levels",
+                "name": "Levels",
+                "value": 2
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "accessable",
+                "name": "AccessAble access guide",
+                "value": "https://www.accessable.co.uk/university-of-leeds/access-guides/175-177-woodhouse-lane"
+            }
+        ],
+        "amenityFeature": [
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Entrances mapped",
+                "alternateName": "entrances",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "AccessAble access guide",
+                "alternateName": "accessable",
+                "value": true
+            }
+        ],
+        "containsPlace": [
+            {
+                "@type": "Place",
+                "additionalType": "https://wiki.openstreetmap.org/wiki/Key:entrance",
+                "name": "Security Office",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "osm",
+                    "value": "node/5512462029"
+                },
+                "latitude": 53.8062063,
+                "longitude": -1.5505333,
+                "amenityFeature": [
+                    {
+                        "@type": "LocationFeatureSpecification",
+                        "name": "Entrance type",
+                        "alternateName": "entrance",
+                        "value": "yes"
+                    }
+                ]
+            },
+            {
+                "@type": "Place",
+                "additionalType": "https://wiki.openstreetmap.org/wiki/Key:entrance",
+                "name": "Digital Education Service",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "osm",
+                    "value": "node/5512462030"
+                },
+                "latitude": 53.8061218,
+                "longitude": -1.550236,
+                "amenityFeature": [
+                    {
+                        "@type": "LocationFeatureSpecification",
+                        "name": "Entrance type",
+                        "alternateName": "entrance",
+                        "value": "yes"
+                    }
+                ]
+            },
+            {
+                "@type": "Place",
+                "name": "Security Office",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "17543"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=17543",
+                "description": "175 Woodhouse Lane<br><br><a href=\"https://commercialcampussupport.leeds.ac.uk/security/\">Visit Security Office website</a><br><br><a href=\"tel:01133435494\">Phone: 0113 343 5494</a><br><br>View <a href=\"https://www.accessable.co.uk/university-of-leeds/access-guides/175-177-woodhouse-lane\">disabled access information for the Security Office</a> on the AccessAble website",
+                "latitude": 53.806164,
+                "longitude": -1.550502
+            }
+        ]
+    }
+}

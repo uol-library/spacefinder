@@ -1,0 +1,90 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "CivicStructure",
+        "identifier": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "slug",
+                "value": "conference-auditorium"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "osm",
+                "value": "way/100370746"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "uprn",
+                "value": "72751793"
+            }
+        ],
+        "name": "Conference Auditorium",
+        "description": "Conference Auditorium<br>Willow Terrace Road<br>Leeds<br>LS2 9DA<br><br><a href=\"http://www.meetinleeds.co.uk/conference-auditorium\">Visit the Conference Auditorium webpage</a><br><br>View <a href=\"https://www.accessable.co.uk/university-of-leeds/access-guides/conference-auditorium\">disabled access information for the Conference Auditorium</a> on the AccessAble website<br><br>Phone: <a href=\"01133436100\">0113 343 6100</a><br><br><strong>Opening hours</strong><br>Open during term time only, Monday-Friday 9.00am-6.00pm<br><br><strong>Vacation opening hours</strong><br>Closed<br><br>A defibrillator is located in the reception of the Conference Auditorium.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "University of Leeds",
+            "addressRegion": "Leeds, West Yorkshire",
+            "streetAddress": "",
+            "postalCode": "LS2 9JT"
+        },
+        "latitude": 53.8039181,
+        "longitude": -1.5533182,
+        "geo": {
+            "@type": "GeoShape",
+            "polygon": [
+                "53.8040493 -1.5530882 53.803785 -1.5530877 53.8037848 -1.5534514 53.8037847 -1.5535482 53.8040485 -1.5535487 53.8040493 -1.5530882"
+            ]
+        },
+        "sameAs": [
+            "https://www.openstreetmap.org/way/100370746",
+            "https://www.leeds.ac.uk/campusmap?location=17396"
+        ],
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "accessable",
+                "name": "AccessAble access guide",
+                "value": "https://www.accessable.co.uk/university-of-leeds/access-guides/conference-auditorium"
+            }
+        ],
+        "amenityFeature": [
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Entrances mapped",
+                "alternateName": "entrances",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "AccessAble access guide",
+                "alternateName": "accessable",
+                "value": true
+            }
+        ],
+        "containsPlace": [
+            {
+                "@type": "Place",
+                "additionalType": "https://wiki.openstreetmap.org/wiki/Key:entrance",
+                "name": "Main entrance",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "osm",
+                    "value": "node/8156215173"
+                },
+                "latitude": 53.8037848,
+                "longitude": -1.5534514,
+                "amenityFeature": [
+                    {
+                        "@type": "LocationFeatureSpecification",
+                        "name": "Entrance type",
+                        "alternateName": "entrance",
+                        "value": "main"
+                    }
+                ]
+            }
+        ]
+    }
+}

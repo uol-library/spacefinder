@@ -1,0 +1,62 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "CivicStructure",
+        "identifier": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "slug",
+                "value": "it-services"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "osm",
+                "value": "way/83603894"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "uprn",
+                "value": "72751800"
+            }
+        ],
+        "name": "IT Services",
+        "description": "IT Service Desk<br>Level 10<br>EC Stoner Building<br>University Precinct<br>University of Leeds<br>Leeds<br>LS2 9JT<br><br><a href=\"http://it.leeds.ac.uk\">Visit the IT Services website</a><br><br><a href=\"tel:01133435401\">Phone: 0113 343 5401</a><br><br>View <a href=\"https://www.accessable.co.uk/university-of-leeds/access-guides/i-t-services\">disabled access information for IT services</a> on the AccessAble website.<br><br><strong>Water fountains</strong><br>Computer block",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "University of Leeds",
+            "addressRegion": "Leeds, West Yorkshire",
+            "streetAddress": "IT Services, University Precinct",
+            "postalCode": "LS2 9JT"
+        },
+        "latitude": 53.8056516,
+        "longitude": -1.5541969,
+        "geo": {
+            "@type": "GeoShape",
+            "polygon": [
+                "53.8055226 -1.5543176 53.8056475 -1.5543172 53.8057876 -1.5543168 53.8057873 -1.5540763 53.8056328 -1.5540768 53.8056023 -1.5540769 53.8055224 -1.5540772 53.8055226 -1.5543176"
+            ]
+        },
+        "sameAs": [
+            "https://www.openstreetmap.org/way/83603894",
+            "https://www.leeds.ac.uk/campusmap?location=17465"
+        ],
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "accessable",
+                "name": "AccessAble access guide",
+                "value": "https://www.accessable.co.uk/university-of-leeds/access-guides/i-t-services"
+            }
+        ],
+        "amenityFeature": [
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "AccessAble access guide",
+                "alternateName": "accessable",
+                "value": true
+            }
+        ]
+    }
+}

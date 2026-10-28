@@ -1,0 +1,85 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "CivicStructure",
+        "identifier": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "slug",
+                "value": "garstang-building"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "osm",
+                "value": "way/186374637"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "wikidata",
+                "value": "Q26252986"
+            }
+        ],
+        "name": "Garstang Building",
+        "description": "Garstang Building<br>University Precinct<br>University of Leeds<br>Leeds<br>LS2 9JT<br><br>Biological Sciences<br><br><a href=\"https://biologicalsciences.leeds.ac.uk/\">Visit the Faculty of Biological Sciences website</a><br><br>Phone: <a href=\"tel:01133438236\">0113 343 8236</a><br><br><strong>Water fountains</strong><br><strong>Garstang North Building</strong><br>Level 8, room 52<br><strong>Garstang South Building</strong><br>Level 4, room 13<br>Level 5, rooms 56, 59A, 59B and 61<br>Level 6, rooms 41G, 56A, 59 and 64<br>Level 7, rooms 60 and 63<br>Level 8, room 61<br><br>View <a href=\"https://www.accessable.co.uk/university-of-leeds/access-guides/garstang-building\">disabled access information for the Garstang Building</a> on the AccessAble website.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "University of Leeds",
+            "addressRegion": "Leeds, West Yorkshire",
+            "streetAddress": ""
+        },
+        "latitude": 53.8045229,
+        "longitude": -1.5556437,
+        "geo": {
+            "@type": "GeoShape",
+            "polygon": [
+                "53.8047563 -1.5563658 53.8046164 -1.5563651 53.8046169 -1.5555829 53.8040901 -1.5555819 53.8040902 -1.5553461 53.8040903 -1.5553077 53.804605 -1.5553088 53.8046199 -1.5553089 53.8046362 -1.5553089 53.8047574 -1.5553092 53.8047573 -1.5553654 53.8047573 -1.5554143 53.8047568 -1.5561225 53.8047565 -1.5563029 53.8047563 -1.5563658"
+            ]
+        },
+        "sameAs": [
+            "https://www.openstreetmap.org/way/186374637",
+            "https://www.wikidata.org/wiki/Q26252986",
+            "https://www.leeds.ac.uk/campusmap?location=17435"
+        ],
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "accessable",
+                "name": "AccessAble access guide",
+                "value": "https://www.accessable.co.uk/university-of-leeds/access-guides/garstang-building"
+            }
+        ],
+        "image": {
+            "@type": "ImageObject",
+            "contentUrl": "/assets/data/buildings/images/u-of-leeds-garstang-building.jpg",
+            "description": "University of Leeds: Garstang Building",
+            "creditText": "User:Iwouldstay, CC BY-SA 3.0, via Wikimedia Commons",
+            "license": "https://creativecommons.org/licenses/by-sa/3.0",
+            "acquireLicensePage": "https://commons.wikimedia.org/wiki/File:U_of_Leeds_-_Garstang_Building.jpg"
+        },
+        "amenityFeature": [
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "AccessAble access guide",
+                "alternateName": "accessable",
+                "value": true
+            }
+        ],
+        "containsPlace": [
+            {
+                "@type": "Place",
+                "name": "Geography - Garstang Building",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "17436"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=17436",
+                "description": "School of Geography<br><br><a href=\"https://environment.leeds.ac.uk/geography/\">Visit the School of Geography website</a><br><br>Phone: <a href=\"tel:0113 3433300\">0113 343 3300</a><br><br>View <a href=\"https://www.accessable.co.uk/university-of-leeds/access-guides/garstang-building\">disabled access information for Garstang Building </a>on the AccessAble website<br><br><strong>Water fountains</strong><br>School of Geography",
+                "latitude": 53.804528,
+                "longitude": -1.55544
+            }
+        ]
+    }
+}

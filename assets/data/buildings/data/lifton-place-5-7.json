@@ -1,0 +1,77 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "CivicStructure",
+        "identifier": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "slug",
+                "value": "lifton-place-5-7"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "osm",
+                "value": "way/84749915"
+            }
+        ],
+        "name": "Lifton Place, 5-7",
+        "description": "5-7 Lifton Place<br>Wellbeing Hub (formerly Logik Centre)<br><br>View <a href=\"https://www.accessable.co.uk/university-of-leeds/access-guides/5-7-lifton-place\">disabled access information for the Wellbeing Hub</a> on the AccessAble website.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "University of Leeds",
+            "addressRegion": "Leeds, West Yorkshire",
+            "streetAddress": ""
+        },
+        "latitude": 53.8076755,
+        "longitude": -1.5583879,
+        "geo": {
+            "@type": "GeoShape",
+            "polygon": [
+                "53.8076189 -1.5585662 53.8077516 -1.5584723 53.8077382 -1.5584178 53.8077805 -1.5583879 53.8077376 -1.5582143 53.8075627 -1.5583381 53.8076189 -1.5585662"
+            ]
+        },
+        "sameAs": [
+            "https://www.openstreetmap.org/way/84749915",
+            "https://www.leeds.ac.uk/campusmap?location=17495"
+        ],
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "building:levels",
+                "name": "Levels",
+                "value": 3
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "accessable",
+                "name": "AccessAble access guide",
+                "value": "https://www.accessable.co.uk/university-of-leeds/access-guides/5-7-lifton-place"
+            }
+        ],
+        "amenityFeature": [
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "AccessAble access guide",
+                "alternateName": "accessable",
+                "value": true
+            }
+        ],
+        "containsPlace": [
+            {
+                "@type": "Place",
+                "name": "Wellbeing Hub, formerly LOGIK Centre",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "17499"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=17499",
+                "description": "A flexible, multi-functional venue for University staff to support wellbeing, learning and development.<br><br>5-7 Lifton Place<br><br><a href=\"mailto:healthandwellbeing@leeds.ac.uk\">Email the Wellbeing Hub at healthandwellbeing@leeds.ac.uk</a><br><br><a href=\"https://www.accessable.co.uk/university-of-leeds\">View AccessAble access guide</a><br><br>Water fountains",
+                "latitude": 53.807619,
+                "longitude": -1.558362
+            }
+        ]
+    }
+}

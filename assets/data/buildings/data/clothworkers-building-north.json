@@ -1,0 +1,175 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "CivicStructure",
+        "identifier": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "slug",
+                "value": "clothworkers-building-north"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "osm",
+                "value": "way/84749530"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "wikidata",
+                "value": "Q63247807"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "uprn",
+                "value": "72751807"
+            }
+        ],
+        "name": "Clothworkers' Building North",
+        "description": "Clothworkers' Building North<br>University Road<br>University Precinct<br>University of Leeds<br>Leeds<br>LS2 9JT<br><br>Media and Communication<br><br><strong>Term time opening hours</strong><br>Monday-Friday 9.00am-6.00pm<br><br><strong>Vacation opening hours</strong><br>Monday-Friday 9.00am-6.00pm<br><br>View <a href=\"https://www.accessable.co.uk/university-of-leeds/access-guides/clothworkers-north\">disabled access information for Clothworkers' Building North </a>on the AccessAble website<br><br><strong>Water fountains</strong><br>School of Media and Communications",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "University of Leeds",
+            "addressRegion": "Leeds, West Yorkshire",
+            "streetAddress": "",
+            "postalCode": "LS2 9JT"
+        },
+        "latitude": 53.8080331,
+        "longitude": -1.5547445,
+        "geo": {
+            "@type": "GeoShape",
+            "polygon": [
+                "53.8083921 -1.5547588 53.8077596 -1.5549203 53.8077423 -1.5549253 53.8077494 -1.5550608 53.8076884 -1.5550766 53.8076752 -1.5550764 53.8076631 -1.5548936 53.8076534 -1.5547465 53.8076507 -1.5547196 53.8076896 -1.5547125 53.807724 -1.5547057 53.8077267 -1.5547276 53.8077293 -1.5547511 53.8081024 -1.5546591 53.8080993 -1.5546064 53.8081331 -1.5545994 53.8081302 -1.5545597 53.8081536 -1.5545537 53.8081745 -1.5545483 53.8081712 -1.5545117 53.8083552 -1.5544658 53.8083676 -1.5546088 53.8083806 -1.5546068 53.8083921 -1.5547588"
+            ]
+        },
+        "sameAs": [
+            "https://www.openstreetmap.org/way/84749530",
+            "https://www.wikidata.org/wiki/Q63247807",
+            "https://www.leeds.ac.uk/campusmap?location=17390"
+        ],
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "accessable",
+                "name": "AccessAble access guide",
+                "value": "https://www.accessable.co.uk/university-of-leeds/access-guides/clothworkers-north"
+            }
+        ],
+        "image": {
+            "@type": "ImageObject",
+            "contentUrl": "/assets/data/buildings/images/alma-mater-7262870728.jpg",
+            "description": "The University of Leeds",
+            "creditText": "Tim Green from Bradford, CC BY 2.0, via Wikimedia Commons",
+            "license": "https://creativecommons.org/licenses/by/2.0",
+            "acquireLicensePage": "https://commons.wikimedia.org/wiki/File:Alma_Mater_(7262870728).jpg"
+        },
+        "amenityFeature": [
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Entrances mapped",
+                "alternateName": "entrances",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Wheelchair accessible entrance",
+                "alternateName": "wheelchair_entrance",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "AccessAble access guide",
+                "alternateName": "accessable",
+                "value": true
+            }
+        ],
+        "containsPlace": [
+            {
+                "@type": "Place",
+                "additionalType": "https://wiki.openstreetmap.org/wiki/Key:entrance",
+                "name": "Main entrance",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "osm",
+                    "value": "node/9765190616"
+                },
+                "latitude": 53.8076631,
+                "longitude": -1.5548936,
+                "amenityFeature": [
+                    {
+                        "@type": "LocationFeatureSpecification",
+                        "name": "Entrance type",
+                        "alternateName": "entrance",
+                        "value": "main"
+                    }
+                ]
+            },
+            {
+                "@type": "Place",
+                "additionalType": "https://wiki.openstreetmap.org/wiki/Key:entrance",
+                "name": "Main entrance",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "osm",
+                    "value": "node/9765190637"
+                },
+                "latitude": 53.8076896,
+                "longitude": -1.5547125,
+                "amenityFeature": [
+                    {
+                        "@type": "LocationFeatureSpecification",
+                        "name": "Entrance type",
+                        "alternateName": "entrance",
+                        "value": "main"
+                    },
+                    {
+                        "@type": "LocationFeatureSpecification",
+                        "name": "wheelchair",
+                        "alternateName": "wheelchair",
+                        "value": "yes"
+                    }
+                ]
+            },
+            {
+                "@type": "Place",
+                "additionalType": "https://wiki.openstreetmap.org/wiki/Key:entrance",
+                "name": "Entrance",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "osm",
+                    "value": "node/9769770156"
+                },
+                "latitude": 53.8081536,
+                "longitude": -1.5545537,
+                "amenityFeature": [
+                    {
+                        "@type": "LocationFeatureSpecification",
+                        "name": "Entrance type",
+                        "alternateName": "entrance",
+                        "value": "yes"
+                    },
+                    {
+                        "@type": "LocationFeatureSpecification",
+                        "name": "wheelchair",
+                        "alternateName": "wheelchair",
+                        "value": "yes"
+                    }
+                ]
+            },
+            {
+                "@type": "Place",
+                "name": "Media and Communication",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "17508"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=17508",
+                "description": "Clothworkers' Building North<br>University Road<br>University Precinct<br>LS2 9JT<br><br><a href=\"http://media.leeds.ac.uk/\">Visit the Media and Communication website</a><br><br><a href=\"tel:01133430161\">Phone: 0113 343 0161</a>",
+                "latitude": 53.808362,
+                "longitude": -1.554698
+            }
+        ]
+    }
+}

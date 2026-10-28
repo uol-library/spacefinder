@@ -1,0 +1,46 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "Place",
+        "identifier": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "slug",
+                "value": "it-fairbairn-site"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "osm",
+                "value": "way/147151518"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "uprn",
+                "value": "72751840"
+            }
+        ],
+        "name": "IT Fairbairn Site",
+        "description": "71-75 Clarendon Road<br>Leeds<br>LS2 9PH",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "University of Leeds",
+            "addressRegion": "Leeds, West Yorkshire",
+            "streetAddress": "",
+            "postalCode": "LS2 9PH"
+        },
+        "latitude": 53.8042275,
+        "longitude": -1.5619744,
+        "geo": {
+            "@type": "GeoShape",
+            "polygon": [
+                "53.8042722 -1.5621504 53.8041833 -1.5621507 53.8041847 -1.5617977 53.804272 -1.5617966 53.8042722 -1.5621504"
+            ]
+        },
+        "sameAs": [
+            "https://www.openstreetmap.org/way/147151518",
+            "https://www.leeds.ac.uk/campusmap?location=17463"
+        ]
+    }
+}

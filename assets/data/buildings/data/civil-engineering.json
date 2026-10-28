@@ -1,0 +1,62 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "CivicStructure",
+        "identifier": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "slug",
+                "value": "civil-engineering"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "osm",
+                "value": "way/242051611"
+            }
+        ],
+        "name": "Civil Engineering",
+        "description": "Engineering Building<br>University Precinct<br>University of Leeds<br>Leeds<br>LS2 9JT<br><br><a href=\"https://eps.leeds.ac.uk/civil-engineering\">Visit the School of Civil Engineering webpage</a><br><br>Phone: <a href=\"tel:01133432269\">0113 343 2269</a><br><br><strong>Term time opening hours</strong><br>Monday-Friday 8.00am-6.00pm<br><br><strong>Vacation opening hours</strong><br>Monday-Friday 8.00am-6.00pm<br><br>View <a href=\"https://www.accessable.co.uk/university-of-leeds/access-guides/civil-engineering\">disabled access information for the Civil Engineering Building </a> on the AccessAble website",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "University of Leeds",
+            "addressRegion": "Leeds, West Yorkshire",
+            "streetAddress": ""
+        },
+        "latitude": 53.8100246,
+        "longitude": -1.5561743,
+        "geo": {
+            "@type": "GeoShape",
+            "polygon": [
+                "53.8097051 -1.5561379 53.8099613 -1.5555646 53.8103034 -1.5562313 53.8103176 -1.5562871 53.810268 -1.5563763 53.8103122 -1.5564264 53.8103245 -1.5564435 53.8102342 -1.5565776 53.8102258 -1.5565674 53.8102027 -1.5565426 53.8101021 -1.5567266 53.8097051 -1.5561379"
+            ]
+        },
+        "sameAs": [
+            "https://www.openstreetmap.org/way/242051611",
+            "https://www.leeds.ac.uk/campusmap?location=17384"
+        ],
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "building:levels",
+                "name": "Levels",
+                "value": 6
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "accessable",
+                "name": "AccessAble access guide",
+                "value": "https://www.accessable.co.uk/university-of-leeds/access-guides/civil-engineering"
+            }
+        ],
+        "amenityFeature": [
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "AccessAble access guide",
+                "alternateName": "accessable",
+                "value": true
+            }
+        ]
+    }
+}

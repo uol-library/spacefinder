@@ -1,0 +1,181 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "CivicStructure",
+        "identifier": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "slug",
+                "value": "marjorie-and-arnold-ziff-building"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "osm",
+                "value": "way/84656862"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "wikidata",
+                "value": "Q26262659"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "uprn",
+                "value": "72761737;72660017"
+            }
+        ],
+        "name": "Marjorie and Arnold Ziff Building",
+        "description": "Beech Grove Terrace<br>University Precinct<br>University of Leeds<br>Leeds<br>LS2 9JT<br><br>Welcome Point (open Monday to Friday 9am - 5pm)<br>International Foundation Year<br>International Student Office<br>Lifelong Learning Centre<br>Student Information Service<br>Study Abroad<br>Communications<br>Doctoral College<br>Leeds Institute for Teaching Excellence (LITE)<br>University Secretary<br>Pro-Vice-Chancellors<br>Deputy Vice-Chancellor<br>Vice-Chancellor<br><br>View <a href=\"https://www.accessable.co.uk/university-of-leeds/access-guides/marjorie-and-arnold-ziff-building\">disabled access information for the Marjorie and Arnold Ziff Building</a> on AccessAble.<br><br><strong>Water fountains</strong><br>Level 9<br>Level 10<br>Level 13, outside room 7",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "University of Leeds",
+            "addressRegion": "Leeds, West Yorkshire",
+            "streetAddress": "",
+            "postalCode": "LS2 9JT"
+        },
+        "latitude": 53.8066628,
+        "longitude": -1.5537053,
+        "geo": {
+            "@type": "GeoShape",
+            "polygon": [
+                "53.8065987 -1.5531176 53.8066425 -1.5530931 53.8066523 -1.5531738 53.8067359 -1.5531433 53.8068552 -1.5539211 53.8068163 -1.5539374 53.8067764 -1.5539482 53.8067785 -1.5540627 53.8066497 -1.5540616 53.8066499 -1.5541744 53.8064961 -1.5541721 53.8065 -1.554051 53.8064836 -1.5540523 53.8064904 -1.5538775 53.8065515 -1.5536757 53.8065848 -1.5535312 53.8065898 -1.5533717 53.8066027 -1.5533502 53.8065822 -1.5532716 53.8066194 -1.5532438 53.8065987 -1.5531176"
+            ]
+        },
+        "sameAs": [
+            "https://www.openstreetmap.org/way/84656862",
+            "https://www.wikidata.org/wiki/Q26262659",
+            "https://www.leeds.ac.uk/campusmap?location=17503"
+        ],
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "accessable",
+                "name": "AccessAble access guide",
+                "value": "https://www.accessable.co.uk/university-of-leeds/access-guides/marjorie-and-arnold-ziff-building"
+            }
+        ],
+        "image": {
+            "@type": "ImageObject",
+            "contentUrl": "/assets/data/buildings/images/university-of-leeds-4th-may-2010-010.jpg",
+            "description": "The Marjorie and Arnold Ziff Building at the University of Leeds.  Taken on the afternoon of Tuesday the 4th of May 2010.",
+            "creditText": "Mtaylor848, CC BY-SA 3.0, via Wikimedia Commons",
+            "license": "https://creativecommons.org/licenses/by-sa/3.0",
+            "acquireLicensePage": "https://commons.wikimedia.org/wiki/File:University_of_Leeds_(4th_May_2010)_010.jpg"
+        },
+        "amenityFeature": [
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Entrances mapped",
+                "alternateName": "entrances",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Wheelchair accessible entrance",
+                "alternateName": "wheelchair_entrance",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "AccessAble access guide",
+                "alternateName": "accessable",
+                "value": true
+            }
+        ],
+        "containsPlace": [
+            {
+                "@type": "Place",
+                "additionalType": "https://wiki.openstreetmap.org/wiki/Key:entrance",
+                "name": "Entrance",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "osm",
+                    "value": "node/11189124446"
+                },
+                "latitude": 53.8068163,
+                "longitude": -1.5539374,
+                "amenityFeature": [
+                    {
+                        "@type": "LocationFeatureSpecification",
+                        "name": "Entrance type",
+                        "alternateName": "entrance",
+                        "value": "yes"
+                    },
+                    {
+                        "@type": "LocationFeatureSpecification",
+                        "name": "wheelchair",
+                        "alternateName": "wheelchair",
+                        "value": "yes"
+                    }
+                ]
+            },
+            {
+                "@type": "Place",
+                "name": "Communications and Engagement Team",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "17394"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=17394",
+                "description": "Level 14<br>Marjorie and Arnold Ziff Building<br>Beech Grove Terrace<br>Leeds<br>LS2 9JT<br><br><a href=\"http://comms.leeds.ac.uk\">Visit the Communications and Engagement website</a><br><br>Phone: <a href=\"tel:01133432451\">0113 343 2451</a>",
+                "latitude": 53.806591,
+                "longitude": -1.554045
+            },
+            {
+                "@type": "Place",
+                "name": "International Office and International Student Office",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "17460"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=17460",
+                "description": "Marjorie and Arnold Ziff Building<br>Beech Grove Terrace>br>University Precinct<br><br><a href=\"http://students.leeds.ac.uk/info/10500/international_students/877/international_student_office\">Visit the International Office website</a><br><br><a href=\"01133433930\">Phone: 0113 343 3930</a>",
+                "latitude": 53.806693,
+                "longitude": -1.553695
+            },
+            {
+                "@type": "Place",
+                "name": "International Pathways Centre",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "17461"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=17461",
+                "description": "Marjorie and Arnold Ziff Building<br>Beech Grove Terrace>br>University Precinct<br><br><a href=\"http://www.leeds.ac.uk/international-foundation-year\">Visit the International Pathways Centre website</a><br><br><a href=\"01133433209\">Phone: 0113 343 3209</a>",
+                "latitude": 53.806655,
+                "longitude": -1.553588
+            },
+            {
+                "@type": "Place",
+                "name": "Lifelong Learning Centre",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "17493"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=17493",
+                "description": "Level 11, Marjorie and Arnold Ziff Building <br><br><a href=\"https://www.leeds.ac.uk/lifelong-learning/\">Visit the Lifelong Learning Centre website</a><br><br><a href=\"tel:01133433212\">Phone: 0113 343 3212</a>",
+                "latitude": 53.806719,
+                "longitude": -1.553663
+            },
+            {
+                "@type": "Place",
+                "name": "Student Information Service - Marjorie and Arnold Ziff Building",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "19875"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=19875",
+                "description": "Our friendly and knowledgeable team can help answer your questions about student life including information about teaching locations, welcome and induction, and Faculty or School information. <br><br>Open 9am-5pm, Monday-Friday.<br><br><br>View <a href=\"https://www.accessable.co.uk/venues/marjorie-and-arnold-ziff-building\">disabled access information for the Marjorie and Arnold Ziff Building </a>on the AccessAble website",
+                "latitude": 53.806698,
+                "longitude": -1.553373
+            }
+        ]
+    }
+}

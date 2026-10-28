@@ -1,0 +1,86 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "CivicStructure",
+        "identifier": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "slug",
+                "value": "nexus"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "osm",
+                "value": "way/799330320"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "wikidata",
+                "value": "Q61748154"
+            }
+        ],
+        "name": "Nexus",
+        "description": "Discovery Way<br>Woodhouse<br>Leeds<LS2 3AA<br><br>Nexus provides access to world-leading research, talent and facilities at the University of Leeds.<br><br><a href=\"https://nexusleeds.co.uk/\">Visit the Nexus website</a><br><br><strong>Water fountains</strong><br>Research and Innovation Services<br><br><strong>Advancement</strong><br><br><strong>Cafés</strong><br>Affine, Innovation hub<br><br>View <a href=\"https://www.accessable.co.uk/university-of-leeds/access-guides/nexus\">disabled access information for Nexus</a> on the AccessAble website",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "University of Leeds",
+            "addressRegion": "Leeds, West Yorkshire",
+            "streetAddress": "Nexus, Discovery Way",
+            "postalCode": "LS2 3AA"
+        },
+        "latitude": 53.8054855,
+        "longitude": -1.5503297,
+        "geo": {
+            "@type": "GeoShape",
+            "polygon": [
+                "53.8057925 -1.5506154 53.8057424 -1.5505556 53.8057673 -1.5504892 53.8057808 -1.5504944 53.805752 -1.5502478 53.8056754 -1.550197 53.805445 -1.5498924 53.8052647 -1.5496746 53.8052788 -1.5500054 53.8052695 -1.5503242 53.8052683 -1.550715 53.8058021 -1.550699 53.8057925 -1.5506154"
+            ]
+        },
+        "sameAs": [
+            "https://www.openstreetmap.org/way/799330320",
+            "https://www.wikidata.org/wiki/Q61748154",
+            "https://www.leeds.ac.uk/campusmap?location=17519"
+        ],
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "accessable",
+                "name": "AccessAble access guide",
+                "value": "https://www.accessable.co.uk/university-of-leeds/access-guides/nexus"
+            }
+        ],
+        "image": {
+            "@type": "ImageObject",
+            "contentUrl": "/assets/data/buildings/images/nexus-leeds.jpg",
+            "description": "Nexus Leeds",
+            "creditText": "Simon Cobb, CC0, via Wikimedia Commons",
+            "license": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+            "acquireLicensePage": "https://commons.wikimedia.org/wiki/File:Nexus_Leeds.jpg"
+        },
+        "amenityFeature": [
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "AccessAble access guide",
+                "alternateName": "accessable",
+                "value": true
+            }
+        ],
+        "containsPlace": [
+            {
+                "@type": "Place",
+                "name": "Research and Innovation Service",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "17537"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=17537",
+                "description": "Nexus<br><br><a href=\"https://ris.leeds.ac.uk/\">Visit the Research and Innovation Service website</a><br><br>View <a href=\"https://www.accessable.co.uk/university-of-leeds/access-guides/nexus\">disabled access information for Nexus</a> on the AccessAble website",
+                "latitude": 53.805132,
+                "longitude": -1.550123
+            }
+        ]
+    }
+}

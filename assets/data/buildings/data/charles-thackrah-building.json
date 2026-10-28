@@ -1,0 +1,149 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "CivicStructure",
+        "identifier": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "slug",
+                "value": "charles-thackrah-building"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "osm",
+                "value": "way/142813657"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "uprn",
+                "value": "72668330;72668321;72668332;72668331;72668323;72668334;72668322;72668333;72668325;72668324;72668335;72668327;72668326;72668329;72663748;72668328;72727512;72727522;72727513"
+            }
+        ],
+        "name": "Charles Thackrah Building",
+        "description": "101 Clarendon Road<br>University Western Campus<br>Leeds<br>LS2 9LF<br><br>Business School<br><strong>Term time opening hours</strong><br>Monday-Friday 9.00am-6.00pm<br><br>View <a href=\"https://www.accessable.co.uk/university-of-leeds/access-guides/charles-thackrah-building\">disabled access information for Charles Thackrah Building</a> on the AccessAble website<br><br><strong>Water fountains</strong><br>Ground floor, rooms 34 and 40<br>Level 1, room 37<br>Level 2, room 25",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "University of Leeds",
+            "addressRegion": "Leeds, West Yorkshire",
+            "streetAddress": "Charles Thackrah Building, Clarendon Road",
+            "postalCode": "LS2 9LJ"
+        },
+        "latitude": 53.8070151,
+        "longitude": -1.5608345,
+        "geo": {
+            "@type": "GeoShape",
+            "polygon": [
+                "53.8072571 -1.5610839 53.8072271 -1.5609638 53.8072444 -1.5609514 53.8072508 -1.5609326 53.8072349 -1.5608575 53.8072238 -1.5608522 53.8072104 -1.5608619 53.8072049 -1.5608398 53.807177 -1.5608598 53.8071645 -1.56081 53.8071521 -1.5607602 53.807198 -1.5607273 53.8071338 -1.5604706 53.8071139 -1.5604849 53.8071085 -1.5604632 53.8066973 -1.5607578 53.806735 -1.5609087 53.806761 -1.5608901 53.8067814 -1.5609715 53.8068012 -1.5609573 53.8068093 -1.5609901 53.8069807 -1.5608675 53.8069901 -1.560905 53.8070093 -1.560982 53.8069788 -1.5610038 53.807038 -1.5612407 53.8072571 -1.5610839"
+            ]
+        },
+        "sameAs": [
+            "https://www.openstreetmap.org/way/142813657",
+            "https://www.leeds.ac.uk/campusmap?location=17379"
+        ],
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "accessable",
+                "name": "AccessAble access guide",
+                "value": "https://www.accessable.co.uk/university-of-leeds/access-guides/charles-thackrah-building"
+            }
+        ],
+        "amenityFeature": [
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Entrances mapped",
+                "alternateName": "entrances",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "AccessAble access guide",
+                "alternateName": "accessable",
+                "value": true
+            }
+        ],
+        "containsPlace": [
+            {
+                "@type": "Place",
+                "additionalType": "https://wiki.openstreetmap.org/wiki/Key:entrance",
+                "name": "Main entrance",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "osm",
+                    "value": "node/9744985106"
+                },
+                "latitude": 53.8071645,
+                "longitude": -1.56081,
+                "amenityFeature": [
+                    {
+                        "@type": "LocationFeatureSpecification",
+                        "name": "Entrance type",
+                        "alternateName": "entrance",
+                        "value": "main"
+                    }
+                ]
+            },
+            {
+                "@type": "Place",
+                "additionalType": "https://wiki.openstreetmap.org/wiki/Key:entrance",
+                "name": "Entrance",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "osm",
+                    "value": "node/9744985107"
+                },
+                "latitude": 53.8069901,
+                "longitude": -1.560905,
+                "amenityFeature": [
+                    {
+                        "@type": "LocationFeatureSpecification",
+                        "name": "Entrance type",
+                        "alternateName": "entrance",
+                        "value": "yes"
+                    }
+                ]
+            },
+            {
+                "@type": "Place",
+                "name": "Business School - Centre for Decision Research",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "17357"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=17357",
+                "description": "Charles Thackrah building<br>Western Campus<br>101 Clarendon Road<br>Leeds<br>LS2 9LF<br><br><a href=\"http://cdr.leeds.ac.uk/\">Visit the Centre for Decision Research website</a><br><br>Phone: <a href=\"tel:01133434465\">0113 343 4465</a>",
+                "latitude": 53.807035,
+                "longitude": -1.560791
+            },
+            {
+                "@type": "Place",
+                "name": "Business School - Centre for Enterprise and Entrepreneurship",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "17359"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=17359",
+                "description": "Charles Thackrah building<br>Western Campus<br>101 Clarendon Road<br>Leeds<br>LS2 9LF<br><br><a href=\"https://cees.leeds.ac.uk/\">Visit the Centre for Enterprise and Entrepreneurship website</a><br><br>Phone: <a href=\"tel:01133437312\">0113 34 37312</a>",
+                "latitude": 53.807035,
+                "longitude": -1.560791
+            },
+            {
+                "@type": "Place",
+                "name": "Business School – Executive Education: Charles Thackrah",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "17367"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=17367",
+                "description": "Charles Thackrah Building<br>101 Clarendon Road<br>University Western Campus<br>Leeds,<br>LS2 9LF",
+                "latitude": 53.807035,
+                "longitude": -1.560791
+            }
+        ]
+    }
+}

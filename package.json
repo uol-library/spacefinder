@@ -10,6 +10,7 @@
     "sustainability": "node _scripts/sustainability.js",
     "osm": "node _scripts/osm.js",
     "buildings": "node _scripts/buildings.js",
+    "test:routing": "node _tests/routing.mjs",
     "build": "bundle exec jekyll build",
     "serve": "bundle exec jekyll serve --config _config.yml"
   },

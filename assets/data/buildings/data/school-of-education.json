@@ -1,0 +1,96 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "CivicStructure",
+        "identifier": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "slug",
+                "value": "school-of-education"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "osm",
+                "value": "way/84655378"
+            }
+        ],
+        "name": "School of Education",
+        "description": "",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "University of Leeds",
+            "addressRegion": "Leeds, West Yorkshire",
+            "streetAddress": "Hillary Place"
+        },
+        "latitude": 53.8062571,
+        "longitude": -1.5523809,
+        "geo": {
+            "@type": "GeoShape",
+            "polygon": [
+                "53.8063756 -1.55277 53.8062521 -1.5527939 53.8062231 -1.5523652 53.8060733 -1.5523943 53.8060575 -1.5521615 53.8061116 -1.552151 53.8061216 -1.5522984 53.8061997 -1.5522833 53.8061841 -1.5520527 53.8063254 -1.5520254 53.8063756 -1.55277"
+            ]
+        },
+        "sameAs": [
+            "https://www.openstreetmap.org/way/84655378"
+        ],
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "accessable",
+                "name": "AccessAble access guide",
+                "value": "https://www.accessable.co.uk/university-of-leeds/access-guides/coach-house"
+            }
+        ],
+        "amenityFeature": [
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "AccessAble access guide",
+                "alternateName": "accessable",
+                "value": true
+            }
+        ],
+        "containsPlace": [
+            {
+                "@type": "Place",
+                "name": "Coach House",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "17393"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=17393",
+                "description": "5-9 Hillary Place<br>Offices and meeting rooms<br><br>View <a href=\"https://www.accessable.co.uk/university-of-leeds/access-guides/coach-house\">disabled access information for Coach House </a>on the AccessAble website",
+                "latitude": 53.806362,
+                "longitude": -1.552787
+            },
+            {
+                "@type": "Place",
+                "name": "Education (School of)",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "17409"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=17409",
+                "description": "5-9 Hillary Place<br>University Precinct<br>University of Leeds<br>Leeds<br>LS2 3AR<br><br><a href=\"https://essl.leeds.ac.uk/education\">Visit School of Education webpage</a><br><br> Phone: <a href=\"tel:01133434545\">0113 343 4545</a><br><br>View <a href=\"https://www.accessable.co.uk/university-of-leeds/access-guides/5-9-hillary-place\">disabled access information for 5-9 Hillary Place </a>on the AccessAble website.",
+                "latitude": 53.806362,
+                "longitude": -1.552787
+            },
+            {
+                "@type": "Place",
+                "name": "Hillary Place",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "17449"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=17449",
+                "description": "Education<br><br><strong>Term time opening hours</strong><br>Monday-Friday 9.00am-6.00pm<br><br><strong>Vacation opening hours</strong><br>Monday-Friday 9.00am-4.30pm<br><br><strong>Water fountains</strong><br>Leeds Driving Simulator<br>School of Education, Ground floor, room 3 staff room and room 23 common room. <a href=\"https://www.accessable.co.uk/university-of-leeds/access-guides/5-9-hillary-place\">View AccessAble access guide for School of Education</a><br><br>Cleaning Services, Level 8, room 226, Physics Deck",
+                "latitude": 53.806362,
+                "longitude": -1.552787
+            }
+        ]
+    }
+}

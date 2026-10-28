@@ -1,0 +1,54 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "CivicStructure",
+        "identifier": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "slug",
+                "value": "st-francis-building"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "osm",
+                "value": "way/232384523"
+            }
+        ],
+        "name": "St Francis Building",
+        "description": "",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "University of Leeds",
+            "addressRegion": "Leeds, West Yorkshire",
+            "streetAddress": ""
+        },
+        "latitude": 53.810163,
+        "longitude": -1.5528663,
+        "geo": {
+            "@type": "GeoShape",
+            "polygon": [
+                "53.810121 -1.5531012 53.8100878 -1.5530985 53.8100031 -1.5527847 53.8101801 -1.5526477 53.8101909 -1.5526877 53.8102427 -1.5526476 53.8102783 -1.55278 53.8103145 -1.552752 53.810323 -1.5527838 53.8103017 -1.5528011 53.8102929 -1.5528083 53.8103058 -1.5528562 53.8102608 -1.5528909 53.8102836 -1.5529758 53.810121 -1.5531012"
+            ]
+        },
+        "sameAs": [
+            "https://www.openstreetmap.org/way/232384523"
+        ],
+        "containsPlace": [
+            {
+                "@type": "Place",
+                "name": "Catholic Chaplaincy",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "17371"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=17371",
+                "description": "5 St Marks Avenue<br>Leeds<br>LS2 9BN<br><br><a href=\"http://www.uilcc.org\">Visit the Catholic Chaplaincy website</a><br><br>Phone: <a href=\"tel:01132438263\">0113 243 8263</a>",
+                "latitude": 53.810268,
+                "longitude": -1.553
+            }
+        ]
+    }
+}

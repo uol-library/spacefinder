@@ -1,0 +1,91 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "creativeWorkStatus": "Published",
+    "mainEntity": {
+        "@type": "CivicStructure",
+        "identifier": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "slug",
+                "value": "irene-manton-building"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "osm",
+                "value": "way/148433752"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "wikidata",
+                "value": "Q26262656"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "uprn",
+                "value": "72650726"
+            }
+        ],
+        "name": "Irene Manton Building",
+        "description": "Irene Manton Building<br>University Precinct<br>University of Leeds<br>Leeds<br>LS2 9JT<br><br>Biological Sciences<br>Computer clusters<br>Geography <br><br>View <a href=\"https://www.accessable.co.uk/university-of-leeds/access-guides/irene-manton-building\">disabled access information for the Irene Manton Building</a> on the AccessAble website.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "University of Leeds",
+            "addressRegion": "Leeds, West Yorkshire",
+            "streetAddress": "",
+            "postalCode": "LS2 9JT"
+        },
+        "latitude": 53.8044136,
+        "longitude": -1.5548446,
+        "geo": {
+            "@type": "GeoShape",
+            "polygon": [
+                "53.8046779 -1.5549772 53.8046378 -1.5549765 53.8046236 -1.5549762 53.8046077 -1.5549759 53.8045895 -1.5549756 53.8041435 -1.5549672 53.8041438 -1.5549268 53.8041451 -1.554712 53.804593 -1.5547202 53.8046348 -1.554721 53.8046796 -1.5547218 53.8046794 -1.5547536 53.8046792 -1.5547837 53.8046785 -1.5548862 53.8046779 -1.5549772"
+            ]
+        },
+        "sameAs": [
+            "https://www.openstreetmap.org/way/148433752",
+            "https://www.wikidata.org/wiki/Q26262656",
+            "https://www.leeds.ac.uk/campusmap?location=17462"
+        ],
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "accessable",
+                "name": "AccessAble access guide",
+                "value": "https://www.accessable.co.uk/university-of-leeds/access-guides/irene-manton-building"
+            }
+        ],
+        "image": {
+            "@type": "ImageObject",
+            "contentUrl": "/assets/data/buildings/images/irene-manton-building-seen-across-the-bridge-from-the-garstang-wing-university-of-leeds-5th-december-2014.jpg",
+            "description": "Irene Manton building seen across the bridge from the Garstang Wing, University of Leeds, West Yorkshire.  Taken on the afternoon of Friday the 5th of December 2014.",
+            "creditText": "Mtaylor848, CC BY-SA 4.0, via Wikimedia Commons",
+            "license": "https://creativecommons.org/licenses/by-sa/4.0",
+            "acquireLicensePage": "https://commons.wikimedia.org/wiki/File:Irene_Manton_building_seen_across_the_bridge_from_the_Garstang_Wing,_University_of_Leeds_(5th_December_2014).JPG"
+        },
+        "amenityFeature": [
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "AccessAble access guide",
+                "alternateName": "accessable",
+                "value": true
+            }
+        ],
+        "containsPlace": [
+            {
+                "@type": "Place",
+                "name": "Geography - Irene Manton Building",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "campusmap",
+                    "value": "17437"
+                },
+                "sameAs": "https://www.leeds.ac.uk/campusmap?location=17437",
+                "description": "School of Geography<br>Geography<br><br><a href=\"https://environment.leeds.ac.uk/geography\">Visit the School of Geography website</a><br><br>Phone: <a href=\"tel:0113 3433300\">0113 343 3300</a>",
+                "latitude": 53.804427,
+                "longitude": -1.554914
+            }
+        ]
+    }
+}
