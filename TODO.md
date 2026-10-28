@@ -104,8 +104,48 @@ The aim: core scripts plus datasets that can be added by putting a folder in
 
 ## spacefinder.leeds.ac.uk (the site repo)
 
-- Add `routing: "history"` and the `datasources` list to its
-  `_data/config.yml`.
+- **Build a demonstration site for the on-campus development server.** Use
+  the site repo's `develop` branch with this repo's `develop` branch as its
+  theme.
+  - **Bring `develop` up to date with `main` first:** it's 12 commits
+    behind, mostly the bot's opening-hours updates.
+  - **Point it at the new theme:** change `remote_theme` in `_config.yml`
+    from `uol-library/spacefinder` to `uol-library/spacefinder@develop`.
+    Leave `main` on the current theme until the new one is released.
+  - **Remove the old overrides:** the site repo has its own copies of theme
+    files, written for the old code, and these would hide the new theme's
+    versions. Remove them or bring them up to date:
+    - `_includes/head.html`, `foot.html` and `top-bar.html`
+    - `_layouts/spacefinder.html`
+    - `_includes/javascript/` (the old `templates.js`, `modal.js` and
+      `cookieconsent-init.js`)
+    - `_sass/spaces.scss`
+
+    Keep the site's own content: the pages in `_includes/pages/`,
+    `favicons.html`, `custom-head.html` and `google-analytics.html`, if they
+    still fit the new theme.
+  - **Settings:** add `routing: "history"` and the `datasources` list to
+    its `_data/config.yml`.
+  - **Server set-up:** check how the development server serves the site.
+    If it can send `index.html` for unknown paths, history routing works
+    without the `404.html` redirect. If not, the redirect handles it.
+- **Move the data to the site repo** at the same stage. That covers:
+  - `assets/data/spaces`, `buildings` and `art`, with their modules and
+    images;
+  - the source data in `campusmap`, `osm` and `sustainability`;
+  - the data scripts: `osm.js`, `buildings.js`, `sustainability.js`,
+    `convert.js` and `concat.js`.
+
+  Check the existing workflows (`concat.yml`, `cronUpdates.yml`, and the
+  LibCal opening-hours jobs) still work with the new data format, since
+  they were written for the old one.
+- **Then clean up the theme**, so it ships with no data:
+  - remove the moved files, `spaces.json`, `filters.json` and the old
+    `filters` list in `_data/config.yml`;
+  - keep a small example dataset, so the theme still runs and the routing
+    tests still have data. The tests currently expect 68 spaces, 95
+    buildings and 22 artworks, so they need updating to match;
+  - update the guides in `docs/` to say where the data now lives.
 - Optional: so that direct visits to URLs like `/spaces/1915` don't redirect
   through `404.html`, add this to `staticwebapp.config.json`:
 
