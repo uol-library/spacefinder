@@ -45,6 +45,7 @@ exclude:
 - LICENSE
 - README.md
 - TODO.md
+- CLAUDE.md
 - docs
 - CONTRIBUTING.md
 - CODE_OF_CONDUCT.md

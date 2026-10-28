@@ -81,6 +81,11 @@ The aim: core scripts plus datasets that can be added by putting a folder in
 
 ## Small fixes
 
+- [ ] `README.md` still describes the old set-up: the `spaces/` folder,
+  `_includes/javascript/templates.js`, and filters defined in
+  `_data/config.yml`. It also links to the wiki. Shorten it and point to
+  the docs site.
+
 - [ ] Three art files spell the contributor `@type` as `"Organisation"`; it should be `"Organization"`:
   `converse-column.json`, `dual-form.json`, `three-piece-reclining-figure-bridge-prop.json`.
 - [ ] `_scripts/concat.js` includes `template.json` and `route.json` in
