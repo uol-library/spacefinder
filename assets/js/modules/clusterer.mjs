@@ -12,7 +12,16 @@
  */
 import { LayerGroup, Marker, DivIcon, LatLngBounds } from 'leaflet';
 
+/**
+ * A layer group which shows its markers in clusters at low zoom levels
+ */
 export class SimpleMarkerClusterGroup extends LayerGroup {
+    /**
+     * @param {Object} options
+     * @param {number} options.maxClusterRadius size of the grid used for clusters, in pixels (default 80)
+     * @param {number} options.disableClusteringAtZoom zoom level at which markers are no longer clustered (default 18)
+     * @param {boolean} options.zoomToBoundsOnClick whether clicking a cluster zooms to its markers (default true)
+     */
     constructor( options = {} ) {
         super();
         this.options = Object.assign({
@@ -145,7 +154,7 @@ export class SimpleMarkerClusterGroup extends LayerGroup {
             className: 'marker-cluster ' + sizeClass,
             iconSize: [ 40, 40 ]
         });
-        const clusterMarker = new Marker( cluster.latlng, { icon, alt: count + ' spaces' } );
+        const clusterMarker = new Marker( cluster.latlng, { icon, alt: count + ' places' } );
         clusterMarker.on( 'click', () => this._onClusterClick( cluster ) );
         return clusterMarker;
     }

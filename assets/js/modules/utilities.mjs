@@ -1,3 +1,8 @@
+/**
+ * Utility functions used by the core modules and the dataset modules:
+ * storage and data loading, finding places, building place HTML, routing
+ * and dataset names.
+ */
 import { spacefinder } from './config.mjs';
 
 /**
@@ -371,6 +376,31 @@ export function setRoute( route, replace ) {
  */
 export function getDataSourceRoute( key ) {
     return key === spacefinder.defaultDataSource ? '': key;
+}
+
+/**
+ * Gets the name of a dataset for use in a sentence, e.g. "study spaces"
+ * (the name from config, or the label in lower case)
+ * @param {string} key dataset key (defaults to the current dataset)
+ * @return {string}
+ */
+export function getDataSourceName( key = spacefinder.currentDataSource ) {
+    let ds = spacefinder.dataSources.find( ds => ds.key === key );
+    if ( ! ds ) {
+        return 'places';
+    }
+    return ds.name || ds.label.toLowerCase();
+}
+
+/**
+ * Puts the current dataset's name in the interface text: the content of
+ * elements with the datasource-name class, and the title of elements with
+ * a data-datasource-title attribute ({name} is replaced with the name)
+ */
+export function setDataSourceNames() {
+    let name = getDataSourceName();
+    document.querySelectorAll( '.datasource-name' ).forEach( el => el.textContent = name );
+    document.querySelectorAll( '[data-datasource-title]' ).forEach( el => el.setAttribute( 'title', el.getAttribute( 'data-datasource-title' ).replace( '{name}', name ) ) );
 }
 
 /**

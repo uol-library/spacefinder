@@ -1,3 +1,10 @@
+/**
+ * The map
+ *
+ * Creates the Leaflet map, adds a marker and popup for each place (using the
+ * dataset module's getInfoWindowContent), keeps the markers in step with the
+ * list when places are selected or filtered, and handles geolocation.
+ */
 import {
     Control,
     Map,
@@ -139,9 +146,9 @@ function maybeSetupMap() {
         /* add each place to the map using a marker */
         for ( let i = 0; i < spacefinder.data[spacefinder.currentDataSource].places.length; i++ ) {
             if ( spacefinder.data[spacefinder.currentDataSource].places[i].lat && spacefinder.data[spacefinder.currentDataSource].places[i].lng ) {
-                var spacePosition = new LatLng( spacefinder.data[spacefinder.currentDataSource].places[i].lat, spacefinder.data[spacefinder.currentDataSource].places[i].lng );
+                var placePosition = new LatLng( spacefinder.data[spacefinder.currentDataSource].places[i].lat, spacefinder.data[spacefinder.currentDataSource].places[i].lng );
                 pointsArray.push( [ spacefinder.data[spacefinder.currentDataSource].places[i].lat, spacefinder.data[spacefinder.currentDataSource].places[i].lng ] );
-                spacefinder.data[spacefinder.currentDataSource].places[i].marker = new Marker( spacePosition, {
+                spacefinder.data[spacefinder.currentDataSource].places[i].marker = new Marker( placePosition, {
                     alt: spacefinder.data[spacefinder.currentDataSource].places[i].title,
                     title: spacefinder.data[spacefinder.currentDataSource].places[i].title,
                     icon: getSVGIcon( 'place-marker' )
@@ -149,7 +156,7 @@ function maybeSetupMap() {
                 spacefinder.data[spacefinder.currentDataSource].markergroup.addLayer( spacefinder.data[spacefinder.currentDataSource].places[i].marker );
                 /* set the popup for the marker */
                 spacefinder.data[spacefinder.currentDataSource].places[i].popup = new Popup().setContent( spacefinder.data[spacefinder.currentDataSource].module.getInfoWindowContent( spacefinder.data[spacefinder.currentDataSource].places[i] ) );
-                spacefinder.data[spacefinder.currentDataSource].places[i].popup.spaceID = spacefinder.data[spacefinder.currentDataSource].places[i].id;
+                spacefinder.data[spacefinder.currentDataSource].places[i].popup.placeID = spacefinder.data[spacefinder.currentDataSource].places[i].id;
                 spacefinder.data[spacefinder.currentDataSource].places[i].marker.bindPopup( spacefinder.data[spacefinder.currentDataSource].places[i].popup );
             }
         }
@@ -159,11 +166,11 @@ function maybeSetupMap() {
 
         /* use popupopen and popupclose events to select and deselect places from map */
         spacefinder.map.on( 'popupopen', event => {
-            zoomMapToPlace( event.popup.spaceID );
-            document.dispatchEvent( new CustomEvent( 'placeSelectedOnMap', { bubbles: true, detail: { id: event.popup.spaceID, src: 'map' } } ) );
+            zoomMapToPlace( event.popup.placeID );
+            document.dispatchEvent( new CustomEvent( 'placeSelectedOnMap', { bubbles: true, detail: { id: event.popup.placeID, src: 'map' } } ) );
         });
         spacefinder.map.on( 'popupclose', event => {
-            document.dispatchEvent( new CustomEvent( 'placeDeselectedFromMap', { bubbles: true, detail: { id: event.popup.spaceID } } ) );
+            document.dispatchEvent( new CustomEvent( 'placeDeselectedFromMap', { bubbles: true, detail: { id: event.popup.placeID } } ) );
         });
 
         /* respond to corresponding events from list */
@@ -288,21 +295,21 @@ function recentreMap() {
 }
 
 /**
- * Zooms the map to show a particular space
- * @param {Object} space
+ * Zooms the map to show a particular place
+ * @param {string} placeid
  */
-function zoomMapToPlace( spaceid ) {
+function zoomMapToPlace( placeid ) {
     splog( 'zoomMapToPlace' );
-    let space = getPlaceById( spaceid );
-    spacefinder.data[spacefinder.currentDataSource].markergroup.zoomToShowLayer( space.marker, function(){
-        let newCenter = new LatLng( space.lat, space.lng );
-        space.popup.setLatLng( newCenter ).openOn( spacefinder.map );
+    let place = getPlaceById( placeid );
+    spacefinder.data[spacefinder.currentDataSource].markergroup.zoomToShowLayer( place.marker, function(){
+        let newCenter = new LatLng( place.lat, place.lng );
+        place.popup.setLatLng( newCenter ).openOn( spacefinder.map );
     });
 }
 
 
 /**
- * Resets the map after a space has been selected
+ * Resets the map after a place has been selected
  */
  function deselectPlacesFromMap() {
     splog( 'deselectPlacesFromMap' );
@@ -316,9 +323,9 @@ function filterMarkers() {
     splog( 'filterMarkers' );
     let markersToAdd = [];
     document.querySelectorAll( '.list-place' ).forEach( element => {
-        let space = getPlaceById( element.getAttribute( 'data-id' ) );
+        let place = getPlaceById( element.getAttribute( 'data-id' ) );
         if ( ! element.classList.contains( 'hidden' ) ) {
-            markersToAdd.push( space.marker );
+            markersToAdd.push( place.marker );
         }
     });
     spacefinder.data[spacefinder.currentDataSource].markergroup.clearLayers();
@@ -335,22 +342,22 @@ function filterMarkers() {
  *******************************************************************/
 
 /**
- * Updates the data-sortdistance attribute for all spaces relative
+ * Updates the data-sortdistance attribute for all places relative
  * to the user position.
  */
 export function updateDistances() {
     splog( 'updateDistances' );
     if ( spacefinder.geoActive ) {
-        spacefinder.data[spacefinder.currentDataSource].places.forEach( (space, index) => {
-            let d = haversine_distance( spacefinder.personLoc, { lat: space.lat, lng: space.lng } );
-            document.querySelector( '[data-id="' + space.id + '"]').setAttribute( 'data-sortdistance', d );
+        spacefinder.data[spacefinder.currentDataSource].places.forEach( (place, index) => {
+            let d = haversine_distance( spacefinder.personLoc, { lat: place.lat, lng: place.lng } );
+            document.querySelector( '[data-id="' + place.id + '"]').setAttribute( 'data-sortdistance', d );
             var dist = ( d > 1000 ) ? ( ( d / 1000 ).toFixed(2) + 'km  away' ) : ( d > 1 ? d + ' metres away': ( d === 1 ? d + ' metre away': 'You are here!' ) );
-            document.getElementById( 'distance' + space.id ).innerHTML = dist;
+            document.getElementById( 'distance' + place.id ).innerHTML = dist;
         });
     } else {
-        let spacenodes = document.querySelectorAll( '.list-place' );
-        if ( spacenodes !== null ) {
-            spacenodes.forEach( element => element.setAttribute( 'data-sortdistance', '' ) );
+        let placenodes = document.querySelectorAll( '.list-place' );
+        if ( placenodes !== null ) {
+            placenodes.forEach( element => element.setAttribute( 'data-sortdistance', '' ) );
         }
     }
 }
@@ -412,7 +419,7 @@ function onGeoLocationFound( event ) {
     spacefinder.personLoc.lat = event.latlng.lat;
     spacefinder.personLoc.lng = event.latlng.lng;
     updateDistances();
-    /* see if the spaces are sorted by distance */
+    /* see if the places are sorted by distance */
     let btn = document.querySelector( '#sortdistance[data-sortdir$="sc"' );
     if ( btn !== null ) {
         let sortdir = document.getElementById( 'sortdistance' ).getAttribute( 'data-sortdir' );

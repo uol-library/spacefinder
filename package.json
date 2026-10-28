@@ -11,6 +11,8 @@
     "osm": "node _scripts/osm.js",
     "buildings": "node _scripts/buildings.js",
     "test:routing": "node _tests/routing.mjs",
+    "docs": "node _scripts/docs.js",
+    "docs:serve": "bundle exec jekyll serve -s docs -d docs/_site",
     "build": "bundle exec jekyll build",
     "serve": "bundle exec jekyll serve --config _config.yml"
   },
@@ -20,5 +22,8 @@
   },
   "keywords": [],
   "author": "",
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "jsdoc-to-markdown": "^9.1.3"
+  }
 }

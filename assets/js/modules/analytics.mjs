@@ -8,8 +8,8 @@
  * @param e.detail.terms the terms used in the search or filter for the search and filter types
  * @param e.detail.filtername the name of the filter for the filter type
  * @param e.detail.src the selection source for the select type (map or list)
- * @param e.detail.id the ID of the space selected for the select type
- * @param e.detail.name the title of the space selected for the select type
+ * @param e.detail.id the ID of the place selected for the select type
+ * @param e.detail.name the title of the place selected for the select type
  */
 document.addEventListener('DOMContentLoaded', () => {
     if ( typeof gtag == 'function' ) {

@@ -15,11 +15,12 @@
  * forward buttons currently reloads the page.
  */
 import { spacefinder } from './config.mjs';
-import { getPlaceBySlug, getPlaceNodeById, splog, setElementFocus, getRoute, setRoute, getDataSourceRoute } from './utilities.mjs';
+import { getPlaceBySlug, getPlaceNodeById, splog, setElementFocus, getRoute, setRoute, getDataSourceRoute, setDataSourceNames } from './utilities.mjs';
 import { openAlertDialog } from './components.mjs';
 
 restoreRoute();
 spacefinder.currentDataSource = getRouteDataSource( getRoute() );
+setDataSourceNames();
 
 document.addEventListener( 'sfmapready', () => {
     splog( 'Map is ready - load initial page/place' );

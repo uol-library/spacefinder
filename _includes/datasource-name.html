@@ -1,0 +1,7 @@
+{%- comment -%}
+    Name of the default dataset for use in a sentence, e.g. "study spaces".
+    The app replaces it with the current dataset's name (see setDataSourceNames
+    in utilities.mjs).
+{%- endcomment -%}
+{%- assign ds = site.data.config.datasources[0] -%}
+<span class="datasource-name">{{ ds.name | default: ds.label | downcase }}</span>

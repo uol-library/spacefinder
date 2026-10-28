@@ -2,7 +2,7 @@
  * Functions for the filters panel in the UI
  */
 import { spacefinder } from './config.mjs';
-import { splog, getJSON } from './utilities.mjs';
+import { splog, getJSON, getDataSourceName } from './utilities.mjs';
 import { Accordion } from './components.mjs';
 
 document.addEventListener( 'placesLoaded', () => {
@@ -81,10 +81,11 @@ function renderFilters() {
         let filterForm = document.createElement( 'form' );
         filterForm.setAttribute( 'id', 'filter-options-form' );
         filterForm.setAttribute( 'role', 'search' );
-        filterForm.setAttribute( 'aria-label', 'Search and filter spaces' );
+        let name = getDataSourceName();
+        filterForm.setAttribute( 'aria-label', 'Search and filter ' + name );
         let controlsContainer = document.createElement( 'div' );
         controlsContainer.classList.add( 'top-controls' );
-        controlsContainer.innerHTML = '<div><label for="search-input" class="visuallyhidden">Search University spaces</label><input id="search-input" type="search" placeholder="Search"></div><div class="searchbuttons"><button type="reset" id="search-reset" class="btn" disabled>Reset<span class="visuallyhidden"> University spaces search and filters</span></button><button type="submit" id="search-submit" class="btn" aria-controls="searchResultsSummary" disabled>Search<span class="visuallyhidden"> University spaces</span></button></div></div>';
+        controlsContainer.innerHTML = '<div><label for="search-input" class="visuallyhidden">Search ' + name + '</label><input id="search-input" type="search" placeholder="Search"></div><div class="searchbuttons"><button type="reset" id="search-reset" class="btn" disabled>Reset<span class="visuallyhidden"> ' + name + ' search and filters</span></button><button type="submit" id="search-submit" class="btn" aria-controls="searchResultsSummary" disabled>Search<span class="visuallyhidden"> ' + name + '</span></button></div></div>';
         filterForm.appendChild( controlsContainer );
         let panelContainer = document.createElement( 'div' );
         panelContainer.classList.add( 'panel-content' );

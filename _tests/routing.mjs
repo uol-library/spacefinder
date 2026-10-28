@@ -177,6 +177,13 @@ async function run(mode, port) {
 
         await b.goto(r('art'));
         check(mode, 'direct visit to art', await ready(22), JSON.stringify(await st()));
+        const names = await b.evaluate(`({
+            skip: document.querySelector('#skip a').textContent,
+            map: document.querySelector('.map-button button').title,
+            search: (document.querySelector('label[for="search-input"]') || {}).textContent,
+            spaces: [...document.querySelectorAll('#top-bar, #skip, #filters h2, #list h2, #map h2, #filter-options-form label.visuallyhidden, .searchbuttons')].some(e => /spaces/i.test(e.textContent))
+        })`);
+        check(mode, 'art uses its dataset name in the interface', names.skip === 'Skip to list of public art' && names.map === 'Map of public art' && names.search === 'Search public art' && !names.spaces, JSON.stringify(names));
 
         await b.goto(r('page/about'));
         await ready(68); await sleep(500);

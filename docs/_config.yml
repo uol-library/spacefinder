@@ -1,0 +1,35 @@
+##########################################################################
+# Spacefinder documentation site
+#
+# Published by GitHub Pages from the docs folder, using the Just the Docs
+# theme. Preview locally from the repository root with:
+#   npm run docs:serve
+#
+# The API pages in docs/api are generated from the code with:
+#   npm run docs
+##########################################################################
+title: Spacefinder documentation
+description: History, roadmap and developer documentation for Spacefinder
+baseurl: "/spacefinder"
+url: "https://uol-library.github.io"
+
+remote_theme: just-the-docs/just-the-docs@v0.12.0
+plugins:
+  - jekyll-remote-theme
+
+search_enabled: true
+heading_anchors: true
+
+aux_links:
+  "Spacefinder on GitHub": "https://github.com/uol-library/spacefinder"
+  "Spacefinder at Leeds": "https://spacefinder.leeds.ac.uk/"
+
+gh_edit_link: true
+gh_edit_link_text: "Edit this page on GitHub"
+gh_edit_repository: "https://github.com/uol-library/spacefinder"
+gh_edit_branch: "develop"
+gh_edit_source: docs
+gh_edit_view_mode: "edit"
+
+exclude:
+  - _site

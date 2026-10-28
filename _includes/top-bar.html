@@ -1,21 +1,21 @@
-<div id="skip"><a href="#listcontent">Skip to list of spaces</a></div>
+<div id="skip"><a href="#listcontent">Skip to list of {% include datasource-name.html %}</a></div>
 <header id="top-bar">
     <h1 class="visuallyhidden">Space finder</h1>
     <nav aria-label="main navigation">
         <ul>
             <li class="navbutton filter-button" data-view="filters">
                 <button class="icon-search">
-                    <span>Search<span class="visuallyhidden"> or filter spaces</span></span>
+                    <span>Search<span class="visuallyhidden"> or filter {% include datasource-name.html %}</span></span>
                 </button>
             </li>
             <li class="navbutton list-button" data-view="list">
                 <button class="icon-list">
-                    <span>List<span class="visuallyhidden"> of spaces</span></span>
+                    <span>List<span class="visuallyhidden"> of {% include datasource-name.html %}</span></span>
                 </button>
             </li>
             <li class="navbutton map-button" data-view="map">
-                <button class="icon-marker" title="Map of spaces">
-                    <span>Map<span class="visuallyhidden"> of spaces</span></span>
+                <button class="icon-marker" title="Map of {% assign ds = site.data.config.datasources[0] %}{{ ds.name | default: ds.label | downcase }}" data-datasource-title="Map of {name}">
+                    <span>Map<span class="visuallyhidden"> of {% include datasource-name.html %}</span></span>
                 </button>
             </li>
             <li class="spacefinder-logo">

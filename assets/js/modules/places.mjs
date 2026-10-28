@@ -1,4 +1,11 @@
-
+/**
+ * The list of places
+ *
+ * Loads the current dataset's data.json and module, renders the list view,
+ * and handles selecting, searching, filtering and sorting places. The dataset
+ * module turns the data into place objects (onloadPlaceData) and supplies
+ * the HTML for each place (getPlaceHTML and getAdditionalInfo).
+ */
 import { spacefinder } from './config.mjs';
 import { splog, getJSON, getFilterData, getRoute, setRoute, getDataSourceRoute, getPlaceById, getPlaceNodeById } from './utilities.mjs';
 import { getFilterStatus } from './filters.mjs';

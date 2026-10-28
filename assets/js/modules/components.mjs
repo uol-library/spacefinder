@@ -81,9 +81,13 @@ export function openAlertDialog( title, content ) {
 }
 
 /**
- * Accordion
+ * Accordion: a button (with aria-expanded and aria-controls) which shows and
+ * hides the content it controls
  */
 export class Accordion {
+	/**
+	 * @param {Element} domNode element containing the button
+	 */
 	constructor(domNode) {
 		this.rootEl = domNode;
 		this.buttonEl = this.rootEl.querySelector('button[aria-expanded]');
