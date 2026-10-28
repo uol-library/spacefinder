@@ -20,7 +20,11 @@ Read this first, then `TODO.md` (what's next) and `_sessions/summary.md`
   theme, so don't merge or push to `main` unless asked. The user's global
   GitHub Pages instructions are for `e-2-org` repos and don't apply here
   (this repo is `uol-library`).
-- The user commits their own work, so don't commit unless asked.
+- **Commits:**
+  - Commit to `develop` at the end of each piece of work.
+  - Keep commit messages brief: a short summary line, plus a few lines of
+    body only if they're really needed.
+  - Don't push unless asked.
 
 ## Architecture
 
