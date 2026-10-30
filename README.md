@@ -1,16 +1,14 @@
-Spacefinder
-===========
+# Spacefinder
 
-This repository contains a **jekyll theme** version of the UI for the Cambridge Spacefinder application (https://spacefinder.lib.cam.ac.uk/). It has been built to investigate possibilities for development of the application to make it usable in other higher education contexts.
+This repository contains a **jekyll theme** version of the UI for the Spacefinder application. It has been built to investigate possibilities for development of the application to make it usable in other higher education contexts.
 
-The major change made to the original application (https://github.com/cambridge-collection/spacefinder/) is the decoupling of the application into User Interface and server-side components. Here, the data for all spaces is served as JSON files rather than using a data endpoint driven by a server-side application.
+The original application was developed at the University of Cambridge. The major change made to the original application (https://github.com/cambridge-collection/spacefinder/) is the decoupling of the application into User Interface and server-side components. Here, the data for all spaces is served as JSON files rather than using a data endpoint driven by a server-side application.
 
-For more information about the project, [please visit the wiki](https://github.com/uol-library/spacefinder/wiki/)
+For more information about the project, [please visit the documentation site](https://uol-library.github.io/spacefinder/)
 
 An example of the application when populated with data is available in the University of Leeds version of Spacefinder, which is available at https://spacefinder.leeds.ac.uk/ and served from the repository [uol-library/spacefinder.leeds.ac.uk](https://github.com/uol-library/spacefinder.leeds.ac.uk).
 
-Using this repository
----------------------
+## Using this repository
 
 This repository can be forked or used as a *jekyll theme* in GitHub to create a custom wayfinding application. Key files which require customising with your own information are:
 
@@ -21,35 +19,42 @@ This repository can be forked or used as a *jekyll theme* in GitHub to create a 
 
 If you are using this repository as a jekyll theme, you need to add `remote_theme: uol-library/spacefinder` to **_config.yml**
 
-Data configuration
-------------------
+## Data configuration
 
-* Data for spaces is kept in JSON files within the `spaces` directory. 
-* Spaces are rendered using functions in the file `_includes/javascript/templates.js`
-* Filters for spaces are defined in the file `_data/config.yml`
+* Data for places used in the application is kept in files within the `assets/data` directory. This directory contains sub-directories containing different datasets.
+* The names of the sub-directories in `assets/data` are declared in `_data/config.yml` under the `datasources` property. Each one needs a **key** (the name of the directory), a **label** and an **icon** name for the UI.
+* The sub-directories in `assets/data` all contain the following:
+  * a **data** directory containing individual JSON-LD files, one for each of the features in the dataset.
+  * an **images** directory containing any images which are used in the UI for this dataset.
+  * a JavaScript module named after the `datasources.key` which is loaded using a dynamic import when the datasource is selected. This module has the responsibility of rendering the data in the UI.
+  * a **filters.json** file which is used to define how the places in the dataset can be filtered in the UI.
 
 Spaces **must** have the following pieces of metadata defined for them:
 
-* **id** - a unique numerical identifier for each space. This is used in the filename of the JSON file in the `spaces` directory, i.e. a space with the ID of `2` stors its data in the file `spaces/2.json`
+* **id** - a unique numerical identifier for each space.
 * **title** - name of the space
 * **slug** - usually the lower case title with all special characters and spaces removed
 * **location** - latitude / longitude values in GeoJSON format.
 * **description** - Short description of the space
-* **opening_hours** - this is a JSON data structure consisting of weekday names as keys, and properties `open` (boolean), `from` (time in HH:MM format) and `to` (time in HH:MM format).
 
-Other metadata fields can be defined in the JSON data, along with filter information for each space (using keys defined in `_data/config.yml`). This data should then be incorporated into the output of the templates in `_includes/javascript/templates.js`.
+Other metadata fields can be defined in the JSON data,
 
-Icon Font
----------
+## Icon Font
 
 Spacefinder uses a font to display different icons which can be customised using https://fontello.com.
 
-The fontello configuration is in the file `assets/font/src/config.json` which you can import into fontello if you want to add and remove icons. Once you have finished customising the font, download the package from fontello and replace the content of your `assets/font/src` folder with it. The package contains the font (in five formats) and a CSS file `assets/font/src/css/spacefinder.css` which can be used to replace the icon CSS file in `_sass/spacefinder.scss`. The only change made to this file is applying the global icon style to the `::before` **and** `::after` pseudo-elements which allows for the inclusion of two icons together in parts of the UI.
+The fontello configuration is in the file `assets/font/src/config.json` which you can import into fontello if you want to add and remove icons. Once you have finished customising the font, download the package from fontello and replace the content of your `assets/font/src` folder with it. The package contains the font (in five formats) and a CSS file `assets/font/src/css/spacefinder.css` which can be used to replace the icon CSS file in `assets/css/modules/icons.css`. The only change made to this file is applying the global icon style to the `::before` **and** `::after` pseudo-elements which allows for the inclusion of two icons together in parts of the UI.
 
-Changelog
----------
+## Changelog
+
+### 1.0 (1/12/2026)
+
+* refactor of Javascript to use Leaflet 2.0 and ESM
+* separation of data from the interface components to allow additional datasets to be loaded into the application
+* rework of place data schema to JSON-LD which conforms to schema.org
+* folding UI components in HTML into Leaflet Controls to make the full-screen experience more consistent, and embedding in an iframe possible.
 
 ### 0.9 (10/1/2023)
 
-* Initial release of code based on https://github.com/uol-library/spacefinder
+* Initial release of code based on the porting of the University of Cambridge Ruby on Rails app to a Single Page Application.
 
