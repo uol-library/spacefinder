@@ -1,0 +1,28 @@
+[
+    {
+        "key": "species",
+        "label": "Species",
+        "message": "Showing trees of species: ",
+        "exclusive": false,
+        "additive": false,
+        "open": true,
+        "options": [
+            {
+                "key": "beech",
+                "label": "Beech"
+            },
+            {
+                "key": "cherry",
+                "label": "Cherry"
+            },
+            {
+                "key": "oak",
+                "label": "Oak"
+            },
+            {
+                "key": "plane",
+                "label": "Plane"
+            }
+        ]
+    }
+]

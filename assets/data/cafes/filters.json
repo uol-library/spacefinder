@@ -1,0 +1,27 @@
+[
+    {
+        "key": "facilities",
+        "label": "Facilities",
+        "message": "Showing cafés with: ",
+        "exclusive": false,
+        "additive": true,
+        "open": true,
+        "options": [
+            {
+                "key": "wifi",
+                "label": "Wi-Fi",
+                "icon": "icon-wifi"
+            },
+            {
+                "key": "sockets",
+                "label": "Plug sockets",
+                "icon": "icon-power"
+            },
+            {
+                "key": "outdoor",
+                "label": "Outdoor seating",
+                "icon": "icon-sun"
+            }
+        ]
+    }
+]

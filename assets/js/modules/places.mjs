@@ -440,7 +440,6 @@ function loadPlaces() {
         url: spacefinder.dataDir + spacefinder.currentDataSource + '/data.json'
     } ).then( data => {
         if ( data.length ) {
-            console.log( spacefinder.dataDir + spacefinder.currentDataSource + '/' + spacefinder.currentDataSource + '.mjs' );
             import(spacefinder.dataDir + spacefinder.currentDataSource + '/' + spacefinder.currentDataSource + '.mjs')
                 .then( module => {
                     spacefinder.data[spacefinder.currentDataSource].module = module;

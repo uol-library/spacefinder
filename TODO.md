@@ -85,19 +85,16 @@ The aim: core scripts plus datasets that can be added by putting a folder in
   `_includes/javascript/templates.js`, and filters defined in
   `_data/config.yml`. It also links to the wiki. Shorten it and point to
   the docs site.
-
-- [ ] Three art files spell the contributor `@type` as `"Organisation"`; it should be `"Organization"`:
-  `converse-column.json`, `dual-form.json`, `three-piece-reclining-figure-bridge-prop.json`.
-- [ ] `_scripts/concat.js` includes `template.json` and `route.json` in
-  `data.json`. Only include records that have a `mainEntity`, as the art
-  rebuild did.
-- [ ] Remove the unused entries in `_data/config.yml`: `spaces`, `spacesurl`,
-  `filters`, `filtersurl` and `imageBaseURL`.
 - [ ] Image URLs start at the site root, so they break if `baseurl` isn't
   empty. Prefix them with `spacefinder.basePath`.
-- [ ] Wrong campus map entries are matched to `relation/7686369` in
-  `assets/data/campusmap/osm/campusmap-osm.json`. See
-  `campusmap-osm-review.md`.
+- [ ] `routing.mjs` turns old `#/space/<slug>` links into `spaces/<slug>`.
+  That only makes sense for the Leeds site: make it a setting, or move it
+  to the site repo.
+- [ ] A site that uses the theme also gets the example datasets
+  (`assets/data/cafes` and `trees`), because a remote theme's `assets` are
+  copied into the site. They do no harm, but they're published. Consider
+  moving them somewhere Jekyll leaves out of a theme, and pointing the
+  theme's own `dataDir` at them.
 
 ## Art trail
 
@@ -109,61 +106,37 @@ The aim: core scripts plus datasets that can be added by putting a folder in
 
 ## spacefinder.leeds.ac.uk (the site repo)
 
-- **Build a demonstration site for the on-campus development server.** Use
-  the site repo's `develop` branch with this repo's `develop` branch as its
-  theme.
-  - **Bring `develop` up to date with `main` first:** it's 12 commits
-    behind, mostly the bot's opening-hours updates.
-  - **Point it at the new theme:** change `remote_theme` in `_config.yml`
-    from `uol-library/spacefinder` to `uol-library/spacefinder@develop`.
-    Leave `main` on the current theme until the new one is released.
-  - **Remove the old overrides:** the site repo has its own copies of theme
-    files, written for the old code, and these would hide the new theme's
-    versions. Remove them or bring them up to date:
-    - `_includes/head.html`, `foot.html` and `top-bar.html`
-    - `_layouts/spacefinder.html`
-    - `_includes/javascript/` (the old `templates.js`, `modal.js` and
-      `cookieconsent-init.js`)
-    - `_sass/spaces.scss`
+The data, its scripts and the daily jobs now live there, and `develop`
+builds with this repo's `develop` branch as its theme. Still to do there:
 
-    Keep the site's own content: the pages in `_includes/pages/`,
-    `favicons.html`, `custom-head.html` and `google-analytics.html`, if they
-    still fit the new theme.
-  - **Settings:** add `routing: "history"` and the `datasources` list to
-    its `_data/config.yml`.
-  - **Server set-up:** check how the development server serves the site.
-    If it can send `index.html` for unknown paths, history routing works
-    without the `404.html` redirect. If not, the redirect handles it.
-- **Move the data to the site repo** at the same stage. That covers:
-  - `assets/data/spaces`, `buildings` and `art`, with their modules and
-    images;
-  - the source data in `campusmap`, `osm` and `sustainability`;
-  - the data scripts: `osm.js`, `buildings.js`, `sustainability.js`,
-    `convert.js` and `concat.js`.
-
-  Check the existing workflows (`concat.yml`, `cronUpdates.yml`, and the
-  LibCal opening-hours jobs) still work with the new data format, since
-  they were written for the old one.
-- **Then clean up the theme**, so it ships with no data:
-  - remove the moved files, `spaces.json`, `filters.json` and the old
-    `filters` list in `_data/config.yml`;
-  - keep a small example dataset, so the theme still runs and the routing
-    tests still have data. The tests currently expect 68 spaces, 95
-    buildings and 22 artworks, so they need updating to match;
-  - update the guides in `docs/` to say where the data now lives.
-- Optional: so that direct visits to URLs like `/spaces/1915` don't redirect
-  through `404.html`, add this to `staticwebapp.config.json`:
-
-  ```json
-  "navigationFallback": {
-    "rewrite": "/index.html",
-    "exclude": ["/assets/*", "/*.{json,xml,css,js,mjs,png,jpg,svg,ico,txt}"]
-  }
-  ```
-
-- Data building (`npm run osm`, `npm run buildings` and
-  `npm run sustainability`) and the daily jobs belong there, not in the theme,
-  which ships with no data. Move the scripts across when the theme is ready.
+- **Opening hours:** finish updating `updateOpeningHoursLibCal.js` for the
+  JSON-LD in `assets/data/spaces/data`: write back to that folder, match
+  libraries by `additionalType` and the end of `streetAddress`, save
+  `openingHoursSpecification` as an array, compare `opens` and `closes`,
+  and zero-pad times.
+- **Other scripts:** `cron.js` and `nextID.js` still use the old
+  `spaces/` folder.
+- **Deployment:** the live site will be served by Apache, copied from a
+  clone of the repo, so the build has to be committed. Take `_site` out of
+  `.gitignore`, and make the daily workflows build the site and commit it
+  along with the data. The server then needs to pull and copy it to the
+  DocumentRoot.
+- **Config:** `_config_dev.yml` is a full copy of `_config.yml`. It could
+  hold only what differs (`remote_theme`, `environment`, `url`), built
+  with `--config _config.yml,_config_dev.yml`.
+- **Data fixes:**
+  - Three art files spell the contributor `@type` as `"Organisation"`; it
+    should be `"Organization"`: `converse-column.json`, `dual-form.json`,
+    `three-piece-reclining-figure-bridge-prop.json`.
+  - `_scripts/concat.js` includes `template.json` and `route.json` in
+    `data.json`. Only include records that have a `mainEntity`, as the art
+    rebuild did.
+  - Wrong campus map entries are matched to `relation/7686369` in
+    `assets/data/campusmap/osm/campusmap-osm.json`. See
+    `campusmap-osm-review.md`.
+- **Release:** when the theme is ready, merge it to this repo's `main`,
+  then change the site's `remote_theme` back to `uol-library/spacefinder`
+  and merge the site's `develop`.
 - Checking the campus map for updates is on hold, because its data isn't
   reliable.
 
@@ -187,6 +160,6 @@ and API pages generated with `npm run docs`. Preview it with
 ## Testing
 
 `npm run test:routing` builds the site in both routing modes and runs 21
-browser scenarios in each, using headless Chrome. It needs Bundler and Chrome.
-`-- --no-build` reuses the last builds. It doesn't test clicking map markers
-or the Azure fallback.
+browser scenarios in each, using headless Chrome and the example datasets.
+It needs Bundler and Chrome. `-- --no-build` reuses the last builds. It
+doesn't test clicking map markers, or the Apache rewrite rules.

@@ -35,11 +35,11 @@ Add the dataset to `datasources` in `_data/config.yml`:
 
 ```yaml
 datasources:
-  - key: "spaces"
-    label: "Study spaces"
-    icon: "icon-desk"
+  - key: "cafes"
+    label: "Cafés"
+    icon: "icon-coffee"
   - key: "trees"
-    label: "Campus trees"
+    label: "Trees"
     icon: "icon-views"
 ```
 
@@ -63,7 +63,15 @@ fits, and only Articles whose `creativeWorkStatus` is `Published` are shown:
             "@type": "Place",
             "identifier": 1,
             "name": "Copper beech",
-            "description": "A large copper beech planted in 1926.",
+            "description": "A large copper beech, planted in 1926.",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "propertyID": "species",
+                    "name": "Species",
+                    "value": "Beech"
+                }
+            ],
             "geo": {
                 "@type": "GeoCoordinates",
                 "latitude": 53.8067,
@@ -99,7 +107,7 @@ An array of filters, which make up the filters panel:
         "open": true,
         "options": [
             { "key": "beech", "label": "Beech" },
-            { "key": "oak", "label": "Oak", "icon": "icon-tree" }
+            { "key": "oak", "label": "Oak", "icon": "icon-views" }
         ]
     }
 ]
@@ -130,17 +138,21 @@ modules, for example:
 
 ```js
 import { spacefinder } from '../../js/modules/config.mjs';
-import { createPlaceElement, getInfoWindowHTML, getDirectionsLink } from '../../js/modules/utilities.mjs';
-import { getPublishedEntities } from '../../js/modules/jsonld.mjs';
+import { escapeHTML as esc, createPlaceElement, getInfoWindowHTML, getDirectionsLink } from '../../js/modules/utilities.mjs';
+import { getPublishedEntities, getPropertyValue } from '../../js/modules/jsonld.mjs';
 
 export const namespace = 'trees';
 ```
 
-It has to export the functions below. The modules for
-[spaces](https://github.com/uol-library/spacefinder/blob/develop/assets/data/spaces/spaces.mjs),
-[buildings](https://github.com/uol-library/spacefinder/blob/develop/assets/data/buildings/buildings.mjs)
-and [art](https://github.com/uol-library/spacefinder/blob/develop/assets/data/art/art.mjs)
-are complete examples.
+It has to export the functions below. The theme's example datasets are
+complete examples:
+[trees](https://github.com/uol-library/spacefinder/blob/develop/assets/data/trees/trees.mjs)
+is the code on this page, and
+[cafés](https://github.com/uol-library/spacefinder/blob/develop/assets/data/cafes/cafes.mjs)
+adds filters from `amenityFeature` and opening hours. The Leeds datasets
+(spaces, buildings and art) are in the
+[spacefinder.leeds.ac.uk](https://github.com/uol-library/spacefinder.leeds.ac.uk)
+repository.
 
 ### onloadPlaceData( data )
 
@@ -156,7 +168,7 @@ place. The core modules use these properties:
 | `lat`, `lng` | the place's position (numbers). Places without them aren't shown on the map. |
 
 Add anything else the other functions need. Keeping the JSON-LD in a
-property (the art and buildings modules use `ld`) is often simplest.
+property (here `ld`) is often simplest.
 
 ```js
 export function onloadPlaceData( data ) {
@@ -166,6 +178,7 @@ export function onloadPlaceData( data ) {
         title: ld.name,
         lat: Number( ld.geo.latitude ),
         lng: Number( ld.geo.longitude ),
+        species: getPropertyValue( ld.additionalProperty, 'species' ),
         ld: ld
     } ) );
 }
@@ -182,11 +195,10 @@ modules rely on the ids, classes and attributes it sets.
 ```js
 export function getPlaceHTML( place ) {
     return createPlaceElement( place, {
-        classList: 'species_' + place.ld.species,
+        classList: 'species_' + place.species.toLowerCase(),
         typeLabel: 'Tree',
         typeClass: 'tree',
-        address: place.ld.address || '',
-        details: '<p class="description">' + place.ld.description + '</p>'
+        details: '<p class="description">' + esc( place.ld.description ) + '</p>'
     } );
 }
 ```
@@ -208,15 +220,15 @@ Required. Returns the HTML for the place's popup on the map. Use
 
 ```js
 export function getInfoWindowContent( place ) {
-    return getInfoWindowHTML( place.title, [ 'Tree', place.ld.species ] );
+    return getInfoWindowHTML( place.title, [ 'Tree', esc( place.species ) ] );
 }
 ```
 
 ### onrenderPlaceData()
 
 Optional. Called after the list has been rendered, for example to start a
-timer that keeps something up to date (the spaces module updates whether
-each space is open).
+timer that keeps something up to date (the Leeds spaces module updates
+whether each space is open).
 
 ### onunloadPlaceData()
 
@@ -233,5 +245,5 @@ paths only work if the site's `baseurl` is empty.
 ## Check it
 
 Run the site with `npm run serve` and open `/#/trees`, or `/trees` with
-history routing. `npm run test:routing` tests the existing datasets (see
-[Development](development.html)).
+history routing. `npm run test:routing` tests the theme with its example
+datasets (see [Development](development.html)).

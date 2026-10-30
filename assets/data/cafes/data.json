@@ -1,0 +1,503 @@
+[
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "creativeWorkStatus": "Published",
+        "mainEntity": {
+            "@type": "CafeOrCoffeeShop",
+            "identifier": 1,
+            "name": "Courtyard Coffee",
+            "description": "A small coffee bar with tables in a sheltered courtyard.",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Courtyard, Example Building"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 53.8071,
+                "longitude": -1.5561
+            },
+            "amenityFeature": [
+                {
+                    "@type": "LocationFeatureSpecification",
+                    "name": "Wi-Fi",
+                    "alternateName": "wifi",
+                    "value": true
+                },
+                {
+                    "@type": "LocationFeatureSpecification",
+                    "name": "Outdoor seating",
+                    "alternateName": "outdoor",
+                    "value": true
+                }
+            ],
+            "openingHoursSpecification": [
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "https://schema.org/Monday",
+                    "opens": "08:00:00",
+                    "closes": "17:00:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "https://schema.org/Tuesday",
+                    "opens": "08:00:00",
+                    "closes": "17:00:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "https://schema.org/Wednesday",
+                    "opens": "08:00:00",
+                    "closes": "17:00:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "https://schema.org/Thursday",
+                    "opens": "08:00:00",
+                    "closes": "17:00:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "https://schema.org/Friday",
+                    "opens": "08:00:00",
+                    "closes": "17:00:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "https://schema.org/Saturday"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "https://schema.org/Sunday"
+                }
+            ]
+        }
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "creativeWorkStatus": "Published",
+        "mainEntity": {
+            "@type": "CafeOrCoffeeShop",
+            "identifier": 2,
+            "name": "Green Bean Kiosk",
+            "description": "A takeaway kiosk by the main path, serving coffee and snacks.",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Main path"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 53.806,
+                "longitude": -1.5548
+            },
+            "amenityFeature": [
+                {
+                    "@type": "LocationFeatureSpecification",
+                    "name": "Outdoor seating",
+                    "alternateName": "outdoor",
+                    "value": true
+                }
+            ],
+            "openingHoursSpecification": [
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "https://schema.org/Monday",
+                    "opens": "07:30:00",
+                    "closes": "15:00:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "https://schema.org/Tuesday",
+                    "opens": "07:30:00",
+                    "closes": "15:00:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "https://schema.org/Wednesday",
+                    "opens": "07:30:00",
+                    "closes": "15:00:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "https://schema.org/Thursday",
+                    "opens": "07:30:00",
+                    "closes": "15:00:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "https://schema.org/Friday",
+                    "opens": "07:30:00",
+                    "closes": "15:00:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "https://schema.org/Saturday",
+                    "opens": "10:00:00",
+                    "closes": "14:00:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "https://schema.org/Sunday"
+                }
+            ]
+        }
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "creativeWorkStatus": "Published",
+        "mainEntity": {
+            "@type": "CafeOrCoffeeShop",
+            "identifier": 3,
+            "name": "Library Corner Café",
+            "description": "A quiet café next to the library entrance. Opens late on Monday mornings.",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Ground floor, Example Library"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 53.8066,
+                "longitude": -1.5532
+            },
+            "amenityFeature": [
+                {
+                    "@type": "LocationFeatureSpecification",
+                    "name": "Wi-Fi",
+                    "alternateName": "wifi",
+                    "value": true
+                },
+                {
+                    "@type": "LocationFeatureSpecification",
+                    "name": "Plug sockets",
+                    "alternateName": "sockets",
+                    "value": true
+                }
+            ],
+            "openingHoursSpecification": [
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "https://schema.org/Monday",
+                    "opens": "08:00:00",
+                    "closes": "20:00:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "https://schema.org/Tuesday",
+                    "opens": "08:00:00",
+                    "closes": "20:00:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "https://schema.org/Wednesday",
+                    "opens": "08:00:00",
+                    "closes": "20:00:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "https://schema.org/Thursday",
+                    "opens": "08:00:00",
+                    "closes": "20:00:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "https://schema.org/Friday",
+                    "opens": "08:00:00",
+                    "closes": "20:00:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "https://schema.org/Saturday",
+                    "opens": "10:00:00",
+                    "closes": "18:00:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "https://schema.org/Sunday",
+                    "opens": "10:00:00",
+                    "closes": "18:00:00"
+                }
+            ]
+        }
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "creativeWorkStatus": "Published",
+        "mainEntity": {
+            "@type": "CafeOrCoffeeShop",
+            "identifier": 4,
+            "name": "The Reading Room",
+            "description": "A large café with long tables, popular for group work.",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "First floor, Example Hall"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 53.8077,
+                "longitude": -1.5545
+            },
+            "amenityFeature": [
+                {
+                    "@type": "LocationFeatureSpecification",
+                    "name": "Wi-Fi",
+                    "alternateName": "wifi",
+                    "value": true
+                },
+                {
+                    "@type": "LocationFeatureSpecification",
+                    "name": "Plug sockets",
+                    "alternateName": "sockets",
+                    "value": true
+                }
+            ],
+            "openingHoursSpecification": [
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "https://schema.org/Monday",
+                    "opens": "09:00:00",
+                    "closes": "19:00:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "https://schema.org/Tuesday",
+                    "opens": "09:00:00",
+                    "closes": "19:00:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "https://schema.org/Wednesday",
+                    "opens": "09:00:00",
+                    "closes": "19:00:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "https://schema.org/Thursday",
+                    "opens": "09:00:00",
+                    "closes": "19:00:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "https://schema.org/Friday",
+                    "opens": "09:00:00",
+                    "closes": "19:00:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "https://schema.org/Saturday",
+                    "opens": "10:00:00",
+                    "closes": "16:00:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "https://schema.org/Sunday"
+                }
+            ]
+        }
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "creativeWorkStatus": "Published",
+        "mainEntity": {
+            "@type": "CafeOrCoffeeShop",
+            "identifier": 5,
+            "name": "Terrace Tea Room",
+            "description": "Tea, cake and a terrace with views across the campus.",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Roof terrace, Example Tower"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 53.8056,
+                "longitude": -1.5566
+            },
+            "amenityFeature": [
+                {
+                    "@type": "LocationFeatureSpecification",
+                    "name": "Outdoor seating",
+                    "alternateName": "outdoor",
+                    "value": true
+                }
+            ],
+            "openingHoursSpecification": [
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "https://schema.org/Monday",
+                    "opens": "10:00:00",
+                    "closes": "16:00:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "https://schema.org/Tuesday",
+                    "opens": "10:00:00",
+                    "closes": "16:00:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "https://schema.org/Wednesday",
+                    "opens": "10:00:00",
+                    "closes": "16:00:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "https://schema.org/Thursday",
+                    "opens": "10:00:00",
+                    "closes": "16:00:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "https://schema.org/Friday",
+                    "opens": "10:00:00",
+                    "closes": "16:00:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "https://schema.org/Saturday"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "https://schema.org/Sunday"
+                }
+            ]
+        }
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "creativeWorkStatus": "Published",
+        "mainEntity": {
+            "@type": "CafeOrCoffeeShop",
+            "identifier": 6,
+            "name": "Union Espresso",
+            "description": "A busy espresso bar in the students' union.",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Ground floor, Example Union"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 53.8083,
+                "longitude": -1.5559
+            },
+            "amenityFeature": [
+                {
+                    "@type": "LocationFeatureSpecification",
+                    "name": "Wi-Fi",
+                    "alternateName": "wifi",
+                    "value": true
+                },
+                {
+                    "@type": "LocationFeatureSpecification",
+                    "name": "Plug sockets",
+                    "alternateName": "sockets",
+                    "value": true
+                },
+                {
+                    "@type": "LocationFeatureSpecification",
+                    "name": "Outdoor seating",
+                    "alternateName": "outdoor",
+                    "value": true
+                }
+            ],
+            "openingHoursSpecification": [
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "https://schema.org/Monday",
+                    "opens": "08:00:00",
+                    "closes": "23:00:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "https://schema.org/Tuesday",
+                    "opens": "08:00:00",
+                    "closes": "23:00:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "https://schema.org/Wednesday",
+                    "opens": "08:00:00",
+                    "closes": "23:00:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "https://schema.org/Thursday",
+                    "opens": "08:00:00",
+                    "closes": "23:00:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "https://schema.org/Friday",
+                    "opens": "08:00:00",
+                    "closes": "23:00:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "https://schema.org/Saturday",
+                    "opens": "10:00:00",
+                    "closes": "23:00:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "https://schema.org/Sunday",
+                    "opens": "12:00:00",
+                    "closes": "22:00:00"
+                }
+            ]
+        }
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "creativeWorkStatus": "Draft",
+        "mainEntity": {
+            "@type": "CafeOrCoffeeShop",
+            "identifier": 7,
+            "name": "Pop-up Café",
+            "description": "Not open yet, so not shown.",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Example Square"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 53.8069,
+                "longitude": -1.554
+            },
+            "amenityFeature": [],
+            "openingHoursSpecification": [
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "https://schema.org/Monday"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "https://schema.org/Tuesday"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "https://schema.org/Wednesday"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "https://schema.org/Thursday"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "https://schema.org/Friday"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "https://schema.org/Saturday"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "https://schema.org/Sunday"
+                }
+            ]
+        }
+    }
+]

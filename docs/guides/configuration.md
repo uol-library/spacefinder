@@ -34,42 +34,49 @@ use the same routes:
 | Route | Shows |
 |---|---|
 | (empty) | the first dataset |
-| `buildings` | another dataset |
-| `spaces/1915` | a place in a dataset |
+| `trees` | another dataset |
+| `cafes/courtyard-coffee` | a place in a dataset |
 | `page/about` | an information page |
 
-- **`hash`** (the default) gives URLs like `/#/spaces/1915`. It works on any
-  static host, including GitHub Pages, with no server set-up.
-- **`history`** gives URLs like `/spaces/1915`, using the History API. These
-  URLs don't exist as files. If someone visits one directly, the host sends
-  `404.html`, which redirects to the site with `?route=spaces%2F1915`, and the
-  app then restores the URL. To avoid the redirect, the host can send
-  `index.html` for these paths instead. On Azure Static Web Apps, add this to
-  `staticwebapp.config.json`:
+- **`hash`** (the default) gives URLs like `/#/cafes/courtyard-coffee`. It
+  works on any static host with no server set-up.
+- **`history`** gives URLs like `/cafes/courtyard-coffee`, using the History
+  API. These URLs don't exist as files, so the server has to send
+  `index.html` for them. On Apache, put this in an `.htaccess` file in the
+  site's root (Jekyll copies it into the build):
 
-  ```json
-  "navigationFallback": {
-    "rewrite": "/index.html",
-    "exclude": ["/assets/*", "/*.{json,xml,css,js,mjs,png,jpg,svg,ico,txt}"]
-  }
+  ```apache
+  RewriteEngine On
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . index.html [L]
   ```
 
-Links from earlier versions, such as `/#/space/1915`, still work in both
-modes.
+  On a host that can't do this, such as GitHub Pages, the host sends
+  `404.html` instead. It redirects to the site with
+  `?route=cafes%2Fcourtyard-coffee`, and the app then restores the URL. The
+  theme's `404.html` isn't included in a site that uses the theme with
+  `remote_theme`, so copy it into the site.
+
+Hash URLs work in both modes, so links made with `hash` still work after
+switching to `history`. Links from the earliest version of the Leeds site,
+such as `/#/space/1915`, are turned into `spaces/1915`.
 
 ## Datasets
 
 ```yaml
 datasources:
-  - key: "spaces"
-    label: "Study spaces"
-    icon: "icon-desk"
-  - key: "buildings"
-    label: "Buildings"
-    icon: "icon-marker"
+  - key: "cafes"
+    label: "Cafés"
+    icon: "icon-coffee"
+  - key: "trees"
+    label: "Trees"
+    icon: "icon-views"
 ```
 
 The datasets the site can show. The first one is shown when the site opens.
+The theme's own `_data/config.yml` lists its example datasets; a site lists
+its own.
 
 | Property | Use |
 |---|---|
@@ -79,9 +86,3 @@ The datasets the site can show. The first one is shown when the site opens.
 | `icon` | the icon class for the dataset |
 
 See [Adding a dataset](adding-a-dataset.html) for what goes in each folder.
-
-## Filters
-
-The `filters` list in `_data/config.yml` is left over from earlier versions.
-Each dataset now has its own `filters.json` (see
-[Adding a dataset](adding-a-dataset.html#filtersjson)).

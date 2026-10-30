@@ -9,9 +9,12 @@ Read this first, then `TODO.md` (what's next) and `_sessions/summary.md`
   rewrite of Cambridge's Spacefinder UI.
 - The live site, spacefinder.leeds.ac.uk, lives in the sibling repo
   `../spacefinder.leeds.ac.uk`. It loads this theme with `remote_theme`,
-  and holds the data and the daily jobs (LibCal opening hours, cron). The
-  theme should eventually ship **without data**; for now the data is here
-  while it's developed.
+  and holds the real data (spaces, buildings, art), the data scripts and
+  the daily jobs (LibCal opening hours, cron). Its `develop` branch uses
+  this repo's `develop` as its theme, and its live site will be served by
+  Apache.
+- This repo has only **example data**: `cafes` and `trees`, which are made
+  up and used by the tests.
 - `../spacefinder-ds` is an earlier attempt to fit the app into the
   University Design System. The map was too small there, which is why the
   list, filters and search are to move into Leaflet controls, with a
@@ -36,7 +39,7 @@ Read this first, then `TODO.md` (what's next) and `_sessions/summary.md`
   - optionally `data/` (one file per place) and `images/`.
 
   They're registered under `datasources` in `_data/config.yml`, and the
-  first one is the default. Currently: `spaces`, `buildings`, `art`.
+  first one is the default. Here: `cafes` and `trees`.
 - **Dataset module API:**
   - Required: `onloadPlaceData(data)`, which fills
     `spacefinder.data[ns].places` with objects that have `id`, `slug`,
@@ -61,12 +64,18 @@ Read this first, then `TODO.md` (what's next) and `_sessions/summary.md`
   there isn't one. Details (`.additionalInfo`) are pre-rendered hidden once
   the filters have loaded, and aren't searched.
 - **Routing** is set by `routing` in `_data/config.yml`:
-  - `hash` (`/#/spaces/1915`) is the theme default;
-  - `history` (`/spaces/1915`) relies on `404.html` redirecting to
-    `?route=`, then `restoreRoute()` puts the URL back.
+  - `hash` (`/#/cafes/courtyard-coffee`) is the theme default;
+  - `history` (`/cafes/courtyard-coffee`) needs the server to send
+    `index.html` for these paths (Apache rewrite rules), or else
+    `404.html` redirects to `?route=` and `restoreRoute()` puts the URL
+    back.
   - Routes: empty, `<dataset>`, `<dataset>/<slug>` and `page/<name>`.
   - Moving to another dataset with Back or Forward currently reloads the
     page, until `switchDataSource` exists.
+- **URLs** for the app's own files are relative to the page's origin
+  (`dataDir`, `main.js`, `main.css`), so that the dataset modules import
+  the same copy of `config.mjs` as `main.js`. Don't use `site.url` for
+  them.
 - **Interface wording** says "places", or uses the current dataset's name
   (`getDataSourceName()` and `setDataSourceNames()`, which fill
   `.datasource-name` and `[data-datasource-title]`). Don't hard-code
@@ -87,14 +96,13 @@ Read this first, then `TODO.md` (what's next) and `_sessions/summary.md`
 | `npm run test:routing` | Builds the site in both routing modes into `_tests/build/` and drives headless Chrome over the DevTools protocol: 21 scenarios per mode, 42 in all. Add `-- --no-build` to reuse the builds. Run it after any change to JS or templates. |
 | `npm run docs` | Regenerates `docs/api/*.md` from JSDoc with jsdoc-to-markdown. Don't edit those pages by hand. |
 | `npm run docs:serve` | Previews the docs site (Just the Docs theme). |
-| `npm run osm`, `npm run buildings`, `npm run sustainability` | Data builders. They need network access, and write nothing if a source fails. |
 
 ## Conventions
 
 - **Code style:** match the surrounding code. JS uses 4-space indentation,
   `function( arg )` spacing, JSDoc on every function, and a comment at the
   top of each module (it becomes the intro on the generated API page).
-- **Data:**
+- **Data** (mostly in the site repo):
   - Text in the JSON-LD is HTML (it uses entities).
   - Identifiers are `PropertyValue`s with a `propertyID`.
   - Features are `LocationFeatureSpecification`s, with the filter key in

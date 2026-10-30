@@ -47,18 +47,14 @@ export const spacefinder = {
     defaultDataSource: {{ site.data.config.datasources[0].key | jsonify }},
     /* set from the URL by routing.mjs before the data is loaded */
     currentDataSource: {{ site.data.config.datasources[0].key | jsonify }},
-    dataDir: '{{ site.url }}{{ site.baseurl }}/assets/data/',
+    /* relative to the page's origin, so the dataset modules import the same copy of this module as main.js */
+    dataDir: '{{ site.baseurl }}/assets/data/',
     /* path of the site, which routes (e.g. spaces/1915) are added to */
     basePath: '{{ site.baseurl }}/',
     /* "history" for URLs like /spaces/1915, "hash" for URLs like /#/spaces/1915 */
     routing: {{ site.data.config.routing | default: "hash" | jsonify }},
-    spaces: [],
     placesLoaded: false,
-    spacesurl: '{{ site.url }}{{ site.baseurl }}/spaces.json',
-    imageBaseURL: '{{ site.url }}{{ site.baseurl }}',
 
     /* filter related config */
-    filters: [],
-    filtersLoaded: false,
-    filtersurl: '{{ site.url }}{{ site.baseurl }}/filters.json'
+    filtersLoaded: false
 };

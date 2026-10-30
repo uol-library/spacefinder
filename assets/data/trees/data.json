@@ -1,0 +1,122 @@
+[
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "creativeWorkStatus": "Published",
+        "mainEntity": {
+            "@type": "Place",
+            "identifier": 1,
+            "name": "Copper beech",
+            "description": "A large copper beech, planted in 1926.",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "propertyID": "species",
+                    "name": "Species",
+                    "value": "Beech"
+                }
+            ],
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 53.8068,
+                "longitude": -1.5556
+            }
+        }
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "creativeWorkStatus": "Published",
+        "mainEntity": {
+            "@type": "Place",
+            "identifier": 2,
+            "name": "Courtyard cherry",
+            "description": "A flowering cherry which blossoms in April.",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "propertyID": "species",
+                    "name": "Species",
+                    "value": "Cherry"
+                }
+            ],
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 53.8072,
+                "longitude": -1.5563
+            }
+        }
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "creativeWorkStatus": "Published",
+        "mainEntity": {
+            "@type": "Place",
+            "identifier": 3,
+            "name": "English oak",
+            "description": "The oldest tree on the example campus.",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "propertyID": "species",
+                    "name": "Species",
+                    "value": "Oak"
+                }
+            ],
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 53.8061,
+                "longitude": -1.5571
+            }
+        }
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "creativeWorkStatus": "Published",
+        "mainEntity": {
+            "@type": "Place",
+            "identifier": 4,
+            "name": "London plane",
+            "description": "A tall plane tree beside the main path.",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "propertyID": "species",
+                    "name": "Species",
+                    "value": "Plane"
+                }
+            ],
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 53.8059,
+                "longitude": -1.555
+            }
+        }
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "creativeWorkStatus": "Published",
+        "mainEntity": {
+            "@type": "Place",
+            "identifier": 5,
+            "name": "Sessile oak",
+            "description": "A young oak planted in 2015.",
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "propertyID": "species",
+                    "name": "Species",
+                    "value": "Oak"
+                }
+            ],
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 53.8079,
+                "longitude": -1.5538
+            }
+        }
+    }
+]

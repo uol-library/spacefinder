@@ -24,27 +24,27 @@ npm install
 | `npm run test:routing` | runs the browser tests (see below) |
 | `npm run docs` | regenerates the [API](../api/) pages from the code |
 | `npm run docs:serve` | serves this documentation site locally |
-| `npm run osm` | downloads building outlines and entrances from OpenStreetMap into `assets/data/osm` |
-| `npm run buildings` | builds the buildings dataset from the OSM data, the campus map and Wikidata |
-| `npm run sustainability` | downloads the Sustainability Service's map into `assets/data/sustainability` |
 
-The data scripts are here while the datasets are being developed. They will
-move to the spacefinder.leeds.ac.uk repository, which builds the data for
-the live site, because the theme will ship without data.
+The theme has only example data: the made-up `cafes` and `trees` datasets
+in `assets/data`. The Leeds data, and the scripts that build it and keep
+opening hours up to date, are in the
+[spacefinder.leeds.ac.uk](https://github.com/uol-library/spacefinder.leeds.ac.uk)
+repository.
 
 ## Tests
 
 `npm run test:routing` builds the site twice, once for each
 [routing](configuration.html#routing) setting, and serves each build the way
 GitHub Pages does, sending `404.html` for paths that don't exist. Then it
-drives headless Chrome through the same scenarios in both builds:
+drives headless Chrome through the same scenarios in both builds, using the
+example datasets:
 
 - selecting places, and going Back and Forward between them;
 - search and filters;
 - the information pages;
 - direct visits to each dataset and to places;
 - unknown places;
-- links from earlier versions;
+- hash links in history mode;
 - the dataset's name in the interface;
 - checking for JavaScript errors.
 

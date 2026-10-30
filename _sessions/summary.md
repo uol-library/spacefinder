@@ -217,3 +217,27 @@ Open work is in `TODO.md`.
   dev dependency.
 - `README.md` is out of date: it still describes `spaces/`, `templates.js`
   and filters defined in config. It should point to the docs site instead.
+
+## 10. Data moved to the site repo; theme cleanup
+
+- The user moved the Leeds data (spaces, buildings, art, the source data)
+  and the data scripts to `spacefinder.leeds.ac.uk` (its `develop`
+  branch, which uses this repo's `develop` as its theme). The live site
+  will be served by Apache, copied from a clone of the site repo, with an
+  `.htaccess` rewrite to `index.html` for history routing.
+- **Example data:** `assets/data/cafes` (6 published cafés and 1 draft,
+  with a `facilities` filter from `amenityFeature` and opening hours) and
+  `assets/data/trees` (5 trees, the code from the "Adding a dataset"
+  guide). Both are made up. They're the theme's `datasources`.
+- **Tests** now use the example data: still 21 scenarios per mode. The old
+  `#/space/1915` check became a check that hash links work in history
+  mode, since the `space` to `spaces` rewrite is Leeds-specific.
+- **Relative URLs:** `dataDir` is `{{ site.baseurl }}/assets/data/`, and
+  `main.js` and `main.css` use `relative_url`. With `site.url`, opening the
+  site under another host name would load modules from two origins, and
+  the dataset modules would get a second copy of `config.mjs`.
+- Removed: `cron.js`, `processJSON.js`, the data scripts in
+  `package.json`, and the unused `spaces`, `spacesurl`, `imageBaseURL`,
+  `filters` and `filtersurl` in `config.mjs`.
+- Docs, `TODO.md` and `CLAUDE.md` updated: Apache instead of Azure, the
+  example datasets, and the remaining site repo work.

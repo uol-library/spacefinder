@@ -12,8 +12,8 @@
  *   npm run test:routing
  *   npm run test:routing -- --no-build    (reuse the last builds)
  *
- * Builds go in _tests/build/, which git ignores. The tests expect the data
- * currently in assets/data (68 spaces, 95 buildings, 22 artworks).
+ * Builds go in _tests/build/, which git ignores. The tests use the example
+ * datasets in assets/data (6 published cafés and 5 trees).
  */
 import http from 'http';
 import fs from 'fs';
@@ -109,24 +109,24 @@ async function run(mode, port) {
     const st = () => b.evaluate(STATE);
     try {
         await b.goto(base);
-        check(mode, 'home page loads spaces', await ready(68), JSON.stringify(await st()));
+        check(mode, 'home page loads cafés', await ready(6), JSON.stringify(await st()));
 
         // select a place from the list
         const first = await b.evaluate(`document.querySelector('.list-place .place-title').dataset.slug`);
         await b.evaluate(`document.querySelector('.list-place .place-title').click()`);
         await b.waitFor(`document.querySelector('.list-place.active') !== null`);
         let s = await st();
-        check(mode, 'clicking a place sets URL and shows details', s.url === urlOf('spaces/' + first) && s.infoVisible.length === 1, JSON.stringify(s));
+        check(mode, 'clicking a place sets URL and shows details', s.url === urlOf('cafes/' + first) && s.infoVisible.length === 1, JSON.stringify(s));
 
         // select another, then back twice
         const second = await b.evaluate(`document.querySelectorAll('.list-place .place-title')[3].dataset.slug`);
         await b.evaluate(`document.querySelectorAll('.list-place .place-title')[3].click()`);
         await sleep(600);
         s = await st();
-        check(mode, 'clicking another place selects it', s.active === second && s.url === urlOf('spaces/' + second) && s.infoVisible.length === 1, JSON.stringify(s));
+        check(mode, 'clicking another place selects it', s.active === second && s.url === urlOf('cafes/' + second) && s.infoVisible.length === 1, JSON.stringify(s));
         await b.evaluate(`history.back()`); await sleep(600);
         s = await st();
-        check(mode, 'back selects previous place', s.active === first && s.url === urlOf('spaces/' + first) && s.infoVisible.length === 1, JSON.stringify(s));
+        check(mode, 'back selects previous place', s.active === first && s.url === urlOf('cafes/' + first) && s.infoVisible.length === 1, JSON.stringify(s));
         await b.evaluate(`history.back()`); await sleep(600);
         s = await st();
         check(mode, 'back again deselects (home URL)', s.active === null && s.url === urlOf('') && s.infoVisible.length === 0, JSON.stringify(s));
@@ -146,11 +146,11 @@ async function run(mode, port) {
         check(mode, 'search does not match hidden details ("Monday" is only in one visible description)', shown === 1, 'shown ' + shown);
         await b.evaluate(`document.getElementById('search-reset').click()`); await sleep(300);
 
-        // place type filter
-        await b.evaluate(`document.getElementById('place_type_library').click()`); await sleep(400);
-        const libs = await b.evaluate(`document.querySelectorAll('.list-place:not(.hidden)').length`);
-        check(mode, 'place type filter works (libraries)', libs > 0 && libs < 68, 'shown ' + libs);
-        await b.evaluate(`document.getElementById('place_type_library').click()`); await sleep(300);
+        // facilities filter
+        await b.evaluate(`document.getElementById('facilities_wifi').click()`); await sleep(400);
+        const wifi = await b.evaluate(`document.querySelectorAll('.list-place:not(.hidden)').length`);
+        check(mode, 'facilities filter works (Wi-Fi)', wifi === 4, 'shown ' + wifi);
+        await b.evaluate(`document.getElementById('facilities_wifi').click()`); await sleep(300);
 
         // information page
         await b.evaluate(`document.querySelector('.modal-trigger[data-dialoghash="about"]').click()`); await sleep(400);
@@ -165,51 +165,51 @@ async function run(mode, port) {
         check(mode, 'closing about page restores URL', s.about === 'true' && s.url === urlOf(''), JSON.stringify(s));
 
         // direct visits
-        await b.goto(r('spaces/1915'));
-        await ready(68); await b.waitFor(`document.querySelector('.list-place.active') !== null`);
+        await b.goto(r('cafes/courtyard-coffee'));
+        await ready(6); await b.waitFor(`document.querySelector('.list-place.active') !== null`);
         s = await st();
-        check(mode, 'direct visit to spaces/1915', s.active === '1915' && s.url === urlOf('spaces/1915') && s.infoVisible.length === 1, JSON.stringify(s));
+        check(mode, 'direct visit to cafes/courtyard-coffee', s.active === 'courtyard-coffee' && s.url === urlOf('cafes/courtyard-coffee') && s.infoVisible.length === 1, JSON.stringify(s));
 
-        await b.goto(r('buildings/parkinson-building'));
-        await ready(95); await b.waitFor(`document.querySelector('.list-place.active') !== null`);
+        await b.goto(r('trees/copper-beech'));
+        await ready(5); await b.waitFor(`document.querySelector('.list-place.active') !== null`);
         s = await st();
-        check(mode, 'direct visit to buildings/parkinson-building', s.active === 'parkinson-building' && s.places === 95, JSON.stringify(s));
+        check(mode, 'direct visit to trees/copper-beech', s.active === 'copper-beech' && s.places === 5, JSON.stringify(s));
 
-        await b.goto(r('art'));
-        check(mode, 'direct visit to art', await ready(22), JSON.stringify(await st()));
+        await b.goto(r('trees'));
+        check(mode, 'direct visit to trees', await ready(5), JSON.stringify(await st()));
         const names = await b.evaluate(`({
             skip: document.querySelector('#skip a').textContent,
             map: document.querySelector('.map-button button').title,
             search: (document.querySelector('label[for="search-input"]') || {}).textContent,
             spaces: [...document.querySelectorAll('#top-bar, #skip, #filters h2, #list h2, #map h2, #filter-options-form label.visuallyhidden, .searchbuttons')].some(e => /spaces/i.test(e.textContent))
         })`);
-        check(mode, 'art uses its dataset name in the interface', names.skip === 'Skip to list of public art' && names.map === 'Map of public art' && names.search === 'Search public art' && !names.spaces, JSON.stringify(names));
+        check(mode, 'trees uses its dataset name in the interface', names.skip === 'Skip to list of trees' && names.map === 'Map of trees' && names.search === 'Search trees' && !names.spaces, JSON.stringify(names));
 
         await b.goto(r('page/about'));
-        await ready(68); await sleep(500);
+        await ready(6); await sleep(500);
         s = await st();
         check(mode, 'direct visit to page/about', s.about !== 'true', JSON.stringify(s));
 
-        await b.goto(r('spaces/no-such-place'));
-        await ready(68); await sleep(800);
+        await b.goto(r('cafes/no-such-place'));
+        await ready(6); await sleep(800);
         s = await st();
         check(mode, 'unknown place shows alert and goes home', s.alert !== 'true' && s.url === urlOf(''), JSON.stringify(s));
 
         // back across datasets reloads into the other dataset
-        await b.goto(r('art/a-spire'));
-        await ready(22); await b.waitFor(`document.querySelector('.list-place.active') !== null`);
-        await b.goto(r('spaces/1915'));
-        await ready(68); await sleep(500);
+        await b.goto(r('trees/english-oak'));
+        await ready(5); await b.waitFor(`document.querySelector('.list-place.active') !== null`);
+        await b.goto(r('cafes/courtyard-coffee'));
+        await ready(6); await sleep(500);
         await b.evaluate(`history.back()`); await sleep(500);
-        await ready(22); await b.waitFor(`document.querySelector('.list-place.active') !== null`);
+        await ready(5); await b.waitFor(`document.querySelector('.list-place.active') !== null`);
         s = await st();
-        check(mode, 'back to another dataset reloads it', s.places === 22 && s.active === 'a-spire', JSON.stringify(s));
+        check(mode, 'back to another dataset reloads it', s.places === 5 && s.active === 'english-oak', JSON.stringify(s));
 
-        // old URLs
-        await b.goto(base + '#/space/1915');
-        await ready(68); await b.waitFor(`document.querySelector('.list-place.active') !== null`);
+        // hash links (from hash routing) also work with history routing
+        await b.goto(base + '#/trees/english-oak');
+        await ready(5); await b.waitFor(`document.querySelector('.list-place.active') !== null`);
         s = await st();
-        check(mode, 'old #/space/1915 link', s.active === '1915' && s.url === urlOf('spaces/1915'), JSON.stringify(s));
+        check(mode, 'hash link #/trees/english-oak', s.active === 'english-oak' && s.url === urlOf('trees/english-oak'), JSON.stringify(s));
     } catch (e) {
         check(mode, 'test script stopped', false, e.message);
     } finally {
