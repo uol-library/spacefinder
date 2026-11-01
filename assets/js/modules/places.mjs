@@ -5,9 +5,11 @@
  * and handles selecting, searching, filtering and sorting places. The dataset
  * module turns the data into place objects (onloadPlaceData) and supplies
  * the HTML for each place (getPlaceHTML and getAdditionalInfo).
+ *
+ * switchDataSource changes to another dataset without reloading the page.
  */
 import { spacefinder } from './config.mjs';
-import { splog, getJSON, getFilterData, getRoute, setRoute, getDataSourceRoute, getPlaceById, getPlaceNodeById } from './utilities.mjs';
+import { splog, getJSON, getFilterData, getRoute, setRoute, getDataSourceRoute, getPlaceById, getPlaceNodeById, setDataSourceNames } from './utilities.mjs';
 import { getFilterStatus } from './filters.mjs';
 import { updateDistances } from './map.mjs';
 
@@ -286,11 +288,15 @@ function deselectPlaces( placeid ) {
             st.setAttribute( 'aria-expanded', false );
         });
     }
-    /* if the URL is for a place, change it to the dataset - unless another place
-       has been selected in the meantime (when going back in history, it will already have changed) */
+    /* if the URL is for the place that was deselected, change it to the dataset - unless another
+       place has been selected in the meantime (when going back in history, or switching to another
+       dataset, the URL will already have changed) */
+    let dataSource = spacefinder.currentDataSource;
+    let slug = active ? getPlaceById( active.getAttribute( 'data-id' ) ).slug: null;
     setTimeout( () => {
-        if ( ! document.querySelector( '.list-place.active' ) && getRoute().length > 1 ) {
-            setRoute( getDataSourceRoute( spacefinder.currentDataSource ) );
+        let route = getRoute();
+        if ( slug && ! document.querySelector( '.list-place.active' ) && route[0] === dataSource && route[1] === slug ) {
+            setRoute( getDataSourceRoute( dataSource ) );
         }
     }, 0 );
 }
@@ -425,23 +431,87 @@ function sortPlacesByTitle( places ) {
 }
 
 /**
+ * Switches to another dataset without reloading the page.
+ *
+ * Sends a datasourceunload event (detail: from and to, the dataset keys) so
+ * that the filters and the map can remove what they added for the old
+ * dataset, then calls the old dataset module's onunloadPlaceData, clears the
+ * list and forgets the old dataset. Then it sends datasourcechange (with the
+ * same detail) and loads the new dataset, which sends placesLoaded,
+ * filtersloaded and sfmapready as it does when the page loads.
+ *
+ * The URL isn't changed: set the route first if it should change.
+ * @param {string} key dataset key
+ * @return {boolean} whether the dataset was switched (false if it is already the current one, or isn't a dataset)
+ */
+export function switchDataSource( key ) {
+    let from = spacefinder.currentDataSource;
+    if ( key === from || ! spacefinder.dataSources.some( ds => ds.key === key ) ) {
+        return false;
+    }
+    splog( 'switchDataSource - from ' + from + ' to ' + key );
+    let detail = { from: from, to: key };
+    document.dispatchEvent( new CustomEvent( 'datasourceunload', { detail: detail } ) );
+    let old = spacefinder.data[ from ];
+    if ( old && old.module && Object.hasOwn( old.module, 'onunloadPlaceData' ) ) {
+        old.module.onunloadPlaceData();
+    }
+    delete spacefinder.data[ from ];
+    document.getElementById( 'listcontent' ).textContent = '';
+    document.getElementById( 'listfilters' ).textContent = '';
+    document.getElementById( 'listfilters' ).setAttribute( 'hidden', '' );
+    resetSort();
+    spacefinder.placesLoaded = false;
+    spacefinder.filtersLoaded = false;
+    spacefinder.mapReady = false;
+    spacefinder.currentDataSource = key;
+    setDataSourceNames();
+    document.dispatchEvent( new CustomEvent( 'datasourcechange', { detail: detail } ) );
+    loadPlaces();
+    return true;
+}
+
+/**
+ * Puts the sort buttons back as they are when the page loads (places are
+ * listed alphabetically when they are loaded)
+ */
+function resetSort() {
+    let sortalpha = document.getElementById( 'sortalpha' );
+    sortalpha.setAttribute( 'data-sortdir', 'asc' );
+    sortalpha.classList.remove( 'icon-sort-name-up' );
+    sortalpha.classList.add( 'icon-sort-name-down' );
+    sortalpha.setAttribute( 'title', 'Sort alphabetically (descending, z to a)' );
+    sortalpha.setAttribute( 'aria-label', 'Sort alphabetically (descending, z to a)' );
+    let sortdistance = document.getElementById( 'sortdistance' );
+    sortdistance.setAttribute( 'data-sortdir', '' );
+    sortdistance.setAttribute( 'title', 'Sort by distance (nearest to farthest)' );
+    sortdistance.setAttribute( 'aria-label', 'Sort by distance (nearest to farthest)' );
+}
+
+/**
  * Loads all place data from a single JSON file
  */
 function loadPlaces() {
     splog( 'loadPlaces' );
-    if ( Object.hasOwn(spacefinder.data, spacefinder.currentDataSource) ) {
-        splog( 'loadPlaces - data already loaded for ' + spacefinder.currentDataSource );
+    /* the dataset being loaded - if it changes before loading finishes, the result is ignored */
+    const key = spacefinder.currentDataSource;
+    if ( Object.hasOwn( spacefinder.data, key ) ) {
+        splog( 'loadPlaces - data already loaded for ' + key );
         return;
     } else {
-        spacefinder.data[spacefinder.currentDataSource] = { places: [] };
+        spacefinder.data[key] = { places: [] };
     }
     getJSON( {
-        key: spacefinder.currentDataSource,
-        url: spacefinder.dataDir + spacefinder.currentDataSource + '/data.json'
+        key: key,
+        url: spacefinder.dataDir + key + '/data.json'
     } ).then( data => {
         if ( data.length ) {
-            import(spacefinder.dataDir + spacefinder.currentDataSource + '/' + spacefinder.currentDataSource + '.mjs')
+            import(spacefinder.dataDir + key + '/' + key + '.mjs')
                 .then( module => {
+                    if ( key !== spacefinder.currentDataSource ) {
+                        splog( 'loadPlaces - ignoring ' + key + ', as the dataset has changed' );
+                        return;
+                    }
                     spacefinder.data[spacefinder.currentDataSource].module = module;
                     spacefinder.data[spacefinder.currentDataSource].module.onloadPlaceData( data );
                     sortPlacesByTitle( spacefinder.data[spacefinder.currentDataSource].places );
@@ -454,7 +524,7 @@ function loadPlaces() {
                     } ) );
                } )
                 .catch( error => {
-                    console.error( `Error loading module for ${spacefinder.currentDataSource} - status: ${error.status}, message: ${error.statusText}` );
+                    console.error( `Error loading module for ${key} - status: ${error.status}, message: ${error.statusText}` );
                 } );
          }
     } ).catch( error => {

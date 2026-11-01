@@ -235,9 +235,12 @@ whether each space is open).
 
 ### onunloadPlaceData()
 
-Optional. Will be called before the app switches to another dataset, to
-remove timers, event listeners and anything else the module added. Switching
-datasets without reloading the page isn't built yet.
+Optional. Called before the app switches to another dataset, to remove
+timers, event listeners and anything else the module added. The app then
+clears the list, the filters and the map markers itself, and forgets the
+dataset's places. If the user comes back to the dataset, it is loaded again
+and `onloadPlaceData` is called again, so reset anything the module keeps
+between calls here.
 
 ## Images
 

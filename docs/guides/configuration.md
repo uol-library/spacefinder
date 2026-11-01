@@ -98,6 +98,8 @@ datasources:
 ```
 
 The datasets the site can show. The first one is shown when the site opens.
+When there is more than one, links to them appear at the top of the filters
+panel, and choosing one switches dataset without reloading the page.
 The theme's own `_data/config.yml` lists its example datasets; a site lists
 its own.
 

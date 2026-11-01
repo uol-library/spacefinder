@@ -8,50 +8,37 @@ The aim: core scripts plus datasets that can be added by putting a folder in
 
 ## Next steps
 
-1. **Switch between datasets in the app.** Add `switchDataSource(key)` and a
-   control in the interface that lists `spacefinder.dataSources`. Switching
-   should:
-   - call the current module's `onunloadPlaceData`, which removes listeners
-     and anything else the module added;
-   - clear the list, the map markers and the filters;
-   - load the new dataset's `data.json`, `filters.json` and module;
-   - call `setDataSourceNames()` (in `utilities.mjs`) so the interface text
-     uses the new dataset's name. The filters panel builds its text when it
-     is rendered, so rendering it again covers that.
-
-   Once this works, `applyRoute` in `assets/js/modules/routing.mjs` can call
-   it instead of `window.location.reload()` when Back or Forward goes to a
-   different dataset.
-2. **Filters that belong to a module.** `applyFilters` treats the "open"
+1. **Filters that belong to a module.** `applyFilters` treats the "open"
    filter as a special case. Instead, let a module export an optional
    `matchFilter(place, key, value)`, so that a dataset can define filters that
    CSS classes can't express.
-3. **Optional filters.** Make `filters.json` optional. A dataset without one
+2. **Optional filters.** Make `filters.json` optional. A dataset without one
    would just show the list view, with no filters panel or filter controls.
-4. **List and filters as Leaflet controls.** Move the list and the filters
+3. **List and filters as Leaflet controls.** Move the list and the filters
    onto the map as Leaflet controls, instead of separate panels in the page
    layout:
    - put the search box at the top of the list view;
    - maybe show the filters in the list view, collapsed under the dataset
      controls and the search box, so there is one panel.
 
-   This fits well with item 1, since the dataset switcher could go in the same
-   control.
+   The dataset switcher (`datasources.mjs`), now at the top of the filters
+   panel, could go in the same control.
 
    The main reason for doing this is a full-screen map. In spacefinder-ds,
    which uses the University Design System, the map was too small within the
    page design. With everything in map controls, the map can go full screen,
    using the Fullscreen API on the map container, and the list, search and
    filters stay available.
-5. **Hooks for embedding the app in other pages.** Let a page that embeds
+4. **Hooks for embedding the app in other pages.** Let a page that embeds
    the app (for example one built with the Design System) share data with it,
    so the app doesn't need its own page design. spacefinder-ds took the
    opposite approach: static pages styled to match the Design System.
    - **Events from the app:** the app already sends events on `document`,
-     such as `sfmapready`, `placesLoaded`, `filtersloaded`, `placeSelected`
-     and `sfselectpage`. Decide which ones are public and what data each
-     carries, document them, and use one naming convention. Add events for a
-     changed dataset, a changed filter or search, and a changed route.
+     such as `sfmapready`, `placesLoaded`, `filtersloaded`, `placeSelected`,
+     `sfselectpage`, `datasourceunload` and `datasourcechange`. Decide which
+     ones are public and what data each carries, document them, and use one
+     naming convention. Add events for a changed filter or search, and a
+     changed route.
    - **Methods the page can call:** for example, select a place, set filters
      or a search, switch dataset, and go full screen. These could sit on
      `spacefinder` or on an object returned by an `init`/mount function.
@@ -61,7 +48,7 @@ The aim: core scripts plus datasets that can be added by putting a folder in
      be optional, so the app doesn't take over the page's URL.
    - **An iframe as well?** If the app is embedded in an iframe, the same
      events and methods could be sent with `postMessage`.
-6. **Rationalise logging in debug mode.** `splog` (in `utilities.mjs`) logs
+5. **Rationalise logging in debug mode.** `splog` (in `utilities.mjs`) logs
    when `spacefinder.debug` is on, which it is when `environment` is
    `development` in `_config.yml`. But it's used unevenly: 18 calls in
    `map.mjs`, none in `components.mjs`, `analytics.mjs` or
@@ -129,11 +116,11 @@ and API pages generated with `npm run docs`. Preview it with
 - Once it's live, replace the GitHub wiki with a link to it, or turn the
   wiki off, so there's only one copy to keep up to date.
 - Add the data model pages for any new datasets, and update the guides when
-  the dataset switcher, optional filters and Leaflet controls are done.
+  optional filters and Leaflet controls are done.
 
 ## Testing
 
-`npm run test:routing` builds the site in both routing modes and runs 22
+`npm run test:routing` builds the site in both routing modes and runs 28
 browser scenarios in each, using headless Chrome and the example datasets.
 It needs Bundler and Chrome. `-- --no-build` reuses the last builds. It
 doesn't test clicking map markers, or the Apache rewrite rules.

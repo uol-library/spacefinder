@@ -74,10 +74,16 @@ function setupLayout() {
 }
 
 /**
- * Sets the initial view of the app
+ * Sets the initial view of the app, and the view after the window is
+ * resized (but not when another dataset loads, so the user's view stays)
+ * @param {Event} event
  */
-function setView() {
+function setView( event ) {
+	if ( spacefinder.initialViewSet && event.type !== 'sfresize' ) {
+		return;
+	}
 	if ( spacefinder.mapReady && spacefinder.placesLoaded && spacefinder.filtersLoaded ) {
+		spacefinder.initialViewSet = true;
 		splog('Setting view' );
 		if ( window.innerWidth >= spacefinder.breakpoints.large ) {
 			splog('Showing filters panel' );

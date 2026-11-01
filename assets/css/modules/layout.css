@@ -272,14 +272,71 @@
  * +-------------------------------+
  */
 
- /* Filters panel */
+ /* Filters panel: the dataset switcher, then the search box and filters (which scroll) */
 #filters {
+    display: flex;
+    flex-direction: column;
+    #filter-options-form {
+        flex: 1 1 auto;
+        min-height: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    .top-controls {
+        flex: 0 0 auto;
+    }
+    .panel-content {
+        flex: 1 1 auto;
+        min-height: 0;
+    }
     .top-controls,
     .panel-content {
         padding:.4em;
     }
     background: var(--filter-bg);
     color: var(--filter-color);
+    #datasources {
+        flex: 0 0 auto;
+        padding: .4em .4em 0;
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .4rem;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        li {
+            flex: 1 1 auto;
+            margin: 0;
+        }
+        a {
+            display: block;
+            padding: .5rem;
+            text-align: center;
+            text-decoration: none;
+            background: var(--filter-button-bg);
+            color: var(--filter-button-color);
+            border: 1px solid var(--filter-button-border);
+            border-radius: 3px;
+            &:hover {
+                background: var(--filter-button-bg-hover);
+                color: var(--filter-button-color-hover);
+                text-decoration: underline;
+            }
+            &:focus-visible {
+                outline: 2px solid var(--filter-button-border-focus);
+                outline-offset: 2px;
+            }
+            &::before {
+                margin-right: .4em;
+            }
+            &[aria-current] {
+                background: var(--filter-button-bg-active);
+                color: var(--filter-button-color-active);
+            }
+        }
+    }
     .searchbuttons {
         display: flex;
         justify-content: space-between;

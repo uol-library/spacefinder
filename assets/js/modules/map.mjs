@@ -3,7 +3,8 @@
  *
  * Creates the Leaflet map, adds a marker and popup for each place (using the
  * dataset module's getInfoWindowContent), keeps the markers in step with the
- * list when places are selected or filtered, and handles geolocation.
+ * list when places are selected or filtered, and handles geolocation. The
+ * map is created once; the markers are replaced when the dataset changes.
  */
 import {
     Control,
@@ -34,6 +35,7 @@ export function initMap() {
     document.addEventListener( 'placesLoaded', maybeSetupMap );
     document.addEventListener( 'filtersloaded', maybeSetupMap );
     document.addEventListener( 'sfmaploaded', maybeSetupMap );
+    document.addEventListener( 'datasourceunload', removeMarkers );
     spacefinder.map = new Map( 'map' ).setView([spacefinder.currentLoc.lat, spacefinder.currentLoc.lng], spacefinder.startZoom );
     /* change leaflet attribution */
     spacefinder.map.attributionControl.setPrefix( '<a href="https://leafletjs.com" target="external" title="A JavaScript library for interactive maps" aria-label="Leaflet - a JavaScript library for interactive maps"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="12" height="8"><path fill="#4C7BE1" d="M0 0h12v4H0z"></path><path fill="#FFD500" d="M0 4h12v3H0z"></path><path fill="#E0BC00" d="M0 7h12v1H0z"></path></svg> Leaflet</a>' );
@@ -66,6 +68,29 @@ export function initMap() {
     spacefinder.scalecontrol = new Control.Scale(
         {position: 'bottomleft'}
     ).addTo(spacefinder.map);
+    /* use popupopen and popupclose events to select and deselect places from map */
+    spacefinder.map.on( 'popupopen', event => {
+        zoomMapToPlace( event.popup.placeID );
+        document.dispatchEvent( new CustomEvent( 'placeSelectedOnMap', { bubbles: true, detail: { id: event.popup.placeID, src: 'map' } } ) );
+    });
+    spacefinder.map.on( 'popupclose', event => {
+        document.dispatchEvent( new CustomEvent( 'placeDeselectedFromMap', { bubbles: true, detail: { id: event.popup.placeID } } ) );
+    });
+
+    /* respond to corresponding events from list */
+    document.addEventListener( 'placeSelected', event => { zoomMapToPlace( event.detail.id ) } );
+    document.addEventListener( 'placeDeselected', deselectPlacesFromMap );
+
+    /**
+     * Add a button to recentre the map when geolocation is active and the user
+     * drags the map off centre (the map should be centred on the user position)
+     */
+    spacefinder.map.on( 'dragend', event => {
+        if ( spacefinder.geoActive && ! spacefinder.recentreControl ) {
+            splog( 'adding recentre control as map was dragged by user' );
+            spacefinder.recentreControl = new RecentreControl( { position: 'bottomleft' } ).addTo( spacefinder.map );
+        }
+    });
     spacefinder.mapLoaded = true;
     spacefinder.viewdata = {
         'street': {
@@ -81,6 +106,12 @@ export function initMap() {
             tileLayer: spacefinder.esri_sat
         }
     };
+
+    /**
+     * Add a button to switch base layers between streets (OpenStreetMap)
+     * and satellite (ESRI).
+     */
+    new MapTypeControl( { position: 'topright' } ).addTo( spacefinder.map );
 
     document.dispatchEvent( new Event( 'sfmaploaded' ) );
 
@@ -124,8 +155,9 @@ export function initMap() {
 }
 
 /**
- * Sets up te map with markers for each place. Needs to run when
- * the map is fully loaded and the place data is fully loaded.
+ * Sets up the map with markers for each place. Needs to run when
+ * the map is fully loaded and the place data is fully loaded, and
+ * again when the dataset changes.
  */
 function maybeSetupMap() {
     splog( 'maybeSetupMap' );
@@ -164,19 +196,6 @@ function maybeSetupMap() {
         /* add the markers to the map */
         spacefinder.map.addLayer( spacefinder.data[spacefinder.currentDataSource].markergroup );
 
-        /* use popupopen and popupclose events to select and deselect places from map */
-        spacefinder.map.on( 'popupopen', event => {
-            zoomMapToPlace( event.popup.placeID );
-            document.dispatchEvent( new CustomEvent( 'placeSelectedOnMap', { bubbles: true, detail: { id: event.popup.placeID, src: 'map' } } ) );
-        });
-        spacefinder.map.on( 'popupclose', event => {
-            document.dispatchEvent( new CustomEvent( 'placeDeselectedFromMap', { bubbles: true, detail: { id: event.popup.placeID } } ) );
-        });
-
-        /* respond to corresponding events from list */
-        document.addEventListener( 'placeSelected', event => { zoomMapToPlace( event.detail.id ) } );
-        document.addEventListener( 'placeDeselected', deselectPlacesFromMap );
-
         /* Make sure the map view encompasses all markers */
         if ( pointsArray.length ) {
             spacefinder.map.fitBounds( pointsArray );
@@ -186,26 +205,23 @@ function maybeSetupMap() {
         spacefinder.mapBounds = spacefinder.map.getBounds();
         spacefinder.mapZoom = parseInt( spacefinder.map.getZoom() );
 
-        /**
-         * Add a button to recentre the map when geolocation is active and the user
-         * drags the map off centre (the map should be centred on the user position)
-         */
-        spacefinder.map.on( 'dragend', event => {
-            if ( spacefinder.geoActive && ! spacefinder.recentreControl ) {
-                splog( 'adding recentre control as map was dragged by user' );
-                spacefinder.recentreControl = new RecentreControl( { position: 'bottomleft' } ).addTo( spacefinder.map );
-            }
-        });
-
-        /**
-         * Add a button to switch base layers between streets (OpenStreetMap)
-         * and satellite (ESRI).
-         */
-        new MapTypeControl( { position: 'topright' } ).addTo( spacefinder.map );
-
-        /* let eveyone know we are ready */
+        /* let everyone know we are ready */
         spacefinder.mapReady = true;
         document.dispatchEvent( new Event( 'sfmapready' ) );
+    }
+}
+
+/**
+ * Closes any popup and removes the markers for the old dataset when
+ * switching to another
+ * @param {CustomEvent} event datasourceunload event (detail.from is the old dataset)
+ */
+function removeMarkers( event ) {
+    splog( 'removeMarkers - ' + event.detail.from );
+    spacefinder.map.closePopup();
+    let data = spacefinder.data[ event.detail.from ];
+    if ( data && data.markergroup ) {
+        spacefinder.map.removeLayer( data.markergroup );
     }
 }
 
@@ -301,6 +317,9 @@ function recentreMap() {
 function zoomMapToPlace( placeid ) {
     splog( 'zoomMapToPlace' );
     let place = getPlaceById( placeid );
+    if ( ! place || ! place.marker ) {
+        return;
+    }
     spacefinder.data[spacefinder.currentDataSource].markergroup.zoomToShowLayer( place.marker, function(){
         let newCenter = new LatLng( place.lat, place.lng );
         place.popup.setLatLng( newCenter ).openOn( spacefinder.map );
@@ -321,6 +340,9 @@ function zoomMapToPlace( placeid ) {
  */
 function filterMarkers() {
     splog( 'filterMarkers' );
+    if ( ! spacefinder.data[spacefinder.currentDataSource] || ! spacefinder.data[spacefinder.currentDataSource].markergroup ) {
+        return;
+    }
     let markersToAdd = [];
     document.querySelectorAll( '.list-place' ).forEach( element => {
         let place = getPlaceById( element.getAttribute( 'data-id' ) );

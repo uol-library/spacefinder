@@ -204,7 +204,52 @@ async function run(mode, port) {
         await b.evaluate(`history.back()`); await sleep(500);
         await ready(5); await b.waitFor(`document.querySelector('.list-place.active') !== null`);
         s = await st();
-        check(mode, 'back to another dataset reloads it', s.places === 5 && s.active === 'english-oak', JSON.stringify(s));
+        check(mode, 'back to another dataset loads it', s.places === 5 && s.active === 'english-oak', JSON.stringify(s));
+
+        // the dataset switcher changes dataset without reloading the page (window.noReload survives)
+        await b.goto(base);
+        await ready(6);
+        await b.evaluate(`window.noReload = true`);
+        await b.evaluate(`document.querySelector('#datasources a[data-datasource="trees"]').click()`);
+        await ready(5); await sleep(300);
+        s = await st();
+        const sw = await b.evaluate(`({
+            noReload: window.noReload === true,
+            current: document.querySelector('#datasources a[aria-current="page"]').dataset.datasource,
+            forms: document.querySelectorAll('#filter-options-form').length,
+            search: document.querySelector('label[for="search-input"]').textContent,
+            summary: document.getElementById('searchResultsSummary').textContent,
+            markers: document.querySelectorAll('.leaflet-marker-icon').length
+        })`);
+        check(mode, 'switcher changes to trees without a reload', sw.noReload && s.places === 5 && s.url === urlOf('trees') && sw.current === 'trees' && sw.forms === 1 && sw.search === 'Search trees' && sw.summary === 'Showing 5 of 5 places' && sw.markers > 0, JSON.stringify({ ...s, ...sw }));
+
+        // select a tree, then switch back to cafés and select a café
+        await b.evaluate(`document.querySelector('.list-place .place-title[data-slug="english-oak"]').click()`);
+        await b.waitFor(`document.querySelector('.list-place.active') !== null`); await sleep(300);
+        await b.evaluate(`document.querySelector('#datasources a[data-datasource="cafes"]').click()`);
+        await ready(6); await sleep(300);
+        s = await st();
+        check(mode, 'switcher changes back to cafés', s.places === 6 && s.active === null && s.url === urlOf(''), JSON.stringify(s));
+        await b.evaluate(`document.querySelector('.list-place .place-title[data-slug="courtyard-coffee"]').click()`);
+        await b.waitFor(`document.querySelector('.list-place.active') !== null`); await sleep(300);
+
+        // back goes to cafés, then to the tree in the other dataset, without a reload
+        await b.evaluate(`history.back()`); await sleep(600);
+        s = await st();
+        check(mode, 'back deselects the café', s.places === 6 && s.active === null && s.url === urlOf(''), JSON.stringify(s));
+        await b.evaluate(`history.back()`);
+        await ready(5); await b.waitFor(`document.querySelector('.list-place.active') !== null`); await sleep(300);
+        s = await st();
+        check(mode, 'back switches to trees and selects the tree', s.places === 5 && s.active === 'english-oak' && s.url === urlOf('trees/english-oak') && await b.evaluate(`window.noReload === true`), JSON.stringify(s));
+        await b.evaluate(`history.forward()`);
+        await ready(6); await sleep(600);
+        s = await st();
+        check(mode, 'forward switches to cafés', s.places === 6 && s.active === null && s.url === urlOf('') && await b.evaluate(`window.noReload === true`), JSON.stringify(s));
+
+        // filters still work once after switching (listeners aren't added twice)
+        await b.evaluate(`document.getElementById('facilities_wifi').click()`); await sleep(400);
+        const wifi2 = await b.evaluate(`({ shown: document.querySelectorAll('.list-place:not(.hidden)').length, forms: document.querySelectorAll('#filter-options-form').length, reset: document.getElementById('search-reset').disabled })`);
+        check(mode, 'filters work after switching datasets', wifi2.shown === 4 && wifi2.forms === 1 && wifi2.reset === false, JSON.stringify(wifi2));
 
         // hash links (from hash routing) also work with history routing
         await b.goto(base + '#/trees/english-oak');

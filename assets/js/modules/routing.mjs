@@ -11,22 +11,27 @@
  * /#/spaces/1915 (spacefinder.routing = "hash") - see _data/config.yml.
  *
  * The dataset is set from the URL when this module is loaded, so that the
- * right data is loaded. Changing to a different dataset with the back and
- * forward buttons currently reloads the page.
+ * right data is loaded. When the URL changes to another dataset (with the
+ * back and forward buttons), it switches to that dataset, and shows the place
+ * in the URL once the dataset has loaded.
  */
 import { spacefinder } from './config.mjs';
 import { getPlaceBySlug, getPlaceNodeById, splog, setElementFocus, getRoute, setRoute, getDataSourceRoute, setDataSourceNames } from './utilities.mjs';
 import { openAlertDialog } from './components.mjs';
+import { switchDataSource } from './places.mjs';
 
 restoreRoute();
 spacefinder.currentDataSource = getRouteDataSource( getRoute() );
 setDataSourceNames();
 
+/* sfmapready is sent each time a dataset has loaded */
 document.addEventListener( 'sfmapready', () => {
-    splog( 'Map is ready - load initial page/place' );
+    splog( 'Map is ready - show the page or place in the URL' );
     applyRoute();
-    window.addEventListener( 'popstate', applyRoute );
 });
+document.addEventListener( 'sfmapready', () => {
+    window.addEventListener( 'popstate', applyRoute );
+}, { once: true } );
 
 /**
  * Checks whether a key is a registered dataset
@@ -92,10 +97,14 @@ function applyRoute() {
         return;
     }
 
-    /* switching datasets isn't possible without a reload yet */
+    /* the rest of the route is applied when the other dataset has loaded (on sfmapready) */
     let dataSource = getRouteDataSource( route );
     if ( dataSource !== spacefinder.currentDataSource ) {
-        window.location.reload();
+        switchDataSource( dataSource );
+        return;
+    }
+    /* a dataset is still loading: the route is applied when it has loaded */
+    if ( ! spacefinder.mapReady ) {
         return;
     }
 

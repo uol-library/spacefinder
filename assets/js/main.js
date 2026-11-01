@@ -4,6 +4,7 @@ import './modules/components.mjs';
 import './modules/layout.mjs';
 import './modules/filters.mjs';
 import './modules/places.mjs';
+import './modules/datasources.mjs';
 import './modules/routing.mjs';
 import { initMap } from './modules/map.mjs';
 

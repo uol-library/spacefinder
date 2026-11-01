@@ -73,8 +73,9 @@ Read this first, then `TODO.md` (what's next) and `_sessions/summary.md`
     `404.html` redirects to `?route=` and `restoreRoute()` puts the URL
     back.
   - Routes: empty, `<dataset>`, `<dataset>/<slug>` and `page/<name>`.
-  - Moving to another dataset with Back or Forward currently reloads the
-    page, until `switchDataSource` exists.
+  - A route for another dataset (from the switcher, or Back and Forward)
+    calls `switchDataSource` (in `places.mjs`); the rest of the route is
+    applied on the next `sfmapready`.
 - **URLs** for the app's own files are relative to the page's origin
   (`dataDir`, `main.js`, `main.css`), so that the dataset modules import
   the same copy of `config.mjs` as `main.js`. Don't use `site.url` for
@@ -83,8 +84,21 @@ Read this first, then `TODO.md` (what's next) and `_sessions/summary.md`
   (`getDataSourceName()` and `setDataSourceNames()`, which fill
   `.datasource-name` and `[data-datasource-title]`). Don't hard-code
   "spaces".
+- **Switching datasets** happens without a reload. `switchDataSource` sends
+  `datasourceunload` (the filters form and the markers are removed), calls
+  the module's `onunloadPlaceData`, clears the list, deletes
+  `spacefinder.data[old]`, resets the `placesLoaded`/`filtersLoaded`/
+  `mapReady` flags, sends `datasourcechange` and loads the new dataset, so
+  `placesLoaded`, `filtersloaded` and `sfmapready` fire again. So:
+  - add `document` listeners and map handlers once (at module load or in
+    `initMap`), never inside a handler for one of those events;
+  - async loads check that the dataset hasn't changed before using the
+    result.
+  The switcher (`datasources.mjs`) is a row of links at the top of
+  `#filters`, which is a flex column so the filters still scroll.
 - **Events** are dispatched on `document`, including `sfmapready`,
-  `placesLoaded`, `filtersloaded`, `placeSelected`, `placeDeselected`,
+  `placesLoaded`, `filtersloaded`, `datasourceunload`, `datasourcechange`,
+  `placeSelected`, `placeDeselected`,
   `placeSelectedOnMap`, `placeDeselectedFromMap`, `sfshowpage`,
   `sfhidepages` and `sfselectpage`. Opening a Leaflet popup closes the
   previous one, which fires `placeDeselectedFromMap`. `deselectPlaces`
@@ -96,7 +110,7 @@ Read this first, then `TODO.md` (what's next) and `_sessions/summary.md`
 | Command | Notes |
 |---|---|
 | `npm run serve` / `npm run build` | Jekyll (Bundler) |
-| `npm run test:routing` | Builds the site in both routing modes into `_tests/build/` and drives headless Chrome over the DevTools protocol: 21 scenarios per mode, 42 in all. Add `-- --no-build` to reuse the builds. Run it after any change to JS or templates. |
+| `npm run test:routing` | Builds the site in both routing modes into `_tests/build/` and drives headless Chrome over the DevTools protocol: 28 scenarios per mode, 56 in all. Add `-- --no-build` to reuse the builds. Run it after any change to JS or templates. |
 | `npm run docs` | Regenerates `docs/api/*.md` from JSDoc with jsdoc-to-markdown. Don't edit those pages by hand. |
 | `npm run docs:serve` | Previews the docs site (Just the Docs theme). |
 

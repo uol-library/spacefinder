@@ -1,16 +1,41 @@
 /**
  * Functions for the filters panel in the UI
+ *
+ * The filters are loaded once the places have loaded, and the panel is
+ * built again for each dataset.
  */
 import { spacefinder } from './config.mjs';
 import { splog, getJSON, getDataSourceName } from './utilities.mjs';
 import { Accordion } from './components.mjs';
 
-document.addEventListener( 'placesLoaded', () => {
-    document.addEventListener( 'filtersloaded', () => {
-        renderFilters();
-        setupFilters();
-    });
-    loadFilters();
+document.addEventListener( 'placesLoaded', loadFilters );
+document.addEventListener( 'filtersloaded', () => {
+    renderFilters();
+    setupFilters();
+});
+/* the reset and search buttons are enabled while any search or filter is active */
+document.addEventListener( 'filtersapplied', () => {
+    if ( ! document.getElementById( 'filter-options-form' ) ) {
+        return;
+    }
+    const activeFilters = getFilterStatus();
+    if ( activeFilters.length ) {
+        document.getElementById( 'search-reset' ).removeAttribute( 'disabled' );
+        document.getElementById( 'search-submit' ).removeAttribute( 'disabled' );
+    } else {
+        let inputvalue = document.getElementById( 'search-input' ).value.trim();
+        if ( inputvalue.length < 2 ) {
+            document.getElementById( 'search-reset' ).setAttribute( 'disabled', '' );
+            document.getElementById( 'search-submit' ).setAttribute( 'disabled', '' );
+        }
+    }
+});
+/* remove the old dataset's filters when switching to another */
+document.addEventListener( 'datasourceunload', () => {
+    let form = document.getElementById( 'filter-options-form' );
+    if ( form ) {
+        form.remove();
+    }
 });
 
 /**
@@ -42,7 +67,8 @@ export function getFilterStatus() {
             }
         }
     }
-    let inputvalue = document.getElementById( 'search-input' ).value.trim();
+    let searchinput = document.getElementById( 'search-input' );
+    let inputvalue = searchinput ? searchinput.value.trim(): '';
     if ( inputvalue.length > 1 ) {
         activeFilters.push({
             name: 'search',
@@ -57,10 +83,16 @@ export function getFilterStatus() {
  */
 function loadFilters() {
     splog( 'loadFilters' );
+    /* the dataset being loaded - if it changes before loading finishes, the result is ignored */
+    const key = spacefinder.currentDataSource;
     getJSON( { 
-        key: spacefinder.currentDataSource + '_filters',
-        url: spacefinder.dataDir + spacefinder.currentDataSource + '/filters.json'
+        key: key + '_filters',
+        url: spacefinder.dataDir + key + '/filters.json'
     } ).then( data => {
+        if ( key !== spacefinder.currentDataSource ) {
+            splog( 'loadFilters - ignoring ' + key + ', as the dataset has changed' );
+            return;
+        }
         if ( data.length ) {
             spacefinder.data[spacefinder.currentDataSource].filters = data;
             spacefinder.filtersLoaded = true;
@@ -135,21 +167,6 @@ function renderFilters() {
  */
 function setupFilters() {
     splog( 'setupFilters' );
-    /* event listener for filter changes */
-    document.addEventListener( 'filtersapplied', event => {
-        const activeFilters = getFilterStatus();
-        if ( activeFilters.length ) {
-            document.getElementById( 'search-reset' ).removeAttribute( 'disabled' );
-            document.getElementById( 'search-submit' ).removeAttribute( 'disabled' );
-        } else {
-            let inputvalue = document.getElementById( 'search-input' ).value.trim();
-            if ( inputvalue.length < 2 ) {
-                document.getElementById( 'search-reset' ).setAttribute( 'disabled', '' );
-                document.getElementById( 'search-submit' ).setAttribute( 'disabled', '' );
-            }
-        }
-    });
-
     /* add radio button behaviour to checkboxes with exclusive attribute */
     const filters = document.querySelectorAll( '#filters input[type=checkbox]' );
     for (const cbx of filters) {
