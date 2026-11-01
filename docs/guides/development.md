@@ -40,7 +40,10 @@ drives headless Chrome through the same scenarios in both builds, using the
 example datasets:
 
 - selecting places, and going Back and Forward between them;
-- search and filters;
+- search and filters, including a filter matched by the dataset module, and
+  a dataset without filters (the trees are built without their
+  `filters.json`);
+- switching datasets, and route aliases;
 - the information pages;
 - direct visits to each dataset and to places;
 - unknown places;

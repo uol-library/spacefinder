@@ -33,7 +33,9 @@ Gets the current status of all filters
 <a name="loadFilters"></a>
 
 ## loadFilters()
-Loads all filter data from a single JSON file
+Loads the dataset's filters from filters.json. The file is optional: if it
+is missing, or the dataset has "filters: false" in the config, the dataset
+has no filters, and the panel only has the search box.
 
 **Kind**: global function  
 <a name="renderFilters"></a>

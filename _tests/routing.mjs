@@ -41,13 +41,15 @@ function serve(dir, port) {
 }
 
 
-/* builds both versions from a copy of the repo, with a route alias (tree: trees) added and routing set for each */
+/* builds both versions from a copy of the repo, with a route alias (tree: trees) added, no trees/filters.json, and routing set for each */
 function build() {
     fs.mkdirSync(ROOT, { recursive: true });
     const src = path.join(ROOT, 'src');
     execFileSync('rsync', ['-a', '--delete', '--exclude=.git', '--exclude=_site', '--exclude=node_modules', '--exclude=vendor', '--exclude=_tests', '--exclude=.jekyll-cache', REPO + '/', src + '/'], { stdio: 'inherit' });
     const config = path.join(src, '_data', 'config.yml');
     const original = fs.readFileSync(config, 'utf8') + '\nrouteAliases:\n  tree: trees\n';
+    /* the trees dataset is built without filters.json, to test a dataset without filters */
+    fs.rmSync(path.join(src, 'examples', 'trees', 'filters.json'));
     for (const out of ['hash', 'history']) {
         console.log('Building ' + out + ' version');
         fs.writeFileSync(config, original.replace(/^routing:.*$/m, 'routing: "' + out + '"'));
@@ -58,6 +60,8 @@ function build() {
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
 async function chrome() {
+    /* a fresh profile, so nothing cached in localStorage by an earlier run is used */
+    fs.rmSync(path.join(ROOT, 'chrome-profile'), { recursive: true, force: true });
     const proc = spawn('google-chrome', ['--headless=new', '--remote-debugging-port=9333', '--user-data-dir=' + path.join(ROOT, 'chrome-profile'), '--no-first-run', '--window-size=1400,1000', 'about:blank'], { stdio: 'ignore' });
     for (let i = 0; i < 50; i++) {
         try { await (await fetch('http://127.0.0.1:9333/json/version')).json(); break; } catch { await sleep(200); }
@@ -200,6 +204,14 @@ async function run(mode, port) {
             spaces: [...document.querySelectorAll('#top-bar, #skip, #filters h2, #list h2, #map h2, #filter-options-form label.visuallyhidden, .searchbuttons')].some(e => /spaces/i.test(e.textContent))
         })`);
         check(mode, 'trees uses its dataset name in the interface', names.skip === 'Skip to list of trees' && names.map === 'Map of trees' && names.search === 'Search trees' && !names.spaces, JSON.stringify(names));
+
+        // trees has no filters.json: the panel has just the search box, and search works
+        const nofilters = await b.evaluate(`({ fieldsets: document.querySelectorAll('#filter-options-form fieldset').length, panel: document.querySelectorAll('#filter-options-form .panel-content').length, label: document.getElementById('filter-options-form').getAttribute('aria-label'), markers: document.querySelectorAll('.leaflet-marker-icon').length })`);
+        check(mode, 'dataset without filters.json shows just the search box', nofilters.fieldsets === 0 && nofilters.panel === 0 && nofilters.label === 'Search trees' && nofilters.markers > 0, JSON.stringify(nofilters));
+        await b.evaluate(`(() => { const i = document.getElementById('search-input'); i.value = 'oak'; i.dispatchEvent(new Event('input')); document.getElementById('search-submit').click(); })()`); await sleep(400);
+        const oaks = await b.evaluate(`document.querySelectorAll('.list-place:not(.hidden)').length`);
+        check(mode, 'search works without filters', oaks === 2, 'shown ' + oaks);
+        await b.evaluate(`document.getElementById('search-reset').click()`); await sleep(300);
 
         await b.goto(r('page/about'));
         await ready(6); await sleep(500);

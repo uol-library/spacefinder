@@ -109,5 +109,6 @@ its own.
 | `label` | the dataset's name in the interface, e.g. on the dataset switcher |
 | `name` | optional; the name used in sentences, such as "List of study spaces". Defaults to the label in lower case. Set it if the label has capitals that should stay. |
 | `icon` | the icon class for the dataset |
+| `filters` | optional; `false` if the dataset has no filters, so the app doesn't request its `filters.json` |
 
 See [Adding a dataset](adding-a-dataset.html) for what goes in each folder.

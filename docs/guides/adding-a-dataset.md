@@ -25,7 +25,7 @@ dataset with the key `trees`:
 ```
 assets/data/trees/
 ├── data.json      the places, as an array of JSON-LD records
-├── filters.json   the filters for the filters panel
+├── filters.json   optional: the filters for the filters panel
 ├── trees.mjs      the module that renders the places
 ├── data/          optional: one JSON-LD file per place, combined into data.json
 └── images/        optional: images the data refers to
@@ -132,8 +132,11 @@ adds these classes when it renders each place (see
 express, such as whether a place is open now, the module can match it in
 code instead (see [matchFilter](#matchfilter-place-key-values-element-)).
 
-At the moment a dataset needs a `filters.json`. If it has no filters, use an
-empty array (`[]`).
+`filters.json` is optional. Without it (or with an empty array), the
+filters panel has just the search box. If a dataset has no filters, you can
+also set `filters: false` for it in the
+[configuration](configuration.html#datasets), so the app doesn't request
+the file.
 
 ## The dataset module
 
