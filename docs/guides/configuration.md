@@ -59,8 +59,19 @@ use the same routes:
   `remote_theme`, so copy it into the site.
 
 Hash URLs work in both modes, so links made with `hash` still work after
-switching to `history`. Links from the earliest version of the Leeds site,
-such as `/#/space/1915`, are turned into `spaces/1915`.
+switching to `history`.
+
+## Route aliases
+
+```yaml
+routeAliases:
+  space: spaces
+```
+
+Optional. Keeps old links working after a dataset's key changes: a route
+whose first part is a key here has it replaced by the value. With the
+example above, `/#/space/1915` (from an earlier version of the Leeds site)
+becomes `spaces/1915`.
 
 ## Datasets
 

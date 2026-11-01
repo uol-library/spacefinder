@@ -19,6 +19,15 @@ map:
 ##########################################################################
 routing: "hash"
 ##########################################################################
+# Route aliases (optional)
+#
+# Old first parts of routes, and what replaces them, so that links made
+# before a dataset was renamed still work. For example, with
+#   routeAliases:
+#     space: spaces
+# /#/space/1915 becomes /#/spaces/1915 (or /spaces/1915).
+##########################################################################
+##########################################################################
 # Datasets
 #
 # Each dataset is a folder in assets/data named after its key, containing:

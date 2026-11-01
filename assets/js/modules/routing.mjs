@@ -50,7 +50,8 @@ function getRouteDataSource( route ) {
  * Puts the URL into the current form before anything else uses it:
  * - a path passed on by 404.html (?route=...) when using history routing
  * - hash URLs (#/...) when using history routing, e.g. from old links
- * - #/space/<slug>, used by earlier versions, becomes spaces/<slug>
+ * - routes starting with a key in spacefinder.routeAliases, which is
+ *   replaced by its value (e.g. space/1915 becomes spaces/1915)
  */
 function restoreRoute() {
     let params = new URLSearchParams( window.location.search );
@@ -60,11 +61,11 @@ function restoreRoute() {
     } else if ( spacefinder.routing === 'history' && window.location.hash.indexOf( '#/' ) === 0 ) {
         route = window.location.hash.slice( 2 );
     }
-    if ( route === null && window.location.hash.indexOf( '#/space/' ) === 0 ) {
-        route = window.location.hash.slice( 2 );
+    if ( route === null && Object.hasOwn( spacefinder.routeAliases, getRoute()[0] ) ) {
+        route = getRoute().join( '/' );
     }
     if ( route !== null ) {
-        route = route.replace( /^space\//, 'spaces/' ).replace( /\/$/, '' );
+        route = route.replace( /\/$/, '' ).replace( /^[^\/]+/, first => Object.hasOwn( spacefinder.routeAliases, first ) ? spacefinder.routeAliases[ first ]: first );
         splog( 'Restoring route ' + route );
         setRoute( route, true );
     }

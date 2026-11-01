@@ -354,6 +354,21 @@ export function getRouteURL( route ) {
 }
 
 /**
+ * Returns the URL for a file on the site, such as an image. Data gives these
+ * from the site root (e.g. /assets/photos/a.jpg), so they need the site's
+ * base path when it isn't served from the root of the domain. Other URLs
+ * (full URLs, or relative ones) are returned unchanged.
+ * @param {string} url URL from the data
+ * @return {string} URL
+ */
+export function getSiteURL( url ) {
+    if ( url && url[0] === '/' && url[1] !== '/' ) {
+        return spacefinder.basePath + url.slice( 1 );
+    }
+    return url;
+}
+
+/**
  * Sets the route in the URL, adding a history entry if it has changed
  * @param {string} route e.g. spaces/1915 (empty for the home page)
  * @param {boolean} replace replace the current history entry rather than adding one

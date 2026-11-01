@@ -41,16 +41,17 @@ function serve(dir, port) {
 }
 
 
-/* builds the hash version from the repo, and the history version from a copy with routing changed */
+/* builds both versions from a copy of the repo, with a route alias (tree: trees) added and routing set for each */
 function build() {
     fs.mkdirSync(ROOT, { recursive: true });
     const src = path.join(ROOT, 'src');
     execFileSync('rsync', ['-a', '--delete', '--exclude=.git', '--exclude=_site', '--exclude=node_modules', '--exclude=vendor', '--exclude=_tests', '--exclude=.jekyll-cache', REPO + '/', src + '/'], { stdio: 'inherit' });
     const config = path.join(src, '_data', 'config.yml');
-    fs.writeFileSync(config, fs.readFileSync(config, 'utf8').replace(/^routing:.*$/m, 'routing: "history"'));
-    for (const [dir, out] of [[REPO, 'hash'], [src, 'history']]) {
+    const original = fs.readFileSync(config, 'utf8') + '\nrouteAliases:\n  tree: trees\n';
+    for (const out of ['hash', 'history']) {
         console.log('Building ' + out + ' version');
-        execFileSync('bundle', ['exec', 'jekyll', 'build', '-q', '-s', dir, '-d', path.join(ROOT, out)], { cwd: REPO, stdio: 'inherit' });
+        fs.writeFileSync(config, original.replace(/^routing:.*$/m, 'routing: "' + out + '"'));
+        execFileSync('bundle', ['exec', 'jekyll', 'build', '-q', '-s', src, '-d', path.join(ROOT, out)], { cwd: REPO, stdio: 'inherit' });
     }
 }
 
@@ -210,6 +211,12 @@ async function run(mode, port) {
         await ready(5); await b.waitFor(`document.querySelector('.list-place.active') !== null`);
         s = await st();
         check(mode, 'hash link #/trees/english-oak', s.active === 'english-oak' && s.url === urlOf('trees/english-oak'), JSON.stringify(s));
+
+        // a route alias (tree: trees, added to the config by build()) is replaced
+        await b.goto(base + '#/tree/copper-beech');
+        await ready(5); await b.waitFor(`document.querySelector('.list-place.active') !== null`);
+        s = await st();
+        check(mode, 'route alias #/tree/copper-beech', s.active === 'copper-beech' && s.url === urlOf('trees/copper-beech'), JSON.stringify(s));
     } catch (e) {
         check(mode, 'test script stopped', false, e.message);
     } finally {

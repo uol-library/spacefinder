@@ -53,6 +53,8 @@ export const spacefinder = {
     basePath: '{{ site.baseurl }}/',
     /* "history" for URLs like /spaces/1915, "hash" for URLs like /#/spaces/1915 */
     routing: {{ site.data.config.routing | default: "hash" | jsonify }},
+    /* old first parts of routes, and what replaces them, e.g. { "space": "spaces" } */
+    routeAliases: {{ site.data.config.routeAliases | jsonify }} || {},
     placesLoaded: false,
 
     /* filter related config */
