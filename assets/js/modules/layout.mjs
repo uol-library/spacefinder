@@ -1,100 +1,155 @@
 /**
- * Spacefinder layout setup
- * Sets event listeners on top bar navigation buttons
+ * Spacefinder layout
+ *
+ * The page is the top bar, the map and the footer. The list and the filters
+ * are in a panel on the left of the map (a Leaflet control), which a button
+ * beside it opens and closes. The map pans by half the panel's width when
+ * it opens or closes, so the places in view stay in the middle of the part
+ * of the map that can be seen.
  */
+import { Control, DomEvent, DomUtil } from 'leaflet';
 import { spacefinder } from './config.mjs';
-import { splog, togglePanel } from './utilities.mjs';
+import { splog, getDataSourceName, getPlaceById } from './utilities.mjs';
 
 document.addEventListener( 'DOMContentLoaded', () => {
-	setupLayout();
-    document.addEventListener( 'placesLoaded', setView );
-    document.addEventListener( 'sfmapready', setView );
-    document.addEventListener( 'filtersloaded', setView );
-	document.addEventListener( 'sfresize', setView );
     window.addEventListener( 'resize', () => {
         clearTimeout( spacefinder.resizeTimeout );
         spacefinder.resizeTimeout = setTimeout( () => {
             splog( 'Resize event' );
-			document.dispatchEvent( new Event( 'sfresize' ) );
+            document.dispatchEvent( new Event( 'sfresize' ) );
         }, 200);
     });
+    document.addEventListener( 'click', event => {
+        /* "Show on map" links in a place's details close the panel and centre the map on the place */
+        if ( event.target.classList.contains( 'show-map' ) ) {
+            event.preventDefault();
+            closePanel( false );
+            let active = document.querySelector( '.list-place.active' );
+            let place = active ? getPlaceById( active.getAttribute( 'data-id' ) ): false;
+            if ( place && place.lat && place.lng ) {
+                spacefinder.map.panTo( [ place.lat, place.lng ] );
+            }
+        /* "More info" buttons in map popups open it */
+        } else if ( event.target.classList.contains( 'show-list' ) ) {
+            event.preventDefault();
+            openPanel();
+        /* the skip link goes to the list, so the panel needs to be open */
+        } else if ( event.target.closest( '#skip a' ) ) {
+            openPanel( false );
+        }
+    });
+    /* the toggle's label has the dataset's name */
+    document.addEventListener( 'datasourcechange', () => setPanelState( isPanelOpen() ) );
 });
 
 /**
- * Sets up layout event listeners
+ * The panel with the list and the filters. The panel's markup is in the
+ * page (#sfpanel, from the spacefinder layout); this moves it into the
+ * map's top left corner.
  */
-function setupLayout() {
-    /* event listener for top nav buttons */
-	document.querySelectorAll( '#top-bar .navbutton' ).forEach( el => {
-        el.addEventListener( 'click', event => {
-            event.preventDefault();
-            /* Dispatch a custom event (viewchange) with the name of the active view */
-            document.getElementById( 'top-bar' ).dispatchEvent( new CustomEvent( 'viewchange', {
-                bubbles: true,
-                cancelable: true,
-                composed: false,
-                detail: {
-                    view: el.getAttribute( 'data-view' )
-                }
-            } ) );
-        });
-    });
-	/* event listener for view changes triggered by top nav */
-	document.addEventListener( 'viewchange', event => {
-		let views = [ 'filters', 'list', 'map' ];
-		if ( views.indexOf( event.detail.view ) === -1 ) {
-			splog( 'Invalid view: ' + event.detail.view );
-			return;
-		}
-		splog( 'View change event: ' + event.detail.view );
-		togglePanel( event.detail.view, document.querySelector( '#top-bar .navbutton[data-view="' + event.detail.view + '"]' ).classList.contains( 'inactive' ) );
-		if ( window.innerWidth < spacefinder.breakpoints.large ) {
-			views.forEach(view => {
-				if ( view !== event.detail.view ) {
-					togglePanel( view, false );
-				}
-			});
-		}
-		/* special case for closing filters view */
-		// if ( 0 && event.detail.view == 'filters' && document.querySelector( '#top-bar .navbutton[data-view="filters"]' ).classList.contains( 'active' ) ) {
-		// 	togglePanel( 'filters', false );
-		// 	togglePanel( 'list', true );
-		// } else {
-		// 	// views.forEach(view => {
-		// 	// 	togglePanel( view, false );
-		// 	// });
-		// 	togglePanel( event.detail.view, true );
-		// 	if ( event.detail.view == 'filters' ) {
-		// 		window.setTimeout( function() { 
-		// 			document.getElementById( 'search-input' ).focus(); 
-		// 		}, 1000 );
-		// 	}
-		// }
-	});
+export class PanelControl extends Control {
+    onAdd( map ) {
+        const container = document.getElementById( 'sfpanel' );
+        /* stop clicks, drags and scrolling in the panel reaching the map */
+        DomEvent.disableClickPropagation( container );
+        DomEvent.disableScrollPropagation( container );
+        return container;
+    }
 }
 
 /**
- * Sets the initial view of the app, and the view after the window is
- * resized (but not when another dataset loads, so the user's view stays)
- * @param {Event} event
+ * The button that opens and closes the panel
  */
-function setView( event ) {
-	if ( spacefinder.initialViewSet && event.type !== 'sfresize' ) {
-		return;
-	}
-	if ( spacefinder.mapReady && spacefinder.placesLoaded && spacefinder.filtersLoaded ) {
-		spacefinder.initialViewSet = true;
-		splog('Setting view' );
-		if ( window.innerWidth >= spacefinder.breakpoints.large ) {
-			splog('Showing filters panel' );
-			togglePanel( 'filters', true );
-		} else {
-			splog('Hiding filters panel');
-			togglePanel( 'filters', false );
-		}
-		if ( window.innerWidth >= spacefinder.breakpoints.small ) {
-			splog('Showing list panel' );
-			togglePanel( 'list', true );
-		}
-	}
+export class PanelToggleControl extends Control {
+    onAdd( map ) {
+        const container = DomUtil.create( 'div', 'leaflet-bar leaflet-control-panel-toggle' );
+        this._button = DomUtil.create( 'button', 'panel-toggle icon-list', container );
+        this._button.setAttribute( 'type', 'button' );
+        this._button.setAttribute( 'aria-controls', 'sfpanel' );
+        DomEvent.disableClickPropagation( container );
+        DomEvent.on( this._button, 'click', () => togglePanel() );
+        return container;
+    }
+}
+
+/**
+ * Adds the panel and its button to the map. The panel starts open, unless
+ * the window is narrower than the small breakpoint.
+ * @param {Map} map
+ */
+export function addPanel( map ) {
+    spacefinder.panelControl = new PanelControl( { position: 'topleft' } ).addTo( map );
+    spacefinder.panelToggleControl = new PanelToggleControl( { position: 'topleft' } ).addTo( map );
+    setPanelState( window.innerWidth >= spacefinder.breakpoints.small );
+}
+
+/**
+ * Whether the panel is open
+ * @return {boolean}
+ */
+export function isPanelOpen() {
+    return document.getElementById( 'map' ).classList.contains( 'sfpanel-open' );
+}
+
+/**
+ * Gets the width of the map covered by the panel, for padding when the
+ * map fits its view to places, and for popups
+ * @return {number} pixels
+ */
+export function getPanelWidth() {
+    return isPanelOpen() ? document.getElementById( 'sfpanel' ).offsetWidth: 0;
+}
+
+/**
+ * Opens the panel
+ * @param {boolean} pan whether to pan the map (default true)
+ */
+export function openPanel( pan = true ) {
+    if ( ! isPanelOpen() ) {
+        togglePanel( pan );
+    }
+}
+
+/**
+ * Closes the panel
+ * @param {boolean} pan whether to pan the map (default true)
+ */
+export function closePanel( pan = true ) {
+    if ( isPanelOpen() ) {
+        togglePanel( pan );
+    }
+}
+
+/**
+ * Opens the panel if it is closed, or closes it if it is open, and pans the
+ * map so the middle of the part that can be seen stays in the same place
+ * @param {boolean} pan whether to pan the map (default true)
+ */
+export function togglePanel( pan = true ) {
+    const opening = ! isPanelOpen();
+    /* the panel's width when open (it isn't measured while it is hidden) */
+    const width = opening ? 0: getPanelWidth();
+    setPanelState( opening );
+    const offset = ( opening ? getPanelWidth(): width ) / 2;
+    if ( pan && spacefinder.map && offset ) {
+        spacefinder.map.panBy( [ opening ? -offset: offset, 0 ] );
+    }
+    document.dispatchEvent( new CustomEvent( 'sfpaneltoggle', { detail: { open: opening } } ) );
+}
+
+/**
+ * Shows or hides the panel, and updates its button
+ * @param {boolean} open
+ */
+function setPanelState( open ) {
+    splog( 'setPanelState - ' + ( open ? 'open': 'closed' ) );
+    document.getElementById( 'map' ).classList.toggle( 'sfpanel-open', open );
+    document.getElementById( 'sfpanel' ).hidden = ! open;
+    const button = document.querySelector( '.panel-toggle' );
+    if ( button ) {
+        const label = ( open ? 'Hide': 'Show' ) + ' the list of ' + getDataSourceName();
+        button.setAttribute( 'aria-expanded', open ? 'true': 'false' );
+        button.setAttribute( 'aria-label', label );
+        button.setAttribute( 'title', label );
+    }
 }

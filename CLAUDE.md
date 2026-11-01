@@ -35,7 +35,7 @@ Read this first, then `TODO.md` (what's next) and `_sessions/summary.md`
   - `data.json`: an array of schema.org JSON-LD Articles, whose
     `mainEntity` is the place;
   - optionally `filters.json` (without it, or with `filters: false` on
-    the datasource, the filters panel has just the search box);
+    the datasource, the panel has just the search box);
   - `<key>.mjs`;
   - optionally `data/` (one file per place) and `images/`.
 
@@ -62,11 +62,25 @@ Read this first, then `TODO.md` (what's next) and `_sessions/summary.md`
   - `config.mjs` contains Liquid. The IDE shows errors on it; these are
     expected.
   - `places.mjs`: list, selection, search and filter application.
-  - `filters.mjs`: the filters panel.
+  - `filters.mjs`: the search form, and the filters overlay on the list.
+  - `layout.mjs`: the panel (`PanelControl`) and its toggle
+    (`PanelToggleControl`), and `openPanel`/`closePanel`/`togglePanel`.
+  - `datasources.mjs`: the dataset switcher (links, or a dropdown for
+    more than two datasets).
   - `map.mjs`: Leaflet 2.0, using its own `clusterer.mjs`.
   - `routing.mjs`
   - `components.mjs`: dialogs and the accordion.
   - `utilities.mjs` and `jsonld.mjs`: shared helpers.
+- **Layout:** the page is the top bar, the map and the footer, in a
+  full-height flex column. The list and filters (`#sfpanel`, in the
+  `spacefinder` layout) are a Leaflet control in the map's top left
+  corner, with a toggle button beside it; the map's other controls are on
+  the right. Opening or closing the panel pans the map by half its width
+  and sends `sfpaneltoggle`. `fitBounds` and popups use the panel's width
+  as padding (`getPanelWidth()`). There are no separate views any more
+  (no `viewchange`): "Show on map" and "More info" open and close the
+  panel. Clicks in the panel still bubble to `document` (Leaflet's
+  `disableClickPropagation` only stops `pointerdown`).
 - **Filtering** uses classes of the form `<filterkey>_<optionkey>` on
   `.list-place`. Search reads `data-search`, or the `.place-summary` text if
   there isn't one. Details (`.additionalInfo`) are pre-rendered hidden once
@@ -90,7 +104,7 @@ Read this first, then `TODO.md` (what's next) and `_sessions/summary.md`
   `.datasource-name` and `[data-datasource-title]`). Don't hard-code
   "spaces".
 - **Switching datasets** happens without a reload. `switchDataSource` sends
-  `datasourceunload` (the filters form and the markers are removed), calls
+  `datasourceunload` (the search form, filters overlay and markers are removed), calls
   the module's `onunloadPlaceData`, clears the list, deletes
   `spacefinder.data[old]`, resets the `placesLoaded`/`filtersLoaded`/
   `mapReady` flags, sends `datasourcechange` and loads the new dataset, so
@@ -115,7 +129,7 @@ Read this first, then `TODO.md` (what's next) and `_sessions/summary.md`
 | Command | Notes |
 |---|---|
 | `npm run serve` / `npm run build` | Jekyll (Bundler) |
-| `npm run test:routing` | Builds the site in both routing modes into `_tests/build/` and drives headless Chrome over the DevTools protocol: 32 scenarios per mode, 64 in all. Add `-- --no-build` to reuse the builds. Run it after any change to JS or templates. |
+| `npm run test:routing` | Builds the site in both routing modes into `_tests/build/` and drives headless Chrome over the DevTools protocol: 37 scenarios per mode, 74 in all. Add `-- --no-build` to reuse the builds. Run it after any change to JS or templates. |
 | `npm run docs` | Regenerates `docs/api/*.md` from JSDoc with jsdoc-to-markdown. Don't edit those pages by hand. |
 | `npm run docs:serve` | Previews the docs site (Just the Docs theme). |
 

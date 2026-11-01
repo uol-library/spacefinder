@@ -2,14 +2,19 @@
 layout: default
 ---
 
-  <div id="filters">
-    <h2 class="visuallyhidden">Search or filter {% include datasource-name.html %}</h2>
-  </div>
-  <div id="list">
-    <h2 class="visuallyhidden">List of {% include datasource-name.html %}</h2>
-    {% include list.html %}
-  </div>
   <div id="map">
     <h2 class="visuallyhidden">Map of {% include datasource-name.html %}</h2>
   </div>
-
+  {%- comment -%}
+    The panel with the list and the filters. map.mjs moves it into a Leaflet
+    control on the left of the map (see PanelControl in layout.mjs).
+  {%- endcomment %}
+  <div id="sfpanel">
+    <div id="filters">
+      <h2 class="visuallyhidden">Search or filter {% include datasource-name.html %}</h2>
+    </div>
+    <div id="list">
+      <h2 class="visuallyhidden">List of {% include datasource-name.html %}</h2>
+      {% include list.html %}
+    </div>
+  </div>

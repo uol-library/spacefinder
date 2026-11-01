@@ -9,18 +9,23 @@ nav_order: 6
 
 [Source](https://github.com/uol-library/spacefinder/blob/develop/assets/js/modules/filters.mjs)
 
-Functions for the filters panel in the UI
+Search and filters
 
-The filters are loaded once the places have loaded, and the panel is
-built again for each dataset.
+The search form is at the top of the panel (in #filters). The filters are
+in an overlay on the list (#filter-panel), which the Filters button in the
+list controls opens; the button at the top of the overlay closes it and
+shows how many places match. The filters are loaded once the places have
+loaded, and the search form and filters are built again for each dataset.
 
-**Exports:** `getFilterStatus`
+**Exports:** `getFilterStatus`, `toggleFilterPanel`
 
 ## Functions
 
 * [getFilterStatus()](#getFilterStatus) ⇒ <code>Object</code>
 * [loadFilters()](#loadFilters)
 * [renderFilters()](#renderFilters)
+* [toggleFilterPanel(open, focus)](#toggleFilterPanel)
+* [updateFilterCounts()](#updateFilterCounts)
 * [setupFilters()](#setupFilters)
 
 <a name="getFilterStatus"></a>
@@ -41,7 +46,26 @@ has no filters, and the panel only has the search box.
 <a name="renderFilters"></a>
 
 ## renderFilters()
-Builds the filters panel
+Builds the search form, and the filters overlay if the dataset has filters
+
+**Kind**: global function  
+<a name="toggleFilterPanel"></a>
+
+## toggleFilterPanel(open, focus)
+Opens or closes the filters overlay
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| open | <code>boolean</code> | whether to open it (default: open it if it is closed) |
+| focus | <code>boolean</code> | whether to move the focus into it, or back to the Filters button (default true) |
+
+<a name="updateFilterCounts"></a>
+
+## updateFilterCounts()
+Updates the number of active filters on the Filters button, and the number
+of matching places on the button that closes the filters overlay
 
 **Kind**: global function  
 <a name="setupFilters"></a>

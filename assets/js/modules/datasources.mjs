@@ -1,10 +1,11 @@
 /**
  * The dataset switcher
  *
- * When the site has more than one dataset, adds a link to each one at the
- * top of the filters panel. Each link goes to the dataset's route, so it can
- * be opened in a new tab; clicking it switches to the dataset without
- * reloading the page. The current dataset's link has aria-current="page".
+ * When the site has more than one dataset, adds a switcher at the top of the
+ * panel. With two datasets it is a link to each one, which goes to the
+ * dataset's route, so it can be opened in a new tab; clicking it switches to
+ * the dataset without reloading the page. The current dataset's link has
+ * aria-current="page". With more than two, it is a dropdown.
  */
 import { spacefinder } from './config.mjs';
 import { splog, escapeHTML, getRouteURL, getDataSourceRoute, setRoute } from './utilities.mjs';
@@ -14,7 +15,7 @@ document.addEventListener( 'DOMContentLoaded', renderDataSourceSwitcher );
 document.addEventListener( 'datasourcechange', updateDataSourceSwitcher );
 
 /**
- * Adds the dataset links to the filters panel
+ * Adds the dataset links (or dropdown) to the top of the panel
  */
 function renderDataSourceSwitcher() {
     if ( spacefinder.dataSources.length < 2 ) {
@@ -24,14 +25,23 @@ function renderDataSourceSwitcher() {
     let nav = document.createElement( 'nav' );
     nav.setAttribute( 'id', 'datasources' );
     nav.setAttribute( 'aria-label', 'Datasets' );
-    let links = '';
-    spacefinder.dataSources.forEach( ds => {
-        let icon = ds.icon ? ' class="' + escapeHTML( ds.icon ) + '"': '';
-        links += '<li><a href="' + getRouteURL( getDataSourceRoute( ds.key ) ) + '" data-datasource="' + escapeHTML( ds.key ) + '"' + icon + '>' + escapeHTML( ds.label ) + '</a></li>';
-    });
-    nav.innerHTML = '<ul>' + links + '</ul>';
-    nav.addEventListener( 'click', onDataSourceClick );
-    /* the filters form is added after this, when the filters have loaded */
+    if ( spacefinder.dataSources.length > 2 ) {
+        let options = '';
+        spacefinder.dataSources.forEach( ds => {
+            options += '<option value="' + escapeHTML( ds.key ) + '">' + escapeHTML( ds.label ) + '</option>';
+        });
+        nav.innerHTML = '<label for="datasource-select" class="visuallyhidden">Dataset</label><select id="datasource-select">' + options + '</select>';
+        nav.querySelector( 'select' ).addEventListener( 'change', event => changeDataSource( event.target.value ) );
+    } else {
+        let links = '';
+        spacefinder.dataSources.forEach( ds => {
+            let icon = ds.icon ? ' class="' + escapeHTML( ds.icon ) + '"': '';
+            links += '<li><a href="' + getRouteURL( getDataSourceRoute( ds.key ) ) + '" data-datasource="' + escapeHTML( ds.key ) + '"' + icon + '>' + escapeHTML( ds.label ) + '</a></li>';
+        });
+        nav.innerHTML = '<ul>' + links + '</ul>';
+        nav.addEventListener( 'click', onDataSourceClick );
+    }
+    /* the search form is added after this, when the filters have loaded */
     document.getElementById( 'filters' ).appendChild( nav );
     updateDataSourceSwitcher();
 }
@@ -47,28 +57,28 @@ function onDataSourceClick( event ) {
         return;
     }
     event.preventDefault();
-    let key = link.getAttribute( 'data-datasource' );
+    changeDataSource( link.getAttribute( 'data-datasource' ) );
+}
+
+/**
+ * Switches to a dataset and changes the URL to its route
+ * @param {String} key
+ */
+function changeDataSource( key ) {
     if ( key !== spacefinder.currentDataSource ) {
         setRoute( getDataSourceRoute( key ) );
         switchDataSource( key );
     }
-    /* show the list on smaller screens, where the filters panel takes up the whole view */
-    if ( window.innerWidth < spacefinder.breakpoints.large ) {
-        document.dispatchEvent( new CustomEvent( 'viewchange', {
-            bubbles: true,
-            cancelable: true,
-            composed: false,
-            detail: {
-                view: 'list'
-            }
-        } ) );
-    }
 }
 
 /**
- * Marks the current dataset's link
+ * Marks the current dataset's link, or selects it in the dropdown
  */
 function updateDataSourceSwitcher() {
+    let select = document.getElementById( 'datasource-select' );
+    if ( select ) {
+        select.value = spacefinder.currentDataSource;
+    }
     document.querySelectorAll( '#datasources a' ).forEach( link => {
         if ( link.getAttribute( 'data-datasource' ) === spacefinder.currentDataSource ) {
             link.setAttribute( 'aria-current', 'page' );

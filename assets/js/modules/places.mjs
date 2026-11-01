@@ -35,24 +35,10 @@ document.addEventListener( 'DOMContentLoaded', () => {
     /* set up click events for places */
     document.addEventListener( 'click', event => {
         /**
-         * Show place on map button (only visible on smaller screens)
-         * Changes the view to show the map pane
-         */
-        if ( event.target.classList.contains( 'show-map' ) ) {
-            event.preventDefault();
-            document.dispatchEvent( new CustomEvent( 'viewchange', {
-                bubbles: true,
-                cancelable: true,
-                composed: false,
-                detail: {
-                    view: 'map'
-                }
-            } ) );
-        /**
          * Event listener to show/hide place detail
          * Added to load-info class which is on place headings
          */
-        } else if ( event.target.classList.contains( 'load-info' ) ) {
+        if ( event.target.classList.contains( 'load-info' ) ) {
             event.preventDefault();
             if ( event.target.getAttribute( 'aria-expanded' ) === 'true' ) {
                 let placeID = event.target.getAttribute( 'data-placeid' );

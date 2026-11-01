@@ -1,80 +1,43 @@
 /**
  * Main layout
  *
- * This contains rules to create the main layout
+ * The top bar and the footer are always on screen, and the map fills the
+ * space between them:
  *
  * +--------------------------------------------+
  * | #top-bar                                   |
  * +--------------------------------------------+
- * | #spacefinder                               |
+ * | #spacefinder > #map                        |
+ * |  +-----------+-+                           |
+ * |  | #sfpanel  |=| (panel and its toggle,    |
+ * |  |           | |  in the map's top left    |
+ * |  |           | |  corner)                  |
+ * |  +-----------+ |                           |
  * +--------------------------------------------+
  * | #footer-bar                                |
  * +--------------------------------------------+
- *
- * and the spacefinder layout, which changes according to screen size
- * and user activity.
  */
 #maincontainer {
-    max-height: 100vh;
+    height: 100vh;
+    height: 100dvh;
     display: flex;
     flex-direction: column;
     margin: 0;
     padding: 0;
     #top-bar {
-        height: var(--topbar-height);
+        flex: 0 0 var(--topbar-height);
     }
     #footer-bar {
-        height: var(--footer-height);
+        flex: 0 0 var(--footer-height);
         padding: var(--footer-padding-y) var(--footer-padding-x);
     }
     #spacefinder {
-        flex: 1;
-        display: flex;
-        height: calc(100vh - (var(--topbar-height) + var(--footer-height)));
-        width: 100vw;
+        flex: 1 1 auto;
+        min-height: 0;
+        width: 100%;
         overflow: hidden;
-        #filters, #list, #map {
-            width: 100vw;
-            flex: 0 0 100vw;
-            &.active {
-                visibility: visible;
-            }
-        }
-        #filters, #list {
-            visibility: hidden;
-            margin-left: -100vw;
-            max-height: calc(100vh - (var(--topbar-height) + var(--footer-height)));
-            &.active {
-                margin-left: 0;
-            }
-            .panel-content {
-                overflow-y: auto; 
-            }
-        }
-        #filters {
-            .top-controls {
-                height: var(--controls-height);
-            }
-            .panel-content {
-                max-height: calc(100vh - (var(--topbar-height) + var(--footer-height) + var(--controls-height)));
-            }
-            &:focus {
-                outline:none;
-            }
-        }
-        #list {
-            .top-controls {
-                height: var(--list-controls-height);
-            }
-            .panel-content {
-                max-height: calc(100vh - (var(--topbar-height) + var(--footer-height) + var(--list-controls-height)));
-            }
-            #listcontent:focus {
-                outline:none;
-            }
-        }
         #map {
-            height: calc(100vh - (var(--topbar-height) + var(--footer-height)));
+            height: 100%;
             &:focus {
                 outline:none;
             }
@@ -85,35 +48,8 @@
     .switch-view {
         display: none;
     }
-    #maincontainer #spacefinder {
-        #filters, #list, #map {
-            visibility: visible;
-        }
-        #filters, #list {
-            position: relative;
-            margin-left: 0;
-            &.inactive {
-                flex: 0;
-                width: 0;
-                visibility: hidden;
-                overflow: hidden;
-            }
-        }
-        #filters {
-            width: calc(var(--filters-width) * 1px);
-            flex: 0 0 calc(var(--filters-width) * 1px);
-        }
-        #list {
-            width: calc(var(--list-width) * 1px);
-            flex: 1 0 calc(var(--list-width) * 1px);
-        }
-        #map {
-            position:relative;
-            flex: 3 1 auto;
-        }
-    }
 }
-/* Top navigation bar */
+/* Top navigation bar: the Spacefinder logo on the left, the site's logo on the right */
 #top-bar {
     background: var(--topbar-bg);
     color: var(--topbar-color);
@@ -131,12 +67,22 @@
     nav>ul {
         list-style: none;
         display: flex;
+        align-items: center;
         column-gap: var(--topbar-padding);
+        height: 100%;
         padding: 0;
         margin: 0;
         li {
             padding: 0;
             margin: 0;
+            &.spacefinder-logo {
+                display: flex;
+                align-items: center;
+                svg {
+                    max-width: 100%;
+                    height: auto;
+                }
+            }
             &.site-logo {
                 #site-logo {
                     display: none;
@@ -153,59 +99,6 @@
                     }
                     #site-logo {
                         display: block;
-                    }
-                }
-            }
-            &.list-button, &.map-button, &.filter-button {
-                border:2px solid transparent;
-                border-radius: 3px;
-                &.active {
-                    background: var(--topbar-bg-active);
-                    border-color: var(--topbar-color);
-                    button {
-                        background: var(--topbar-bg-active);
-                    }
-                }
-            }
-            @media screen and (min-width: 1000px) {
-                &.map-button {
-                    display: none;
-                }
-            }
-
-            &.spacefinder-logo {
-                display: none;
-                @media screen and (min-width: 1000px) {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    flex: 1;
-                }
-            }
-            button {
-                cursor: pointer;
-                border: none;
-                height: 100%;
-                font-size: 1.2rem;
-                line-height: 32px;
-                color: var(--topbar-color);
-                background: var(--topbar-bg);
-                text-decoration: none;
-                display: flex;
-                flex: 1 0 auto;
-                padding: 0 1em;
-                align-items: center;
-                justify-content: center;
-                column-gap: var(--topbar-padding);
-                span {
-                    @media screen and (max-width: 1000px) {
-                        clip: rect(0 0 0 0);
-                        clip-path: inset(100%); 
-                        height: 1px; 
-                        overflow: hidden; 
-                        position: absolute; 
-                        white-space: nowrap; 
-                        width: 1px; 
                     }
                 }
             }
@@ -263,36 +156,101 @@
 }
 
 /**
- * Spacefinder layout
+ * The panel
  *
- * Rules to create the spacefinder layout
- *
- * +-------------------------------+
- * | #filters | #list    | #map    |
- * +-------------------------------+
+ * A Leaflet control in the map's top left corner, which is stretched to
+ * the map's height. The panel is the dataset switcher and the search form
+ * (#filters), then the list controls and the list (#list), with the
+ * filters as an overlay on the list (#filter-panel).
  */
-
- /* Filters panel: the dataset switcher, then the search box and filters (which scroll) */
-#filters {
+#map .leaflet-top.leaflet-left {
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: flex-start;
+    .leaflet-control-panel-toggle {
+        flex: 0 0 auto;
+    }
+}
+#sfpanel {
+    width: min(var(--panel-width), calc(100% - 54px));
+    align-self: stretch;
+    margin: 0;
+    float: none;
     display: flex;
     flex-direction: column;
-    #filter-options-form {
+    background: var(--background-color);
+    color: var(--foreground-color);
+    font: inherit;
+    font-size: 1rem;
+    box-shadow: 2px 0 6px rgba(0, 0, 0, .3);
+    &[hidden] {
+        display: none;
+    }
+    #filters {
+        flex: 0 0 auto;
+    }
+    #list {
         flex: 1 1 auto;
         min-height: 0;
         display: flex;
         flex-direction: column;
+        &:focus,
+        #listcontent:focus {
+            outline: none;
+        }
     }
-    .top-controls {
+    #listcontrols {
         flex: 0 0 auto;
     }
-    .panel-content {
+    #listbody {
         flex: 1 1 auto;
         min-height: 0;
+        position: relative;
     }
-    .top-controls,
-    .panel-content {
-        padding:.4em;
+    #listcontainer {
+        height: 100%;
+        overflow-y: auto;
     }
+}
+/*
+ * When the map is too narrow for the panel and the controls on the right
+ * (the panel's width, plus the toggle and a control, each about 54px), the
+ * controls are hidden while the panel is open. The attribution stays, so
+ * the list leaves room for it.
+ */
+@media screen and (max-width: 740px) {
+    #map.sfpanel-open {
+        .leaflet-top.leaflet-right,
+        .leaflet-bottom.leaflet-right .leaflet-control:not(.leaflet-control-attribution) {
+            display: none;
+        }
+        #listcontent {
+            padding-bottom: 1.5rem;
+        }
+    }
+}
+.panel-toggle {
+    width: 2.6rem;
+    height: 2.6rem;
+    padding: 0;
+    font-size: 1.3rem;
+    border: none;
+    border-radius: 4px;
+    background: var(--background-color);
+    color: var(--foreground-color);
+    cursor: pointer;
+    &::before {
+        margin: 0;
+    }
+    &[aria-expanded="true"] {
+        background: var(--filter-button-bg-active);
+        color: var(--filter-button-color-active);
+    }
+}
+
+/* Top of the panel: the dataset switcher and the search form */
+#filters {
     background: var(--filter-bg);
     color: var(--filter-color);
     #datasources {
@@ -337,18 +295,62 @@
             }
         }
     }
-    .searchbuttons {
-        display: flex;
-        justify-content: space-between;
-        .btn {
-            width: calc(50% - .2rem);
-        }
-    }
-    input[type=search] {
+    #datasources select {
         width: 100%;
         padding: .5rem;
+        font-size: 1rem;
         border: 1px solid var(--filter-button-border-focus);
         border-radius: 3px;
+        background: var(--filter-label-bg);
+        color: var(--filter-label-color);
+    }
+    /* the search box and its buttons, on one row */
+    #filter-options-form {
+        display: flex;
+        gap: .4rem;
+        padding: .4em;
+        input[type=search] {
+            flex: 1 1 auto;
+            min-width: 0;
+            padding: .5rem;
+            border: 1px solid var(--filter-button-border-focus);
+            border-radius: 3px;
+        }
+        .btn {
+            flex: 0 0 auto;
+            width: auto;
+            margin: 0;
+            padding: .5rem .8rem;
+        }
+    }
+}
+/* the filters, as an overlay on the list */
+#filter-panel {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    background: color-mix(in srgb, var(--filter-bg) 90%, transparent);
+    color: var(--filter-color);
+    &[hidden] {
+        display: none;
+    }
+    .top-controls {
+        flex: 0 0 auto;
+        padding: .4em;
+        .btn {
+            margin: 0;
+            font-size: 1rem;
+            background: var(--filter-button-bg-active);
+            color: var(--filter-button-color-active);
+        }
+    }
+    .panel-content {
+        flex: 1 1 auto;
+        min-height: 0;
+        overflow-y: auto;
+        padding: .4em;
     }
     fieldset.filter-options {
         border: 0;
@@ -414,15 +416,17 @@
 /**
  * List panel
  */
+/* the geolocation and sort buttons, the number of places shown, and the Filters button */
 #listcontrols {
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+    align-items: center;
+    gap: .3rem;
+    padding: .3rem .4rem;
     border-bottom: 1px solid var(--filter-bg);
     p {
         flex: 1;
-        margin: 1px 3px;
-        padding: .5rem;
+        margin: 0;
+        padding: 0 .3rem;
     }
 }
 #listfilters {

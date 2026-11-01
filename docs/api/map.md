@@ -16,6 +16,9 @@ dataset module's getInfoWindowContent), keeps the markers in step with the
 list when places are selected or filtered, and handles geolocation. The
 map is created once; the markers are replaced when the dataset changes.
 
+The list and filters panel (see layout.mjs) is on the left of the map, so
+the map's own controls are on the right.
+
 **Exports:** `initMap`, `updateDistances`
 
 ## Classes
@@ -27,6 +30,7 @@ map is created once; the markers are replaced when the dataset changes.
 
 * [initMap()](#initMap)
 * [maybeSetupMap()](#maybeSetupMap)
+* [updatePopupPadding()](#updatePopupPadding)
 * [removeMarkers(event)](#removeMarkers)
 * [getSVGIcon(className)](#getSVGIcon) ⇒ <code>Object</code>
 * [recentreMap()](#recentreMap)
@@ -69,6 +73,14 @@ Initialise map and set listeners to set up markers when loaded
 Sets up the map with markers for each place. Needs to run when
 the map is fully loaded and the place data is fully loaded, and
 again when the dataset changes.
+
+**Kind**: global function  
+<a name="updatePopupPadding"></a>
+
+## updatePopupPadding()
+Keeps popups clear of the panel when the map pans to show them. Every
+popup's autoPanPaddingTopLeft option is this same array, so changing it
+changes them all.
 
 **Kind**: global function  
 <a name="removeMarkers"></a>

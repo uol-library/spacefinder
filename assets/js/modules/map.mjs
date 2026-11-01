@@ -5,6 +5,9 @@
  * dataset module's getInfoWindowContent), keeps the markers in step with the
  * list when places are selected or filtered, and handles geolocation. The
  * map is created once; the markers are replaced when the dataset changes.
+ *
+ * The list and filters panel (see layout.mjs) is on the left of the map, so
+ * the map's own controls are on the right.
  */
 import {
     Control,
@@ -24,6 +27,7 @@ import { getPlaceById, splog, haversine_distance } from './utilities.mjs';
 import { openAlertDialog } from './components.mjs';
 import { activateSort, sortPlaces } from './places.mjs';
 import { SimpleMarkerClusterGroup } from './clusterer.mjs';
+import { addPanel, getPanelWidth } from './layout.mjs';
 
 /**
  * Initialise map and set listeners to set up markers when loaded
@@ -36,7 +40,10 @@ export function initMap() {
     document.addEventListener( 'filtersloaded', maybeSetupMap );
     document.addEventListener( 'sfmaploaded', maybeSetupMap );
     document.addEventListener( 'datasourceunload', removeMarkers );
-    spacefinder.map = new Map( 'map' ).setView([spacefinder.currentLoc.lat, spacefinder.currentLoc.lng], spacefinder.startZoom );
+    spacefinder.map = new Map( 'map', { zoomControl: false } ).setView([spacefinder.currentLoc.lat, spacefinder.currentLoc.lng], spacefinder.startZoom );
+    /* the list and filters panel, and the button which opens and closes it */
+    addPanel( spacefinder.map );
+    new Control.Zoom( { position: 'topright' } ).addTo( spacefinder.map );
     /* change leaflet attribution */
     spacefinder.map.attributionControl.setPrefix( '<a href="https://leafletjs.com" target="external" title="A JavaScript library for interactive maps" aria-label="Leaflet - a JavaScript library for interactive maps"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="12" height="8"><path fill="#4C7BE1" d="M0 0h12v4H0z"></path><path fill="#FFD500" d="M0 4h12v3H0z"></path><path fill="#E0BC00" d="M0 7h12v1H0z"></path></svg> Leaflet</a>' );
     spacefinder.osm = new TileLayer( 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -48,10 +55,10 @@ export function initMap() {
 	    attribution: 'Tiles © Esri - Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
     });
     spacefinder.fullscreencontrol = new FullScreen({
-        position: 'topleft'
+        position: 'topright'
     }).addTo(spacefinder.map);
     spacefinder.locateControl = new LocateControl({
-        position: 'topleft',
+        position: 'topright',
         strings: {
             title: 'Use my location'
         },
@@ -66,7 +73,7 @@ export function initMap() {
     spacefinder.map.on( 'locatedeactivate', onGeoDeactivate );
     spacefinder.map.on( 'locationfound', onGeoLocationFound );
     spacefinder.scalecontrol = new Control.Scale(
-        {position: 'bottomleft'}
+        {position: 'bottomright'}
     ).addTo(spacefinder.map);
     /* use popupopen and popupclose events to select and deselect places from map */
     spacefinder.map.on( 'popupopen', event => {
@@ -88,7 +95,7 @@ export function initMap() {
     spacefinder.map.on( 'dragend', event => {
         if ( spacefinder.geoActive && ! spacefinder.recentreControl ) {
             splog( 'adding recentre control as map was dragged by user' );
-            spacefinder.recentreControl = new RecentreControl( { position: 'bottomleft' } ).addTo( spacefinder.map );
+            spacefinder.recentreControl = new RecentreControl( { position: 'bottomright' } ).addTo( spacefinder.map );
         }
     });
     spacefinder.mapLoaded = true;
@@ -119,18 +126,6 @@ export function initMap() {
      * Add click listeners
      */
     document.addEventListener( 'click', event => {
-        /* Returns to list view from map "more info" button */
-        if ( event.target.classList.contains( 'show-list' ) ) {
-            event.preventDefault();
-            document.dispatchEvent( new CustomEvent( 'viewchange', {
-                bubbles: true,
-                cancelable: true,
-                composed: false,
-                detail: {
-                    view: 'list'
-                }
-            } ) );
-        }
         /* prevents the close button on popups changing the anchor */
         if ( event.target.classList.contains( 'leaflet-popup-close-button' ) || ( event.target.parentNode && event.target.parentNode.classList && event.target.parentNode.classList.contains( 'leaflet-popup-close-button' ) ) ) {
             event.preventDefault();
@@ -138,20 +133,15 @@ export function initMap() {
     });
 
     /**
-     * make sure the map knows about resizing, both of the main
-     * window, and when a change in view happens (which may reduce
-     * the area taken up by the map component)
+     * make sure the map knows about resizing, and keep popups clear of the
+     * panel when it opens or closes, or the window is resized
      */
     document.addEventListener( 'sfresize', () => {
         spacefinder.map.invalidateSize( true );
+        updatePopupPadding();
     });
-    document.addEventListener( 'viewchange', () => {
-        splog( 'view changed' );
-        window.setTimeout( () => {
-            splog( 'invalidating map size - viewchange event', 'map.js' );
-            spacefinder.map.invalidateSize( true );
-        }, 500);
-    });
+    document.addEventListener( 'sfpaneltoggle', updatePopupPadding );
+    updatePopupPadding();
 }
 
 /**
@@ -187,7 +177,7 @@ function maybeSetupMap() {
                 });
                 spacefinder.data[spacefinder.currentDataSource].markergroup.addLayer( spacefinder.data[spacefinder.currentDataSource].places[i].marker );
                 /* set the popup for the marker */
-                spacefinder.data[spacefinder.currentDataSource].places[i].popup = new Popup().setContent( spacefinder.data[spacefinder.currentDataSource].module.getInfoWindowContent( spacefinder.data[spacefinder.currentDataSource].places[i] ) );
+                spacefinder.data[spacefinder.currentDataSource].places[i].popup = new Popup( { autoPanPaddingTopLeft: spacefinder.popupPadding } ).setContent( spacefinder.data[spacefinder.currentDataSource].module.getInfoWindowContent( spacefinder.data[spacefinder.currentDataSource].places[i] ) );
                 spacefinder.data[spacefinder.currentDataSource].places[i].popup.placeID = spacefinder.data[spacefinder.currentDataSource].places[i].id;
                 spacefinder.data[spacefinder.currentDataSource].places[i].marker.bindPopup( spacefinder.data[spacefinder.currentDataSource].places[i].popup );
             }
@@ -198,7 +188,8 @@ function maybeSetupMap() {
 
         /* Make sure the map view encompasses all markers */
         if ( pointsArray.length ) {
-            spacefinder.map.fitBounds( pointsArray );
+            /* leave room for the panel */
+            spacefinder.map.fitBounds( pointsArray, { paddingTopLeft: [ getPanelWidth(), 0 ] } );
         }
 
         /* save the map bounds and zoom to enable resetting */
@@ -209,6 +200,18 @@ function maybeSetupMap() {
         spacefinder.mapReady = true;
         document.dispatchEvent( new Event( 'sfmapready' ) );
     }
+}
+
+/**
+ * Keeps popups clear of the panel when the map pans to show them. Every
+ * popup's autoPanPaddingTopLeft option is this same array, so changing it
+ * changes them all.
+ */
+function updatePopupPadding() {
+    if ( ! spacefinder.popupPadding ) {
+        spacefinder.popupPadding = [ 5, 5 ];
+    }
+    spacefinder.popupPadding[0] = getPanelWidth() + 5;
 }
 
 /**

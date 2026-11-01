@@ -9,31 +9,113 @@ nav_order: 8
 
 [Source](https://github.com/uol-library/spacefinder/blob/develop/assets/js/modules/layout.mjs)
 
-Spacefinder layout setup
-Sets event listeners on top bar navigation buttons
+Spacefinder layout
 
-**Exports:** nothing (this module sets up event listeners when it is imported)
+The page is the top bar, the map and the footer. The list and the filters
+are in a panel on the left of the map (a Leaflet control), which a button
+beside it opens and closes. The map pans by half the panel's width when
+it opens or closes, so the places in view stay in the middle of the part
+of the map that can be seen.
+
+**Exports:** `PanelControl`, `PanelToggleControl`, `addPanel`, `isPanelOpen`, `getPanelWidth`, `openPanel`, `closePanel`, `togglePanel`
+
+## Classes
+
+* [PanelControl](#PanelControl)
+* [PanelToggleControl](#PanelToggleControl)
 
 ## Functions
 
-* [setupLayout()](#setupLayout)
-* [setView(event)](#setView)
+* [addPanel(map)](#addPanel)
+* [isPanelOpen()](#isPanelOpen) ⇒ <code>boolean</code>
+* [getPanelWidth()](#getPanelWidth) ⇒ <code>number</code>
+* [openPanel(pan)](#openPanel)
+* [closePanel(pan)](#closePanel)
+* [togglePanel(pan)](#togglePanel)
+* [setPanelState(open)](#setPanelState)
 
-<a name="setupLayout"></a>
+<a name="PanelControl"></a>
 
-## setupLayout()
-Sets up layout event listeners
+## PanelControl
+The panel with the list and the filters. The panel's markup is in the
+page (#sfpanel, from the spacefinder layout); this moves it into the
+map's top left corner.
 
-**Kind**: global function  
-<a name="setView"></a>
+**Kind**: global class  
+<a name="PanelToggleControl"></a>
 
-## setView(event)
-Sets the initial view of the app, and the view after the window is
-resized (but not when another dataset loads, so the user's view stays)
+## PanelToggleControl
+The button that opens and closes the panel
+
+**Kind**: global class  
+<a name="addPanel"></a>
+
+## addPanel(map)
+Adds the panel and its button to the map. The panel starts open, unless
+the window is narrower than the small breakpoint.
 
 **Kind**: global function  
 
 | Param | Type |
 | --- | --- |
-| event | <code>Event</code> |
+| map | <code>Map</code> | 
+
+<a name="isPanelOpen"></a>
+
+## isPanelOpen() ⇒ <code>boolean</code>
+Whether the panel is open
+
+**Kind**: global function  
+<a name="getPanelWidth"></a>
+
+## getPanelWidth() ⇒ <code>number</code>
+Gets the width of the map covered by the panel, for padding when the
+map fits its view to places, and for popups
+
+**Kind**: global function  
+**Returns**: <code>number</code> - pixels  
+<a name="openPanel"></a>
+
+## openPanel(pan)
+Opens the panel
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| pan | <code>boolean</code> | whether to pan the map (default true) |
+
+<a name="closePanel"></a>
+
+## closePanel(pan)
+Closes the panel
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| pan | <code>boolean</code> | whether to pan the map (default true) |
+
+<a name="togglePanel"></a>
+
+## togglePanel(pan)
+Opens the panel if it is closed, or closes it if it is open, and pans the
+map so the middle of the part that can be seen stays in the same place
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| pan | <code>boolean</code> | whether to pan the map (default true) |
+
+<a name="setPanelState"></a>
+
+## setPanelState(open)
+Shows or hides the panel, and updates its button
+
+**Kind**: global function  
+
+| Param | Type |
+| --- | --- |
+| open | <code>boolean</code> |
 {% endraw %}

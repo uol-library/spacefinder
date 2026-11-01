@@ -1,10 +1,14 @@
 <div id="listcontrols" class="top-controls">
-    <p id="searchResultsSummary" aria-live="polite" aria-atomic="true"></p>
     <button type="button" class="geo-button btn icon-my-location" title="Use my location" aria-label="Use my location" disabled></button>
     <button id="sortdistance" data-sortdir="" class="btn sortbutton icon-distance" title="Sort by distance (nearest to farthest)" aria-label="Sort by distance (nearest to farthest)" disabled></button>
     <button id="sortalpha" data-sortdir="asc" class="btn sortbutton icon-sort-name-down" title="Sort alphabetically (descending, z to a)" aria-label="Sort alphabetically (descending, z to a)"></button>
+    <p id="searchResultsSummary" aria-live="polite" aria-atomic="true"></p>
+    <button type="button" id="filter-toggle" class="btn" aria-controls="filter-panel" aria-expanded="false" hidden>Filters<span class="filter-count"></span></button>
 </div>
-<div id="listcontainer" class="panel-content">
-    <div id="listfilters" hidden></div>
-    <div id="listcontent"></div>
+<div id="listbody">
+    <div id="listcontainer" class="panel-content">
+        <div id="listfilters" hidden></div>
+        <div id="listcontent"></div>
+    </div>
+    {%- comment -%} filters.mjs adds the filters here (#filter-panel), as an overlay on the list {%- endcomment %}
 </div>

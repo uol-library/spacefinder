@@ -13,7 +13,7 @@ Utility functions used by the core modules and the dataset modules:
 storage and data loading, finding places, building place HTML, routing
 and dataset names.
 
-**Exports:** `haversine_distance`, `getJSON`, `getPlaceById`, `getPlaceBySlug`, `getPlaceNodeById`, `getFilterData`, `escapeHTML`, `decodeHTML`, `getDirectionsLink`, `createPlaceElement`, `getInfoWindowHTML`, `setElementFocus`, `togglePanel`, `getRoute`, `getRouteURL`, `getSiteURL`, `setRoute`, `getDataSourceRoute`, `getDataSourceName`, `setDataSourceNames`, `splog`
+**Exports:** `haversine_distance`, `getJSON`, `getPlaceById`, `getPlaceBySlug`, `getPlaceNodeById`, `getFilterData`, `escapeHTML`, `decodeHTML`, `getDirectionsLink`, `createPlaceElement`, `getInfoWindowHTML`, `setElementFocus`, `getRoute`, `getRouteURL`, `getSiteURL`, `setRoute`, `getDataSourceRoute`, `getDataSourceName`, `setDataSourceNames`, `splog`
 
 ## Functions
 
@@ -33,7 +33,6 @@ and dataset names.
 * [createPlaceElement(place, content)](#createPlaceElement) ⇒ <code>Element</code>
 * [getInfoWindowHTML(title, info, description)](#getInfoWindowHTML) ⇒ <code>string</code>
 * [setElementFocus()](#setElementFocus)
-* [togglePanel()](#togglePanel)
 * [getRoute()](#getRoute) ⇒ <code>Array</code>
 * [getRouteURL(route)](#getRouteURL) ⇒ <code>string</code>
 * [getSiteURL(url)](#getSiteURL) ⇒ <code>string</code>
@@ -247,12 +246,6 @@ Returns HTML for a place's map infoWindow. The show-list button is used by map.m
 
 ## setElementFocus()
 Sets focus on an element
-
-**Kind**: global function  
-<a name="togglePanel"></a>
-
-## togglePanel()
-Acticvates / deactivates a panel in the view
 
 **Kind**: global function  
 <a name="getRoute"></a>

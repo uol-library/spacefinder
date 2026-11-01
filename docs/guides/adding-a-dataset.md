@@ -25,7 +25,7 @@ dataset with the key `trees`:
 ```
 assets/data/trees/
 ├── data.json      the places, as an array of JSON-LD records
-├── filters.json   optional: the filters for the filters panel
+├── filters.json   optional: the filters
 ├── trees.mjs      the module that renders the places
 ├── data/          optional: one JSON-LD file per place, combined into data.json
 └── images/        optional: images the data refers to
@@ -96,7 +96,8 @@ lists.
 
 ## filters.json
 
-An array of filters, which make up the filters panel:
+An array of filters. They are shown over the list when the Filters button
+is pressed:
 
 ```json
 [
@@ -133,7 +134,7 @@ express, such as whether a place is open now, the module can match it in
 code instead (see [matchFilter](#matchfilter-place-key-values-element-)).
 
 `filters.json` is optional. Without it (or with an empty array), the
-filters panel has just the search box. If a dataset has no filters, you can
+panel has just the search box, and no Filters button. If a dataset has no filters, you can
 also set `filters: false` for it in the
 [configuration](configuration.html#datasets), so the app doesn't request
 the file.
@@ -266,7 +267,7 @@ export function matchFilter( cafe, key, values ) {
 ```
 
 The filter still needs an entry in `filters.json`, so that it appears in
-the filters panel.
+the filters.
 
 ## Images
 

@@ -7,15 +7,8 @@
     --topbar-height: 73px;
     --topbar-padding: 10px;
 
-    /* filters panel (large screens) */
-    --filters-width: 256;
-
-    /* list panel (large screens) */
-    --list-width: 500;
-
-    /* controls at top of list and search panels */
-    --controls-height: 80px;
-    --list-controls-height: 40px;
+    /* the list and filters panel on the map (narrower if the map is) */
+    --panel-width: 628px;
 
     /* footer bar */
     --footer-height: 30px;

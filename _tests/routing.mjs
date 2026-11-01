@@ -157,6 +157,31 @@ async function run(mode, port) {
         check(mode, 'facilities filter works (Wi-Fi)', wifi === 4, 'shown ' + wifi);
         await b.evaluate(`document.getElementById('facilities_wifi').click()`); await sleep(300);
 
+        // the filters overlay: the Filters button opens it, its button shows the number of matching places and closes it
+        await b.evaluate(`document.getElementById('filter-toggle').click()`); await sleep(200);
+        let fo = await b.evaluate(`({ open: !document.getElementById('filter-panel').hidden, expanded: document.getElementById('filter-toggle').getAttribute('aria-expanded'), apply: document.getElementById('filter-apply').textContent, focus: document.activeElement.id })`);
+        check(mode, 'Filters button opens the filters overlay', fo.open && fo.expanded === 'true' && fo.apply === 'Show 6 places' && fo.focus === 'filter-apply', JSON.stringify(fo));
+        await b.evaluate(`document.getElementById('facilities_wifi').click()`); await sleep(400);
+        fo = await b.evaluate(`({ apply: document.getElementById('filter-apply').textContent, count: document.querySelector('#filter-toggle .filter-count').textContent })`);
+        check(mode, 'filters overlay counts matching places and active filters', fo.apply === 'Show 4 places' && fo.count === ' (1)', JSON.stringify(fo));
+        await b.evaluate(`document.getElementById('filter-apply').click()`); await sleep(200);
+        fo = await b.evaluate(`({ open: !document.getElementById('filter-panel').hidden, expanded: document.getElementById('filter-toggle').getAttribute('aria-expanded'), focus: document.activeElement.id, shown: document.querySelectorAll('.list-place:not(.hidden)').length })`);
+        check(mode, 'Show places button closes the overlay and keeps the filter', !fo.open && fo.expanded === 'false' && fo.focus === 'filter-toggle' && fo.shown === 4, JSON.stringify(fo));
+        await b.evaluate(`document.getElementById('search-reset').click()`); await sleep(300);
+
+        // the panel toggle closes and opens the panel, and pans the map by half the panel's width
+        const width = await b.evaluate(`document.getElementById('sfpanel').offsetWidth`);
+        /* the map's centre in pixels, from the same copy of config.mjs as the page uses */
+        const centre = () => b.evaluate(`import(document.querySelector('script[src$="main.js"]').src.replace('main.js', 'modules/config.mjs')).then(m => Math.round(m.spacefinder.map.project(m.spacefinder.map.getCenter()).x))`);
+        const before = await centre();
+        await b.evaluate(`document.querySelector('.panel-toggle').click()`); await sleep(600);
+        let p = await b.evaluate(`({ open: !document.getElementById('sfpanel').hidden, expanded: document.querySelector('.panel-toggle').getAttribute('aria-expanded') })`);
+        const closed = await centre();
+        check(mode, 'panel toggle closes the panel and pans the map', !p.open && p.expanded === 'false' && Math.abs((closed - before) - width / 2) <= 1, JSON.stringify({ ...p, width, pan: closed - before }));
+        await b.evaluate(`document.querySelector('.panel-toggle').click()`); await sleep(600);
+        p = await b.evaluate(`({ open: !document.getElementById('sfpanel').hidden, expanded: document.querySelector('.panel-toggle').getAttribute('aria-expanded') })`);
+        check(mode, 'panel toggle opens the panel and pans back', p.open && p.expanded === 'true' && Math.abs((await centre()) - before) <= 1, JSON.stringify(p));
+
         // "open now" filter, matched by the cafés module's matchFilter, with the clock set to a fixed local time
         const openAt = async (time, expected) => {
             await b.evaluate(`(() => {
@@ -199,15 +224,16 @@ async function run(mode, port) {
         check(mode, 'direct visit to trees', await ready(5), JSON.stringify(await st()));
         const names = await b.evaluate(`({
             skip: document.querySelector('#skip a').textContent,
-            map: document.querySelector('.map-button button').title,
+            map: document.querySelector('#map h2').textContent,
+            toggle: document.querySelector('.panel-toggle').getAttribute('aria-label'),
             search: (document.querySelector('label[for="search-input"]') || {}).textContent,
-            spaces: [...document.querySelectorAll('#top-bar, #skip, #filters h2, #list h2, #map h2, #filter-options-form label.visuallyhidden, .searchbuttons')].some(e => /spaces/i.test(e.textContent))
+            spaces: [...document.querySelectorAll('#top-bar, #skip, #filters h2, #list h2, #map h2, #filter-options-form label.visuallyhidden, #filter-options-form button')].some(e => /spaces/i.test(e.textContent))
         })`);
-        check(mode, 'trees uses its dataset name in the interface', names.skip === 'Skip to list of trees' && names.map === 'Map of trees' && names.search === 'Search trees' && !names.spaces, JSON.stringify(names));
+        check(mode, 'trees uses its dataset name in the interface', names.skip === 'Skip to list of trees' && names.map === 'Map of trees' && names.toggle === 'Hide the list of trees' && names.search === 'Search trees' && !names.spaces, JSON.stringify(names));
 
         // trees has no filters.json: the panel has just the search box, and search works
-        const nofilters = await b.evaluate(`({ fieldsets: document.querySelectorAll('#filter-options-form fieldset').length, panel: document.querySelectorAll('#filter-options-form .panel-content').length, label: document.getElementById('filter-options-form').getAttribute('aria-label'), markers: document.querySelectorAll('.leaflet-marker-icon').length })`);
-        check(mode, 'dataset without filters.json shows just the search box', nofilters.fieldsets === 0 && nofilters.panel === 0 && nofilters.label === 'Search trees' && nofilters.markers > 0, JSON.stringify(nofilters));
+        const nofilters = await b.evaluate(`({ fieldsets: document.querySelectorAll('#filter-options-form fieldset').length, panel: document.querySelectorAll('#filter-options-form .panel-content').length, label: document.getElementById('filter-options-form').getAttribute('aria-label'), toggle: document.getElementById('filter-toggle').hidden, markers: document.querySelectorAll('.leaflet-marker-icon').length })`);
+        check(mode, 'dataset without filters.json shows just the search box', nofilters.fieldsets === 0 && nofilters.panel === 0 && nofilters.label === 'Search trees' && nofilters.toggle && nofilters.markers > 0, JSON.stringify(nofilters));
         await b.evaluate(`(() => { const i = document.getElementById('search-input'); i.value = 'oak'; i.dispatchEvent(new Event('input')); document.getElementById('search-submit').click(); })()`); await sleep(400);
         const oaks = await b.evaluate(`document.querySelectorAll('.list-place:not(.hidden)').length`);
         check(mode, 'search works without filters', oaks === 2, 'shown ' + oaks);

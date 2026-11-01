@@ -1,8 +1,11 @@
 /**
- * Functions for the filters panel in the UI
+ * Search and filters
  *
- * The filters are loaded once the places have loaded, and the panel is
- * built again for each dataset.
+ * The search form is at the top of the panel (in #filters). The filters are
+ * in an overlay on the list (#filter-panel), which the Filters button in the
+ * list controls opens; the button at the top of the overlay closes it and
+ * shows how many places match. The filters are loaded once the places have
+ * loaded, and the search form and filters are built again for each dataset.
  */
 import { spacefinder } from './config.mjs';
 import { splog, getJSON, getDataSourceName } from './utilities.mjs';
@@ -18,6 +21,7 @@ document.addEventListener( 'filtersapplied', () => {
     if ( ! document.getElementById( 'filter-options-form' ) ) {
         return;
     }
+    updateFilterCounts();
     const activeFilters = getFilterStatus();
     if ( activeFilters.length ) {
         document.getElementById( 'search-reset' ).removeAttribute( 'disabled' );
@@ -30,12 +34,19 @@ document.addEventListener( 'filtersapplied', () => {
         }
     }
 });
-/* remove the old dataset's filters when switching to another */
+/* remove the old dataset's search form and filters when switching to another */
 document.addEventListener( 'datasourceunload', () => {
-    let form = document.getElementById( 'filter-options-form' );
-    if ( form ) {
-        form.remove();
-    }
+    toggleFilterPanel( false, false );
+    [ 'filter-options-form', 'filter-panel' ].forEach( id => {
+        let el = document.getElementById( id );
+        if ( el ) {
+            el.remove();
+        }
+    });
+    document.getElementById( 'filter-toggle' ).hidden = true;
+});
+document.addEventListener( 'DOMContentLoaded', () => {
+    document.getElementById( 'filter-toggle' ).addEventListener( 'click', () => toggleFilterPanel() );
 });
 
 /**
@@ -44,7 +55,7 @@ document.addEventListener( 'datasourceunload', () => {
  */
 export function getFilterStatus() {
     splog( 'getFilterStatus' );
-    const filters = document.querySelectorAll( '#filters input[type=checkbox]' );
+    const filters = document.querySelectorAll( '#filter-panel input[type=checkbox]' );
     const activeFilters = [];
     for (const cbx of filters) {
         if (cbx.checked) {
@@ -112,63 +123,105 @@ function loadFilters() {
 }
 
 /**
- * Builds the filters panel
+ * Builds the search form, and the filters overlay if the dataset has filters
  */
 function renderFilters() {
     splog( 'renderFilters' );
     let filters = spacefinder.data[spacefinder.currentDataSource].filters;
+    let name = getDataSourceName();
     let filterForm = document.createElement( 'form' );
     filterForm.setAttribute( 'id', 'filter-options-form' );
     filterForm.setAttribute( 'role', 'search' );
-    let name = getDataSourceName();
     filterForm.setAttribute( 'aria-label', ( filters.length ? 'Search and filter ': 'Search ' ) + name );
-    let controlsContainer = document.createElement( 'div' );
-    controlsContainer.classList.add( 'top-controls' );
-    controlsContainer.innerHTML = '<div><label for="search-input" class="visuallyhidden">Search ' + name + '</label><input id="search-input" type="search" placeholder="Search"></div><div class="searchbuttons"><button type="reset" id="search-reset" class="btn" disabled>Reset<span class="visuallyhidden"> ' + name + ' search and filters</span></button><button type="submit" id="search-submit" class="btn" aria-controls="searchResultsSummary" disabled>Search<span class="visuallyhidden"> ' + name + '</span></button></div></div>';
-    filterForm.appendChild( controlsContainer );
-    let panelContainer = document.createElement( 'div' );
-    panelContainer.classList.add( 'panel-content' );
-    filters.forEach( filter => {
-        let fs = document.createElement( 'fieldset' );
-        fs.classList.add( 'filter-options' );
-        fs.classList.add( filter.key + '-filter-options' );
-        let ld = document.createElement( 'legend' );
-        let fl = document.createElement( 'ul' );
-        fl.setAttribute( 'id', 'filters-' + filter.key );
-        if ( filter.options.length === 1 ) {
-            ld.classList.add( 'visuallyhidden' );
-            ld.appendChild( document.createTextNode( filter.label ) );
-        } else {
-            fs.classList.add( 'accordion' );
-            ld.innerHTML = '<button type="button" class="accordion-trigger" id="trigger-' + filter.key + '" aria-controls="filters-' + filter.key + '" aria-expanded="' + ( filter.open ? 'true': 'false' ) + '" tabindex="0"><span>' + filter.label + '</span></button>';
-            fl.classList.add( 'accordion-content' );
-            fl.setAttribute( 'aria-hidden', ( filter.open ? 'false': 'true' ) );
-            fl.setAttribute( 'aria-labelledby', 'trigger-' + filter.key );
-            if ( ! filter.open ) {
-                fl.setAttribute( 'hidden', '' );
-            }
-        }
-        fs.appendChild( ld );
-        let filterOptions = '';
-        let excl = filter.exclusive ? ' class="exclusive"': '';
-        filter.options.forEach( option => {
-            filterOptions += '<li class="filter-option ' + filter.key + ' ' + filter.key + '_' + option.key + '" data-id="' + filter.key + '_' + option.key + '">';
-            filterOptions += '<input type="checkbox" data-filterkey="' + filter.key + '" data-optionkey="' + option.key + '" id="' + filter.key + '_' + option.key + '" name="' + filter.key + '_' + option.key + '" value="' + filter.key + '_' + option.key + '"' + excl + '>';
-            let icon = option.icon ? option.icon: 'icon-tick';
-            filterOptions += '<span class="' + icon + '"></span><label for="' + filter.key + '_' + option.key + '">' + option.label + '</label>';
-            filterOptions += '</li>';
-        });
-        fl.innerHTML = filterOptions;
-        fs.appendChild( fl );
-        panelContainer.appendChild( fs );
-    });
+    filterForm.innerHTML = '<label for="search-input" class="visuallyhidden">Search ' + name + '</label><input id="search-input" type="search" placeholder="Search"><button type="submit" id="search-submit" class="btn" aria-controls="searchResultsSummary" disabled>Search<span class="visuallyhidden"> ' + name + '</span></button><button type="reset" id="search-reset" class="btn" disabled>Reset<span class="visuallyhidden"> ' + name + ' search and filters</span></button>';
+    document.getElementById( 'filters' ).appendChild( filterForm );
     /* a dataset without filters just has the search box */
     if ( filters.length ) {
-        filterForm.appendChild( panelContainer );
+        let filterPanel = document.createElement( 'div' );
+        filterPanel.setAttribute( 'id', 'filter-panel' );
+        filterPanel.setAttribute( 'role', 'region' );
+        filterPanel.setAttribute( 'aria-label', 'Filter ' + name );
+        filterPanel.hidden = true;
+        filterPanel.innerHTML = '<div class="top-controls"><button type="button" id="filter-apply" class="btn">Show places</button></div>';
+        let panelContainer = document.createElement( 'div' );
+        panelContainer.classList.add( 'panel-content' );
+        filters.forEach( filter => {
+            let fs = document.createElement( 'fieldset' );
+            fs.classList.add( 'filter-options' );
+            fs.classList.add( filter.key + '-filter-options' );
+            let ld = document.createElement( 'legend' );
+            let fl = document.createElement( 'ul' );
+            fl.setAttribute( 'id', 'filters-' + filter.key );
+            if ( filter.options.length === 1 ) {
+                ld.classList.add( 'visuallyhidden' );
+                ld.appendChild( document.createTextNode( filter.label ) );
+            } else {
+                fs.classList.add( 'accordion' );
+                ld.innerHTML = '<button type="button" class="accordion-trigger" id="trigger-' + filter.key + '" aria-controls="filters-' + filter.key + '" aria-expanded="' + ( filter.open ? 'true': 'false' ) + '" tabindex="0"><span>' + filter.label + '</span></button>';
+                fl.classList.add( 'accordion-content' );
+                fl.setAttribute( 'aria-hidden', ( filter.open ? 'false': 'true' ) );
+                fl.setAttribute( 'aria-labelledby', 'trigger-' + filter.key );
+                if ( ! filter.open ) {
+                    fl.setAttribute( 'hidden', '' );
+                }
+            }
+            fs.appendChild( ld );
+            let filterOptions = '';
+            let excl = filter.exclusive ? ' class="exclusive"': '';
+            filter.options.forEach( option => {
+                filterOptions += '<li class="filter-option ' + filter.key + ' ' + filter.key + '_' + option.key + '" data-id="' + filter.key + '_' + option.key + '">';
+                filterOptions += '<input type="checkbox" data-filterkey="' + filter.key + '" data-optionkey="' + option.key + '" id="' + filter.key + '_' + option.key + '" name="' + filter.key + '_' + option.key + '" value="' + filter.key + '_' + option.key + '"' + excl + '>';
+                let icon = option.icon ? option.icon: 'icon-tick';
+                filterOptions += '<span class="' + icon + '"></span><label for="' + filter.key + '_' + option.key + '">' + option.label + '</label>';
+                filterOptions += '</li>';
+            });
+            fl.innerHTML = filterOptions;
+            fs.appendChild( fl );
+            panelContainer.appendChild( fs );
+        });
+        filterPanel.appendChild( panelContainer );
+        document.getElementById( 'listbody' ).appendChild( filterPanel );
+        document.getElementById( 'filter-toggle' ).hidden = false;
+        updateFilterCounts();
     }
-    document.getElementById( 'filters' ).appendChild( filterForm );
     /* fire the filtersrendered event */
     document.dispatchEvent( new Event( 'filtersrendered' ) );
+}
+
+/**
+ * Opens or closes the filters overlay
+ * @param {boolean} open whether to open it (default: open it if it is closed)
+ * @param {boolean} focus whether to move the focus into it, or back to the Filters button (default true)
+ */
+export function toggleFilterPanel( open, focus = true ) {
+    let panel = document.getElementById( 'filter-panel' );
+    let button = document.getElementById( 'filter-toggle' );
+    if ( ! panel ) {
+        return;
+    }
+    if ( typeof open === 'undefined' ) {
+        open = panel.hidden;
+    }
+    panel.hidden = ! open;
+    button.setAttribute( 'aria-expanded', open ? 'true': 'false' );
+    if ( focus ) {
+        ( open ? document.getElementById( 'filter-apply' ): button ).focus();
+    }
+}
+
+/**
+ * Updates the number of active filters on the Filters button, and the number
+ * of matching places on the button that closes the filters overlay
+ */
+function updateFilterCounts() {
+    let applyButton = document.getElementById( 'filter-apply' );
+    if ( ! applyButton ) {
+        return;
+    }
+    let checked = document.querySelectorAll( '#filter-panel input[type=checkbox]:checked' ).length;
+    document.querySelector( '#filter-toggle .filter-count' ).textContent = checked ? ' (' + checked + ')': '';
+    let shown = document.querySelectorAll( '#listcontent .list-place:not(.hidden)' ).length;
+    applyButton.textContent = 'Show ' + shown + ' ' + ( shown === 1 ? 'place': 'places' );
 }
 
 /**
@@ -177,7 +230,7 @@ function renderFilters() {
 function setupFilters() {
     splog( 'setupFilters' );
     /* add radio button behaviour to checkboxes with exclusive attribute */
-    const filters = document.querySelectorAll( '#filters input[type=checkbox]' );
+    const filters = document.querySelectorAll( '#filter-panel input[type=checkbox]' );
     for (const cbx of filters) {
         /* add/remove visible focus styles to list items when a checkbox is focussed */
         cbx.addEventListener( 'focus', eventElement => {
@@ -186,7 +239,7 @@ function setupFilters() {
             eventElement.target.closest( 'li' ).scrollIntoView(false);
         });
         cbx.addEventListener( 'blur', eventElement => {
-            document.querySelectorAll( '#filters li' ).forEach( el => el.classList.remove( 'focus' ) );
+            document.querySelectorAll( '#filter-panel li' ).forEach( el => el.classList.remove( 'focus' ) );
         });
 
         cbx.addEventListener( 'change', eventElement => {
@@ -207,7 +260,7 @@ function setupFilters() {
     document.getElementById( 'search-reset' ).addEventListener( 'click', event => {
         event.preventDefault();
         document.getElementById( 'filter-options-form' ).reset();
-        const filters = document.querySelectorAll( '#filters input[type=checkbox]' );
+        const filters = document.querySelectorAll( '#filter-panel input[type=checkbox]' );
         for (const cbx of filters) {
             cbx.checked = false;
         }
@@ -221,8 +274,8 @@ function setupFilters() {
             document.getElementById( 'search-reset' ).removeAttribute( 'disabled' );
             document.getElementById( 'search-submit' ).removeAttribute( 'disabled' );
         } else {
-            const checkedfilters = document.querySelectorAll( '#filters input[type=checkbox]:checked' );
-            if ( checkedfilters == null ) {
+            const checkedfilters = document.querySelectorAll( '#filter-panel input[type=checkbox]:checked' );
+            if ( ! checkedfilters.length ) {
                 document.getElementById( 'search-reset' ).setAttribute( 'disabled', '' );
                 document.getElementById( 'search-submit' ).setAttribute( 'disabled', '' );
             }
@@ -248,18 +301,17 @@ function setupFilters() {
             }));
 
         }
-        /* switch to list view on mobile / tablet */
-        if ( window.innerWidth < spacefinder.breakpoints.large ) {
-            document.getElementById( 'top-bar' ).dispatchEvent( new CustomEvent( 'viewchange', {
-                bubbles: true,
-                cancelable: true,
-                composed: false,
-                detail: {
-                    view: 'list'
-                }
-            } ) );
-        }
     });
+    /* the button at the top of the filters overlay, and the Escape key, close it */
+    let filterPanel = document.getElementById( 'filter-panel' );
+    if ( filterPanel ) {
+        document.getElementById( 'filter-apply' ).addEventListener( 'click', () => toggleFilterPanel( false ) );
+        filterPanel.addEventListener( 'keydown', event => {
+            if ( event.key === 'Escape' ) {
+                toggleFilterPanel( false );
+            }
+        });
+    }
     /* init accordions */
 	const accordions = document.querySelectorAll( '.accordion' );
 	accordions.forEach( accordionEl => {

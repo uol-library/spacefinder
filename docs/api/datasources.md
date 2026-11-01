@@ -11,10 +11,11 @@ nav_order: 5
 
 The dataset switcher
 
-When the site has more than one dataset, adds a link to each one at the
-top of the filters panel. Each link goes to the dataset's route, so it can
-be opened in a new tab; clicking it switches to the dataset without
-reloading the page. The current dataset's link has aria-current="page".
+When the site has more than one dataset, adds a switcher at the top of the
+panel. With two datasets it is a link to each one, which goes to the
+dataset's route, so it can be opened in a new tab; clicking it switches to
+the dataset without reloading the page. The current dataset's link has
+aria-current="page". With more than two, it is a dropdown.
 
 **Exports:** nothing (this module sets up event listeners when it is imported)
 
@@ -22,12 +23,13 @@ reloading the page. The current dataset's link has aria-current="page".
 
 * [renderDataSourceSwitcher()](#renderDataSourceSwitcher)
 * [onDataSourceClick(event)](#onDataSourceClick)
+* [changeDataSource(key)](#changeDataSource)
 * [updateDataSourceSwitcher()](#updateDataSourceSwitcher)
 
 <a name="renderDataSourceSwitcher"></a>
 
 ## renderDataSourceSwitcher()
-Adds the dataset links to the filters panel
+Adds the dataset links (or dropdown) to the top of the panel
 
 **Kind**: global function  
 <a name="onDataSourceClick"></a>
@@ -42,10 +44,21 @@ opened in a new tab or window)
 | --- | --- |
 | event | <code>MouseEvent</code> | 
 
+<a name="changeDataSource"></a>
+
+## changeDataSource(key)
+Switches to a dataset and changes the URL to its route
+
+**Kind**: global function  
+
+| Param | Type |
+| --- | --- |
+| key | <code>String</code> | 
+
 <a name="updateDataSourceSwitcher"></a>
 
 ## updateDataSourceSwitcher()
-Marks the current dataset's link
+Marks the current dataset's link, or selects it in the dropdown
 
 **Kind**: global function
 {% endraw %}

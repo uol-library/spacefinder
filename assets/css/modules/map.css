@@ -43,7 +43,8 @@
             background: var(--background-color);
         }
     }
-    &.active .placeInfoWindow button.show-list {
+    /* "More info" in popups opens the panel, so it is only shown while the panel is closed */
+    &:not(.sfpanel-open) .placeInfoWindow button.show-list {
         display: block;
     }
     .place-marker {

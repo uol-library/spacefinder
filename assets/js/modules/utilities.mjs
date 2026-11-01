@@ -310,20 +310,6 @@ export function setElementFocus( id ) {
 }
 
 /**
- * Acticvates / deactivates a panel in the view
- */
-export function togglePanel( panel, active ) {
-    if ( [ 'filters', 'list', 'map' ].indexOf( panel ) !== -1 ) {
-        let activeclass = active ? 'active': 'inactive';
-        let inactiveclass = active ? 'inactive': 'active';
-        document.querySelector( '#top-bar .navbutton[data-view="' + panel + '"]' ).classList.remove( inactiveclass );
-        document.querySelector( '#top-bar .navbutton[data-view="' + panel + '"]' ).classList.add( activeclass );
-        document.getElementById( panel ).classList.remove( inactiveclass );
-        document.getElementById( panel ).classList.add( activeclass );
-    }
-}
-
-/**
  * Gets the current route from the URL, e.g. [ 'spaces', '1915' ] from
  * /spaces/1915 (history routing) or /#/spaces/1915 (hash routing)
  * @return {Array} route segments

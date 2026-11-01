@@ -8,28 +8,19 @@ The aim: core scripts plus datasets that can be added by putting a folder in
 
 ## Next steps
 
-1. **List and filters as Leaflet controls.** Move the list and the filters
-   onto the map as Leaflet controls, instead of separate panels in the page
-   layout:
-   - put the search box at the top of the list view;
-   - maybe show the filters in the list view, collapsed under the dataset
-     controls and the search box, so there is one panel.
-
-   The dataset switcher (`datasources.mjs`), now at the top of the filters
-   panel, could go in the same control.
-
-   The main reason for doing this is a full-screen map. In spacefinder-ds,
-   which uses the University Design System, the map was too small within the
-   page design. With everything in map controls, the map can go full screen,
-   using the Fullscreen API on the map container, and the list, search and
-   filters stay available.
+1. **Full screen.** The list and filters are now a Leaflet control on the
+   map (`layout.mjs`), so the map can go full screen with them. Check the
+   fullscreen control keeps the panel usable (it uses the Fullscreen API on
+   the map container), especially on phones, where the panel and the
+   controls on the right don't both fit.
 2. **Hooks for embedding the app in other pages.** Let a page that embeds
    the app (for example one built with the Design System) share data with it,
    so the app doesn't need its own page design. spacefinder-ds took the
    opposite approach: static pages styled to match the Design System.
    - **Events from the app:** the app already sends events on `document`,
      such as `sfmapready`, `placesLoaded`, `filtersloaded`, `placeSelected`,
-     `sfselectpage`, `datasourceunload` and `datasourcechange`. Decide which
+     `sfselectpage`, `datasourceunload`, `datasourcechange` and
+     `sfpaneltoggle`. Decide which
      ones are public and what data each carries, document them, and use one
      naming convention. Add events for a changed filter or search, and a
      changed route.
@@ -109,12 +100,11 @@ and API pages generated with `npm run docs`. Preview it with
   `/docs`. It will be at <https://uol-library.github.io/spacefinder/>.
 - Once it's live, replace the GitHub wiki with a link to it, or turn the
   wiki off, so there's only one copy to keep up to date.
-- Add the data model pages for any new datasets, and update the guides when
-  the Leaflet controls are done.
+- Add the data model pages for any new datasets.
 
 ## Testing
 
-`npm run test:routing` builds the site in both routing modes and runs 32
+`npm run test:routing` builds the site in both routing modes and runs 37
 browser scenarios in each, using headless Chrome and the example datasets.
 It needs Bundler and Chrome. `-- --no-build` reuses the last builds. It
 doesn't test clicking map markers, or the Apache rewrite rules.
