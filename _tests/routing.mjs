@@ -13,7 +13,7 @@
  *   npm run test:routing -- --no-build    (reuse the last builds)
  *
  * Builds go in _tests/build/, which git ignores. The tests use the example
- * datasets in assets/data (6 published cafés and 5 trees).
+ * datasets in examples/ (6 published cafés and 5 trees).
  */
 import http from 'http';
 import fs from 'fs';

@@ -65,7 +65,8 @@ Gets the dataset for a route (the default dataset for pages and the home page)
 Puts the URL into the current form before anything else uses it:
 - a path passed on by 404.html (?route=...) when using history routing
 - hash URLs (#/...) when using history routing, e.g. from old links
-- #/space/<slug>, used by earlier versions, becomes spaces/<slug>
+- routes starting with a key in spacefinder.routeAliases, which is
+  replaced by its value (e.g. space/1915 becomes spaces/1915)
 
 **Kind**: global function  
 <a name="applyRoute"></a>

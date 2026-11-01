@@ -1,10 +1,10 @@
 # TODO
 
-Where things were left on 27 October 2026 (`develop` branch).
+Where things were left on 1 November 2026 (`develop` branch).
 
 The aim: core scripts plus datasets that can be added by putting a folder in
 `assets/data/<key>/` (`data.json`, `filters.json`, `<key>.mjs`, optional
-`images/`) and listing it under `datasources` in `_data/config.yml`.
+`images/`; the theme's own examples are in `examples/`) and listing it under `datasources` in `_data/config.yml`.
 
 ## Next steps
 
@@ -79,64 +79,42 @@ The aim: core scripts plus datasets that can be added by putting a folder in
      `console.error` for real errors;
    - this fits with documenting events for the embedding hooks (item 5).
 
-## Small fixes
-
-- [ ] `README.md` still describes the old set-up: the `spaces/` folder,
-  `_includes/javascript/templates.js`, and filters defined in
-  `_data/config.yml`. It also links to the wiki. Shorten it and point to
-  the docs site.
-- [ ] Image URLs start at the site root, so they break if `baseurl` isn't
-  empty. Prefix them with `spacefinder.basePath`.
-- [ ] `routing.mjs` turns old `#/space/<slug>` links into `spaces/<slug>`.
-  That only makes sense for the Leeds site: make it a setting, or move it
-  to the site repo.
-- [ ] A site that uses the theme also gets the example datasets
-  (`assets/data/cafes` and `trees`), because a remote theme's `assets` are
-  copied into the site. They do no harm, but they're published. Consider
-  moving them somewhere Jekyll leaves out of a theme, and pointing the
-  theme's own `dataDir` at them.
-
 ## Art trail
 
-- Walk the route and record the viewing point coordinates (for `route.json`).
+- The route is done for now: `route.geojson` (full) and `shortroute.geojson`
+  in the site repo, fitted to OpenStreetMap and step-free, with statistics
+  (`npm run routeStats`) and GPX/KML exports (`npm run routeExport`).
+- Still to check on the ground: the estimated west pavement of Woodhouse
+  Lane beside the steps at way/985764210, and the end of the flight near
+  Hermes (way/22951906). The accessible path beside the Clarendon Building
+  is missing from OSM (it's being added); check the route against it
+  afterwards.
+- Walk the route and record the viewing point coordinates.
 - Then decide how to show each artwork's description: either when the user
   gets near it, or as clickable pins beside the route. The route stays
   separate from the artwork pins. Hermes can't go on the route because it's
   on a wall above a pond.
+- Show the routes in the app, with links to download the GPX and KML files.
 
 ## spacefinder.leeds.ac.uk (the site repo)
 
 The data, its scripts and the daily jobs now live there, and `develop`
-builds with this repo's `develop` branch as its theme. Still to do there:
+builds with this repo's `develop` branch as its theme. Done: the scripts use
+the JSON-LD in `assets/data/*/data`, `_config_dev.yml` holds only the
+overrides, and `.github/workflows/build.yml` builds the site and pushes it
+to the `build` (from `main`) or `build-dev` (from `develop`) branch for the
+Apache servers to copy. Still to do there:
 
-- **Opening hours:** finish updating `updateOpeningHoursLibCal.js` for the
-  JSON-LD in `assets/data/spaces/data`: write back to that folder, match
-  libraries by `additionalType` and the end of `streetAddress`, save
-  `openingHoursSpecification` as an array, compare `opens` and `closes`,
-  and zero-pad times.
-- **Other scripts:** `cron.js` and `nextID.js` still use the old
-  `spaces/` folder.
-- **Deployment:** the live site will be served by Apache, copied from a
-  clone of the repo, so the build has to be committed. Take `_site` out of
-  `.gitignore`, and make the daily workflows build the site and commit it
-  along with the data. The server then needs to pull and copy it to the
-  DocumentRoot.
-- **Config:** `_config_dev.yml` is a full copy of `_config.yml`. It could
-  hold only what differs (`remote_theme`, `environment`, `url`), built
-  with `--config _config.yml,_config_dev.yml`.
-- **Data fixes:**
-  - Three art files spell the contributor `@type` as `"Organisation"`; it
-    should be `"Organization"`: `converse-column.json`, `dual-form.json`,
-    `three-piece-reclining-figure-bridge-prop.json`.
-  - `_scripts/concat.js` includes `template.json` and `route.json` in
-    `data.json`. Only include records that have a `mainEntity`, as the art
-    rebuild did.
-  - Wrong campus map entries are matched to `relation/7686369` in
-    `assets/data/campusmap/osm/campusmap-osm.json`. See
-    `campusmap-osm-review.md`.
+- **Deployment:** set up the servers to pull the build branches and copy
+  them to the DocumentRoot.
+- **Data fixes:** wrong campus map entries are matched to `relation/7686369`
+  in `assets/data/campusmap/osm/campusmap-osm.json`. See
+  `campusmap-osm-review.md`.
 - **Release:** when the theme is ready, merge it to this repo's `main`,
   then change the site's `remote_theme` back to `uol-library/spacefinder`
-  and merge the site's `develop`.
+  and merge the site's `develop`. The site's dataset modules use
+  `getSiteURL()`, which is only in this repo's `develop`, so push it before
+  the site's `develop`.
 - Checking the campus map for updates is on hold, because its data isn't
   reliable.
 
@@ -150,16 +128,12 @@ and API pages generated with `npm run docs`. Preview it with
   `/docs`. It will be at <https://uol-library.github.io/spacefinder/>.
 - Once it's live, replace the GitHub wiki with a link to it, or turn the
   wiki off, so there's only one copy to keep up to date.
-- The art trail data model page (from the wiki) is older than the data. The
-  real files have `identifier`, an array of `image` objects, and
-  `contributor` as either an object or an array. Update the page to match,
-  and add a page for the buildings data model.
 - Add the data model pages for any new datasets, and update the guides when
   the dataset switcher, optional filters and Leaflet controls are done.
 
 ## Testing
 
-`npm run test:routing` builds the site in both routing modes and runs 21
+`npm run test:routing` builds the site in both routing modes and runs 22
 browser scenarios in each, using headless Chrome and the example datasets.
 It needs Bundler and Chrome. `-- --no-build` reuses the last builds. It
 doesn't test clicking map markers, or the Apache rewrite rules.

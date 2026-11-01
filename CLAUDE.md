@@ -13,8 +13,8 @@ Read this first, then `TODO.md` (what's next) and `_sessions/summary.md`
   the daily jobs (LibCal opening hours, cron). Its `develop` branch uses
   this repo's `develop` as its theme, and its live site will be served by
   Apache.
-- This repo has only **example data**: `cafes` and `trees`, which are made
-  up and used by the tests.
+- This repo has only **example data**: `cafes` and `trees` in `examples/`,
+  which are made up and used by the tests.
 - `../spacefinder-ds` is an earlier attempt to fit the app into the
   University Design System. The map was too small there, which is why the
   list, filters and search are to move into Leaflet controls, with a
@@ -39,7 +39,10 @@ Read this first, then `TODO.md` (what's next) and `_sessions/summary.md`
   - optionally `data/` (one file per place) and `images/`.
 
   They're registered under `datasources` in `_data/config.yml`, and the
-  first one is the default. Here: `cafes` and `trees`.
+  first one is the default. Here: `cafes` and `trees`, which are in
+  `examples/` instead (`dataDir` in `_data/config.yml`), because Jekyll
+  copies a theme's `assets/` into every site that uses it. Their imports
+  start `../../assets/js/modules/`.
 - **Dataset module API:**
   - Required: `onloadPlaceData(data)`, which fills
     `spacefinder.data[ns].places` with objects that have `id`, `slug`,

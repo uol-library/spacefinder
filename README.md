@@ -8,36 +8,18 @@ For more information about the project, [please visit the documentation site](ht
 
 An example of the application when populated with data is available in the University of Leeds version of Spacefinder, which is available at https://spacefinder.leeds.ac.uk/ and served from the repository [uol-library/spacefinder.leeds.ac.uk](https://github.com/uol-library/spacefinder.leeds.ac.uk).
 
-## Using this repository
+## Using the theme
 
-This repository can be forked or used as a *jekyll theme* in GitHub to create a custom wayfinding application. Key files which require customising with your own information are:
+Add `remote_theme: uol-library/spacefinder` to the site's `_config.yml`, then customise:
 
-* **_config.yml** - the main Jekyll configuration file
-* **_includes/pages/** - directory containing your about page, accessibility statement and privacy statement
-* **_includes/favicons.html** - site icon collection
-* **_includes/top-bar.html** - site logo (inline SVG or images)
+* **_config.yml**: the site's title, description, links and other settings
+* **_data/config.yml**: the map's starting point, the routing mode and the datasets (see the [configuration guide](https://uol-library.github.io/spacefinder/guides/configuration.html))
+* **assets/data/**: the datasets, one folder each (see [adding a dataset](https://uol-library.github.io/spacefinder/guides/adding-a-dataset.html))
+* **_includes/pages/**: the about page, accessibility statement and privacy statement
+* **_includes/favicons.html**: site icons
+* **_includes/top-bar.html**: site logo (inline SVG or images)
 
-If you are using this repository as a jekyll theme, you need to add `remote_theme: uol-library/spacefinder` to **_config.yml**
-
-## Data configuration
-
-* Data for places used in the application is kept in files within the `assets/data` directory. This directory contains sub-directories containing different datasets.
-* The names of the sub-directories in `assets/data` are declared in `_data/config.yml` under the `datasources` property. Each one needs a **key** (the name of the directory), a **label** and an **icon** name for the UI.
-* The sub-directories in `assets/data` all contain the following:
-  * a **data** directory containing individual JSON-LD files, one for each of the features in the dataset.
-  * an **images** directory containing any images which are used in the UI for this dataset.
-  * a JavaScript module named after the `datasources.key` which is loaded using a dynamic import when the datasource is selected. This module has the responsibility of rendering the data in the UI.
-  * a **filters.json** file which is used to define how the places in the dataset can be filtered in the UI.
-
-Spaces **must** have the following pieces of metadata defined for them:
-
-* **id** - a unique numerical identifier for each space.
-* **title** - name of the space
-* **slug** - usually the lower case title with all special characters and spaces removed
-* **location** - latitude / longitude values in GeoJSON format.
-* **description** - Short description of the space
-
-Other metadata fields can be defined in the JSON data,
+This repository has two made-up example datasets, cafés and trees, in `examples/`. The [development guide](https://uol-library.github.io/spacefinder/guides/development.html) covers running the theme locally and its tests.
 
 ## Icon Font
 

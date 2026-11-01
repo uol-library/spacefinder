@@ -73,6 +73,18 @@ whose first part is a key here has it replaced by the value. With the
 example above, `/#/space/1915` (from an earlier version of the Leeds site)
 becomes `spaces/1915`.
 
+## Data directory
+
+```yaml
+dataDir: "examples/"
+```
+
+Optional. The folder the datasets are in, from the site root and ending with
+`/`. The default is `assets/data/`, which is where a site's datasets should
+go. The theme sets it to `examples/` for its example datasets: Jekyll copies
+everything in a theme's `assets` folder into the site, so examples in
+`assets/data` would be published on every site that uses the theme.
+
 ## Datasets
 
 ```yaml
@@ -91,7 +103,7 @@ its own.
 
 | Property | Use |
 |---|---|
-| `key` | the name of the dataset's folder in `assets/data`, and its route |
+| `key` | the name of the dataset's folder in the [data directory](#data-directory), and its route |
 | `label` | the dataset's name in the interface, e.g. on the dataset switcher |
 | `name` | optional; the name used in sentences, such as "List of study spaces". Defaults to the label in lower case. Set it if the label has capitals that should stay. |
 | `icon` | the icon class for the dataset |

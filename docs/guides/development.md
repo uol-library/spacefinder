@@ -26,7 +26,7 @@ npm install
 | `npm run docs:serve` | serves this documentation site locally |
 
 The theme has only example data: the made-up `cafes` and `trees` datasets
-in `assets/data`. The Leeds data, and the scripts that build it and keep
+in `examples` (see [Data directory](configuration.html#data-directory)). The Leeds data, and the scripts that build it and keep
 opening hours up to date, are in the
 [spacefinder.leeds.ac.uk](https://github.com/uol-library/spacefinder.leeds.ac.uk)
 repository.

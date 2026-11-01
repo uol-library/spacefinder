@@ -7,7 +7,9 @@ nav_order: 2
 # Adding a dataset
 {: .no_toc }
 
-A dataset is a folder in `assets/data`, listed in `_data/config.yml`. The
+A dataset is a folder in `assets/data` (or the folder set by
+[`dataDir`](configuration.html#data-directory)), listed in
+`_data/config.yml`. The
 core modules load its data, show it in the list and on the map, and handle
 search, filters and routing. The dataset's own module decides how each place
 looks.
@@ -146,13 +148,14 @@ export const namespace = 'trees';
 
 It has to export the functions below. The theme's example datasets are
 complete examples:
-[trees](https://github.com/uol-library/spacefinder/blob/develop/assets/data/trees/trees.mjs)
+[trees](https://github.com/uol-library/spacefinder/blob/develop/examples/trees/trees.mjs)
 is the code on this page, and
-[cafés](https://github.com/uol-library/spacefinder/blob/develop/assets/data/cafes/cafes.mjs)
+[cafés](https://github.com/uol-library/spacefinder/blob/develop/examples/cafes/cafes.mjs)
 adds filters from `amenityFeature` and opening hours. The Leeds datasets
 (spaces, buildings and art) are in the
 [spacefinder.leeds.ac.uk](https://github.com/uol-library/spacefinder.leeds.ac.uk)
-repository.
+repository. The examples are in the theme's `examples` folder, rather than
+`assets/data`, so their imports start `../../assets/js/modules/`.
 
 ### onloadPlaceData( data )
 
@@ -239,8 +242,14 @@ datasets without reloading the page isn't built yet.
 ## Images
 
 Put images in the dataset's `images` folder and refer to them from the data,
-for example `/assets/data/trees/images/copper-beech.jpg`. At the moment these
-paths only work if the site's `baseurl` is empty.
+for example `/assets/data/trees/images/copper-beech.jpg`. In the module, pass
+these URLs through `getSiteURL()` (from `utilities.mjs`), which adds the
+site's `baseurl`, so they still work when the site isn't at the root of its
+domain:
+
+```js
+'<img src="' + getSiteURL( ld.image.contentUrl ) + '" alt="' + esc( ld.image.description ) + '">'
+```
 
 ## Check it
 

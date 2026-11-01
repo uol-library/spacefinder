@@ -4,9 +4,9 @@
  * The smallest useful dataset module, as described in the "Adding a
  * dataset" guide in the documentation. The trees are made up.
  */
-import { spacefinder } from '../../js/modules/config.mjs';
-import { escapeHTML as esc, getDirectionsLink, createPlaceElement, getInfoWindowHTML } from '../../js/modules/utilities.mjs';
-import { getPublishedEntities, getPropertyValue } from '../../js/modules/jsonld.mjs';
+import { spacefinder } from '../../assets/js/modules/config.mjs';
+import { escapeHTML as esc, getDirectionsLink, createPlaceElement, getInfoWindowHTML } from '../../assets/js/modules/utilities.mjs';
+import { getPublishedEntities, getPropertyValue } from '../../assets/js/modules/jsonld.mjs';
 
 export const namespace = 'trees';
 

@@ -13,7 +13,7 @@ Utility functions used by the core modules and the dataset modules:
 storage and data loading, finding places, building place HTML, routing
 and dataset names.
 
-**Exports:** `haversine_distance`, `getJSON`, `getPlaceById`, `getPlaceBySlug`, `getPlaceNodeById`, `getFilterData`, `escapeHTML`, `decodeHTML`, `getDirectionsLink`, `createPlaceElement`, `getInfoWindowHTML`, `setElementFocus`, `togglePanel`, `getRoute`, `getRouteURL`, `setRoute`, `getDataSourceRoute`, `getDataSourceName`, `setDataSourceNames`, `splog`
+**Exports:** `haversine_distance`, `getJSON`, `getPlaceById`, `getPlaceBySlug`, `getPlaceNodeById`, `getFilterData`, `escapeHTML`, `decodeHTML`, `getDirectionsLink`, `createPlaceElement`, `getInfoWindowHTML`, `setElementFocus`, `togglePanel`, `getRoute`, `getRouteURL`, `getSiteURL`, `setRoute`, `getDataSourceRoute`, `getDataSourceName`, `setDataSourceNames`, `splog`
 
 ## Functions
 
@@ -36,6 +36,7 @@ and dataset names.
 * [togglePanel()](#togglePanel)
 * [getRoute()](#getRoute) ⇒ <code>Array</code>
 * [getRouteURL(route)](#getRouteURL) ⇒ <code>string</code>
+* [getSiteURL(url)](#getSiteURL) ⇒ <code>string</code>
 * [setRoute(route, replace)](#setRoute)
 * [getDataSourceRoute(key)](#getDataSourceRoute) ⇒ <code>string</code>
 * [getDataSourceName(key)](#getDataSourceName) ⇒ <code>string</code>
@@ -273,6 +274,21 @@ Returns the URL for a route
 | Param | Type | Description |
 | --- | --- | --- |
 | route | <code>string</code> | e.g. spaces/1915 (empty for the home page) |
+
+<a name="getSiteURL"></a>
+
+## getSiteURL(url) ⇒ <code>string</code>
+Returns the URL for a file on the site, such as an image. Data gives these
+from the site root (e.g. /assets/photos/a.jpg), so they need the site's
+base path when it isn't served from the root of the domain. Other URLs
+(full URLs, or relative ones) are returned unchanged.
+
+**Kind**: global function  
+**Returns**: <code>string</code> - URL  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| url | <code>string</code> | URL from the data |
 
 <a name="setRoute"></a>
 

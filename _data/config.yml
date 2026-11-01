@@ -28,12 +28,22 @@ routing: "hash"
 # /#/space/1915 becomes /#/spaces/1915 (or /spaces/1915).
 ##########################################################################
 ##########################################################################
+# Data directory (optional)
+#
+# The folder the datasets are in, from the site root, ending with "/". The
+# default is assets/data/. The theme keeps its examples in examples/, not
+# assets/data/, so that sites using the theme don't publish them too (Jekyll
+# copies a theme's assets folder into the site).
+##########################################################################
+dataDir: "examples/"
+##########################################################################
 # Datasets
 #
-# Each dataset is a folder in assets/data named after its key, containing:
+# Each dataset is a folder in the data directory named after its key,
+# containing:
 #   data.json:    an array of schema.org JSON-LD records
 #   filters.json: filter definitions
-#   <key>.mjs:    a module which renders the data (see cafes/cafes.mjs)
+#   <key>.mjs:    a module which renders the data (see examples/cafes)
 #   images/:      any images the data refers to (optional)
 #
 # The key is also used in URLs, e.g. /cafes/courtyard-coffee. The first

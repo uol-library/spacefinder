@@ -48,7 +48,7 @@ export const spacefinder = {
     /* set from the URL by routing.mjs before the data is loaded */
     currentDataSource: {{ site.data.config.datasources[0].key | jsonify }},
     /* relative to the page's origin, so the dataset modules import the same copy of this module as main.js */
-    dataDir: '{{ site.baseurl }}/assets/data/',
+    dataDir: '{{ site.baseurl }}/{{ site.data.config.dataDir | default: "assets/data/" }}',
     /* path of the site, which routes (e.g. spaces/1915) are added to */
     basePath: '{{ site.baseurl }}/',
     /* "history" for URLs like /spaces/1915, "hash" for URLs like /#/spaces/1915 */

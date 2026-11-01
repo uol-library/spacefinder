@@ -6,9 +6,9 @@
  * openingHoursSpecification. The cafés are made up. See the "Adding a
  * dataset" guide in the documentation for what each function does.
  */
-import { spacefinder } from '../../js/modules/config.mjs';
-import { splog, escapeHTML as esc, getDirectionsLink, createPlaceElement, getInfoWindowHTML, getFilterData } from '../../js/modules/utilities.mjs';
-import { getPublishedEntities, getFeatureKeys } from '../../js/modules/jsonld.mjs';
+import { spacefinder } from '../../assets/js/modules/config.mjs';
+import { splog, escapeHTML as esc, getDirectionsLink, createPlaceElement, getInfoWindowHTML, getFilterData } from '../../assets/js/modules/utilities.mjs';
+import { getPublishedEntities, getFeatureKeys } from '../../assets/js/modules/jsonld.mjs';
 
 export const namespace = 'cafes';
 
