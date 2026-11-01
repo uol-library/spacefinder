@@ -12,6 +12,10 @@ host: "localhost"
 google_analytics: ""
 photo_dir: "/assets/photos/"
 lang: "en"
+# Which end of the top bar the site's logo is at: "right" (the default) or
+# "left". The Spacefinder logo is at the other end. To use your own logo,
+# put it in _includes/site-logo.html.
+site_logo_position: "right"
 dc:
   creator: ""
   dateCreated: ""

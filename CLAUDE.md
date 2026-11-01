@@ -72,7 +72,9 @@ Read this first, then `TODO.md` (what's next) and `_sessions/summary.md`
   - `components.mjs`: dialogs and the accordion.
   - `utilities.mjs` and `jsonld.mjs`: shared helpers.
 - **Layout:** the page is the top bar, the map and the footer, in a
-  full-height flex column. The list and filters (`#sfpanel`, in the
+  full-height flex column. The top bar's logos are in
+  `_includes/spacefinder-logo.html` and `_includes/site-logo.html`;
+  `site_logo_position` in `_config.yml` (`right` or `left`) sets their order. The list and filters (`#sfpanel`, in the
   `spacefinder` layout) are a Leaflet control in the map's top left
   corner, with a toggle button beside it; the map's other controls are on
   the right. Opening or closing the panel pans the map by half its width

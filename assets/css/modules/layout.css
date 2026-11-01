@@ -49,7 +49,7 @@
         display: none;
     }
 }
-/* Top navigation bar: the Spacefinder logo on the left, the site's logo on the right */
+/* Top navigation bar: the Spacefinder logo and the site's logo, at either end (site_logo_position in _config.yml sets which is first) */
 #top-bar {
     background: var(--topbar-bg);
     color: var(--topbar-color);
@@ -75,6 +75,9 @@
         li {
             padding: 0;
             margin: 0;
+            & + li {
+                margin-left: auto;
+            }
             &.spacefinder-logo {
                 display: flex;
                 align-items: center;
@@ -87,10 +90,13 @@
                 #site-logo {
                     display: none;
                 }
-                margin-left: auto;
                 flex: 0 0 53px;
                 a {
+                    display: block;
                     padding:0;
+                }
+                svg {
+                    display: block;
                 }
                 @media screen and (min-width: 1000px) {
                     flex: 0 0 183px;

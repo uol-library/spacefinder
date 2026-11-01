@@ -113,3 +113,19 @@ its own.
 | `filters` | optional; `false` if the dataset has no filters, so the app doesn't request its `filters.json` |
 
 See [Adding a dataset](adding-a-dataset.html) for what goes in each folder.
+
+## Top bar
+
+The top bar has the Spacefinder logo at one end and the site's logo at the
+other. This setting goes in the site's `_config.yml`, not
+`_data/config.yml`:
+
+```yaml
+site_logo_position: "left"
+```
+
+`right` (the default) puts the site's logo on the right, and `left` puts it
+on the left, with the Spacefinder logo on the right. The logos are in
+`_includes/site-logo.html` and `_includes/spacefinder-logo.html`. The theme's
+site logo is a placeholder, so put your own in `_includes/site-logo.html` in
+your site, keeping the `<li class="site-logo">` around it.
