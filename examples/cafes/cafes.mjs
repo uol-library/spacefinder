@@ -2,8 +2,9 @@
  * Example dataset: cafés.
  *
  * Shows how a dataset module renders schema.org JSON-LD places, with
- * filters made from amenityFeature and opening hours from
- * openingHoursSpecification. The cafés are made up. See the "Adding a
+ * filters made from amenityFeature, opening hours from
+ * openingHoursSpecification, and an "open now" filter matched in code
+ * (matchFilter). The cafés are made up. See the "Adding a
  * dataset" guide in the documentation for what each function does.
  */
 import { spacefinder } from '../../assets/js/modules/config.mjs';
@@ -91,4 +92,34 @@ export function getAdditionalInfo( cafe ) {
  */
 export function getInfoWindowContent( cafe ) {
     return getInfoWindowHTML( cafe.title, [ 'Café', esc( cafe.ld.address.streetAddress ) ] );
+}
+
+/**
+ * Checks whether a café is open at a given time
+ * @param {Object} cafe
+ * @param {Date} date
+ * @return {boolean}
+ */
+function isOpen( cafe, date ) {
+    const days = [ 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday' ];
+    const time = date.toTimeString().slice( 0, 8 );
+    return ( cafe.ld.openingHoursSpecification || [] ).some( spec =>
+        spec.dayOfWeek.replace( /^https?:\/\/schema.org\//, '' ) === days[ date.getDay() ] &&
+        spec.opens && spec.opens <= time && time < spec.closes
+    );
+}
+
+/**
+ * Matches filters that CSS classes can't express. The "open" filter depends
+ * on the time, so it is checked here when the filters are applied; other
+ * filters return undefined and are matched by class.
+ * @param {Object} cafe
+ * @param {String} key the filter key
+ * @param {Array} values the checked option keys
+ * @return {boolean|undefined}
+ */
+export function matchFilter( cafe, key, values ) {
+    if ( key === 'open' ) {
+        return isOpen( cafe, new Date() );
+    }
 }

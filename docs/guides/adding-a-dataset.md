@@ -128,7 +128,9 @@ An array of filters, which make up the filters panel:
 Filtering works with classes: a place matches option `beech` of filter
 `species` if its list element has the class `species_beech`. The module
 adds these classes when it renders each place (see
-[getPlaceHTML](#getplacehtml-place-)).
+[getPlaceHTML](#getplacehtml-place-)). For a filter that classes can't
+express, such as whether a place is open now, the module can match it in
+code instead (see [matchFilter](#matchfilter-place-key-values-element-)).
 
 At the moment a dataset needs a `filters.json`. If it has no filters, use an
 empty array (`[]`).
@@ -151,7 +153,8 @@ complete examples:
 [trees](https://github.com/uol-library/spacefinder/blob/develop/examples/trees/trees.mjs)
 is the code on this page, and
 [cafés](https://github.com/uol-library/spacefinder/blob/develop/examples/cafes/cafes.mjs)
-adds filters from `amenityFeature` and opening hours. The Leeds datasets
+adds filters from `amenityFeature`, opening hours and an "Open now"
+filter. The Leeds datasets
 (spaces, buildings and art) are in the
 [spacefinder.leeds.ac.uk](https://github.com/uol-library/spacefinder.leeds.ac.uk)
 repository. The examples are in the theme's `examples` folder, rather than
@@ -241,6 +244,26 @@ clears the list, the filters and the map markers itself, and forgets the
 dataset's places. If the user comes back to the dataset, it is loaded again
 and `onloadPlaceData` is called again, so reset anything the module keeps
 between calls here.
+
+### matchFilter( place, key, values, element )
+
+Optional. Called for each place and each active filter when the filters are
+applied, before the class matching. `key` is the filter's key, `values` the
+keys of its checked options, and `element` the place's list element. Return
+`true` or `false` to decide whether the place matches, or `undefined` (or
+nothing) to leave the filter to the class matching. The cafés example uses
+it for an "Open now" filter:
+
+```js
+export function matchFilter( cafe, key, values ) {
+    if ( key === 'open' ) {
+        return isOpen( cafe, new Date() );
+    }
+}
+```
+
+The filter still needs an entry in `filters.json`, so that it appears in
+the filters panel.
 
 ## Images
 

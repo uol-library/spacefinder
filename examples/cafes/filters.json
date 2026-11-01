@@ -1,5 +1,20 @@
 [
     {
+        "key": "open",
+        "label": "Cafés open now",
+        "message": "Showing cafés which are open now",
+        "exclusive": false,
+        "additive": false,
+        "open": true,
+        "options": [
+            {
+                "key": "now",
+                "label": "Only show cafés which are open now",
+                "icon": "icon-time-short"
+            }
+        ]
+    },
+    {
         "key": "facilities",
         "label": "Facilities",
         "message": "Showing cafés with: ",

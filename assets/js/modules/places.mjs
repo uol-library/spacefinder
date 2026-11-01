@@ -116,6 +116,7 @@ function applyFilters() {
         document.querySelectorAll( '.list-place' ).forEach( el => {
             el.classList.remove( 'hidden' );
             let showEl = true;
+            let moduleMatch;
             activeFilters.forEach( filtergroup => {
                 if ( filtergroup.name == 'search' ) {
                     /* search the place summary (not the hidden additional info), or the module's own search text */
@@ -129,8 +130,9 @@ function applyFilters() {
                     if ( ! foundKw ) {
                         showEl = false;
                     }
-                } else if ( filtergroup.name == 'open' ) {
-                    if ( el.getAttribute( 'data-openclass' ) != 'open' ) {
+                } else if ( ( moduleMatch = matchModuleFilter( el, filtergroup ) ) !== undefined ) {
+                    /* the dataset module decided whether this place matches */
+                    if ( ! moduleMatch ) {
                         showEl = false;
                     }
                 } else {
@@ -166,6 +168,23 @@ function applyFilters() {
     }
     document.dispatchEvent( new CustomEvent( 'placeDeselected', { bubbles: true, detail: false } ) );
     document.dispatchEvent( new Event( 'filtersapplied' ) );
+}
+
+/**
+ * Asks the dataset module whether a place matches a filter, for filters that
+ * can't be matched with CSS classes. A module can export
+ * matchFilter( place, key, values, element ), which returns true or false, or
+ * undefined to leave the filter to the default class matching.
+ * @param {Element} el the place's element in the list
+ * @param {Object} filtergroup the filter key (name) and checked option keys (value)
+ * @return {boolean|undefined}
+ */
+function matchModuleFilter( el, filtergroup ) {
+    const module = spacefinder.data[spacefinder.currentDataSource].module;
+    if ( ! module || typeof module.matchFilter !== 'function' ) {
+        return undefined;
+    }
+    return module.matchFilter( getPlaceById( el.getAttribute( 'data-id' ) ), filtergroup.name, filtergroup.value, el );
 }
 
 /**

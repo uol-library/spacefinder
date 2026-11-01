@@ -50,7 +50,11 @@ Read this first, then `TODO.md` (what's next) and `_sessions/summary.md`
     `ld`). Also `getPlaceHTML(place)` (use `createPlaceElement`),
     `getAdditionalInfo(place)` and `getInfoWindowContent(place)` (use
     `getInfoWindowHTML`).
-  - Optional: `onrenderPlaceData()` and `onunloadPlaceData()`.
+  - Optional: `onrenderPlaceData()`, `onunloadPlaceData()` and
+    `matchFilter(place, key, values, element)`, which returns true/false
+    for filters that CSS classes can't express (e.g. "open now"), or
+    undefined to fall back to class matching. `applyFilters` has no
+    special cases for particular filters.
   - The full guide is `docs/guides/adding-a-dataset.md`.
 - **Core modules** are in `assets/js/modules/`, and the entry point is
   `assets/js/main.js`.
@@ -110,7 +114,7 @@ Read this first, then `TODO.md` (what's next) and `_sessions/summary.md`
 | Command | Notes |
 |---|---|
 | `npm run serve` / `npm run build` | Jekyll (Bundler) |
-| `npm run test:routing` | Builds the site in both routing modes into `_tests/build/` and drives headless Chrome over the DevTools protocol: 28 scenarios per mode, 56 in all. Add `-- --no-build` to reuse the builds. Run it after any change to JS or templates. |
+| `npm run test:routing` | Builds the site in both routing modes into `_tests/build/` and drives headless Chrome over the DevTools protocol: 30 scenarios per mode, 60 in all. Add `-- --no-build` to reuse the builds. Run it after any change to JS or templates. |
 | `npm run docs` | Regenerates `docs/api/*.md` from JSDoc with jsdoc-to-markdown. Don't edit those pages by hand. |
 | `npm run docs:serve` | Previews the docs site (Just the Docs theme). |
 

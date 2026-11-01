@@ -23,6 +23,7 @@ switchDataSource changes to another dataset without reloading the page.
 ## Functions
 
 * [applyFilters()](#applyFilters)
+* [matchModuleFilter(el, filtergroup)](#matchModuleFilter) ⇒ <code>boolean</code> \| <code>undefined</code>
 * [updateListFilterMessage()](#updateListFilterMessage)
 * [selectPlace(placeid, source)](#selectPlace)
 * [deselectPlaces(placeid)](#deselectPlaces)
@@ -44,6 +45,21 @@ switchDataSource changes to another dataset without reloading the page.
 Applies filters to the list of places
 
 **Kind**: global function  
+<a name="matchModuleFilter"></a>
+
+## matchModuleFilter(el, filtergroup) ⇒ <code>boolean</code> \| <code>undefined</code>
+Asks the dataset module whether a place matches a filter, for filters that
+can't be matched with CSS classes. A module can export
+matchFilter( place, key, values, element ), which returns true or false, or
+undefined to leave the filter to the default class matching.
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| el | <code>Element</code> | the place's element in the list |
+| filtergroup | <code>Object</code> | the filter key (name) and checked option keys (value) |
+
 <a name="updateListFilterMessage"></a>
 
 ## updateListFilterMessage()

@@ -153,6 +153,21 @@ async function run(mode, port) {
         check(mode, 'facilities filter works (Wi-Fi)', wifi === 4, 'shown ' + wifi);
         await b.evaluate(`document.getElementById('facilities_wifi').click()`); await sleep(300);
 
+        // "open now" filter, matched by the cafés module's matchFilter, with the clock set to a fixed local time
+        const openAt = async (time, expected) => {
+            await b.evaluate(`(() => {
+                const RealDate = window.RealDate || (window.RealDate = Date);
+                window.Date = class extends RealDate { constructor(...a) { super(...(a.length ? a : ['${time}'])); } static now() { return new RealDate('${time}').getTime(); } };
+            })()`);
+            await b.evaluate(`document.getElementById('open_now').click()`); await sleep(400);
+            const n = await b.evaluate(`document.querySelectorAll('.list-place:not(.hidden)').length`);
+            await b.evaluate(`document.getElementById('open_now').click()`); await sleep(300);
+            await b.evaluate(`window.Date = window.RealDate`);
+            check(mode, `module filter works (open at ${time})`, n === expected, 'shown ' + n);
+        };
+        await openAt('2026-11-02T16:00:00', 4);
+        await openAt('2026-11-07T15:00:00', 3);
+
         // information page
         await b.evaluate(`document.querySelector('.modal-trigger[data-dialoghash="about"]').click()`); await sleep(400);
         s = await st();

@@ -8,13 +8,9 @@ The aim: core scripts plus datasets that can be added by putting a folder in
 
 ## Next steps
 
-1. **Filters that belong to a module.** `applyFilters` treats the "open"
-   filter as a special case. Instead, let a module export an optional
-   `matchFilter(place, key, value)`, so that a dataset can define filters that
-   CSS classes can't express.
-2. **Optional filters.** Make `filters.json` optional. A dataset without one
+1. **Optional filters.** Make `filters.json` optional. A dataset without one
    would just show the list view, with no filters panel or filter controls.
-3. **List and filters as Leaflet controls.** Move the list and the filters
+2. **List and filters as Leaflet controls.** Move the list and the filters
    onto the map as Leaflet controls, instead of separate panels in the page
    layout:
    - put the search box at the top of the list view;
@@ -29,7 +25,7 @@ The aim: core scripts plus datasets that can be added by putting a folder in
    page design. With everything in map controls, the map can go full screen,
    using the Fullscreen API on the map container, and the list, search and
    filters stay available.
-4. **Hooks for embedding the app in other pages.** Let a page that embeds
+3. **Hooks for embedding the app in other pages.** Let a page that embeds
    the app (for example one built with the Design System) share data with it,
    so the app doesn't need its own page design. spacefinder-ds took the
    opposite approach: static pages styled to match the Design System.
@@ -48,7 +44,7 @@ The aim: core scripts plus datasets that can be added by putting a folder in
      be optional, so the app doesn't take over the page's URL.
    - **An iframe as well?** If the app is embedded in an iframe, the same
      events and methods could be sent with `postMessage`.
-5. **Rationalise logging in debug mode.** `splog` (in `utilities.mjs`) logs
+4. **Rationalise logging in debug mode.** `splog` (in `utilities.mjs`) logs
    when `spacefinder.debug` is on, which it is when `environment` is
    `development` in `_config.yml`. But it's used unevenly: 18 calls in
    `map.mjs`, none in `components.mjs`, `analytics.mjs` or
@@ -64,7 +60,7 @@ The aim: core scripts plus datasets that can be added by putting a folder in
      messages with `console.group`;
    - replace the stray `console.log` calls with `splog`, and keep
      `console.error` for real errors;
-   - this fits with documenting events for the embedding hooks (item 5).
+   - this fits with documenting events for the embedding hooks (item 3).
 
 ## Art trail
 
@@ -120,7 +116,7 @@ and API pages generated with `npm run docs`. Preview it with
 
 ## Testing
 
-`npm run test:routing` builds the site in both routing modes and runs 28
+`npm run test:routing` builds the site in both routing modes and runs 30
 browser scenarios in each, using headless Chrome and the example datasets.
 It needs Bundler and Chrome. `-- --no-build` reuses the last builds. It
 doesn't test clicking map markers, or the Apache rewrite rules.
