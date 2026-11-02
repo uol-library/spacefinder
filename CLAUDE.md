@@ -1,7 +1,8 @@
 # Spacefinder theme: notes for Claude
 
-Read this first, then `TODO.md` (what's next) and `_sessions/summary.md`
-(what has been done, and why).
+Read this first, then `../spacefinder.leeds.ac.uk/TODO.md` (what's next,
+for the theme and the site) and `_sessions/summary.md` (what has been done,
+and why).
 
 ## What this repo is
 
@@ -167,5 +168,5 @@ Read this first, then `TODO.md` (what's next) and `_sessions/summary.md`
   or prayer rooms. Cycle parking comes from the Sustainability Service map,
   not OSM.
 - **Jekyll publishes Markdown at the root**, so add new top-level `.md`
-  files to `exclude` in `_config.yml` (as `TODO.md` and `CLAUDE.md` are).
+  files to `exclude` in `_config.yml` (as `CLAUDE.md` is).
   Folders starting with `_` are skipped automatically.

@@ -48,7 +48,6 @@ exclude:
 - package-lock.json
 - LICENSE
 - README.md
-- TODO.md
 - CHANGELOG.md
 - CLAUDE.md
 - docs
