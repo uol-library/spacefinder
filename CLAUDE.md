@@ -135,8 +135,8 @@ Read this first, then `TODO.md` (what's next) and `_sessions/summary.md`
   plain, cloneable data, or `false` until the dataset has loaded);
   `embed.mjs` makes it and the events available with `postMessage` to the
   origins in `embed: origins`. `routing: "none"` keeps the route in
-  `utilities.mjs` instead of the URL. Mounting the app in a container on
-  another page isn't done (see TODO.md).
+  `utilities.mjs` instead of the URL. Embedding is by iframe only:
+  mounting the app in a container on another page isn't planned.
 - **Logging:** `const log = getLogger( 'module' )`, then `log( message,
   ...data )`, `log.warn`, `log.error` (always shown). Debug mode is
   `environment: development` or `?sfdebug`. Log what happened and the data

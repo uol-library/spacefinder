@@ -13,15 +13,6 @@ The aim: core scripts plus datasets that can be added by putting a folder in
    fullscreen control keeps the panel usable (it uses the Fullscreen API on
    the map container), especially on phones, where the panel and the
    controls on the right don't both fit.
-2. **Mounting the app in another page.** The events, the API
-   (`window.spacefinderAPI`), the `postMessage` bridge for iframes and
-   `routing: "none"` are done (see `docs/guides/embedding.md`). Still to do:
-   starting the app in a given container element with options (the
-   datasets, the routing mode, the start route), so a page can place the
-   map itself without an iframe. The page's markup (`#map`, `#sfpanel`, the
-   dialogs) comes from the Jekyll layout, so it would need building in JS,
-   and the CSS would need scoping to the container. Decide first whether
-   the iframe is enough.
 
 ## Art trail
 
