@@ -128,12 +128,22 @@ export function getJSON( options ) {
             var xhr = new XMLHttpRequest();
             xhr.onload = () => {
                 if (xhr.status >= 200 && xhr.status < 300) {
+                    let data;
+                    try {
+                        data = JSON.parse( xhr.responseText );
+                    } catch ( error ) {
+                        /* e.g. a server that sends index.html for missing files */
+                        reject({
+                            status: 404,
+                            statusText: options.url + ' is not JSON'
+                        });
+                        return;
+                    }
                     if ( storageAvailable( 'localStorage' ) ) {
                         var expires = new Date().getTime() + ( options.expires * 60 * 60 * 1000 );
                         log( 'Storing ' + options.key + ' in local storage until ' + new Date( expires ).toLocaleString( 'en-GB' ) );
                         setWithExpiry( options.key, xhr.responseText, options.expires );
                     }
-                    let data = JSON.parse( xhr.responseText );
                     if ( options.callback ) {
                         options.callback( data );
                     }
