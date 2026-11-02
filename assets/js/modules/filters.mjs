@@ -6,18 +6,23 @@
  * list controls opens; the button at the top of the overlay closes it and
  * shows how many places match. The filters are loaded once the places have
  * loaded, and the search form and filters are built again for each dataset.
+ *
+ * Sends sffiltersloaded and sfsearch (when a search is submitted).
  */
 import { spacefinder } from './config.mjs';
-import { splog, getJSON, getDataSourceName } from './utilities.mjs';
+import { getLogger, sendEvent, getJSON, getDataSourceName } from './utilities.mjs';
 import { Accordion } from './components.mjs';
+import { applyFilters } from './places.mjs';
 
-document.addEventListener( 'placesLoaded', loadFilters );
-document.addEventListener( 'filtersloaded', () => {
+const log = getLogger( 'filters' );
+
+document.addEventListener( 'sfplacesloaded', loadFilters );
+document.addEventListener( 'sffiltersloaded', () => {
     renderFilters();
     setupFilters();
 });
 /* the reset and search buttons are enabled while any search or filter is active */
-document.addEventListener( 'filtersapplied', () => {
+document.addEventListener( 'sffilterchange', () => {
     if ( ! document.getElementById( 'filter-options-form' ) ) {
         return;
     }
@@ -35,7 +40,7 @@ document.addEventListener( 'filtersapplied', () => {
     }
 });
 /* remove the old dataset's search form and filters when switching to another */
-document.addEventListener( 'datasourceunload', () => {
+document.addEventListener( 'sfdatasourceunload', () => {
     toggleFilterPanel( false, false );
     [ 'filter-options-form', 'filter-panel' ].forEach( id => {
         let el = document.getElementById( id );
@@ -54,7 +59,6 @@ document.addEventListener( 'DOMContentLoaded', () => {
  * @return {Object} activeFilters
  */
 export function getFilterStatus() {
-    splog( 'getFilterStatus' );
     const filters = document.querySelectorAll( '#filter-panel input[type=checkbox]' );
     const activeFilters = [];
     for (const cbx of filters) {
@@ -90,12 +94,43 @@ export function getFilterStatus() {
 }
 
 /**
+ * Sets the checked filters and the search, then applies them (for the API)
+ * @param {Object|null} filters filter key: array of option keys to check (all
+ * others are unchecked), or null to leave the filters as they are
+ * @param {string|null} search search text, or null to leave it as it is
+ * @return {boolean} false if the filters haven't loaded yet
+ */
+export function setFilterState( filters, search ) {
+    if ( ! document.getElementById( 'filter-options-form' ) ) {
+        log.warn( 'setFilterState - the filters have not loaded yet' );
+        return false;
+    }
+    if ( filters !== null ) {
+        document.querySelectorAll( '#filter-panel input[type=checkbox]' ).forEach( cbx => cbx.checked = false );
+        Object.entries( filters ).forEach( ( [ key, options ] ) => {
+            ( Array.isArray( options ) ? options: [ options ] ).forEach( option => {
+                let cbx = document.querySelector( '#filter-panel input[data-filterkey="' + CSS.escape( key ) + '"][data-optionkey="' + CSS.escape( option ) + '"]' );
+                if ( cbx ) {
+                    cbx.checked = true;
+                } else {
+                    log.warn( 'setFilterState - there is no filter ' + key + ' with option ' + option );
+                }
+            });
+        });
+    }
+    if ( search !== null ) {
+        document.getElementById( 'search-input' ).value = String( search ).replace( /[^a-zA-Z0-9 ]/g, '' ).trim();
+    }
+    applyFilters();
+    return true;
+}
+
+/**
  * Loads the dataset's filters from filters.json. The file is optional: if it
  * is missing, or the dataset has "filters: false" in the config, the dataset
  * has no filters, and the panel only has the search box.
  */
 function loadFilters() {
-    splog( 'loadFilters' );
     /* the dataset being loaded - if it changes before loading finishes, the result is ignored */
     const key = spacefinder.currentDataSource;
     const dataSource = spacefinder.dataSources.find( ds => ds.key === key );
@@ -104,21 +139,21 @@ function loadFilters() {
         url: spacefinder.dataDir + key + '/filters.json'
     } ).catch( error => {
         if ( error.status !== 404 ) {
-            console.error( `Error loading filters for ${key} - status: ${error.status}, message: ${error.statusText}` );
+            log.error( 'Error loading ' + key + '/filters.json - status: ' + error.status + ', message: ' + error.statusText );
         } else {
-            splog( `loadFilters - ${key} has no filters.json` );
+            log( key + ' has no filters.json' );
         }
         return [];
     } );
     request.then( data => {
         if ( key !== spacefinder.currentDataSource ) {
-            splog( 'loadFilters - ignoring ' + key + ', as the dataset has changed' );
+            log( 'loadFilters - ignoring ' + key + ', as the dataset has changed' );
             return;
         }
         spacefinder.data[key].filters = Array.isArray( data ) ? data: [];
         spacefinder.filtersLoaded = true;
-        /* fire the filtersloaded event */
-        document.dispatchEvent( new Event( 'filtersloaded' ) );
+        log( 'Loaded ' + spacefinder.data[key].filters.length + ' filters for ' + key, spacefinder.data[key].filters );
+        sendEvent( 'sffiltersloaded', { dataSource: key, filters: spacefinder.data[key].filters.map( f => f.key ) } );
     } );
 }
 
@@ -126,7 +161,6 @@ function loadFilters() {
  * Builds the search form, and the filters overlay if the dataset has filters
  */
 function renderFilters() {
-    splog( 'renderFilters' );
     let filters = spacefinder.data[spacefinder.currentDataSource].filters;
     let name = getDataSourceName();
     let filterForm = document.createElement( 'form' );
@@ -184,8 +218,6 @@ function renderFilters() {
         document.getElementById( 'filter-toggle' ).hidden = false;
         updateFilterCounts();
     }
-    /* fire the filtersrendered event */
-    document.dispatchEvent( new Event( 'filtersrendered' ) );
 }
 
 /**
@@ -228,7 +260,6 @@ function updateFilterCounts() {
  * Set up event listeners on filters
  */
 function setupFilters() {
-    splog( 'setupFilters' );
     /* add radio button behaviour to checkboxes with exclusive attribute */
     const filters = document.querySelectorAll( '#filter-panel input[type=checkbox]' );
     for (const cbx of filters) {
@@ -252,8 +283,7 @@ function setupFilters() {
                 }
                 item.checked = itemStatus;
             }
-            /* trigger the viewfilter event */
-            item.dispatchEvent( new Event( 'viewfilter', { bubbles: true } ) );
+            applyFilters();
         })
     }
     /* reset button */
@@ -264,8 +294,7 @@ function setupFilters() {
         for (const cbx of filters) {
             cbx.checked = false;
         }
-        /* trigger the viewfilter event */
-        event.target.dispatchEvent( new Event( 'viewfilter', { bubbles: true }  ) );
+        applyFilters();
     });
     /* search, reset and view results buttons activation */
     document.getElementById( 'search-input' ).addEventListener( 'input', event => {
@@ -281,7 +310,7 @@ function setupFilters() {
             }
             if ( inputvalue.length == 0 ) {
                 /* search has been cleared */
-                event.target.dispatchEvent( new Event( 'viewfilter', { bubbles: true } ) );
+                applyFilters();
             }
         }
     });
@@ -289,17 +318,11 @@ function setupFilters() {
     document.getElementById( 'search-submit' ).addEventListener( 'click', event => {
         event.preventDefault();
         let inputvalue = document.getElementById( 'search-input' ).value.replace( /[^a-zA-Z0-9 ]/g, '' ).trim();
-        splog( `Search for ${inputvalue}` );
         if ( inputvalue.length > 1 ) {
+            log( 'Searching for ' + inputvalue );
             document.getElementById( 'search-input' ).value = inputvalue;
-            /* trigger the viewfilter event */
-            event.target.dispatchEvent( new Event( 'viewfilter', { bubbles: true } ) );
-            document.dispatchEvent( new CustomEvent( 'sfsearch', {
-                detail: {
-                    terms: inputvalue
-                }
-            }));
-
+            applyFilters();
+            sendEvent( 'sfsearch', { dataSource: spacefinder.currentDataSource, terms: inputvalue } );
         }
     });
     /* the button at the top of the filters overlay, and the Escape key, close it */

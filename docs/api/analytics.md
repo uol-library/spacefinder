@@ -9,13 +9,25 @@ nav_order: 1
 
 [Source](https://github.com/uol-library/spacefinder/blob/develop/assets/js/modules/analytics.mjs)
 
-Google Analytics event triggers
+Google Analytics events
 
-Adds event listeners for various events to be logged to GA.
-
-Custom Eventa contain information in the detail property:
+Sends some of the app's events (see the Embedding guide in the documentation)
+to Google Analytics, when the site has a google_analytics ID and the user
+has accepted analytics cookies (the gtag function is defined by
+_includes/google-analytics.html). In debug mode, the events that would be
+sent are logged.
 
 **Exports:** nothing (this module sets up event listeners when it is imported)
 
-_No documented functions._
+<a name="track"></a>
+
+## track(name, params)
+Sends an event to Google Analytics, if gtag has been loaded
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| name | <code>string</code> | GA event name |
+| params | <code>Object</code> | GA event parameters |
 {% endraw %}

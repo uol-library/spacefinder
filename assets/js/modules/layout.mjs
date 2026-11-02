@@ -9,14 +9,15 @@
  */
 import { Control, DomEvent, DomUtil } from 'leaflet';
 import { spacefinder } from './config.mjs';
-import { splog, getDataSourceName, getPlaceById } from './utilities.mjs';
+import { getLogger, sendEvent, getDataSourceName, getPlaceById } from './utilities.mjs';
+
+const log = getLogger( 'layout' );
 
 document.addEventListener( 'DOMContentLoaded', () => {
     window.addEventListener( 'resize', () => {
         clearTimeout( spacefinder.resizeTimeout );
         spacefinder.resizeTimeout = setTimeout( () => {
-            splog( 'Resize event' );
-            document.dispatchEvent( new Event( 'sfresize' ) );
+            sendEvent( 'sfresize', { width: window.innerWidth, height: window.innerHeight } );
         }, 200);
     });
     document.addEventListener( 'click', event => {
@@ -39,7 +40,7 @@ document.addEventListener( 'DOMContentLoaded', () => {
         }
     });
     /* the toggle's label has the dataset's name */
-    document.addEventListener( 'datasourcechange', () => setPanelState( isPanelOpen() ) );
+    document.addEventListener( 'sfdatasourcechange', () => setPanelState( isPanelOpen() ) );
 });
 
 /**
@@ -134,7 +135,7 @@ export function togglePanel( pan = true ) {
     if ( pan && spacefinder.map && offset ) {
         spacefinder.map.panBy( [ opening ? -offset: offset, 0 ] );
     }
-    document.dispatchEvent( new CustomEvent( 'sfpaneltoggle', { detail: { open: opening } } ) );
+    sendEvent( 'sfpaneltoggle', { open: opening } );
 }
 
 /**
@@ -142,7 +143,7 @@ export function togglePanel( pan = true ) {
  * @param {boolean} open
  */
 function setPanelState( open ) {
-    splog( 'setPanelState - ' + ( open ? 'open': 'closed' ) );
+    log( 'The panel is ' + ( open ? 'open': 'closed' ) );
     document.getElementById( 'map' ).classList.toggle( 'sfpanel-open', open );
     document.getElementById( 'sfpanel' ).hidden = ! open;
     const button = document.querySelector( '.panel-toggle' );

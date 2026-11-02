@@ -5,6 +5,8 @@
  */
 import { spacefinder } from './config.mjs';
 
+const log = getLogger( 'data' );
+
 /**
  * Checks to see if localStorage is available
  * 
@@ -115,20 +117,20 @@ export function getJSON( options ) {
             options.expires = 24;
         }
         if ( storageAvailable( 'localStorage' ) && getWithExpiry( options.key ) ) {
-            splog( `getting data ${options.key} from local storage` );
+            log( 'Got ' + options.key + ' from local storage' );
             let data = JSON.parse( getWithExpiry( options.key ) );
             if ( options.callback ) {
                 options.callback( data );
             }
             resolve( data );
         } else {
-            splog( `getting data ${options.key} from ${options.url}` );
+            log( 'Getting ' + options.key + ' from ' + options.url );
             var xhr = new XMLHttpRequest();
             xhr.onload = () => {
                 if (xhr.status >= 200 && xhr.status < 300) {
                     if ( storageAvailable( 'localStorage' ) ) {
                         var expires = new Date().getTime() + ( options.expires * 60 * 60 * 1000 );
-                        splog( `storing data ${options.key} in localstorage - expires ${new Date( expires).toLocaleDateString("en-UK")}` );
+                        log( 'Storing ' + options.key + ' in local storage until ' + new Date( expires ).toLocaleString( 'en-GB' ) );
                         setWithExpiry( options.key, xhr.responseText, options.expires );
                     }
                     let data = JSON.parse( xhr.responseText );
@@ -302,21 +304,26 @@ export function getInfoWindowHTML( title, info, description ) {
  * Sets focus on an element
  */
 export function setElementFocus( id ) {
-    splog( "Setting element focus on #" + id );
 	if ( document.getElementById( id ) !== null ) {
 		document.getElementById( id ).setAttribute( 'tabindex', '-1' );
 		document.getElementById( id ).focus();
 	}
 }
 
+/* the route when routing is "none", which isn't kept in the URL */
+let currentRoute = '';
+
 /**
  * Gets the current route from the URL, e.g. [ 'spaces', '1915' ] from
- * /spaces/1915 (history routing) or /#/spaces/1915 (hash routing)
+ * /spaces/1915 (history routing) or /#/spaces/1915 (hash routing). With
+ * "none" routing, the route isn't in the URL, so it is kept here instead.
  * @return {Array} route segments
  */
 export function getRoute() {
     let path = '';
-    if ( spacefinder.routing === 'history' ) {
+    if ( spacefinder.routing === 'none' ) {
+        path = currentRoute;
+    } else if ( spacefinder.routing === 'history' ) {
         path = window.location.pathname;
         if ( path.indexOf( spacefinder.basePath ) === 0 ) {
             path = path.slice( spacefinder.basePath.length );
@@ -335,6 +342,10 @@ export function getRoute() {
 export function getRouteURL( route ) {
     if ( spacefinder.routing === 'history' ) {
         return spacefinder.basePath + route;
+    }
+    if ( spacefinder.routing === 'none' ) {
+        /* a link to open in a new tab, as restoreRoute (routing.mjs) reads ?route */
+        return spacefinder.basePath + ( route ? '?route=' + encodeURIComponent( route ): '' );
     }
     return spacefinder.basePath + ( route ? '#/' + route: '' );
 }
@@ -355,18 +366,29 @@ export function getSiteURL( url ) {
 }
 
 /**
- * Sets the route in the URL, adding a history entry if it has changed
+ * Sets the route in the URL, adding a history entry if it has changed, and
+ * sends sfroutechange. With "none" routing, the URL and the history are left
+ * alone.
  * @param {string} route e.g. spaces/1915 (empty for the home page)
  * @param {boolean} replace replace the current history entry rather than adding one
  */
 export function setRoute( route, replace ) {
-    let url = getRouteURL( route );
-    if ( url !== window.location.pathname + window.location.search + window.location.hash ) {
+    let changed = route !== getRoute().join( '/' );
+    if ( spacefinder.routing === 'none' ) {
+        currentRoute = route;
+    } else {
+        let url = getRouteURL( route );
+        if ( url === window.location.pathname + window.location.search + window.location.hash ) {
+            return;
+        }
         if ( replace ) {
             history.replaceState( null, '', url );
         } else {
             history.pushState( null, '', url );
         }
+    }
+    if ( changed ) {
+        sendEvent( 'sfroutechange', { route: route } );
     }
 }
 
@@ -405,12 +427,59 @@ export function setDataSourceNames() {
 }
 
 /**
- * Logs messages to console if debug flag is set
- * @param {string} message
+ * Gets a logger for a module. In debug mode (spacefinder.debug, which is on
+ * when the site's environment is development, or the URL has ?sfdebug),
+ * messages are written to the console with the time and the module's name,
+ * followed by any data, which the console shows as objects that can be
+ * opened:
+ *
+ *     const log = getLogger( 'places' );
+ *     log( 'Loaded 6 places', places );
+ *     log.warn( 'No place with the slug ' + slug );
+ *     log.error( 'Could not load data.json', error );
+ *
+ * Errors are always written to the console, in debug mode or not.
+ * @param {string} module the module's name
+ * @return {Function} log( message, ...data ), with warn() and error()
  */
-export function splog( message ) {
-    if ( spacefinder.debug ) {
+export function getLogger( module ) {
+    const prefix = () => {
         let now = new Date();
-        console.log( now.getHours() + ':' + now.getMinutes().toString().padStart(2, '0') + ':' + now.getSeconds().toString().padStart(2, '0') + '.' + now.getMilliseconds().toString().padStart(3, '0') + ' - ' + message );
-    }
+        return now.getHours().toString().padStart(2, '0') + ':' + now.getMinutes().toString().padStart(2, '0') + ':' + now.getSeconds().toString().padStart(2, '0') + '.' + now.getMilliseconds().toString().padStart(3, '0') + ( module ? ' [' + module + ']': '' );
+    };
+    const log = ( message, ...data ) => {
+        if ( spacefinder.debug ) {
+            console.log( prefix() + ' ' + message, ...data );
+        }
+    };
+    log.warn = ( message, ...data ) => {
+        if ( spacefinder.debug ) {
+            console.warn( prefix() + ' ' + message, ...data );
+        }
+    };
+    log.error = ( message, ...data ) => {
+        console.error( prefix() + ' ' + message, ...data );
+    };
+    return log;
+}
+
+/**
+ * Logs a message in debug mode (see getLogger). For dataset modules, which
+ * can also use getLogger to have their name on their messages.
+ * @param {string} message
+ * @param {...*} data anything else to log with the message
+ */
+export const splog = getLogger( '' );
+
+const logEvent = getLogger( 'event' );
+
+/**
+ * Sends one of the app's events on the document (see the Embedding guide
+ * in the documentation), and logs it in debug mode
+ * @param {string} name event name, e.g. sfplaceselect
+ * @param {Object} detail the event's data
+ */
+export function sendEvent( name, detail = {} ) {
+    logEvent( name, detail );
+    document.dispatchEvent( new CustomEvent( name, { detail: detail } ) );
 }

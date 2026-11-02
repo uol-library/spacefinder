@@ -8,7 +8,9 @@
  *   page/<page>                 an information page (modal), e.g. page/about
  *
  * These appear in URLs as /spaces/1915 (spacefinder.routing = "history") or
- * /#/spaces/1915 (spacefinder.routing = "hash") - see _data/config.yml.
+ * /#/spaces/1915 (spacefinder.routing = "hash") - see _data/config.yml. With
+ * "none", the route isn't kept in the URL (for an app embedded in another
+ * page), but the first route can be given as ?route=spaces/1915.
  *
  * The dataset is set from the URL when this module is loaded, so that the
  * right data is loaded. When the URL changes to another dataset (with the
@@ -16,21 +18,23 @@
  * in the URL once the dataset has loaded.
  */
 import { spacefinder } from './config.mjs';
-import { getPlaceBySlug, getPlaceNodeById, splog, setElementFocus, getRoute, setRoute, getDataSourceRoute, setDataSourceNames } from './utilities.mjs';
-import { openAlertDialog } from './components.mjs';
-import { switchDataSource } from './places.mjs';
+import { getPlaceBySlug, getPlaceNodeById, getLogger, sendEvent, setElementFocus, getRoute, setRoute, getDataSourceRoute, setDataSourceNames } from './utilities.mjs';
+import { openAlertDialog, showPage, hidePages } from './components.mjs';
+import { switchDataSource, selectPlace, deselectPlaces } from './places.mjs';
+
+const log = getLogger( 'routing' );
 
 restoreRoute();
 spacefinder.currentDataSource = getRouteDataSource( getRoute() );
 setDataSourceNames();
 
-/* sfmapready is sent each time a dataset has loaded */
-document.addEventListener( 'sfmapready', () => {
-    splog( 'Map is ready - show the page or place in the URL' );
-    applyRoute();
-});
-document.addEventListener( 'sfmapready', () => {
-    window.addEventListener( 'popstate', applyRoute );
+/* sfdatasourceready is sent each time a dataset has loaded */
+document.addEventListener( 'sfdatasourceready', applyRoute );
+document.addEventListener( 'sfdatasourceready', () => {
+    window.addEventListener( 'popstate', () => {
+        sendEvent( 'sfroutechange', { route: getRoute().join( '/' ) } );
+        applyRoute();
+    });
 }, { once: true } );
 
 /**
@@ -71,7 +75,7 @@ function restoreRoute() {
     }
     if ( route !== null ) {
         route = route.replace( /\/$/, '' ).replace( /^[^\/]+/, first => Object.hasOwn( spacefinder.routeAliases, first ) ? spacefinder.routeAliases[ first ]: first );
-        splog( 'Restoring route ' + route );
+        log( 'Restoring the route ' + route );
         setRoute( route, true );
     }
 }
@@ -83,21 +87,21 @@ function applyRoute() {
     /* the hash can be changed without reloading the page, so old URLs need restoring here too */
     restoreRoute();
     let route = getRoute();
-    splog( 'Applying route /' + route.join( '/' ) );
+    log( 'Applying the route /' + route.join( '/' ) );
 
     /* information pages */
     if ( route[0] === 'page' ) {
-        document.dispatchEvent( new CustomEvent( 'sfshowpage', { detail: { page: route[1] } } ) );
+        showPage( route[1] );
         return;
     }
-    document.dispatchEvent( new Event( 'sfhidepages' ) );
+    hidePages();
 
     if ( route.length && ! isDataSource( route[0] ) ) {
         notFound();
         return;
     }
 
-    /* the rest of the route is applied when the other dataset has loaded (on sfmapready) */
+    /* the rest of the route is applied when the other dataset has loaded (on sfdatasourceready) */
     let dataSource = getRouteDataSource( route );
     if ( dataSource !== spacefinder.currentDataSource ) {
         switchDataSource( dataSource );
@@ -114,22 +118,29 @@ function applyRoute() {
             notFound();
             return;
         }
-        let placenode = getPlaceNodeById( place.id );
-        if ( ! placenode.classList.contains( 'active' ) ) {
-            splog( 'Activating place' );
-            document.dispatchEvent( new CustomEvent( 'placeSelected', { bubbles: true, detail: { id: place.id, src: 'load' } } ) );
+        if ( ! getPlaceNodeById( place.id ).classList.contains( 'active' ) ) {
+            selectPlace( place.id, 'route' );
             setElementFocus( 'place' + place.id );
         }
     } else {
-        document.dispatchEvent( new CustomEvent( 'placeDeselected', { bubbles: true, detail: false } ) );
+        deselectPlaces( false, 'route' );
     }
+}
+
+/**
+ * Goes to a route, and shows what it refers to (for the API)
+ * @param {string} route e.g. trees/copper-beech, or page/about
+ */
+export function goToRoute( route ) {
+    setRoute( route );
+    applyRoute();
 }
 
 /**
  * Tells the user that the URL doesn't match anything, and goes to the current dataset
  */
 function notFound() {
-    splog( 'Route not found' );
+    log.warn( 'Nothing matches the route /' + getRoute().join( '/' ) );
     setRoute( getDataSourceRoute( spacefinder.currentDataSource ), true );
     openAlertDialog( 'Not found', 'Sorry, the page or place you were looking for could not be found.' );
 }

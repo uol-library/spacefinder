@@ -8,7 +8,7 @@
  * dataset" guide in the documentation for what each function does.
  */
 import { spacefinder } from '../../assets/js/modules/config.mjs';
-import { splog, escapeHTML as esc, getDirectionsLink, createPlaceElement, getInfoWindowHTML, getFilterData } from '../../assets/js/modules/utilities.mjs';
+import { escapeHTML as esc, getDirectionsLink, createPlaceElement, getInfoWindowHTML, getFilterData } from '../../assets/js/modules/utilities.mjs';
 import { getPublishedEntities, getFeatureKeys } from '../../assets/js/modules/jsonld.mjs';
 
 export const namespace = 'cafes';
@@ -27,7 +27,6 @@ function slugify( str ) {
  * @param {Array} data JSON-LD Articles
  */
 export function onloadPlaceData( data ) {
-    splog( 'onloadPlaceData (cafes module)' );
     spacefinder.data[namespace].places = getPublishedEntities( data ).map( ld => ( {
         id: ld.identifier,
         slug: slugify( ld.name ),

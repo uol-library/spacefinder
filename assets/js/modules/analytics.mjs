@@ -1,63 +1,70 @@
 /**
- * Google Analytics event triggers
+ * Google Analytics events
  *
- * Adds event listeners for various events to be logged to GA.
- *
- * Custom Eventa contain information in the detail property:
- *
- * @param e.detail.terms the terms used in the search or filter for the search and filter types
- * @param e.detail.filtername the name of the filter for the filter type
- * @param e.detail.src the selection source for the select type (map or list)
- * @param e.detail.id the ID of the place selected for the select type
- * @param e.detail.name the title of the place selected for the select type
+ * Sends some of the app's events (see the Embedding guide in the documentation)
+ * to Google Analytics, when the site has a google_analytics ID and the user
+ * has accepted analytics cookies (the gtag function is defined by
+ * _includes/google-analytics.html). In debug mode, the events that would be
+ * sent are logged.
  */
-document.addEventListener('DOMContentLoaded', () => {
-    if ( typeof gtag == 'function' ) {
-        document.addEventListener( 'sfselectitem', e => {
-            gtag('event', 'select_item', {
-                item_list_id: e.detail.src,
-                item_list_name: e.detail.src,
-                items: [
-                    {
-                        item_id: e.detail.id,
-                        item_name: e.detail.name
-                    }
-                ]
-            });
-        });
-        document.addEventListener( 'sfselectpage', e => {
-            gtag('event', 'select_item', {
-                items: [
-                    {
-                        item_id: e.detail.id,
-                        item_name: e.detail.name
-                    }
-                ]
-            });
-        });
-        document.addEventListener( 'sfsearch', e => {
-            gtag('event','search', {
-                search_term: e.detail.terms
-            });
-        });
-        document.addEventListener( 'sffilter', e => {
-            gtag('event','select_content', {
-                'content_type': e.detail.filtername,
-                'item_id': e.detail.terms
-            });
-        });
-        document.addEventListener( 'sfgeostart', e => {
-            gtag('event','level_start', {
-                'level_name': 'Geolocation activated'
-            });
-        });
-        document.addEventListener( 'sfgeoend', e => {
-            gtag('event','level_end', {
-                'level_name': 'Geolocation deactivated'
-            });
-        });
+import { getLogger } from './utilities.mjs';
+
+const log = getLogger( 'analytics' );
+
+/**
+ * Sends an event to Google Analytics, if gtag has been loaded
+ * @param {string} name GA event name
+ * @param {Object} params GA event parameters
+ */
+function track( name, params ) {
+    log( 'GA event ' + name + ( typeof window.gtag === 'function' ? '': ' (not sent: GA is not loaded)' ), params );
+    if ( typeof window.gtag === 'function' ) {
+        window.gtag( 'event', name, params );
     }
-});
-function gtag() {
-    console.log( 'gtag called with arguments:', arguments );
 }
+
+document.addEventListener( 'sfplaceselect', e => {
+    track( 'select_item', {
+        item_list_id: e.detail.source,
+        item_list_name: e.detail.source,
+        items: [
+            {
+                item_id: e.detail.id,
+                item_name: e.detail.title
+            }
+        ]
+    });
+});
+document.addEventListener( 'sfpageshow', e => {
+    track( 'select_item', {
+        items: [
+            {
+                item_id: e.detail.page,
+                item_name: e.detail.title
+            }
+        ]
+    });
+});
+document.addEventListener( 'sfsearch', e => {
+    track( 'search', {
+        search_term: e.detail.terms
+    });
+});
+document.addEventListener( 'sffilterchange', e => {
+    Object.entries( e.detail.filters ).forEach( ( [ key, options ] ) => {
+        track( 'select_content', {
+            content_type: key,
+            item_id: options.join( ', ' )
+        });
+    });
+});
+document.addEventListener( 'sfgeostart', () => {
+    track( 'level_start', {
+        level_name: 'Geolocation activated'
+    });
+});
+document.addEventListener( 'sfgeoend', () => {
+    track( 'level_end', {
+        level_name: 'Geolocation deactivated'
+    });
+});

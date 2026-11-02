@@ -31,6 +31,17 @@ theme (for Leeds, in
 - `site_logo_position` in `_config.yml` puts the site's logo on the left or
   right of the top bar. The logos are in their own includes, so a site can
   replace `_includes/site-logo.html` with its own.
+- **Embedding:** public events (`sfplaceselect`, `sffilterchange`,
+  `sfdatasourceready` and others, all on `document`), an API at
+  `window.spacefinderAPI` for selecting places, setting filters and the
+  search, switching dataset and opening the panel, and a `postMessage`
+  bridge so a page on another site can do the same with the app in an
+  iframe (`embed: origins` in `_data/config.yml`). See
+  [Embedding the app](docs/guides/embedding.md).
+- `routing: "none"`, which leaves the URL alone, for an app in an iframe.
+- **Debug logging:** `getLogger( module )` logs what each module does, with
+  its data, and every event the app sends. Debug mode can be switched on
+  with `?sfdebug` in the URL.
 - A documentation site in `docs/`, with guides and API pages generated
   from JSDoc (`npm run docs`).
 - Browser tests (`npm run test:routing`) for both routing modes.
@@ -48,6 +59,17 @@ theme (for Leeds, in
   "spaces".
 - Data and image URLs are relative to the site, so it works when it isn't
   at the root of its domain.
+- The app's events have one naming convention (`sf` and lower case), and
+  modules call each other's functions instead of sending each other events.
+  Selecting a place sends one event, where it used to send two from the
+  list and the map.
+- Google Analytics events are sent through the real `gtag` function. A
+  local function of the same name stopped any events reaching Google
+  Analytics, and logged them in the console instead. The selection source
+  `load` is now `route`.
+- Switching dataset while the map was zooming to a place could open that
+  place's popup afterwards, and select the place with the same ID in the
+  new dataset.
 
 ### Removed
 

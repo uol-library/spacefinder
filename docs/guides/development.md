@@ -1,7 +1,7 @@
 ---
 title: Development
 parent: Guides
-nav_order: 3
+nav_order: 4
 ---
 
 # Development
@@ -33,11 +33,11 @@ repository.
 
 ## Tests
 
-`npm run test:routing` builds the site twice, once for each
+`npm run test:routing` builds the site three times, once for each
 [routing](configuration.html#routing) setting, and serves each build the way
 GitHub Pages does, sending `404.html` for paths that don't exist. Then it
-drives headless Chrome through the same scenarios in both builds, using the
-example datasets:
+drives headless Chrome through the same scenarios in the `hash` and
+`history` builds, using the example datasets:
 
 - selecting places, and going Back and Forward between them;
 - search and filters, including a filter matched by the dataset module, and
@@ -49,10 +49,34 @@ example datasets:
 - unknown places;
 - hash links in history mode;
 - the dataset's name in the interface;
-- checking for JavaScript errors.
+- the [events](embedding.html#events) sent when places are selected, and
+  the [API](embedding.html#the-api).
+
+The `none` build is tested on its own (the URL and the history mustn't
+change), and in an iframe on a page with another origin, which is listed
+under `embed: origins`, to test calling the API and receiving events with
+`postMessage`. A page on an origin that isn't listed mustn't get any
+answers or events. Every build is checked for JavaScript errors.
 
 It needs Google Chrome. Add `-- --no-build` to reuse the last builds. The
 builds are kept in `_tests/build`, which git ignores.
+
+## Debugging
+
+In debug mode, the app logs what it does in the browser's console: what it
+loads, the routes it applies, the filters applied and how many places
+match, and every [event](embedding.html#events) it sends, with its data.
+Debug mode is on when `environment` is `development` in `_config.yml`, or
+when the page's URL has `?sfdebug`, e.g. `https://spacefinder.example.ac.uk/?sfdebug`.
+
+Each message starts with the time and the module that logged it, e.g.
+`[places]` or `[event]`, so the console's filter can show one module's
+messages. Objects logged with a message can be opened in the console.
+
+The modules log with `getLogger` from `utilities.mjs`, which dataset
+modules can use too (see [Adding a dataset](adding-a-dataset.html#logging)).
+Errors, such as a dataset that won't load, are logged in the console
+whether debug mode is on or not.
 
 ## Documentation
 

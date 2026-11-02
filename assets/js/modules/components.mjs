@@ -1,9 +1,13 @@
 /**
- * Modal
+ * Dialogs (the information pages, and alerts) and the accordion
+ *
+ * Sends sfpageshow and sfpagehide when an information page opens or closes.
  */
 import A11yDialog from 'a11y-dialog';
 import { spacefinder } from './config.mjs';
-import { getRoute, setRoute, getDataSourceRoute } from './utilities.mjs';
+import { getRoute, setRoute, getDataSourceRoute, getLogger, sendEvent } from './utilities.mjs';
+
+const log = getLogger( 'components' );
 
 /* page dialogs, keyed by page name (the route is page/<name>) */
 const pageDialogs = {};
@@ -15,33 +19,42 @@ document.addEventListener('DOMContentLoaded', () => {
         let dialog = getPageDialog( page, mb.getAttribute('data-dialogid') );
         mb.addEventListener('click', e => {
             dialog.previousRoute = getRoute().join( '/' );
-            dialog.show();
             setRoute( 'page/' + page );
-            document.dispatchEvent(new CustomEvent('sfselectpage', {
-                detail: {
-                    id: page,
-                    name: e.target.textContent
-                }
-            }));
-        });
-    });
-    /* show and hide pages from the URL (see routing.mjs) */
-    document.addEventListener( 'sfshowpage', event => {
-        let dialog = pageDialogs[ event.detail.page ];
-        if ( dialog && ! dialog.shown ) {
-            /* the page was opened directly, so closing it goes to the current dataset */
-            dialog.previousRoute = getDataSourceRoute( spacefinder.currentDataSource );
             dialog.show();
-        }
-    });
-    document.addEventListener( 'sfhidepages', () => {
-        Object.values( pageDialogs ).forEach( dialog => {
-            if ( dialog.shown ) {
-                dialog.hide();
-            }
         });
     });
 });
+
+/**
+ * Shows an information page (used by routing.mjs, when the route is
+ * page/<name>)
+ * @param {String} page page name
+ * @return {boolean} whether there is a page with that name
+ */
+export function showPage( page ) {
+    let dialog = pageDialogs[ page ];
+    if ( ! dialog ) {
+        log.warn( 'There is no page called ' + page );
+        return false;
+    }
+    if ( ! dialog.shown ) {
+        /* the page was opened directly, so closing it goes to the current dataset */
+        dialog.previousRoute = getDataSourceRoute( spacefinder.currentDataSource );
+        dialog.show();
+    }
+    return true;
+}
+
+/**
+ * Closes any information page that is open
+ */
+export function hidePages() {
+    Object.values( pageDialogs ).forEach( dialog => {
+        if ( dialog.shown ) {
+            dialog.hide();
+        }
+    });
+}
 
 /**
  * Gets the dialog for a page, creating it if needed
@@ -53,7 +66,15 @@ document.addEventListener('DOMContentLoaded', () => {
 function getPageDialog( page, dialogid ) {
     if ( ! pageDialogs[ page ] ) {
         let dialog = new A11yDialog( document.getElementById( dialogid ) );
+        /* the page's title, from the first button that opens it */
+        let trigger = document.querySelector( '.modal-trigger[data-dialoghash="' + page + '"]' );
+        let title = trigger ? trigger.textContent.trim(): page;
+        dialog.on('show', () => {
+            log( 'Showing the ' + page + ' page' );
+            sendEvent( 'sfpageshow', { page: page, title: title } );
+        });
         dialog.on('hide', () => {
+            sendEvent( 'sfpagehide', { page: page, title: title } );
             /* only change the URL if it is still the page's (it won't be when going back in history) */
             if ( getRoute()[0] === 'page' ) {
                 setRoute( dialog.previousRoute || '' );

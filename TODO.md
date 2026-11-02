@@ -13,43 +13,15 @@ The aim: core scripts plus datasets that can be added by putting a folder in
    fullscreen control keeps the panel usable (it uses the Fullscreen API on
    the map container), especially on phones, where the panel and the
    controls on the right don't both fit.
-2. **Hooks for embedding the app in other pages.** Let a page that embeds
-   the app (for example one built with the Design System) share data with it,
-   so the app doesn't need its own page design. spacefinder-ds took the
-   opposite approach: static pages styled to match the Design System.
-   - **Events from the app:** the app already sends events on `document`,
-     such as `sfmapready`, `placesLoaded`, `filtersloaded`, `placeSelected`,
-     `sfselectpage`, `datasourceunload`, `datasourcechange` and
-     `sfpaneltoggle`. Decide which
-     ones are public and what data each carries, document them, and use one
-     naming convention. Add events for a changed filter or search, and a
-     changed route.
-   - **Methods the page can call:** for example, select a place, set filters
-     or a search, switch dataset, and go full screen. These could sit on
-     `spacefinder` or on an object returned by an `init`/mount function.
-   - **Mounting:** start the app in a given container element with options
-     (the datasets, the routing mode, the start route), so the page decides
-     where the map goes and how big it is. In an embedded app, routing could
-     be optional, so the app doesn't take over the page's URL.
-   - **An iframe as well?** If the app is embedded in an iframe, the same
-     events and methods could be sent with `postMessage`.
-3. **Rationalise logging in debug mode.** `splog` (in `utilities.mjs`) logs
-   when `spacefinder.debug` is on, which it is when `environment` is
-   `development` in `_config.yml`. But it's used unevenly: 18 calls in
-   `map.mjs`, none in `components.mjs`, `analytics.mjs` or
-   `cookieconsent.mjs`. Most calls just log a function name. There are
-   also a few `console.log`/`console.error` calls that bypass it, including
-   one in `loadPlaces` in `places.mjs` that logs every time. Make debug mode
-   more verbose and consistent:
-   - log the module and what happened, with the data that matters (the
-     route being applied, the dataset loaded and how many places it has,
-     the filters and search terms applied and how many places match,
-     events sent and received);
-   - maybe add levels (e.g. `splog( message, 'warn' )`) or group related
-     messages with `console.group`;
-   - replace the stray `console.log` calls with `splog`, and keep
-     `console.error` for real errors;
-   - this fits with documenting events for the embedding hooks (item 2).
+2. **Mounting the app in another page.** The events, the API
+   (`window.spacefinderAPI`), the `postMessage` bridge for iframes and
+   `routing: "none"` are done (see `docs/guides/embedding.md`). Still to do:
+   starting the app in a given container element with options (the
+   datasets, the routing mode, the start route), so a page can place the
+   map itself without an iframe. The page's markup (`#map`, `#sfpanel`, the
+   dialogs) comes from the Jekyll layout, so it would need building in JS,
+   and the CSS would need scoping to the container. Decide first whether
+   the iframe is enough.
 
 ## Art trail
 
@@ -104,7 +76,8 @@ and API pages generated with `npm run docs`. Preview it with
 
 ## Testing
 
-`npm run test:routing` builds the site in both routing modes and runs 37
-browser scenarios in each, using headless Chrome and the example datasets.
+`npm run test:routing` builds the site in the three routing modes and runs
+109 browser scenarios, using headless Chrome and the example datasets,
+including the app in an iframe.
 It needs Bundler and Chrome. `-- --no-build` reuses the last builds. It
 doesn't test clicking map markers, or the Apache rewrite rules.

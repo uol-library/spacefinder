@@ -4,7 +4,8 @@
  * SpaceFinder configuration
  */
 export const spacefinder = {
-    debug: {% if site.environment == "development" %}true{% else %}false{% endif %},
+    /* debug logging (see getLogger in utilities.mjs): on in development, or with ?sfdebug in the URL */
+    debug: {% if site.environment == "development" %}true{% else %}false{% endif %} || new URLSearchParams( window.location.search ).has( 'sfdebug' ),
 
     /* CSS breakpoints */
     breakpoints: {
@@ -51,10 +52,12 @@ export const spacefinder = {
     dataDir: '{{ site.baseurl }}/{{ site.data.config.dataDir | default: "assets/data/" }}',
     /* path of the site, which routes (e.g. spaces/1915) are added to */
     basePath: '{{ site.baseurl }}/',
-    /* "history" for URLs like /spaces/1915, "hash" for URLs like /#/spaces/1915 */
+    /* "history" for URLs like /spaces/1915, "hash" for URLs like /#/spaces/1915, "none" to leave the URL alone */
     routing: {{ site.data.config.routing | default: "hash" | jsonify }},
     /* old first parts of routes, and what replaces them, e.g. { "space": "spaces" } */
     routeAliases: {{ site.data.config.routeAliases | jsonify }} || {},
+    /* origins of pages which can embed the app in an iframe and use it with postMessage (see embed.mjs) */
+    embedOrigins: {{ site.data.config.embed.origins | jsonify }} || [],
     placesLoaded: false,
 
     /* filter related config */

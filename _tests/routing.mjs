@@ -1,10 +1,12 @@
 /**
- * Routing tests
+ * Routing, events and API tests
  *
- * Builds the site twice with Jekyll (routing: "hash" and routing: "history"),
- * serves each build the way GitHub Pages does (unknown paths get 404.html),
- * then drives headless Chrome over the DevTools protocol through the same
- * scenarios in both modes.
+ * Builds the site three times with Jekyll (routing: "hash", "history" and
+ * "none"), serves each build the way GitHub Pages does (unknown paths get
+ * 404.html), then drives headless Chrome over the DevTools protocol through
+ * the same scenarios in the hash and history modes. The "none" build is
+ * tested on its own, and embedded in an iframe on another origin (which is
+ * listed under embed: origins) to test the postMessage API.
  *
  * Needs Ruby/Bundler (for Jekyll), Google Chrome and Node 22+ (for WebSocket).
  * Run from the repository root:
@@ -41,7 +43,10 @@ function serve(dir, port) {
 }
 
 
-/* builds both versions from a copy of the repo, with a route alias (tree: trees) added, no trees/filters.json, and routing set for each */
+/* the origins of the page embedding the "none" build: one allowed in its config, one not */
+const EMBED_PORT = 4104, OTHER_PORT = 4105;
+
+/* builds the three versions from a copy of the repo, with a route alias (tree: trees) added, no trees/filters.json, and routing set for each */
 function build() {
     fs.mkdirSync(ROOT, { recursive: true });
     const src = path.join(ROOT, 'src');
@@ -50,14 +55,18 @@ function build() {
     const original = fs.readFileSync(config, 'utf8') + '\nrouteAliases:\n  tree: trees\n';
     /* the trees dataset is built without filters.json, to test a dataset without filters */
     fs.rmSync(path.join(src, 'examples', 'trees', 'filters.json'));
-    for (const out of ['hash', 'history']) {
+    for (const out of ['hash', 'history', 'none']) {
         console.log('Building ' + out + ' version');
-        fs.writeFileSync(config, original.replace(/^routing:.*$/m, 'routing: "' + out + '"'));
+        const embed = out === 'none' ? `\nembed:\n  origins:\n    - "http://127.0.0.1:${EMBED_PORT}"\n` : '';
+        fs.writeFileSync(config, original.replace(/^routing:.*$/m, 'routing: "' + out + '"') + embed);
         execFileSync('bundle', ['exec', 'jekyll', 'build', '-q', '-s', src, '-d', path.join(ROOT, out)], { cwd: REPO, stdio: 'inherit' });
     }
 }
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+/* the app's public events (see embed.mjs) */
+const EVENTS = [...fs.readFileSync(path.join(REPO, 'assets/js/modules/embed.mjs'), 'utf8').match(/export const EVENTS = \[([^\]]*)\]/)[1].matchAll(/'(\w+)'/g)].map(m => m[1]);
 
 async function chrome() {
     /* a fresh profile, so nothing cached in localStorage by an earlier run is used */
@@ -197,6 +206,66 @@ async function run(mode, port) {
         await openAt('2026-11-02T16:00:00', 4);
         await openAt('2026-11-07T15:00:00', 3);
 
+        // events: record the app's events from here on
+        await b.evaluate(`(() => { window.sfEvents = []; ${JSON.stringify(EVENTS)}.forEach(n => document.addEventListener(n, e => window.sfEvents.push({ name: n, detail: e.detail }))); })()`);
+        const events = async () => { const e = await b.evaluate(`window.sfEvents`); await b.evaluate(`window.sfEvents = []`); return e; };
+        const evNames = list => list.map(e => e.name).join(',');
+        await b.evaluate(`document.querySelector('.list-place .place-title[data-slug="courtyard-coffee"]').click()`); await sleep(600);
+        let ev = await events();
+        let sel = ev.filter(e => e.name === 'sfplaceselect');
+        check(mode, 'clicking a place sends sfplaceselect once, and sfroutechange', sel.length === 1 && sel[0].detail.slug === 'courtyard-coffee' && sel[0].detail.source === 'list' && sel[0].detail.dataSource === 'cafes' && ev.some(e => e.name === 'sfroutechange' && e.detail.route === 'cafes/courtyard-coffee'), evNames(ev));
+        await b.evaluate(`document.querySelector('.list-place.active .place-title').click()`); await sleep(600);
+        ev = await events();
+        check(mode, 'closing it sends sfplacedeselect once', ev.filter(e => e.name === 'sfplacedeselect').length === 1 && ev.find(e => e.name === 'sfplacedeselect').detail.slug === 'courtyard-coffee', evNames(ev));
+
+        // the API
+        const api = await b.evaluate(`spacefinderAPI.ready.then(api => ({ ds: api.getDataSource(), sources: api.getDataSources().map(d => d.key + (d.current ? '*' : '')).join(','), places: api.getPlaces().length, filters: api.getFilters().map(f => f.key).join(',') }))`);
+        check(mode, 'API: ready, datasets, places and filters', api.ds === 'cafes' && api.sources === 'cafes*,trees' && api.places === 6 && api.filters.includes('facilities'), JSON.stringify(api));
+        let res = await b.evaluate(`spacefinderAPI.selectPlace('courtyard-coffee')`); await sleep(800);
+        s = await st();
+        ev = await events();
+        let popup = await b.evaluate(`document.querySelector('.leaflet-popup h3')?.textContent || null`);
+        check(mode, 'API: selectPlace selects it and opens its popup', res === true && s.active === 'courtyard-coffee' && s.url === urlOf('cafes/courtyard-coffee') && popup === 'Courtyard Coffee' && ev.filter(e => e.name === 'sfplaceselect').length === 1 && ev.find(e => e.name === 'sfplaceselect').detail.source === 'api', JSON.stringify({ res, s, popup, ev: evNames(ev) }));
+        await b.evaluate(`spacefinderAPI.deselectPlace()`); await sleep(500);
+        s = await st();
+        popup = await b.evaluate(`document.querySelector('.leaflet-popup') !== null`);
+        check(mode, 'API: deselectPlace closes it', s.active === null && s.url === urlOf('') && !popup && await b.evaluate(`spacefinderAPI.getSelectedPlace() === null`), JSON.stringify(s));
+        res = await b.evaluate(`spacefinderAPI.selectPlace('no-such-place')`);
+        check(mode, 'API: selectPlace returns false for an unknown place', res === false, String(res));
+        await events();
+        res = await b.evaluate(`spacefinderAPI.setFilters({ facilities: ['wifi'] })`); await sleep(300);
+        ev = await events();
+        let fc = ev.find(e => e.name === 'sffilterchange');
+        const count = await b.evaluate(`document.querySelector('#filter-toggle .filter-count').textContent`);
+        check(mode, 'API: setFilters filters the list and sends sffilterchange', res.shown === 4 && res.total === 6 && fc && fc.detail.shown === 4 && fc.detail.filters.facilities[0] === 'wifi' && count === ' (1)', JSON.stringify({ res, fc, count }));
+        res = await b.evaluate(`spacefinderAPI.setSearch('Monday')`); await sleep(300);
+        check(mode, 'API: setSearch keeps the filters', res.search[0] === 'Monday' && res.filters.facilities && res.shown <= 1, JSON.stringify(res));
+        res = await b.evaluate(`spacefinderAPI.clearFilters()`); await sleep(300);
+        check(mode, 'API: clearFilters shows all places', res.shown === 6 && Object.keys(res.filters).length === 0 && res.search.length === 0 && await b.evaluate(`document.getElementById('search-input').value === ''`), JSON.stringify(res));
+        await b.evaluate(`spacefinderAPI.closePanel()`); await sleep(500);
+        res = await b.evaluate(`spacefinderAPI.isPanelOpen()`);
+        await b.evaluate(`spacefinderAPI.openPanel()`); await sleep(500);
+        check(mode, 'API: closePanel and openPanel', res === false && await b.evaluate(`spacefinderAPI.isPanelOpen()`), String(res));
+        await events();
+        res = await b.evaluate(`spacefinderAPI.switchDataSource('trees')`);
+        await ready(5); await sleep(300);
+        ev = await events();
+        s = await st();
+        check(mode, 'API: switchDataSource loads the other dataset', res === true && s.url === urlOf('trees') && await b.evaluate(`spacefinderAPI.getDataSource()`) === 'trees' && evNames(ev).includes('sfdatasourceunload,sfdatasourcechange') && ev.some(e => e.name === 'sfdatasourceready' && e.detail.dataSource === 'trees' && e.detail.count === 5), evNames(ev));
+        await b.evaluate(`spacefinderAPI.goTo('cafes/courtyard-coffee')`);
+        await ready(6); await b.waitFor(`document.querySelector('.list-place.active') !== null`);
+        s = await st();
+        check(mode, 'API: goTo a place in another dataset', s.active === 'courtyard-coffee' && s.url === urlOf('cafes/courtyard-coffee') && await b.evaluate(`spacefinderAPI.getRoute()`) === 'cafes/courtyard-coffee', JSON.stringify(s));
+        // a popup from the old dataset opening after a switch (as at the end of a zoom that started before it) mustn't select a place in the new one
+        const config = `import(document.querySelector('script[src$="main.js"]').src.replace('main.js', 'modules/config.mjs'))`;
+        await b.evaluate(`${config}.then(m => { const p = m.spacefinder.data.cafes.places.find(p => p.slug === 'green-bean-kiosk'); window.oldPopup = p.popup.setLatLng([p.lat, p.lng]); return true; })`);
+        await b.evaluate(`spacefinderAPI.switchDataSource('trees')`);
+        await ready(5); await sleep(300);
+        await b.evaluate(`${config}.then(m => { window.oldPopup.openOn(m.spacefinder.map); return true; })`); await sleep(500);
+        res = await b.evaluate(`({ selected: spacefinderAPI.getSelectedPlace(), route: spacefinderAPI.getRoute(), popup: document.querySelector('.leaflet-popup') !== null })`);
+        check(mode, 'a popup from the old dataset does not select a place after switching', res.selected === null && res.route === 'trees' && !res.popup, JSON.stringify(res));
+        await b.evaluate(`spacefinderAPI.goTo('')`); await sleep(500);
+
         // information page
         await b.evaluate(`document.querySelector('.modal-trigger[data-dialoghash="about"]').click()`); await sleep(400);
         s = await st();
@@ -325,10 +394,90 @@ async function run(mode, port) {
     }
 }
 
+/* the "none" build: the URL never changes, the first route can be given with ?route=, and the app can be used from a page on another origin */
+async function runNone(port) {
+    const mode = 'none';
+    const base = `http://127.0.0.1:${port}/`;
+    const b = await chrome();
+    const ready = n => b.waitFor(`document.querySelectorAll('.list-place').length === ${n} && document.querySelector('.leaflet-container') !== null`);
+    const st = () => b.evaluate(STATE);
+    try {
+        await b.goto(base);
+        await ready(6);
+        const length = await b.evaluate(`history.length`);
+        await b.evaluate(`document.querySelector('.list-place .place-title[data-slug="courtyard-coffee"]').click()`);
+        await b.waitFor(`document.querySelector('.list-place.active') !== null`); await sleep(300);
+        let s = await st();
+        check(mode, 'selecting a place leaves the URL and history alone', s.active === 'courtyard-coffee' && s.url === '/' && await b.evaluate(`history.length`) === length && await b.evaluate(`spacefinderAPI.getRoute()`) === 'cafes/courtyard-coffee', JSON.stringify(s));
+        await b.evaluate(`document.querySelector('#datasources a[data-datasource="trees"]').click()`);
+        await ready(5); await sleep(300);
+        s = await st();
+        const href = await b.evaluate(`document.querySelector('#datasources a[data-datasource="trees"]').getAttribute('href')`);
+        check(mode, 'switcher changes dataset without changing the URL', s.places === 5 && s.url === '/' && href === '/?route=trees', JSON.stringify({ ...s, href }));
+        await b.goto(base + '?route=trees/copper-beech');
+        await ready(5); await b.waitFor(`document.querySelector('.list-place.active') !== null`);
+        s = await st();
+        check(mode, '?route= gives the first route', s.active === 'copper-beech', JSON.stringify(s));
+
+        // embedded in an iframe on an allowed origin
+        await b.goto(`http://127.0.0.1:${EMBED_PORT}/`);
+        let ok = await b.waitFor(`window.messages.some(m => m.type === 'event' && m.name === 'sfready')`, 20000);
+        check(mode, 'embedded: the parent page receives sfready', ok, JSON.stringify(await b.evaluate(`window.messages.map(m => m.name || m.type)`)));
+        let r = await b.evaluate(`call('ready')`);
+        let r2 = await b.evaluate(`call('selectPlace', ['courtyard-coffee'])`);
+        await sleep(600);
+        let got = await b.evaluate(`window.messages.filter(m => m.name === 'sfplaceselect').map(m => m.detail.slug + ':' + m.detail.source)`);
+        check(mode, 'embedded: calling selectPlace selects it and sends sfplaceselect', r.result === true && r2.result === true && got.join() === 'courtyard-coffee:api', JSON.stringify({ r, r2, got }));
+        r = await b.evaluate(`call('setFilters', [{ facilities: ['wifi'] }])`);
+        check(mode, 'embedded: setFilters returns the filter state', r.result && r.result.shown === 4, JSON.stringify(r));
+        r = await b.evaluate(`call('noSuchMethod')`);
+        check(mode, 'embedded: an unknown method returns an error', r.error && /noSuchMethod/.test(r.error), JSON.stringify(r));
+
+        // on an origin that isn't allowed, nothing is sent or answered
+        await b.goto(`http://127.0.0.1:${OTHER_PORT}/`);
+        await sleep(4000);
+        r = await b.evaluate(`Promise.race([call('ready'), new Promise(res => setTimeout(() => res('no answer'), 1500))])`);
+        const n = await b.evaluate(`window.messages.length`);
+        check(mode, 'embedded on another origin: no events or answers', r === 'no answer' && n === 0, JSON.stringify({ r, n }));
+    } catch (e) {
+        check(mode, 'test script stopped', false, e.message);
+    } finally {
+        const errs = [...new Set(b.errors)];
+        check(mode, 'no JavaScript errors', errs.length === 0, errs.slice(0, 5).join(' | '));
+        b.proc.kill();
+        await sleep(500);
+    }
+}
+
+/* a page which embeds the "none" build in an iframe, and calls its API with postMessage */
+function serveParent(appPort, port) {
+    const html = `<!doctype html><meta charset="utf-8"><title>Embed test</title>
+<iframe src="http://127.0.0.1:${appPort}/" style="width:1200px;height:800px" allow="fullscreen"></iframe>
+<script>
+window.messages = [];
+const waiting = {};
+let id = 0;
+window.addEventListener('message', e => {
+    if (!e.data || e.data.app !== 'spacefinder') return;
+    if (e.data.type === 'result' && waiting[e.data.id]) { waiting[e.data.id](e.data); delete waiting[e.data.id]; }
+    else window.messages.push(e.data);
+});
+window.call = (method, args = []) => new Promise(res => {
+    const i = ++id; waiting[i] = res;
+    document.querySelector('iframe').contentWindow.postMessage({ app: 'spacefinder', type: 'call', id: i, method, args }, 'http://127.0.0.1:${appPort}');
+});
+</script>`;
+    return new Promise(res => http.createServer((req, resp) => { resp.writeHead(200, { 'Content-Type': 'text/html' }); resp.end(html); }).listen(port, res));
+}
+
 if (!process.argv.includes('--no-build')) build();
 await serve(path.join(ROOT, 'hash'), 4101);
 await serve(path.join(ROOT, 'history'), 4102);
 await run('hash', 4101);
 await run('history', 4102);
+await serve(path.join(ROOT, 'none'), 4103);
+await serveParent(4103, EMBED_PORT);
+await serveParent(4103, OTHER_PORT);
+await runNone(4103);
 for (const x of results) console.log((x.ok ? 'PASS ' : 'FAIL ') + x.mode.padEnd(8) + x.name + (x.ok ? '' : '\n        ' + x.detail));
 process.exit(results.every(x => x.ok) ? 0 : 1);

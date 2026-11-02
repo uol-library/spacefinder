@@ -281,6 +281,25 @@ domain:
 '<img src="' + getSiteURL( ld.image.contentUrl ) + '" alt="' + esc( ld.image.description ) + '">'
 ```
 
+## Logging
+
+To log what the module does in [debug mode](development.html#debugging),
+get a logger with the module's name. Anything after the message is logged
+as data, which can be opened in the console:
+
+```js
+import { getLogger } from '../../js/modules/utilities.mjs';
+
+const log = getLogger( 'trees' );
+
+log( 'Loaded ' + places.length + ' trees', places );
+log.warn( 'No species for ' + ld.name );
+log.error( 'Could not read the opening hours', error );
+```
+
+Errors are logged whether debug mode is on or not. `splog( message )` still
+works, and logs without a module name.
+
 ## Check it
 
 Run the site with `npm run serve` and open `/#/trees`, or `/trees` with

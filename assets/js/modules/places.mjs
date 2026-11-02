@@ -7,31 +7,29 @@
  * the HTML for each place (getPlaceHTML and getAdditionalInfo).
  *
  * switchDataSource changes to another dataset without reloading the page.
+ *
+ * Sends sfplacesloaded, sfplaceselect, sfplacedeselect, sffilterchange,
+ * sfdatasourceunload and sfdatasourcechange (see the Embedding guide in the
+ * documentation).
  */
 import { spacefinder } from './config.mjs';
-import { splog, getJSON, getFilterData, getRoute, setRoute, getDataSourceRoute, getPlaceById, getPlaceNodeById, setDataSourceNames } from './utilities.mjs';
+import { getLogger, sendEvent, getJSON, getFilterData, getRoute, setRoute, getDataSourceRoute, getPlaceById, getPlaceNodeById, setDataSourceNames } from './utilities.mjs';
 import { getFilterStatus } from './filters.mjs';
 import { updateDistances } from './map.mjs';
 
+const log = getLogger( 'places' );
+
 /* setup */
 document.addEventListener( 'DOMContentLoaded', () => {
-    document.addEventListener( 'placesLoaded', () => {
+    document.addEventListener( 'sfplacesloaded', () => {
         renderList();
         updateDistances();
         activateSort(true, 'alpha');
     });
     /* additional info can use filter data (e.g. labels and icons), so is rendered when the filters have loaded */
-    document.addEventListener( 'filtersloaded', renderAdditionalInfo );
+    document.addEventListener( 'sffiltersloaded', renderAdditionalInfo );
     loadPlaces();
-    /* event listener for search + filter changes */
-    document.addEventListener( 'viewfilter', applyFilters );
-    document.addEventListener( 'filtersapplied', updateListFilterMessage );
-
-    /* event listeners for place selection and deselection */
-    document.addEventListener( 'placeSelected', event => { selectPlace( event.detail.id, event.detail.src ) } );
-    document.addEventListener( 'placeDeselected', event => { deselectPlaces( event.detail ) }  );
-    document.addEventListener( 'placeSelectedOnMap', event => { selectPlace( event.detail.id, 'map' ) } );
-    document.addEventListener( 'placeDeselectedFromMap', event => { deselectPlaces( event.detail ) }  );
+    document.addEventListener( 'sffilterchange', updateListFilterMessage );
     /* set up click events for places */
     document.addEventListener( 'click', event => {
         /**
@@ -41,15 +39,10 @@ document.addEventListener( 'DOMContentLoaded', () => {
         if ( event.target.classList.contains( 'load-info' ) ) {
             event.preventDefault();
             if ( event.target.getAttribute( 'aria-expanded' ) === 'true' ) {
-                let placeID = event.target.getAttribute( 'data-placeid' );
-                document.dispatchEvent( new CustomEvent( 'placeDeselected', { bubbles: true, detail: placeID } ) );
+                deselectPlaces( event.target.getAttribute( 'data-placeid' ) );
                 event.target.setAttribute( 'aria-expanded', 'false' );
             } else {
-                let placeID = event.target.getAttribute( 'data-placeid' );
-                let placenode = document.querySelector( '[data-id="' + placeID + '"]' );
-                if ( ! placenode.classList.contains( 'active' ) ) {
-                    document.dispatchEvent( new CustomEvent( 'placeSelected', { bubbles: true, detail: { id: placeID, src: 'list' } } ) );
-                }
+                selectPlace( event.target.getAttribute( 'data-placeid' ), 'list' );
                 event.target.setAttribute( 'aria-expanded', 'true' );
             }
         /**
@@ -69,36 +62,24 @@ document.addEventListener( 'DOMContentLoaded', () => {
                 }
             });
             document.getElementById( 'search-input' ).value = newsearchterms.join(' ');
-            document.dispatchEvent( new Event( 'viewfilter', { bubbles: true } ) );
+            applyFilters();
         } else if ( event.target.classList.contains( 'filter-term' ) ) {
             event.preventDefault();
             let termid = event.target.getAttribute( 'data-termid' );
             document.getElementById( termid ).checked = false;
-            document.dispatchEvent( new Event( 'viewfilter', { bubbles: true } ) );
+            applyFilters();
         }
     });
 });
 
 /**
- * Applies filters to the list of places
+ * Applies the search and the checked filters to the list of places (the
+ * map's markers follow the list), then sends sffilterchange
  */
-function applyFilters() {
-    splog( 'applyFilters' );
+export function applyFilters() {
     const activeFilters = getFilterStatus();
     document.getElementById( 'listcontainer' ).scrollTop = 0;
-    let searchcondition = '';
     if ( activeFilters.length ) {
-        activeFilters.forEach( filtergroup => {
-            if ( filtergroup.name !== 'search' ) {
-                document.dispatchEvent(new CustomEvent('sffilter', {
-                    detail: {
-                        type: 'filter',
-                        filtername: filtergroup.name,
-                        terms: filtergroup.value.join(', ')
-                    }
-                }));
-            }
-        });
         document.querySelectorAll( '.list-place' ).forEach( el => {
             el.classList.remove( 'hidden' );
             let showEl = true;
@@ -152,8 +133,35 @@ function applyFilters() {
             el.classList.remove( 'hidden' );
         });
     }
-    document.dispatchEvent( new CustomEvent( 'placeDeselected', { bubbles: true, detail: false } ) );
-    document.dispatchEvent( new Event( 'filtersapplied' ) );
+    deselectPlaces( false );
+    const detail = getFilterChangeDetail( activeFilters );
+    log( 'Filters applied: ' + detail.shown + ' of ' + detail.total + ' places match', detail );
+    sendEvent( 'sffilterchange', detail );
+}
+
+/**
+ * Gets the active filters and search terms, and the number of places they
+ * match, for sffilterchange and the API
+ * @param {Array} activeFilters from getFilterStatus()
+ * @return {Object} dataSource, filters (filter key: checked option keys), search (terms), shown and total
+ */
+export function getFilterChangeDetail( activeFilters = getFilterStatus() ) {
+    let filters = {};
+    let search = [];
+    activeFilters.forEach( f => {
+        if ( f.name === 'search' ) {
+            search = f.value;
+        } else {
+            filters[ f.name ] = f.value;
+        }
+    });
+    return {
+        dataSource: spacefinder.currentDataSource,
+        filters: filters,
+        search: search,
+        shown: document.querySelectorAll( '.list-place:not(.hidden)' ).length,
+        total: document.querySelectorAll( '.list-place' ).length
+    };
 }
 
 /**
@@ -178,7 +186,6 @@ function matchModuleFilter( el, filtergroup ) {
  * search terms and filters are active
  */
 function updateListFilterMessage() {
-    splog( 'updateListFilterMessage' );
     let activeFilters = getFilterStatus();
     let container = document.getElementById( 'listfilters' );
     /* empty any existing messages and hide */
@@ -235,26 +242,25 @@ function updateListFilterMessage() {
 }
 
 /**
- * Selects a place in the list
- * @param {integer} placeid ID of place to be selected
- * @param {string} source Source of selection (map, list, load)
+ * Selects a place: shows its details in the list, and sends sfplaceselect,
+ * which the map uses to show its popup. Does nothing if the place is already
+ * selected.
+ * @param {integer|string} placeid ID of place to be selected
+ * @param {string} source what selected it: list, map, route or api
+ * @return {boolean} whether the place exists
  */
-function selectPlace( placeid, source ) {
-    splog( 'selectPlace' );
+export function selectPlace( placeid, source ) {
     let place = getPlaceById( placeid );
     if ( ! place ) {
-        splog( 'selectPlace - no place found with ID ' + placeid );
-        return;
+        log.warn( 'selectPlace - no place with ID ' + placeid );
+        return false;
     }
-    document.dispatchEvent(new CustomEvent( 'sfselectitem', {
-        detail: {
-            id: placeid,
-            name: place.title,
-            src: source
-        }
-    }));
+    let placenode = getPlaceNodeById( place.id );
+    if ( placenode.classList.contains( 'active' ) ) {
+        return true;
+    }
+    log( 'Selecting ' + place.title + ' (from ' + source + ')', place );
     showAdditionalInfo( place.id );
-    let placenode = document.querySelector( '[data-id="' + place.id + '"]' );
     document.querySelectorAll( '.list-place' ).forEach( sp => {
         sp.classList.remove( 'active' );
     });
@@ -267,24 +273,43 @@ function selectPlace( placeid, source ) {
     let totop = ( placenode.offsetTop + listFilters.offsetHeight ) - listContainer.offsetTop;
     scrollingElement.scrollTop = totop;
     setRoute( spacefinder.currentDataSource + '/' + place.slug );
+    sendEvent( 'sfplaceselect', getPlaceDetail( place, source ) );
+    return true;
 }
 
 /**
- * Deselects a place in the list, an optionally scrolls the list to the top
- * and recentres the map.
- * @param {integer|Object|boolean} placeid ID of place which has been deselected (or an object
- * with an id property, from the map), or false to deselect any place
+ * Gets the data about a place sent with sfplaceselect and sfplacedeselect
+ * @param {Object} place
+ * @param {string} source what selected or deselected it
+ * @return {Object}
  */
-function deselectPlaces( placeid ) {
-    splog( 'deselectPlaces' );
-    let id = ( placeid && typeof placeid === 'object' ) ? placeid.id: placeid;
+function getPlaceDetail( place, source ) {
+    return {
+        dataSource: spacefinder.currentDataSource,
+        id: place.id,
+        slug: place.slug,
+        title: place.title,
+        source: source
+    };
+}
+
+/**
+ * Deselects the selected place, and sends sfplacedeselect (which closes its
+ * popup on the map) if there was one
+ * @param {integer|string|boolean} id ID of the place to deselect, or false to
+ * deselect any place
+ * @param {string} source what deselected it: list, map, route or api
+ */
+export function deselectPlaces( id = false, source = 'list' ) {
     let active = document.querySelector( '.list-place.active' );
     /* opening a map popup closes the previous one - ignore that if another place is already selected */
-    if ( active && id !== false && id !== undefined && String( active.getAttribute( 'data-id' ) ) !== String( id ) ) {
-        splog( 'deselectPlaces - place ' + id + ' is not selected' );
+    if ( active && id !== false && String( active.getAttribute( 'data-id' ) ) !== String( id ) ) {
+        log( 'deselectPlaces - place ' + id + ' is not selected' );
         return;
     }
+    let deselected = active ? getPlaceById( active.getAttribute( 'data-id' ) ): false;
     if ( active ) {
+        log( 'Deselecting ' + deselected.title + ' (from ' + source + ')' );
         showAdditionalInfo( false );
         document.querySelectorAll( '.list-place' ).forEach( sp => {
             sp.classList.remove( 'active' );
@@ -297,7 +322,10 @@ function deselectPlaces( placeid ) {
        place has been selected in the meantime (when going back in history, or switching to another
        dataset, the URL will already have changed) */
     let dataSource = spacefinder.currentDataSource;
-    let slug = active ? getPlaceById( active.getAttribute( 'data-id' ) ).slug: null;
+    let slug = deselected ? deselected.slug: null;
+    if ( deselected ) {
+        sendEvent( 'sfplacedeselect', getPlaceDetail( deselected, source ) );
+    }
     setTimeout( () => {
         let route = getRoute();
         if ( slug && ! document.querySelector( '.list-place.active' ) && route[0] === dataSource && route[1] === slug ) {
@@ -312,7 +340,7 @@ function deselectPlaces( placeid ) {
  * @param {string} sorttype either alpha or distance.
  */
 export function activateSort( activate, sorttype ) {
-    splog( 'activateSort - sorting places by ' + sorttype + ' ' + ( activate? 'activated': 'deactivated' ) );
+    log( 'Sorting by ' + sorttype + ' ' + ( activate? 'enabled': 'disabled' ) );
     const sortbutton = document.getElementById( 'sort' + sorttype );
     if ( ! activate ) {
         sortbutton.disabled = true;
@@ -331,7 +359,6 @@ export function activateSort( activate, sorttype ) {
  * @param {Event} event event from button click
  */
 function sortPlacesListener( event ) {
-    splog( 'sortPlacesListener' );
     event.preventDefault();
     /* get all the data we need to perform the sort */
     let sortdir = event.target.getAttribute( 'data-sortdir' );
@@ -368,7 +395,7 @@ function sortPlacesListener( event ) {
  * @param {boolean} dir sort direction (true = asc, false = desc)
  */
 export function sortPlaces( sortby, dir ) {
-    splog( 'sortPlaces' );
+    log( 'Sorting places by ' + sortby.replace( 'sort', '' ) + ( dir ? ' (ascending)': ' (descending)' ) );
     /* first update the sorting buttons */
     document.querySelectorAll( '.sortbutton' ).forEach( el => el.setAttribute( 'data-sortdir', '' ) );
     let dirAttr = dir ? 'asc': 'desc';
@@ -382,7 +409,7 @@ export function sortPlaces( sortby, dir ) {
     listitemsArray.forEach( el => {
         listcontainer.appendChild( el );
     });
-    document.dispatchEvent( new Event( 'placeDeselected' ) );
+    deselectPlaces( false );
 }
 
 /**
@@ -392,7 +419,6 @@ export function sortPlaces( sortby, dir ) {
  * @returns sorting function for Array.sort()
  */
 function comparer( asc, attr ) {
-    splog( 'comparer' );
     /**
      * the function to perform the comparison
      * @param {(integer|string)} a first value to sort
@@ -438,12 +464,12 @@ function sortPlacesByTitle( places ) {
 /**
  * Switches to another dataset without reloading the page.
  *
- * Sends a datasourceunload event (detail: from and to, the dataset keys) so
+ * Sends sfdatasourceunload (detail: from and to, the dataset keys) so
  * that the filters and the map can remove what they added for the old
  * dataset, then calls the old dataset module's onunloadPlaceData, clears the
- * list and forgets the old dataset. Then it sends datasourcechange (with the
- * same detail) and loads the new dataset, which sends placesLoaded,
- * filtersloaded and sfmapready as it does when the page loads.
+ * list and forgets the old dataset. Then it sends sfdatasourcechange (with the
+ * same detail) and loads the new dataset, which sends sfplacesloaded,
+ * sffiltersloaded and sfdatasourceready as it does when the page loads.
  *
  * The URL isn't changed: set the route first if it should change.
  * @param {string} key dataset key
@@ -454,9 +480,9 @@ export function switchDataSource( key ) {
     if ( key === from || ! spacefinder.dataSources.some( ds => ds.key === key ) ) {
         return false;
     }
-    splog( 'switchDataSource - from ' + from + ' to ' + key );
+    log( 'Switching dataset from ' + from + ' to ' + key );
     let detail = { from: from, to: key };
-    document.dispatchEvent( new CustomEvent( 'datasourceunload', { detail: detail } ) );
+    sendEvent( 'sfdatasourceunload', detail );
     let old = spacefinder.data[ from ];
     if ( old && old.module && Object.hasOwn( old.module, 'onunloadPlaceData' ) ) {
         old.module.onunloadPlaceData();
@@ -471,7 +497,7 @@ export function switchDataSource( key ) {
     spacefinder.mapReady = false;
     spacefinder.currentDataSource = key;
     setDataSourceNames();
-    document.dispatchEvent( new CustomEvent( 'datasourcechange', { detail: detail } ) );
+    sendEvent( 'sfdatasourcechange', detail );
     loadPlaces();
     return true;
 }
@@ -497,11 +523,10 @@ function resetSort() {
  * Loads all place data from a single JSON file
  */
 function loadPlaces() {
-    splog( 'loadPlaces' );
     /* the dataset being loaded - if it changes before loading finishes, the result is ignored */
     const key = spacefinder.currentDataSource;
     if ( Object.hasOwn( spacefinder.data, key ) ) {
-        splog( 'loadPlaces - data already loaded for ' + key );
+        log( 'loadPlaces - ' + key + ' is already loaded' );
         return;
     } else {
         spacefinder.data[key] = { places: [] };
@@ -510,31 +535,28 @@ function loadPlaces() {
         key: key,
         url: spacefinder.dataDir + key + '/data.json'
     } ).then( data => {
-        if ( data.length ) {
-            import(spacefinder.dataDir + key + '/' + key + '.mjs')
-                .then( module => {
-                    if ( key !== spacefinder.currentDataSource ) {
-                        splog( 'loadPlaces - ignoring ' + key + ', as the dataset has changed' );
-                        return;
-                    }
-                    spacefinder.data[spacefinder.currentDataSource].module = module;
-                    spacefinder.data[spacefinder.currentDataSource].module.onloadPlaceData( data );
-                    sortPlacesByTitle( spacefinder.data[spacefinder.currentDataSource].places );
-                    spacefinder.placesLoaded = true;
-                    /* fire the placesLoaded event */
-                    document.getElementById( 'list' ).dispatchEvent( new Event( 'placesLoaded', {
-                        bubbles: true,
-                        cancelable: true,
-                        composed: false,
-                    } ) );
-               } )
-                .catch( error => {
-                    console.error( `Error loading module for ${key} - status: ${error.status}, message: ${error.statusText}` );
-                } );
-         }
+        if ( ! data.length ) {
+            log.warn( key + '/data.json has no records' );
+            return;
+        }
+        import(spacefinder.dataDir + key + '/' + key + '.mjs')
+            .then( module => {
+                if ( key !== spacefinder.currentDataSource ) {
+                    log( 'loadPlaces - ignoring ' + key + ', as the dataset has changed' );
+                    return;
+                }
+                spacefinder.data[key].module = module;
+                spacefinder.data[key].module.onloadPlaceData( data );
+                sortPlacesByTitle( spacefinder.data[key].places );
+                spacefinder.placesLoaded = true;
+                log( 'Loaded ' + spacefinder.data[key].places.length + ' places for ' + key + ' (from ' + data.length + ' records)', spacefinder.data[key].places );
+                sendEvent( 'sfplacesloaded', { dataSource: key, count: spacefinder.data[key].places.length } );
+            } )
+            .catch( error => {
+                log.error( 'Error loading or running the module for ' + key, error );
+            } );
     } ).catch( error => {
-        console.log( error );
-        console.error( `Error loading place data - status: ${error.status}, message: ${error.statusText}` );
+        log.error( 'Error loading ' + key + '/data.json - status: ' + error.status + ', message: ' + error.statusText );
     } );
 }
 
@@ -542,7 +564,6 @@ function loadPlaces() {
  * Renders list view for places
  */
 function renderList() {
-    splog( 'renderList' );
     let listContainer = document.getElementById( 'listcontent' );
     let placetotal = spacefinder.data[spacefinder.currentDataSource].places.length;
     spacefinder.data[spacefinder.currentDataSource].places.forEach( place => {
@@ -560,7 +581,6 @@ function renderList() {
  * Renders additional information for all places (hidden until a place is selected)
  */
 function renderAdditionalInfo() {
-    splog( 'renderAdditionalInfo' );
     spacefinder.data[spacefinder.currentDataSource].places.forEach( place => {
         getPlaceNodeById( place.id ).querySelector( '.additionalInfo' ).innerHTML = spacefinder.data[spacefinder.currentDataSource].module.getAdditionalInfo( place );
     });
@@ -573,7 +593,6 @@ function renderAdditionalInfo() {
  * @param {integer} placeid ID of place, or false to hide all
  */
 function showAdditionalInfo( placeid ) {
-    splog( 'showAdditionalInfo' );
     document.querySelectorAll( '.additionalInfo' ).forEach( el => {
         el.hidden = true;
     });

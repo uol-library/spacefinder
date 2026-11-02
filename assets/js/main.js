@@ -6,6 +6,8 @@ import './modules/filters.mjs';
 import './modules/places.mjs';
 import './modules/datasources.mjs';
 import './modules/routing.mjs';
+import './modules/api.mjs';
+import './modules/embed.mjs';
 import { initMap } from './modules/map.mjs';
 
 document.addEventListener( 'DOMContentLoaded', () => {

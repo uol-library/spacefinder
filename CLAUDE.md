@@ -69,7 +69,10 @@ Read this first, then `TODO.md` (what's next) and `_sessions/summary.md`
     more than two datasets).
   - `map.mjs`: Leaflet 2.0, using its own `clusterer.mjs`.
   - `routing.mjs`
-  - `components.mjs`: dialogs and the accordion.
+  - `components.mjs`: dialogs (`showPage`, `hidePages`) and the accordion.
+  - `api.mjs` and `embed.mjs`: the API for embedding pages, and the
+    `postMessage` bridge for iframes.
+  - `analytics.mjs`: Google Analytics events, made from the app's events.
   - `utilities.mjs` and `jsonld.mjs`: shared helpers.
 - **Layout:** the page is the top bar, the map and the footer, in a
   full-height flex column. The top bar's logos are in
@@ -96,7 +99,7 @@ Read this first, then `TODO.md` (what's next) and `_sessions/summary.md`
   - Routes: empty, `<dataset>`, `<dataset>/<slug>` and `page/<name>`.
   - A route for another dataset (from the switcher, or Back and Forward)
     calls `switchDataSource` (in `places.mjs`); the rest of the route is
-    applied on the next `sfmapready`.
+    applied on the next `sfdatasourceready`.
 - **URLs** for the app's own files are relative to the page's origin
   (`dataDir`, `main.js`, `main.css`), so that the dataset modules import
   the same copy of `config.mjs` as `main.js`. Don't use `site.url` for
@@ -106,32 +109,45 @@ Read this first, then `TODO.md` (what's next) and `_sessions/summary.md`
   `.datasource-name` and `[data-datasource-title]`). Don't hard-code
   "spaces".
 - **Switching datasets** happens without a reload. `switchDataSource` sends
-  `datasourceunload` (the search form, filters overlay and markers are removed), calls
-  the module's `onunloadPlaceData`, clears the list, deletes
+  `sfdatasourceunload` (the search form, filters overlay and markers are
+  removed), calls the module's `onunloadPlaceData`, clears the list, deletes
   `spacefinder.data[old]`, resets the `placesLoaded`/`filtersLoaded`/
-  `mapReady` flags, sends `datasourcechange` and loads the new dataset, so
-  `placesLoaded`, `filtersloaded` and `sfmapready` fire again. So:
+  `mapReady` flags, sends `sfdatasourcechange` and loads the new dataset, so
+  `sfplacesloaded`, `sffiltersloaded` and `sfdatasourceready` fire again. So:
   - add `document` listeners and map handlers once (at module load or in
     `initMap`), never inside a handler for one of those events;
   - async loads check that the dataset hasn't changed before using the
     result.
-  The switcher (`datasources.mjs`) is a row of links at the top of
-  `#filters`, which is a flex column so the filters still scroll.
-- **Events** are dispatched on `document`, including `sfmapready`,
-  `placesLoaded`, `filtersloaded`, `datasourceunload`, `datasourcechange`,
-  `placeSelected`, `placeDeselected`,
-  `placeSelectedOnMap`, `placeDeselectedFromMap`, `sfshowpage`,
-  `sfhidepages` and `sfselectpage`. Opening a Leaflet popup closes the
-  previous one, which fires `placeDeselectedFromMap`. `deselectPlaces`
-  ignores deselections for a place that isn't the active one, so that
-  doesn't add extra history entries.
+  The switcher (`datasources.mjs`) is at the top of `#filters`: links for
+  two datasets, a dropdown for more.
+- **Events** are public notifications, documented in
+  `docs/guides/embedding.md`: `sf` + lower case (`sfplaceselect`,
+  `sffilterchange`, `sfdatasourceready`...), always a `CustomEvent` on
+  `document`, sent with `sendEvent( name, detail )` from `utilities.mjs`
+  (which logs them). The list is `EVENTS` in `embed.mjs`; keep it, the
+  guide and the tests in step. Modules call each other's functions for
+  commands (`selectPlace`, `deselectPlaces`, `applyFilters`, `showPage`),
+  rather than sending events to each other. `selectPlace` does nothing if
+  the place is already selected, and `deselectPlaces` ignores a place that
+  isn't the selected one (opening a popup closes the previous one), so
+  each sends its event once.
+- **Embedding:** `api.mjs` is `window.spacefinderAPI` (methods return
+  plain, cloneable data, or `false` until the dataset has loaded);
+  `embed.mjs` makes it and the events available with `postMessage` to the
+  origins in `embed: origins`. `routing: "none"` keeps the route in
+  `utilities.mjs` instead of the URL. Mounting the app in a container on
+  another page isn't done (see TODO.md).
+- **Logging:** `const log = getLogger( 'module' )`, then `log( message,
+  ...data )`, `log.warn`, `log.error` (always shown). Debug mode is
+  `environment: development` or `?sfdebug`. Log what happened and the data
+  that matters, not function names. Don't use `console.*` directly.
 
 ## Commands
 
 | Command | Notes |
 |---|---|
 | `npm run serve` / `npm run build` | Jekyll (Bundler) |
-| `npm run test:routing` | Builds the site in both routing modes into `_tests/build/` and drives headless Chrome over the DevTools protocol: 37 scenarios per mode, 74 in all. Add `-- --no-build` to reuse the builds. Run it after any change to JS or templates. |
+| `npm run test:routing` | Builds the site in the three routing modes into `_tests/build/` and drives headless Chrome over the DevTools protocol: 50 scenarios each for hash and history, and 9 for none (including the app in an iframe), 109 in all. Add `-- --no-build` to reuse the builds. Run it after any change to JS or templates. |
 | `npm run docs` | Regenerates `docs/api/*.md` from JSDoc with jsdoc-to-markdown. Don't edit those pages by hand. |
 | `npm run docs:serve` | Previews the docs site (Just the Docs theme). |
 

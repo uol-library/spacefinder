@@ -8,11 +8,11 @@
  * aria-current="page". With more than two, it is a dropdown.
  */
 import { spacefinder } from './config.mjs';
-import { splog, escapeHTML, getRouteURL, getDataSourceRoute, setRoute } from './utilities.mjs';
+import { escapeHTML, getRouteURL, getDataSourceRoute, setRoute } from './utilities.mjs';
 import { switchDataSource } from './places.mjs';
 
 document.addEventListener( 'DOMContentLoaded', renderDataSourceSwitcher );
-document.addEventListener( 'datasourcechange', updateDataSourceSwitcher );
+document.addEventListener( 'sfdatasourcechange', updateDataSourceSwitcher );
 
 /**
  * Adds the dataset links (or dropdown) to the top of the panel
@@ -21,7 +21,6 @@ function renderDataSourceSwitcher() {
     if ( spacefinder.dataSources.length < 2 ) {
         return;
     }
-    splog( 'renderDataSourceSwitcher' );
     let nav = document.createElement( 'nav' );
     nav.setAttribute( 'id', 'datasources' );
     nav.setAttribute( 'aria-label', 'Datasets' );
@@ -63,12 +62,14 @@ function onDataSourceClick( event ) {
 /**
  * Switches to a dataset and changes the URL to its route
  * @param {String} key
+ * @return {boolean} whether the dataset was switched (false if it is the current one, or isn't a dataset)
  */
-function changeDataSource( key ) {
-    if ( key !== spacefinder.currentDataSource ) {
-        setRoute( getDataSourceRoute( key ) );
-        switchDataSource( key );
+export function changeDataSource( key ) {
+    if ( key === spacefinder.currentDataSource || ! spacefinder.dataSources.some( ds => ds.key === key ) ) {
+        return false;
     }
+    setRoute( getDataSourceRoute( key ) );
+    return switchDataSource( key );
 }
 
 /**

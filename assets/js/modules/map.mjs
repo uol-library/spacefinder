@@ -8,6 +8,9 @@
  *
  * The list and filters panel (see layout.mjs) is on the left of the map, so
  * the map's own controls are on the right.
+ *
+ * Sends sfdatasourceready (each time a dataset's markers are on the map),
+ * sfgeostart, sfgeoend and sffullscreen.
  */
 import {
     Control,
@@ -23,23 +26,23 @@ import {
 import { FullScreen } from 'leaflet.fullscreen';
 import { LocateControl } from 'leaflet.locatecontrol';
 import { spacefinder } from './config.mjs';
-import { getPlaceById, splog, haversine_distance } from './utilities.mjs';
+import { getPlaceById, getLogger, sendEvent, haversine_distance } from './utilities.mjs';
 import { openAlertDialog } from './components.mjs';
-import { activateSort, sortPlaces } from './places.mjs';
+import { activateSort, sortPlaces, selectPlace, deselectPlaces } from './places.mjs';
 import { SimpleMarkerClusterGroup } from './clusterer.mjs';
 import { addPanel, getPanelWidth } from './layout.mjs';
+
+const log = getLogger( 'map' );
 
 /**
  * Initialise map and set listeners to set up markers when loaded
  */
 export function initMap() {
-    splog( 'initMap' );
-    document.addEventListener( 'sfmaploaded', checkGeo );
-    document.addEventListener( 'filtersapplied', filterMarkers );
-    document.addEventListener( 'placesLoaded', maybeSetupMap );
-    document.addEventListener( 'filtersloaded', maybeSetupMap );
-    document.addEventListener( 'sfmaploaded', maybeSetupMap );
-    document.addEventListener( 'datasourceunload', removeMarkers );
+    log( 'Creating the map' );
+    document.addEventListener( 'sffilterchange', filterMarkers );
+    document.addEventListener( 'sfplacesloaded', maybeSetupMap );
+    document.addEventListener( 'sffiltersloaded', maybeSetupMap );
+    document.addEventListener( 'sfdatasourceunload', removeMarkers );
     spacefinder.map = new Map( 'map', { zoomControl: false } ).setView([spacefinder.currentLoc.lat, spacefinder.currentLoc.lng], spacefinder.startZoom );
     /* the list and filters panel, and the button which opens and closes it */
     addPanel( spacefinder.map );
@@ -57,6 +60,8 @@ export function initMap() {
     spacefinder.fullscreencontrol = new FullScreen({
         position: 'topright'
     }).addTo(spacefinder.map);
+    spacefinder.map.on( 'enterFullscreen', () => sendEvent( 'sffullscreen', { fullscreen: true } ) );
+    spacefinder.map.on( 'exitFullscreen', () => sendEvent( 'sffullscreen', { fullscreen: false } ) );
     spacefinder.locateControl = new LocateControl({
         position: 'topright',
         strings: {
@@ -77,16 +82,28 @@ export function initMap() {
     ).addTo(spacefinder.map);
     /* use popupopen and popupclose events to select and deselect places from map */
     spacefinder.map.on( 'popupopen', event => {
+        /* a popup from a dataset that has been replaced (e.g. opened at the end of a zoom that started before the switch) */
+        if ( event.popup.dataSource !== spacefinder.currentDataSource ) {
+            log( 'Closing a popup from ' + event.popup.dataSource + ', as the dataset has changed' );
+            spacefinder.map.closePopup( event.popup );
+            return;
+        }
         zoomMapToPlace( event.popup.placeID );
-        document.dispatchEvent( new CustomEvent( 'placeSelectedOnMap', { bubbles: true, detail: { id: event.popup.placeID, src: 'map' } } ) );
+        selectPlace( event.popup.placeID, 'map' );
     });
     spacefinder.map.on( 'popupclose', event => {
-        document.dispatchEvent( new CustomEvent( 'placeDeselectedFromMap', { bubbles: true, detail: { id: event.popup.placeID } } ) );
+        if ( event.popup.dataSource === spacefinder.currentDataSource ) {
+            deselectPlaces( event.popup.placeID, 'map' );
+        }
     });
 
-    /* respond to corresponding events from list */
-    document.addEventListener( 'placeSelected', event => { zoomMapToPlace( event.detail.id ) } );
-    document.addEventListener( 'placeDeselected', deselectPlacesFromMap );
+    /* show the popup for a place selected in the list (or from the URL or the API), and close it when it is deselected */
+    document.addEventListener( 'sfplaceselect', event => {
+        if ( event.detail.source !== 'map' ) {
+            zoomMapToPlace( event.detail.id );
+        }
+    });
+    document.addEventListener( 'sfplacedeselect', () => spacefinder.map.closePopup() );
 
     /**
      * Add a button to recentre the map when geolocation is active and the user
@@ -94,7 +111,7 @@ export function initMap() {
      */
     spacefinder.map.on( 'dragend', event => {
         if ( spacefinder.geoActive && ! spacefinder.recentreControl ) {
-            splog( 'adding recentre control as map was dragged by user' );
+            log( 'Adding the recentre control, as the map was dragged' );
             spacefinder.recentreControl = new RecentreControl( { position: 'bottomright' } ).addTo( spacefinder.map );
         }
     });
@@ -120,8 +137,6 @@ export function initMap() {
      */
     new MapTypeControl( { position: 'topright' } ).addTo( spacefinder.map );
 
-    document.dispatchEvent( new Event( 'sfmaploaded' ) );
-
     /**
      * Add click listeners
      */
@@ -142,6 +157,9 @@ export function initMap() {
     });
     document.addEventListener( 'sfpaneltoggle', updatePopupPadding );
     updatePopupPadding();
+
+    checkGeo();
+    maybeSetupMap();
 }
 
 /**
@@ -150,7 +168,6 @@ export function initMap() {
  * again when the dataset changes.
  */
 function maybeSetupMap() {
-    splog( 'maybeSetupMap' );
     if ( spacefinder.mapLoaded && spacefinder.placesLoaded && spacefinder.filtersLoaded ) {
 
         /* collect latLng coordinates here to define map bounds */
@@ -179,6 +196,7 @@ function maybeSetupMap() {
                 /* set the popup for the marker */
                 spacefinder.data[spacefinder.currentDataSource].places[i].popup = new Popup( { autoPanPaddingTopLeft: spacefinder.popupPadding } ).setContent( spacefinder.data[spacefinder.currentDataSource].module.getInfoWindowContent( spacefinder.data[spacefinder.currentDataSource].places[i] ) );
                 spacefinder.data[spacefinder.currentDataSource].places[i].popup.placeID = spacefinder.data[spacefinder.currentDataSource].places[i].id;
+                spacefinder.data[spacefinder.currentDataSource].places[i].popup.dataSource = spacefinder.currentDataSource;
                 spacefinder.data[spacefinder.currentDataSource].places[i].marker.bindPopup( spacefinder.data[spacefinder.currentDataSource].places[i].popup );
             }
         }
@@ -198,7 +216,8 @@ function maybeSetupMap() {
 
         /* let everyone know we are ready */
         spacefinder.mapReady = true;
-        document.dispatchEvent( new Event( 'sfmapready' ) );
+        log( 'Added ' + pointsArray.length + ' markers for ' + spacefinder.currentDataSource );
+        sendEvent( 'sfdatasourceready', { dataSource: spacefinder.currentDataSource, count: spacefinder.data[spacefinder.currentDataSource].places.length } );
     }
 }
 
@@ -217,10 +236,10 @@ function updatePopupPadding() {
 /**
  * Closes any popup and removes the markers for the old dataset when
  * switching to another
- * @param {CustomEvent} event datasourceunload event (detail.from is the old dataset)
+ * @param {CustomEvent} event sfdatasourceunload event (detail.from is the old dataset)
  */
 function removeMarkers( event ) {
-    splog( 'removeMarkers - ' + event.detail.from );
+    log( 'Removing the markers for ' + event.detail.from );
     spacefinder.map.closePopup();
     let data = spacefinder.data[ event.detail.from ];
     if ( data && data.markergroup ) {
@@ -245,7 +264,7 @@ class RecentreControl extends Control {
         return container;
     }
     onRemove( map ) {
-        splog( 'removing recentre control' );
+        log( 'Removing the recentre control' );
         DomEvent.off( this._recentreButton, 'click mousedown dblclick' );
     }
     _recentreMap() {
@@ -305,25 +324,20 @@ function getSVGIcon( c ) {
 }
 
 /**
- * Re-centres map
- */
-function recentreMap() {
-    splog( 'recentreMap' );
-    let newCenter = spacefinder.geoActive ? spacefinder.personLoc: spacefinder.currentLoc;
-    spacefinder.map.panTo( newCenter );
-}
-
-/**
  * Zooms the map to show a particular place
  * @param {string} placeid
  */
 function zoomMapToPlace( placeid ) {
-    splog( 'zoomMapToPlace' );
     let place = getPlaceById( placeid );
     if ( ! place || ! place.marker ) {
         return;
     }
-    spacefinder.data[spacefinder.currentDataSource].markergroup.zoomToShowLayer( place.marker, function(){
+    const dataSource = spacefinder.currentDataSource;
+    spacefinder.data[dataSource].markergroup.zoomToShowLayer( place.marker, function(){
+        /* the zoom can end after switching to another dataset */
+        if ( dataSource !== spacefinder.currentDataSource ) {
+            return;
+        }
         let newCenter = new LatLng( place.lat, place.lng );
         place.popup.setLatLng( newCenter ).openOn( spacefinder.map );
     });
@@ -331,18 +345,9 @@ function zoomMapToPlace( placeid ) {
 
 
 /**
- * Resets the map after a place has been selected
- */
- function deselectPlacesFromMap() {
-    splog( 'deselectPlacesFromMap' );
-    spacefinder.map.closePopup();
-}
-
-/**
  * Filters the markers on the map
  */
 function filterMarkers() {
-    splog( 'filterMarkers' );
     if ( ! spacefinder.data[spacefinder.currentDataSource] || ! spacefinder.data[spacefinder.currentDataSource].markergroup ) {
         return;
     }
@@ -371,7 +376,6 @@ function filterMarkers() {
  * to the user position.
  */
 export function updateDistances() {
-    splog( 'updateDistances' );
     if ( spacefinder.geoActive ) {
         spacefinder.data[spacefinder.currentDataSource].places.forEach( (place, index) => {
             let d = haversine_distance( spacefinder.personLoc, { lat: place.lat, lng: place.lng } );
@@ -400,14 +404,14 @@ function toggleGeoButton( enable ) {
  * Called when LocateControl starts tracking the user's position.
  */
 function onGeoActivate() {
-    splog( 'onGeoActivate' );
+    log( 'Geolocation started' );
     spacefinder.geoActive = true;
     document.querySelectorAll( '.geo-button' ).forEach( element => {
         element.classList.add( 'active' );
         element.setAttribute( 'aria-label', 'Stop using my location' );
         element.setAttribute( 'title', 'Stop using my location' );
     });
-    document.dispatchEvent(new Event( 'sfgeostart' ));
+    sendEvent( 'sfgeostart' );
     activateSort( true, 'distance' );
 }
 
@@ -415,7 +419,7 @@ function onGeoActivate() {
  * Called when LocateControl stops tracking the user's position.
  */
 function onGeoDeactivate() {
-    splog( 'onGeoDeactivate' );
+    log( 'Geolocation stopped' );
     spacefinder.geoActive = false;
     document.querySelectorAll( '.geo-button' ).forEach( element => {
         element.classList.remove( 'active' );
@@ -423,7 +427,7 @@ function onGeoDeactivate() {
         element.setAttribute( 'title', 'Use my location' );
     });
     document.getElementById( 'sortdistance' ).setAttribute( 'data-sortdir', '' );
-    document.dispatchEvent(new Event( 'sfgeoend' ));
+    sendEvent( 'sfgeoend' );
     activateSort( false, 'distance' );
     updateDistances();
 }
@@ -435,8 +439,9 @@ function onGeoDeactivate() {
  * @param {Object} event Leaflet locationfound event
  */
 function onGeoLocationFound( event ) {
-    splog( 'onGeoLocationFound' );
+    log( 'Location found', event.latlng );
     if ( spacefinder.mapBounds && ! spacefinder.mapBounds.contains( event.latlng ) ) {
+        log( 'The location is outside the map, so geolocation has been stopped' );
         spacefinder.locateControl.stop();
         openAlertDialog( 'Sorry...', 'You need to be a bit nearer to use this feature.' );
         return;
@@ -459,7 +464,7 @@ function onGeoLocationFound( event ) {
  * @param {Object} error
  */
 function onGeoError( error ) {
-    splog( 'onGeoError' );
+    log.warn( 'Geolocation error: ' + error.message, error );
     if ( error.code === 1 || error.code === 2 ) {
         toggleGeoButton( false );
     }
@@ -469,7 +474,6 @@ function onGeoError( error ) {
  * Performs checks for geolocation permissions and services when the map has loaded
  */
 function checkGeo() {
-    splog( 'checkGeo' );
     /* first see if geolocation is available on the device */
     checkGeoAvailable();
     /* check to see if it is enabled to determine initial button states */
@@ -482,7 +486,6 @@ function checkGeo() {
  * watches for updates to permissions.
  */
 function checkGeoPermissions() {
-    splog( 'checkGeoPermissions' );
     /* check for permissions query */
     if ( 'permissions' in navigator && navigator.permissions.query ) {
         /* query geolocation permissions */
@@ -491,6 +494,7 @@ function checkGeoPermissions() {
         } ).then( result => {
             /* save permission state (denied, granted or prompt) */
             spacefinder.permission = result.state;
+            log( 'Geolocation permission: ' + result.state );
             toggleGeoButton( 'denied' !== result.state );
             result.onchange = function() {
                 spacefinder.permission = result.state;
@@ -507,7 +511,6 @@ function checkGeoPermissions() {
  * wires up the list-view geolocation button.
  */
 function checkGeoAvailable() {
-    splog( 'checkGeoAvailable' );
     if ( 'geolocation' in navigator ) {
         /* add listener to buttons to toggle geolocation */
         document.addEventListener( 'click', event => {
@@ -523,6 +526,7 @@ function checkGeoAvailable() {
             }
         });
     } else {
+        log( 'Geolocation is not available' );
         toggleGeoButton( false );
     }
 }

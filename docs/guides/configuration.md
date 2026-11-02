@@ -28,7 +28,7 @@ Where the map is centred, and how far it is zoomed in, when the site opens.
 routing: "hash"
 ```
 
-How the selected dataset, place or page is shown in the URL. Both settings
+How the selected dataset, place or page is shown in the URL. The settings
 use the same routes:
 
 | Route | Shows |
@@ -61,6 +61,12 @@ use the same routes:
 Hash URLs work in both modes, so links made with `hash` still work after
 switching to `history`.
 
+- **`none`** leaves the URL alone, so Back and Forward don't go through the
+  places selected in the app. It is for an app embedded in another page
+  (see [Embedding the app](embedding.html#in-an-iframe)). The route is kept
+  by the app (the API's `getRoute()` gives it), and the first one can be
+  given in the URL, e.g. `?route=cafes/courtyard-coffee`.
+
 ## Route aliases
 
 ```yaml
@@ -72,6 +78,18 @@ Optional. Keeps old links working after a dataset's key changes: a route
 whose first part is a key here has it replaced by the value. With the
 example above, `/#/space/1915` (from an earlier version of the Leeds site)
 becomes `spaces/1915`.
+
+## Embedding
+
+```yaml
+embed:
+  origins:
+    - "https://www.example.ac.uk"
+```
+
+Optional. The origins of pages that can show the app in an iframe and
+control it with `postMessage`. See
+[Embedding the app](embedding.html#in-an-iframe).
 
 ## Data directory
 

@@ -16,8 +16,20 @@ map:
 #            the URL is restored, which works on GitHub Pages.
 #   hash:    URLs like /#/cafes/courtyard-coffee. Works on any static
 #            host with no server configuration.
+#   none:    the URL doesn't change, and Back and Forward don't go
+#            through places in the app. For an app embedded in another
+#            page. The first route can be given as ?route=cafes/courtyard-coffee.
 ##########################################################################
 routing: "hash"
+##########################################################################
+# Embedding (optional)
+#
+# Origins of pages which may show the app in an iframe and control it with
+# postMessage (see the Embedding guide). "*" allows any page.
+#   embed:
+#     origins:
+#       - "https://www.example.ac.uk"
+##########################################################################
 ##########################################################################
 # Route aliases (optional)
 #
