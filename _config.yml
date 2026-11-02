@@ -49,6 +49,7 @@ exclude:
 - LICENSE
 - README.md
 - TODO.md
+- CHANGELOG.md
 - CLAUDE.md
 - docs
 - CONTRIBUTING.md
