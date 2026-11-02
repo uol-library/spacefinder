@@ -30,6 +30,13 @@ document.addEventListener( 'DOMContentLoaded', () => {
     document.addEventListener( 'sffiltersloaded', renderAdditionalInfo );
     loadPlaces();
     document.addEventListener( 'sffilterchange', updateListFilterMessage );
+    /* the list can't be scrolled while the panel is closed, so a place selected on the map is scrolled to when it opens */
+    document.addEventListener( 'sfpaneltoggle', event => {
+        let active = document.querySelector( '.list-place.active' );
+        if ( event.detail.open && active ) {
+            scrollToPlace( active.getAttribute( 'data-id' ) );
+        }
+    });
     /* set up click events for places */
     document.addEventListener( 'click', event => {
         /**
@@ -266,15 +273,26 @@ export function selectPlace( placeid, source ) {
     });
     placenode.classList.add( 'active' );
     placenode.querySelector( 'button.place-title' ).setAttribute( 'aria-expanded', true );
-    /* find distance from top of listcontainer */
-    let scrollingElement = document.getElementById( 'listcontainer' );
-    let listContainer = document.getElementById( 'listcontent' );
-    let listFilters = document.getElementById( 'listfilters' );
-    let totop = ( placenode.offsetTop + listFilters.offsetHeight ) - listContainer.offsetTop;
-    scrollingElement.scrollTop = totop;
+    scrollToPlace( place.id );
     setRoute( spacefinder.currentDataSource + '/' + place.slug );
     sendEvent( 'sfplaceselect', getPlaceDetail( place, source ) );
     return true;
+}
+
+/**
+ * Scrolls the list so a place is at the top. This does nothing while the
+ * panel is closed, so it is called again when the panel opens.
+ * @param {string|number} placeid
+ */
+export function scrollToPlace( placeid ) {
+    let placenode = getPlaceNodeById( placeid );
+    if ( ! placenode ) {
+        return;
+    }
+    let scrollingElement = document.getElementById( 'listcontainer' );
+    let listContainer = document.getElementById( 'listcontent' );
+    let listFilters = document.getElementById( 'listfilters' );
+    scrollingElement.scrollTop = ( placenode.offsetTop + listFilters.offsetHeight ) - listContainer.offsetTop;
 }
 
 /**

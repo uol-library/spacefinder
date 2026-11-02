@@ -30,10 +30,14 @@ document.addEventListener( 'DOMContentLoaded', () => {
             if ( place && place.lat && place.lng ) {
                 spacefinder.map.panTo( [ place.lat, place.lng ] );
             }
-        /* "More info" buttons in map popups open it */
+        /* "More info" buttons in map popups open it (places.mjs scrolls to the selected place), and move the focus to the place */
         } else if ( event.target.classList.contains( 'show-list' ) ) {
             event.preventDefault();
             openPanel();
+            let title = document.querySelector( '.list-place.active button.place-title' );
+            if ( title ) {
+                title.focus( { preventScroll: true } );
+            }
         /* the skip link goes to the list, so the panel needs to be open */
         } else if ( event.target.closest( '#skip a' ) ) {
             openPanel( false );
