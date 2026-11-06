@@ -50,6 +50,18 @@ export const spacefinder = {
     currentDataSource: {{ site.data.config.datasources[0].key | jsonify }},
     /* relative to the page's origin, so the dataset modules import the same copy of this module as main.js */
     dataDir: '{{ site.baseurl }}/{{ site.data.config.dataDir | default: "assets/data/" }}',
+    /* each dataset's overlays (see overlays.mjs): the .geojson files in its data folder, relative to dataDir */
+    {%- assign sfDataDir = site.data.config.dataDir | default: "assets/data/" %}
+    overlayFiles: {
+    {%- for ds in site.data.config.datasources %}
+        {%- assign sfPrefix = "/" | append: sfDataDir | append: ds.key | append: "/data/" %}
+        {{ ds.key | jsonify }}: [
+        {%- for f in site.static_files %}
+            {%- if f.extname == ".geojson" and f.path contains sfPrefix %}{{ f.path | remove_first: "/" | remove_first: sfDataDir | jsonify }}, {% endif %}
+        {%- endfor -%}
+        ],
+    {%- endfor %}
+    },
     /* path of the site, which routes (e.g. spaces/1915) are added to */
     basePath: '{{ site.baseurl }}/',
     /* "history" for URLs like /spaces/1915, "hash" for URLs like /#/spaces/1915, "none" to leave the URL alone */

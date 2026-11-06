@@ -68,6 +68,9 @@ and why).
     (`PanelToggleControl`), and `openPanel`/`closePanel`/`togglePanel`.
   - `datasources.mjs`: the dataset switcher (links, or a dropdown for
     more than two datasets).
+  - `overlays.mjs`: a dataset's `.geojson` files (in its `data/`
+    folder, listed in `config.mjs` at build time), listed above the places
+    and shown on the map with their buttons.
   - `map.mjs`: Leaflet 2.0, using its own `clusterer.mjs`.
   - `routing.mjs`
   - `components.mjs`: dialogs (`showPage`, `hidePages`) and the accordion.

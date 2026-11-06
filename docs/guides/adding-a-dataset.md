@@ -27,7 +27,8 @@ assets/data/trees/
 ├── data.json      the places, as an array of JSON-LD records
 ├── filters.json   optional: the filters
 ├── trees.mjs      the module that renders the places
-├── data/          optional: one JSON-LD file per place, combined into data.json
+├── data/          optional: one JSON-LD file per place, combined into data.json,
+│                  and any overlays (.geojson files)
 └── images/        optional: images the data refers to
 ```
 
@@ -268,6 +269,56 @@ export function matchFilter( cafe, key, values ) {
 
 The filter still needs an entry in `filters.json`, so that it appears in
 the filters.
+
+## Overlays
+
+Any `.geojson` file in the dataset's `data/` folder is an overlay, such as
+a walking route or a set of points. When the dataset loads, its overlays
+are listed above the places, each with a button which shows or hides it on
+the map. The files are found when the site is built, so adding one needs no
+other change, and they are listed in the order of their file names.
+
+Optional members of the FeatureCollection describe the overlay:
+
+```json
+{
+    "type": "FeatureCollection",
+    "title": "Full route",
+    "description": "4.6 km, 22 artworks, about 2 hours",
+    "downloads": [ { "label": "GPX", "href": "route.gpx" } ],
+    "style": { "color": "#b0127a", "weight": 8, "dashArray": "0 16", "lineCap": "round" },
+    "visible": true,
+    "group": "routes",
+    "features": [ ]
+}
+```
+
+- `title` is its name in the list (the file name if there isn't one), and
+  `description` (HTML) follows it.
+- `downloads` are links shown after the description. Each `href` is
+  relative to the GeoJSON file.
+- `style` holds Leaflet path options for its lines, shapes and points.
+  Points are drawn as circles, and `radius` sets their size.
+- `visible: true` shows it when the dataset loads.
+- Overlays with the same `group` are shown one at a time: choosing one
+  hides the others. Overlays without a group are shown and hidden
+  independently.
+
+A feature with a `name` property has a popup with its name and
+`description` (HTML). Other features have the overlay's title as a
+tooltip. Lines and shapes have the classes `sf-overlay` and
+`sf-overlay-<file name>`, so they can also be styled with CSS.
+
+The list can have a heading and an introduction, set in the dataset's
+entry in `_data/config.yml`:
+
+```yaml
+  - key: "art"
+    label: "Public Art Trail"
+    overlays:
+      title: "Public Art Trail"
+      description: "Two step-free walks around the artworks."
+```
 
 ## Images
 
