@@ -249,9 +249,16 @@
     &::before {
         margin: 0;
     }
-    &[aria-expanded="true"] {
-        background: var(--filter-button-bg-active);
-        color: var(--filter-button-color-active);
+}
+/* while the panel is open, the toggle (an X) is a tab on its top right corner */
+#map.sfpanel-open .leaflet-control-panel-toggle {
+    margin: 0;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    box-shadow: 2px 1px 4px rgba(0, 0, 0, .3);
+    .panel-toggle {
+        border-radius: 0 4px 4px 0;
+        background: var(--filter-bg);
     }
 }
 

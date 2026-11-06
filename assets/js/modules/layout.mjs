@@ -154,6 +154,9 @@ function setPanelState( open ) {
     if ( button ) {
         const label = ( open ? 'Hide': 'Show' ) + ' the list of ' + getDataSourceName();
         button.setAttribute( 'aria-expanded', open ? 'true': 'false' );
+        /* the list icon opens the panel, and an X closes it */
+        button.classList.toggle( 'icon-list', ! open );
+        button.classList.toggle( 'icon-close', open );
         button.setAttribute( 'aria-label', label );
         button.setAttribute( 'title', label );
     }
