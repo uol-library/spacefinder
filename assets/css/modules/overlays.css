@@ -81,7 +81,7 @@
     border-radius: 50%;
     background: var(--overlay-colour, #555);
     color: #fff;
-    font-size: 13px;
+    font-size: 10px;
     line-height: 1;
     box-shadow: 0 1px 3px rgba(0, 0, 0, .4);
     &::before {
