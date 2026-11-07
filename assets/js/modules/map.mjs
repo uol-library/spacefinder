@@ -82,6 +82,10 @@ export function initMap() {
     ).addTo(spacefinder.map);
     /* use popupopen and popupclose events to select and deselect places from map */
     spacefinder.map.on( 'popupopen', event => {
+        /* not a place's popup (e.g. one of an overlay's, see overlays.mjs) */
+        if ( event.popup.placeID === undefined ) {
+            return;
+        }
         /* a popup from a dataset that has been replaced (e.g. opened at the end of a zoom that started before the switch) */
         if ( event.popup.dataSource !== spacefinder.currentDataSource ) {
             log( 'Closing a popup from ' + event.popup.dataSource + ', as the dataset has changed' );

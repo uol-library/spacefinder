@@ -18,6 +18,11 @@
  * - visible: true to show it when the dataset loads
  * - group: overlays in the same group are shown one at a time, so choosing
  *   one hides the others
+ * - markers: icon markers for points, chosen by one of their properties, e.g.
+ *   { "property": "category", "categories": { "hire": { "icon": "icon-bike-rack",
+ *   "colour": "#f9a825", "label": "Bike hire" } } }. A point whose category
+ *   isn't listed is a circle. The categories are listed as a key under the
+ *   overlay's name, in the order they are given.
  *
  * A feature with a name property has a popup with its name and description
  * (HTML); other features have the overlay's title as a tooltip.
@@ -29,7 +34,7 @@
  * Lines and shapes have the class names sf-overlay and sf-overlay-<file name>,
  * so they can also be styled with CSS.
  */
-import { GeoJSON, CircleMarker } from 'leaflet';
+import { GeoJSON, CircleMarker, Marker, DivIcon } from 'leaflet';
 import { spacefinder } from './config.mjs';
 import { getLogger, getJSON, escapeHTML } from './utilities.mjs';
 
@@ -92,10 +97,18 @@ function getOverlay( file, url, geojson ) {
     let name = file.split( '/' ).pop().replace( /\.geojson$/, '' );
     let style = Object.assign( {}, geojson.style || {} );
     let title = geojson.title || name;
+    let markers = geojson.markers || {};
+    let categories = markers.categories || {};
     let layer = new GeoJSON( geojson, {
         className: 'sf-overlay sf-overlay-' + name,
         style: () => style,
-        pointToLayer: ( feature, latlng ) => new CircleMarker( latlng, Object.assign( { radius: 6, fillOpacity: .8 }, style ) ),
+        pointToLayer: ( feature, latlng ) => {
+            let category = categories[ ( feature.properties || {} )[ markers.property ] ];
+            if ( category ) {
+                return new Marker( latlng, { icon: getMarkerIcon( category ), title: ( feature.properties || {} ).name || category.label || '' } );
+            }
+            return new CircleMarker( latlng, Object.assign( { radius: 6, fillOpacity: .8 }, style ) );
+        },
         onEachFeature: ( feature, featureLayer ) => {
             let props = feature.properties || {};
             if ( props.name ) {
@@ -114,8 +127,34 @@ function getOverlay( file, url, geojson ) {
         colour: style.color || '',
         visible: geojson.visible === true,
         group: geojson.group || '',
+        key: Object.values( categories ),
         layer: layer
     };
+}
+
+/**
+ * HTML for a category's marker: its icon on a circle of its colour
+ * @param {Object} category { icon, colour }
+ * @return {String}
+ */
+function getMarkerHTML( category ) {
+    let colour = category.colour ? ' style="--overlay-colour: ' + escapeHTML( category.colour ) + '"': '';
+    return '<span class="overlay-marker ' + escapeHTML( category.icon || '' ) + '"' + colour + ' aria-hidden="true"></span>';
+}
+
+/**
+ * Leaflet icon for a category's markers
+ * @param {Object} category { icon, colour }
+ * @return {DivIcon}
+ */
+function getMarkerIcon( category ) {
+    return new DivIcon({
+        html: getMarkerHTML( category ),
+        className: 'sf-overlay-icon',
+        iconSize: [ 26, 26 ],
+        iconAnchor: [ 13, 13 ],
+        popupAnchor: [ 0, -13 ]
+    });
 }
 
 /**
@@ -142,6 +181,9 @@ function renderOverlays( key ) {
         }
         if ( overlay.downloads.length ) {
             html += '<span class="overlay-links">' + overlay.downloads.map( d => '<a href="' + escapeHTML( d.href ) + '" download>' + escapeHTML( d.label ) + '</a>' ).join( ' ' ) + '</span>';
+        }
+        if ( overlay.key.length ) {
+            html += '<ul class="overlay-key">' + overlay.key.map( c => '<li>' + getMarkerHTML( c ) + escapeHTML( c.label || '' ) + '</li>' ).join( '' ) + '</ul>';
         }
         html += '</li>';
     });

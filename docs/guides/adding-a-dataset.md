@@ -303,6 +303,19 @@ Optional members of the FeatureCollection describe the overlay:
 - Overlays with the same `group` are shown one at a time: choosing one
   hides the others. Overlays without a group are shown and hidden
   independently.
+- `markers` gives points icon markers, chosen by one of their properties.
+  A point whose category isn't listed is a circle. The categories are also
+  listed as a key under the overlay's name:
+
+  ```json
+  "markers": {
+      "property": "category",
+      "categories": {
+          "parking": { "icon": "icon-bike-rack", "colour": "#097138", "label": "Cycle parking" },
+          "hire": { "icon": "icon-bike-rack", "colour": "#f9a825", "label": "Bike hire" }
+      }
+  }
+  ```
 
 A feature with a `name` property has a popup with its name and
 `description` (HTML). Other features have the overlay's title as a

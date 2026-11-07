@@ -55,4 +55,40 @@
     .overlay-description {
         color: var(--light-text-color);
     }
+    /* the key to an overlay's markers */
+    ul.overlay-key {
+        flex-basis: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: .25rem 1rem;
+        padding-left: 1.5rem;
+        li {
+            display: flex;
+            align-items: center;
+            gap: .4rem;
+            padding: 0;
+        }
+    }
+}
+/* an overlay's point markers (on the map and in the key): an icon on a circle of the category's colour */
+.overlay-marker {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    background: var(--overlay-colour, #555);
+    color: #fff;
+    font-size: 13px;
+    line-height: 1;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .4);
+    &::before {
+        margin: 0;
+    }
+}
+.leaflet-marker-icon.sf-overlay-icon {
+    background: none;
+    border: none;
 }
