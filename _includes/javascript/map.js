@@ -143,9 +143,13 @@ function maybeSetupMap() {
         document.addEventListener( 'spaceSelected', event => { zoomMapToSpace( event.detail.id ) } );
         document.addEventListener( 'spaceDeselected', deselectSpacesFromMap );
     
-        /* Make sure the map view encompasses all markers */
+        /* Make sure the map view encompasses all markers. This isn't animated,
+           so the map has stopped moving when sfmapready is fired: a space
+           selected from the URL then stays selected (an animated zoom would
+           re-cluster the markers when it finished, closing the space's popup
+           and deselecting it), and the bounds saved below are the final ones */
         if ( pointsArray.length ) {
-            spacefinder.map.fitBounds( pointsArray );
+            spacefinder.map.fitBounds( pointsArray, { animate: false } );
         }
 
         /* save the map bounds and zoom to enable resetting */
